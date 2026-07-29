@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Stare + gerundio in italiano: sto mangiando, sta piovendo. Quando usarlo e quando usare il presente semplice.">
+  <title>Stare + Gerundio · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 8 — STARE + GERUNDIO
+     ========================================================================== */
+  window.LESSON = {
+    num: 8, file: '08-stare-gerundio.html', icon: '🎬', title: 'Stare + Gerundio', group: 'Strutture',
+    subtitle: 'L\'azione in diretta: sto mangiando, stai lavorando, sta piovendo. E soprattutto: quando NON usarlo.',
+
+    intro: {
+      what: 'Stare + gerundio è la forma progressiva italiana, l\'equivalente di "I am doing". Si costruisce con il verbo <b>stare</b> coniugato più il <b>gerundio</b> del verbo principale (-ando per i verbi in -are, -endo per -ere e -ire).',
+      when: 'Solo per un\'azione che sta accadendo <b>proprio in questo momento</b>, mentre parli. "Che fai?" — "Sto cucinando". È perfetta al telefono, per descrivere una foto o per spiegare perché non puoi rispondere.',
+      why: 'Perché è la struttura che gli studenti anglofoni usano troppo e gli studenti italiani usano troppo poco. Capire il confine tra "mangio" e "sto mangiando" ti fa suonare naturale.',
+      mistakes: [
+        'Usarla per il futuro: ❌ "Sto andando a Roma domani" → in italiano si dice "Domani vado a Roma".',
+        'Usarla per le abitudini: ❌ "Sto lavorando in banca da tre anni" → ✅ "Lavoro in banca da tre anni".',
+        'Usare essere invece di stare: ❌ "Sono mangiando" → ✅ "Sto mangiando".',
+        'Coniugare il gerundio: il gerundio è invariabile, non cambia mai con la persona.'
+      ]
+    },
+
+    formulas: [
+      {
+        label: 'La formula',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'STARE coniugato', note: 'sto, stai, sta…', type: 'verb' },
+              { text: 'GERUNDIO', note: '-ando / -endo', type: 'object' }
+            ], example: 'Io sto mangiando.', translation: "I'm eating (right now)." }
+        ]
+      },
+      {
+        label: 'Come si forma il gerundio',
+        rows: [
+          { parts: [
+              { text: '-ARE → -ANDO', note: 'parlare → parlando', type: 'verb' },
+              { text: '-ERE → -ENDO', note: 'leggere → leggendo', type: 'object' },
+              { text: '-IRE → -ENDO', note: 'dormire → dormendo', type: 'extra' }
+            ], example: 'parlando · leggendo · dormendo' }
+        ]
+      },
+      {
+        label: 'Con un verbo riflessivo',
+        rows: [
+          { parts: [
+              { text: 'PRONOME', note: 'mi, ti, si…', type: 'extra' },
+              { text: 'sto / stai / sta', type: 'verb' },
+              { text: 'gerundio', type: 'object' }
+            ], example: 'Mi sto preparando. (= Sto preparandomi.)', translation: "I'm getting ready." }
+        ]
+      }
+    ],
+    formulaNote: 'Il gerundio è invariabile: "sto mangiando", "stiamo mangiando", "stanno mangiando" — la parte finale non cambia mai.',
+
+    rules: [
+      {
+        title: 'Il gerundio: due desinenze e cinque irregolari',
+        body: 'Togli -are/-ere/-ire e aggiungi <b>-ando</b> (solo per i verbi in -are) o <b>-endo</b> (per tutti gli altri).',
+        points: [
+          '-ARE → -ANDO: mangiare → mangi<b>ando</b>, lavorare → lavor<b>ando</b>',
+          '-ERE → -ENDO: scrivere → scriv<b>endo</b>, leggere → legg<b>endo</b>',
+          '-IRE → -ENDO: dormire → dorm<b>endo</b>, finire → fin<b>endo</b> (niente -isc-!)',
+          'Irregolari: fare → <b>facendo</b>, dire → <b>dicendo</b>, bere → <b>bevendo</b>, tradurre → traducendo, porre → ponendo.'
+        ],
+        exception: 'I verbi in -isc- perdono il -isc- nel gerundio: capire → capendo, finire → finendo. Non "capiscendo".'
+      },
+      {
+        title: 'Quando usarla DAVVERO: solo l\'azione in corso',
+        body: 'Stare + gerundio si usa solo se l\'azione è in svolgimento nel momento esatto in cui parli. In tutti gli altri casi si usa il presente semplice.',
+        points: [
+          '✅ "Pronto? Non posso parlare, <b>sto guidando</b>." (proprio adesso)',
+          '✅ "Che cosa <b>stai facendo</b>?" (in questo momento)',
+          '✅ "Silenzio, il bambino <b>sta dormendo</b>."',
+          '❌ Abitudine → "Lavoro in ospedale", non "sto lavorando in ospedale".',
+          '❌ Futuro → "Domani parto", non "sto partendo domani".'
+        ],
+        exception: 'Con "in questi giorni / in questo periodo" si può usare per un\'azione temporanea più lunga: "In questo periodo sto studiando per un esame". È corretto e comune.'
+      },
+      {
+        title: 'Il presente semplice copre già molto',
+        body: 'Questa è la parte che gli anglofoni fanno fatica ad accettare: in italiano <b>"mangio" può significare sia "I eat" sia "I am eating"</b>. La forma progressiva è opzionale, serve solo a insistere sull\'"adesso".',
+        points: [
+          '"Che fai?" — "Mangio." ✅ perfettamente naturale.',
+          '"Che fai?" — "Sto mangiando." ✅ altrettanto corretto, insiste sul momento.',
+          'Regola pratica: se puoi togliere "sto…ndo" e la frase resta chiara, il presente semplice va benissimo.'
+        ],
+        exception: 'Con i verbi di stato (essere, avere, sapere, conoscere, piacere) la forma progressiva non si usa: ❌ "Sto avendo fame" → ✅ "Ho fame".'
+      },
+      {
+        title: 'Verbi che NON accettano il gerundio progressivo',
+        body: 'I verbi che descrivono uno stato, non un\'azione, restano al presente semplice.',
+        points: [
+          '❌ Sto essendo stanco → ✅ <b>Sono</b> stanco.',
+          '❌ Sto avendo un cane → ✅ <b>Ho</b> un cane.',
+          '❌ Mi sta piacendo → ✅ <b>Mi piace</b>.',
+          '❌ Sto sapendo la risposta → ✅ <b>So</b> la risposta.',
+          '❌ Sto volendo un caffè → ✅ <b>Voglio</b> un caffè.'
+        ],
+        exception: 'Alcuni verbi di stato accettano il progressivo se descrivono un cambiamento graduale: "Sto capendo" (I\'m starting to understand), "Mi sto stancando" (I\'m getting tired).'
+      },
+      {
+        title: 'Posizione dei pronomi',
+        body: 'Con i verbi riflessivi o con i pronomi oggetto ci sono due posizioni possibili.',
+        points: [
+          'Prima di stare (più comune): "<b>Mi</b> sto vestendo", "<b>Lo</b> sto leggendo".',
+          'Attaccato al gerundio: "Sto vestendo<b>mi</b>", "Sto leggendo<b>lo</b>".',
+          'Mai in mezzo: ❌ "Sto mi vestendo".'
+        ],
+        exception: 'Nell\'italiano parlato la prima posizione (pronome prima di stare) è nettamente la più usata.'
+      },
+      {
+        title: 'Stare da solo: non è "essere"',
+        body: 'Attenzione: <b>stare</b> ha anche un significato indipendente e non è sinonimo di essere.',
+        points: [
+          'Salute: "Come <b>stai</b>?" — "<b>Sto</b> bene." (mai "Come sei?")',
+          'Restare in un luogo: "<b>Sto</b> a casa stasera."',
+          'Stare per + infinito = essere sul punto di: "Il treno <b>sta per</b> partire" (the train is about to leave).'
+        ],
+        exception: '"Sto bene" = I\'m fine (salute). "Sono bene" non esiste in italiano.'
+      }
+    ],
+
+    timeline: {
+      title: 'Adesso, sempre, o tra poco?',
+      intro: 'Tre strutture diverse per tre momenti diversi.',
+      points: [
+        { time: 'Abitudine', label: 'Presente semplice', example: 'Ogni giorno lavoro alle nove.', note: 'non progressivo!' },
+        { time: 'Proprio adesso', label: 'Stare + gerundio', example: 'In questo momento sto lavorando.', now: true },
+        { time: 'Tra un attimo', label: 'Stare per + infinito', example: 'Sto per uscire.', note: 'about to' },
+        { time: 'Domani', label: 'Presente', example: 'Domani lavoro da casa.', note: 'MAI il progressivo' }
+      ],
+      caption: 'La differenza fondamentale con l\'inglese: il futuro non si esprime mai con stare + gerundio.'
+    },
+
+    tables: [
+      {
+        title: 'Stare — presente indicativo',
+        note: 'Irregolare, ma somiglia a "dare" e "fare".',
+        columns: ['Persona', 'stare', 'Esempio'],
+        rows: [
+          { cells: ['io', 'sto', 'Sto lavorando.'], irregular: [1] },
+          { cells: ['tu', 'stai', 'Stai scherzando?'], irregular: [1] },
+          { cells: ['lui / lei', 'sta', 'Sta piovendo.'], irregular: [1] },
+          { cells: ['noi', 'stiamo', 'Stiamo mangiando.'], irregular: [1] },
+          { cells: ['voi', 'state', 'State studiando?'] },
+          { cells: ['loro', 'stanno', 'Stanno dormendo.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Formazione del gerundio',
+        columns: ['Infinito', 'Gruppo', 'Gerundio', 'Frase'],
+        rows: [
+          { cells: ['parlare', '-are', 'parlando', 'Sto parlando al telefono.'] },
+          { cells: ['mangiare', '-are', 'mangiando', 'Stiamo mangiando.'] },
+          { cells: ['scrivere', '-ere', 'scrivendo', 'Sto scrivendo un\'email.'] },
+          { cells: ['leggere', '-ere', 'leggendo', 'Sta leggendo il giornale.'] },
+          { cells: ['dormire', '-ire', 'dormendo', 'I bambini stanno dormendo.'] },
+          { cells: ['capire', '-ire (isc)', 'capendo', 'Sto capendo meglio.'], irregular: [2] },
+          { cells: ['fare', 'irregolare', 'facendo', 'Che cosa stai facendo?'], irregular: [2] },
+          { cells: ['dire', 'irregolare', 'dicendo', 'Che stai dicendo?'], irregular: [2] },
+          { cells: ['bere', 'irregolare', 'bevendo', 'Sto bevendo un caffè.'], irregular: [2] }
+        ]
+      },
+      {
+        title: 'Progressivo SÌ / progressivo NO',
+        note: 'Nel dubbio, il presente semplice è quasi sempre accettabile.',
+        columns: ['Situazione', 'Forma giusta', 'Forma sbagliata'],
+        rows: [
+          { cells: ['azione in corso adesso', 'Sto mangiando.', '—'] },
+          { cells: ['abitudine', 'Mangio alle otto.', 'Sto mangiando alle otto.'], irregular: [2] },
+          { cells: ['futuro', 'Domani parto.', 'Sto partendo domani.'], irregular: [2] },
+          { cells: ['stato / sensazione', 'Ho fame.', 'Sto avendo fame.'], irregular: [2] },
+          { cells: ['gusto', 'Mi piace.', 'Mi sta piacendo.'], irregular: [2] },
+          { cells: ['periodo temporaneo', 'In questo periodo sto studiando molto.', '—'] },
+          { cells: ['sul punto di', 'Sto per uscire.', 'Sto uscendo tra un\'ora.'], irregular: [2] }
+        ]
+      },
+      {
+        title: 'Espressioni tipiche con stare',
+        columns: ['Espressione', 'Significato', 'Esempio'],
+        rows: [
+          { cells: ['Come stai?', 'How are you?', 'Ciao, come stai?'] },
+          { cells: ['Sto bene / male', "I'm well / unwell", 'Oggi sto benissimo.'] },
+          { cells: ['stare a casa', 'to stay home', 'Stasera sto a casa.'] },
+          { cells: ['stare zitto', 'to be quiet', 'Sta\' zitto, per favore!'] },
+          { cells: ['stare attento', 'to pay attention', 'Stai attento alla strada!'] },
+          { cells: ['stare per + infinito', 'to be about to', 'Il film sta per iniziare.'] },
+          { cells: ['Sta piovendo.', "It's raining.", 'Prendi l\'ombrello, sta piovendo.'] },
+          { cells: ['Stai scherzando?', 'Are you kidding?', 'Davvero? Stai scherzando!'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Che cosa stai facendo?', literal: 'What thing you-stay doing?', natural: 'What are you doing (right now)?', note: 'fare → facendo (irregolare). Domanda tipica al telefono.' },
+      { it: 'Sto mangiando, ti richiamo dopo.', literal: 'I-stay eating, you I-call-back later.', natural: "I'm eating, I'll call you back later.", note: 'Azione in corso proprio adesso: uso perfetto del progressivo.' },
+      { it: 'Non posso parlare, sto guidando.', literal: 'Not I-can to-speak, I-stay driving.', natural: "I can't talk, I'm driving.", note: 'guidare → guidando.' },
+      { it: 'Silenzio! Il bambino sta dormendo.', literal: 'Silence! The child stays sleeping.', natural: 'Quiet! The baby is sleeping.', note: 'dormire → dormendo (-ire fa -endo).' },
+      { it: 'Sta piovendo, prendi l\'ombrello.', literal: 'It-stays raining, take the umbrella.', natural: "It's raining, take an umbrella.", note: 'Verbi meteorologici: solo terza persona singolare.' },
+      { it: 'Stiamo guardando un film.', literal: 'We-stay watching a film.', natural: "We're watching a film.", note: 'noi → stiamo. Il gerundio non cambia.' },
+      { it: 'I ragazzi stanno studiando in biblioteca.', literal: 'The boys stay studying in library.', natural: 'The boys are studying in the library.', note: 'loro → stanno.' },
+      { it: 'Mi sto preparando, arrivo tra dieci minuti.', literal: 'Myself I-stay preparing, I-arrive in ten minutes.', natural: "I'm getting ready, I'll be there in ten minutes.", note: 'Riflessivo: il pronome va prima di stare (più naturale).' },
+      { it: 'Sto scrivendo un\'email importante.', literal: 'I-stay writing an email important.', natural: "I'm writing an important email.", note: 'scrivere → scrivendo.' },
+      { it: 'Che stai dicendo? Non ho capito.', literal: 'What you-stay saying? Not I-have understood.', natural: "What are you saying? I didn't get it.", note: 'dire → dicendo (irregolare).' },
+      { it: 'Sto bevendo un caffè al bar.', literal: 'I-stay drinking a coffee at-the bar.', natural: "I'm having a coffee at the bar.", note: 'bere → bevendo.' },
+      { it: 'Scusa, ti sto disturbando?', literal: 'Sorry, you I-stay disturbing?', natural: 'Sorry, am I disturbing you?', note: 'Il pronome oggetto "ti" va prima di stare.' },
+      { it: 'In questo periodo sto studiando per un esame.', literal: 'In this period I-stay studying for an exam.', natural: "These days I'm studying for an exam.", note: 'Uso esteso: un periodo temporaneo, non solo l\'istante.' },
+      { it: 'Il treno sta per partire!', literal: 'The train stays for to-leave!', natural: 'The train is about to leave!', note: 'stare PER + infinito = essere sul punto di. Struttura diversa dal gerundio.' },
+      { it: 'Domani vado al mare.', literal: 'Tomorrow I-go to-the sea.', natural: "Tomorrow I'm going to the seaside.", note: 'Futuro → presente semplice. MAI "sto andando domani".' },
+      { it: 'Lavoro in una scuola da due anni.', literal: 'I-work in a school from two years.', natural: "I've been working at a school for two years.", note: 'Situazione stabile → presente semplice, non progressivo.' },
+      { it: 'Ho fame, non "sto avendo fame".', literal: 'I-have hunger.', natural: "I'm hungry.", note: 'I verbi di stato non ammettono la forma progressiva.' },
+      { it: 'Sto capendo sempre di più.', literal: 'I-stay understanding always of more.', natural: "I'm understanding more and more.", note: 'Eccezione: capire ammette il progressivo se indica un cambiamento graduale.' },
+      { it: 'Stai scherzando, vero?', literal: 'You-stay joking, true?', natural: "You're joking, right?", note: 'Espressione fissa utilissima nella conversazione.' },
+      { it: 'Che cosa stanno facendo i tuoi amici?', literal: 'What thing they-stay doing the your friends?', natural: 'What are your friends doing?', note: 'loro + facendo.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Sono mangiando.', right: 'Sto mangiando.', why: 'La forma progressiva usa STARE, non essere. "Sono mangiando" non esiste.' },
+      { wrong: 'Sto andando a Roma domani.', right: 'Domani vado a Roma.', why: 'In italiano il progressivo non esprime mai il futuro: si usa il presente semplice.' },
+      { wrong: 'Sto lavorando in banca da tre anni.', right: 'Lavoro in banca da tre anni.', why: 'Una situazione stabile e duratura vuole il presente semplice.' },
+      { wrong: 'Sto avendo fame.', right: 'Ho fame.', why: 'I verbi di stato (avere, essere, sapere, piacere) non ammettono la forma progressiva.' },
+      { wrong: 'Sto capiscendo.', right: 'Sto capendo.', why: 'Il gerundio dei verbi -isc- non contiene -isc-: capendo, finendo, preferendo.' },
+      { wrong: 'Sto mi vestendo.', right: 'Mi sto vestendo. / Sto vestendomi.', why: 'Il pronome sta prima di stare o attaccato al gerundio, mai in mezzo.' },
+      { wrong: 'Stiamo mangiandi.', right: 'Stiamo mangiando.', why: 'Il gerundio è invariabile: non concorda mai con il soggetto.' },
+      { wrong: 'Sto faciendo i compiti.', right: 'Sto facendo i compiti.', why: 'Il gerundio di fare è "facendo".' },
+      { wrong: 'Come sei?', right: 'Come stai?', why: 'Per la salute e lo stato d\'animo si usa stare, non essere.' }
+    ],
+
+    exercises: {
+      mc: [
+        { q: 'Gerundio di "mangiare":', options: ['mangiendo', 'mangiando', 'mangando', 'mangiendo'], answer: 1, hint: '-are → -ando', why: 'I verbi in -are fanno -ando.' },
+        { q: 'Gerundio di "scrivere":', options: ['scrivando', 'scrivendo', 'scriviendo', 'scritto'], answer: 1, hint: '-ere → -endo', why: 'scrivere → scrivendo.' },
+        { q: 'Gerundio di "fare":', options: ['fando', 'faciendo', 'facendo', 'farendo'], answer: 2, hint: 'irregolare', why: 'fare → facendo.' },
+        { q: 'Gerundio di "capire":', options: ['capiscendo', 'capendo', 'capiendo', 'capando'], answer: 1, hint: 'il -isc- sparisce', why: 'capire → capendo.' },
+        { q: 'Quale frase è corretta?', options: ['Sono mangiando.', 'Sto mangiando.', 'Ho mangiando.', 'Vado mangiando.'], answer: 1, hint: 'quale verbo si usa?', why: 'La forma progressiva si costruisce con stare.' },
+        { q: 'Come si dice "Tomorrow I\'m going to Rome"?', options: ['Sto andando a Roma domani.', 'Domani vado a Roma.', 'Domani sto andando a Roma.', 'Vado stando a Roma.'], answer: 1, hint: 'futuro in italiano', why: 'Il futuro vicino usa il presente semplice.' },
+        { q: 'Quale frase NON è corretta?', options: ['Sto studiando.', 'Sta piovendo.', 'Sto avendo fame.', 'Stiamo uscendo.'], answer: 2, hint: 'verbo di stato', why: 'Avere non ammette la forma progressiva: "Ho fame".' },
+        { q: '«Il treno ___ partire» (sta per succedere tra poco)', options: ['sta partendo', 'sta per partire', 'sta a partire', 'sta partire'], answer: 1, hint: 'about to', why: 'stare PER + infinito = essere sul punto di.' },
+        { q: 'Completa: «I bambini ___ dormendo.»', options: ['sta', 'stanno', 'stiamo', 'state'], answer: 1, hint: 'loro', why: 'loro → stanno.' },
+        { q: 'Dove va il pronome? «___ vestendo» (io, vestirsi)', options: ['Sto mi vestendo', 'Mi sto vestendo', 'Sto vestendo mi', 'Sono mi vestendo'], answer: 1, hint: 'prima di stare', why: '"Mi sto vestendo" o "Sto vestendomi".' }
+      ],
+      fill: [
+        { before: 'Io (stare)', after: 'lavorando.', answers: ['sto'], en: 'I am working.' },
+        { before: 'Che cosa stai', after: '? (fare)', answers: ['facendo'], en: 'What are you doing?', hint: 'gerundio irregolare' },
+        { before: 'Il bambino sta', after: '. (dormire)', answers: ['dormendo'], en: 'The baby is sleeping.' },
+        { before: 'Noi stiamo', after: 'un film. (guardare)', answers: ['guardando'], en: 'We are watching a film.' },
+        { before: 'Sta', after: ', prendi l\'ombrello. (piovere)', answers: ['piovendo'], en: 'It is raining, take an umbrella.' },
+        { before: 'Loro', after: 'studiando. (stare)', answers: ['stanno'], en: 'They are studying.' },
+        { before: 'Sto', after: 'un caffè. (bere)', answers: ['bevendo'], en: 'I am drinking a coffee.' },
+        { before: 'Il film sta', after: 'iniziare.', answers: ['per'], en: 'The film is about to start.', hint: 'stare ___ + infinito' }
+      ],
+      order: [
+        { words: ['Che', 'cosa', 'stai', 'facendo'], answer: 'Che cosa stai facendo', en: 'What are you doing?' },
+        { words: ['Non', 'posso', 'parlare', 'sto', 'guidando'], answer: 'Non posso parlare sto guidando', en: "I can't talk, I'm driving." },
+        { words: ['I', 'bambini', 'stanno', 'dormendo'], answer: 'I bambini stanno dormendo', en: 'The children are sleeping.' },
+        { words: ['Mi', 'sto', 'preparando', 'per', 'uscire'], answer: 'Mi sto preparando per uscire', en: "I'm getting ready to go out." },
+        { words: ['Il', 'treno', 'sta', 'per', 'partire'], answer: 'Il treno sta per partire', en: 'The train is about to leave.' }
+      ],
+      dnd: {
+        instructions: 'Serve il PROGRESSIVO (sto…ndo) o il PRESENTE SEMPLICE? Trascina ogni situazione.',
+        buckets: [
+          { id: 'prog', label: 'STO + GERUNDIO', icon: '🎬' },
+          { id: 'pres', label: 'PRESENTE SEMPLICE', icon: '⏱️' }
+        ],
+        items: [
+          { text: 'Adesso: "Non posso, ___ (guidare)"', bucket: 'prog' },
+          { text: 'Abitudine: "Ogni giorno ___ alle 8 (lavorare)"', bucket: 'pres' },
+          { text: 'Domani: "Domani ___ a Milano (andare)"', bucket: 'pres' },
+          { text: 'In questo istante: "Silenzio, ___ (dormire, lui)"', bucket: 'prog' },
+          { text: 'Da 3 anni: "___ in banca da tre anni (lavorare)"', bucket: 'pres' },
+          { text: 'Al telefono: "Che ___ ? (fare, tu)"', bucket: 'prog' },
+          { text: 'Stato: "___ fame (avere)"', bucket: 'pres' },
+          { text: 'Adesso fuori: "___ (piovere)"', bucket: 'prog' }
+        ]
+      },
+      match: [
+        { a: 'parlare', b: 'parlando' },
+        { a: 'leggere', b: 'leggendo' },
+        { a: 'dormire', b: 'dormendo' },
+        { a: 'fare', b: 'facendo' },
+        { a: 'dire', b: 'dicendo' },
+        { a: 'bere', b: 'bevendo' },
+        { a: 'capire', b: 'capendo' },
+        { a: 'Sta piovendo.', b: "It's raining." },
+        { a: 'Sto per uscire.', b: "I'm about to go out." }
+      ],
+      tf: [
+        { statement: 'La forma progressiva si costruisce con essere + gerundio.', answer: false, why: 'No: si costruisce con STARE + gerundio.' },
+        { statement: 'Il gerundio è invariabile.', answer: true, why: 'Sì: non cambia mai con la persona.' },
+        { statement: '«Sto andando a Roma domani» è corretto.', answer: false, why: 'No: il futuro usa il presente semplice → "Domani vado a Roma".' },
+        { statement: '«Mangio» può significare anche "I am eating".', answer: true, why: 'Sì: il presente italiano copre entrambi i sensi.' },
+        { statement: 'Il gerundio di capire è "capiscendo".', answer: false, why: 'No: è "capendo". Il -isc- sparisce.' },
+        { statement: '«Sto per uscire» significa "sono sul punto di uscire".', answer: true, why: 'Sì: stare PER + infinito.' },
+        { statement: '«Sto avendo fame» è corretto.', answer: false, why: 'No: i verbi di stato non ammettono il progressivo → "Ho fame".' }
+      ],
+      translate: [
+        { en: 'What are you doing?', answers: ['Che cosa stai facendo', 'Cosa stai facendo', 'Che stai facendo'] },
+        { en: "I'm eating.", answers: ['Sto mangiando', 'Mangio'] },
+        { en: "It's raining.", answers: ['Sta piovendo', 'Piove'] },
+        { en: 'The children are sleeping.', answers: ['I bambini stanno dormendo', 'I bambini dormono'] },
+        { en: "I'm getting ready.", answers: ['Mi sto preparando', 'Sto preparandomi'] },
+        { en: 'The train is about to leave.', answers: ['Il treno sta per partire'] },
+        { en: 'Tomorrow I am going to the sea.', answers: ['Domani vado al mare'], hint: 'futuro → presente semplice' }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Al telefono',
+      lines: [
+        { speaker: 'Marta', icon: '👩', it: 'Pronto Saman? Che stai facendo?', en: 'Hello Saman? What are you doing?',
+          glosses: [{ term: 'stai facendo', expl: 'stare + gerundio: azione in corso proprio adesso.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Ciao! Sto cucinando, ma posso parlare.', en: "Hi! I'm cooking, but I can talk.",
+          glosses: [{ term: 'Sto cucinando', expl: 'cucinare → cucinando (-are → -ando).' }] },
+        { speaker: 'Marta', icon: '👩', it: 'Sta piovendo da voi? Qui è un disastro.', en: 'Is it raining where you are? Here it\'s a disaster.',
+          glosses: [{ term: 'Sta piovendo', expl: 'Verbi del tempo: solo 3ª persona singolare.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Sì! Sto guardando dalla finestra: piove fortissimo.', en: "Yes! I'm looking out the window: it's raining really hard.",
+          glosses: [{ term: 'Sto guardando', expl: 'Azione in corso.' }, { term: 'piove', expl: 'Qui il presente semplice basta: la forma progressiva è opzionale.' }] },
+        { speaker: 'Marta', icon: '👩', it: 'Senti, domani vieni alla festa di Luca?', en: 'Listen, are you coming to Luca\'s party tomorrow?',
+          glosses: [{ term: 'domani vieni', expl: 'Futuro → presente semplice. Mai "stai venendo domani".' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Credo di sì. In questo periodo sto studiando molto, ma una sera libera la trovo.', en: "I think so. These days I'm studying a lot, but I can find a free evening.",
+          glosses: [{ term: 'sto studiando', expl: 'Uso esteso: un periodo temporaneo, non solo l\'istante.' }] },
+        { speaker: 'Marta', icon: '👩', it: 'Perfetto! Scusa, sta per arrivare il mio treno. Ci sentiamo!', en: 'Perfect! Sorry, my train is about to arrive. Talk soon!',
+          glosses: [{ term: 'sta per arrivare', expl: 'stare PER + infinito = essere sul punto di.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Va bene, anche io sto per servire la cena. Ciao!', en: "Alright, I'm about to serve dinner too. Bye!",
+          glosses: [{ term: 'sto per servire', expl: 'Stessa struttura: azione imminente.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'sto, stai, sta, stiamo, state, stanno', back: 'stare — presente' },
+      { front: '-are → ?', back: '-ando (parlando)' },
+      { front: '-ere / -ire → ?', back: '-endo (leggendo, dormendo)' },
+      { front: 'fare / dire / bere', back: 'facendo / dicendo / bevendo', note: 'gerundi irregolari' },
+      { front: 'capire → ?', back: 'capendo', note: 'il -isc- sparisce' },
+      { front: 'Sto mangiando.', back: "I'm eating (right now)" },
+      { front: 'Sta piovendo.', back: "It's raining." },
+      { front: 'Sto per uscire.', back: "I'm about to go out.", note: 'stare PER + infinito' },
+      { front: 'Domani vado a Roma.', back: 'Tomorrow I\'m going to Rome', note: 'futuro → presente, MAI progressivo' },
+      { front: 'Come stai?', back: 'How are you?', note: 'salute → stare, non essere' },
+      { front: 'Mi sto preparando.', back: "I'm getting ready", note: 'pronome prima di stare' }
+    ],
+
+    summary: {
+      formula: 'STARE coniugato (sto/stai/sta/stiamo/state/stanno) + GERUNDIO (-ando per -are, -endo per -ere/-ire)',
+      rules: [
+        'Si usa SOLO per un\'azione in corso nel momento in cui parli.',
+        'Il gerundio è invariabile: non cambia con la persona.',
+        'Gerundi irregolari: fare→facendo, dire→dicendo, bere→bevendo.',
+        'I verbi -isc- perdono il -isc-: capire→capendo, finire→finendo.',
+        'MAI per il futuro: "Domani vado", non "sto andando domani".',
+        'MAI con i verbi di stato: ho fame, sono stanco, mi piace, so.',
+        'I pronomi vanno prima di stare o attaccati al gerundio: "Mi sto vestendo" = "Sto vestendomi".',
+        'stare PER + infinito = essere sul punto di: "Sto per uscire".'
+      ],
+      tips: [
+        'Chiediti: "sta succedendo mentre parlo?" Se sì → sto + gerundio. Se è abitudine, futuro o stato → presente semplice.',
+        'Ricorda la coppia: -ARE prende la A (parlANDO), tutto il resto prende la E (leggENDO, dormENDO).',
+        'Il presente semplice è sempre una scelta sicura: se non sei sicuro, usa "mangio" invece di "sto mangiando" — nessun italiano ti correggerà.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

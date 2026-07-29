@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Coniugatore dei verbi irregolari italiani: tutti i tempi di indicativo, congiuntivo, condizionale e imperativo, con forme irregolari evidenziate ed esempi.">
+  <title>Verbi Irregolari · Italiano Interattivo</title>
+  <link rel="stylesheet" href="assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔀</text></svg>">
+  <style>
+    /* ── Page-specific layout: verb list beside the conjugation panel ── */
+    .verb-layout { display: grid; grid-template-columns: 260px 1fr; gap: 20px; align-items: start; }
+    .verb-list {
+      position: sticky; top: calc(var(--header-h) + 14px);
+      max-height: calc(100vh - var(--header-h) - 40px); overflow-y: auto;
+      display: flex; flex-direction: column; gap: 5px; padding-right: 4px;
+    }
+    .verb-item {
+      display: flex; align-items: center; gap: 8px; width: 100%; text-align: left;
+      padding: 8px 11px; border-radius: var(--r-sm);
+      border: 1px solid var(--border); background: var(--surface); color: var(--text);
+      transition: all var(--dur) var(--ease);
+    }
+    .verb-item:hover { border-color: var(--brand-2); transform: translateX(2px); }
+    .verb-item.active { background: var(--info-bg); border-color: var(--brand-2); color: var(--info); font-weight: 700; }
+    .verb-item .vi-inf { font-family: var(--font-it); font-size: 1rem; }
+    .verb-item .vi-en { font-size: .74rem; color: var(--text-mute); display: block; }
+    .verb-item .vi-lvl {
+      margin-left: auto; font-size: .64rem; font-weight: 800; padding: 2px 6px;
+      border-radius: var(--r-pill); background: var(--surface-3); color: var(--text-mute);
+    }
+    /* Tense grid */
+    .tense-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+    .tense-card {
+      border: 1px solid var(--border); border-radius: var(--r-md);
+      background: var(--surface-2); padding: 12px 14px;
+    }
+    .tense-card h4 {
+      margin: 0 0 8px; font-size: .78rem; text-transform: uppercase;
+      letter-spacing: .07em; color: var(--text-mute);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .tense-card.compound h4::after {
+      content: "derivato"; font-size: .6rem; padding: 1px 6px; border-radius: var(--r-pill);
+      background: var(--surface-3); color: var(--text-mute); letter-spacing: .04em;
+    }
+    .form-row { display: flex; gap: 8px; padding: 3px 0; font-size: .93rem; align-items: baseline; }
+    .form-row .fr-p { width: 52px; flex: none; color: var(--text-mute); font-size: .78rem; }
+    .form-row .fr-f { font-family: var(--font-it); }
+    .form-row .fr-f.irr { background: var(--warn-bg); color: var(--warn); font-weight: 700; border-radius: 5px; padding: 0 5px; }
+    @media (max-width: 820px) {
+      .verb-layout { grid-template-columns: 1fr; }
+      .verb-list { position: static; max-height: 300px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>
+    window.ITA_LEVEL = 'A2';
+    window.ITA_PATHS = { home: 'A2/index.html', levels: 'index.html', base: 'A2/' };
+  </script>
+  <script src="A2/lessons.js"></script>
+  <script src="assets/app.js?v=8"></script>
+  <script src="assets/components.js?v=8"></script>
+  <!-- Generated dataset. The .js version is used (not .json) so the page also
+       works when opened directly from disk, where fetch() is blocked. -->
+  <script src="data/irregular-verbs.js"></script>
+
+  <script>
+  /* ==========================================================================
+     Irregular verb reference.
+     Data comes from data/verbs-core.json via tools/build-verbs.js — this page
+     only displays it. Forms flagged in `irregular_forms` are highlighted so
+     learners can see *where* a verb is irregular, not just that it is.
+     ========================================================================== */
+  const DATA = window.VERBS || { verbs: [], meta: {} };
+  const { store } = ITA;
+
+  /* Tense labels, in teaching order. `c: true` marks a compound tense — one
+     built from auxiliary + participle rather than stored per verb. */
+  const MOODS = [
+    { key: 'indicativo', label: 'Indicativo', tenses: [
+      { key: 'presente', label: 'Presente' },
+      { key: 'passato_prossimo', label: 'Passato prossimo', c: true },
+      { key: 'imperfetto', label: 'Imperfetto' },
+      { key: 'trapassato_prossimo', label: 'Trapassato prossimo', c: true },
+      { key: 'passato_remoto', label: 'Passato remoto' },
+      { key: 'trapassato_remoto', label: 'Trapassato remoto', c: true },
+      { key: 'futuro_semplice', label: 'Futuro semplice' },
+      { key: 'futuro_anteriore', label: 'Futuro anteriore', c: true }
+    ]},
+    { key: 'congiuntivo', label: 'Congiuntivo', tenses: [
+      { key: 'presente', label: 'Presente' },
+      { key: 'passato', label: 'Passato', c: true },
+      { key: 'imperfetto', label: 'Imperfetto' },
+      { key: 'trapassato', label: 'Trapassato', c: true }
+    ]},
+    { key: 'condizionale', label: 'Condizionale', tenses: [
+      { key: 'presente', label: 'Presente' },
+      { key: 'passato', label: 'Passato', c: true }
+    ]}
+  ];
+
+  /* Maps a displayed tense back to the key used in `irregular_forms`. */
+  const IRR_KEY = {
+    'indicativo.presente': 'presente',
+    'indicativo.imperfetto': 'imperfetto',
+    'indicativo.passato_remoto': 'passato_remoto',
+    'indicativo.futuro_semplice': 'futuro_semplice',
+    'congiuntivo.presente': 'congiuntivo_presente',
+    'congiuntivo.imperfetto': 'congiuntivo_imperfetto',
+    'condizionale.presente': 'condizionale_presente'
+  };
+
+  const IRR_LABELS = {
+    stem_change: 'cambio di radice',
+    spelling_change: 'cambio ortografico',
+    irregular_ending: 'desinenza irregolare',
+    suppletive_form: 'forma suppletiva',
+    contracted_form: 'forma contratta',
+    completely_irregular: 'completamente irregolare',
+    irregular_participle: 'participio irregolare',
+    irregular_passato_remoto: 'passato remoto forte',
+    irregular_future_stem: 'radice del futuro irregolare'
+  };
+
+  const EX_LABELS = {
+    presente: 'Presente', passato_prossimo: 'Passato prossimo', imperfetto: 'Imperfetto',
+    passato_remoto: 'Passato remoto', futuro_semplice: 'Futuro semplice',
+    congiuntivo_presente: 'Congiuntivo presente', condizionale_presente: 'Condizionale presente',
+    imperativo: 'Imperativo'
+  };
+
+  ITA.createPage({
+    data: () => ({
+      store,
+      meta: DATA.meta,
+      verbs: DATA.verbs,
+      moods: MOODS,
+      persons: ['io', 'tu', 'lui', 'noi', 'voi', 'loro'],
+      selected: DATA.verbs.length ? DATA.verbs[0].infinitive : null,
+      q: '',
+      aux: 'all',
+      level: 'all',
+      showCompound: true
+    }),
+    computed: {
+      filtered() {
+        const q = ITA.normalise(this.q);
+        return this.verbs.filter(v => {
+          if (this.aux !== 'all' && v.auxiliary !== this.aux) return false;
+          if (this.level !== 'all' && v.cefr !== this.level) return false;
+          if (!q) return true;
+          return ITA.normalise(v.infinitive + ' ' + v.english).indexOf(q) >= 0;
+        });
+      },
+      verb() { return this.verbs.find(v => v.infinitive === this.selected) || null; },
+      /** Example sentences, in teaching order. */
+      exampleList() {
+        if (!this.verb) return [];
+        return Object.keys(EX_LABELS)
+          .filter(k => this.verb.examples[k] && this.verb.examples[k].italian !== '—')
+          .map(k => ({ key: k, label: EX_LABELS[k], ex: this.verb.examples[k] }));
+      },
+      auxCounts() {
+        const c = { essere: 0, avere: 0, both: 0 };
+        this.verbs.forEach(v => { c[v.auxiliary]++; });
+        return c;
+      }
+    },
+    methods: {
+      select(v) {
+        this.selected = v.infinitive;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+      irrLabel(t) { return IRR_LABELS[t] || t; },
+      /** True when this person of this tense is flagged irregular. */
+      isIrr(moodKey, tenseKey, person) {
+        if (!this.verb) return false;
+        const k = IRR_KEY[moodKey + '.' + tenseKey];
+        if (!k) return false;
+        const flagged = this.verb.irregular_forms[k];
+        return Array.isArray(flagged) && flagged.indexOf(person) >= 0;
+      },
+      tenseForms(moodKey, tenseKey) {
+        const mood = this.verb && this.verb.conjugations[moodKey];
+        return (mood && mood[tenseKey]) || null;
+      },
+      /** Reads a whole tense aloud. */
+      sayTense(moodKey, tenseKey) {
+        const f = this.tenseForms(moodKey, tenseKey);
+        if (f) ITA.speak(this.persons.map(p => f[p]).join(', '));
+      },
+      copyVerb() {
+        if (this.verb) ITA.copy(JSON.stringify(this.verb, null, 2));
+      },
+      auxLabel(a) {
+        return a === 'both' ? 'essere / avere' : a;
+      }
+    },
+    template: `
+      <a class="skip-link" href="#main">Vai al contenuto</a>
+      <site-header current=""></site-header>
+
+      <main id="main" class="container">
+        <header class="hero animate-in">
+          <p class="card-kicker" style="color:rgba(255,255,255,.85)">Riferimento · tutti i livelli</p>
+          <h1>🔀 Verbi irregolari italiani</h1>
+          <p>Tutti i tempi di indicativo, congiuntivo, condizionale e imperativo, con le forme
+             irregolari evidenziate, la spiegazione dell'irregolarità e un esempio per ogni tempo.</p>
+          <div class="hero-stats">
+            <div class="hero-stat"><b>{{ verbs.length }}</b><span>verbi</span></div>
+            <div class="hero-stat"><b>17</b><span>tempi per verbo</span></div>
+            <div class="hero-stat"><b>{{ auxCounts.essere }}</b><span>con essere</span></div>
+            <div class="hero-stat"><b>{{ auxCounts.avere }}</b><span>con avere</span></div>
+          </div>
+        </header>
+
+        <!-- Filters -->
+        <div class="vocab-toolbar">
+          <div class="search-box">
+            <span class="s-icon" aria-hidden="true">🔍</span>
+            <input type="search" v-model="q" placeholder="Cerca un verbo (andare, to go…)" aria-label="Cerca un verbo">
+          </div>
+          <button class="btn btn-ghost btn-sm" @click="showCompound = !showCompound">
+            {{ showCompound ? '🙈 Nascondi tempi composti' : '👁️ Mostra tempi composti' }}
+          </button>
+        </div>
+        <div class="chip-row">
+          <button class="chip" :class="{ active: aux === 'all' }" @click="aux = 'all'">Tutti gli ausiliari</button>
+          <button class="chip" :class="{ active: aux === 'avere' }" @click="aux = 'avere'">avere <small>{{ auxCounts.avere }}</small></button>
+          <button class="chip" :class="{ active: aux === 'essere' }" @click="aux = 'essere'">essere <small>{{ auxCounts.essere }}</small></button>
+          <button class="chip" :class="{ active: aux === 'both' }" @click="aux = 'both'">entrambi <small>{{ auxCounts.both }}</small></button>
+          <button class="chip" :class="{ active: level === 'all' }" @click="level = 'all'">Tutti i livelli</button>
+          <button class="chip" :class="{ active: level === 'A1' }" @click="level = 'A1'">A1</button>
+          <button class="chip" :class="{ active: level === 'A2' }" @click="level = 'A2'">A2</button>
+          <button class="chip" :class="{ active: level === 'B1' }" @click="level = 'B1'">B1</button>
+        </div>
+
+        <div class="verb-layout">
+          <!-- Verb list -->
+          <nav class="verb-list" aria-label="Elenco dei verbi">
+            <button v-for="v in filtered" :key="v.infinitive" class="verb-item"
+                    :class="{ active: v.infinitive === selected }" @click="select(v)">
+              <span>
+                <span class="vi-inf">{{ v.infinitive }}</span>
+                <span class="vi-en">{{ v.english }}</span>
+              </span>
+              <span class="vi-lvl">{{ v.cefr }}</span>
+            </button>
+            <p v-if="!filtered.length" class="muted small center">Nessun verbo trovato.</p>
+          </nav>
+
+          <!-- Conjugation panel -->
+          <div v-if="verb">
+            <section class="card">
+              <div class="card-head">
+                <span class="card-badge" aria-hidden="true">🔤</span>
+                <div>
+                  <p class="card-kicker">{{ verb.english }}</p>
+                  <h2 style="font-size:1.5rem;font-family:var(--font-it)">{{ verb.infinitive }}</h2>
+                </div>
+                <span style="margin-left:auto;display:flex;gap:6px">
+                  <speak-btn :text="verb.infinitive"></speak-btn>
+                  <button class="mini-btn" @click="copyVerb" aria-label="Copia i dati del verbo" title="Copia JSON">⧉</button>
+                </span>
+              </div>
+              <div class="row" style="gap:6px;margin-bottom:12px">
+                <span class="pill pill-info">{{ verb.cefr }}</span>
+                <span class="pill">{{ verb.frequency.replace('_', ' ') }}</span>
+                <span class="pill pill-ok">ausiliare: {{ auxLabel(verb.auxiliary) }}</span>
+                <span v-for="t in verb.irregularity.type" :key="t" class="pill pill-warn">{{ irrLabel(t) }}</span>
+              </div>
+              <p style="margin:0">{{ verb.irregularity.description }}</p>
+
+              <div class="grid grid-3" style="margin-top:14px">
+                <div class="tense-card">
+                  <h4>Participio</h4>
+                  <div class="form-row"><span class="fr-p">passato</span><span class="fr-f irr">{{ verb.conjugations.participio.passato }}</span></div>
+                  <div class="form-row" v-if="verb.conjugations.participio.presente"><span class="fr-p">presente</span><span class="fr-f">{{ verb.conjugations.participio.presente }}</span></div>
+                </div>
+                <div class="tense-card">
+                  <h4>Gerundio</h4>
+                  <div class="form-row"><span class="fr-p">presente</span><span class="fr-f">{{ verb.conjugations.gerundio.presente }}</span></div>
+                  <div class="form-row"><span class="fr-p">passato</span><span class="fr-f">{{ verb.conjugations.gerundio.passato }}</span></div>
+                </div>
+                <div class="tense-card">
+                  <h4>Infinito</h4>
+                  <div class="form-row"><span class="fr-p">presente</span><span class="fr-f">{{ verb.conjugations.infinito.presente }}</span></div>
+                  <div class="form-row"><span class="fr-p">passato</span><span class="fr-f">{{ verb.conjugations.infinito.passato }}</span></div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Moods and tenses -->
+            <section v-for="mood in moods" :key="mood.key" class="card">
+              <div class="card-head">
+                <span class="card-badge" aria-hidden="true">📖</span>
+                <div><p class="card-kicker">Modo</p><h2 style="font-size:1.15rem">{{ mood.label }}</h2></div>
+              </div>
+              <div class="tense-grid">
+                <div v-for="t in mood.tenses" :key="t.key" v-show="showCompound || !t.c"
+                     class="tense-card" :class="{ compound: t.c }">
+                  <h4>
+                    {{ t.label }}
+                    <button class="mini-btn" style="margin-left:auto;width:24px;height:24px;font-size:.7rem"
+                            @click="sayTense(mood.key, t.key)" :aria-label="'Ascolta ' + t.label">🔊</button>
+                  </h4>
+                  <div v-for="p in persons" :key="p" class="form-row">
+                    <span class="fr-p">{{ p === 'lui' ? 'lui/lei' : p }}</span>
+                    <span class="fr-f" :class="{ irr: isIrr(mood.key, t.key, p) }">
+                      {{ tenseForms(mood.key, t.key)[p] }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p class="small muted" style="margin:12px 0 0">
+                <span class="fr-f irr" style="font-size:.8rem">forma</span> = irregolare ·
+                «derivato» = tempo composto, costruito con ausiliare + participio
+              </p>
+            </section>
+
+            <!-- Imperative -->
+            <section class="card">
+              <div class="card-head">
+                <span class="card-badge" aria-hidden="true">📣</span>
+                <div><p class="card-kicker">Modo</p><h2 style="font-size:1.15rem">Imperativo</h2></div>
+              </div>
+              <div class="tense-card">
+                <div v-for="(form, person) in verb.conjugations.imperativo" :key="person" class="form-row">
+                  <span class="fr-p">{{ person }}</span>
+                  <span class="fr-f" :class="{ irr: form !== '—' }">{{ form }}</span>
+                  <speak-btn v-if="form !== '—'" :text="form" style="width:24px;height:24px;font-size:.7rem"></speak-btn>
+                </div>
+              </div>
+            </section>
+
+            <!-- Examples -->
+            <section class="card">
+              <div class="card-head">
+                <span class="card-badge" aria-hidden="true">💬</span>
+                <div><p class="card-kicker">Uso</p><h2 style="font-size:1.15rem">Esempi per ogni tempo</h2></div>
+              </div>
+              <div v-for="e in exampleList" :key="e.key" class="example-card">
+                <p class="card-kicker" style="margin-bottom:4px">{{ e.label }}</p>
+                <div class="ex-it">
+                  <span class="it">{{ e.ex.italian }}</span>
+                  <span class="ex-tools">
+                    <speak-btn :text="e.ex.italian"></speak-btn>
+                    <copy-btn :text="e.ex.italian"></copy-btn>
+                  </span>
+                </div>
+                <p class="ex-nat">{{ e.ex.english }}</p>
+              </div>
+            </section>
+
+            <!-- Notes -->
+            <section class="card card--tip">
+              <h2 style="font-size:1.1rem">📌 Note d'uso</h2>
+              <ul style="margin:0">
+                <li v-for="(n, i) in verb.notes" :key="i">{{ n }}</li>
+              </ul>
+            </section>
+          </div>
+
+          <p v-else class="muted">Nessun verbo selezionato.</p>
+        </div>
+
+        <p class="small muted center" style="margin-top:24px">
+          Dataset generato da <code>tools/build-verbs.js</code> · {{ meta.count }} verbi ·
+          {{ meta.standard }}
+        </p>
+      </main>
+
+      <footer class="site-footer">
+        <p>Verbi irregolari · Italiano Interattivo</p>
+      </footer>
+      <toast-host></toast-host>
+    `
+  });
+  </script>
+</body>
+</html>

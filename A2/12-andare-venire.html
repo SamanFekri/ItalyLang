@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Andare e venire in italiano: differenza, preposizioni a/in/da, andare a + infinito, espressioni utili.">
+  <title>Andare / Venire · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 12 — ANDARE / VENIRE
+     ========================================================================== */
+  window.LESSON = {
+    num: 12, file: '12-andare-venire.html', icon: '🚶', title: 'Andare / Venire', group: 'Verbi chiave',
+    subtitle: 'Movimento e direzione: dove vado, da dove vengo, e le preposizioni a / in / da che li accompagnano.',
+
+    intro: {
+      what: '<b>Andare</b> = muoversi verso un luogo <i>lontano da chi parla</i>. <b>Venire</b> = muoversi verso <i>chi parla o chi ascolta</i>. La differenza non è il movimento in sé, ma il punto di vista.',
+      when: 'Ogni volta che parli di spostamenti (vado al lavoro), di inviti (vieni a cena?), di programmi (andiamo al mare) e di provenienza (vengo dall\'Iran).',
+      why: 'Perché la scelta della preposizione dopo andare (a, in, da) è uno degli scogli più duri dell\'italiano, e perché "andare a + infinito" è una delle strutture più frequenti della lingua parlata.',
+      mistakes: [
+        'Usare "venire" quando ci si muove verso un terzo luogo: ❌ "Vengo al supermercato" (se l\'altro non è lì) → ✅ "Vado al supermercato".',
+        'Sbagliare la preposizione: ❌ "Vado a Italia" → ✅ "Vado in Italia".',
+        'Dimenticare la A davanti all\'infinito: ❌ "Vado mangiare" → ✅ "Vado a mangiare".',
+        'Usare avere al passato: ❌ "Ho andato" → ✅ "Sono andato".'
+      ]
+    },
+
+    formulas: [
+      {
+        label: 'Andare + preposizione + luogo',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'ANDARE', type: 'verb' },
+              { text: 'A / IN / DA', type: 'extra' },
+              { text: 'LUOGO', type: 'object' }
+            ], example: 'Vado a Roma. / Vado in Italia. / Vado da Marco.' }
+        ]
+      },
+      {
+        label: 'Andare A + infinito = movimento con uno scopo',
+        rows: [
+          { parts: [
+              { text: 'ANDARE', type: 'verb' },
+              { text: 'A', type: 'extra' },
+              { text: 'INFINITO', type: 'object' }
+            ], example: 'Vado a fare la spesa.', translation: "I'm going to do the shopping." }
+        ]
+      },
+      {
+        label: 'Venire A + infinito = invito o arrivo',
+        rows: [
+          { parts: [
+              { text: 'VENIRE', type: 'verb' },
+              { text: 'A', type: 'extra' },
+              { text: 'INFINITO', type: 'object' }
+            ], example: 'Vieni a mangiare da me?', translation: 'Will you come eat at my place?' }
+        ]
+      },
+      {
+        label: 'Provenienza: venire DA',
+        rows: [
+          { parts: [
+              { text: 'VENIRE', type: 'verb' },
+              { text: 'DA', type: 'extra' },
+              { text: 'origine', type: 'object' }
+            ], example: 'Vengo dall\'Iran.', translation: "I'm from Iran." }
+        ]
+      }
+    ],
+    formulaNote: 'Sia andare sia venire prendono A prima di un infinito: "vado a mangiare", "vieni a vedere".',
+
+    rules: [
+      {
+        title: 'Andare o venire? Guarda dove si trova l\'ascoltatore',
+        body: 'La regola italiana è più rigida di quella inglese. <b>Venire</b> si usa solo se il movimento va verso il punto in cui si trova (o si troverà) la persona con cui parli.',
+        points: [
+          'Sei a casa tua, un amico ti invita: "Vieni da me stasera?" → tu rispondi "Sì, <b>vengo</b>" (mi muovo verso di te).',
+          'Parli con un collega di un\'uscita al supermercato dove lui non sarà: "<b>Vado</b> al supermercato".',
+          'Se andate insieme in un terzo posto: "<b>Vieni</b> con me al cinema?" — qui "venire con" indica accompagnamento, ed è corretto.'
+        ],
+        exception: 'In inglese si può dire "I\'m coming to the party" anche se chi parla non è alla festa. In italiano dipende: se il tuo interlocutore ci sarà, "vengo" è giusto; altrimenti "vado".'
+      },
+      {
+        title: 'Le preposizioni di luogo: A, IN, DA',
+        body: 'Questa è la parte da memorizzare. La logica c\'è, ma le eccezioni esistono.',
+        points: [
+          '<b>A</b> + città, isole piccole: a Roma, a Milano, a Capri.',
+          '<b>IN</b> + paesi, regioni, isole grandi: in Italia, in Toscana, in Sicilia.',
+          '<b>IN</b> + luoghi che finiscono in -eria e molti spazi chiusi: in farmacia, in pizzeria, in banca, in ufficio, in centro, in montagna, in palestra.',
+          '<b>A</b> + alcuni luoghi comuni: a casa, a scuola, a teatro, a letto, al lavoro, al mare, al cinema, al ristorante, al bar.',
+          '<b>DA</b> + persona: vado dal medico, vado da Marco, vado dal parrucchiere.'
+        ],
+        exception: 'Non c\'è una regola perfetta per a/in: alcune coppie vanno imparate a memoria (al cinema ma in teatro? no: <b>a teatro</b>; al bar ma <b>in</b> pizzeria). Impara i luoghi con la loro preposizione, come blocchi.'
+      },
+      {
+        title: 'Andare A + infinito',
+        body: 'Struttura frequentissima per esprimere uno spostamento con uno scopo. Equivale a "go and do".',
+        points: [
+          'Vado <b>a</b> mangiare. — I\'m going to eat.',
+          'Andiamo <b>a</b> vedere un film? — Shall we go see a film?',
+          'Sono andato <b>a</b> comprare il pane. — I went to buy bread.',
+          'Attenzione: non esprime il futuro come l\'inglese "I\'m going to study" (= ho intenzione). Per l\'intenzione l\'italiano usa il presente o "pensare di".'
+        ],
+        exception: '❌ "Vado a studiare domani" nel senso di "ho intenzione di studiare" è ambiguo: significa "mi sposto per studiare". Per l\'intenzione futura si dice "Domani studio" o "Penso di studiare".'
+      },
+      {
+        title: 'Passato prossimo: sempre ESSERE con accordo',
+        body: 'Sono verbi di movimento, quindi vogliono essere.',
+        points: [
+          'Marco <b>è andato</b> · Anna <b>è andata</b> · loro <b>sono andati/e</b>.',
+          'Venire ha il participio irregolare: <b>venuto</b> → "Sono venuto in treno".',
+          'Errore classico: ❌ "Ho andato". Non esiste.'
+        ],
+        exception: 'Con i mezzi di trasporto si usa IN o A PIEDI: "Vado <b>in</b> macchina / <b>in</b> treno / <b>in</b> bici", ma "vado <b>a piedi</b>".'
+      },
+      {
+        title: 'Espressioni idiomatiche con andare',
+        body: 'Andare compare in molte formule quotidiane.',
+        points: [
+          '<b>Come va?</b> — How is it going? (risposta: "Va bene", "Tutto bene")',
+          '<b>Ti va di + infinito?</b> — Do you feel like…? ("Ti va di uscire?")',
+          '<b>Va bene.</b> — OK, alright.',
+          '<b>Andare via</b> — to leave: "Devo andare via alle sei".',
+          '<b>Andare a trovare qualcuno</b> — to visit someone: "Vado a trovare mia nonna".',
+          '<b>Andare d\'accordo</b> — to get along: "Vado d\'accordo con i colleghi".'
+        ],
+        exception: '"Visitare" si usa per luoghi e monumenti ("visitare il museo"); per le persone si dice "andare a trovare".'
+      }
+    ],
+
+    timeline: {
+      title: 'Andare e venire: due direzioni',
+      intro: 'Immagina che il tuo interlocutore sia il punto di riferimento.',
+      points: [
+        { time: 'Origine', label: 'Vengo da…', example: 'Vengo dall\'Iran.', note: 'provenienza' },
+        { time: 'Verso di te', label: 'Vengo', example: 'Vengo da te alle otto.', now: true, note: 'movimento verso l\'ascoltatore' },
+        { time: 'Verso un altro luogo', label: 'Vado', example: 'Vado al supermercato.', note: 'lontano da chi parla' },
+        { time: 'Ritorno', label: 'Torno', example: 'Torno a casa alle sette.', note: 'tornare = to come/go back' }
+      ],
+      caption: 'Terzo verbo utilissimo: TORNARE (to return), anche lui con essere: "sono tornato".'
+    },
+
+    tables: [
+      {
+        title: 'Andare e venire — presente (entrambi irregolari)',
+        columns: ['Persona', 'ANDARE', 'VENIRE', 'Esempio'],
+        rows: [
+          { cells: ['io', 'vado', 'vengo', 'Vado a casa. / Vengo da te.'], irregular: [1, 2] },
+          { cells: ['tu', 'vai', 'vieni', 'Dove vai? / Vieni con me?'], irregular: [1, 2] },
+          { cells: ['lui / lei', 'va', 'viene', 'Va al lavoro. / Viene domani.'], irregular: [1, 2] },
+          { cells: ['noi', 'andiamo', 'veniamo', 'Andiamo al mare.'] },
+          { cells: ['voi', 'andate', 'venite', 'Venite alla festa?'] },
+          { cells: ['loro', 'vanno', 'vengono', 'Vanno via. / Vengono a cena.'], irregular: [1, 2] }
+        ]
+      },
+      {
+        title: 'Passato prossimo — con essere',
+        columns: ['Persona', 'ANDARE', 'VENIRE'],
+        rows: [
+          { cells: ['io (m/f)', 'sono andato / andata', 'sono venuto / venuta'], irregular: [2] },
+          { cells: ['tu', 'sei andato / andata', 'sei venuto / venuta'] },
+          { cells: ['lui / lei', 'è andato / andata', 'è venuto / venuta'] },
+          { cells: ['noi', 'siamo andati / andate', 'siamo venuti / venute'] },
+          { cells: ['voi', 'siete andati / andate', 'siete venuti / venute'] },
+          { cells: ['loro', 'sono andati / andate', 'sono venuti / venute'] }
+        ]
+      },
+      {
+        title: 'Le preposizioni di luogo — la tabella da memorizzare',
+        note: 'Impara il luogo insieme alla preposizione, come una parola sola.',
+        columns: ['Preposizione', 'Si usa con', 'Esempi'],
+        rows: [
+          { cells: ['A', 'città e isole piccole', 'a Roma, a Milano, a Capri'] },
+          { cells: ['A', 'luoghi comuni', 'a casa, a scuola, a letto, a teatro'] },
+          { cells: ['AL / ALLA', 'luoghi con articolo', 'al cinema, al bar, al mare, alla stazione'] },
+          { cells: ['IN', 'paesi, regioni, isole grandi', 'in Italia, in Toscana, in Sicilia'] },
+          { cells: ['IN', 'spazi chiusi e negozi', 'in banca, in ufficio, in farmacia, in centro'] },
+          { cells: ['IN', 'mezzi di trasporto', 'in macchina, in treno, in aereo, in bici'] },
+          { cells: ['DA', 'persone', 'dal medico, da Marco, dal parrucchiere'] },
+          { cells: ['A PIEDI', 'camminando', 'Vado a piedi.'], irregular: [0] }
+        ]
+      },
+      {
+        title: 'Espressioni con andare e venire',
+        columns: ['Espressione', 'Inglese', 'Esempio'],
+        rows: [
+          { cells: ['Come va?', 'How is it going?', 'Ciao, come va?'] },
+          { cells: ['Va bene.', 'OK / alright.', 'Va bene, ci vediamo alle otto.'] },
+          { cells: ['Ti va di…?', 'Do you feel like…?', 'Ti va di uscire stasera?'] },
+          { cells: ['andare via', 'to leave', 'Scusa, devo andare via.'] },
+          { cells: ['andare a trovare', 'to visit (a person)', 'Vado a trovare i miei genitori.'] },
+          { cells: ['andare d\'accordo', 'to get along', 'Vado d\'accordo con tutti.'] },
+          { cells: ['andare in vacanza', 'to go on holiday', 'Andiamo in vacanza a luglio.'] },
+          { cells: ['Vengo subito.', "I'm coming right away.", 'Aspetta, vengo subito!'] },
+          { cells: ['Da dove vieni?', 'Where are you from?', 'Da dove vieni? — Dall\'Iran.'] },
+          { cells: ['Come si va a…?', 'How do you get to…?', 'Scusi, come si va alla stazione?'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Vado al lavoro in metro.', literal: 'I-go to-the work in metro.', natural: 'I go to work by metro.', note: 'al lavoro (a + il); mezzi di trasporto con IN.' },
+      { it: 'Domani vado a Roma.', literal: 'Tomorrow I-go to Rome.', natural: "Tomorrow I'm going to Rome.", note: 'Città → A. Presente con valore di futuro.' },
+      { it: 'L\'anno prossimo vado in Italia.', literal: 'The year next I-go in Italy.', natural: "Next year I'm going to Italy.", note: 'Paesi → IN. Mai "a Italia".' },
+      { it: 'Vado dal dentista alle tre.', literal: 'I-go from-the dentist at-the three.', natural: "I'm going to the dentist at three.", note: 'Persone e professionisti → DA.' },
+      { it: 'Vieni a cena da me stasera?', literal: 'You-come to dinner from me this-evening?', natural: 'Will you come to dinner at my place tonight?', note: 'venire A + nome/infinito; "da me" = a casa mia.' },
+      { it: 'Vengo subito, aspetta un attimo!', literal: 'I-come immediately, wait a moment!', natural: "I'm coming right away, wait a second!", note: 'Il movimento è verso chi ascolta → venire.' },
+      { it: 'Da dove vieni? — Vengo dall\'Iran.', literal: 'From where you-come? I-come from-the Iran.', natural: 'Where are you from? — I\'m from Iran.', note: 'venire DA per la provenienza. da + il = dal, da + l\' = dall\'.' },
+      { it: 'Andiamo a vedere un film?', literal: 'We-go to to-see a film?', natural: 'Shall we go see a film?', note: 'andare A + infinito: movimento con uno scopo.' },
+      { it: 'Vado a fare la spesa, torno tra un\'ora.', literal: 'I-go to to-do the shopping, I-return within an hour.', natural: "I'm going to do the shopping, I'll be back in an hour.", note: 'Due verbi di movimento: andare a + infinito, tornare.' },
+      { it: 'Ieri sono andato al cinema con Marco.', literal: 'Yesterday I-am gone to-the cinema with Marco.', natural: 'Yesterday I went to the cinema with Marco.', note: 'Passato prossimo con essere. Mai "ho andato".' },
+      { it: 'Anna è andata in banca stamattina.', literal: 'Anna is gone in bank this-morning.', natural: 'Anna went to the bank this morning.', note: 'Participio concordato: andata. Banca → IN.' },
+      { it: 'I miei amici sono venuti a trovarmi.', literal: 'The my friends are come to to-find-me.', natural: 'My friends came to visit me.', note: '"andare/venire a trovare" = far visita a una persona.' },
+      { it: 'Vieni con noi al mare?', literal: 'You-come with us to-the sea?', natural: 'Are you coming to the seaside with us?', note: '"venire con" = accompagnare, sempre corretto.' },
+      { it: 'Vado a piedi, non è lontano.', literal: 'I-go by feet, not is far.', natural: "I'll walk, it's not far.", note: '"a piedi" è l\'unica espressione di trasporto con A.' },
+      { it: 'Come va? — Tutto bene, grazie!', literal: 'How goes? All well, thanks!', natural: 'How\'s it going? — All good, thanks!', note: 'Formula di saluto standard.' },
+      { it: 'Ti va di uscire stasera?', literal: 'To-you goes of to-go-out this-evening?', natural: 'Do you feel like going out tonight?', note: '"ti va di" + infinito = do you feel like. Struttura come piacere.' },
+      { it: 'Scusa, devo andare via.', literal: 'Sorry, I-must to-go away.', natural: 'Sorry, I have to leave.', note: '"andare via" = leave, andarsene.' },
+      { it: 'Quest\'estate andiamo in vacanza in Sicilia.', literal: 'This summer we-go in holiday in Sicily.', natural: 'This summer we\'re going on holiday to Sicily.', note: 'Isole grandi → IN. "in vacanza" è un\'espressione fissa.' },
+      { it: 'Scusi, come si va alla stazione?', literal: 'Excuse-me, how one goes to-the station?', natural: 'Excuse me, how do I get to the station?', note: 'Forma impersonale "si va": utilissima per chiedere indicazioni.' },
+      { it: 'Vado d\'accordo con i miei colleghi.', literal: 'I-go of-agreement with the my colleagues.', natural: 'I get along with my colleagues.', note: '"andare d\'accordo con" = to get along with.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Ho andato al cinema.', right: 'Sono andato al cinema.', why: 'Andare è un verbo di movimento: al passato prossimo vuole essere.' },
+      { wrong: 'Vado a Italia.', right: 'Vado in Italia.', why: 'I paesi vogliono IN; le città vogliono A.' },
+      { wrong: 'Vado in Roma.', right: 'Vado a Roma.', why: 'Le città vogliono A. Con "in" si direbbe solo in contesti particolari (in Roma antica).' },
+      { wrong: 'Vado mangiare.', right: 'Vado a mangiare.', why: 'Andare regge la preposizione A davanti all\'infinito.' },
+      { wrong: 'Vado al medico.', right: 'Vado dal medico.', why: 'Con le persone (anche professionisti) si usa DA.' },
+      { wrong: 'Anna è andato a scuola.', right: 'Anna è andata a scuola.', why: 'Con essere il participio concorda: Anna → andata.' },
+      { wrong: 'Vengo al supermercato. (l\'altro non c\'è)', right: 'Vado al supermercato.', why: 'Venire si usa solo se il movimento è verso l\'interlocutore.' },
+      { wrong: 'Vado in piedi.', right: 'Vado a piedi.', why: '"a piedi" è un\'espressione fissa: l\'unica con A tra i mezzi di trasporto.' },
+      { wrong: 'Vado a visitare mia nonna.', right: 'Vado a trovare mia nonna.', why: '"Visitare" si usa per luoghi e monumenti; per le persone si dice "andare a trovare".' }
+    ],
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Io ___ al lavoro.»', options: ['vado', 'vai', 'va', 'vengo'], answer: 0, hint: 'io', why: 'io → vado.' },
+        { q: 'Completa: «Loro ___ a cena da noi.»', options: ['vanno', 'vengono', 'veniamo', 'venite'], answer: 1, hint: 'movimento verso chi parla', why: 'Se il movimento va verso di noi → venire.' },
+        { q: 'Completa: «Vado ___ Italia.»', options: ['a', 'in', 'da', 'al'], answer: 1, hint: 'è un paese', why: 'I paesi vogliono IN.' },
+        { q: 'Completa: «Vado ___ Roma.»', options: ['a', 'in', 'da', 'al'], answer: 0, hint: 'è una città', why: 'Le città vogliono A.' },
+        { q: 'Completa: «Vado ___ dentista.»', options: ['al', 'in', 'dal', 'a'], answer: 2, hint: 'è una persona', why: 'Con le persone → DA (da + il = dal).' },
+        { q: 'Completa: «Vado ___ fare la spesa.»', options: ['a', 'di', 'per', '—'], answer: 0, hint: 'andare + infinito', why: 'andare A + infinito.' },
+        { q: 'Passato: «Anna ___ al mare.»', options: ['ha andato', 'è andato', 'è andata', 'ha andata'], answer: 2, hint: 'essere + accordo', why: 'Verbo di movimento + soggetto femminile.' },
+        { q: 'Participio passato di venire:', options: ['venito', 'venuto', 'vento', 'venudo'], answer: 1, hint: 'irregolare', why: 'venire → venuto.' },
+        { q: 'Come si dice "I go by car"?', options: ['Vado con macchina.', 'Vado in macchina.', 'Vado a macchina.', 'Vado per macchina.'], answer: 1, hint: 'mezzi di trasporto', why: 'I mezzi vogliono IN (tranne "a piedi").' },
+        { q: '«Ti va di uscire?» significa:', options: ['Devi uscire?', 'Ti piace uscire?', 'Hai voglia di uscire?', 'Vai fuori?'], answer: 2, hint: 'proposta informale', why: '"ti va di" + infinito = do you feel like.' },
+        { q: 'Come si dice "I visit my grandmother"?', options: ['Visito mia nonna.', 'Vado a trovare mia nonna.', 'Vengo mia nonna.', 'Vado da trovare mia nonna.'], answer: 1, hint: 'persone ≠ monumenti', why: 'Per le persone si usa "andare a trovare".' },
+        { q: 'Completa: «Noi ___ in vacanza a luglio.»', options: ['andiamo', 'andate', 'vanno', 'veniamo'], answer: 0, hint: 'noi', why: 'noi → andiamo.' }
+      ],
+      fill: [
+        { before: 'Io', after: 'al supermercato.', answers: ['vado'], en: 'I am going to the supermarket.' },
+        { before: 'Tu', after: 'alla festa stasera?', answers: ['vieni', 'vai'], en: 'Are you coming to the party tonight?' },
+        { before: 'Domani vado', after: 'Milano.', answers: ['a'], en: 'Tomorrow I go to Milan.' },
+        { before: 'Andiamo', after: 'Francia quest\'estate.', answers: ['in'], en: 'We are going to France this summer.' },
+        { before: 'Devo andare', after: 'medico.', answers: ['dal'], en: 'I have to go to the doctor.' },
+        { before: 'Vado', after: 'comprare il pane.', answers: ['a'], en: 'I am going to buy bread.' },
+        { before: 'Ieri sono', after: 'al cinema.', answers: ['andato', 'andata'], en: 'Yesterday I went to the cinema.' },
+        { before: 'I miei amici sono', after: 'a trovarmi.', answers: ['venuti', 'venute'], en: 'My friends came to visit me.' },
+        { before: 'Da dove', after: '? — Dall\'Iran.', answers: ['vieni', 'viene'], en: 'Where are you from?' },
+        { before: 'Vado', after: 'piedi, non è lontano.', answers: ['a'], en: 'I will walk, it is not far.' }
+      ],
+      order: [
+        { words: ['Vado', 'al', 'lavoro', 'in', 'metro'], answer: 'Vado al lavoro in metro', en: 'I go to work by metro.' },
+        { words: ['Vieni', 'a', 'cena', 'da', 'me'], answer: 'Vieni a cena da me', en: 'Come to dinner at my place.' },
+        { words: ['Ieri', 'sono', 'andato', 'al', 'mare'], answer: 'Ieri sono andato al mare', en: 'Yesterday I went to the sea.' },
+        { words: ['Quest\'estate', 'andiamo', 'in', 'vacanza', 'in', 'Sicilia'], answer: "Quest'estate andiamo in vacanza in Sicilia", en: 'This summer we go on holiday to Sicily.' },
+        { words: ['Scusi', 'come', 'si', 'va', 'alla', 'stazione'], answer: 'Scusi come si va alla stazione', en: 'Excuse me, how do I get to the station?' }
+      ],
+      dnd: {
+        instructions: 'Quale preposizione va con ogni luogo? Trascina.',
+        buckets: [
+          { id: 'a', label: 'A / AL', icon: '📍' },
+          { id: 'in', label: 'IN', icon: '🗺️' },
+          { id: 'da', label: 'DA / DAL', icon: '🧑' }
+        ],
+        items: [
+          { text: 'Roma', bucket: 'a' },
+          { text: 'Italia', bucket: 'in' },
+          { text: 'il medico', bucket: 'da' },
+          { text: 'casa', bucket: 'a' },
+          { text: 'banca', bucket: 'in' },
+          { text: 'Marco', bucket: 'da' },
+          { text: 'scuola', bucket: 'a' },
+          { text: 'Sicilia', bucket: 'in' },
+          { text: 'il cinema (al)', bucket: 'a' },
+          { text: 'ufficio', bucket: 'in' },
+          { text: 'il parrucchiere', bucket: 'da' },
+          { text: 'montagna', bucket: 'in' }
+        ]
+      },
+      match: [
+        { a: 'vado', b: 'I go' },
+        { a: 'vieni', b: 'you come' },
+        { a: 'andiamo', b: 'we go' },
+        { a: 'vengono', b: 'they come' },
+        { a: 'sono andato', b: 'I went' },
+        { a: 'sono venuto', b: 'I came' },
+        { a: 'Come va?', b: 'How is it going?' },
+        { a: 'Ti va di…?', b: 'Do you feel like…?' },
+        { a: 'andare a trovare', b: 'to visit someone' },
+        { a: 'andare via', b: 'to leave' }
+      ],
+      tf: [
+        { statement: 'Andare e venire al passato prossimo usano essere.', answer: true, why: 'Sì: sono andato, sono venuto.' },
+        { statement: 'Si dice "Vado a Italia".', answer: false, why: 'No: i paesi vogliono IN → "Vado in Italia".' },
+        { statement: 'Con le persone si usa la preposizione DA.', answer: true, why: 'Sì: vado dal medico, vado da Marco.' },
+        { statement: '«Vado a piedi» è corretto.', answer: true, why: 'Sì, è l\'unica espressione di trasporto con A.' },
+        { statement: 'Il participio di venire è "venito".', answer: false, why: 'No: è "venuto".' },
+        { statement: 'Si può dire "Vado mangiare".', answer: false, why: 'No: serve la A → "Vado a mangiare".' },
+        { statement: 'Per far visita a una persona si dice "andare a trovare".', answer: true, why: 'Sì; "visitare" si usa per luoghi e monumenti.' }
+      ],
+      translate: [
+        { en: 'I go to work by metro.', answers: ['Vado al lavoro in metro'] },
+        { en: 'Tomorrow I am going to Rome.', answers: ['Domani vado a Roma'] },
+        { en: 'We are going to Italy in July.', answers: ['Andiamo in Italia a luglio', 'A luglio andiamo in Italia'] },
+        { en: 'Are you coming to the party?', answers: ['Vieni alla festa', 'Venite alla festa'] },
+        { en: 'Yesterday I went to the cinema.', answers: ['Ieri sono andato al cinema', 'Ieri sono andata al cinema'] },
+        { en: 'I have to go to the doctor.', answers: ['Devo andare dal medico', 'Devo andare dal dottore'] },
+        { en: 'Where are you from?', answers: ['Da dove vieni', 'Di dove sei', 'Da dove viene'] },
+        { en: 'I am going to buy bread.', answers: ['Vado a comprare il pane'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Programmi del fine settimana',
+      lines: [
+        { speaker: 'Giorgio', icon: '🧑', it: 'Ciao Leila, come va?', en: 'Hi Leila, how\'s it going?',
+          glosses: [{ term: 'come va', expl: 'Espressione fissa di saluto: "how is it going?".' }] },
+        { speaker: 'Leila', icon: '👩', side: 'right', it: 'Tutto bene! Domani vado a Firenze con mia sorella.', en: "All good! Tomorrow I'm going to Florence with my sister.",
+          glosses: [{ term: 'vado a Firenze', expl: 'Città → preposizione A.' }] },
+        { speaker: 'Giorgio', icon: '🧑', it: 'Che bello! Andate in treno o in macchina?', en: 'How nice! Are you going by train or by car?',
+          glosses: [{ term: 'in treno / in macchina', expl: 'I mezzi di trasporto vogliono IN.' }] },
+        { speaker: 'Leila', icon: '👩', side: 'right', it: 'In treno. Poi in città andiamo a piedi, è tutto vicino.', en: 'By train. Then in the city we walk, everything is close.',
+          glosses: [{ term: 'a piedi', expl: 'Unica eccezione: "a piedi", non "in piedi".' }] },
+        { speaker: 'Giorgio', icon: '🧑', it: 'Vai anche a trovare i tuoi zii che abitano lì?', en: 'Are you also going to visit your uncle and aunt who live there?',
+          glosses: [{ term: 'a trovare', expl: '"andare a trovare" = far visita a una persona.' }] },
+        { speaker: 'Leila', icon: '👩', side: 'right', it: 'Sì! Vengono a prenderci alla stazione.', en: "Yes! They're coming to pick us up at the station.",
+          glosses: [{ term: 'Vengono', expl: 'Il movimento è verso di noi → venire.' }, { term: 'a prenderci', expl: 'venire A + infinito, con pronome attaccato.' }] },
+        { speaker: 'Giorgio', icon: '🧑', it: 'E domenica? Ti va di venire al cinema con noi?', en: 'And on Sunday? Do you feel like coming to the cinema with us?',
+          glosses: [{ term: 'Ti va di', expl: '"ti va di" + infinito = do you feel like.' }, { term: 'venire al cinema con noi', expl: '"venire con" = accompagnare qualcuno.' }] },
+        { speaker: 'Leila', icon: '👩', side: 'right', it: 'Volentieri, ma torno tardi. Ti scrivo quando sono a casa.', en: "Gladly, but I'll be back late. I'll text you when I'm home.",
+          glosses: [{ term: 'torno', expl: 'tornare = to come/go back, anche lui con essere al passato.' }, { term: 'a casa', expl: '"a casa" è un\'espressione fissa senza articolo.' }] },
+        { speaker: 'Giorgio', icon: '🧑', it: 'Perfetto. Buon viaggio!', en: 'Perfect. Have a good trip!', glosses: [] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'vado, vai, va, andiamo, andate, vanno', back: 'andare — to go' },
+      { front: 'vengo, vieni, viene, veniamo, venite, vengono', back: 'venire — to come' },
+      { front: 'sono andato / sono venuto', back: 'passato con ESSERE', note: 'mai "ho andato"' },
+      { front: 'a + città', back: 'a Roma, a Milano' },
+      { front: 'in + paese / regione', back: 'in Italia, in Toscana' },
+      { front: 'da + persona', back: 'dal medico, da Marco' },
+      { front: 'in + mezzo di trasporto', back: 'in treno, in macchina', note: 'ma: a piedi' },
+      { front: 'andare a + infinito', back: 'to go and do: vado a mangiare' },
+      { front: 'andare a trovare', back: 'to visit a person' },
+      { front: 'Come va?', back: "How's it going?" },
+      { front: 'Ti va di…?', back: 'Do you feel like…?' },
+      { front: 'Da dove vieni?', back: 'Where are you from?' }
+    ],
+
+    summary: {
+      formula: 'ANDARE + a/in/da + LUOGO  ·  ANDARE / VENIRE + A + INFINITO  ·  Passato: SONO andato / SONO venuto',
+      rules: [
+        'Andare = movimento lontano da chi parla · Venire = movimento verso chi parla o ascolta.',
+        'Preposizioni: A + città e luoghi comuni, IN + paesi/regioni/spazi chiusi/mezzi, DA + persone.',
+        'Unica eccezione tra i trasporti: "a piedi".',
+        'Andare/venire + A + infinito: "Vado a mangiare", "Vieni a vedere".',
+        'Passato prossimo sempre con essere e participio concordato. Venire → venuto (irregolare).',
+        'Per le persone: "andare a trovare"; per i luoghi: "visitare".',
+        'Espressioni: come va, va bene, ti va di…, andare via, andare d\'accordo, andare in vacanza.'
+      ],
+      tips: [
+        'Domanda-chiave per scegliere: "il mio interlocutore è nel posto dove mi muovo?" Se sì → vengo. Se no → vado.',
+        'Per le preposizioni, memorizza il luogo con la sua preposizione come una parola sola: "in-banca", "al-cinema", "dal-medico".',
+        'Trucco per i paesi e le città: la parola "città" è corta come "a", la parola "nazione" è lunga come "in". Un po\' assurdo, ma funziona.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

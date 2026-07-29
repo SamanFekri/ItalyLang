@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Corso interattivo di grammatica italiana livello A2: sintassi dei verbi, esercizi, flashcard e 200 parole con traduzione in farsi.">
+  <title>Italiano A2 · Corso di grammatica interattivo</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     A2 course home: progress dashboard + lesson grid + search + bookmarks.
+     ========================================================================== */
+  const { store, coursePct, completedCount, level, levelPct } = ITA;
+
+  ITA.createPage({
+    data: () => ({ store, lessons: ITA.lessons, q: '', filter: 'all' }),
+    computed: {
+      pct() { return coursePct.value; },
+      done() { return completedCount.value; },
+      lvl() { return level.value; },
+      lvlPct() { return levelPct.value; },
+      filtered() {
+        const q = ITA.normalise(this.q);
+        return this.lessons.filter(l => {
+          if (this.filter === 'todo' && store.completed[l.file]) return false;
+          if (this.filter === 'done' && !store.completed[l.file]) return false;
+          if (this.filter === 'saved' && store.bookmarks.indexOf(l.file) < 0) return false;
+          if (!q) return true;
+          return ITA.normalise(l.title + ' ' + l.blurb + ' ' + l.group).indexOf(q) >= 0;
+        });
+      },
+      nextLesson() { return this.lessons.find(l => !store.completed[l.file]) || this.lessons[0]; },
+      totalScore() {
+        const s = Object.values(store.scores);
+        if (!s.length) return null;
+        const c = s.reduce((a, x) => a + x.correct, 0), t = s.reduce((a, x) => a + x.total, 0);
+        return { correct: c, total: t, pct: t ? Math.round(c / t * 100) : 0 };
+      }
+    },
+    methods: {
+      isDone(f) { return !!store.completed[f]; },
+      isSaved(f) { return store.bookmarks.indexOf(f) >= 0; }
+    },
+    template: `
+      <a class="skip-link" href="#main">Vai al contenuto</a>
+      <site-header current="index.html"></site-header>
+
+      <main id="main" class="container">
+        <header class="hero animate-in">
+          <p class="card-kicker" style="color:rgba(255,255,255,.85)">Livello A2 · Elementare</p>
+          <h1>La sintassi dei verbi italiani 🇮🇹</h1>
+          <p>17 lezioni per capire davvero come si costruisce una frase italiana: dai verbi
+             <span class="it">essere</span> e <span class="it">avere</span> fino all'imperativo,
+             alle preposizioni dopo i verbi e a 200 parole essenziali con traduzione in farsi.</p>
+          <div class="hero-stats">
+            <div class="hero-stat"><b>{{ done }}/{{ lessons.length }}</b><span>lezioni</span></div>
+            <div class="hero-stat"><b>{{ store.xp }}</b><span>XP</span></div>
+            <div class="hero-stat"><b>Lv. {{ lvl }}</b><span>{{ lvlPct }}/100 al prossimo</span></div>
+            <div class="hero-stat"><b>{{ store.streak }} 🔥</b><span>serie · record {{ store.bestStreak }}</span></div>
+          </div>
+        </header>
+
+        <!-- Progress dashboard -->
+        <section class="card">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">📈</span>
+            <div><p class="card-kicker">Dashboard</p><h2 style="font-size:1.2rem">I tuoi progressi</h2></div>
+          </div>
+          <div class="stack">
+            <progress-bar :value="pct" label="Corso completato" :right="pct + '%'"></progress-bar>
+            <progress-bar :value="lvlPct" :label="'Livello ' + lvl" :right="lvlPct + '/100 XP'"></progress-bar>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" :href="nextLesson.file">▶ Continua: {{ nextLesson.title }}</a>
+            <a class="btn btn-ghost" href="17-ripasso.html">🏆 Ripasso generale</a>
+            <a class="btn btn-ghost" href="16-vocabolario-200.html">🇮🇷 200 parole + فارسی</a>
+            <a class="btn btn-ghost" href="../verbi.html">🔀 Verbi irregolari</a>
+          </div>
+          <p v-if="totalScore" class="small muted" style="margin:12px 0 0">
+            Esercizi svolti: <b>{{ totalScore.correct }}/{{ totalScore.total }}</b> risposte corrette ({{ totalScore.pct }}%).
+          </p>
+        </section>
+
+        <!-- Search + filters -->
+        <div class="vocab-toolbar" style="margin-top:26px">
+          <div class="search-box">
+            <span class="s-icon" aria-hidden="true">🔍</span>
+            <input type="search" v-model="q" placeholder="Cerca una lezione (es. passato, piacere, preposizioni)…" aria-label="Cerca una lezione">
+          </div>
+        </div>
+        <div class="chip-row">
+          <button class="chip" :class="{ active: filter === 'all' }" @click="filter = 'all'">Tutte <small>{{ lessons.length }}</small></button>
+          <button class="chip" :class="{ active: filter === 'todo' }" @click="filter = 'todo'">Da fare <small>{{ lessons.length - done }}</small></button>
+          <button class="chip" :class="{ active: filter === 'done' }" @click="filter = 'done'">Completate <small>{{ done }}</small></button>
+          <button class="chip" :class="{ active: filter === 'saved' }" @click="filter = 'saved'">🔖 Salvate <small>{{ store.bookmarks.length }}</small></button>
+        </div>
+
+        <!-- Lesson grid -->
+        <div class="grid grid-lessons">
+          <a v-for="l in filtered" :key="l.file" class="lesson-card" :href="l.file">
+            <div class="lc-top">
+              <span class="lc-icon" aria-hidden="true">{{ l.icon }}</span>
+              <h3>{{ l.title }}</h3>
+              <span class="lc-num">{{ String(l.num).padStart(2, '0') }}</span>
+            </div>
+            <p>{{ l.blurb }}</p>
+            <div class="row" style="margin-top:auto;gap:6px">
+              <span class="pill">{{ l.group }}</span>
+              <span v-if="isDone(l.file)" class="pill pill-ok">✓ completata</span>
+              <span v-if="isSaved(l.file)" class="pill pill-warn">🔖 salvata</span>
+              <span v-if="store.scores[l.file]" class="pill pill-info">{{ store.scores[l.file].pct }}%</span>
+            </div>
+          </a>
+        </div>
+        <p v-if="!filtered.length" class="muted center" style="margin-top:20px">Nessuna lezione trovata.</p>
+
+        <!-- Study advice -->
+        <section class="card card--tip" style="margin-top:26px">
+          <h2 style="font-size:1.1rem">💡 Come studiare con questo corso</h2>
+          <ol>
+            <li>Leggi <b>Introduzione → Formula → Regola</b>: non saltare la formula, è lo scheletro della frase.</li>
+            <li>Leggi gli esempi ad alta voce usando il pulsante 🔊 e ripeti.</li>
+            <li>Guarda gli <b>errori comuni</b>: sono gli sbagli che fanno quasi tutti gli studenti.</li>
+            <li>Fai tutti e 7 gli <b>esercizi</b>: ogni tipo allena una competenza diversa.</li>
+            <li>Chiudi con le <b>flashcard</b> e torna il giorno dopo per mantenere la serie 🔥.</li>
+          </ol>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Italiano A2 · Corso interattivo di grammatica · I progressi restano nel tuo browser (localStorage).</p>
+      </footer>
+      <toast-host></toast-host>
+    `
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Diagnostica delle voci: quali voci italiane sono installate e quale voce riceve ogni personaggio.">
+  <title>Diagnostica voci · Italiano Interattivo</title>
+  <link rel="stylesheet" href="assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎙️</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>
+    window.ITA_LEVEL = 'A2';
+    window.ITA_PATHS = { home: 'A2/index.html', levels: 'index.html', base: 'A2/' };
+  </script>
+  <script src="A2/lessons.js?v=8"></script>
+  <script src="assets/app.js?v=8"></script>
+  <script src="assets/components.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     Voice diagnostics.
+     The Web Speech API can only use voices installed on the device, and it
+     never reports a voice's gender. This page shows exactly what the browser
+     offers, what the app infers, and which voice each character would get —
+     so "everyone sounds the same" can be diagnosed instead of guessed at.
+     ========================================================================== */
+  const { store } = ITA;
+
+  ITA.createPage({
+    data: () => ({
+      store,
+      all: [],
+      tick: 0,                       // bumped when the voice list changes
+      sample: 'Ciao! Mi chiamo Giulia e studio italiano ogni giorno.',
+      last: ITA.lastSpoken,
+      build: ITA.VERSION,
+      demo: [
+        { name: 'Giulia', icon: '👩' },
+        { name: 'Saman',  icon: '🧑' },
+        { name: 'Anna',   icon: '👩' },
+        { name: 'Marco',  icon: '🧑' }
+      ]
+    }),
+    computed: {
+      italian() { this.tick; ITA.voiceTick.value; return ITA.voicesFor('it-IT'); },
+      /** Voices that ARE installed, grouped by language — helps spot that a
+          system has plenty of English voices but no Italian one at all. */
+      byLang() {
+        this.tick;
+        const map = {};
+        this.all.forEach(v => { (map[v.lang] = map[v.lang] || []).push(v.name); });
+        return Object.keys(map).sort().map(k => ({ lang: k, names: map[k] }));
+      },
+      supported() { return 'speechSynthesis' in window; },
+      /** The demo cast: voices are assigned by order of appearance only. */
+      cast() {
+        return this.demo.map((c, i) => Object.assign({}, c, { index: i }));
+      },
+      verdict() {
+        if (!this.supported) return { cls: 'pill-err', text: 'Il browser non supporta la sintesi vocale' };
+        if (!this.italian.length) return { cls: 'pill-err', text: '0 voci italiane — il browser userà la voce di sistema (inglese)' };
+        if (this.italian.length === 1) return { cls: 'pill-warn', text: '1 sola voce italiana — i personaggi si distinguono solo per tono e velocità' };
+        return { cls: 'pill-ok', text: this.italian.length + ' voci italiane: ogni personaggio può avere la sua' };
+      }
+    },
+    mounted() {
+      const refresh = () => {
+        ITA.refreshVoices();   // keep the app's cache and this page in sync
+        this.all = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+        this.tick++;
+      };
+      refresh();
+      if (window.speechSynthesis && window.speechSynthesis.addEventListener) {
+        window.speechSynthesis.addEventListener('voiceschanged', refresh);
+      }
+      // Voices can arrive late; poll briefly so the page fills in by itself.
+      let n = 0;
+      const t = setInterval(() => { refresh(); if (++n > 12 || this.all.length) clearInterval(t); }, 400);
+    },
+    methods: {
+      gOf(v) { return ITA.voiceGender(v); },
+      /** Plays a sample with one specific voice, bypassing the picker. */
+      testVoice(v) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(this.sample);
+        u.voice = v; u.lang = v.lang; u.rate = 0.9;
+        window.speechSynthesis.speak(u);
+      },
+      /** Plays the sample exactly as the app would for that character. */
+      testCharacter(c) {
+        ITA.speak('Ciao, sono ' + c.name + '. Piacere di conoscerti!', 'it-IT',
+                  { persona: c.index, speaker: c.name });
+      },
+      voiceFor(c) {
+        const v = ITA.castVoice('it-IT', c.index);
+        return v ? v.name : '—';
+      },
+      /** Same-voice detection: are two characters going to sound identical? */
+      clash() {
+        const names = this.cast.map(c => this.voiceFor(c));
+        return names.length !== new Set(names).size;
+      },
+      playAllVoices() {
+        window.speechSynthesis.cancel();
+        this.italian.forEach(v => {
+          const u = new SpeechSynthesisUtterance(v.name + '. ' + this.sample);
+          u.voice = v; u.lang = v.lang; u.rate = 0.95;
+          window.speechSynthesis.speak(u);   // queues one after another
+        });
+      },
+      stop() { ITA.stopSpeaking(); },
+      reset() {
+        // Full shape — a partial reset would leave stale keys behind.
+        store.voices = { mode: 'auto', base: null, f: null, m: null, byName: {} };
+        ITA.toast('Assegnazioni azzerate');
+      }
+    },
+    template: `
+      <a class="skip-link" href="#main">Vai al contenuto</a>
+      <site-header current=""></site-header>
+
+      <main id="main" class="container container-narrow">
+        <header class="hero animate-in">
+          <p class="card-kicker" style="color:rgba(255,255,255,.85)">Strumento di diagnostica</p>
+          <h1>🎙️ Voci disponibili</h1>
+          <p>Il browser può leggere l'italiano solo con le voci installate sul tuo dispositivo,
+             e non dice mai se una voce è maschile o femminile. Questa pagina mostra che cosa
+             c'è davvero sul tuo sistema e quale voce riceve ogni personaggio.</p>
+          <div class="hero-stats">
+            <div class="hero-stat"><b>{{ all.length }}</b><span>voci totali</span></div>
+            <div class="hero-stat"><b>{{ italian.length }}</b><span>voci italiane</span></div>
+          </div>
+        </header>
+
+        <section class="card">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">🩺</span>
+            <div><p class="card-kicker">Risultato</p><h2 style="font-size:1.2rem">Situazione del tuo dispositivo</h2></div>
+          </div>
+          <p><span class="pill" :class="verdict.cls">{{ verdict.text }}</span></p>
+
+          <div v-if="italian.length < 2" class="card card--warn" style="margin-top:14px">
+            <h3 style="font-size:1rem">Come installare altre voci italiane</h3>
+            <p class="small" style="margin-bottom:6px"><b>macOS:</b> Impostazioni di Sistema → Accessibilità →
+              Contenuto letto → Voce di sistema → <b>Gestisci voci…</b> → Italiano →
+              scarica <i>Alice</i>, <i>Luca</i>, <i>Federica</i>. Poi <b>riavvia il browser</b>.</p>
+            <p class="small" style="margin-bottom:6px"><b>Windows:</b> Impostazioni → Ora e lingua → Lingua e area geografica →
+              aggiungi <b>Italiano</b> → Opzioni → Sintesi vocale.</p>
+            <p class="small" style="margin-bottom:0"><b>iOS/iPadOS:</b> Impostazioni → Accessibilità → Contenuto letto → Voci → Italiano.</p>
+          </div>
+        </section>
+
+        <!-- Live readout: proves which code is running and what it produced -->
+        <section class="card card--accent">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">📟</span>
+            <div>
+              <p class="card-kicker">Motore audio</p>
+              <h2 style="font-size:1.2rem">Ultima frase pronunciata</h2>
+            </div>
+            <span class="pill" :class="build === 'voci-8' ? 'pill-ok' : 'pill-err'"
+                  style="margin-left:auto">build {{ build }}</span>
+          </div>
+          <p v-if="build !== 'voci-7'" class="feedback no">
+            ⚠️ Stai usando una versione vecchia di app.js rimasta in cache.
+            Ricarica con <b>⌘⇧R</b> (o Ctrl+F5).
+          </p>
+          <p v-if="!last.n" class="muted small">
+            Premi un 🔊 qui sotto: qui appariranno la voce e i parametri realmente usati.
+          </p>
+          <div v-else class="table-wrap">
+            <table class="verb-table">
+              <tbody>
+                <tr><td>Personaggio</td><td class="form">{{ last.speaker }}</td></tr>
+                <tr><td>Voce usata</td><td class="form">{{ last.voice }} <span class="muted small">({{ last.local ? 'offline' : 'online' }})</span></td></tr>
+                <tr><td>Posizione nel dialogo</td><td class="form">{{ last.index }}</td></tr>
+                <tr><td>Pitch</td><td class="form"><b>{{ last.pitch }}</b> <span class="muted small">(1 = naturale)</span></td></tr>
+                <tr><td>Rate</td><td class="form">{{ last.rate }}</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">🎭</span>
+            <div><p class="card-kicker">Anteprima</p><h2 style="font-size:1.2rem">Quale voce riceve ogni personaggio</h2></div>
+          </div>
+          <p class="small muted">Questa è esattamente la logica usata nelle Conversazioni delle lezioni.</p>
+          <div class="table-wrap">
+            <table class="verb-table">
+              <thead><tr><th>Personaggio</th><th>Ordine</th><th>Voce assegnata</th><th>Prova</th></tr></thead>
+              <tbody>
+                <tr v-for="c in cast" :key="c.name">
+                  <td>{{ c.icon }} {{ c.name }}</td>
+                  <td>{{ c.index + 1 }}º a parlare</td>
+                  <td class="form">{{ voiceFor(c) }}</td>
+                  <td><button class="mini-btn" @click="testCharacter(c)" :aria-label="'Ascolta ' + c.name">🔊</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p v-if="clash()" class="feedback hint" style="margin-top:12px">
+            ⚠️ Due personaggi condividono la stessa voce: non ci sono abbastanza voci italiane installate.
+            L'app compensa cambiando tono e velocità, ma il timbro resta lo stesso.
+          </p>
+          <p v-else class="feedback ok" style="margin-top:12px">✅ Ogni personaggio ha una voce diversa.</p>
+          <div class="btn-row">
+            <button class="btn btn-ghost btn-sm" @click="stop">⏹ Ferma</button>
+            <button class="btn btn-ghost btn-sm" @click="reset">↻ Azzera le assegnazioni salvate</button>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">🇮🇹</span>
+            <div><p class="card-kicker">Dettaglio</p><h2 style="font-size:1.2rem">Voci italiane rilevate</h2></div>
+          </div>
+          <p v-if="!italian.length" class="muted">Nessuna voce italiana trovata.</p>
+          <div v-else>
+            <div class="table-wrap">
+              <table class="verb-table">
+                <thead><tr><th>Nome</th><th>Lingua</th><th>Tipo</th><th>Genere rilevato</th><th>Prova</th></tr></thead>
+                <tbody>
+                  <tr v-for="v in italian" :key="v.name + v.lang">
+                    <td>{{ v.name }}</td>
+                    <td>{{ v.lang }}</td>
+                    <td>{{ v.localService ? 'offline' : 'online' }}</td>
+                    <td><span :class="gOf(v) ? 'irr' : 'muted'">{{ gOf(v) === 'f' ? 'femminile' : gOf(v) === 'm' ? 'maschile' : 'non rilevato' }}</span></td>
+                    <td><button class="mini-btn" @click="testVoice(v)" :aria-label="'Ascolta ' + v.name">🔊</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="btn-row">
+              <button class="btn btn-primary btn-sm" @click="playAllVoices">▶ Ascolta tutte in fila</button>
+              <button class="btn btn-ghost btn-sm" @click="stop">⏹ Ferma</button>
+            </div>
+          </div>
+          <label style="display:block;margin-top:14px">
+            <span class="small" style="font-weight:700">Frase di prova</span>
+            <input class="text-input" v-model="sample" style="margin-top:4px">
+          </label>
+        </section>
+
+        <details class="card" open>
+          <summary style="cursor:pointer;font-weight:700">
+            Tutte le voci del browser, per lingua ({{ all.length }})
+          </summary>
+          <p class="small muted" style="margin-top:8px">
+            Se qui vedi molte voci ma nessuna riga <b>it-IT</b>, il tuo sistema non ha
+            nessuna voce italiana: è questa la causa dell'accento inglese.
+          </p>
+          <div class="table-wrap" style="max-height:340px;overflow:auto">
+            <table class="verb-table">
+              <thead><tr><th>Lingua</th><th>Voci</th></tr></thead>
+              <tbody>
+                <tr v-for="g in byLang" :key="g.lang"
+                    :style="g.lang.toLowerCase().indexOf('it') === 0 ? 'background:var(--ok-bg)' : ''">
+                  <td>{{ g.lang }}</td>
+                  <td class="small">{{ g.names.join(', ') }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <nav class="pager">
+          <a href="index.html"><p class="p-dir">← Torna</p><p class="p-title">🏠 Home</p></a>
+          <a href="A2/01-essere.html" class="next"><p class="p-dir">Prova una conversazione →</p><p class="p-title">🟢 Lezione 1 · Essere</p></a>
+        </nav>
+      </main>
+
+      <footer class="site-footer">
+        <p>Diagnostica voci · Italiano Interattivo</p>
+      </footer>
+      <toast-host></toast-host>
+    `
+  });
+  </script>
+</body>
+</html>

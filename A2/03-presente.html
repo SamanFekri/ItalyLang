@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il presente indicativo italiano: verbi regolari in -are, -ere, -ire, verbi in -isc- e principali irregolari.">
+  <title>Presente Indicativo · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 3 — PRESENTE INDICATIVO
+     ========================================================================== */
+  window.LESSON = {
+    num: 3, file: '03-presente.html', icon: '⏱️', title: 'Presente Indicativo', group: 'Le basi',
+    subtitle: 'Il motore della lingua: tre famiglie di verbi (-are, -ere, -ire), i verbi in -isc- e gli irregolari che usi ogni giorno.',
+
+    intro: {
+      what: 'Il presente indicativo è il tempo che descrive ciò che è vero adesso, ciò che fai abitualmente e ciò che è sempre vero. Si forma togliendo la desinenza dell\'infinito (-are, -ere, -ire) e aggiungendo una terminazione diversa per ogni persona.',
+      when: 'Azioni di adesso ("Studio italiano"), abitudini ("Ogni giorno bevo un caffè"), verità generali ("L\'acqua bolle a 100 gradi"), futuro vicino ("Domani parto") e — con "da" — azioni iniziate nel passato che continuano ("Studio italiano da due anni").',
+      why: 'È la base di tutto: senza il presente non puoi costruire il passato prossimo (che usa il presente di essere/avere), i modali, il gerundio o l\'imperativo. Un solo tempo copre il 70% delle conversazioni quotidiane.',
+      mistakes: [
+        'Aggiungere un pronome inutile: in italiano "Io studio" e "Studio" sono uguali, e la seconda è più naturale.',
+        'Tradurre "I am studying" con due verbi: ❌ "Sono studiando" → ✅ "Studio" (o "Sto studiando", lezione 8).',
+        'Dimenticare che i verbi in -ire si dividono in due gruppi: dormo (breve) ma capisco (con -isc-).',
+        'Sbagliare la pronuncia/scrittura dei verbi in -care e -gare: "tu giochi" con la h.'
+      ]
+    },
+
+    formulas: [
+      {
+        label: 'Come si forma un verbo regolare',
+        rows: [
+          { parts: [
+              { text: 'Infinito', note: 'parl-are', type: 'subject' },
+              { text: 'togli -are/-ere/-ire', note: '→ radice: parl-', type: 'extra' },
+              { text: 'aggiungi la desinenza', note: '-o, -i, -a…', type: 'verb' }
+            ], example: 'parlare → parl- + -o = parlo', translation: 'I speak' }
+        ]
+      },
+      {
+        label: 'Le tre famiglie',
+        rows: [
+          { parts: [
+              { text: '-ARE', note: 'parlare', type: 'verb' },
+              { text: '-ERE', note: 'prendere', type: 'object' },
+              { text: '-IRE', note: 'dormire / capire', type: 'extra' }
+            ], example: 'parlo · prendo · dormo · capisco' }
+        ]
+      },
+      {
+        label: 'Frase completa',
+        rows: [
+          { parts: [
+              { text: '(Soggetto)', note: 'facoltativo', type: 'subject' },
+              { text: 'Verbo al presente', type: 'verb' },
+              { text: 'Resto della frase', type: 'object' }
+            ], example: '(Io) studio italiano ogni giorno.', translation: 'I study Italian every day.' }
+        ]
+      }
+    ],
+    formulaNote: 'Le desinenze di "io" e "tu" sono uguali per tutti i gruppi: -o e -i. È la parte più facile del sistema!',
+
+    rules: [
+      {
+        title: 'Le desinenze regolari: solo 3 schemi da imparare',
+        body: 'Guarda le somiglianze invece delle differenze. <b>Io</b> finisce sempre in <b>-o</b>, <b>tu</b> sempre in <b>-i</b>, <b>noi</b> sempre in <b>-iamo</b>, <b>voi</b> cambia solo la vocale (-ate / -ete / -ite).',
+        points: [
+          '-ARE: parl<b>o</b>, parl<b>i</b>, parl<b>a</b>, parl<b>iamo</b>, parl<b>ate</b>, parl<b>ano</b>',
+          '-ERE: prend<b>o</b>, prend<b>i</b>, prend<b>e</b>, prend<b>iamo</b>, prend<b>ete</b>, prend<b>ono</b>',
+          '-IRE: dorm<b>o</b>, dorm<b>i</b>, dorm<b>e</b>, dorm<b>iamo</b>, dorm<b>ite</b>, dorm<b>ono</b>',
+          'Unica differenza vera tra -ERE e -IRE: la forma "voi" (prendete / dormite).'
+        ],
+        exception: 'Attenzione all\'accento parlato: "parlano" e "prendono" hanno l\'accento sulla prima sillaba (PARlano, PRENdono), non alla fine.'
+      },
+      {
+        title: 'I verbi in -ISC-: capire, finire, preferire, pulire, spedire',
+        body: 'Circa metà dei verbi in -ire inserisce <b>-isc-</b> tra la radice e la desinenza in quattro persone su sei: <b>io, tu, lui/lei, loro</b>. Noi e voi restano normali.',
+        points: [
+          'capire → cap<b>isc</b>o, cap<b>isc</b>i, cap<b>isc</b>e, capiamo, capite, cap<b>isc</b>ono',
+          'La memoria visiva: le forme con -isc- fanno una "scarpa" attorno a noi/voi.',
+          'Verbi -isc- comunissimi: capire, finire, preferire, pulire, spedire, costruire, unire, chiarire.',
+          'Verbi -ire SENZA -isc-: dormire, partire, aprire, offrire, sentire, seguire, servire.'
+        ],
+        exception: 'Non c\'è una regola per sapere quale verbo prende -isc-: va imparato con il verbo. Fortunatamente la lista dei più usati è corta (vedi tabella).'
+      },
+      {
+        title: 'Verbi in -CARE / -GARE: si aggiunge una H',
+        body: 'Verbi come <b>giocare, cercare, pagare, spiegare</b> aggiungono una <b>h</b> davanti alle desinenze che iniziano per -i (tu e noi), per mantenere il suono duro.',
+        points: [
+          'giocare → gioco, gioc<b>h</b>i, gioca, gioc<b>h</b>iamo, giocate, giocano',
+          'pagare → pago, pag<b>h</b>i, paga, pag<b>h</b>iamo, pagate, pagano',
+          'Senza la h, "gioci" si leggerebbe "djoci".'
+        ],
+        exception: 'Al contrario, i verbi in -CIARE / -GIARE perdono la i: mangiare → mangi (non "mangii"), cominciare → cominci.'
+      },
+      {
+        title: 'Gli irregolari che devi sapere subito',
+        body: 'Non sono tanti, ma sono i più usati in assoluto. Vale la pena impararli come piccole canzoni.',
+        points: [
+          '<b>andare</b>: vado, vai, va, andiamo, andate, vanno',
+          '<b>fare</b>: faccio, fai, fa, facciamo, fate, fanno',
+          '<b>stare</b>: sto, stai, sta, stiamo, state, stanno',
+          '<b>dare</b>: do, dai, dà, diamo, date, danno',
+          '<b>venire</b>: vengo, vieni, viene, veniamo, venite, vengono',
+          '<b>uscire</b>: esco, esci, esce, usciamo, uscite, escono',
+          '<b>dire</b>: dico, dici, dice, diciamo, dite, dicono',
+          '<b>bere</b>: bevo, bevi, beve, beviamo, bevete, bevono'
+        ],
+        exception: 'Nota lo schema ricorrente: noi e voi sono quasi sempre "quasi regolari" (andiamo, andate / veniamo, venite). L\'irregolarità si concentra su io, tu, lui, loro.'
+      },
+      {
+        title: 'Presente + DA = azione ancora in corso',
+        body: 'Dove l\'inglese usa il present perfect ("I have been studying for two years"), l\'italiano usa il <b>presente + da</b>.',
+        points: [
+          'Studio italiano <b>da</b> due anni. → I have been studying Italian for two years.',
+          'Abito a Milano <b>da</b> gennaio. → I have lived in Milan since January.',
+          'Domanda: <b>Da quanto tempo</b> studi italiano?'
+        ],
+        exception: 'Non usare il passato: ❌ "Ho studiato italiano da due anni" cambia significato ed è quasi sempre sbagliato in questo contesto.'
+      }
+    ],
+
+    timeline: {
+      title: 'Che cosa copre il presente',
+      intro: 'Il presente italiano è molto più largo del "present simple" inglese: copre anche il presente progressivo e spesso il futuro vicino.',
+      points: [
+        { time: 'Passato → oggi', label: 'Presente + da', example: 'Studio italiano da due anni.', note: 'iniziato prima, continua' },
+        { time: 'Adesso', label: 'Presente', example: 'Mangio una pizza.', now: true, note: '= I eat / I am eating' },
+        { time: 'Abitudine', label: 'Presente abituale', example: 'Ogni lunedì vado in palestra.' },
+        { time: 'Futuro vicino', label: 'Presente con valore futuro', example: 'Domani parto per Roma.', note: 'naturalissimo in italiano' }
+      ],
+      caption: 'Una sola forma, quattro usi: per questo il presente è il tempo più redditizio da studiare.'
+    },
+
+    tables: [
+      {
+        title: 'Verbi regolari — i tre modelli a confronto',
+        note: 'Io = -o e tu = -i per tutti. Le vere differenze sono in lui/lei, voi e loro.',
+        columns: ['Persona', 'parlARE', 'prendERE', 'dormIRE'],
+        rows: [
+          { cells: ['io', 'parlo', 'prendo', 'dormo'] },
+          { cells: ['tu', 'parli', 'prendi', 'dormi'] },
+          { cells: ['lui / lei', 'parla', 'prende', 'dorme'], irregular: [1] },
+          { cells: ['noi', 'parliamo', 'prendiamo', 'dormiamo'] },
+          { cells: ['voi', 'parlate', 'prendete', 'dormite'], irregular: [1, 2, 3] },
+          { cells: ['loro', 'parlano', 'prendono', 'dormono'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Verbi in -ISC- (capire) vs -ire semplice (dormire)',
+        note: 'Il -isc- sparisce solo con noi e voi.',
+        columns: ['Persona', 'capIRE (-isc-)', 'dormIRE (semplice)'],
+        rows: [
+          { cells: ['io', 'capisco', 'dormo'], irregular: [1] },
+          { cells: ['tu', 'capisci', 'dormi'], irregular: [1] },
+          { cells: ['lui / lei', 'capisce', 'dorme'], irregular: [1] },
+          { cells: ['noi', 'capiamo', 'dormiamo'] },
+          { cells: ['voi', 'capite', 'dormite'] },
+          { cells: ['loro', 'capiscono', 'dormono'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Quali verbi -ire prendono -isc-? Le due liste',
+        note: 'Impara queste 16 parole e hai coperto quasi tutto l\'A2.',
+        columns: ['CON -isc-', 'Significato', 'SENZA -isc-', 'Significato'],
+        rows: [
+          { cells: ['capire', 'to understand', 'dormire', 'to sleep'] },
+          { cells: ['finire', 'to finish', 'partire', 'to leave'] },
+          { cells: ['preferire', 'to prefer', 'aprire', 'to open'] },
+          { cells: ['pulire', 'to clean', 'offrire', 'to offer'] },
+          { cells: ['spedire', 'to send', 'sentire', 'to hear/feel'] },
+          { cells: ['costruire', 'to build', 'seguire', 'to follow'] },
+          { cells: ['unire', 'to unite', 'servire', 'to serve'] },
+          { cells: ['restituire', 'to give back', 'vestire', 'to dress'] }
+        ]
+      },
+      {
+        title: 'Gli 8 irregolari più usati',
+        note: 'Nota come noi/voi restino quasi regolari in quasi tutti.',
+        columns: ['Verbo', 'io', 'tu', 'lui/lei', 'noi', 'voi', 'loro'],
+        rows: [
+          { cells: ['andare', 'vado', 'vai', 'va', 'andiamo', 'andate', 'vanno'], irregular: [1, 2, 3, 6] },
+          { cells: ['fare', 'faccio', 'fai', 'fa', 'facciamo', 'fate', 'fanno'], irregular: [1, 2, 3, 4, 5, 6] },
+          { cells: ['stare', 'sto', 'stai', 'sta', 'stiamo', 'state', 'stanno'], irregular: [1, 2, 3, 6] },
+          { cells: ['dare', 'do', 'dai', 'dà', 'diamo', 'date', 'danno'], irregular: [1, 2, 3, 6] },
+          { cells: ['venire', 'vengo', 'vieni', 'viene', 'veniamo', 'venite', 'vengono'], irregular: [1, 2, 3, 6] },
+          { cells: ['uscire', 'esco', 'esci', 'esce', 'usciamo', 'uscite', 'escono'], irregular: [1, 2, 3, 6] },
+          { cells: ['dire', 'dico', 'dici', 'dice', 'diciamo', 'dite', 'dicono'], irregular: [1, 2, 3, 5, 6] },
+          { cells: ['bere', 'bevo', 'bevi', 'beve', 'beviamo', 'bevete', 'bevono'], irregular: [1, 2, 3, 4, 5, 6] }
+        ]
+      },
+      {
+        title: 'Verbi in -care / -gare / -ciare / -giare',
+        note: 'Regola di suono: la h protegge il suono duro, la i sparisce quando è inutile.',
+        columns: ['Verbo', 'io', 'tu', 'noi'],
+        rows: [
+          { cells: ['giocare', 'gioco', 'giochi', 'giochiamo'], irregular: [2, 3] },
+          { cells: ['cercare', 'cerco', 'cerchi', 'cerchiamo'], irregular: [2, 3] },
+          { cells: ['pagare', 'pago', 'paghi', 'paghiamo'], irregular: [2, 3] },
+          { cells: ['mangiare', 'mangio', 'mangi', 'mangiamo'], irregular: [2, 3] },
+          { cells: ['cominciare', 'comincio', 'cominci', 'cominciamo'], irregular: [2, 3] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Parlo italiano e un po\' di inglese.', literal: 'I-speak Italian and a bit of English.', natural: 'I speak Italian and a little English.', note: 'parlare → parl- + -o. Il pronome "io" non serve.' },
+      { it: 'Tu lavori in banca?', literal: 'You work in bank?', natural: 'Do you work at a bank?', note: 'Nessun "do" in italiano: solo il verbo coniugato + intonazione.' },
+      { it: 'Marco prende il treno ogni mattina.', literal: 'Marco takes the train every morning.', natural: 'Marco takes the train every morning.', note: '-ere, terza persona → prend-e. "Ogni mattina" segnala l\'abitudine.' },
+      { it: 'Noi mangiamo alle otto.', literal: 'We eat at-the eight.', natural: 'We eat at eight.', note: 'mangiare perde la i davanti a -iamo: mangiamo, non "mangiiamo".' },
+      { it: 'Voi dormite troppo!', literal: 'You(pl) sleep too-much!', natural: 'You guys sleep too much!', note: '-ire regolare: dorm-ite.' },
+      { it: 'I miei amici vivono a Bologna.', literal: 'The my friends live in Bologna.', natural: 'My friends live in Bologna.', note: '-ere, loro → viv-ono. Accento su VIvono.' },
+      { it: 'Non capisco, puoi ripetere?', literal: 'Not I-understand, can-you repeat?', natural: "I don't understand, can you repeat?", note: 'capire è un verbo -isc-: cap-isc-o. Frase di sopravvivenza n°1.' },
+      { it: 'Preferisci il tè o il caffè?', literal: 'You-prefer the tea or the coffee?', natural: 'Do you prefer tea or coffee?', note: 'preferire → prefer-isc-i.' },
+      { it: 'Finiamo di lavorare alle sei.', literal: 'We-finish of to-work at-the six.', natural: 'We finish work at six.', note: 'Con noi il -isc- sparisce: fin-iamo. E "finire DI + infinito" (lezione 9).' },
+      { it: 'Loro capiscono tutto.', literal: 'They understand everything.', natural: 'They understand everything.', note: 'loro → cap-isc-ono. Il -isc- torna.' },
+      { it: 'Vado al lavoro in metro.', literal: 'I-go to-the work in metro.', natural: 'I go to work by metro.', note: 'andare è irregolare: vado. a + il = al.' },
+      { it: 'Che cosa fai stasera?', literal: 'What thing you-do this-evening?', natural: 'What are you doing tonight?', note: 'fare → fai. Il presente copre anche il futuro vicino.' },
+      { it: 'Esco con gli amici il venerdì.', literal: 'I-go-out with the friends the Friday.', natural: 'I go out with friends on Fridays.', note: 'uscire → esco (la u diventa e). "il venerdì" = ogni venerdì.' },
+      { it: 'Beviamo un caffè insieme?', literal: 'We-drink a coffee together?', natural: 'Shall we have a coffee together?', note: 'bere → bev-iamo (la radice torna latina: bev-).' },
+      { it: 'Giochi a calcio la domenica?', literal: 'You-play at football the Sunday?', natural: 'Do you play football on Sundays?', note: 'giocare prende la h: gioc-h-i. E "giocare A + sport".' },
+      { it: 'Studio italiano da due anni.', literal: 'I-study Italian from two years.', natural: 'I have been studying Italian for two years.', note: 'Presente + DA per un\'azione iniziata prima e ancora in corso.' },
+      { it: 'Domani parto per Roma.', literal: 'Tomorrow I-leave for Rome.', natural: "Tomorrow I'm leaving for Rome.", note: 'Presente con valore di futuro: normalissimo in italiano.' },
+      { it: 'Ogni giorno leggo il giornale e scrivo un\'email.', literal: 'Every day I-read the newspaper and I-write an email.', natural: 'Every day I read the paper and write an email.', note: 'Due verbi in -ere regolari: legg-o, scriv-o.' },
+      { it: 'Quanto costa questo?', literal: 'How-much costs this?', natural: 'How much does this cost?', note: 'costare → cost-a. Domanda essenziale per fare la spesa.' },
+      { it: 'Puliamo la casa il sabato mattina.', literal: 'We-clean the house the Saturday morning.', natural: 'We clean the house on Saturday mornings.', note: 'pulire è -isc-, ma con NOI si dice pul-iamo.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Sono studiando italiano.', right: 'Studio italiano. / Sto studiando italiano.', why: 'Non si traduce "am + -ing" con essere. Il presente semplice basta; per l\'azione in corso adesso si usa stare + gerundio (lezione 8).' },
+      { wrong: 'Io capo l\'italiano.', right: 'Io capisco l\'italiano.', why: 'Capire è un verbo -isc-: capisco, capisci, capisce, capiamo, capite, capiscono.' },
+      { wrong: 'Noi capisciamo.', right: 'Noi capiamo.', why: 'Con noi e voi il -isc- non c\'è: capiamo, capite.' },
+      { wrong: 'Tu gioci a tennis.', right: 'Tu giochi a tennis.', why: 'I verbi in -care aggiungono la h davanti alla -i per mantenere il suono duro.' },
+      { wrong: 'Noi mangiiamo la pizza.', right: 'Noi mangiamo la pizza.', why: 'I verbi in -giare/-ciare perdono la i quando la desinenza inizia già per i.' },
+      { wrong: 'Loro parlanno molto.', right: 'Loro parlano molto.', why: 'La desinenza è -ano (una sola n): parlano, mangiano, studiano.' },
+      { wrong: 'Ho studiato italiano da due anni. (= e continuo)', right: 'Studio italiano da due anni.', why: 'Se l\'azione continua ancora, l\'italiano usa il PRESENTE + da, non il passato.' },
+      { wrong: 'Io vado, tu vado.', right: 'Io vado, tu vai.', why: 'Ogni persona ha la sua forma: la desinenza non si copia dal soggetto precedente.' },
+      { wrong: 'Voi prendite il caffè?', right: 'Voi prendete il caffè?', why: '-ERE fa -ete (prendete), -IRE fa -ite (dormite). È l\'unica differenza tra i due gruppi.' }
+    ],
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Noi ___ in ufficio alle nove.» (arrivare)', options: ['arriviamo', 'arrivate', 'arrivano', 'arrivo'], answer: 0, hint: 'noi + -are', why: '-are con noi → -iamo: arriviamo.' },
+        { q: 'Completa: «Loro ___ molto bene.» (scrivere)', options: ['scrivano', 'scrivono', 'scrivete', 'scrive'], answer: 1, hint: '-ere, terza plurale', why: '-ere con loro → -ono: scrivono.' },
+        { q: 'Completa: «Io non ___ questa parola.» (capire)', options: ['capo', 'capio', 'capisco', 'capisce'], answer: 2, hint: 'verbo -isc-', why: 'capire è -isc-: io capisco.' },
+        { q: 'Completa: «Noi ___ alle sette.» (finire)', options: ['finisciamo', 'finiamo', 'finiscono', 'finite'], answer: 1, hint: 'con noi il -isc- sparisce', why: 'noi finiamo (senza -isc-).' },
+        { q: 'Completa: «Tu ___ a carte?» (giocare)', options: ['gioci', 'giochi', 'giocchi', 'gioghi'], answer: 1, hint: 'serve una h', why: '-care + i → -chi: giochi.' },
+        { q: 'Completa: «Voi ___ il treno delle otto.» (prendere)', options: ['prendite', 'prendete', 'prendate', 'prendono'], answer: 1, hint: '-ere → voi', why: '-ere con voi → -ete: prendete.' },
+        { q: 'Quale verbo NON prende -isc-?', options: ['preferire', 'pulire', 'dormire', 'spedire'], answer: 2, hint: 'È un verbo del sonno…', why: 'dormire è -ire semplice: dormo, dormi, dorme.' },
+        { q: 'Completa: «Marco ___ a casa alle sei.» (venire)', options: ['vene', 'viene', 'venisce', 'vieni'], answer: 1, hint: 'irregolare', why: 'venire: vengo, vieni, viene…' },
+        { q: 'Come si dice "I have been living here for 3 years"?', options: ['Ho abitato qui da 3 anni.', 'Abito qui da 3 anni.', 'Sono abitato qui 3 anni.', 'Abitavo qui da 3 anni.'], answer: 1, hint: 'azione ancora in corso', why: 'Presente + da: "Abito qui da 3 anni".' },
+        { q: 'Completa: «Loro ___ un caffè.» (bere)', options: ['berono', 'bevono', 'bevano', 'bevete'], answer: 1, hint: 'la radice diventa bev-', why: 'bere → bevo, bevi, beve, beviamo, bevete, bevono.' }
+      ],
+      fill: [
+        { before: 'Io (lavorare)', after: 'in un ristorante.', answers: ['lavoro'], en: 'I work in a restaurant.' },
+        { before: 'Tu (leggere)', after: 'molti libri.', answers: ['leggi'], en: 'You read a lot of books.' },
+        { before: 'Anna (dormire)', after: 'otto ore.', answers: ['dorme'], en: 'Anna sleeps eight hours.' },
+        { before: 'Noi (preferire)', after: 'il mare.', answers: ['preferiamo'], en: 'We prefer the sea.', hint: 'con noi niente -isc-' },
+        { before: 'Voi (capire)', after: 'la domanda?', answers: ['capite'], en: 'Do you understand the question?' },
+        { before: 'Loro (finire)', after: 'il lavoro tardi.', answers: ['finiscono'], en: 'They finish work late.', hint: 'loro riprende il -isc-' },
+        { before: 'Tu (pagare)', after: 'con la carta?', answers: ['paghi'], en: 'Do you pay by card?', hint: 'serve la h' },
+        { before: 'Io (andare)', after: 'in palestra il lunedì.', answers: ['vado'], en: 'I go to the gym on Mondays.' },
+        { before: 'Marco (fare)', after: 'colazione al bar.', answers: ['fa'], en: 'Marco has breakfast at the bar.' },
+        { before: '(Io) Studio italiano', after: 'due anni.', answers: ['da'], en: 'I have been studying Italian for two years.', hint: 'preposizione del tempo continuato' }
+      ],
+      order: [
+        { words: ['Ogni', 'giorno', 'prendo', 'il', 'treno'], answer: 'Ogni giorno prendo il treno', en: 'Every day I take the train.' },
+        { words: ['Non', 'capisco', 'questa', 'parola'], answer: 'Non capisco questa parola', en: "I don't understand this word." },
+        { words: ['I', 'miei', 'amici', 'vivono', 'a', 'Roma'], answer: 'I miei amici vivono a Roma', en: 'My friends live in Rome.' },
+        { words: ['Studio', 'italiano', 'da', 'due', 'anni'], answer: 'Studio italiano da due anni', en: 'I have been studying Italian for two years.' },
+        { words: ['A', 'che', 'ora', 'finite', 'di', 'lavorare'], answer: 'A che ora finite di lavorare', en: 'What time do you finish work?' }
+      ],
+      dnd: {
+        instructions: 'A quale gruppo appartiene ogni verbo? Trascina l\'infinito nella colonna giusta.',
+        buckets: [
+          { id: 'are', label: '-ARE', icon: '🅰️' },
+          { id: 'ere', label: '-ERE', icon: '🅴' },
+          { id: 'isc', label: '-IRE con -isc-', icon: '🔶' },
+          { id: 'ire', label: '-IRE semplice', icon: '🔷' }
+        ],
+        items: [
+          { text: 'parlare', bucket: 'are' },
+          { text: 'mangiare', bucket: 'are' },
+          { text: 'lavorare', bucket: 'are' },
+          { text: 'prendere', bucket: 'ere' },
+          { text: 'scrivere', bucket: 'ere' },
+          { text: 'leggere', bucket: 'ere' },
+          { text: 'capire', bucket: 'isc' },
+          { text: 'finire', bucket: 'isc' },
+          { text: 'preferire', bucket: 'isc' },
+          { text: 'dormire', bucket: 'ire' },
+          { text: 'partire', bucket: 'ire' },
+          { text: 'aprire', bucket: 'ire' }
+        ]
+      },
+      match: [
+        { a: 'io parlo', b: 'I speak' },
+        { a: 'tu prendi', b: 'you take' },
+        { a: 'lei dorme', b: 'she sleeps' },
+        { a: 'noi capiamo', b: 'we understand' },
+        { a: 'voi finite', b: 'you (pl.) finish' },
+        { a: 'loro escono', b: 'they go out' },
+        { a: 'io faccio', b: 'I do / I make' },
+        { a: 'tu vai', b: 'you go' },
+        { a: 'noi beviamo', b: 'we drink' }
+      ],
+      tf: [
+        { statement: 'La desinenza di "io" è -o per tutti e tre i gruppi.', answer: true, why: 'Sì: parlo, prendo, dormo, capisco.' },
+        { statement: 'Con "noi" i verbi in -isc- mantengono il -isc-.', answer: false, why: 'No: noi capiamo, noi finiamo. Il -isc- torna solo con io, tu, lui/lei, loro.' },
+        { statement: 'In italiano il pronome soggetto è obbligatorio.', answer: false, why: 'No: "Studio" basta. Il pronome si usa per enfasi o chiarezza.' },
+        { statement: '«Tu giochi» si scrive con la h.', answer: true, why: 'Sì, i verbi in -care/-gare aggiungono la h davanti a -i.' },
+        { statement: '«Domani parto» è una frase corretta per parlare del futuro.', answer: true, why: 'Sì: il presente esprime spesso il futuro vicino.' },
+        { statement: 'L\'unica differenza tra le desinenze -ere e -ire è la forma "voi".', answer: true, why: 'Esatto: prendete / dormite. Tutto il resto è identico.' },
+        { statement: '«Sono mangiando» è la traduzione di "I am eating".', answer: false, why: 'No: si dice "Mangio" oppure "Sto mangiando".' }
+      ],
+      translate: [
+        { en: 'I work in an office.', answers: ['Lavoro in un ufficio', 'Io lavoro in un ufficio'] },
+        { en: "I don't understand.", answers: ['Non capisco', 'Io non capisco'], hint: 'verbo -isc-' },
+        { en: 'We finish at six.', answers: ['Finiamo alle sei', 'Noi finiamo alle sei'], hint: 'noi → niente -isc-' },
+        { en: 'Do you prefer tea or coffee?', answers: ['Preferisci il tè o il caffè', 'Preferisce il tè o il caffè'] },
+        { en: 'They live in Rome.', answers: ['Vivono a Roma', 'Loro vivono a Roma', 'Abitano a Roma'] },
+        { en: 'I have been studying Italian for one year.', answers: ['Studio italiano da un anno'], hint: 'presente + da' },
+        { en: 'What do you do tonight?', answers: ['Che cosa fai stasera', 'Cosa fai stasera', 'Che fai stasera'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Che lavoro fai?',
+      lines: [
+        { speaker: 'Elena', icon: '👩', it: 'Che lavoro fai, Saman?', en: 'What do you do for work, Saman?',
+          glosses: [{ term: 'fai', expl: 'fare, 2ª persona (irregolare): faccio, fai, fa…' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Lavoro in un\'azienda di software. Scrivo codice tutto il giorno.', en: 'I work at a software company. I write code all day.',
+          glosses: [{ term: 'Lavoro', expl: 'lavorare, -are regolare: lavor- + -o.' }, { term: 'Scrivo', expl: 'scrivere, -ere regolare: scriv- + -o.' }] },
+        { speaker: 'Elena', icon: '👩', it: 'Interessante! E parli italiano da molto?', en: 'Interesting! And have you been speaking Italian for long?',
+          glosses: [{ term: 'parli', expl: '-are con tu → -i.' }, { term: 'da molto', expl: 'presente + DA = azione iniziata prima e ancora in corso.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Studio italiano da un anno, ma non capisco sempre tutto.', en: "I've been studying Italian for a year, but I don't always understand everything.",
+          glosses: [{ term: 'Studio', expl: 'Presente + da un anno: l\'azione continua ancora.' }, { term: 'capisco', expl: 'capire è un verbo -isc-: cap-isc-o.' }] },
+        { speaker: 'Elena', icon: '👩', it: 'Parli benissimo! Preferisci parlare o scrivere?', en: 'You speak very well! Do you prefer speaking or writing?',
+          glosses: [{ term: 'Preferisci', expl: 'preferire, verbo -isc-: prefer-isc-i.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Preferisco parlare. Esco spesso con amici italiani e così imparo.', en: 'I prefer speaking. I often go out with Italian friends and that way I learn.',
+          glosses: [{ term: 'Esco', expl: 'uscire è irregolare: esco, esci, esce, usciamo, uscite, escono.' }, { term: 'imparo', expl: 'imparare, -are regolare.' }] },
+        { speaker: 'Elena', icon: '👩', it: 'Ottima idea. Stasera andiamo a bere qualcosa, vieni?', en: 'Great idea. Tonight we\'re going for a drink — are you coming?',
+          glosses: [{ term: 'andiamo', expl: 'andare con noi: quasi regolare (and-iamo). Qui il presente indica il futuro vicino.' }, { term: 'vieni', expl: 'venire, 2ª persona irregolare.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Volentieri! Finisco di lavorare alle sette.', en: 'Gladly! I finish work at seven.',
+          glosses: [{ term: 'Finisco', expl: 'finire, verbo -isc-.' }, { term: 'di lavorare', expl: 'finire DI + infinito (lezione 9).' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'parlo, parli, parla…', back: '-ARE: -o, -i, -a, -iamo, -ate, -ano' },
+      { front: 'prendo, prendi, prende…', back: '-ERE: -o, -i, -e, -iamo, -ete, -ono' },
+      { front: 'dormo, dormi, dorme…', back: '-IRE: -o, -i, -e, -iamo, -ite, -ono' },
+      { front: 'capisco, capisci, capisce…', back: '-IRE con -isc-: capiamo / capite senza -isc-' },
+      { front: 'vado, vai, va, andiamo, andate, vanno', back: 'andare — to go' },
+      { front: 'faccio, fai, fa, facciamo, fate, fanno', back: 'fare — to do / to make' },
+      { front: 'sto, stai, sta, stiamo, state, stanno', back: 'stare — to stay / to be (health)' },
+      { front: 'vengo, vieni, viene, veniamo, venite, vengono', back: 'venire — to come' },
+      { front: 'esco, esci, esce, usciamo, uscite, escono', back: 'uscire — to go out' },
+      { front: 'bevo, bevi, beve, beviamo, bevete, bevono', back: 'bere — to drink' },
+      { front: 'dico, dici, dice, diciamo, dite, dicono', back: 'dire — to say' },
+      { front: 'tu giochi / noi giochiamo', back: '-care e -gare prendono la H' },
+      { front: 'Studio italiano da due anni.', back: 'I have been studying Italian for two years', note: 'presente + DA' }
+    ],
+
+    summary: {
+      formula: 'radice + desinenza · -ARE: o-i-a-iamo-ate-ano · -ERE: o-i-e-iamo-ete-ono · -IRE: o-i-e-iamo-ite-ono (± isc)',
+      rules: [
+        'Io finisce sempre in -o, tu in -i, noi sempre in -iamo.',
+        '-ERE e -IRE differiscono solo nella forma voi: prendete / dormite.',
+        'I verbi -isc- (capire, finire, preferire, pulire, spedire) aggiungono -isc- tranne con noi e voi.',
+        'Verbi in -care/-gare: h davanti alla i (giochi, paghiamo). Verbi in -ciare/-giare: la i sparisce (mangi).',
+        'Irregolari da sapere: andare, fare, stare, dare, venire, uscire, dire, bere.',
+        'Presente + DA = azione iniziata nel passato e ancora in corso.',
+        'Il presente copre anche il futuro vicino: "Domani parto".'
+      ],
+      tips: [
+        'Impara le desinenze come un ritmo: "o-i-a-iamo-ate-ano" si canta in due secondi.',
+        'Per i verbi -isc- immagina una scarpa: -isc- sta in alto (io, tu, lui) e in basso (loro), noi e voi stanno nel mezzo senza.',
+        'Gli irregolari sono quasi sempre regolari con NOI e VOI: se sei nel dubbio, quella forma è la più prevedibile.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il verbo dire in italiano: dire vs parlare, discorso indiretto, dire di + infinito, espressioni comuni.">
+  <title>Dire · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 13 — DIRE
+     ========================================================================== */
+  window.LESSON = {
+    num: 13, file: '13-dire.html', icon: '💬', title: 'Dire', group: 'Verbi chiave',
+    subtitle: 'Riportare le parole degli altri: dire che, dire di, e la differenza tra dire, parlare e raccontare.',
+
+    intro: {
+      what: 'Dire significa "to say / to tell". Introduce le parole di qualcuno: direttamente ("Marco dice: «Sono stanco»") o indirettamente ("Marco dice <b>che</b> è stanco"). Con un ordine o una richiesta usa <b>di</b> + infinito ("Mi ha detto <b>di</b> aspettare").',
+      when: 'Ogni volta che riporti una conversazione, dai un\'informazione ricevuta da altri, fai o riferisci una richiesta, o usi una delle tante espressioni fisse (dire di sì, voler dire, come si dice…).',
+      why: 'Perché senza dire non puoi raccontare quello che ti hanno detto — e almeno metà delle conversazioni quotidiane consiste esattamente in questo.',
+      mistakes: [
+        'Confondere dire e parlare: ❌ "Dico italiano" → ✅ "Parlo italiano".',
+        'Dimenticare "che": ❌ "Dice è stanco" → ✅ "Dice che è stanco".',
+        'Usare "che" per un ordine: ❌ "Mi ha detto che aspettare" → ✅ "Mi ha detto di aspettare".',
+        'Sbagliare la coniugazione: voi fa "dite", non "dicete".'
+      ]
+    },
+
+    formulas: [
+      {
+        label: 'Dire CHE + informazione (discorso indiretto)',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'DIRE', type: 'verb' },
+              { text: 'CHE', type: 'extra' },
+              { text: 'frase', type: 'object' }
+            ], example: 'Marco dice che è stanco.', translation: 'Marco says (that) he is tired.' }
+        ]
+      },
+      {
+        label: 'Dire DI + infinito (ordine, richiesta, consiglio)',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'DIRE', type: 'verb' },
+              { text: 'DI', type: 'extra' },
+              { text: 'INFINITO', type: 'object' }
+            ], example: 'Mi ha detto di aspettare.', translation: 'He told me to wait.' }
+        ]
+      },
+      {
+        label: 'Dire qualcosa A qualcuno',
+        rows: [
+          { parts: [
+              { text: 'DIRE', type: 'verb' },
+              { text: 'qualcosa', type: 'object' },
+              { text: 'A qualcuno', note: 'o pronome: mi, ti, gli…', type: 'extra' }
+            ], example: 'Dico la verità a Marco. = Gli dico la verità.' }
+        ]
+      }
+    ],
+    formulaNote: 'Regola d\'oro: informazione → dire CHE. Ordine o richiesta → dire DI + infinito.',
+
+    rules: [
+      {
+        title: 'Dire, parlare, raccontare: tre verbi diversi',
+        body: 'L\'inglese "to speak / to say / to tell" si divide in italiano secondo quello che segue il verbo.',
+        points: [
+          '<b>DIRE</b> + contenuto: "Dico la verità", "Dice che viene", "Non dire niente!".',
+          '<b>PARLARE</b> + lingua o argomento: "Parlo italiano", "Parliamo <b>di</b> lavoro", "Parlo <b>con</b> Marco".',
+          '<b>RACCONTARE</b> + storia: "Ti racconto una storia", "Mi ha raccontato il film".',
+          '<b>CHIEDERE</b> = domandare: "Mi ha chiesto un favore".'
+        ],
+        exception: 'Con le lingue: si dice "Parlo italiano" e non "dico italiano". Ma per una parola singola: "Come si dice «table» in italiano?" — qui serve dire.'
+      },
+      {
+        title: 'Il discorso indiretto con CHE',
+        body: 'Passare dal discorso diretto a quello indiretto richiede tre aggiustamenti.',
+        points: [
+          'Aggiungi <b>che</b>: Marco: «Sono stanco» → Marco dice <b>che</b> è stanco.',
+          'Cambia la persona del verbo: «<b>Sono</b> stanco» → dice che <b>è</b> stanco.',
+          'Cambia i possessivi e i pronomi: «Ho perso <b>il mio</b> telefono» → dice che ha perso <b>il suo</b> telefono.',
+          'Se il verbo introduttivo è al presente ("dice che"), il tempo della frase non cambia.'
+        ],
+        exception: 'Se il verbo introduttivo è al passato ("ha detto che"), l\'italiano corretto cambia il tempo: «Sono stanco» → "Ha detto che <b>era</b> stanco" (imperfetto, B1). A A2, però, "Ha detto che è stanco" si sente comunemente nel parlato.'
+      },
+      {
+        title: 'Ordini e richieste: dire DI + infinito',
+        body: 'Quando riporti un ordine, un consiglio o una richiesta, non si usa "che" ma <b>di</b> + infinito.',
+        points: [
+          '«Aspetta!» → Mi ha detto <b>di</b> aspettare.',
+          '«Non fumare» → Il medico mi ha detto <b>di</b> non fumare.',
+          '«Chiamami» → Ti dico <b>di</b> chiamarmi domani.',
+          'Confronto: "Dice che viene" (informazione) vs "Dice di venire" (ordine: vieni!).'
+        ],
+        exception: 'La struttura vale anche per altri verbi di comunicazione: chiedere di, consigliare di, ordinare di, suggerire di, promettere di.'
+      },
+      {
+        title: 'A chi lo dici? I pronomi indiretti',
+        body: 'Dire vuole due complementi: <b>qualcosa</b> (diretto) <b>a qualcuno</b> (indiretto).',
+        points: [
+          'Forma lunga: "Dico la verità <b>a Marco</b>."',
+          'Forma breve: "<b>Gli</b> dico la verità." (gli = a lui)',
+          'Pronomi: <b>mi, ti, gli, le, ci, vi, gli</b> — gli stessi di piacere.',
+          'Al passato: "Mi ha detto", "Ti ho detto", "Gli abbiamo detto".'
+        ],
+        exception: 'Attenzione: "Le ho detto" con la L maiuscola nello scritto formale significa "I told you (formal)".'
+      },
+      {
+        title: 'Espressioni fisse con dire',
+        body: 'Da imparare in blocco: sono nelle prime cento frasi che sentirai in Italia.',
+        points: [
+          '<b>Dire di sì / di no</b> — to say yes / no: "Ha detto di sì".',
+          '<b>Voler dire</b> — to mean: "Che vuol dire questa parola?"',
+          '<b>Come si dice… in italiano?</b> — How do you say… in Italian?',
+          '<b>Si dice che…</b> — They say that… (forma impersonale)',
+          '<b>Dire la verità / una bugia</b> — to tell the truth / a lie',
+          '<b>Che ne dici?</b> — What do you think? / How about it?',
+          '<b>Come si suol dire</b> — as they say (formale)',
+          '<b>Non me lo dire!</b> — Don\'t tell me! / You\'re kidding!'
+        ],
+        exception: '"Voler dire" è irregolare nell\'uso: si dice "vuol dire" (senza la e finale) più spesso di "vuole dire".'
+      }
+    ],
+
+    timeline: {
+      title: 'Dal discorso diretto all\'indiretto',
+      intro: 'Le tre trasformazioni da fare, in ordine.',
+      points: [
+        { time: 'Passo 1', label: 'Discorso diretto', example: 'Marco: «Sono stanco».', note: 'le parole esatte' },
+        { time: 'Passo 2', label: 'Aggiungi CHE', example: 'Marco dice che…', now: true },
+        { time: 'Passo 3', label: 'Cambia la persona', example: 'Marco dice che è stanco.', note: 'sono → è' },
+        { time: 'Ordine?', label: 'Usa DI + infinito', example: '«Aspetta!» → Dice di aspettare.', note: 'non "che"' }
+      ],
+      caption: 'Se la frase originale è una domanda, si usa "se" o la parola interrogativa: «Vieni?» → "Mi ha chiesto se vengo".'
+    },
+
+    tables: [
+      {
+        title: 'Dire — coniugazione',
+        note: 'Come fare, recupera una radice latina (dic-).',
+        columns: ['Persona', 'Presente', 'Passato prossimo', 'Esempio'],
+        rows: [
+          { cells: ['io', 'dico', 'ho detto', 'Dico sempre la verità.'], irregular: [1, 2] },
+          { cells: ['tu', 'dici', 'hai detto', 'Che cosa dici?'], irregular: [1, 2] },
+          { cells: ['lui / lei', 'dice', 'ha detto', 'Dice che viene.'], irregular: [1, 2] },
+          { cells: ['noi', 'diciamo', 'abbiamo detto', 'Diciamo di sì.'], irregular: [1, 2] },
+          { cells: ['voi', 'dite', 'avete detto', 'Che ne dite?'], irregular: [1, 2] },
+          { cells: ['loro', 'dicono', 'hanno detto', 'Dicono di no.'], irregular: [1, 2] }
+        ]
+      },
+      {
+        title: 'DIRE / PARLARE / RACCONTARE / CHIEDERE',
+        note: 'La scelta dipende da quello che viene dopo.',
+        columns: ['Verbo', 'Si usa con', 'Esempio'],
+        rows: [
+          { cells: ['dire', 'un contenuto, una frase', 'Dice che è tardi.'] },
+          { cells: ['dire di', 'un ordine', 'Mi dice di aspettare.'] },
+          { cells: ['parlare', 'una lingua', 'Parlo italiano.'] },
+          { cells: ['parlare di', 'un argomento', 'Parliamo di politica.'] },
+          { cells: ['parlare con', 'una persona', 'Parlo con il direttore.'] },
+          { cells: ['raccontare', 'una storia, un fatto', 'Ti racconto il film.'] },
+          { cells: ['chiedere', 'una domanda, un favore', 'Mi ha chiesto aiuto.'] },
+          { cells: ['rispondere', 'una risposta', 'Non ha risposto.'] }
+        ]
+      },
+      {
+        title: 'Discorso diretto → discorso indiretto',
+        note: 'Con "dice che" (presente) i tempi non cambiano.',
+        columns: ['Diretto', 'Indiretto', 'Cosa cambia'],
+        rows: [
+          { cells: ['«Sono stanco»', 'Dice che è stanco.', 'persona del verbo'] },
+          { cells: ['«Ho fame»', 'Dice che ha fame.', 'sono → è, ho → ha'] },
+          { cells: ['«Vengo domani»', 'Dice che viene domani.', 'vengo → viene'] },
+          { cells: ['«Il mio treno è in ritardo»', 'Dice che il suo treno è in ritardo.', 'mio → suo'] },
+          { cells: ['«Aspetta!»', 'Dice di aspettare.', 'ordine → DI + infinito'], irregular: [1] },
+          { cells: ['«Non fumare»', 'Dice di non fumare.', 'NON prima dell\'infinito'], irregular: [1] },
+          { cells: ['«Vieni?»', 'Chiede se vengo.', 'domanda → SE'], irregular: [1] },
+          { cells: ['«Dove abiti?»', 'Chiede dove abito.', 'parola interrogativa'] }
+        ]
+      },
+      {
+        title: 'Espressioni con dire',
+        columns: ['Espressione', 'Inglese', 'Uso'],
+        rows: [
+          { cells: ['dire di sì / di no', 'to say yes / no', 'Ha detto di sì.'] },
+          { cells: ['voler dire', 'to mean', 'Che vuol dire?'] },
+          { cells: ['Come si dice… ?', 'How do you say…?', 'Come si dice "book"?'] },
+          { cells: ['Si dice che…', 'They say that…', 'Si dice che sia bravo.'] },
+          { cells: ['dire la verità', 'to tell the truth', 'Dimmi la verità.'] },
+          { cells: ['dire una bugia', 'to tell a lie', 'Non dire bugie!'] },
+          { cells: ['Che ne dici?', 'What do you think?', 'Andiamo al mare, che ne dici?'] },
+          { cells: ['Non me lo dire!', "Don't tell me!", 'espressione di sorpresa'] },
+          { cells: ['Te l\'avevo detto!', 'I told you so!', 'un po\' provocatorio'] },
+          { cells: ['Dimmi!', 'Tell me! / Go ahead!', 'al telefono o in negozio'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Marco dice che arriva alle otto.', literal: 'Marco says that he-arrives at-the eight.', natural: 'Marco says he\'s arriving at eight.', note: 'Discorso indiretto con che. In italiano "che" non si può omettere.' },
+      { it: 'Mi ha detto di aspettare qui.', literal: 'To-me he-has said of to-wait here.', natural: 'He told me to wait here.', note: 'Ordine → dire DI + infinito.' },
+      { it: 'Che cosa hai detto? Non ho sentito.', literal: 'What thing you-have said? Not I-have heard.', natural: "What did you say? I didn't hear.", note: 'dire → detto (participio irregolare).' },
+      { it: 'Diciamo sempre la verità.', literal: 'We-say always the truth.', natural: 'We always tell the truth.', note: 'noi → diciamo.' },
+      { it: 'Che ne dite di una pizza?', literal: 'What of-it you(pl)-say of a pizza?', natural: 'How about a pizza?', note: 'voi → dite (mai "dicete"). Formula per proporre qualcosa.' },
+      { it: 'Loro dicono di no.', literal: 'They say of no.', natural: 'They say no.', note: '"dire di sì / di no": la preposizione di è obbligatoria.' },
+      { it: 'Come si dice «window» in italiano?', literal: 'How one says «window» in Italian?', natural: 'How do you say "window" in Italian?', note: 'Domanda essenziale per ogni studente. Risposta: "finestra".' },
+      { it: 'Che vuol dire questa parola?', literal: 'What wants to-say this word?', natural: 'What does this word mean?', note: '"voler dire" = significare. Nota "vuol" senza la e.' },
+      { it: 'Il medico mi ha detto di non bere caffè.', literal: 'The doctor to-me has said of not to-drink coffee.', natural: 'The doctor told me not to drink coffee.', note: 'Ordine negativo: NON va prima dell\'infinito.' },
+      { it: 'Gli ho detto la verità.', literal: 'To-him I-have said the truth.', natural: 'I told him the truth.', note: 'Pronome indiretto "gli" = a lui, prima dell\'ausiliare.' },
+      { it: 'Anna dice che non può venire.', literal: 'Anna says that not she-can to-come.', natural: "Anna says she can't come.", note: 'Discorso indiretto con un modale nella frase secondaria.' },
+      { it: 'Non dire niente a nessuno!', literal: 'Not say nothing to nobody!', natural: "Don't tell anyone!", note: 'Imperativo negativo: non + infinito (lezione 14). Doppia negazione corretta in italiano.' },
+      { it: 'Dimmi tutto!', literal: 'Tell-me everything!', natural: 'Tell me everything!', note: 'Imperativo "di\'" + mi con raddoppiamento: dimmi.' },
+      { it: 'Si dice che questo ristorante sia ottimo.', literal: 'One says that this restaurant be excellent.', natural: 'They say this restaurant is excellent.', note: 'Forma impersonale "si dice che". (Il congiuntivo "sia" è B1.)' },
+      { it: 'Parlo italiano, ma non lo parlo benissimo.', literal: 'I-speak Italian, but not it I-speak very-well.', natural: "I speak Italian, but I don't speak it very well.", note: 'Con le lingue: parlare, non dire.' },
+      { it: 'Parliamo di lavoro domani, va bene?', literal: 'We-speak of work tomorrow, goes well?', natural: "Let's talk about work tomorrow, okay?", note: 'parlare DI + argomento.' },
+      { it: 'Ti racconto cosa è successo ieri.', literal: 'To-you I-tell what is happened yesterday.', natural: "Let me tell you what happened yesterday.", note: 'raccontare per una storia o una sequenza di fatti.' },
+      { it: 'Mi ha chiesto se vengo alla festa.', literal: 'To-me he-has asked if I-come to-the party.', natural: 'He asked me if I\'m coming to the party.', note: 'Domanda indiretta → chiedere SE.' },
+      { it: 'Te l\'avevo detto!', literal: 'To-you it I-had said!', natural: 'I told you so!', note: 'Espressione fissa (trapassato, B1) ma utilissima già ora.' },
+      { it: 'Dica pure!', literal: 'Say too!', natural: 'Go ahead! / How can I help you?', note: 'Forma di cortesia (Lei) usata da negozianti e camerieri.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Dico italiano.', right: 'Parlo italiano.', why: 'Con le lingue si usa parlare. Dire introduce un contenuto, non una lingua.' },
+      { wrong: 'Dice è stanco.', right: 'Dice che è stanco.', why: 'In italiano "che" è obbligatorio; a differenza dell\'inglese non si può omettere.' },
+      { wrong: 'Mi ha detto che aspettare.', right: 'Mi ha detto di aspettare.', why: 'Con un ordine o una richiesta si usa DI + infinito, non "che".' },
+      { wrong: 'Voi dicete la verità.', right: 'Voi dite la verità.', why: 'La forma voi è "dite", irregolare (come "fate" e "siete").' },
+      { wrong: 'Ho dito la verità.', right: 'Ho detto la verità.', why: 'Il participio passato di dire è "detto".' },
+      { wrong: 'Ha detto sì.', right: 'Ha detto di sì.', why: 'L\'espressione italiana è "dire DI sì / DI no".' },
+      { wrong: 'Parlo di Marco al telefono. (= converso con lui)', right: 'Parlo con Marco al telefono.', why: '"parlare di" = l\'argomento; "parlare con" = la persona.' },
+      { wrong: 'Che significa dire questa parola?', right: 'Che vuol dire questa parola? / Che significa questa parola?', why: 'Due formule corrette separate; non si mescolano.' },
+      { wrong: 'Dimmi la verità a me.', right: 'Dimmi la verità.', why: '"Dimmi" contiene già "a me": non va ripetuto.' }
+    ],
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Io ___ sempre la verità.»', options: ['dico', 'dici', 'dice', 'diciamo'], answer: 0, hint: 'io', why: 'io → dico.' },
+        { q: 'Completa: «Voi ___ di no?»', options: ['dicete', 'dite', 'dicete', 'dicono'], answer: 1, hint: 'irregolare come "fate"', why: 'voi → dite.' },
+        { q: 'Completa: «Marco dice ___ è stanco.»', options: ['di', 'che', 'se', '—'], answer: 1, hint: 'informazione', why: 'Informazione → dire CHE.' },
+        { q: 'Completa: «Mi ha detto ___ aspettare.»', options: ['di', 'che', 'a', '—'], answer: 0, hint: 'ordine', why: 'Ordine → dire DI + infinito.' },
+        { q: 'Come si dice "I speak Italian"?', options: ['Dico italiano.', 'Parlo italiano.', 'Racconto italiano.', 'Dico l\'italiano.'], answer: 1, hint: 'lingue', why: 'Con le lingue si usa parlare.' },
+        { q: 'Participio passato di dire:', options: ['dito', 'dicuto', 'detto', 'dicto'], answer: 2, hint: 'irregolare', why: 'dire → detto.' },
+        { q: '«Che vuol dire?» significa:', options: ['What do you want?', 'What does it mean?', 'What did you say?', 'Who says?'], answer: 1, hint: 'voler dire = ?', why: '"voler dire" = significare.' },
+        { q: 'Discorso indiretto di «Vieni?»:', options: ['Mi chiede che vengo.', 'Mi chiede se vengo.', 'Mi chiede di venire.', 'Mi dice che vieni.'], answer: 1, hint: 'domanda sì/no', why: 'Le domande sì/no diventano "se".' },
+        { q: 'Completa: «Il dottore mi ha detto di ___ fumare.»', options: ['non', 'no', 'niente', 'nessun'], answer: 0, hint: 'ordine negativo', why: 'NON va prima dell\'infinito.' },
+        { q: 'Come si propone qualcosa?', options: ['Che ne dici?', 'Che dici che?', 'Che dire?', 'Come si dice?'], answer: 0, hint: 'espressione fissa', why: '"Che ne dici?" = what do you think / how about it.' }
+      ],
+      fill: [
+        { before: 'Io', after: 'sempre quello che penso.', answers: ['dico'], en: 'I always say what I think.' },
+        { before: 'Voi che cosa ne', after: '?', answers: ['dite'], en: 'What do you think about it?' },
+        { before: 'Anna dice', after: 'non può venire.', answers: ['che'], en: "Anna says she can't come." },
+        { before: 'Mi ha detto', after: 'chiamarlo stasera.', answers: ['di'], en: 'He told me to call him tonight.' },
+        { before: 'Ieri ho', after: 'la verità a mia madre.', answers: ['detto'], en: 'Yesterday I told my mother the truth.' },
+        { before: 'Come si', after: '"table" in italiano?', answers: ['dice'], en: 'How do you say "table" in Italian?' },
+        { before: 'Io', after: 'italiano e un po\' di francese.', answers: ['parlo'], en: 'I speak Italian and a little French.' },
+        { before: 'Stasera', after: 'con il direttore.', answers: ['parlo'], en: 'Tonight I speak with the director.' },
+        { before: 'Ha detto', after: 'sì!', answers: ['di'], en: 'He said yes!' },
+        { before: 'Mi ha chiesto', after: 'vengo alla festa.', answers: ['se'], en: 'He asked me if I am coming to the party.' }
+      ],
+      order: [
+        { words: ['Marco', 'dice', 'che', 'arriva', 'tardi'], answer: 'Marco dice che arriva tardi', en: 'Marco says he is arriving late.' },
+        { words: ['Mi', 'ha', 'detto', 'di', 'aspettare'], answer: 'Mi ha detto di aspettare', en: 'He told me to wait.' },
+        { words: ['Come', 'si', 'dice', 'questo', 'in', 'italiano'], answer: 'Come si dice questo in italiano', en: 'How do you say this in Italian?' },
+        { words: ['Il', 'medico', 'mi', 'ha', 'detto', 'di', 'non', 'fumare'], answer: 'Il medico mi ha detto di non fumare', en: 'The doctor told me not to smoke.' },
+        { words: ['Che', 'ne', 'dici', 'di', 'una', 'pizza'], answer: 'Che ne dici di una pizza', en: 'How about a pizza?' }
+      ],
+      dnd: {
+        instructions: 'Quale verbo serve? Trascina ogni frase.',
+        buckets: [
+          { id: 'dire', label: 'DIRE', icon: '💬' },
+          { id: 'parlare', label: 'PARLARE', icon: '🗣️' },
+          { id: 'raccontare', label: 'RACCONTARE', icon: '📖' }
+        ],
+        items: [
+          { text: '___ italiano', bucket: 'parlare' },
+          { text: '___ che è tardi', bucket: 'dire' },
+          { text: '___ di lavoro', bucket: 'parlare' },
+          { text: '___ una storia ai bambini', bucket: 'raccontare' },
+          { text: '___ la verità', bucket: 'dire' },
+          { text: '___ con il direttore', bucket: 'parlare' },
+          { text: '___ di sì', bucket: 'dire' },
+          { text: '___ come è andata la giornata', bucket: 'raccontare' },
+          { text: '___ una bugia', bucket: 'dire' }
+        ]
+      },
+      match: [
+        { a: 'dico', b: 'I say' },
+        { a: 'dite', b: 'you (pl.) say' },
+        { a: 'ho detto', b: 'I said' },
+        { a: 'dire di sì', b: 'to say yes' },
+        { a: 'voler dire', b: 'to mean' },
+        { a: 'Come si dice…?', b: 'How do you say…?' },
+        { a: 'Che ne dici?', b: 'What do you think?' },
+        { a: 'Dimmi!', b: 'Tell me!' },
+        { a: 'Mi ha detto di aspettare.', b: 'He told me to wait.' },
+        { a: 'Dice che è stanco.', b: 'He says he is tired.' }
+      ],
+      tf: [
+        { statement: 'In italiano "che" nel discorso indiretto è obbligatorio.', answer: true, why: 'Sì, non si può omettere come in inglese.' },
+        { statement: 'Per riportare un ordine si usa "dire che".', answer: false, why: 'No: si usa "dire di" + infinito.' },
+        { statement: 'Con le lingue si usa dire: "dico italiano".', answer: false, why: 'No: si usa parlare → "parlo italiano".' },
+        { statement: 'La forma "voi" di dire è "dite".', answer: true, why: 'Sì, irregolare come "fate" e "siete".' },
+        { statement: 'Il participio passato di dire è "detto".', answer: true, why: 'Sì: ho detto, hai detto…' },
+        { statement: '«Parlare di» significa parlare con qualcuno.', answer: false, why: 'No: "parlare di" = l\'argomento, "parlare con" = la persona.' },
+        { statement: '«Ha detto sì» è la forma corretta.', answer: false, why: 'La forma standard è "ha detto DI sì".' }
+      ],
+      translate: [
+        { en: 'Marco says he is tired.', answers: ['Marco dice che è stanco'] },
+        { en: 'He told me to wait.', answers: ['Mi ha detto di aspettare'] },
+        { en: 'How do you say this in Italian?', answers: ['Come si dice questo in italiano'] },
+        { en: 'What does this word mean?', answers: ['Che vuol dire questa parola', 'Cosa vuol dire questa parola', 'Che significa questa parola'] },
+        { en: 'I speak a little Italian.', answers: ['Parlo un po\' di italiano'] },
+        { en: 'She said yes.', answers: ['Ha detto di sì'] },
+        { en: 'Tell me the truth.', answers: ['Dimmi la verità', 'Mi dica la verità'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Un messaggio da riferire',
+      lines: [
+        { speaker: 'Sara', icon: '👩', it: 'Hai parlato con Luca oggi?', en: 'Did you talk to Luca today?',
+          glosses: [{ term: 'parlato con', expl: 'parlare CON + persona.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Sì, mi ha detto che arriva alle otto.', en: 'Yes, he told me he\'s arriving at eight.',
+          glosses: [{ term: 'mi ha detto che', expl: 'Informazione → dire CHE. "Che" è obbligatorio.' }] },
+        { speaker: 'Sara', icon: '👩', it: 'Perfetto. Ti ha detto di portare qualcosa?', en: 'Perfect. Did he tell you to bring something?',
+          glosses: [{ term: 'ha detto di portare', expl: 'Richiesta → dire DI + infinito.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Mi ha detto di comprare il vino e di non dimenticare il dolce.', en: 'He told me to buy the wine and not to forget the dessert.',
+          glosses: [{ term: 'di non dimenticare', expl: 'Ordine negativo: DI + NON + infinito.' }] },
+        { speaker: 'Sara', icon: '👩', it: 'Ah, e ha detto se viene anche Marta?', en: 'Ah, and did he say whether Marta is coming too?',
+          glosses: [{ term: 'ha detto se', expl: 'Domanda indiretta sì/no → SE.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Ha detto di sì. Anzi, dice che porta anche il fratello.', en: "He said yes. Actually, he says he's bringing his brother too.",
+          glosses: [{ term: 'Ha detto di sì', expl: 'Espressione fissa: dire DI sì / DI no.' }, { term: 'dice che porta', expl: 'Nuova informazione → dire CHE.' }] },
+        { speaker: 'Sara', icon: '👩', it: 'Che ne dici se prepariamo la pasta al forno?', en: 'How about we make baked pasta?',
+          glosses: [{ term: 'Che ne dici', expl: 'Formula per proporre: what do you think?' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Ottima idea. Come si dice «pasta al forno» in inglese?', en: 'Great idea. How do you say "pasta al forno" in English?',
+          glosses: [{ term: 'Come si dice', expl: 'Formula fissa per chiedere una traduzione.' }] },
+        { speaker: 'Sara', icon: '👩', it: 'Baked pasta, credo. Dimmi quando arrivi!', en: 'Baked pasta, I think. Tell me when you arrive!',
+          glosses: [{ term: 'Dimmi', expl: 'Imperativo di dire (di\') + mi, con raddoppiamento.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'dico, dici, dice, diciamo, dite, dicono', back: 'dire — presente', note: 'voi = dite!' },
+      { front: 'ho detto / dicendo', back: 'participio e gerundio di dire' },
+      { front: 'dire CHE + frase', back: 'informazione: Dice che è stanco' },
+      { front: 'dire DI + infinito', back: 'ordine: Mi ha detto di aspettare' },
+      { front: 'parlare + lingua', back: 'Parlo italiano' },
+      { front: 'parlare DI / parlare CON', back: 'argomento / persona' },
+      { front: 'raccontare', back: 'to tell (a story)' },
+      { front: 'dire di sì / di no', back: 'to say yes / no' },
+      { front: 'voler dire', back: 'to mean', note: 'Che vuol dire?' },
+      { front: 'Come si dice… ?', back: 'How do you say…?' },
+      { front: 'Che ne dici?', back: 'What do you think?' },
+      { front: 'Dimmi!', back: 'Tell me!' }
+    ],
+
+    summary: {
+      formula: 'DIRE + CHE + frase (informazione)  ·  DIRE + DI + infinito (ordine)  ·  DIRE qualcosa A qualcuno',
+      rules: [
+        'Presente: dico, dici, dice, diciamo, dite, dicono. Participio: detto. Gerundio: dicendo.',
+        'Informazione → dire CHE ("Dice che viene"). "Che" non si può omettere.',
+        'Ordine, richiesta, consiglio → dire DI + infinito ("Dice di venire").',
+        'Domanda indiretta → chiedere SE o parola interrogativa ("Mi chiede se vengo").',
+        'Lingue e argomenti → parlare (parlo italiano, parlo di lavoro, parlo con Marco).',
+        'Storie → raccontare.',
+        'Espressioni: dire di sì/no, voler dire, come si dice, che ne dici, dimmi.'
+      ],
+      tips: [
+        'Coppia da memorizzare: "Dice CHE viene" (mi informa) vs "Dice DI venire" (mi ordina). Una parola cambia tutto.',
+        'Se in inglese diresti "that", in italiano è obbligatorio scrivere "che". Gli italiani non lo omettono mai.',
+        'Le quattro forme che gli studenti sbagliano sempre: dite (voi), detto (participio), dicono (loro), dimmi (imperativo). Ripetile ad alta voce.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

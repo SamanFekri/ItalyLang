@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il passato prossimo italiano: formazione con essere e avere, accordo del participio, participi irregolari, espressioni di tempo.">
+  <title>Passato Prossimo · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 5 — PASSATO PROSSIMO
+     ========================================================================== */
+  window.LESSON = {
+    num: 5, file: '05-passato-prossimo.html', icon: '📅', title: 'Passato Prossimo', group: 'Strutture',
+    subtitle: 'Il passato che userai il 90% delle volte: due pezzi, un ausiliare da scegliere e una regola di accordo.',
+
+    intro: {
+      what: 'Il passato prossimo è un tempo composto: si forma con due parole, l\'<b>ausiliare</b> (essere o avere al presente) più il <b>participio passato</b> del verbo principale. Corrisponde sia a "I ate" sia a "I have eaten".',
+      when: 'Per ogni azione conclusa nel passato: ieri, la settimana scorsa, tre anni fa, stamattina. In tutta Italia (soprattutto al nord e al centro) è il passato della conversazione quotidiana.',
+      why: 'Senza il passato prossimo non puoi raccontare nulla: la tua giornata, il weekend, un viaggio, un problema. È il tempo che trasforma una lista di frasi presenti in una vera conversazione.',
+      mistakes: [
+        'Scegliere l\'ausiliare sbagliato: ❌ "Ho andato" → ✅ "Sono andato".',
+        'Dimenticare l\'accordo con essere: ❌ "Maria è andato" → ✅ "Maria è andata".',
+        'Accordare il participio con avere quando non serve: ❌ "Maria ha mangiata" → ✅ "Maria ha mangiato".',
+        'Usare l\'infinito invece del participio: ❌ "Ho mangiare" → ✅ "Ho mangiato".'
+      ]
+    },
+
+    formulas: [
+      {
+        label: 'Formula generale',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'ESSERE o AVERE', note: 'al presente', type: 'verb' },
+              { text: 'PARTICIPIO PASSATO', note: '-ato / -uto / -ito', type: 'object' }
+            ], example: 'Io ho mangiato una pizza.', translation: 'I ate a pizza.' }
+        ]
+      },
+      {
+        label: 'Con AVERE — il participio NON cambia',
+        rows: [
+          { parts: [
+              { text: 'Maria', type: 'subject' },
+              { text: 'ha', type: 'verb' },
+              { text: 'mangiato', note: 'sempre -o', type: 'object' }
+            ], example: 'Maria ha mangiato. / I ragazzi hanno mangiato.', translation: 'Maria ate. / The boys ate.' }
+        ]
+      },
+      {
+        label: 'Con ESSERE — il participio CONCORDA col soggetto',
+        rows: [
+          { parts: [
+              { text: 'Maria', note: 'femminile sing.', type: 'subject' },
+              { text: 'è', type: 'verb' },
+              { text: 'andat-A', note: 'o / a / i / e', type: 'extra' }
+            ], example: 'Maria è andata. / Le ragazze sono andate.', translation: 'Maria went. / The girls went.' }
+        ]
+      },
+      {
+        label: 'Come si costruisce il participio regolare',
+        rows: [
+          { parts: [
+              { text: '-ARE → -ATO', note: 'parlare → parlato', type: 'verb' },
+              { text: '-ERE → -UTO', note: 'credere → creduto', type: 'object' },
+              { text: '-IRE → -ITO', note: 'dormire → dormito', type: 'extra' }
+            ], example: 'ho parlato · ho creduto · ho dormito' }
+        ]
+      }
+    ],
+    formulaNote: 'Il trucco per ricordare le desinenze: A-U-I, come le vocali di "pAUsa" senza la s.',
+
+    rules: [
+      {
+        title: 'Passo 1 — costruire il participio passato',
+        body: 'Togli la desinenza dell\'infinito e aggiungi <b>-ato</b>, <b>-uto</b> o <b>-ito</b>.',
+        points: [
+          '-ARE → -ATO: mangiare → mangi<b>ato</b>, lavorare → lavor<b>ato</b>',
+          '-ERE → -UTO: vendere → vend<b>uto</b>, credere → cred<b>uto</b>',
+          '-IRE → -ITO: finire → fin<b>ito</b>, dormire → dorm<b>ito</b>',
+          'I verbi in -isc- (capire, finire) fanno il participio regolare: capito, finito.'
+        ],
+        exception: 'Moltissimi verbi in -ERE hanno un participio irregolare: fare → <b>fatto</b>, dire → <b>detto</b>, vedere → <b>visto</b>, prendere → <b>preso</b>, leggere → <b>letto</b>, scrivere → <b>scritto</b>. Vedi la tabella dei 25 irregolari.'
+      },
+      {
+        title: 'Passo 2 — scegliere l\'ausiliare: la regola del movimento e del cambiamento',
+        body: 'Circa il 75% dei verbi usa <b>avere</b>. Usano <b>essere</b>: i verbi di movimento, i verbi di cambiamento di stato, i verbi riflessivi e alcuni verbi di "stare".',
+        points: [
+          '<b>AVERE</b>: verbi transitivi, cioè con un oggetto → "Ho mangiato <i>la pizza</i>", "Ho visto <i>un film</i>", "Ho letto <i>il libro</i>".',
+          '<b>ESSERE — movimento</b>: andare, venire, tornare, partire, arrivare, entrare, uscire, salire, scendere, cadere.',
+          '<b>ESSERE — cambiamento/stato</b>: nascere, morire, diventare, crescere, restare, rimanere, stare, essere.',
+          '<b>ESSERE — riflessivi</b>: mi sono alzato, ti sei lavato, ci siamo divertiti (lezione 6).',
+          'Test rapido: se puoi mettere un oggetto diretto dopo il verbo ("mangio <i>cosa?</i>"), l\'ausiliare è avere.'
+        ],
+        exception: 'Alcuni verbi cambiano ausiliare secondo l\'uso: "Ho corso 10 km" (attività) vs "Sono corso a casa" (movimento verso un luogo). Anche: "Ho cominciato il libro" vs "Il film è cominciato".'
+      },
+      {
+        title: 'Passo 3 — l\'accordo del participio',
+        body: 'Questa è la regola che distingue chi ha capito il sistema da chi va a memoria.',
+        points: [
+          'Con <b>AVERE</b>: il participio finisce sempre in <b>-o</b>, non cambia mai. "Anna ha mangiato", "I ragazzi hanno mangiato".',
+          'Con <b>ESSERE</b>: il participio concorda con il soggetto come un aggettivo → <b>-o</b> (m. sing.), <b>-a</b> (f. sing.), <b>-i</b> (m. plur. o misto), <b>-e</b> (f. plur.).',
+          'Marco è andat<b>o</b> · Anna è andat<b>a</b> · I ragazzi sono andat<b>i</b> · Le ragazze sono andat<b>e</b>.',
+          'Gruppo misto (uomini + donne) → maschile plurale: "Marco e Anna sono andat<b>i</b>".'
+        ],
+        exception: 'Con avere il participio concorda solo se prima c\'è un pronome oggetto diretto (lo, la, li, le): "La pizza? L\'ho mangiat<b>a</b>". È materia B1, ma si sente spessissimo.'
+      },
+      {
+        title: 'Negazione e avverbi: dove vanno?',
+        body: 'La posizione delle parole in un tempo composto è fissa.',
+        points: [
+          'Negazione: <b>NON + ausiliare + participio</b> → "Non ho capito", "Non sono andato".',
+          'Avverbi brevi (già, mai, ancora, sempre, più, appena) vanno <b>tra ausiliare e participio</b> → "Ho <b>già</b> mangiato", "Non sono <b>mai</b> stato in Italia".',
+          'Avverbi lunghi vanno dopo il participio → "Ho mangiato velocemente".'
+        ],
+        exception: '"Non ho mai" richiede la doppia negazione: in italiano "non… mai" è corretto e obbligatorio, a differenza dell\'inglese.'
+      },
+      {
+        title: 'Le parole-segnale del passato',
+        body: 'Certe espressioni ti dicono immediatamente che serve il passato prossimo.',
+        points: [
+          '<b>ieri</b>, <b>ieri sera</b>, <b>l\'altro ieri</b>',
+          '<b>la settimana scorsa</b>, <b>il mese scorso</b>, <b>l\'anno scorso</b>, <b>sabato scorso</b>',
+          '<b>due giorni fa</b>, <b>tre anni fa</b> (fa = ago, sempre dopo il periodo)',
+          '<b>stamattina</b>, <b>poco fa</b>, <b>già</b>, <b>appena</b>, <b>non… ancora</b>'
+        ],
+        exception: '"Fa" va sempre dopo l\'espressione di tempo: "due ore fa", mai "fa due ore".'
+      }
+    ],
+
+    timeline: {
+      title: 'Dove si colloca il passato prossimo',
+      intro: 'Il passato prossimo indica un\'azione conclusa. Se l\'azione continua ancora, serve il presente + da (lezione 3).',
+      points: [
+        { time: '3 anni fa', label: 'Passato prossimo', example: 'Sono arrivato in Italia tre anni fa.', note: 'punto concluso' },
+        { time: 'Ieri', label: 'Passato prossimo', example: 'Ieri ho lavorato molto.', note: 'azione finita' },
+        { time: 'Adesso', label: 'Presente', example: 'Adesso lavoro da casa.', now: true },
+        { time: 'Da 3 anni → ora', label: 'Presente + da', example: 'Vivo in Italia da tre anni.', note: 'NON passato: continua!' }
+      ],
+      caption: 'Confronto chiave: "Sono arrivato tre anni fa" (evento concluso) vs "Vivo qui da tre anni" (situazione ancora vera).'
+    },
+
+    tables: [
+      {
+        title: 'Participi regolari: le tre desinenze',
+        columns: ['Infinito', 'Gruppo', 'Participio', 'Esempio'],
+        rows: [
+          { cells: ['parlare', '-are', 'parlato', 'Ho parlato con Marco.'] },
+          { cells: ['mangiare', '-are', 'mangiato', 'Abbiamo mangiato bene.'] },
+          { cells: ['credere', '-ere', 'creduto', 'Non ci ho creduto.'] },
+          { cells: ['vendere', '-ere', 'venduto', 'Hanno venduto la casa.'] },
+          { cells: ['dormire', '-ire', 'dormito', 'Ho dormito otto ore.'] },
+          { cells: ['capire', '-ire (isc)', 'capito', 'Non ho capito.'] },
+          { cells: ['finire', '-ire (isc)', 'finito', 'Ho finito il lavoro.'] }
+        ]
+      },
+      {
+        title: 'I 25 participi irregolari più usati (impara questi!)',
+        note: 'Quasi tutti sono verbi in -ere. Vale la pena impararli a coppie.',
+        columns: ['Infinito', 'Participio', 'Esempio'],
+        rows: [
+          { cells: ['fare', 'fatto', 'Ho fatto colazione.'], irregular: [1] },
+          { cells: ['dire', 'detto', 'Ho detto la verità.'], irregular: [1] },
+          { cells: ['vedere', 'visto', 'Ho visto un film.'], irregular: [1] },
+          { cells: ['prendere', 'preso', 'Ho preso il treno.'], irregular: [1] },
+          { cells: ['leggere', 'letto', 'Ho letto il giornale.'], irregular: [1] },
+          { cells: ['scrivere', 'scritto', 'Ho scritto un\'email.'], irregular: [1] },
+          { cells: ['bere', 'bevuto', 'Ho bevuto un caffè.'], irregular: [1] },
+          { cells: ['aprire', 'aperto', 'Ho aperto la finestra.'], irregular: [1] },
+          { cells: ['chiudere', 'chiuso', 'Ho chiuso la porta.'], irregular: [1] },
+          { cells: ['mettere', 'messo', 'Ho messo le chiavi qui.'], irregular: [1] },
+          { cells: ['perdere', 'perso', 'Ho perso il treno.'], irregular: [1] },
+          { cells: ['chiedere', 'chiesto', 'Ho chiesto informazioni.'], irregular: [1] },
+          { cells: ['rispondere', 'risposto', 'Non ha risposto.'], irregular: [1] },
+          { cells: ['rimanere', 'rimasto', 'Sono rimasto a casa.'], irregular: [1] },
+          { cells: ['venire', 'venuto', 'È venuto ieri.'], irregular: [1] },
+          { cells: ['scegliere', 'scelto', 'Ho scelto questo.'], irregular: [1] },
+          { cells: ['vincere', 'vinto', 'Abbiamo vinto!'], irregular: [1] },
+          { cells: ['spegnere', 'spento', 'Ho spento la luce.'], irregular: [1] },
+          { cells: ['offrire', 'offerto', 'Mi ha offerto il caffè.'], irregular: [1] },
+          { cells: ['succedere', 'successo', 'Che cosa è successo?'], irregular: [1] },
+          { cells: ['nascere', 'nato', 'Sono nato a Teheran.'], irregular: [1] },
+          { cells: ['morire', 'morto', 'Il gatto è morto.'], irregular: [1] },
+          { cells: ['vivere', 'vissuto', 'Ho vissuto a Roma.'], irregular: [1] },
+          { cells: ['conoscere', 'conosciuto', 'L\'ho conosciuto a scuola.'], irregular: [1] },
+          { cells: ['essere', 'stato', 'Sono stato a Milano.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'ESSERE o AVERE? La lista dei verbi con ESSERE',
+        note: 'Se il verbo non è in questa lista (e non è riflessivo), quasi sicuramente vuole avere.',
+        columns: ['Categoria', 'Verbi', 'Esempio'],
+        rows: [
+          { cells: ['Movimento', 'andare, venire, tornare, arrivare, partire', 'Sono andato a Roma.'] },
+          { cells: ['Entrata/uscita', 'entrare, uscire, salire, scendere', 'Siamo usciti alle otto.'] },
+          { cells: ['Stare fermi', 'stare, restare, rimanere', 'Sono rimasta a casa.'] },
+          { cells: ['Vita', 'nascere, morire, crescere, diventare', 'È nata nel 1995.'] },
+          { cells: ['Cadere/piacere', 'cadere, piacere, costare, sembrare', 'Mi è piaciuto il film.'] },
+          { cells: ['Riflessivi', 'alzarsi, lavarsi, svegliarsi…', 'Mi sono alzato presto.'] },
+          { cells: ['Essere stesso', 'essere', 'Sono stato malato.'] }
+        ]
+      },
+      {
+        title: 'Accordo del participio con ESSERE',
+        note: 'Con avere niente accordo: il participio resta in -o.',
+        columns: ['Soggetto', 'Frase', 'Finale'],
+        rows: [
+          { cells: ['Marco (m. sing.)', 'Marco è andato al bar.', '-o'], irregular: [2] },
+          { cells: ['Anna (f. sing.)', 'Anna è andata al bar.', '-a'], irregular: [2] },
+          { cells: ['I ragazzi (m. plur.)', 'I ragazzi sono andati al bar.', '-i'], irregular: [2] },
+          { cells: ['Le ragazze (f. plur.)', 'Le ragazze sono andate al bar.', '-e'], irregular: [2] },
+          { cells: ['Marco e Anna (misto)', 'Marco e Anna sono andati al bar.', '-i (masch.)'], irregular: [2] }
+        ]
+      },
+      {
+        title: 'Parole-segnale del passato',
+        columns: ['Espressione', 'Inglese', 'Esempio'],
+        rows: [
+          { cells: ['ieri', 'yesterday', 'Ieri ho studiato.'] },
+          { cells: ['ieri sera', 'last night', 'Ieri sera sono uscito.'] },
+          { cells: ['la settimana scorsa', 'last week', 'La settimana scorsa ho lavorato molto.'] },
+          { cells: ['il mese / l\'anno scorso', 'last month / year', 'L\'anno scorso sono andato in Italia.'] },
+          { cells: ['due giorni fa', 'two days ago', 'Due giorni fa ho visto Marco.'] },
+          { cells: ['stamattina', 'this morning', 'Stamattina ho fatto colazione tardi.'] },
+          { cells: ['già', 'already', 'Ho già mangiato.'] },
+          { cells: ['non… ancora', 'not yet', 'Non ho ancora finito.'] },
+          { cells: ['appena', 'just', 'Sono appena arrivato.'] },
+          { cells: ['non… mai', 'never', 'Non sono mai stato in Cina.'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Ieri ho mangiato una pizza buonissima.', literal: 'Yesterday I-have eaten a pizza very-good.', natural: 'Yesterday I ate a delicious pizza.', note: 'mangiare è transitivo (mangio cosa? la pizza) → avere. Participio invariabile.' },
+      { it: 'Sono andato al supermercato.', literal: 'I-am gone to-the supermarket.', natural: 'I went to the supermarket.', note: 'andare = movimento → essere. Parla un uomo: andato.' },
+      { it: 'Anna è andata al cinema.', literal: 'Anna is gone to-the cinema.', natural: 'Anna went to the cinema.', note: 'Con essere il participio concorda: Anna → andata.' },
+      { it: 'Marco e Luca sono usciti alle nove.', literal: 'Marco and Luca are gone-out at-the nine.', natural: 'Marco and Luca went out at nine.', note: 'Plurale maschile → usciti.' },
+      { it: 'Le mie amiche sono arrivate tardi.', literal: 'The my friends(f) are arrived late.', natural: 'My friends arrived late.', note: 'Plurale femminile → arrivate.' },
+      { it: 'Abbiamo visto un bel film.', literal: 'We-have seen a nice film.', natural: 'We saw a good film.', note: 'vedere ha il participio irregolare: visto.' },
+      { it: 'Non ho capito, puoi ripetere?', literal: 'Not I-have understood, can-you repeat?', natural: "I didn't understand, can you repeat?", note: 'NON va prima dell\'ausiliare. capire → capito (regolare).' },
+      { it: 'Che cosa hai fatto ieri sera?', literal: 'What thing you-have done yesterday evening?', natural: 'What did you do last night?', note: 'fare → fatto. Domanda base di ogni conversazione.' },
+      { it: 'Ho già bevuto tre caffè oggi.', literal: 'I-have already drunk three coffees today.', natural: "I've already had three coffees today.", note: '"già" va tra ausiliare e participio. bere → bevuto.' },
+      { it: 'Non sono mai stato in Giappone.', literal: 'Not I-am never been in Japan.', natural: "I've never been to Japan.", note: 'essere → stato. La doppia negazione "non… mai" è obbligatoria.' },
+      { it: 'Sono nata a Teheran nel 1995.', literal: 'I-am born in Tehran in-the 1995.', natural: 'I was born in Tehran in 1995.', note: 'nascere → nato/nata, con essere. Parla una donna.' },
+      { it: 'Ho perso il treno delle otto.', literal: 'I-have lost the train of-the eight.', natural: 'I missed the eight o\'clock train.', note: 'perdere → perso. "Perdere il treno" = to miss the train.' },
+      { it: 'Siamo rimasti a casa tutto il weekend.', literal: 'We-are remained at home all the weekend.', natural: 'We stayed home all weekend.', note: 'rimanere → rimasto, con essere.' },
+      { it: 'Mi ha scritto un messaggio stamattina.', literal: 'To-me he-has written a message this-morning.', natural: 'He wrote me a message this morning.', note: 'scrivere → scritto. Il pronome "mi" va prima dell\'ausiliare.' },
+      { it: 'Tre anni fa ho cominciato a studiare italiano.', literal: 'Three years ago I-have begun to to-study Italian.', natural: 'Three years ago I started studying Italian.', note: '"fa" segue sempre il periodo. cominciare A + infinito (lezione 9).' },
+      { it: 'Il film è cominciato alle nove.', literal: 'The film is begun at-the nine.', natural: 'The film started at nine.', note: 'Stesso verbo, ausiliare diverso: qui non c\'è oggetto, il film "si muove" da solo → essere.' },
+      { it: 'Sei stata brava, complimenti!', literal: 'You-are been good, compliments!', natural: 'You did great, well done!', note: 'essere → stato/stata. Rivolto a una donna: stata + brava.' },
+      { it: 'Non abbiamo ancora deciso dove andare.', literal: 'Not we-have yet decided where to-go.', natural: "We haven't decided where to go yet.", note: '"ancora" tra ausiliare e participio. decidere → deciso.' },
+      { it: 'Che cosa è successo?', literal: 'What thing is happened?', natural: 'What happened?', note: 'succedere → successo, con essere. Espressione utilissima.' },
+      { it: 'L\'anno scorso siamo stati in Sicilia.', literal: 'The year past we-are been in Sicily.', natural: 'Last year we went to Sicily.', note: '"essere stato in + luogo" = to have been to a place.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Ho andato al cinema.', right: 'Sono andato al cinema.', why: 'Andare è un verbo di movimento: vuole sempre essere. È l\'errore n°1 degli studenti stranieri.' },
+      { wrong: 'Maria è andato a Roma.', right: 'Maria è andata a Roma.', why: 'Con l\'ausiliare essere il participio concorda col soggetto: Maria è femminile → andata.' },
+      { wrong: 'Maria ha mangiata la pizza.', right: 'Maria ha mangiato la pizza.', why: 'Con avere il participio NON concorda mai col soggetto: resta in -o.' },
+      { wrong: 'Ho mangiare una pizza.', right: 'Ho mangiato una pizza.', why: 'Serve il participio passato, non l\'infinito.' },
+      { wrong: 'Sono avuto un problema.', right: 'Ho avuto un problema.', why: 'Avere usa se stesso come ausiliare: ho avuto.' },
+      { wrong: 'Ho stato a Milano.', right: 'Sono stato a Milano.', why: 'Essere usa se stesso come ausiliare: sono stato.' },
+      { wrong: 'Ieri ho vedere Marco.', right: 'Ieri ho visto Marco.', why: 'Il participio di vedere è irregolare: visto.' },
+      { wrong: 'Non ho mangiato mai il sushi.', right: 'Non ho mai mangiato il sushi.', why: 'Gli avverbi brevi (mai, già, ancora, appena) vanno tra ausiliare e participio.' },
+      { wrong: 'Vivo in Italia da tre anni fa.', right: 'Vivo in Italia da tre anni.', why: '"Fa" indica un punto concluso nel passato; con "da" e il presente l\'azione continua.' },
+      { wrong: 'Le ragazze sono andati al mare.', right: 'Le ragazze sono andate al mare.', why: 'Femminile plurale → -e.' }
+    ],
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Ieri ___ una pizza.»', options: ['sono mangiato', 'ho mangiato', 'ho mangiata', 'ho mangiare'], answer: 1, hint: 'mangiare ha un oggetto', why: 'Verbo transitivo → avere, participio invariabile.' },
+        { q: 'Completa: «Anna ___ al mercato.»', options: ['ha andato', 'è andato', 'è andata', 'ha andata'], answer: 2, hint: 'andare + accordo femminile', why: 'andare → essere, e il participio concorda con Anna.' },
+        { q: 'Participio di "fare":', options: ['fatto', 'facuto', 'fato', 'fasto'], answer: 0, hint: 'irregolare', why: 'fare → fatto.' },
+        { q: 'Participio di "prendere":', options: ['prendito', 'prenduto', 'preso', 'presto'], answer: 2, hint: 'irregolare in -so', why: 'prendere → preso.' },
+        { q: 'Completa: «Noi ___ a casa tutto il giorno.» (rimanere)', options: ['abbiamo rimasto', 'siamo rimasti', 'siamo rimasto', 'abbiamo rimasti'], answer: 1, hint: 'rimanere vuole essere', why: 'essere + rimasti (plurale).' },
+        { q: 'Quale frase è corretta?', options: ['Non ho mangiato mai il sushi.', 'Non mai ho mangiato il sushi.', 'Non ho mai mangiato il sushi.', 'Mai non ho mangiato il sushi.'], answer: 2, hint: 'dove va "mai"?', why: 'Gli avverbi brevi stanno tra ausiliare e participio.' },
+        { q: 'Completa: «Le ragazze sono ___ tardi.» (arrivare)', options: ['arrivato', 'arrivati', 'arrivate', 'arrivata'], answer: 2, hint: 'femminile plurale', why: 'Con essere: -e per il femminile plurale.' },
+        { q: 'Come si dice "I have been to Rome"?', options: ['Ho stato a Roma.', 'Sono stato a Roma.', 'Ho essuto a Roma.', 'Sono essuto a Roma.'], answer: 1, hint: 'essere è ausiliare di se stesso', why: 'sono + stato.' },
+        { q: 'Completa: «Che cosa ___ ieri sera?»', options: ['sei fatto', 'hai fatto', 'hai fare', 'hai fatta'], answer: 1, hint: 'fare è transitivo', why: 'fare → avere + fatto.' },
+        { q: 'Quale verbo vuole ESSERE?', options: ['mangiare', 'leggere', 'nascere', 'comprare'], answer: 2, hint: 'cambiamento di stato', why: 'nascere → sono nato/nata.' },
+        { q: 'Completa: «Non ___ ancora finito il lavoro.»', options: ['sono', 'ho', 'hai', 'è'], answer: 1, hint: 'finire è transitivo qui', why: 'ho finito; "ancora" sta in mezzo.' },
+        { q: '«Due giorni ___ ho visto Marco.»', options: ['fa', 'scorso', 'da', 'prima'], answer: 0, hint: '= ago', why: '"fa" segue sempre l\'espressione di tempo.' }
+      ],
+      fill: [
+        { before: 'Ieri (io)', after: 'studiato tutto il giorno.', answers: ['ho'], en: 'Yesterday I studied all day.' },
+        { before: 'Marco', after: 'andato a Milano.', answers: ['è', 'e'], en: 'Marco went to Milan.' },
+        { before: 'Anna è', after: 'a Firenze. (andare)', answers: ['andata'], en: 'Anna went to Florence.', hint: 'accordo femminile' },
+        { before: 'Noi abbiamo', after: 'un bel film. (vedere)', answers: ['visto'], en: 'We saw a nice film.', hint: 'participio irregolare' },
+        { before: 'Loro sono', after: 'alle otto. (uscire)', answers: ['usciti', 'uscite'], en: 'They went out at eight.' },
+        { before: 'Non ho', after: 'la domanda. (capire)', answers: ['capito'], en: "I didn't understand the question." },
+        { before: 'Che cosa hai', after: '? (dire)', answers: ['detto'], en: 'What did you say?', hint: 'irregolare' },
+        { before: 'Ho', after: 'il treno delle sette. (perdere)', answers: ['perso'], en: 'I missed the seven o\'clock train.' },
+        { before: 'Sono', after: 'a Teheran. (nascere)', answers: ['nato', 'nata'], en: 'I was born in Tehran.' },
+        { before: 'Tre anni', after: 'ho cominciato a studiare.', answers: ['fa'], en: 'Three years ago I started studying.' }
+      ],
+      order: [
+        { words: ['Ieri', 'ho', 'mangiato', 'una', 'pizza'], answer: 'Ieri ho mangiato una pizza', en: 'Yesterday I ate a pizza.' },
+        { words: ['Anna', 'è', 'andata', 'al', 'cinema'], answer: 'Anna è andata al cinema', en: 'Anna went to the cinema.' },
+        { words: ['Non', 'ho', 'mai', 'visto', 'questo', 'film'], answer: 'Non ho mai visto questo film', en: "I've never seen this film.", hint: '"mai" tra ausiliare e participio' },
+        { words: ['Le', 'ragazze', 'sono', 'arrivate', 'tardi'], answer: 'Le ragazze sono arrivate tardi', en: 'The girls arrived late.' },
+        { words: ['Che', 'cosa', 'hai', 'fatto', 'ieri', 'sera'], answer: 'Che cosa hai fatto ieri sera', en: 'What did you do last night?' },
+        { words: ['Siamo', 'rimasti', 'a', 'casa', 'tutto', 'il', 'giorno'], answer: 'Siamo rimasti a casa tutto il giorno', en: 'We stayed home all day.' }
+      ],
+      dnd: {
+        instructions: 'Questi verbi al passato prossimo vogliono ESSERE o AVERE? Trascinali.',
+        buckets: [
+          { id: 'essere', label: 'ESSERE (sono…)', icon: '🟢' },
+          { id: 'avere', label: 'AVERE (ho…)', icon: '🔵' }
+        ],
+        items: [
+          { text: 'andare', bucket: 'essere' },
+          { text: 'mangiare', bucket: 'avere' },
+          { text: 'venire', bucket: 'essere' },
+          { text: 'vedere', bucket: 'avere' },
+          { text: 'partire', bucket: 'essere' },
+          { text: 'leggere', bucket: 'avere' },
+          { text: 'nascere', bucket: 'essere' },
+          { text: 'comprare', bucket: 'avere' },
+          { text: 'uscire', bucket: 'essere' },
+          { text: 'scrivere', bucket: 'avere' },
+          { text: 'rimanere', bucket: 'essere' },
+          { text: 'bere', bucket: 'avere' },
+          { text: 'tornare', bucket: 'essere' },
+          { text: 'fare', bucket: 'avere' }
+        ]
+      },
+      match: [
+        { a: 'fare', b: 'fatto' },
+        { a: 'dire', b: 'detto' },
+        { a: 'vedere', b: 'visto' },
+        { a: 'prendere', b: 'preso' },
+        { a: 'leggere', b: 'letto' },
+        { a: 'scrivere', b: 'scritto' },
+        { a: 'aprire', b: 'aperto' },
+        { a: 'chiudere', b: 'chiuso' },
+        { a: 'essere', b: 'stato' },
+        { a: 'nascere', b: 'nato' }
+      ],
+      tf: [
+        { statement: 'Con l\'ausiliare avere il participio concorda con il soggetto.', answer: false, why: 'No: con avere il participio resta in -o. "Anna ha mangiato".' },
+        { statement: 'Con l\'ausiliare essere il participio concorda con il soggetto.', answer: true, why: 'Sì: Anna è andata, le ragazze sono andate.' },
+        { statement: 'I verbi di movimento usano essere.', answer: true, why: 'Sì: andare, venire, partire, arrivare, uscire, tornare.' },
+        { statement: 'Il participio di "vedere" è "veduto" e basta.', answer: false, why: '"Veduto" esiste ma è raro e letterario: si dice "visto".' },
+        { statement: '«Non ho mai mangiato» è corretto.', answer: true, why: 'Sì: la doppia negazione "non… mai" è obbligatoria in italiano.' },
+        { statement: 'Si dice «Vivo qui da tre anni fa».', answer: false, why: 'No: o "da tre anni" (presente) o "sono arrivato tre anni fa" (passato).' },
+        { statement: 'Essere e avere usano se stessi come ausiliari: sono stato, ho avuto.', answer: true, why: 'Esatto.' },
+        { statement: 'Un gruppo misto di uomini e donne prende il participio femminile plurale.', answer: false, why: 'No: prende il maschile plurale → "Marco e Anna sono andati".' }
+      ],
+      translate: [
+        { en: 'Yesterday I worked a lot.', answers: ['Ieri ho lavorato molto', 'Ieri ho lavorato tanto'] },
+        { en: 'Anna went to Rome.', answers: ['Anna è andata a Roma'], hint: 'attenzione all\'accordo' },
+        { en: "I didn't understand.", answers: ['Non ho capito', 'Io non ho capito'] },
+        { en: 'We saw a beautiful film.', answers: ['Abbiamo visto un bel film', 'Abbiamo visto un film bellissimo'] },
+        { en: "I've never been to Italy.", answers: ['Non sono mai stato in Italia', 'Non sono mai stata in Italia'] },
+        { en: 'What did you do last night?', answers: ['Che cosa hai fatto ieri sera', 'Cosa hai fatto ieri sera', 'Che hai fatto ieri sera'] },
+        { en: 'They arrived two hours ago.', answers: ['Sono arrivati due ore fa', 'Sono arrivate due ore fa'] },
+        { en: 'I was born in Tehran.', answers: ['Sono nato a Teheran', 'Sono nata a Teheran'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Com\'è andato il weekend?',
+      lines: [
+        { speaker: 'Paolo', icon: '🧑', it: 'Ciao Leila! Com\'è andato il weekend?', en: 'Hi Leila! How was your weekend?',
+          glosses: [{ term: 'è andato', expl: 'andare → essere + andato. Il soggetto è "il weekend" (maschile).' }] },
+        { speaker: 'Leila', icon: '👩', side: 'right', it: 'Benissimo! Sono andata al mare con delle amiche.', en: 'Great! I went to the seaside with some friends.',
+          glosses: [{ term: 'Sono andata', expl: 'Verbo di movimento → essere; parla una donna → andata.' }] },
+        { speaker: 'Paolo', icon: '🧑', it: 'Che bello! E che cosa avete fatto?', en: 'How nice! And what did you do?',
+          glosses: [{ term: 'avete fatto', expl: 'fare è transitivo → avere. Participio irregolare: fatto.' }] },
+        { speaker: 'Leila', icon: '👩', side: 'right', it: 'Abbiamo nuotato, poi abbiamo mangiato del pesce buonissimo.', en: 'We swam, then we ate some really good fish.',
+          glosses: [{ term: 'Abbiamo nuotato', expl: 'nuotare → avere (attività, non spostamento verso un luogo).' }, { term: 'abbiamo mangiato', expl: 'Con avere il participio non cambia mai, anche se il soggetto è femminile plurale.' }] },
+        { speaker: 'Paolo', icon: '🧑', it: 'Io invece sono rimasto a casa: non sono uscito per niente.', en: "I stayed home instead: I didn't go out at all.",
+          glosses: [{ term: 'sono rimasto', expl: 'rimanere → essere. Participio irregolare: rimasto.' }, { term: 'non sono uscito', expl: 'La negazione va prima dell\'ausiliare.' }] },
+        { speaker: 'Leila', icon: '👩', side: 'right', it: 'Perché? È successo qualcosa?', en: 'Why? Did something happen?',
+          glosses: [{ term: 'È successo', expl: 'succedere → essere. Participio: successo.' }] },
+        { speaker: 'Paolo', icon: '🧑', it: 'Ho preso l\'influenza. Ho dormito quasi tutto il sabato.', en: 'I caught the flu. I slept almost all Saturday.',
+          glosses: [{ term: 'Ho preso', expl: 'prendere → preso (irregolare), con avere.' }, { term: 'Ho dormito', expl: 'dormire → dormito, regolare in -ito. Non è movimento → avere.' }] },
+        { speaker: 'Leila', icon: '👩', side: 'right', it: 'Mi dispiace! Sei già stato dal medico?', en: "I'm sorry! Have you already been to the doctor?",
+          glosses: [{ term: 'Sei già stato', expl: 'essere → stato; "già" sta tra ausiliare e participio.' }] },
+        { speaker: 'Paolo', icon: '🧑', it: 'Non ancora, ma ieri ho comprato delle medicine.', en: 'Not yet, but yesterday I bought some medicine.',
+          glosses: [{ term: 'ho comprato', expl: 'comprare è transitivo → avere.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'ho + participio', back: 'passato prossimo con AVERE', note: 'verbi transitivi: ho mangiato, ho visto' },
+      { front: 'sono + participio (concordato)', back: 'passato prossimo con ESSERE', note: 'movimento/cambiamento: sono andato/a' },
+      { front: '-are → ?', back: '-ato (parlato)' },
+      { front: '-ere → ?', back: '-uto (creduto)' },
+      { front: '-ire → ?', back: '-ito (dormito)' },
+      { front: 'fare / dire / vedere', back: 'fatto / detto / visto' },
+      { front: 'prendere / leggere / scrivere', back: 'preso / letto / scritto' },
+      { front: 'aprire / chiudere / mettere', back: 'aperto / chiuso / messo' },
+      { front: 'essere / nascere / rimanere', back: 'stato / nato / rimasto' },
+      { front: 'Anna è andat__', back: 'Anna è andata', note: 'con essere il participio concorda' },
+      { front: 'Anna ha mangiat__', back: 'Anna ha mangiato', note: 'con avere NON concorda' },
+      { front: 'Non ho mai…', back: "I've never…", note: 'avverbio tra ausiliare e participio' },
+      { front: 'due giorni fa', back: 'two days ago', note: '"fa" sempre dopo il periodo' }
+    ],
+
+    summary: {
+      formula: 'Soggetto + [ho/hai/ha/abbiamo/avete/hanno] oppure [sono/sei/è/siamo/siete/sono] + PARTICIPIO PASSATO',
+      rules: [
+        'Participio regolare: -are → -ato, -ere → -uto, -ire → -ito.',
+        'AVERE per i verbi transitivi (con oggetto): il participio non cambia mai.',
+        'ESSERE per movimento, cambiamento di stato e riflessivi: il participio concorda col soggetto (-o/-a/-i/-e).',
+        'Essere e avere sono ausiliari di se stessi: sono stato, ho avuto.',
+        'Negazione: NON + ausiliare + participio. Avverbi brevi (già, mai, ancora, appena) tra ausiliare e participio.',
+        'Parole-segnale: ieri, la settimana scorsa, due giorni fa, stamattina, già, non ancora.',
+        'Azione ancora in corso → NON passato, ma presente + da: "Vivo qui da tre anni".'
+      ],
+      tips: [
+        'Vocali del participio: A-U-I. parlAto, credUto, dormIto.',
+        'Per l\'ausiliare chiediti: "il verbo ha un oggetto?" Sì → avere. È un movimento o un cambiamento? → essere.',
+        'La casetta della memoria: i verbi con ESSERE sono quelli che descrivono un corpo che si sposta o cambia (andare, venire, entrare, uscire, nascere, morire, diventare).',
+        'Impara i participi irregolari a coppie di suono: fatto/detto, preso/messo, visto/chiesto, letto/scritto.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

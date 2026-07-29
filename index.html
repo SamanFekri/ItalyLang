@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Impara l'italiano livello per livello: grammatica interattiva, esercizi, flashcard e vocabolario.">
+  <title>Italiano Interattivo · Scegli il tuo livello</title>
+  <link rel="stylesheet" href="assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Vue 3 (global build — includes the template compiler) -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+  <!-- The root page shows the A2 course, so it loads the A2 lesson index -->
+  <script>
+    window.ITA_LEVEL = 'A2';
+    window.ITA_PATHS = { home: 'A2/index.html', levels: 'index.html', base: 'A2/' };
+  </script>
+  <script src="A2/lessons.js?v=8"></script>
+  <script src="assets/app.js?v=8"></script>
+  <script src="assets/components.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     Root landing page — the level picker.
+     New levels (A1, B1, …) only need a folder + an entry in LEVELS below.
+     ========================================================================== */
+  const LEVELS = [
+    {
+      code: 'A2', title: 'Elementare', href: 'A2/index.html', icon: '🚀',
+      status: 'ready',
+      blurb: 'Sintassi dei verbi italiani: essere, avere, presente, modali, passato prossimo, riflessivi, piacere, gerundio, preposizioni, imperativo — con 200 parole tradotte anche in farsi.',
+      points: ['17 lezioni complete', '250+ esempi tradotti', '7 tipi di esercizi', '200 parole IT · EN · فارسی']
+    },
+    { code: 'A1', title: 'Principiante', href: '#', icon: '🌱', status: 'soon',
+      blurb: 'Primi passi: alfabeto, articoli, nomi, numeri, presentarsi.', points: ['In arrivo'] },
+    { code: 'B1', title: 'Intermedio', href: '#', icon: '🧗', status: 'soon',
+      blurb: 'Imperfetto, futuro, congiuntivo, periodo ipotetico.', points: ['In arrivo'] }
+  ];
+
+  const { store, coursePct, completedCount, level } = ITA;
+
+  ITA.createPage({
+    data: () => ({ store, levels: LEVELS, lessons: ITA.lessons }),
+    computed: {
+      pct() { return coursePct.value; },
+      done() { return completedCount.value; },
+      lvl() { return level.value; }
+    },
+    methods: {
+      reset() {
+        if (confirm('Vuoi davvero azzerare XP, serie e progressi?')) {
+          store.xp = 0; store.streak = 0; store.completed = {}; store.scores = {};
+          store.bookmarks = []; store.favorites = []; store.known = {};
+          ITA.toast('Progressi azzerati');
+        }
+      }
+    },
+    template: `
+      <a class="skip-link" href="#main">Vai al contenuto</a>
+      <site-header current="index.html"></site-header>
+
+      <main id="main" class="container">
+        <header class="hero animate-in">
+          <p class="card-kicker" style="color:rgba(255,255,255,.85)">Corso interattivo di italiano</p>
+          <h1>Impara l'italiano, un livello alla volta 🇮🇹</h1>
+          <p>Grammatica spiegata da zero, esempi con traduzione letterale e naturale, esercizi corretti
+             automaticamente, flashcard e vocabolario. Tutto nel browser, senza registrazione.</p>
+          <div class="hero-stats">
+            <div class="hero-stat"><b>{{ store.xp }}</b><span>XP totali</span></div>
+            <div class="hero-stat"><b>{{ lvl }}</b><span>livello utente</span></div>
+            <div class="hero-stat"><b>{{ store.streak }} 🔥</b><span>giorni di fila</span></div>
+            <div class="hero-stat"><b>{{ done }}/{{ lessons.length }}</b><span>lezioni A2</span></div>
+          </div>
+        </header>
+
+        <section class="card">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">📈</span>
+            <div><p class="card-kicker">Il tuo percorso</p><h2 style="font-size:1.2rem">Progresso del corso A2</h2></div>
+          </div>
+          <progress-bar :value="pct" label="Lezioni completate" :right="pct + '%'"></progress-bar>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="A2/index.html">▶ Continua il corso A2</a>
+            <a class="btn btn-ghost" href="A2/16-vocabolario-200.html">🇮🇷 200 parole con فارسی</a>
+            <a class="btn btn-ghost" href="verbi.html">🔀 Verbi irregolari</a>
+            <button class="btn btn-ghost" @click="reset">↻ Azzera i progressi</button>
+          </div>
+        </section>
+
+        <h2 style="margin:28px 0 14px">Scegli il livello</h2>
+        <div class="grid grid-lessons">
+          <a v-for="l in levels" :key="l.code" class="lesson-card"
+             :href="l.status === 'ready' ? l.href : null"
+             :style="l.status !== 'ready' ? 'opacity:.6;cursor:not-allowed' : ''"
+             :aria-disabled="String(l.status !== 'ready')">
+            <div class="lc-top">
+              <span class="lc-icon" aria-hidden="true">{{ l.icon }}</span>
+              <h3>{{ l.code }} — {{ l.title }}</h3>
+              <span class="lc-num">{{ l.status === 'ready' ? 'Disponibile' : 'Presto' }}</span>
+            </div>
+            <p>{{ l.blurb }}</p>
+            <ul class="small muted" style="margin:6px 0 0;padding-left:1.1em">
+              <li v-for="p in l.points" :key="p">{{ p }}</li>
+            </ul>
+          </a>
+        </div>
+
+        <section class="card" style="margin-top:26px">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">🧭</span>
+            <div><p class="card-kicker">Come funziona</p><h2 style="font-size:1.2rem">Ogni lezione segue lo stesso percorso</h2></div>
+          </div>
+          <div class="grid grid-3">
+            <div><b>1 · Significato</b><p class="small muted">Che cos'è, quando si usa, perché serve.</p></div>
+            <div><b>2 · Formula</b><p class="small muted">La struttura visiva della frase.</p></div>
+            <div><b>3 · Regola</b><p class="small muted">Regole ed eccezioni, spiegate da zero.</p></div>
+            <div><b>4 · Esempi</b><p class="small muted">Italiano → letterale → naturale → nota.</p></div>
+            <div><b>5 · Errori</b><p class="small muted">❌ sbagliato / ✅ corretto, con il perché.</p></div>
+            <div><b>6 · Pratica</b><p class="small muted">7 tipi di esercizi con correzione automatica.</p></div>
+            <div><b>7 · Riassunto</b><p class="small muted">Formula, regole chiave, trucchi mnemonici.</p></div>
+            <div><b>8 · Ripasso</b><p class="small muted">Flashcard e ripasso casuale.</p></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Italiano Interattivo · costruito con Vue 3 · nessun backend, i progressi restano nel tuo browser.</p>
+      </footer>
+      <toast-host></toast-host>
+    `
+  });
+  </script>
+</body>
+</html>

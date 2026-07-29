@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ripasso generale di grammatica italiana A2: quiz misto su tutte le lezioni, con punteggio e diagnosi degli argomenti da rivedere.">
+  <title>Ripasso Generale · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 17 — RIPASSO GENERALE
+     60 domande a scelta multipla, taggate con la lezione di riferimento.
+     Alla fine il quiz calcola il punteggio per argomento e dice che cosa
+     conviene rivedere.
+     ========================================================================== */
+  const BANK = [
+    /* — 1. Essere — */
+    { t: 1, q: 'Completa: «Noi ___ studenti.»', o: ['siamo', 'siete', 'sono', 'sei'], a: 0, w: 'noi → siamo.' },
+    { t: 1, q: 'Quale frase è corretta?', o: ['Maria è stanco.', 'Maria è stanca.', 'Maria ha stanca.', 'Maria sono stanca.'], a: 1, w: 'Dopo essere l\'aggettivo concorda: Maria → stanca.' },
+    { t: 1, q: 'Completa: «___ due libri sul tavolo.»', o: ['C\'è', 'Ci sono', 'È', 'Sono'], a: 1, w: 'Plurale → ci sono.' },
+    { t: 1, q: 'Come si dice "I am from Tehran"?', o: ['Sono da Teheran.', 'Sono di Teheran.', 'Ho di Teheran.', 'Vengo di Teheran.'], a: 1, w: 'essere DI + città.' },
+
+    /* — 2. Avere — */
+    { t: 2, q: 'Come si dice "I am hungry"?', o: ['Sono fame.', 'Ho fame.', 'Ho la fame.', 'Faccio fame.'], a: 1, w: 'Le sensazioni fisiche usano avere, senza articolo.' },
+    { t: 2, q: 'Completa: «Quanti anni ___ tua sorella?»', o: ['hai', 'ha', 'ho', 'hanno'], a: 1, w: 'lei → ha. L\'età usa avere.' },
+    { t: 2, q: 'Completa: «Ho bisogno ___ aiuto.»', o: ['di', 'a', 'per', '—'], a: 0, w: 'avere bisogno DI.' },
+    { t: 2, q: 'Come si dice "It\'s cold today" (il tempo)?', o: ['Ho freddo oggi.', 'È freddo oggi.', 'Fa freddo oggi.', 'Ha freddo oggi.'], a: 2, w: 'Il clima usa fare.' },
+
+    /* — 3. Presente — */
+    { t: 3, q: 'Completa: «Loro ___ molto bene.» (scrivere)', o: ['scrivano', 'scrivono', 'scrivete', 'scrive'], a: 1, w: '-ere con loro → -ono.' },
+    { t: 3, q: 'Completa: «Io non ___ questa parola.» (capire)', o: ['capo', 'capio', 'capisco', 'capisce'], a: 2, w: 'capire è un verbo -isc-.' },
+    { t: 3, q: 'Completa: «Noi ___ alle sette.» (finire)', o: ['finisciamo', 'finiamo', 'finiscono', 'finite'], a: 1, w: 'Con noi il -isc- sparisce.' },
+    { t: 3, q: 'Completa: «Tu ___ a carte?» (giocare)', o: ['gioci', 'giochi', 'giocchi', 'gioghi'], a: 1, w: '-care prende la h davanti alla i.' },
+    { t: 3, q: 'Come si dice "I have been living here for 3 years"?', o: ['Ho abitato qui da 3 anni.', 'Abito qui da 3 anni.', 'Abitavo qui da 3 anni.', 'Sto abitando qui 3 anni.'], a: 1, w: 'Azione ancora in corso → presente + da.' },
+
+    /* — 4. Modali — */
+    { t: 4, q: 'Quale frase è corretta?', o: ['Devo studio.', 'Devo di studiare.', 'Devo studiare.', 'Devo a studiare.'], a: 2, w: 'Modale + infinito nudo.' },
+    { t: 4, q: 'Al bar, la forma più gentile è:', o: ['Voglio un caffè.', 'Vorrei un caffè.', 'Devo un caffè.', 'Posso caffè.'], a: 1, w: 'Il condizionale "vorrei" è la formula di cortesia.' },
+    { t: 4, q: 'Passato: «Devo andare» (uomo) diventa…', o: ['Ho dovuto andare.', 'Sono dovuto andare.', 'Sono dovuta andare.', 'Sono dovuto andato.'], a: 1, w: 'L\'ausiliare è quello del verbo all\'infinito: andare → essere.' },
+    { t: 4, q: 'Completa: «Noi ___ partire alle otto.»', o: ['dobiamo', 'dobbiamo', 'doviamo', 'devono'], a: 1, w: 'dobbiamo, con due b.' },
+
+    /* — 5. Passato prossimo — */
+    { t: 5, q: 'Completa: «Anna ___ al mercato.»', o: ['ha andato', 'è andato', 'è andata', 'ha andata'], a: 2, w: 'andare → essere; participio concordato con Anna.' },
+    { t: 5, q: 'Participio passato di "prendere":', o: ['prendito', 'prenduto', 'preso', 'presto'], a: 2, w: 'prendere → preso.' },
+    { t: 5, q: 'Quale frase è corretta?', o: ['Non ho mangiato mai il sushi.', 'Non ho mai mangiato il sushi.', 'Non mai ho mangiato il sushi.', 'Mai non ho mangiato il sushi.'], a: 1, w: 'Gli avverbi brevi stanno tra ausiliare e participio.' },
+    { t: 5, q: 'Completa: «Le ragazze sono ___ tardi.» (arrivare)', o: ['arrivato', 'arrivati', 'arrivate', 'arrivata'], a: 2, w: 'Femminile plurale → -e.' },
+    { t: 5, q: 'Come si dice "I have been to Rome"?', o: ['Ho stato a Roma.', 'Sono stato a Roma.', 'Ho essuto a Roma.', 'Ero a Roma.'], a: 1, w: 'Essere è ausiliare di se stesso.' },
+    { t: 5, q: 'Quale verbo vuole ESSERE al passato prossimo?', o: ['mangiare', 'leggere', 'nascere', 'comprare'], a: 2, w: 'nascere = cambiamento di stato → essere.' },
+
+    /* — 6. Riflessivi — */
+    { t: 6, q: 'Quale frase è corretta?', o: ['Ho alzato presto.', 'Sono alzato presto.', 'Mi sono alzato presto.', 'Mi ho alzato presto.'], a: 2, w: 'I riflessivi vogliono pronome + essere.' },
+    { t: 6, q: 'Completa: «Noi ___ svegliamo presto.»', o: ['mi', 'vi', 'ci', 'si'], a: 2, w: 'noi → ci.' },
+    { t: 6, q: '«Mi lavo ___ mani.»', o: ['le mie', 'le', 'mie', 'i miei'], a: 1, w: 'Con le parti del corpo niente possessivo.' },
+    { t: 6, q: 'Completa: «I ragazzi si sono ___ molto.» (divertirsi)', o: ['divertito', 'divertiti', 'divertite', 'divertita'], a: 1, w: 'Accordo maschile plurale.' },
+
+    /* — 7. Piacere — */
+    { t: 7, q: 'Completa: «Mi ___ i libri gialli.»', o: ['piace', 'piacciono', 'piaccio', 'piaci'], a: 1, w: 'Cosa plurale → piacciono.' },
+    { t: 7, q: 'Come si dice "Marco likes football"?', o: ['Marco piace il calcio.', 'A Marco piace il calcio.', 'Marco piacciono il calcio.', 'Il calcio piace Marco.'], a: 1, w: 'Con un nome proprio serve A.' },
+    { t: 7, q: 'Passato: «___ piaciuto il film.»', o: ['Mi ha', 'Mi è', 'Mi sono', 'Ho'], a: 1, w: 'Piacere usa essere.' },
+    { t: 7, q: '«Mi manchi» significa:', o: ['I miss you', 'You miss me', 'I am missing', 'You are missing'], a: 0, w: 'Struttura rovesciata: "tu manchi a me".' },
+    { t: 7, q: 'Completa: «Ci ___ andare al cinema.»', o: ['piacciono', 'piace', 'piacete', 'piaci'], a: 1, w: 'Con un infinito → sempre singolare.' },
+
+    /* — 8. Stare + gerundio — */
+    { t: 8, q: 'Quale frase è corretta?', o: ['Sono mangiando.', 'Sto mangiando.', 'Ho mangiando.', 'Vado mangiando.'], a: 1, w: 'La forma progressiva usa STARE.' },
+    { t: 8, q: 'Gerundio di "fare":', o: ['fando', 'faciendo', 'facendo', 'farendo'], a: 2, w: 'fare → facendo.' },
+    { t: 8, q: 'Come si dice "Tomorrow I\'m going to Rome"?', o: ['Sto andando a Roma domani.', 'Domani vado a Roma.', 'Domani sto andando a Roma.', 'Domani andando a Roma.'], a: 1, w: 'Il futuro vicino usa il presente semplice.' },
+    { t: 8, q: 'Quale frase NON è corretta?', o: ['Sto studiando.', 'Sta piovendo.', 'Sto avendo fame.', 'Stiamo uscendo.'], a: 2, w: 'I verbi di stato non ammettono il progressivo: "Ho fame".' },
+
+    /* — 9. Preposizioni — */
+    { t: 9, q: 'Completa: «Comincio ___ capire.»', o: ['a', 'di', 'da', '—'], a: 0, w: 'cominciare A.' },
+    { t: 9, q: 'Completa: «Ho finito ___ lavorare.»', o: ['a', 'di', 'da', '—'], a: 1, w: 'finire DI.' },
+    { t: 9, q: 'Completa: «Non riesco ___ dormire.»', o: ['a', 'di', 'da', '—'], a: 0, w: 'riuscire A.' },
+    { t: 9, q: 'Completa: «Mi piace ___ viaggiare.»', o: ['a', 'di', '— (niente)', 'da'], a: 2, w: 'piacere + infinito nudo.' },
+    { t: 9, q: 'Completa: «Ho smesso ___ fumare.»', o: ['a', 'di', 'da', '—'], a: 1, w: 'smettere DI.' },
+    { t: 9, q: 'Completa: «Ho voglia ___ un gelato.»', o: ['a', 'di', 'per', '—'], a: 1, w: 'avere voglia DI.' },
+
+    /* — 10. Sapere / conoscere — */
+    { t: 10, q: 'Completa: «___ Marco da molti anni.»', o: ['So', 'Conosco', 'Posso', 'Sappia'], a: 1, w: 'Persona → conoscere.' },
+    { t: 10, q: 'Completa: «___ che domani piove.»', o: ['Conosco', 'So', 'Posso', 'Conosce'], a: 1, w: 'Informazione → sapere.' },
+    { t: 10, q: 'Completa: «___ nuotare?» (capacità appresa)', o: ['Conosci', 'Sai', 'Puoi', 'Conoscete'], a: 1, w: 'sapere + infinito = capacità.' },
+    { t: 10, q: '«Ho conosciuto Anna ieri» significa:', o: ['La conoscevo già.', 'L\'ho incontrata per la prima volta.', 'Sapevo di lei.', 'L\'ho rivista.'], a: 1, w: 'Passato prossimo di conoscere = incontrare.' },
+
+    /* — 11. Fare — */
+    { t: 11, q: 'Completa: «Io ___ colazione alle sette.»', o: ['ho', 'faccio', 'sono', 'prendo'], a: 1, w: 'fare colazione.' },
+    { t: 11, q: 'Come si dice "I play the guitar"?', o: ['Faccio la chitarra.', 'Gioco la chitarra.', 'Suono la chitarra.', 'Gioco a chitarra.'], a: 2, w: 'Gli strumenti si suonano.' },
+    { t: 11, q: '«Mi fa male la testa» significa:', o: ['I make my head hurt.', 'My head hurts.', 'I have a hard head.', 'I hit my head.'], a: 1, w: 'Struttura rovesciata: la testa è il soggetto.' },
+    { t: 11, q: 'Completa: «Voi ___ sport?»', o: ['facciamo', 'fate', 'facete', 'fanno'], a: 1, w: 'voi → fate.' },
+
+    /* — 12. Andare / venire — */
+    { t: 12, q: 'Completa: «Vado ___ Italia.»', o: ['a', 'in', 'da', 'al'], a: 1, w: 'I paesi vogliono IN.' },
+    { t: 12, q: 'Completa: «Vado ___ dentista.»', o: ['al', 'in', 'dal', 'a'], a: 2, w: 'Con le persone → DA.' },
+    { t: 12, q: 'Come si dice "I go by car"?', o: ['Vado con macchina.', 'Vado in macchina.', 'Vado a macchina.', 'Vado per macchina.'], a: 1, w: 'I mezzi vogliono IN (tranne "a piedi").' },
+    { t: 12, q: 'Come si dice "I visit my grandmother"?', o: ['Visito mia nonna.', 'Vado a trovare mia nonna.', 'Vengo mia nonna.', 'Vado da visitare mia nonna.'], a: 1, w: 'Per le persone: andare a trovare.' },
+
+    /* — 13. Dire — */
+    { t: 13, q: 'Completa: «Marco dice ___ è stanco.»', o: ['di', 'che', 'se', '—'], a: 1, w: 'Informazione → dire CHE.' },
+    { t: 13, q: 'Completa: «Mi ha detto ___ aspettare.»', o: ['di', 'che', 'a', '—'], a: 0, w: 'Ordine → dire DI + infinito.' },
+    { t: 13, q: 'Come si dice "I speak Italian"?', o: ['Dico italiano.', 'Parlo italiano.', 'Racconto italiano.', 'Dico l\'italiano.'], a: 1, w: 'Con le lingue si usa parlare.' },
+    { t: 13, q: 'Completa: «Voi ___ sempre la verità.»', o: ['dicete', 'dite', 'dicono', 'diciamo'], a: 1, w: 'voi → dite.' },
+
+    /* — 14. Imperativo — */
+    { t: 14, q: 'Negativo di «Parla!» (a un amico):', o: ['Non parla!', 'Non parli!', 'Non parlare!', 'Non parlato!'], a: 2, w: 'Negazione informale: NON + infinito.' },
+    { t: 14, q: 'Come si dice "Tell me!" a uno sconosciuto?', o: ['Dimmi!', 'Mi dica!', 'Dicami!', 'Dica mi!'], a: 1, w: 'Con Lei il pronome va prima.' },
+    { t: 14, q: 'Imperativo LEI di "scusare":', o: ['scusa', 'scusi', 'scusare', 'scusate'], a: 1, w: '-are con Lei → -i.' },
+    { t: 14, q: 'Imperativo TU di "essere":', o: ['sia', 'sei', 'sii', 'essere'], a: 2, w: 'Sii gentile!' }
+  ];
+
+  const TOPICS = {
+    1: 'Essere', 2: 'Avere', 3: 'Presente', 4: 'Verbi modali', 5: 'Passato prossimo',
+    6: 'Riflessivi', 7: 'Piacere', 8: 'Stare + gerundio', 9: 'Preposizioni',
+    10: 'Sapere/Conoscere', 11: 'Fare', 12: 'Andare/Venire', 13: 'Dire', 14: 'Imperativo'
+  };
+
+  const { store, shuffle, addXp, markComplete } = ITA;
+
+  ITA.createPage({
+    data: () => ({
+      store,
+      lessons: ITA.lessons,
+      TOPICS: TOPICS,
+      bankSize: BANK.length,
+      questions: [],
+      answers: {},
+      started: false,
+      length: 20,
+      topicFilter: 'all'
+    }),
+    computed: {
+      answered() { return Object.keys(this.answers).length; },
+      correct() { return this.questions.filter((q, i) => this.answers[i] === q.a).length; },
+      done() { return this.questions.length > 0 && this.answered === this.questions.length; },
+      pct() { return this.questions.length ? Math.round(this.correct / this.questions.length * 100) : 0; },
+      /** Per-topic breakdown, used for the "what to review" diagnosis. */
+      byTopic() {
+        const m = {};
+        this.questions.forEach((q, i) => {
+          if (!m[q.t]) m[q.t] = { total: 0, ok: 0 };
+          m[q.t].total++;
+          if (this.answers[i] === q.a) m[q.t].ok++;
+        });
+        return Object.keys(m).map(t => ({
+          topic: TOPICS[t],
+          file: ITA.lessons.find(l => l.num === Number(t)),
+          total: m[t].total, ok: m[t].ok,
+          pct: Math.round(m[t].ok / m[t].total * 100)
+        })).sort((a, b) => a.pct - b.pct);
+      },
+      weakSpots() { return this.byTopic.filter(t => t.pct < 100); },
+      topicList() {
+        return Object.keys(TOPICS).map(k => ({ n: Number(k), label: TOPICS[k] }));
+      }
+    },
+    methods: {
+      start(n) {
+        this.length = n;
+        let pool = BANK;
+        if (this.topicFilter !== 'all') pool = BANK.filter(q => q.t === Number(this.topicFilter));
+        this.questions = shuffle(pool).slice(0, Math.min(n, pool.length)).map(q => {
+          // Shuffle the options too, keeping track of the right one.
+          const right = q.o[q.a];
+          const opts = shuffle(q.o);
+          return { t: q.t, q: q.q, o: opts, a: opts.indexOf(right), w: q.w };
+        });
+        this.answers = {};
+        this.started = true;
+        this.$nextTick(() => {
+          const el = document.getElementById('quiz');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        });
+      },
+      pick(qi, oi) {
+        if (this.answers[qi] !== undefined) return;
+        this.answers[qi] = oi;
+        if (this.done) {
+          addXp(this.correct * 5);
+          store.scores['17-ripasso.html'] = { correct: this.correct, total: this.questions.length, pct: this.pct };
+          if (this.pct >= 70) markComplete('17-ripasso.html');
+        }
+      },
+      cls(qi, oi) {
+        if (this.answers[qi] === undefined) return '';
+        if (oi === this.questions[qi].a) return 'correct';
+        return this.answers[qi] === oi ? 'wrong' : '';
+      },
+      reset() { this.started = false; this.questions = []; this.answers = {}; },
+      lessonFile(n) { const l = ITA.lessons.find(x => x.num === n); return l ? l.file : '#'; }
+    },
+
+    template: `
+      <a class="skip-link" href="#main">Vai al contenuto</a>
+      <site-header current="17-ripasso.html"></site-header>
+
+      <main id="main" class="container">
+        <header class="hero animate-in">
+          <p class="card-kicker" style="color:rgba(255,255,255,.85)">Lezione 17 · Ripasso</p>
+          <h1>🏆 Ripasso Generale</h1>
+          <p>Un quiz misto su tutte le lezioni del corso. Alla fine scoprirai il tuo punteggio
+             e quali argomenti conviene rivedere — con il link diretto alla lezione giusta.</p>
+          <div class="hero-stats">
+            <div class="hero-stat"><b>{{ bankSize }}</b><span>domande in archivio</span></div>
+            <div class="hero-stat"><b>14</b><span>argomenti</span></div>
+            <div class="hero-stat"><b>{{ store.xp }}</b><span>XP totali</span></div>
+            <div class="hero-stat" v-if="store.scores['17-ripasso.html']">
+              <b>{{ store.scores['17-ripasso.html'].pct }}%</b><span>ultimo risultato</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Setup -->
+        <section v-if="!started" class="card">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">🎯</span>
+            <div><p class="card-kicker">Prepara il quiz</p><h2 style="font-size:1.2rem">Scegli argomento e lunghezza</h2></div>
+          </div>
+
+          <p class="small muted">Le domande e le risposte vengono mescolate ogni volta: puoi ripetere il quiz all'infinito.</p>
+
+          <h3 style="font-size:1rem;margin-top:14px">Argomento</h3>
+          <div class="chip-row">
+            <button class="chip" :class="{ active: topicFilter === 'all' }" @click="topicFilter = 'all'">Tutti gli argomenti</button>
+            <button v-for="t in topicList" :key="t.n" class="chip"
+                    :class="{ active: topicFilter === String(t.n) }" @click="topicFilter = String(t.n)">
+              {{ t.n }}. {{ t.label }}
+            </button>
+          </div>
+
+          <h3 style="font-size:1rem">Quante domande?</h3>
+          <div class="btn-row">
+            <button class="btn btn-ghost" @click="start(10)">⚡ 10 — veloce</button>
+            <button class="btn btn-primary" @click="start(20)">🎯 20 — consigliato</button>
+            <button class="btn btn-ghost" @click="start(bankSize)">🏁 Tutte — esame completo</button>
+          </div>
+        </section>
+
+        <!-- Quiz -->
+        <section v-else id="quiz" class="card">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">❓</span>
+            <div><p class="card-kicker">Quiz in corso</p><h2 style="font-size:1.2rem">{{ questions.length }} domande</h2></div>
+            <button class="btn btn-ghost btn-sm" style="margin-left:auto" @click="reset">✕ Esci</button>
+          </div>
+
+          <div style="margin-bottom:18px">
+            <progress-bar :value="answered / questions.length * 100"
+                          :label="'Risposte: ' + answered + '/' + questions.length"
+                          :right="correct + ' corrette'"></progress-bar>
+          </div>
+
+          <div v-for="(q, qi) in questions" :key="qi" class="q-block">
+            <div class="q-prompt">
+              <span class="q-index" aria-hidden="true">{{ qi + 1 }}</span>
+              <span>
+                {{ q.q }}
+                <span class="pill" style="margin-left:6px;font-size:.66rem">{{ q.t }}. {{ TOPICS[q.t] }}</span>
+              </span>
+            </div>
+            <div class="opt-list">
+              <button v-for="(o, oi) in q.o" :key="oi" class="opt" :class="cls(qi, oi)"
+                      :disabled="answers[qi] !== undefined" @click="pick(qi, oi)">
+                <span class="opt-key" aria-hidden="true">{{ 'ABCD'[oi] }}</span>
+                <span class="it">{{ o }}</span>
+              </button>
+            </div>
+            <p v-if="answers[qi] !== undefined" class="feedback" :class="answers[qi] === q.a ? 'ok' : 'no'">
+              {{ answers[qi] === q.a ? '✅ Esatto! ' : '❌ ' }}{{ q.w }}
+              <a v-if="answers[qi] !== q.a" :href="lessonFile(q.t)" style="margin-left:6px">→ rivedi la lezione {{ q.t }}</a>
+            </p>
+          </div>
+
+          <!-- Results -->
+          <div v-if="done" style="margin-top:22px">
+            <div class="score-box">
+              <div class="score-ring" :style="{ '--pct': pct }"><span>{{ pct }}%</span></div>
+              <div>
+                <p style="margin:0;font-weight:800;font-size:1.05rem">{{ correct }} / {{ questions.length }} corrette</p>
+                <p class="small muted" style="margin:0">
+                  {{ pct >= 90 ? 'Eccellente! Sei pronto per il B1. 🎉'
+                   : pct >= 70 ? 'Molto bene! Rivedi solo gli argomenti in rosso.'
+                   : pct >= 50 ? 'Buona base, ma serve ancora ripasso.'
+                   : 'Riparti dalle lezioni indicate qui sotto: è normale, si impara così.' }}
+                </p>
+              </div>
+              <button class="btn btn-primary btn-sm" style="margin-left:auto" @click="reset">↻ Nuovo quiz</button>
+            </div>
+
+            <h3 style="margin-top:22px">📊 Risultato per argomento</h3>
+            <div class="grid grid-2">
+              <div v-for="t in byTopic" :key="t.topic" class="card" style="margin:0;padding:14px">
+                <div class="row" style="justify-content:space-between">
+                  <b>{{ t.topic }}</b>
+                  <span class="pill" :class="t.pct === 100 ? 'pill-ok' : t.pct >= 50 ? 'pill-warn' : 'pill-err'">
+                    {{ t.ok }}/{{ t.total }}
+                  </span>
+                </div>
+                <progress-bar :value="t.pct"></progress-bar>
+                <a v-if="t.pct < 100 && t.file" :href="t.file.file" class="small" style="display:inline-block;margin-top:8px">
+                  → Rivedi: {{ t.file.icon }} {{ t.file.title }}
+                </a>
+              </div>
+            </div>
+
+            <div v-if="weakSpots.length" class="card card--warn" style="margin-top:18px">
+              <h3 style="font-size:1rem">📌 Piano di ripasso consigliato</h3>
+              <ol>
+                <li v-for="t in weakSpots.slice(0, 3)" :key="t.topic">
+                  <b>{{ t.topic }}</b> ({{ t.pct }}%) —
+                  <a v-if="t.file" :href="t.file.file">apri la lezione {{ t.file.num }}</a>
+                </li>
+              </ol>
+            </div>
+            <div v-else class="card card--tip" style="margin-top:18px">
+              <h3 style="font-size:1rem">🏅 Percorso completato senza errori!</h3>
+              <p style="margin:0">Hai risposto correttamente a tutte le domande. Prova il quiz completo da 60 domande, poi passa al vocabolario.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Course map -->
+        <section class="card">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">🗺️</span>
+            <div><p class="card-kicker">Mappa</p><h2 style="font-size:1.2rem">Tutte le lezioni del corso</h2></div>
+          </div>
+          <div class="grid grid-lessons">
+            <a v-for="l in lessons" :key="l.file" class="lesson-card" :href="l.file" style="padding:14px">
+              <div class="lc-top">
+                <span class="lc-icon" aria-hidden="true">{{ l.icon }}</span>
+                <h3 style="font-size:.98rem">{{ l.title }}</h3>
+                <span class="lc-num">{{ String(l.num).padStart(2, '0') }}</span>
+              </div>
+              <span v-if="store.completed[l.file]" class="pill pill-ok">✓ completata</span>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Italiano A2 · Corso interattivo di grammatica · I progressi restano nel tuo browser (localStorage).</p>
+      </footer>
+      <toast-host></toast-host>
+    `,
+    created() { this.TOPICS = TOPICS; }
+  });
+  </script>
+</body>
+</html>

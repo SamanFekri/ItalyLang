@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il verbo avere in italiano: presente, espressioni con avere (ho fame, ho sete, ho paura), esercizi interattivi.">
+  <title>Avere · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 2 — AVERE
+     ========================================================================== */
+  window.LESSON = {
+    num: 2, file: '02-avere.html', icon: '🔵', title: 'Avere', group: 'Le basi',
+    subtitle: 'Possesso, età e tutte le sensazioni del corpo: ho fame, ho sete, ho freddo, ho paura.',
+
+    intro: {
+      what: 'Avere significa "to have". Come essere, è irregolare. Serve per il possesso (ho una macchina), per l\'età (ho 30 anni), per le sensazioni fisiche (ho fame) e come ausiliare del passato prossimo (ho mangiato).',
+      when: 'Ogni volta che possiedi qualcosa, che dici quanti anni hai, che senti qualcosa nel corpo (fame, sete, sonno, freddo, caldo, paura, fretta, mal di testa) e in circa il 75% dei verbi al passato prossimo.',
+      why: 'È il verbo ausiliare più usato in assoluto. E le "espressioni con avere" sono la differenza più visibile tra chi parla italiano da straniero e chi lo parla bene.',
+      mistakes: [
+        'Tradurre "I am hungry" letteralmente: ❌ "Sono fame" → ✅ "Ho fame".',
+        'Scrivere "ho" senza h: ❌ "o fame". La h non si pronuncia ma è obbligatoria.',
+        'Dire ❌ "Ho 30 anni vecchio" — "anni" basta, non serve "vecchio".',
+        'Usare l\'articolo con le espressioni: ❌ "Ho la fame" → ✅ "Ho fame".'
+      ]
+    },
+
+    formulas: [
+      {
+        label: 'Possesso',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'avere', note: 'coniugato', type: 'verb' },
+              { text: 'Oggetto', note: 'una cosa', type: 'object' }
+            ], example: 'Io ho una macchina.', translation: 'I have a car.' }
+        ]
+      },
+      {
+        label: 'Sensazioni — SENZA articolo',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'avere', type: 'verb' },
+              { text: 'fame / sete / sonno…', note: 'niente articolo!', type: 'extra' }
+            ], example: 'Ho fame e ho sete.', translation: 'I\'m hungry and thirsty.' }
+        ]
+      },
+      {
+        label: 'Età',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'avere', type: 'verb' },
+              { text: 'numero', type: 'object' },
+              { text: 'anni', type: 'extra' }
+            ], example: 'Mia sorella ha 25 anni.', translation: 'My sister is 25.' }
+        ]
+      },
+      {
+        label: 'Ausiliare del passato prossimo (lezione 5)',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'ho / hai / ha…', type: 'verb' },
+              { text: 'participio passato', note: 'mangiato, visto…', type: 'object' }
+            ], example: 'Ho mangiato una pizza.', translation: 'I ate a pizza.' }
+        ]
+      }
+    ],
+    formulaNote: 'Le espressioni con avere non prendono mai l\'articolo: "ho fame", non "ho la fame".',
+
+    rules: [
+      {
+        title: 'Presente: ho, hai, ha, abbiamo, avete, hanno',
+        body: 'Quattro forme iniziano con una <b>h muta</b>: <b>ho, hai, ha, hanno</b>. La h non si pronuncia mai in italiano — serve solo a distinguere queste forme da altre parole (o, ai, a, anno).',
+        points: [
+          '<b>ho</b> (verbo) vs <b>o</b> (or) — "Ho un cane o un gatto?"',
+          '<b>ha</b> (verbo) vs <b>a</b> (to/at) — "Lei ha una casa a Roma."',
+          '<b>hanno</b> (verbo) vs <b>anno</b> (year) — "Hanno un anno di esperienza."'
+        ],
+        exception: 'Noi (abbiamo) e voi (avete) non hanno la h: cominciano con la a.'
+      },
+      {
+        title: 'Le espressioni fisiche: il corpo "ha", non "è"',
+        body: 'Questa è la regola che cambia tutto per chi parla inglese o farsi. L\'italiano vede fame, sete, sonno, paura come <i>cose che possiedi</i>, non come stati.',
+        points: [
+          'avere fame / sete → hunger / thirst',
+          'avere sonno → sleepiness (≠ avere sogno = to have a dream)',
+          'avere freddo / caldo → riferito alla PERSONA ("Ho caldo" = I feel hot)',
+          'avere paura (di) → to be afraid (of)',
+          'avere fretta → to be in a hurry',
+          'avere ragione / torto → to be right / wrong',
+          'avere mal di testa / gola / stomaco → to have a headache / sore throat / stomachache'
+        ],
+        exception: 'Per il tempo atmosferico non si usa avere ma FARE: "Fa freddo oggi" (it\'s cold), non "Ha freddo".'
+      },
+      {
+        title: 'L\'età si dice sempre con avere + numero + anni',
+        body: 'La parola <b>anni</b> non si può togliere.',
+        points: [
+          'Quanti anni hai? → How old are you?',
+          'Ho ventotto anni. → I\'m twenty-eight.',
+          'Con un solo anno: "Ha un anno" (singolare).'
+        ],
+        exception: 'Per un compleanno si può dire "Compio 30 anni" (dal verbo compiere).'
+      },
+      {
+        title: 'Avere bisogno di / avere voglia di',
+        body: 'Due espressioni fondamentali che reggono sempre <b>di</b>.',
+        points: [
+          '<b>avere bisogno di</b> + nome o infinito = to need → "Ho bisogno di aiuto", "Ho bisogno di dormire".',
+          '<b>avere voglia di</b> + nome o infinito = to feel like → "Ho voglia di un gelato", "Ho voglia di uscire".'
+        ],
+        exception: 'Non dimenticare "di": ❌ "Ho bisogno aiuto" è sbagliato. (Vedi lezione 9 sulle preposizioni.)'
+      },
+      {
+        title: 'Avere è l\'ausiliare della maggioranza dei verbi al passato',
+        body: 'Al passato prossimo, i verbi <b>transitivi</b> (quelli che hanno un oggetto) usano avere: "Ho visto un film", "Hai comprato il pane".',
+        points: [
+          'Con avere il participio NON cambia: "Anna ha mangiato" (non "mangiata").',
+          'Con essere invece cambia: "Anna è andata".'
+        ],
+        exception: 'Il participio cambia con avere solo se prima c\'è un pronome oggetto diretto: "La pizza? L\'ho mangiata". Questo è un dettaglio B1, ma ti capiterà di sentirlo.'
+      }
+    ],
+
+    timeline: {
+      title: 'Avere nel tempo',
+      points: [
+        { time: 'Passato', label: 'Passato prossimo', example: 'Ho avuto la febbre.', note: 'avere + avuto' },
+        { time: 'Passato', label: 'Imperfetto (B1)', example: 'Avevo fame.', note: 'stato prolungato' },
+        { time: 'Adesso', label: 'Presente', example: 'Ho fame.', now: true },
+        { time: 'Futuro', label: 'Futuro (B1)', example: 'Avrò tempo domani.', note: 'a A2: "Domani ho tempo"' }
+      ],
+      caption: 'Il participio passato di avere è "avuto": "Ho avuto un problema" = I had a problem.'
+    },
+
+    tables: [
+      {
+        title: 'Avere — Presente indicativo',
+        note: 'Le forme con la H sono io, tu, lui/lei, loro. La h non si pronuncia!',
+        columns: ['Persona', 'Forma', 'Esempio'],
+        rows: [
+          { cells: ['io', 'ho', 'Ho una domanda.'], irregular: [1] },
+          { cells: ['tu', 'hai', 'Hai tempo?'], irregular: [1] },
+          { cells: ['lui / lei / Lei', 'ha', 'Lei ha due figli.'], irregular: [1] },
+          { cells: ['noi', 'abbiamo', 'Abbiamo fame.'], irregular: [1] },
+          { cells: ['voi', 'avete', 'Avete una prenotazione?'], irregular: [1] },
+          { cells: ['loro', 'hanno', 'Hanno una casa al mare.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Avere — Passato prossimo (avere + avuto)',
+        columns: ['Persona', 'Forma', 'Esempio'],
+        rows: [
+          { cells: ['io', 'ho avuto', 'Ho avuto paura.'] },
+          { cells: ['tu', 'hai avuto', 'Hai avuto fortuna.'] },
+          { cells: ['lui / lei', 'ha avuto', 'Ha avuto un incidente.'] },
+          { cells: ['noi', 'abbiamo avuto', 'Abbiamo avuto un problema.'] },
+          { cells: ['voi', 'avete avuto', 'Avete avuto notizie?'] },
+          { cells: ['loro', 'hanno avuto', 'Hanno avuto un bambino.'] }
+        ]
+      },
+      {
+        title: 'Le 15 espressioni con AVERE da sapere a memoria',
+        note: 'Nessuna di queste vuole l\'articolo.',
+        columns: ['Italiano', 'Inglese', 'Esempio'],
+        rows: [
+          { cells: ['avere fame', 'to be hungry', 'Ho fame, mangiamo?'] },
+          { cells: ['avere sete', 'to be thirsty', 'Hai sete? Ecco dell\'acqua.'] },
+          { cells: ['avere sonno', 'to be sleepy', 'I bambini hanno sonno.'] },
+          { cells: ['avere freddo', 'to be cold', 'Ho freddo, chiudi la finestra.'] },
+          { cells: ['avere caldo', 'to be hot', 'Avete caldo?'] },
+          { cells: ['avere paura (di)', 'to be afraid (of)', 'Ho paura dei ragni.'] },
+          { cells: ['avere fretta', 'to be in a hurry', 'Scusa, ho fretta!'] },
+          { cells: ['avere ragione', 'to be right', 'Hai ragione, scusa.'] },
+          { cells: ['avere torto', 'to be wrong', 'Secondo me hai torto.'] },
+          { cells: ['avere bisogno di', 'to need', 'Ho bisogno di aiuto.'] },
+          { cells: ['avere voglia di', 'to feel like', 'Ho voglia di un caffè.'] },
+          { cells: ['avere mal di testa', 'to have a headache', 'Ho mal di testa.'] },
+          { cells: ['avere fortuna', 'to be lucky', 'Hai avuto fortuna!'] },
+          { cells: ['avere tempo', 'to have time', 'Non ho tempo oggi.'] },
+          { cells: ['avere ... anni', 'to be ... years old', 'Ho trent\'anni.'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Ho una sorella e due fratelli.', literal: 'I-have a sister and two brothers.', natural: 'I have one sister and two brothers.', note: 'Possesso semplice: avere + oggetto.' },
+      { it: 'Quanti anni hai? — Ho ventotto anni.', literal: 'How-many years you-have? I-have twenty-eight years.', natural: 'How old are you? — I\'m twenty-eight.', note: 'L\'età usa sempre avere + numero + anni.' },
+      { it: 'Ho fame, andiamo a mangiare?', literal: 'I-have hunger, we-go to eat?', natural: 'I\'m hungry, shall we go eat?', note: '"fame" senza articolo. Mai "sono fame".' },
+      { it: 'I bambini hanno sonno.', literal: 'The children have sleepiness.', natural: 'The kids are sleepy.', note: 'loro → hanno, con la h.' },
+      { it: 'Hai freddo? Chiudo la finestra.', literal: 'You-have cold? I-close the window.', natural: 'Are you cold? I\'ll close the window.', note: 'Freddo riferito alla persona → avere. Per il clima: "Fa freddo".' },
+      { it: 'Ho paura dei cani grandi.', literal: 'I-have fear of-the dogs big.', natural: 'I\'m afraid of big dogs.', note: 'avere paura DI + oggetto della paura. di + i = dei.' },
+      { it: 'Scusa, ho fretta, ci vediamo dopo!', literal: 'Sorry, I-have hurry, us we-see later!', natural: 'Sorry, I\'m in a hurry, see you later!', note: 'Formula da bar/ufficio, utilissima.' },
+      { it: 'Hai ragione, ho sbagliato io.', literal: 'You-have reason, I-have mistaken I.', natural: 'You\'re right, I was the one who made a mistake.', note: 'avere ragione / avere torto: sempre con avere.' },
+      { it: 'Abbiamo bisogno di aiuto.', literal: 'We-have need of help.', natural: 'We need help.', note: 'avere bisogno DI: la preposizione è obbligatoria.' },
+      { it: 'Ho voglia di un gelato.', literal: 'I-have desire of an ice-cream.', natural: 'I feel like an ice cream.', note: 'avere voglia DI + nome o infinito.' },
+      { it: 'Non ho tempo oggi, forse domani.', literal: 'Not I-have time today, maybe tomorrow.', natural: 'I don\'t have time today, maybe tomorrow.', note: 'La negazione NON va prima del verbo.' },
+      { it: 'Avete una prenotazione?', literal: 'You(pl)-have a reservation?', natural: 'Do you have a reservation?', note: 'Tipica domanda al ristorante. Nessun "do" ausiliare in italiano.' },
+      { it: 'Mia madre ha mal di testa.', literal: 'My mother has pain of head.', natural: 'My mother has a headache.', note: 'avere mal di + parte del corpo.' },
+      { it: 'Ho avuto la febbre per tre giorni.', literal: 'I-have had the fever for three days.', natural: 'I had a fever for three days.', note: 'Passato prossimo di avere: ho avuto.' },
+      { it: 'Loro hanno una casa in campagna.', literal: 'They have a house in countryside.', natural: 'They have a house in the countryside.', note: 'hanno con la h — non confondere con "anno" (year).' },
+      { it: 'Ho comprato il pane.', literal: 'I-have bought the bread.', natural: 'I bought the bread.', note: 'Qui avere è AUSILIARE: ho + participio passato.' },
+      { it: 'Che cosa hai? Non stai bene?', literal: 'What thing you-have? Not you-stay well?', natural: 'What\'s wrong? Are you not feeling well?', note: '"Che cosa hai?" = "What\'s the matter with you?"' },
+      { it: 'Abbiamo avuto fortuna con il tempo.', literal: 'We-have had luck with the weather.', natural: 'We were lucky with the weather.', note: 'avere fortuna, al passato prossimo.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Sono fame.', right: 'Ho fame.', why: 'Le sensazioni fisiche sono "cose che si hanno" in italiano. Vale per fame, sete, sonno, freddo, caldo, paura, fretta.' },
+      { wrong: 'Ho la fame.', right: 'Ho fame.', why: 'Queste espressioni non prendono mai l\'articolo.' },
+      { wrong: 'O ventidue anni.', right: 'Ho ventidue anni.', why: 'La h di "ho" non si sente ma si scrive. Senza h, "o" significa "or".' },
+      { wrong: 'Sono ventidue anni.', right: 'Ho ventidue anni.', why: 'L\'età si dice con avere. "Sono 22" non esiste in italiano.' },
+      { wrong: 'Ho bisogno aiuto.', right: 'Ho bisogno di aiuto.', why: '"Avere bisogno" regge sempre la preposizione DI.' },
+      { wrong: 'Ha freddo oggi. (parlando del tempo)', right: 'Fa freddo oggi.', why: 'Il clima usa FARE. "Ha freddo" significa che una persona sente freddo.' },
+      { wrong: 'Loro anno una macchina.', right: 'Loro hanno una macchina.', why: '"anno" = year (nome). Il verbo è "hanno".' },
+      { wrong: 'Abbiamo ragione tu.', right: 'Hai ragione tu.', why: 'Il verbo deve concordare con il soggetto reale: tu → hai.' }
+    ],
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Io ___ due gatti.»', options: ['ha', 'ho', 'hai', 'abbiamo'], answer: 1, hint: 'prima persona', why: 'io → ho (con la h).' },
+        { q: 'Completa: «Loro ___ una casa grande.»', options: ['anno', 'avete', 'hanno', 'abbiamo'], answer: 2, hint: '"anno" è un sostantivo!', why: 'loro → hanno. "Anno" = year.' },
+        { q: 'Come si dice "I\'m thirsty"?', options: ['Sono sete.', 'Ho la sete.', 'Ho sete.', 'Faccio sete.'], answer: 2, hint: 'sensazione fisica, senza articolo', why: 'Ho sete: avere + sostantivo senza articolo.' },
+        { q: 'Come si dice "It\'s cold today" (il tempo)?', options: ['Ho freddo oggi.', 'Fa freddo oggi.', 'È freddo oggi.', 'Ha freddo oggi.'], answer: 1, hint: 'Parliamo del clima, non di una persona.', why: 'Il tempo atmosferico usa FARE: fa freddo / fa caldo.' },
+        { q: 'Completa: «Noi ___ bisogno di riposo.»', options: ['abbiamo', 'avete', 'hanno', 'ho'], answer: 0, hint: 'noi', why: 'noi → abbiamo (senza h).' },
+        { q: 'Quale frase è corretta?', options: ['Ho voglia un caffè.', 'Ho voglia di un caffè.', 'Sono voglia di caffè.', 'Ho la voglia caffè.'], answer: 1, hint: 'Manca una preposizione.', why: '"Avere voglia" regge sempre DI.' },
+        { q: '«Quanti anni ___ tua sorella?»', options: ['hai', 'ha', 'ho', 'hanno'], answer: 1, hint: 'tua sorella = lei', why: 'Terza persona singolare → ha.' },
+        { q: 'Passato prossimo: «Ieri ___ la febbre.»', options: ['sono avuto', 'ho avuto', 'ho avere', 'ero avuto'], answer: 1, hint: 'Avere si coniuga con se stesso.', why: 'ho + avuto = passato prossimo di avere.' }
+      ],
+      fill: [
+        { before: 'Io', after: 'trent\'anni.', answers: ['ho'], en: 'I am thirty.', hint: 'con la h!' },
+        { before: 'Tu', after: 'ragione, scusa.', answers: ['hai'], en: 'You are right, sorry.' },
+        { before: 'Marco', after: 'mal di testa.', answers: ['ha'], en: 'Marco has a headache.' },
+        { before: 'Noi', after: 'fame!', answers: ['abbiamo'], en: 'We are hungry!' },
+        { before: 'Voi', after: 'una prenotazione?', answers: ['avete'], en: 'Do you (pl.) have a reservation?' },
+        { before: 'Loro', after: 'due bambini.', answers: ['hanno'], en: 'They have two children.' },
+        { before: 'Ho bisogno', after: 'aiuto.', answers: ['di', "d'"], en: 'I need help.', hint: 'la preposizione obbligatoria' },
+        { before: 'Ieri (io) ho', after: 'un problema al lavoro.', answers: ['avuto'], en: 'Yesterday I had a problem at work.', hint: 'participio passato di avere' }
+      ],
+      order: [
+        { words: ['Io', 'ho', 'venticinque', 'anni'], answer: 'Io ho venticinque anni', en: 'I am 25 years old.' },
+        { words: ['Non', 'ho', 'tempo', 'oggi'], answer: 'Non ho tempo oggi', en: 'I have no time today.' },
+        { words: ['Abbiamo', 'bisogno', 'di', 'una', 'pausa'], answer: 'Abbiamo bisogno di una pausa', en: 'We need a break.' },
+        { words: ['I', 'bambini', 'hanno', 'sonno'], answer: 'I bambini hanno sonno', en: 'The children are sleepy.' },
+        { words: ['Ho', 'paura', 'dei', 'ragni'], answer: 'Ho paura dei ragni', en: 'I am afraid of spiders.', hint: 'avere paura + di' }
+      ],
+      dnd: {
+        instructions: 'Il verbo giusto è AVERE, ESSERE o FARE? Trascina ogni espressione.',
+        buckets: [
+          { id: 'avere', label: 'AVERE', icon: '🔵' },
+          { id: 'essere', label: 'ESSERE', icon: '🟢' },
+          { id: 'fare', label: 'FARE (clima)', icon: '🌤️' }
+        ],
+        items: [
+          { text: '... fame', bucket: 'avere' },
+          { text: '... 30 anni', bucket: 'avere' },
+          { text: '... in ritardo', bucket: 'essere' },
+          { text: '... freddo (il tempo)', bucket: 'fare' },
+          { text: '... paura', bucket: 'avere' },
+          { text: '... italiano', bucket: 'essere' },
+          { text: '... caldo (il tempo)', bucket: 'fare' },
+          { text: '... ragione', bucket: 'avere' },
+          { text: '... d\'accordo', bucket: 'essere' },
+          { text: '... bisogno di', bucket: 'avere' },
+          { text: '... bel tempo', bucket: 'fare' },
+          { text: '... stanco', bucket: 'essere' }
+        ]
+      },
+      match: [
+        { a: 'avere fame', b: 'to be hungry' },
+        { a: 'avere sete', b: 'to be thirsty' },
+        { a: 'avere sonno', b: 'to be sleepy' },
+        { a: 'avere fretta', b: 'to be in a hurry' },
+        { a: 'avere ragione', b: 'to be right' },
+        { a: 'avere torto', b: 'to be wrong' },
+        { a: 'avere bisogno di', b: 'to need' },
+        { a: 'avere voglia di', b: 'to feel like' },
+        { a: 'avere mal di gola', b: 'to have a sore throat' }
+      ],
+      tf: [
+        { statement: 'Le forme "ho, hai, ha, hanno" si scrivono con la h ma la h non si pronuncia.', answer: true, why: 'Esatto: la h è solo ortografica.' },
+        { statement: 'Si dice «Ho la fame».', answer: false, why: 'No: le espressioni con avere non prendono l\'articolo → "Ho fame".' },
+        { statement: 'Per dire l\'età si usa essere.', answer: false, why: 'No: si usa avere → "Ho 30 anni".' },
+        { statement: '«Fa freddo» si usa per il tempo atmosferico.', answer: true, why: 'Sì. "Ho freddo" invece riguarda la persona.' },
+        { statement: '«Avere bisogno» si può usare senza "di".', answer: false, why: 'No: serve sempre DI → "ho bisogno di aiuto".' },
+        { statement: 'Il participio passato di avere è "avuto".', answer: true, why: 'Sì: "ho avuto", "abbiamo avuto".' }
+      ],
+      translate: [
+        { en: 'I am hungry.', answers: ['Ho fame'], hint: 'non "sono"' },
+        { en: 'How old are you?', answers: ['Quanti anni hai', 'Quanti anni ha'], hint: 'letteralmente: quanti anni possiedi?' },
+        { en: 'We need a coffee.', answers: ['Abbiamo bisogno di un caffè'], hint: 'avere bisogno + di' },
+        { en: 'They are afraid of dogs.', answers: ['Hanno paura dei cani', 'Loro hanno paura dei cani'] },
+        { en: "I don't have time.", answers: ['Non ho tempo', 'Io non ho tempo'] },
+        { en: 'You are right.', answers: ['Hai ragione', 'Tu hai ragione', 'Ha ragione'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — In pausa pranzo',
+      lines: [
+        { speaker: 'Luca', icon: '🧑', it: 'Ciao Sara! Hai fame? Sono già le due.', en: 'Hi Sara! Are you hungry? It\'s already two o\'clock.',
+          glosses: [{ term: 'Hai fame', expl: 'avere + fame, senza articolo. Mai "sei fame".' }, { term: 'Sono già le due', expl: 'L\'ora usa ESSERE al plurale: sono le due.' }] },
+        { speaker: 'Sara', icon: '👩', side: 'right', it: 'Sì, ho una fame incredibile! E anche sete.', en: 'Yes, I\'m incredibly hungry! And thirsty too.',
+          glosses: [{ term: 'ho una fame incredibile', expl: 'Con un aggettivo, l\'articolo torna: "una fame incredibile".' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Hai voglia di una pizza? C\'è un posto qui vicino.', en: 'Do you feel like a pizza? There\'s a place nearby.',
+          glosses: [{ term: 'Hai voglia di', expl: 'avere voglia DI + nome/infinito = to feel like.' }] },
+        { speaker: 'Sara', icon: '👩', side: 'right', it: 'Volentieri, ma ho fretta: alle tre ho una riunione.', en: 'Gladly, but I\'m in a hurry: I have a meeting at three.',
+          glosses: [{ term: 'ho fretta', expl: 'avere fretta = to be in a hurry.' }, { term: 'ho una riunione', expl: 'Qui avere = possesso di un impegno.' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Nessun problema. Hai bisogno di qualcosa per la riunione?', en: 'No problem. Do you need anything for the meeting?',
+          glosses: [{ term: 'Hai bisogno di', expl: 'avere bisogno DI = to need. La preposizione è obbligatoria.' }] },
+        { speaker: 'Sara', icon: '👩', side: 'right', it: 'No grazie. Però ho mal di testa, hai un\'aspirina?', en: 'No thanks. But I have a headache — do you have an aspirin?',
+          glosses: [{ term: 'ho mal di testa', expl: 'avere mal di + parte del corpo.' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Sì! Ieri ho avuto lo stesso problema. Ecco.', en: 'Yes! Yesterday I had the same problem. Here you go.',
+          glosses: [{ term: 'ho avuto', expl: 'Passato prossimo di avere: ho + avuto.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'ho / hai / ha', back: 'I have / you have / he-she has', hint: 'tutte con la h muta' },
+      { front: 'abbiamo / avete / hanno', back: 'we have / you (pl) have / they have' },
+      { front: 'ho fame', back: 'I\'m hungry', note: 'mai "sono fame"' },
+      { front: 'ho sete', back: 'I\'m thirsty' },
+      { front: 'ho sonno', back: 'I\'m sleepy' },
+      { front: 'ho freddo / ho caldo', back: 'I\'m cold / I\'m hot', note: 'clima → fa freddo / fa caldo' },
+      { front: 'ho paura di…', back: 'I\'m afraid of…' },
+      { front: 'ho fretta', back: 'I\'m in a hurry' },
+      { front: 'hai ragione / hai torto', back: 'you\'re right / you\'re wrong' },
+      { front: 'ho bisogno di…', back: 'I need…' },
+      { front: 'ho voglia di…', back: 'I feel like…' },
+      { front: 'ho mal di testa', back: 'I have a headache' },
+      { front: 'Quanti anni hai?', back: 'How old are you?' },
+      { front: 'ho avuto', back: 'I had / I have had', note: 'participio: avuto' }
+    ],
+
+    summary: {
+      formula: 'Soggetto + avere (ho / hai / ha / abbiamo / avete / hanno) + oggetto o sensazione SENZA articolo',
+      rules: [
+        'Presente irregolare: ho, hai, ha, abbiamo, avete, hanno. La h non si pronuncia.',
+        'Sensazioni fisiche → avere: fame, sete, sonno, freddo, caldo, paura, fretta.',
+        'Età → avere + numero + anni: "Ho 30 anni".',
+        'avere bisogno DI / avere voglia DI: la preposizione è obbligatoria.',
+        'Clima → fare: "Fa freddo", non "ha freddo".',
+        'Avere è l\'ausiliare della maggior parte dei verbi al passato prossimo: "ho mangiato".'
+      ],
+      tips: [
+        'Regola d\'oro: se in inglese dici "I AM + hungry / thirsty / cold / scared / 30 years old", in italiano diventa "HO".',
+        'La h di ho-hai-ha-hanno serve a non confonderli con o (or), ai (to the), a (to), anno (year).',
+        'Impara le espressioni come blocchi interi — "ho fretta", "hai ragione" — non parola per parola.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

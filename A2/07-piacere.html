@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il verbo piacere in italiano: mi piace, mi piacciono, pronomi indiretti, passato prossimo.">
+  <title>Piacere · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 7 — PIACERE
+     ========================================================================== */
+  window.LESSON = {
+    num: 7, file: '07-piacere.html', icon: '❤️', title: 'Piacere', group: 'Strutture',
+    subtitle: 'Il verbo che funziona al contrario: non "io amo la pizza" ma "la pizza è piacevole a me".',
+
+    intro: {
+      what: 'Piacere significa letteralmente "to be pleasing". La frase italiana ha la struttura rovesciata rispetto all\'inglese: chi prova il piacere non è il soggetto ma il <b>destinatario</b> (mi, ti, gli, le, ci, vi), e la cosa che piace è il <b>soggetto grammaticale</b> che comanda il verbo.',
+      when: 'Per dire cosa ti piace e cosa non ti piace: cibo, musica, sport, città, attività, persone. È l\'argomento numero uno delle conversazioni tra persone che si conoscono.',
+      why: 'Perché è la struttura più diversa dall\'inglese e dal farsi in tutto l\'A2, e perché lo stesso schema vale per altri verbi frequentissimi: servire, mancare, sembrare, interessare, bastare.',
+      mistakes: [
+        'Tradurre parola per parola: ❌ "Io piaccio la pizza" (= I am pleasing to the pizza!) → ✅ "Mi piace la pizza".',
+        'Non accordare il verbo con la cosa che piace: ❌ "Mi piace gli spaghetti" → ✅ "Mi piacciono gli spaghetti".',
+        'Dimenticare l\'articolo: in italiano si dice "Mi piace <b>la</b> pizza", non "Mi piace pizza".',
+        'Usare avere al passato: ❌ "Mi ha piaciuto" → ✅ "Mi è piaciuto".'
+      ]
+    },
+
+    formulas: [
+      {
+        label: 'La struttura rovesciata',
+        rows: [
+          { parts: [
+              { text: 'PRONOME INDIRETTO', note: 'mi/ti/gli/le/ci/vi', type: 'extra' },
+              { text: 'piace / piacciono', note: 'concorda con la COSA', type: 'verb' },
+              { text: 'LA COSA', note: 'il vero soggetto', type: 'subject' }
+            ], example: 'Mi piace la musica.', translation: 'literally: to-me is-pleasing the music.' }
+        ]
+      },
+      {
+        label: 'Singolare vs plurale — la regola chiave',
+        rows: [
+          { parts: [
+              { text: 'Mi piace', note: 'una cosa singolare', type: 'verb' },
+              { text: 'il caffè', type: 'subject' }
+            ], example: 'Mi piace il caffè.', translation: 'I like coffee.' },
+          { parts: [
+              { text: 'Mi piacciono', note: 'più cose', type: 'verb' },
+              { text: 'i dolci', type: 'subject' }
+            ], example: 'Mi piacciono i dolci.', translation: 'I like sweets.' }
+        ]
+      },
+      {
+        label: 'Con un verbo: sempre singolare',
+        rows: [
+          { parts: [
+              { text: 'Mi piace', type: 'verb' },
+              { text: 'INFINITO', note: 'anche più di uno!', type: 'object' }
+            ], example: 'Mi piace leggere e viaggiare.', translation: 'I like reading and travelling.' }
+        ]
+      },
+      {
+        label: 'Passato prossimo — con ESSERE',
+        rows: [
+          { parts: [
+              { text: 'PRONOME', type: 'extra' },
+              { text: 'è / sono', type: 'verb' },
+              { text: 'piaciuto / piaciuta / piaciuti / piaciute', note: 'concorda con la cosa', type: 'object' }
+            ], example: 'Mi è piaciuto il film. / Mi sono piaciute le foto.' }
+        ]
+      }
+    ],
+    formulaNote: 'Trucco mentale: traduci sempre "mi piace" come "to me is pleasing". Così l\'accordo diventa ovvio.',
+
+    rules: [
+      {
+        title: 'I pronomi indiretti: a chi piace?',
+        body: 'Il pronome indica la persona che prova il piacere. Sono gli stessi pronomi che userai con tanti altri verbi.',
+        points: [
+          'a me → <b>mi</b> · a te → <b>ti</b> · a lui → <b>gli</b> · a lei → <b>le</b>',
+          'a noi → <b>ci</b> · a voi → <b>vi</b> · a loro → <b>gli</b> (o "a loro")',
+          'Forma formale (Lei): <b>Le</b> piace? = Do you like it? (con la L maiuscola nello scritto)',
+          'Per enfatizzare si usa la forma lunga: "<b>A me</b> piace il mare, <b>a te</b> piace la montagna".'
+        ],
+        exception: 'Con un nome proprio serve la preposizione A: "<b>A</b> Marco piace il calcio", "<b>Ai</b> miei amici piace il cinema". Non "Marco piace il calcio".'
+      },
+      {
+        title: 'Piace o piacciono? Guarda la COSA, non la persona',
+        body: 'Il verbo concorda con ciò che piace, non con chi prova il piacere. Questa è la regola che sbagliano quasi tutti.',
+        points: [
+          'Una cosa singolare → <b>piace</b>: "Ci piace <i>questa città</i>".',
+          'Più cose (plurale) → <b>piacciono</b>: "Ci piacciono <i>queste città</i>".',
+          'Un verbo all\'infinito → sempre <b>piace</b>: "Ci piace <i>viaggiare</i>".',
+          'Anche più infiniti restano singolari: "Mi piace <i>cucinare e mangiare</i>".'
+        ],
+        exception: 'Le forme "piaccio / piaci" esistono e riguardano le persone: "Tu mi piaci" (I like you / I fancy you), "Io ti piaccio?" (Do you like me?). Attenzione: con una persona ha spesso un senso romantico.'
+      },
+      {
+        title: 'Non dimenticare l\'articolo',
+        body: 'In italiano i nomi generali vogliono l\'articolo determinativo, anche dove l\'inglese non lo mette.',
+        points: [
+          '✅ Mi piace <b>la</b> pizza. ❌ Mi piace pizza.',
+          '✅ Mi piacciono <b>gli</b> animali. ❌ Mi piacciono animali.',
+          '✅ Non mi piace <b>il</b> calcio.'
+        ],
+        exception: 'Con l\'infinito non c\'è articolo: "Mi piace nuotare".'
+      },
+      {
+        title: 'La negazione: NON prima di tutto',
+        body: 'Il NON precede il pronome indiretto.',
+        points: [
+          '<b>Non</b> mi piace il pesce. → I don\'t like fish.',
+          '<b>Non</b> mi piacciono le verdure.',
+          'Per attenuare: "Non mi piace <b>molto</b>" (I don\'t like it much), "<b>Mi piace abbastanza</b>" (I quite like it).'
+        ],
+        exception: 'Per un\'antipatia forte si usa un altro verbo: "Odio il pesce" (I hate fish) oppure "Detesto…".'
+      },
+      {
+        title: 'Al passato prossimo: essere + participio concordato',
+        body: 'Piacere è un verbo che usa <b>essere</b>. Il participio concorda con la cosa che è piaciuta.',
+        points: [
+          'Mi <b>è piaciuto</b> il film. (film = maschile singolare)',
+          'Mi <b>è piaciuta</b> la mostra. (femminile singolare)',
+          'Mi <b>sono piaciuti</b> i film. (maschile plurale)',
+          'Mi <b>sono piaciute</b> le foto. (femminile plurale)'
+        ],
+        exception: 'Con un infinito resta singolare maschile: "Mi è piaciuto viaggiare in treno".'
+      },
+      {
+        title: 'La famiglia di piacere: gli altri verbi rovesciati',
+        body: 'Lo stesso schema vale per un piccolo gruppo di verbi molto usati.',
+        points: [
+          '<b>servire</b> (to need / to be needed): "Mi serve una penna", "Mi servono due biglietti".',
+          '<b>mancare</b> (to miss): "Mi manca la mia famiglia", "Mi mancano i miei amici".',
+          '<b>interessare</b>: "Mi interessa la storia", "Non mi interessano i dettagli".',
+          '<b>sembrare</b> (to seem): "Mi sembra una buona idea".',
+          '<b>bastare</b> (to be enough): "Mi basta un caffè".'
+        ],
+        exception: 'Attenzione a "mancare": "Mi manchi" significa "I miss you" — il soggetto sei tu, non io. È esattamente l\'opposto dell\'inglese.'
+      }
+    ],
+
+    timeline: {
+      title: 'Piacere nel tempo',
+      points: [
+        { time: 'Passato', label: 'Passato prossimo', example: 'Mi è piaciuto il film.', note: 'essere + piaciuto' },
+        { time: 'Adesso', label: 'Presente', example: 'Mi piace questo film.', now: true },
+        { time: 'Gusto generale', label: 'Presente', example: 'Mi piace il cinema italiano.', note: 'sempre vero' },
+        { time: 'Cortesia', label: 'Condizionale', example: 'Mi piacerebbe venire.', note: '= I would like to' }
+      ],
+      caption: '"Mi piacerebbe" è utilissimo per accettare o rifiutare gentilmente un invito: "Mi piacerebbe, ma non posso".'
+    },
+
+    tables: [
+      {
+        title: 'I pronomi indiretti — a chi piace',
+        columns: ['Persona', 'Forma breve', 'Forma lunga', 'Esempio'],
+        rows: [
+          { cells: ['io', 'mi', 'a me', 'Mi piace il mare.'], irregular: [1] },
+          { cells: ['tu', 'ti', 'a te', 'Ti piace il mare?'], irregular: [1] },
+          { cells: ['lui', 'gli', 'a lui', 'Gli piace il calcio.'], irregular: [1] },
+          { cells: ['lei', 'le', 'a lei', 'Le piace la musica.'], irregular: [1] },
+          { cells: ['Lei (formale)', 'Le', 'a Lei', 'Le piace l\'Italia?'], irregular: [1] },
+          { cells: ['noi', 'ci', 'a noi', 'Ci piace viaggiare.'], irregular: [1] },
+          { cells: ['voi', 'vi', 'a voi', 'Vi piace la pizza?'], irregular: [1] },
+          { cells: ['loro', 'gli', 'a loro', 'Gli piace ballare.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Piace vs piacciono — la scelta',
+        note: 'Guarda sempre la parola DOPO il verbo.',
+        columns: ['La cosa che piace', 'Verbo', 'Esempio'],
+        rows: [
+          { cells: ['nome singolare', 'piace', 'Mi piace il caffè.'], irregular: [1] },
+          { cells: ['nome plurale', 'piacciono', 'Mi piacciono i dolci.'], irregular: [1] },
+          { cells: ['un infinito', 'piace', 'Mi piace cucinare.'], irregular: [1] },
+          { cells: ['due infiniti', 'piace', 'Mi piace leggere e scrivere.'], irregular: [1] },
+          { cells: ['una persona (tu)', 'piaci', 'Tu mi piaci.'], irregular: [1] },
+          { cells: ['io come persona', 'piaccio', 'Io ti piaccio?'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Passato prossimo di piacere',
+        note: 'Il participio concorda con la cosa piaciuta, non con la persona.',
+        columns: ['Cosa', 'Frase', 'Perché'],
+        rows: [
+          { cells: ['il film (m. s.)', 'Mi è piaciuto il film.', '-o'], irregular: [1] },
+          { cells: ['la città (f. s.)', 'Mi è piaciuta la città.', '-a'], irregular: [1] },
+          { cells: ['i film (m. p.)', 'Mi sono piaciuti i film.', '-i'], irregular: [1] },
+          { cells: ['le foto (f. p.)', 'Mi sono piaciute le foto.', '-e'], irregular: [1] },
+          { cells: ['viaggiare (inf.)', 'Mi è piaciuto viaggiare.', 'sempre -o'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'La famiglia dei verbi "rovesciati"',
+        columns: ['Verbo', 'Singolare', 'Plurale', 'Significato'],
+        rows: [
+          { cells: ['piacere', 'mi piace', 'mi piacciono', 'to like'] },
+          { cells: ['servire', 'mi serve', 'mi servono', 'to need'] },
+          { cells: ['mancare', 'mi manca', 'mi mancano', 'to miss'] },
+          { cells: ['interessare', 'mi interessa', 'mi interessano', 'to be interested in'] },
+          { cells: ['sembrare', 'mi sembra', 'mi sembrano', 'to seem'] },
+          { cells: ['bastare', 'mi basta', 'mi bastano', 'to be enough'] },
+          { cells: ['dispiacere', 'mi dispiace', '—', "I'm sorry"] }
+        ]
+      },
+      {
+        title: 'Come esprimere gradi di gusto',
+        columns: ['Espressione', 'Intensità', 'Inglese'],
+        rows: [
+          { cells: ['Mi piace da morire!', '★★★★★', 'I love it!'] },
+          { cells: ['Mi piace moltissimo.', '★★★★★', 'I really love it.'] },
+          { cells: ['Mi piace molto.', '★★★★', 'I like it a lot.'] },
+          { cells: ['Mi piace.', '★★★', 'I like it.'] },
+          { cells: ['Mi piace abbastanza.', '★★', 'I quite like it.'] },
+          { cells: ['Non mi piace molto.', '★', "I don't like it much."] },
+          { cells: ['Non mi piace per niente.', '☆', "I don't like it at all."] },
+          { cells: ['Lo odio / Lo detesto.', '☆☆', 'I hate it.'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Mi piace la pizza.', literal: 'To-me is-pleasing the pizza.', natural: 'I like pizza.', note: 'La pizza è il soggetto: è lei che "piace". Nota l\'articolo "la".' },
+      { it: 'Mi piacciono gli spaghetti.', literal: 'To-me are-pleasing the spaghetti.', natural: 'I like spaghetti.', note: '"gli spaghetti" è plurale → piacciono.' },
+      { it: 'Ti piace il caffè italiano?', literal: 'To-you is-pleasing the coffee Italian?', natural: 'Do you like Italian coffee?', note: 'Domanda con la sola intonazione.' },
+      { it: 'A Marco piace il calcio.', literal: 'To Marco is-pleasing the football.', natural: 'Marco likes football.', note: 'Con un nome proprio serve la preposizione A.' },
+      { it: 'Le piace la musica classica.', literal: 'To-her is-pleasing the music classical.', natural: 'She likes classical music.', note: '"le" = a lei. Attenzione: "gli" = a lui.' },
+      { it: 'Ci piace viaggiare in treno.', literal: 'To-us is-pleasing to-travel in train.', natural: 'We like travelling by train.', note: 'Con un infinito il verbo resta singolare.' },
+      { it: 'Vi piacciono i film italiani?', literal: 'To-you(pl) are-pleasing the films Italian?', natural: 'Do you like Italian films?', note: 'Cosa plurale → piacciono.' },
+      { it: 'Non mi piace il pesce crudo.', literal: 'Not to-me is-pleasing the fish raw.', natural: "I don't like raw fish.", note: 'NON va prima del pronome.' },
+      { it: 'Non mi piacciono per niente le zanzare.', literal: 'Not to-me are-pleasing for nothing the mosquitoes.', natural: "I don't like mosquitoes at all.", note: '"per niente" rafforza la negazione.' },
+      { it: 'A me piace il mare, a te piace la montagna.', literal: 'To me is-pleasing the sea, to you is-pleasing the mountain.', natural: 'I like the sea, you like the mountains.', note: 'Forma lunga per il contrasto e l\'enfasi.' },
+      { it: 'Mi è piaciuto molto il film di ieri.', literal: 'To-me is been-pleasing much the film of yesterday.', natural: 'I really liked yesterday\'s film.', note: 'Passato: essere + piaciuto (concorda con "film").' },
+      { it: 'Mi sono piaciute le tue foto.', literal: 'To-me are been-pleasing the your photos.', natural: 'I liked your photos.', note: '"le foto" è femminile plurale → sono piaciute.' },
+      { it: 'Ti è piaciuta Roma?', literal: 'To-you is been-pleasing Rome?', natural: 'Did you like Rome?', note: 'Roma è femminile → piaciuta.' },
+      { it: 'Mi piacerebbe venire, ma devo lavorare.', literal: 'To-me would-be-pleasing to-come, but I-must to-work.', natural: "I'd like to come, but I have to work.", note: 'Formula standard per rifiutare gentilmente un invito.' },
+      { it: 'Tu mi piaci molto.', literal: 'You to-me are-pleasing much.', natural: 'I like you a lot.', note: 'Con una persona: attenzione, ha spesso un senso romantico!' },
+      { it: 'Mi serve una penna, ce l\'hai?', literal: 'To-me serves a pen, there it you-have?', natural: 'I need a pen, do you have one?', note: 'servire funziona come piacere: mi serve / mi servono.' },
+      { it: 'Mi manca la mia famiglia.', literal: 'To-me lacks the my family.', natural: 'I miss my family.', note: 'La famiglia è il soggetto. "Mi manchi" = I miss you.' },
+      { it: 'Che cosa ti piace fare nel tempo libero?', literal: 'What thing to-you is-pleasing to-do in-the time free?', natural: 'What do you like doing in your free time?', note: 'Domanda-chiave per iniziare una conversazione.' },
+      { it: 'A noi non piacciono le città grandi.', literal: 'To us not are-pleasing the cities big.', natural: "We don't like big cities.", note: 'Forma lunga + negazione + plurale.' },
+      { it: 'Mi dispiace, non posso venire.', literal: 'To-me displeases, not I-can to-come.', natural: "I'm sorry, I can't come.", note: 'dispiacere = il contrario di piacere; qui significa "mi spiace".' }
+    ],
+
+    mistakes: [
+      { wrong: 'Io piaccio la pizza.', right: 'Mi piace la pizza.', why: 'Con "io piaccio" dici che TU sei piacevole per la pizza. Il pronome giusto è mi.' },
+      { wrong: 'Mi piace gli spaghetti.', right: 'Mi piacciono gli spaghetti.', why: 'Il verbo concorda con la cosa che piace: "gli spaghetti" è plurale.' },
+      { wrong: 'Mi piacciono viaggiare.', right: 'Mi piace viaggiare.', why: 'Con un verbo all\'infinito si usa sempre il singolare "piace".' },
+      { wrong: 'Mi piace pizza.', right: 'Mi piace la pizza.', why: 'In italiano i nomi generali prendono l\'articolo determinativo.' },
+      { wrong: 'Marco piace il calcio.', right: 'A Marco piace il calcio.', why: 'Con un nome proprio serve la preposizione A: la persona è il destinatario, non il soggetto.' },
+      { wrong: 'Mi ha piaciuto il film.', right: 'Mi è piaciuto il film.', why: 'Piacere usa l\'ausiliare essere al passato prossimo.' },
+      { wrong: 'Mi è piaciuto le foto.', right: 'Mi sono piaciute le foto.', why: 'Il participio e l\'ausiliare concordano con "le foto" (femminile plurale).' },
+      { wrong: 'Gli piace a lei la musica.', right: 'Le piace la musica. / A lei piace la musica.', why: '"gli" = a lui, "le" = a lei. Non si usano insieme alla forma lunga.' },
+      { wrong: 'Io manco te.', right: 'Ti manco. / Mi manchi.', why: 'Mancare è rovesciato come piacere: "Mi manchi" = I miss you.' }
+    ],
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Mi ___ la musica.»', options: ['piace', 'piacciono', 'piaccio', 'piaci'], answer: 0, hint: '"la musica" è singolare', why: 'Cosa singolare → piace.' },
+        { q: 'Completa: «Mi ___ i libri gialli.»', options: ['piace', 'piacciono', 'piaccio', 'piaci'], answer: 1, hint: '"i libri" è plurale', why: 'Cosa plurale → piacciono.' },
+        { q: 'Completa: «Ci ___ andare al cinema.»', options: ['piacciono', 'piace', 'piacete', 'piaci'], answer: 1, hint: 'infinito', why: 'Con un infinito si usa sempre il singolare.' },
+        { q: 'Come si dice "Marco likes football"?', options: ['Marco piace il calcio.', 'A Marco piace il calcio.', 'Marco piacciono il calcio.', 'Il calcio piace Marco.'], answer: 1, hint: 'serve una preposizione', why: 'Con un nome proprio: A Marco.' },
+        { q: 'Passato: «___ piaciuto il film.»', options: ['Mi ha', 'Mi è', 'Mi sono', 'Ho'], answer: 1, hint: 'quale ausiliare?', why: 'Piacere vuole essere: mi è piaciuto.' },
+        { q: 'Completa: «Mi sono ___ le tue foto.»', options: ['piaciuto', 'piaciuta', 'piaciuti', 'piaciute'], answer: 3, hint: '"le foto" è femminile plurale', why: 'Accordo con la cosa: piaciute.' },
+        { q: 'Il pronome per "a lei" è:', options: ['gli', 'le', 'lo', 'la'], answer: 1, hint: 'attenzione a non confonderlo con "a lui"', why: 'a lei → le; a lui → gli.' },
+        { q: 'Come si dice "I need two tickets"?', options: ['Mi serve due biglietti.', 'Mi servono due biglietti.', 'Io servo due biglietti.', 'Ho bisogno due biglietti.'], answer: 1, hint: 'servire funziona come piacere', why: '"due biglietti" è plurale → mi servono.' },
+        { q: '«Mi manchi» significa:', options: ['I miss you', 'You miss me', 'I am missing', 'You are missing'], answer: 0, hint: 'struttura rovesciata', why: 'Letteralmente: "tu manchi a me" = I miss you.' },
+        { q: 'Quale frase NON è corretta?', options: ['Non mi piace il pesce.', 'Non mi piacciono le verdure.', 'Mi non piace il pesce.', 'A me non piace il pesce.'], answer: 2, hint: 'dove va NON?', why: 'NON va prima del pronome: "Non mi piace".' }
+      ],
+      fill: [
+        { before: 'Mi', after: 'la cioccolata.', answers: ['piace'], en: 'I like chocolate.' },
+        { before: 'Mi', after: 'i dolci italiani.', answers: ['piacciono'], en: 'I like Italian sweets.' },
+        { before: '', after: 'piace il calcio? (tu)', answers: ['ti'], en: 'Do you like football?' },
+        { before: '', after: 'Marco piace viaggiare.', answers: ['a'], en: 'Marco likes travelling.', hint: 'preposizione davanti al nome proprio' },
+        { before: 'A lei', after: 'la musica classica.', answers: ['piace'], en: 'She likes classical music.' },
+        { before: 'Non ci', after: 'le città rumorose.', answers: ['piacciono'], en: "We don't like noisy cities." },
+        { before: 'Ieri mi', after: 'piaciuto molto il concerto.', answers: ['è', 'e'], en: 'Yesterday I really liked the concert.' },
+        { before: 'Mi sono', after: 'le tue foto. (piacere)', answers: ['piaciute'], en: 'I liked your photos.', hint: 'femminile plurale' },
+        { before: 'Mi', after: 'una penna, ce l\'hai?', answers: ['serve'], en: 'I need a pen.' },
+        { before: 'Mi', after: 'la mia famiglia.', answers: ['manca'], en: 'I miss my family.' }
+      ],
+      order: [
+        { words: ['Mi', 'piace', 'la', 'musica', 'italiana'], answer: 'Mi piace la musica italiana', en: 'I like Italian music.' },
+        { words: ['Non', 'mi', 'piacciono', 'le', 'verdure'], answer: 'Non mi piacciono le verdure', en: "I don't like vegetables." },
+        { words: ['A', 'Marco', 'piace', 'giocare', 'a', 'calcio'], answer: 'A Marco piace giocare a calcio', en: 'Marco likes playing football.' },
+        { words: ['Mi', 'è', 'piaciuto', 'molto', 'il', 'film'], answer: 'Mi è piaciuto molto il film', en: 'I really liked the film.' },
+        { words: ['Che', 'cosa', 'ti', 'piace', 'fare'], answer: 'Che cosa ti piace fare', en: 'What do you like doing?' },
+        { words: ['Mi', 'piacerebbe', 'venire', 'ma', 'non', 'posso'], answer: 'Mi piacerebbe venire ma non posso', en: "I'd like to come but I can't." }
+      ],
+      dnd: {
+        instructions: 'La frase richiede PIACE o PIACCIONO? Trascina ogni finale nella colonna giusta.',
+        buckets: [
+          { id: 'piace', label: 'Mi PIACE…', icon: '1️⃣' },
+          { id: 'piacciono', label: 'Mi PIACCIONO…', icon: '🔢' }
+        ],
+        items: [
+          { text: 'il gelato', bucket: 'piace' },
+          { text: 'i gatti', bucket: 'piacciono' },
+          { text: 'leggere', bucket: 'piace' },
+          { text: 'le canzoni italiane', bucket: 'piacciono' },
+          { text: 'la primavera', bucket: 'piace' },
+          { text: 'gli sport all\'aperto', bucket: 'piacciono' },
+          { text: 'viaggiare in treno', bucket: 'piace' },
+          { text: 'questi libri', bucket: 'piacciono' },
+          { text: 'la tua idea', bucket: 'piace' },
+          { text: 'i film horror', bucket: 'piacciono' }
+        ]
+      },
+      match: [
+        { a: 'mi', b: 'a me' },
+        { a: 'ti', b: 'a te' },
+        { a: 'gli', b: 'a lui / a loro' },
+        { a: 'le', b: 'a lei' },
+        { a: 'ci', b: 'a noi' },
+        { a: 'vi', b: 'a voi' },
+        { a: 'Mi serve…', b: 'I need…' },
+        { a: 'Mi manchi.', b: 'I miss you.' },
+        { a: 'Mi dispiace.', b: "I'm sorry." },
+        { a: 'Mi piacerebbe.', b: "I'd like to." }
+      ],
+      tf: [
+        { statement: 'Il verbo piacere concorda con la persona che prova il piacere.', answer: false, why: 'No: concorda con la COSA che piace.' },
+        { statement: '«Mi piace viaggiare» è corretto.', answer: true, why: 'Sì: con un infinito si usa sempre il singolare.' },
+        { statement: 'Si dice «Marco piace la pizza».', answer: false, why: 'No: serve la preposizione → "A Marco piace la pizza".' },
+        { statement: 'Al passato prossimo piacere usa avere.', answer: false, why: 'No: usa essere → "mi è piaciuto".' },
+        { statement: '«Mi manchi» significa "I miss you".', answer: true, why: 'Sì: letteralmente "tu manchi a me".' },
+        { statement: '«Mi piace la pizza» ha bisogno dell\'articolo "la".', answer: true, why: 'Sì: in italiano i nomi generali prendono l\'articolo.' },
+        { statement: '«Gli» può significare sia "a lui" sia "a loro".', answer: true, why: 'Sì, nell\'italiano parlato moderno.' }
+      ],
+      translate: [
+        { en: 'I like coffee.', answers: ['Mi piace il caffè'], hint: 'non dimenticare l\'articolo' },
+        { en: 'I like Italian films.', answers: ['Mi piacciono i film italiani'] },
+        { en: "I don't like fish.", answers: ['Non mi piace il pesce'] },
+        { en: 'Do you like travelling?', answers: ['Ti piace viaggiare', 'Le piace viaggiare'] },
+        { en: 'Marco likes music.', answers: ['A Marco piace la musica'] },
+        { en: 'I liked the film.', answers: ['Mi è piaciuto il film'] },
+        { en: 'I miss my family.', answers: ['Mi manca la mia famiglia'] },
+        { en: "I'd like to come.", answers: ['Mi piacerebbe venire'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Gusti e tempo libero',
+      lines: [
+        { speaker: 'Giulia', icon: '👩', it: 'Che cosa ti piace fare nel tempo libero?', en: 'What do you like doing in your free time?',
+          glosses: [{ term: 'ti piace fare', expl: 'Con un infinito il verbo resta singolare: piace.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Mi piace leggere e mi piacciono molto i film italiani.', en: 'I like reading and I really like Italian films.',
+          glosses: [{ term: 'Mi piace leggere', expl: 'infinito → singolare.' }, { term: 'mi piacciono … i film', expl: '"i film" è plurale → piacciono.' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'Anche a me! E la musica? Ti piace il rap?', en: 'Me too! And music? Do you like rap?',
+          glosses: [{ term: 'Anche a me', expl: 'Forma lunga del pronome: "a me" per l\'enfasi.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Non molto. Preferisco il jazz. A te piace?', en: 'Not much. I prefer jazz. Do you like it?',
+          glosses: [{ term: 'Non molto', expl: 'Modo gentile di dire che non piace.' }, { term: 'A te piace', expl: 'Forma lunga in domanda diretta.' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'Sì! Ieri sono andata a un concerto e mi è piaciuto tantissimo.', en: 'Yes! Yesterday I went to a concert and I loved it.',
+          glosses: [{ term: 'mi è piaciuto', expl: 'Passato prossimo con ESSERE; concorda con "il concerto" (m. sing.).' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Che bello! A me piacerebbe andare a un concerto jazz.', en: "How nice! I'd like to go to a jazz concert.",
+          glosses: [{ term: 'piacerebbe', expl: 'Condizionale: "I would like". Utilissimo per desideri e inviti.' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'Allora andiamo insieme! Ma non mi piacciono i posti troppo affollati.', en: "Then let's go together! But I don't like places that are too crowded.",
+          glosses: [{ term: 'non mi piacciono', expl: 'NON prima del pronome; "i posti" plurale → piacciono.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Nemmeno a me. Mi serve solo un buon posto tranquillo!', en: 'Me neither. I just need a nice quiet place!',
+          glosses: [{ term: 'Nemmeno a me', expl: '"Me neither" — risposta negativa con la forma lunga.' }, { term: 'Mi serve', expl: 'servire funziona come piacere: mi serve / mi servono.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'Mi piace + singolare', back: 'I like (one thing)', hint: 'Mi piace il caffè' },
+      { front: 'Mi piacciono + plurale', back: 'I like (several things)', hint: 'Mi piacciono i dolci' },
+      { front: 'Mi piace + infinito', back: 'I like doing…', note: 'sempre singolare' },
+      { front: 'mi / ti / gli / le / ci / vi / gli', back: 'pronomi indiretti: a me, a te, a lui, a lei, a noi, a voi, a loro' },
+      { front: 'A Marco piace…', back: 'Marco likes…', note: 'nome proprio → preposizione A' },
+      { front: 'Mi è piaciuto / piaciuta', back: 'I liked (it)', note: 'passato con ESSERE' },
+      { front: 'Mi sono piaciuti / piaciute', back: 'I liked (them)' },
+      { front: 'Mi piacerebbe…', back: "I'd like to…" },
+      { front: 'Mi serve / mi servono', back: 'I need' },
+      { front: 'Mi manchi', back: 'I miss you', note: 'struttura rovesciata!' },
+      { front: 'Mi dispiace', back: "I'm sorry" },
+      { front: 'Non mi piace per niente', back: "I don't like it at all" }
+    ],
+
+    summary: {
+      formula: 'PRONOME INDIRETTO (mi/ti/gli/le/ci/vi/gli) + PIACE (singolare o infinito) / PIACCIONO (plurale) + LA COSA',
+      rules: [
+        'La struttura è rovesciata: la cosa che piace è il soggetto grammaticale.',
+        'piace + nome singolare o infinito · piacciono + nome plurale.',
+        'Con un nome proprio serve la preposizione A: "A Marco piace…".',
+        'Non dimenticare l\'articolo: "Mi piace LA pizza".',
+        'Negazione: NON prima del pronome → "Non mi piace".',
+        'Passato prossimo con ESSERE e participio concordato con la cosa: mi è piaciuto / mi sono piaciute.',
+        'Stessa struttura per servire, mancare, interessare, sembrare, bastare, dispiacere.'
+      ],
+      tips: [
+        'Traduci sempre nella testa "mi piace" come "to me IS PLEASING": l\'accordo diventa automatico.',
+        'Domanda da farti prima di scegliere il verbo: "quante cose piacciono?" Una → piace. Più di una → piacciono.',
+        '"Mi manchi" = I miss you. Se lo dici al contrario ("ti manco") stai dicendo che l\'altro sente la tua mancanza — attenzione nei messaggi!'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

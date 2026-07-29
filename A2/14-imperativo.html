@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="L'imperativo italiano A2: forme positive, negative e forma di cortesia con Lei. Con pronomi ed esercizi.">
+  <title>Imperativo · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 14 — IMPERATIVO (base A2)
+     ========================================================================== */
+  window.LESSON = {
+    num: 14, file: '14-imperativo.html', icon: '📣', title: 'Imperativo', group: 'Verbi chiave',
+    subtitle: 'Dare istruzioni, consigli e inviti: guarda!, non guardare!, guardi! — le tre forme che ti servono.',
+
+    intro: {
+      what: 'L\'imperativo è il modo del verbo che serve per dare ordini, istruzioni, consigli e inviti. In italiano ha tre forme utili a A2: <b>tu</b> (informale), <b>Lei</b> (formale) e <b>noi</b> (= "let\'s…"). Ha anche una forma negativa con una regola tutta sua.',
+      when: 'Per strada ("Vai dritto e gira a destra"), in cucina ("Aggiungi il sale"), nei consigli ("Prova questo!"), negli inviti ("Vieni, siediti!") e nelle richieste formali ("Scusi, mi dica").',
+      why: 'Perché l\'imperativo è ovunque: nelle ricette, nei cartelli, nelle istruzioni, nei consigli degli amici. E perché la forma di cortesia con Lei è indispensabile per parlare con chi non conosci.',
+      mistakes: [
+        'Usare l\'infinito per un ordine positivo a "tu": ❌ "Mangiare!" → ✅ "Mangia!" (l\'infinito serve solo per la negazione).',
+        'Non usare l\'infinito per la negazione: ❌ "Non mangia!" → ✅ "Non mangiare!".',
+        'Usare la forma tu con uno sconosciuto: "Scusa, dimmi" a un signore anziano suona maleducato → "Scusi, mi dica".',
+        'Staccare i pronomi: ❌ "Dì mi" → ✅ "Dimmi".'
+      ]
+    },
+
+    formulas: [
+      {
+        label: 'Imperativo affermativo — TU',
+        rows: [
+          { parts: [
+              { text: '-ARE → -A', note: 'parlare → parla!', type: 'verb' },
+              { text: '-ERE → -I', note: 'prendere → prendi!', type: 'object' },
+              { text: '-IRE → -I', note: 'sentire → senti!', type: 'extra' }
+            ], example: 'Parla più lentamente! · Prendi questo! · Senti!' }
+        ]
+      },
+      {
+        label: 'Imperativo negativo — TU: NON + INFINITO',
+        rows: [
+          { parts: [
+              { text: 'NON', type: 'extra' },
+              { text: 'INFINITO', note: 'la forma del dizionario', type: 'object' }
+            ], example: 'Non parlare! · Non correre! · Non dimenticare!', translation: "Don't speak! Don't run!" }
+        ]
+      },
+      {
+        label: 'Forma di cortesia — LEI',
+        rows: [
+          { parts: [
+              { text: '-ARE → -I', note: 'parlare → parli!', type: 'verb' },
+              { text: '-ERE / -IRE → -A', note: 'prendere → prenda!', type: 'object' }
+            ], example: 'Scusi, parli più lentamente. · Prenda pure!' }
+        ]
+      },
+      {
+        label: 'Invito collettivo — NOI',
+        rows: [
+          { parts: [
+              { text: 'forma "noi" del presente', note: '-iamo', type: 'verb' }
+            ], example: 'Andiamo! · Mangiamo! · Non parliamo di lavoro.', translation: "Let's go! Let's eat!" }
+        ]
+      }
+    ],
+    formulaNote: 'Curiosità utile: le desinenze di tu e Lei sono "invertite" — con i verbi in -are, tu prende la -a e Lei la -i; con -ere/-ire è il contrario.',
+
+    rules: [
+      {
+        title: 'Imperativo TU: quasi uguale al presente',
+        body: 'Solo i verbi in <b>-are</b> hanno una forma propria; gli altri copiano il presente.',
+        points: [
+          '-ARE: togli la -i del presente e metti <b>-a</b> → tu parl<b>i</b> → Parl<b>a</b>!',
+          '-ERE: identico al presente → tu prendi → <b>Prendi</b>!',
+          '-IRE: identico al presente → tu senti → <b>Senti</b>!',
+          '-IRE con -isc-: anche qui identico → tu finisci → <b>Finisci</b>!'
+        ],
+        exception: 'Sette verbi hanno forme brevi irregolari: <b>va\'</b> (o vai), <b>da\'</b> (o dai), <b>fa\'</b> (o fai), <b>sta\'</b> (o stai), <b>di\'</b> (solo così), più <b>abbi</b> (avere) e <b>sii</b> (essere).'
+      },
+      {
+        title: 'La negazione: NON + INFINITO (solo con tu)',
+        body: 'Questa è la regola più sorprendente dell\'imperativo italiano, ma vale <b>solo per la forma tu</b>.',
+        points: [
+          'Parla! → <b>Non parlare!</b>',
+          'Vai! → <b>Non andare!</b>',
+          'Dimmi! → <b>Non dirmi niente!</b>',
+          'Con Lei e noi la negazione è normale: "Non parli!", "Non parliamo!".'
+        ],
+        exception: 'Nel parlato familiare si sente anche "Non ti preoccupare!" accanto a "Non preoccuparti!": con i pronomi entrambe le posizioni sono corrette.'
+      },
+      {
+        title: 'La forma di cortesia con LEI',
+        body: 'Quando parli con uno sconosciuto, un cliente, un anziano o in un contesto formale, l\'imperativo cambia forma (tecnicamente è un congiuntivo, ma a A2 basta impararlo come formula).',
+        points: [
+          '-ARE → <b>-i</b>: scusare → <b>Scusi</b>! · guardare → <b>Guardi</b>!',
+          '-ERE / -IRE → <b>-a</b>: prendere → <b>Prenda</b>! · sentire → <b>Senta</b>!',
+          'Irregolari utilissimi: <b>vada</b> (andare), <b>faccia</b> (fare), <b>dica</b> (dire), <b>venga</b> (venire), <b>stia</b> (stare), <b>sia</b> (essere), <b>abbia</b> (avere).',
+          'Frasi che sentirai ogni giorno: "Scusi!", "Mi dica!", "Prego, si accomodi!", "Senta, scusi…", "Vada dritto".'
+        ],
+        exception: 'Con la forma Lei i pronomi vanno SEMPRE prima del verbo: "<b>Mi</b> dica", "<b>Si</b> accomodi", mai "Dicami".'
+      },
+      {
+        title: 'I pronomi con l\'imperativo',
+        body: 'La posizione del pronome dipende dalla forma usata.',
+        points: [
+          'TU e NOI (affermativo): il pronome si <b>attacca</b> alla fine → "Dammi il libro!", "Alzati!", "Sediamoci!".',
+          'TU (negativo): due possibilità → "Non alzarti!" oppure "Non ti alzare!".',
+          'LEI: il pronome va <b>prima</b> → "Mi dia il libro", "Si accomodi", "Mi scusi".',
+          'Con le forme brevi (va\', da\', fa\', sta\', di\') la consonante del pronome <b>raddoppia</b>: da\' + mi = <b>dammi</b>, di\' + mi = <b>dimmi</b>, fa\' + lo = <b>fallo</b>, sta\' + ci = stacci.'
+        ],
+        exception: 'Il raddoppiamento non avviene con "gli": da\' + gli = <b>dagli</b> (una sola g).'
+      },
+      {
+        title: 'L\'imperativo non è sempre un ordine',
+        body: 'In italiano l\'imperativo si usa moltissimo anche per gentilezza, inviti e incoraggiamenti.',
+        points: [
+          'Invito: "<b>Vieni</b>, <b>siediti</b>!" — Come in, sit down!',
+          'Offerta: "<b>Prendi</b> pure!" / "<b>Prenda</b> pure!" — Help yourself.',
+          'Incoraggiamento: "<b>Dai</b>, <b>prova</b>!" — Come on, give it a go!',
+          'Attenzione: "<b>Guarda</b>!", "<b>Senti</b>!", "<b>Ascolta</b>!" — spesso servono solo ad attirare l\'attenzione, come "look" e "listen" in inglese.',
+          'Con "per favore" e "pure" l\'imperativo diventa subito gentile.'
+        ],
+        exception: '"Dai!" è un imperativo di dare usato come esclamazione: significa "come on!" e non ha nulla a che vedere con il dare qualcosa.'
+      }
+    ],
+
+    timeline: {
+      title: 'Quale forma scegliere?',
+      intro: 'Dipende da chi hai davanti.',
+      points: [
+        { time: 'Amici, familiari, coetanei', label: 'TU', example: 'Senti, prendi questo!', now: true },
+        { time: 'Sconosciuti, clienti, anziani', label: 'LEI', example: 'Senta, prenda questo.', note: 'forma di cortesia' },
+        { time: 'Gruppo di cui fai parte', label: 'NOI', example: 'Andiamo!', note: "let's…" },
+        { time: 'Divieti e cartelli', label: 'NON + infinito', example: 'Non fumare. Non toccare.', note: 'anche impersonale' }
+      ],
+      caption: 'Nel dubbio con uno sconosciuto usa sempre il Lei: è impossibile risultare scortesi.'
+    },
+
+    tables: [
+      {
+        title: 'Imperativo regolare — le tre forme',
+        note: 'Attenzione allo "scambio" delle vocali tra tu e Lei.',
+        columns: ['Verbo', 'TU', 'LEI (formale)', 'NOI'],
+        rows: [
+          { cells: ['parlare', 'parla!', 'parli!', 'parliamo!'], irregular: [1, 2] },
+          { cells: ['guardare', 'guarda!', 'guardi!', 'guardiamo!'], irregular: [1, 2] },
+          { cells: ['prendere', 'prendi!', 'prenda!', 'prendiamo!'], irregular: [1, 2] },
+          { cells: ['scrivere', 'scrivi!', 'scriva!', 'scriviamo!'], irregular: [1, 2] },
+          { cells: ['sentire', 'senti!', 'senta!', 'sentiamo!'], irregular: [1, 2] },
+          { cells: ['finire', 'finisci!', 'finisca!', 'finiamo!'], irregular: [1, 2] }
+        ]
+      },
+      {
+        title: 'Imperativo negativo',
+        note: 'Solo la forma TU cambia struttura: NON + infinito.',
+        columns: ['Persona', 'Affermativo', 'Negativo'],
+        rows: [
+          { cells: ['tu', 'Parla!', 'Non parlare!'], irregular: [2] },
+          { cells: ['tu', 'Vai!', 'Non andare!'], irregular: [2] },
+          { cells: ['tu', 'Dimmi!', 'Non dirmi niente!'], irregular: [2] },
+          { cells: ['Lei', 'Parli!', 'Non parli!'] },
+          { cells: ['noi', 'Parliamo!', 'Non parliamo!'] }
+        ]
+      },
+      {
+        title: 'Gli irregolari da sapere',
+        note: 'Le forme con l\'apostrofo (va\', fa\'…) sono abbreviazioni: si possono usare anche vai, fai, dai, stai.',
+        columns: ['Verbo', 'TU', 'LEI', 'Esempio'],
+        rows: [
+          { cells: ['andare', "va' / vai", 'vada', 'Vada sempre dritto!'], irregular: [1, 2] },
+          { cells: ['fare', "fa' / fai", 'faccia', 'Faccia pure!'], irregular: [1, 2] },
+          { cells: ['dare', "da' / dai", 'dia', 'Mi dia un caffè.'], irregular: [1, 2] },
+          { cells: ['stare', "sta' / stai", 'stia', 'Stia tranquillo!'], irregular: [1, 2] },
+          { cells: ['dire', "di'", 'dica', 'Mi dica!'], irregular: [1, 2] },
+          { cells: ['venire', 'vieni', 'venga', 'Venga avanti!'], irregular: [2] },
+          { cells: ['essere', 'sii', 'sia', 'Sii gentile!'], irregular: [1, 2] },
+          { cells: ['avere', 'abbi', 'abbia', 'Abbia pazienza!'], irregular: [1, 2] },
+          { cells: ['uscire', 'esci', 'esca', 'Esca da questa porta.'], irregular: [2] },
+          { cells: ['tenere', 'tieni', 'tenga', 'Tenga il resto.'], irregular: [2] }
+        ]
+      },
+      {
+        title: 'I pronomi: attaccati o separati?',
+        columns: ['Forma', 'Posizione', 'Esempio'],
+        rows: [
+          { cells: ['tu affermativo', 'attaccato', 'Dimmi! Alzati! Prendilo!'], irregular: [1] },
+          { cells: ['tu negativo', 'attaccato o prima', 'Non alzarti! = Non ti alzare!'] },
+          { cells: ['Lei', 'sempre prima', 'Mi dica. Si accomodi. Mi scusi.'], irregular: [1] },
+          { cells: ['noi', 'attaccato', 'Sediamoci! Andiamocene!'], irregular: [1] },
+          { cells: ['forme brevi', 'raddoppiamento', "da' + mi = dammi · di' + mi = dimmi · fa' + lo = fallo"], irregular: [2] }
+        ]
+      },
+      {
+        title: 'Frasi con l\'imperativo che sentirai ogni giorno',
+        columns: ['Italiano', 'Inglese', 'Contesto'],
+        rows: [
+          { cells: ['Scusi!', 'Excuse me!', 'per strada, formale'] },
+          { cells: ['Scusa!', 'Sorry! / Excuse me!', 'con amici'] },
+          { cells: ['Senta, scusi…', 'Excuse me…', 'iniziare una domanda'] },
+          { cells: ['Mi dica!', 'How can I help you?', 'negozianti, camerieri'] },
+          { cells: ['Prego, si accomodi.', 'Please, have a seat.', 'ufficio, ristorante'] },
+          { cells: ['Vada dritto e giri a destra.', 'Go straight and turn right.', 'indicazioni stradali'] },
+          { cells: ['Guarda!', 'Look!', 'attirare l\'attenzione'] },
+          { cells: ['Dai, andiamo!', "Come on, let's go!", 'incoraggiare'] },
+          { cells: ['Non ti preoccupare!', "Don't worry!", 'rassicurare'] },
+          { cells: ['Aspetta un attimo!', 'Wait a second!', 'ovunque'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Parla più lentamente, per favore!', literal: 'Speak more slowly, for favour!', natural: 'Speak more slowly, please!', note: 'Imperativo tu di un verbo in -are: parla (con la -a).' },
+      { it: 'Scusi, parli più lentamente.', literal: 'Excuse-me, speak more slowly.', natural: 'Excuse me, could you speak more slowly.', note: 'Stessa frase con la forma di cortesia: parli (con la -i).' },
+      { it: 'Prendi un caffè con me!', literal: 'Take a coffee with me!', natural: 'Have a coffee with me!', note: '-ere: la forma tu è identica al presente.' },
+      { it: 'Senti, ho una domanda.', literal: 'Listen, I-have a question.', natural: 'Listen, I have a question.', note: '"Senti" spesso serve solo ad attirare l\'attenzione.' },
+      { it: 'Non parlare così veloce!', literal: 'Not to-speak so fast!', natural: "Don't speak so fast!", note: 'Negazione con tu: NON + INFINITO.' },
+      { it: 'Non dimenticare le chiavi!', literal: 'Not to-forget the keys!', natural: "Don't forget the keys!", note: 'Sempre l\'infinito nella negazione informale.' },
+      { it: 'Vai dritto e poi gira a destra.', literal: 'Go straight and then turn to right.', natural: 'Go straight then turn right.', note: 'Indicazioni stradali con tu.' },
+      { it: 'Vada dritto fino al semaforo.', literal: 'Go straight until to-the traffic-light.', natural: 'Go straight to the traffic lights.', note: 'Stessa indicazione con Lei: vada.' },
+      { it: 'Dimmi tutto!', literal: 'Tell-me everything!', natural: 'Tell me everything!', note: "di' + mi = dimmi, con raddoppiamento della consonante." },
+      { it: 'Mi dica, signora.', literal: 'To-me say, madam.', natural: 'How can I help you, madam?', note: 'Con Lei il pronome va prima: mi dica.' },
+      { it: 'Dammi una mano, per favore.', literal: 'Give-me a hand, please.', natural: 'Give me a hand, please.', note: "da' + mi = dammi. \"Dare una mano\" = aiutare." },
+      { it: 'Prego, si accomodi!', literal: 'Please, yourself make-comfortable!', natural: 'Please, have a seat!', note: 'Riflessivo con Lei: il pronome "si" va prima.' },
+      { it: 'Siediti, ti preparo un tè.', literal: 'Sit-yourself, to-you I-prepare a tea.', natural: "Sit down, I'll make you a tea.", note: 'Riflessivo con tu: il pronome si attacca (siedi + ti).' },
+      { it: 'Non ti preoccupare, va tutto bene.', literal: 'Not yourself to-worry, goes all well.', natural: "Don't worry, everything is fine.", note: 'Nella negazione il pronome può stare prima o attaccato: "Non preoccuparti".' },
+      { it: 'Andiamo, è tardi!', literal: 'Let\'s-go, is late!', natural: "Let's go, it's late!", note: 'Imperativo noi = forma del presente.' },
+      { it: 'Facciamo una pausa!', literal: 'Let\'s-do a break!', natural: "Let's take a break!", note: 'noi + fare.' },
+      { it: 'Sii gentile con tua sorella.', literal: 'Be kind with your sister.', natural: 'Be nice to your sister.', note: 'Imperativo irregolare di essere: sii.' },
+      { it: 'Abbi pazienza, arrivo subito.', literal: 'Have patience, I-arrive immediately.', natural: "Be patient, I'm coming right away.", note: 'Imperativo irregolare di avere: abbi.' },
+      { it: 'Non fumare qui, per favore.', literal: 'Not to-smoke here, please.', natural: "Don't smoke here, please.", note: 'Sui cartelli si legge spesso solo "Non fumare" o "Vietato fumare".' },
+      { it: 'Faccia pure, si accomodi.', literal: 'Do too, yourself make-comfortable.', natural: 'Go ahead, make yourself comfortable.', note: '"pure" ammorbidisce l\'imperativo e lo rende un invito.' },
+      { it: 'Dai, prova! Non è difficile.', literal: 'Come-on, try! Not is difficult.', natural: "Come on, give it a try! It's not hard.", note: '"Dai!" come esclamazione = come on!' }
+    ],
+
+    mistakes: [
+      { wrong: 'Mangiare la pasta! (ordine a un amico)', right: 'Mangia la pasta!', why: 'L\'infinito si usa solo nella forma NEGATIVA con tu. Per l\'ordine positivo serve l\'imperativo.' },
+      { wrong: 'Non mangia la pasta!', right: 'Non mangiare la pasta!', why: 'La negazione con tu si forma con NON + infinito.' },
+      { wrong: 'Parla più lentamente! (a uno sconosciuto anziano)', right: 'Parli più lentamente, per favore.', why: 'Con gli sconosciuti serve la forma di cortesia con Lei.' },
+      { wrong: 'Dì mi la verità.', right: 'Dimmi la verità.', why: 'Con le forme brevi il pronome si attacca e la consonante raddoppia.' },
+      { wrong: 'Dicami, signore.', right: 'Mi dica, signore.', why: 'Con la forma Lei i pronomi vanno sempre prima del verbo.' },
+      { wrong: 'Prendi! (a un cliente in negozio)', right: 'Prenda pure!', why: 'In un contesto commerciale si usa il Lei. "Pure" rende l\'imperativo un invito gentile.' },
+      { wrong: 'Sia gentile! (a tuo fratello)', right: 'Sii gentile!', why: '"Sia" è la forma di cortesia; con un familiare si usa "sii".' },
+      { wrong: 'Andiamo noi!', right: 'Andiamo!', why: 'Con l\'imperativo non si esprime il pronome soggetto.' },
+      { wrong: 'Non ti alzare... anzi: Non alzati!', right: 'Non alzarti! / Non ti alzare!', why: 'Nella negazione il pronome sta attaccato all\'infinito o prima del verbo, mai attaccato alla forma dell\'imperativo.' }
+    ],
+
+    exercises: {
+      mc: [
+        { q: 'Imperativo TU di "parlare":', options: ['parli', 'parla', 'parlare', 'parlate'], answer: 1, hint: '-are prende la -a', why: 'parlare → Parla!' },
+        { q: 'Imperativo TU di "prendere":', options: ['prenda', 'prendi', 'prendere', 'prende'], answer: 1, hint: 'uguale al presente', why: '-ere → Prendi!' },
+        { q: 'Imperativo LEI di "scusare":', options: ['scusa', 'scusi', 'scusare', 'scusate'], answer: 1, hint: '-are con Lei prende la -i', why: 'Scusi! è la forma di cortesia.' },
+        { q: 'Imperativo LEI di "sentire":', options: ['senti', 'senta', 'sentire', 'sente'], answer: 1, hint: '-ire con Lei prende la -a', why: 'Senta, scusi…' },
+        { q: 'Negativo di «Parla!» (a un amico):', options: ['Non parla!', 'Non parli!', 'Non parlare!', 'Non parlato!'], answer: 2, hint: 'NON + infinito', why: 'La negazione con tu usa l\'infinito.' },
+        { q: 'Come si dice "Tell me!" a un amico?', options: ['Di\' mi!', 'Dimmi!', 'Mi dici!', 'Dicimi!'], answer: 1, hint: 'raddoppiamento', why: "di' + mi = dimmi." },
+        { q: 'Come si dice "Tell me" a uno sconosciuto?', options: ['Dimmi!', 'Mi dica!', 'Dicami!', 'Dica mi!'], answer: 1, hint: 'con Lei il pronome va prima', why: 'Mi dica: formula standard di negozianti e camerieri.' },
+        { q: 'Imperativo TU di "essere":', options: ['sia', 'sei', 'sii', 'essere'], answer: 2, hint: 'irregolare', why: 'Sii gentile!' },
+        { q: 'Quale frase è la più adatta a un cliente?', options: ['Aspetta!', 'Aspetti un attimo, per favore.', 'Non aspettare!', 'Aspettiamo!'], answer: 1, hint: 'contesto formale', why: 'Forma di cortesia con Lei + per favore.' },
+        { q: '«Andiamo!» significa:', options: ['They go!', "Let's go!", 'Go!', 'We went!'], answer: 1, hint: 'imperativo noi', why: 'La forma noi dell\'imperativo = "let\'s…".' },
+        { q: 'Come si dice "Don\'t worry!" a un amico?', options: ['Non preoccupati!', 'Non ti preoccupare!', 'Non si preoccupi!', 'Non preoccupare ti!'], answer: 1, hint: 'due forme corrette: questa e "Non preoccuparti!"', why: 'Nella negazione il pronome sta prima o attaccato all\'infinito.' },
+        { q: 'Imperativo LEI di "fare":', options: ['fai', 'fa\'', 'faccia', 'fate'], answer: 2, hint: 'irregolare', why: 'Faccia pure!' }
+      ],
+      fill: [
+        { before: '', after: 'più lentamente, per favore! (parlare, tu)', answers: ['parla'], en: 'Speak more slowly, please!' },
+        { before: 'Scusi,', after: 'più lentamente. (parlare, Lei)', answers: ['parli'], en: 'Excuse me, speak more slowly.' },
+        { before: 'Non', after: 'le chiavi! (dimenticare, tu)', answers: ['dimenticare'], en: "Don't forget the keys!" },
+        { before: '', after: 'dritto fino al semaforo. (andare, Lei)', answers: ['vada'], en: 'Go straight to the traffic lights.' },
+        { before: '', after: 'tutto! (dire + mi, tu)', answers: ['dimmi'], en: 'Tell me everything!' },
+        { before: 'Prego,', after: 'accomodi. (si, Lei)', answers: ['si'], en: 'Please, have a seat.' },
+        { before: '', after: 'gentile con tua sorella! (essere, tu)', answers: ['sii'], en: 'Be nice to your sister!' },
+        { before: '', after: 'pazienza, arrivo subito! (avere, tu)', answers: ['abbi'], en: 'Be patient, I am coming!' },
+        { before: '', after: ', è tardi! (andare, noi)', answers: ['andiamo'], en: "Let's go, it's late!" },
+        { before: 'Non', after: 'qui, per favore. (fumare)', answers: ['fumare'], en: "Don't smoke here, please." }
+      ],
+      order: [
+        { words: ['Parla', 'più', 'lentamente', 'per', 'favore'], answer: 'Parla più lentamente per favore', en: 'Speak more slowly please.' },
+        { words: ['Non', 'dimenticare', 'le', 'chiavi'], answer: 'Non dimenticare le chiavi', en: "Don't forget the keys." },
+        { words: ['Vada', 'dritto', 'e', 'giri', 'a', 'destra'], answer: 'Vada dritto e giri a destra', en: 'Go straight and turn right.' },
+        { words: ['Prego', 'si', 'accomodi'], answer: 'Prego si accomodi', en: 'Please, have a seat.' },
+        { words: ['Dai', 'andiamo', 'è', 'tardi'], answer: 'Dai andiamo è tardi', en: "Come on, let's go, it's late." }
+      ],
+      dnd: {
+        instructions: 'Questa frase va detta con TU (amico) o con LEI (formale)? Trascina.',
+        buckets: [
+          { id: 'tu', label: 'TU (informale)', icon: '🙂' },
+          { id: 'lei', label: 'LEI (formale)', icon: '🎩' }
+        ],
+        items: [
+          { text: 'Scusa!', bucket: 'tu' },
+          { text: 'Scusi!', bucket: 'lei' },
+          { text: 'Dimmi!', bucket: 'tu' },
+          { text: 'Mi dica!', bucket: 'lei' },
+          { text: 'Senti!', bucket: 'tu' },
+          { text: 'Senta!', bucket: 'lei' },
+          { text: 'Vai dritto.', bucket: 'tu' },
+          { text: 'Vada dritto.', bucket: 'lei' },
+          { text: 'Siediti!', bucket: 'tu' },
+          { text: 'Si accomodi!', bucket: 'lei' },
+          { text: 'Prendi pure!', bucket: 'tu' },
+          { text: 'Prenda pure!', bucket: 'lei' }
+        ]
+      },
+      match: [
+        { a: 'Parla!', b: 'Speak! (informal)' },
+        { a: 'Parli!', b: 'Speak! (formal)' },
+        { a: 'Non parlare!', b: "Don't speak! (informal)" },
+        { a: 'Dimmi!', b: 'Tell me! (informal)' },
+        { a: 'Mi dica!', b: 'Tell me! (formal)' },
+        { a: 'Si accomodi!', b: 'Have a seat! (formal)' },
+        { a: 'Andiamo!', b: "Let's go!" },
+        { a: 'Sii gentile!', b: 'Be kind!' },
+        { a: 'Abbi pazienza!', b: 'Be patient!' },
+        { a: 'Non ti preoccupare!', b: "Don't worry!" }
+      ],
+      tf: [
+        { statement: 'L\'imperativo negativo con "tu" si forma con NON + infinito.', answer: true, why: 'Sì: "Non parlare!", "Non andare!".' },
+        { statement: 'Con i verbi in -are l\'imperativo tu finisce in -i.', answer: false, why: 'No: finisce in -a (parla!). È il Lei che finisce in -i (parli!).' },
+        { statement: 'Con la forma Lei i pronomi si attaccano al verbo.', answer: false, why: 'No: vanno sempre prima → "Mi dica", "Si accomodi".' },
+        { statement: '«Dimmi» viene da "di\'" + "mi" con raddoppiamento.', answer: true, why: 'Esatto, come dammi, fallo, dacci.' },
+        { statement: 'L\'imperativo "noi" corrisponde a "let\'s…".', answer: true, why: 'Sì: Andiamo! = Let\'s go!' },
+        { statement: '«Sii» è l\'imperativo formale di essere.', answer: false, why: 'No: "sii" è la forma tu; il formale è "sia".' },
+        { statement: 'In italiano l\'imperativo si usa anche per gli inviti gentili.', answer: true, why: 'Sì: "Vieni, siediti!", "Prenda pure!".' }
+      ],
+      translate: [
+        { en: 'Speak more slowly, please! (to a friend)', answers: ['Parla più lentamente per favore', 'Parla più piano per favore'] },
+        { en: "Don't forget the keys!", answers: ['Non dimenticare le chiavi'] },
+        { en: 'Excuse me! (to a stranger)', answers: ['Scusi'] },
+        { en: 'Tell me everything! (to a friend)', answers: ['Dimmi tutto'] },
+        { en: 'Go straight ahead. (formal)', answers: ['Vada dritto', 'Vada sempre dritto'] },
+        { en: "Let's go!", answers: ['Andiamo'] },
+        { en: "Don't worry!", answers: ['Non ti preoccupare', 'Non preoccuparti'] },
+        { en: 'Please, have a seat. (formal)', answers: ['Prego si accomodi', 'Si accomodi'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Chiedere indicazioni (formale) e un consiglio (informale)',
+      lines: [
+        { speaker: 'Saman', icon: '🧑', it: 'Scusi, signora, sa dov\'è la stazione?', en: 'Excuse me, madam, do you know where the station is?',
+          glosses: [{ term: 'Scusi', expl: 'Imperativo formale di scusare (-are → -i).' }] },
+        { speaker: 'Signora', icon: '👵', side: 'right', it: 'Certo! Vada dritto e giri a destra al semaforo.', en: 'Of course! Go straight and turn right at the traffic lights.',
+          glosses: [{ term: 'Vada', expl: 'Imperativo formale irregolare di andare.' }, { term: 'giri', expl: 'girare (-are) con Lei → giri.' }] },
+        { speaker: 'Saman', icon: '🧑', it: 'Grazie mille! È lontano?', en: 'Thank you so much! Is it far?', glosses: [] },
+        { speaker: 'Signora', icon: '👵', side: 'right', it: 'No, dieci minuti. Ma non prenda l\'autobus, è più lento!', en: "No, ten minutes. But don't take the bus, it's slower!",
+          glosses: [{ term: 'non prenda', expl: 'Con Lei la negazione è normale: NON + forma di cortesia (non l\'infinito).' }] },
+        { speaker: 'Amico', icon: '🧑', it: 'Ehi Saman! Vieni, ti accompagno io.', en: "Hey Saman! Come on, I'll take you.",
+          glosses: [{ term: 'Vieni', expl: 'Imperativo informale di venire, uguale al presente.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Grazie! Dammi solo un minuto, prendo la giacca.', en: 'Thanks! Just give me a minute, I\'ll grab my jacket.',
+          glosses: [{ term: 'Dammi', expl: "da' + mi con raddoppiamento della m." }] },
+        { speaker: 'Amico', icon: '🧑', it: 'Dai, sbrigati! E non dimenticare il biglietto.', en: "Come on, hurry up! And don't forget the ticket.",
+          glosses: [{ term: 'Dai', expl: 'Esclamazione: "come on!".' }, { term: 'sbrigati', expl: 'Riflessivo con tu: il pronome si attacca (sbriga + ti).' }, { term: 'non dimenticare', expl: 'Negazione con tu: NON + infinito.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Non ti preoccupare, ce l\'ho. Andiamo!', en: "Don't worry, I've got it. Let's go!",
+          glosses: [{ term: 'Non ti preoccupare', expl: 'Anche "Non preoccuparti!" è corretto.' }, { term: 'Andiamo', expl: "Imperativo noi = let's go." }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'parlare → tu', back: 'Parla!', note: '-are prende la -a' },
+      { front: 'prendere / sentire → tu', back: 'Prendi! / Senti!', note: 'uguale al presente' },
+      { front: 'Negativo con tu', back: 'NON + INFINITO: Non parlare!' },
+      { front: 'parlare → Lei', back: 'Parli!', note: '-are prende la -i con Lei' },
+      { front: 'prendere / sentire → Lei', back: 'Prenda! / Senta!' },
+      { front: 'andare / fare / dire → Lei', back: 'Vada! / Faccia! / Dica!' },
+      { front: 'essere / avere → tu', back: 'Sii! / Abbi!' },
+      { front: "da' + mi", back: 'dammi (raddoppiamento)' },
+      { front: "di' + mi", back: 'dimmi' },
+      { front: 'Pronomi con LEI', back: 'sempre PRIMA: Mi dica, Si accomodi' },
+      { front: 'Imperativo NOI', back: "Andiamo! = Let's go!" },
+      { front: 'Scusa / Scusi', back: 'Excuse me (informale / formale)' }
+    ],
+
+    summary: {
+      formula: 'TU: -are → -A, -ere/-ire → -I · NEGATIVO TU: NON + INFINITO · LEI: -are → -I, -ere/-ire → -A · NOI: -iamo',
+      rules: [
+        'Con tu, solo i verbi in -are cambiano (parla!); gli altri copiano il presente (prendi!, senti!).',
+        'La negazione informale usa NON + infinito: "Non parlare!".',
+        'La forma di cortesia (Lei) inverte le vocali: parli!, prenda!, senta!.',
+        'Irregolari: va\'/vada, fa\'/faccia, da\'/dia, sta\'/stia, di\'/dica, sii/sia, abbi/abbia, vieni/venga.',
+        'Pronomi: attaccati con tu e noi (dimmi, alzati, sediamoci), sempre prima con Lei (mi dica, si accomodi).',
+        'Con le forme brevi la consonante del pronome raddoppia: dammi, dimmi, fallo (ma dagli).',
+        'L\'imperativo serve anche per inviti e incoraggiamenti: "Vieni, siediti!", "Dai, prova!".'
+      ],
+      tips: [
+        'Ricorda l\'inversione con una frase: "parlA a un amico, parlI a un signore". Le vocali si scambiano.',
+        'La negazione informale è l\'unico caso in cui l\'infinito diventa un ordine: "Non toccare!" è quello che leggi sui cartelli dei musei.',
+        'Se non sei sicuro di quale forma usare con uno sconosciuto, aggiungi "per favore" e usa il Lei: non sbaglierai mai.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

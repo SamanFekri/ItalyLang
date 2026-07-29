@@ -1,0 +1,26 @@
+{
+  "name": "italiano-interattivo",
+  "version": "1.0.0",
+  "description": "Corso interattivo di grammatica italiana (livello A2) costruito con Vue 3 — sito statico, nessun backend.",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js 3000",
+    "serve": "node server.js",
+    "open": "node server.js & sleep 1 && open http://localhost:3000"
+  },
+  "keywords": [
+    "italian",
+    "italiano",
+    "a2",
+    "grammar",
+    "vue",
+    "language-learning",
+    "farsi"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sapere vs conoscere in italiano: quando usare l'uno e quando l'altro, con albero decisionale ed esercizi.">
+  <title>Sapere vs Conoscere · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+  <style>
+    /* Albero decisionale — usato solo in questa lezione */
+    .tree { display: flex; flex-direction: column; gap: 10px; margin: 16px 0; }
+    .tree-node {
+      border: 2px solid var(--border-strong); border-radius: var(--r-md);
+      padding: 12px 16px; background: var(--surface-2);
+    }
+    .tree-q { font-weight: 800; }
+    .tree-branch { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .tree-yes { border-color: var(--ok); background: var(--ok-bg); }
+    .tree-no  { border-color: var(--info); background: var(--info-bg); }
+    .tree-arrow { text-align: center; color: var(--text-mute); font-size: 1.2rem; }
+    @media (max-width: 620px) { .tree-branch { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 10 — SAPERE vs CONOSCERE
+     ========================================================================== */
+  window.LESSON = {
+    num: 10, file: '10-sapere-conoscere.html', icon: '🧠', title: 'Sapere vs Conoscere', group: 'Verbi chiave',
+    subtitle: 'Un solo verbo inglese, "to know", diventa due verbi italiani. Ecco come scegliere ogni volta senza esitare.',
+
+    intro: {
+      what: 'L\'inglese "to know" e il farsi «دانستن / شناختن» si dividono in italiano in due verbi diversi: <b>sapere</b> (conoscere un\'informazione, essere capace di fare qualcosa) e <b>conoscere</b> (avere familiarità con una persona, un luogo, un\'opera).',
+      when: 'Sapere: davanti a un\'informazione ("So dove abita"), a una frase secondaria ("So che sei stanco") o a un infinito ("So nuotare"). Conoscere: davanti a un nome di persona, città, ristorante, libro, canzone ("Conosco Marco", "Conosco Roma").',
+      why: 'È l\'errore più immediatamente riconoscibile per un orecchio italiano. Sbagliare qui non impedisce di capirsi, ma ti fa suonare straniero anche dopo anni di studio.',
+      mistakes: [
+        'Usare conoscere con un\'informazione: ❌ "Conosco che sei italiano" → ✅ "So che sei italiano".',
+        'Usare sapere con una persona: ❌ "So Marco" → ✅ "Conosco Marco".',
+        'Usare "posso" per un\'abilità appresa: ❌ "Posso nuotare" (= mi è permesso) → ✅ "So nuotare".',
+        'Confondere i passati: "ho saputo" (I found out) ≠ "sapevo" (I knew); "ho conosciuto" (I met) ≠ "conoscevo" (I knew).'
+      ]
+    },
+
+    formulas: [
+      {
+        label: 'SAPERE — informazione o capacità',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'SAPERE', type: 'verb' },
+              { text: 'che / dove / come / quando…', note: 'un\'informazione', type: 'object' }
+            ], example: 'So dove abita Marco.', translation: 'I know where Marco lives.' },
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'SAPERE', type: 'verb' },
+              { text: 'INFINITO', note: 'un\'abilità', type: 'extra' }
+            ], example: 'So nuotare.', translation: 'I can swim / I know how to swim.' }
+        ]
+      },
+      {
+        label: 'CONOSCERE — familiarità con qualcuno o qualcosa',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'CONOSCERE', type: 'verb' },
+              { text: 'NOME', note: 'persona, luogo, opera', type: 'object' }
+            ], example: 'Conosco Marco. / Conosco Roma.', translation: 'I know Marco. / I know Rome.' }
+        ]
+      }
+    ],
+    formulaNote: 'Regola pratica in tre parole: dopo CONOSCERE viene sempre un NOME; dopo SAPERE viene una FRASE o un INFINITO.',
+
+    rules: [
+      {
+        title: 'L\'albero decisionale',
+        body: `Fatti due domande e la scelta è automatica.
+          <div class="tree">
+            <div class="tree-node tree-q">❓ Dopo il verbo c'è un NOME (persona, città, libro, ristorante)?</div>
+            <div class="tree-arrow">↓</div>
+            <div class="tree-branch">
+              <div class="tree-node tree-yes"><b>SÌ →  CONOSCERE</b><br>
+                <span class="it">Conosco Marco. · Conosco Firenze. · Conosci questo film?</span></div>
+              <div class="tree-node tree-no"><b>NO → seconda domanda ↓</b></div>
+            </div>
+            <div class="tree-arrow">↓</div>
+            <div class="tree-node tree-q">❓ Dopo il verbo c'è un'INFORMAZIONE (che, dove, come, quando, perché, se) o un INFINITO?</div>
+            <div class="tree-arrow">↓</div>
+            <div class="tree-branch">
+              <div class="tree-node tree-yes"><b>SÌ → SAPERE</b><br>
+                <span class="it">So che sei stanco. · So dove abita. · So nuotare.</span></div>
+              <div class="tree-node tree-no"><b>Risposta breve → SAPERE</b><br>
+                <span class="it">— Lo so. / Non lo so.</span></div>
+            </div>
+          </div>`,
+        points: [
+          'Il test più veloce: se puoi sostituire il verbo con "sono capace di" o "ho l\'informazione che", usa <b>sapere</b>.',
+          'Se puoi sostituirlo con "ho familiarità con", usa <b>conoscere</b>.'
+        ],
+        exception: 'Alcune frasi accettano entrambi con senso diverso: "Conosco questa canzone" (l\'ho sentita, la riconosco) vs "So questa canzone" (la so a memoria, la posso cantare).'
+      },
+      {
+        title: 'SAPERE + infinito = essere capace (≠ potere)',
+        body: 'Questa distinzione non esiste in inglese e crea confusione continua.',
+        points: [
+          '<b>Sapere</b> + infinito = capacità appresa: "<b>So</b> guidare" (ho imparato, ho la patente).',
+          '<b>Potere</b> + infinito = permesso o possibilità nelle circostanze: "Non <b>posso</b> guidare" (ho bevuto / la macchina è rotta).',
+          'Confronto: "So nuotare ma oggi non posso: ho l\'influenza".'
+        ],
+        exception: 'Con i verbi di percezione l\'italiano usa potere: "Non posso vederti da qui" (I can\'t see you). "Non so vedere" non si dice.'
+      },
+      {
+        title: 'CONOSCERE si usa anche per luoghi e opere',
+        body: 'Non solo persone: qualsiasi cosa con cui hai familiarità diretta.',
+        points: [
+          'Persone: "Conosci mia sorella?"',
+          'Città e luoghi: "Conosco bene Milano", "Conosci un buon ristorante qui?"',
+          'Opere e prodotti: "Conosci questo film / questa canzone / questo libro?"',
+          'Materie e argomenti: "Conosce bene la storia italiana."'
+        ],
+        exception: 'Con le lingue si usano entrambi: "Conosco l\'italiano" (ho una certa familiarità) e "So l\'italiano" (lo so usare). Il più naturale in conversazione è "Parlo italiano".'
+      },
+      {
+        title: 'Al passato i due verbi cambiano significato',
+        body: 'Questo è il punto avanzato più utile della lezione. Il passato prossimo dà un senso puntuale, l\'imperfetto (B1) un senso di stato.',
+        points: [
+          '<b>Ho conosciuto Marco</b> ieri. = I <b>met</b> Marco yesterday (prima volta).',
+          '<b>Conoscevo</b> Marco. = I <b>knew</b> Marco (situazione continua, imperfetto).',
+          '<b>Ho saputo</b> la notizia ieri. = I <b>found out</b> the news yesterday.',
+          '<b>Sapevo</b> la verità. = I <b>knew</b> the truth (stato).'
+        ],
+        exception: 'Quindi "Ho conosciuto tua sorella" non significa "conoscevo tua sorella", ma "l\'ho incontrata per la prima volta". È un errore che cambia davvero il senso.'
+      },
+      {
+        title: 'Espressioni fisse da imparare in blocco',
+        body: 'Queste formule si usano decine di volte al giorno.',
+        points: [
+          '<b>Non lo so.</b> = I don\'t know. (mai "non conosco" da solo)',
+          '<b>Lo so.</b> = I know.',
+          '<b>Chi lo sa?</b> = Who knows?',
+          '<b>Non so cosa dire.</b> = I don\'t know what to say.',
+          '<b>Sai che ore sono?</b> = Do you know what time it is?',
+          '<b>Ci conosciamo?</b> = Do we know each other?',
+          '<b>Piacere di conoscerti / conoscerla.</b> = Nice to meet you.',
+          '<b>Fammi sapere.</b> = Let me know.'
+        ],
+        exception: 'Attenzione: la risposta "Non so" senza "lo" è possibile ma meno naturale. Gli italiani dicono quasi sempre "Non lo so".'
+      }
+    ],
+
+    timeline: {
+      title: 'Sapere e conoscere nel tempo',
+      intro: 'Il cambiamento di significato al passato è la parte da memorizzare.',
+      points: [
+        { time: 'Passato puntuale', label: 'Ho conosciuto', example: 'Ho conosciuto Marco a una festa.', note: '= I met (prima volta)' },
+        { time: 'Passato puntuale', label: 'Ho saputo', example: 'Ho saputo la notizia ieri.', note: '= I found out' },
+        { time: 'Adesso', label: 'Conosco / So', example: 'Conosco Marco. So che è simpatico.', now: true },
+        { time: 'Stato passato (B1)', label: 'Conoscevo / Sapevo', example: 'Conoscevo bene quella città.', note: '= I knew (a lungo)' }
+      ],
+      caption: 'Passato prossimo = il momento in cui la conoscenza è cominciata. Imperfetto = la conoscenza come stato.'
+    },
+
+    tables: [
+      {
+        title: 'Sapere — presente (irregolare)',
+        columns: ['Persona', 'Forma', 'Esempio'],
+        rows: [
+          { cells: ['io', 'so', 'So dove abiti.'], irregular: [1] },
+          { cells: ['tu', 'sai', 'Sai nuotare?'], irregular: [1] },
+          { cells: ['lui / lei', 'sa', 'Non sa la risposta.'], irregular: [1] },
+          { cells: ['noi', 'sappiamo', 'Sappiamo che è difficile.'], irregular: [1] },
+          { cells: ['voi', 'sapete', 'Sapete l\'indirizzo?'] },
+          { cells: ['loro', 'sanno', 'Non sanno niente.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Conoscere — presente (regolare in -ere)',
+        note: 'Attenzione alla pronuncia: "conosco" ha il suono duro, "conosci" quello dolce.',
+        columns: ['Persona', 'Forma', 'Esempio'],
+        rows: [
+          { cells: ['io', 'conosco', 'Conosco tua sorella.'] },
+          { cells: ['tu', 'conosci', 'Conosci Roma?'] },
+          { cells: ['lui / lei', 'conosce', 'Conosce molte persone.'] },
+          { cells: ['noi', 'conosciamo', 'Ci conosciamo da anni.'] },
+          { cells: ['voi', 'conoscete', 'Conoscete questo posto?'] },
+          { cells: ['loro', 'conoscono', 'Non conoscono la città.'] }
+        ]
+      },
+      {
+        title: 'Il confronto diretto',
+        note: 'Dopo conoscere: un NOME. Dopo sapere: una FRASE o un INFINITO.',
+        columns: ['Situazione', 'SAPERE', 'CONOSCERE'],
+        rows: [
+          { cells: ['una persona', '—', 'Conosco Marco.'], irregular: [2] },
+          { cells: ['una città', '—', 'Conosco Roma.'], irregular: [2] },
+          { cells: ['un\'informazione', 'So dove abita.', '—'], irregular: [1] },
+          { cells: ['una frase con "che"', 'So che è tardi.', '—'], irregular: [1] },
+          { cells: ['un\'abilità', 'So guidare.', '—'], irregular: [1] },
+          { cells: ['una notizia', 'Sai la novità?', '—'], irregular: [1] },
+          { cells: ['un ristorante', '—', 'Conosci un buon ristorante?'], irregular: [2] },
+          { cells: ['una canzone', 'So la canzone (a memoria).', 'Conosco la canzone (l\'ho sentita).'] }
+        ]
+      },
+      {
+        title: 'Passato prossimo: attenzione al significato',
+        columns: ['Frase', 'Significato reale', 'NON significa'],
+        rows: [
+          { cells: ['Ho conosciuto Anna.', 'I met Anna (prima volta).', 'I knew Anna.'], irregular: [1] },
+          { cells: ['Conoscevo Anna. (B1)', 'I knew Anna (per un periodo).', '—'] },
+          { cells: ['Ho saputo la notizia.', 'I found out the news.', 'I knew the news.'], irregular: [1] },
+          { cells: ['Sapevo la verità. (B1)', 'I knew the truth.', '—'] },
+          { cells: ['Ho saputo che sei tornato.', 'I heard/found out that you are back.', '—'] }
+        ]
+      },
+      {
+        title: 'Espressioni fisse',
+        columns: ['Espressione', 'Inglese', 'Quando si usa'],
+        rows: [
+          { cells: ['Non lo so.', "I don't know.", 'risposta standard'] },
+          { cells: ['Lo so.', 'I know.', 'conferma'] },
+          { cells: ['Chi lo sa?', 'Who knows?', 'incertezza'] },
+          { cells: ['Sai che ore sono?', 'Do you know the time?', 'per strada'] },
+          { cells: ['Fammi sapere.', 'Let me know.', 'fine messaggio'] },
+          { cells: ['Piacere di conoscerti.', 'Nice to meet you.', 'presentazioni'] },
+          { cells: ['Ci conosciamo?', 'Do we know each other?', 'volto familiare'] },
+          { cells: ['Non so cosa dire.', "I don't know what to say.", 'sorpresa/emozione'] },
+          { cells: ['Che ne so!', 'How should I know!', 'informale, un po\' brusco'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Conosco Marco da dieci anni.', literal: 'I-know Marco from ten years.', natural: "I've known Marco for ten years.", note: 'Persona → conoscere. Presente + da per la durata.' },
+      { it: 'So che Marco abita a Roma.', literal: 'I-know that Marco lives in Rome.', natural: 'I know that Marco lives in Rome.', note: 'Dopo "che" c\'è un\'informazione → sapere.' },
+      { it: 'Sai dove abita Marco?', literal: 'You-know where lives Marco?', natural: 'Do you know where Marco lives?', note: 'Domanda indiretta con "dove" → sapere.' },
+      { it: 'Conosci Roma?', literal: 'You-know Rome?', natural: 'Do you know Rome? / Have you been to Rome?', note: 'Luogo → conoscere.' },
+      { it: 'So nuotare, ma non so sciare.', literal: 'I-know to-swim, but not I-know to-ski.', natural: "I can swim, but I can't ski.", note: 'Abilità appresa → sapere + infinito. Nessuna preposizione.' },
+      { it: 'Non posso nuotare oggi: ho l\'influenza.', literal: 'Not I-can to-swim today: I-have the flu.', natural: "I can't swim today: I have the flu.", note: 'Circostanza esterna → potere, non sapere.' },
+      { it: 'Non lo so, mi dispiace.', literal: 'Not it I-know, to-me displeases.', natural: "I don't know, sorry.", note: 'Espressione fissa: sempre con "lo".' },
+      { it: 'Conosci un buon ristorante qui vicino?', literal: 'You-know a good restaurant here near?', natural: 'Do you know a good restaurant nearby?', note: 'Nome (ristorante) → conoscere.' },
+      { it: 'Sapete a che ora arriva il treno?', literal: 'You(pl)-know at what hour arrives the train?', natural: 'Do you know what time the train arrives?', note: 'Informazione → sapere.' },
+      { it: 'Ho conosciuto tua sorella ieri sera.', literal: 'I-have known your sister yesterday evening.', natural: 'I met your sister last night.', note: 'Passato prossimo di conoscere = incontrare per la prima volta!' },
+      { it: 'Ho saputo che ti sposi. Congratulazioni!', literal: 'I-have known that you marry. Congratulations!', natural: 'I heard you\'re getting married. Congratulations!', note: 'Passato prossimo di sapere = venire a sapere, scoprire.' },
+      { it: 'Piacere di conoscerti!', literal: 'Pleasure of to-know-you!', natural: 'Nice to meet you!', note: 'Formula fissa delle presentazioni. Formale: "di conoscerla".' },
+      { it: 'Non conosco bene questa città.', literal: 'Not I-know well this city.', natural: "I don't know this city well.", note: 'Luogo → conoscere.' },
+      { it: 'Non so cosa fare.', literal: 'Not I-know what to-do.', natural: "I don't know what to do.", note: 'sapere + domanda indiretta + infinito.' },
+      { it: 'Loro non sanno la verità.', literal: 'They not know the truth.', natural: "They don't know the truth.", note: 'Un\'informazione, anche se è un nome → sapere.' },
+      { it: 'Ci conosciamo da quando eravamo bambini.', literal: 'Us we-know from when we-were children.', natural: "We've known each other since we were kids.", note: 'Uso reciproco di conoscere.' },
+      { it: 'Sai suonare la chitarra?', literal: 'You-know to-play the guitar?', natural: 'Can you play the guitar?', note: 'Abilità → sapere + infinito.' },
+      { it: 'Conosco questa canzone, ma non so le parole.', literal: 'I-know this song, but not I-know the words.', natural: "I know this song, but I don't know the lyrics.", note: 'La frase perfetta per capire la differenza: familiarità vs informazione memorizzata.' },
+      { it: 'Fammi sapere se vieni.', literal: 'Make-me to-know if you-come.', natural: 'Let me know if you\'re coming.', note: 'Espressione fissa utilissima nei messaggi.' },
+      { it: 'Scusi, sa che ore sono?', literal: 'Excuse-me, you-know what hours are?', natural: 'Excuse me, do you know what time it is?', note: 'Forma di cortesia (Lei) + sapere.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Conosco che sei italiano.', right: 'So che sei italiano.', why: 'Dopo "che" c\'è un\'informazione: si usa sapere. Conoscere non regge mai una frase.' },
+      { wrong: 'So Marco.', right: 'Conosco Marco.', why: 'Con una persona si usa sempre conoscere.' },
+      { wrong: 'Conosco nuotare.', right: 'So nuotare.', why: 'Con un infinito (un\'abilità) si usa sapere.' },
+      { wrong: 'Posso nuotare bene. (= ho imparato)', right: 'So nuotare bene.', why: '"Posso" indica permesso o possibilità momentanea, non una capacità appresa.' },
+      { wrong: 'Conosci dove abita?', right: 'Sai dove abita?', why: 'Dopo "dove" c\'è un\'informazione → sapere.' },
+      { wrong: 'Ho conosciuto Marco da dieci anni.', right: 'Conosco Marco da dieci anni.', why: 'Con "da" + durata si usa il presente. "Ho conosciuto" significa "l\'ho incontrato la prima volta".' },
+      { wrong: 'Non conosco.', right: 'Non lo so.', why: 'La risposta standard a una domanda è "Non lo so". "Non conosco" da solo resta sospeso: conoscere ha bisogno di un oggetto.' },
+      { wrong: 'Sappo la risposta.', right: 'So la risposta.', why: 'La prima persona di sapere è "so", irregolare e brevissima.' },
+      { wrong: 'Piacere di sapere!', right: 'Piacere di conoscerti!', why: 'Nelle presentazioni si usa conoscere: incontri una persona.' }
+    ],
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «___ Marco da molti anni.»', options: ['So', 'Conosco', 'Posso', 'Sappia'], answer: 1, hint: 'persona', why: 'Con una persona → conoscere.' },
+        { q: 'Completa: «___ che domani piove.»', options: ['Conosco', 'So', 'Posso', 'Conosce'], answer: 1, hint: 'dopo "che"', why: 'Informazione → sapere.' },
+        { q: 'Completa: «___ nuotare?»', options: ['Conosci', 'Sai', 'Puoi', 'Conoscete'], answer: 1, hint: 'abilità appresa', why: 'sapere + infinito.' },
+        { q: 'Completa: «___ Roma? È bellissima.»', options: ['Sai', 'Conosci', 'Puoi', 'Sappi'], answer: 1, hint: 'luogo', why: 'Luogo → conoscere.' },
+        { q: 'Completa: «___ dove sono le chiavi?»', options: ['Conosci', 'Sai', 'Conosce', 'Puoi'], answer: 1, hint: 'domanda indiretta', why: 'Informazione → sapere.' },
+        { q: '«Ho conosciuto Anna ieri» significa:', options: ['La conoscevo già.', "L'ho incontrata per la prima volta.", 'Sapevo di lei.', "L'ho vista di nuovo."], answer: 1, hint: 'passato prossimo di conoscere', why: 'Passato prossimo = il momento dell\'incontro iniziale.' },
+        { q: '«Ho saputo la notizia» significa:', options: ['Sapevo già la notizia.', 'Ho scoperto la notizia.', 'Conoscevo la notizia.', 'Ho detto la notizia.'], answer: 1, hint: 'to find out', why: 'Passato prossimo di sapere = venire a sapere.' },
+        { q: 'Qual è la risposta naturale a «Che ore sono?» se non lo sai?', options: ['Non conosco.', 'Non lo so.', 'Non posso.', 'Non conosco le ore.'], answer: 1, hint: 'espressione fissa', why: '"Non lo so" è la formula standard.' },
+        { q: 'Completa: «Noi ___ questo ristorante, si mangia bene.»', options: ['sappiamo', 'conosciamo', 'possiamo', 'sanno'], answer: 1, hint: 'un locale', why: 'Nome di luogo → conoscere.' },
+        { q: 'Completa: «Loro non ___ niente della storia.»', options: ['conoscono', 'sanno', 'possono', 'sappiono'], answer: 1, hint: '"niente" = informazione', why: 'Informazione → sapere; loro → sanno.' },
+        { q: 'Nelle presentazioni si dice:', options: ['Piacere di sapere!', 'Piacere di conoscerti!', 'Piacere di potere!', 'Piacere di conoscere!'], answer: 1, hint: 'incontri una persona', why: 'Formula fissa: piacere di conoscerti / conoscerla.' },
+        { q: '«Non posso venire» significa:', options: ['Non sono capace di venire.', 'Non mi è possibile venire.', 'Non conosco la strada.', 'Non so come si viene.'], answer: 1, hint: 'potere = circostanze', why: 'Potere indica possibilità o permesso, non capacità appresa.' }
+      ],
+      fill: [
+        { before: 'Io', after: 'tua sorella, abbiamo studiato insieme.', answers: ['conosco'], en: 'I know your sister, we studied together.' },
+        { before: 'Tu', after: 'che ore sono?', answers: ['sai'], en: 'Do you know what time it is?' },
+        { before: 'Marco non', after: 'guidare.', answers: ['sa'], en: "Marco can't drive." },
+        { before: 'Noi', after: 'un buon ristorante in centro.', answers: ['conosciamo'], en: 'We know a good restaurant downtown.' },
+        { before: 'Voi', after: 'dove è la stazione?', answers: ['sapete'], en: 'Do you know where the station is?' },
+        { before: 'Loro non', after: 'la città.', answers: ['conoscono'], en: "They don't know the city." },
+        { before: 'Non', after: 'so, mi dispiace.', answers: ['lo'], en: "I don't know, sorry.", hint: 'espressione fissa' },
+        { before: 'Ieri ho', after: 'una persona molto interessante.', answers: ['conosciuto'], en: 'Yesterday I met a very interesting person.' },
+        { before: 'Ho', after: 'che ti sposi!', answers: ['saputo'], en: 'I heard you are getting married!' },
+        { before: 'Piacere di', after: '!', answers: ['conoscerti', 'conoscerla'], en: 'Nice to meet you!' }
+      ],
+      order: [
+        { words: ['Conosco', 'Marco', 'da', 'dieci', 'anni'], answer: 'Conosco Marco da dieci anni', en: "I've known Marco for ten years." },
+        { words: ['Sai', 'dove', 'abita', 'Anna'], answer: 'Sai dove abita Anna', en: 'Do you know where Anna lives?' },
+        { words: ['Non', 'so', 'suonare', 'il', 'piano'], answer: 'Non so suonare il piano', en: "I can't play the piano." },
+        { words: ['Ho', 'conosciuto', 'tua', 'sorella', 'ieri'], answer: 'Ho conosciuto tua sorella ieri', en: 'I met your sister yesterday.' },
+        { words: ['Conosci', 'un', 'buon', 'ristorante', 'qui'], answer: 'Conosci un buon ristorante qui', en: 'Do you know a good restaurant here?' }
+      ],
+      dnd: {
+        instructions: 'Ogni frase richiede SAPERE o CONOSCERE? Trascina.',
+        buckets: [
+          { id: 'sapere', label: 'SAPERE', icon: '💡' },
+          { id: 'conoscere', label: 'CONOSCERE', icon: '🤝' }
+        ],
+        items: [
+          { text: '___ Marco', bucket: 'conoscere' },
+          { text: '___ che è tardi', bucket: 'sapere' },
+          { text: '___ nuotare', bucket: 'sapere' },
+          { text: '___ Roma', bucket: 'conoscere' },
+          { text: '___ dove abita', bucket: 'sapere' },
+          { text: '___ un buon dentista', bucket: 'conoscere' },
+          { text: '___ la risposta', bucket: 'sapere' },
+          { text: '___ questo film', bucket: 'conoscere' },
+          { text: '___ come si fa', bucket: 'sapere' },
+          { text: '___ i miei genitori', bucket: 'conoscere' }
+        ]
+      },
+      match: [
+        { a: 'So nuotare.', b: 'I can swim (learned skill)' },
+        { a: 'Non posso nuotare oggi.', b: "I can't swim today (circumstances)" },
+        { a: 'Conosco Marco.', b: 'I know Marco' },
+        { a: 'So che è simpatico.', b: 'I know that he is nice' },
+        { a: 'Ho conosciuto Marco.', b: 'I met Marco' },
+        { a: 'Ho saputo la notizia.', b: 'I found out the news' },
+        { a: 'Non lo so.', b: "I don't know." },
+        { a: 'Piacere di conoscerti.', b: 'Nice to meet you.' },
+        { a: 'Fammi sapere.', b: 'Let me know.' }
+      ],
+      tf: [
+        { statement: 'Dopo conoscere c\'è sempre un nome.', answer: true, why: 'Sì: persona, luogo, opera, oggetto.' },
+        { statement: '«Conosco che sei stanco» è corretto.', answer: false, why: 'No: dopo "che" c\'è un\'informazione → "So che sei stanco".' },
+        { statement: '«So nuotare» significa che ho imparato a nuotare.', answer: true, why: 'Sì: sapere + infinito = capacità appresa.' },
+        { statement: '«Ho conosciuto Anna» significa "conoscevo Anna".', answer: false, why: 'No: significa "l\'ho incontrata per la prima volta".' },
+        { statement: '«Ho saputo» significa "ho scoperto / sono venuto a sapere".', answer: true, why: 'Esatto: il passato prossimo di sapere è puntuale.' },
+        { statement: 'La risposta standard "I don\'t know" è «Non conosco».', answer: false, why: 'No: si dice "Non lo so".' },
+        { statement: 'Con le città si usa conoscere.', answer: true, why: 'Sì: "Conosco Roma".' },
+        { statement: '«Potere» e «sapere» + infinito significano la stessa cosa.', answer: false, why: 'No: sapere = capacità appresa, potere = permesso o possibilità.' }
+      ],
+      translate: [
+        { en: 'I know Marco.', answers: ['Conosco Marco'] },
+        { en: 'I know that it is late.', answers: ['So che è tardi'] },
+        { en: 'Do you know where the station is?', answers: ['Sai dove è la stazione', "Sai dov'è la stazione", 'Sa dove è la stazione'] },
+        { en: 'I can swim.', answers: ['So nuotare'], hint: 'capacità appresa' },
+        { en: 'Do you know Rome?', answers: ['Conosci Roma', 'Conosce Roma'] },
+        { en: "I don't know.", answers: ['Non lo so'] },
+        { en: 'I met your brother yesterday.', answers: ['Ho conosciuto tuo fratello ieri', 'Ieri ho conosciuto tuo fratello'] },
+        { en: 'Nice to meet you.', answers: ['Piacere di conoscerti', 'Piacere di conoscerla'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — A una festa',
+      lines: [
+        { speaker: 'Elena', icon: '👩', it: 'Ciao! Conosci Marco, il ragazzo vicino alla finestra?', en: 'Hi! Do you know Marco, the guy near the window?',
+          glosses: [{ term: 'Conosci', expl: 'Persona → conoscere.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'No, non lo conosco. So che lavora con te, vero?', en: "No, I don't know him. I know he works with you, right?",
+          glosses: [{ term: 'non lo conosco', expl: 'conoscere + pronome oggetto "lo" = him.' }, { term: 'So che', expl: 'Dopo "che" c\'è un\'informazione → sapere.' }] },
+        { speaker: 'Elena', icon: '👩', it: 'Sì! L\'ho conosciuto l\'anno scorso in ufficio.', en: 'Yes! I met him last year at the office.',
+          glosses: [{ term: "L'ho conosciuto", expl: 'Passato prossimo di conoscere = "l\'ho incontrato per la prima volta".' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Sai se parla inglese? Il mio italiano non è perfetto.', en: 'Do you know if he speaks English? My Italian isn\'t perfect.',
+          glosses: [{ term: 'Sai se', expl: 'Domanda indiretta con "se" → sapere.' }] },
+        { speaker: 'Elena', icon: '👩', it: 'Sa parlare inglese e anche spagnolo. È bravissimo con le lingue.', en: 'He can speak English and Spanish too. He\'s great with languages.',
+          glosses: [{ term: 'Sa parlare', expl: 'sapere + infinito = abilità appresa.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Ottimo. E conosci anche la ragazza con lui?', en: 'Great. And do you know the girl with him too?',
+          glosses: [{ term: 'conosci', expl: 'Di nuovo una persona → conoscere.' }] },
+        { speaker: 'Elena', icon: '👩', it: 'Non lo so, forse è sua sorella. Ho saputo che è appena arrivata da Napoli.', en: "I don't know, maybe she's his sister. I heard she just arrived from Naples.",
+          glosses: [{ term: 'Non lo so', expl: 'Espressione fissa: sempre con "lo".' }, { term: 'Ho saputo', expl: 'Passato prossimo di sapere = ho scoperto, mi hanno detto.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Andiamo a salutarli? Voglio conoscere gente nuova.', en: "Shall we go say hi? I want to meet new people.",
+          glosses: [{ term: 'conoscere gente nuova', expl: 'Con conoscere all\'infinito = "to meet".' }] },
+        { speaker: 'Elena', icon: '👩', it: 'Certo! Piacere di conoscerti, dirai. Funziona sempre.', en: "Sure! 'Nice to meet you', you'll say. It always works.",
+          glosses: [{ term: 'Piacere di conoscerti', expl: 'Formula fissa delle presentazioni.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'so, sai, sa, sappiamo, sapete, sanno', back: 'sapere — presente irregolare' },
+      { front: 'conosco, conosci, conosce, conosciamo, conoscete, conoscono', back: 'conoscere — presente regolare' },
+      { front: 'Conosco + NOME', back: 'persona, città, libro, ristorante' },
+      { front: 'So + che / dove / come…', back: "un'informazione" },
+      { front: 'So + INFINITO', back: 'capacità appresa: So nuotare' },
+      { front: 'Non posso nuotare oggi.', back: "circostanze, non capacità" },
+      { front: 'Ho conosciuto Marco.', back: 'I MET Marco (prima volta)' },
+      { front: 'Ho saputo la notizia.', back: 'I FOUND OUT the news' },
+      { front: 'Non lo so.', back: "I don't know." },
+      { front: 'Piacere di conoscerti.', back: 'Nice to meet you.' },
+      { front: 'Fammi sapere.', back: 'Let me know.' },
+      { front: 'Ci conosciamo?', back: 'Do we know each other?' }
+    ],
+
+    summary: {
+      formula: 'CONOSCERE + NOME (persona / luogo / opera)  ·  SAPERE + FRASE (che, dove, come…) o INFINITO',
+      rules: [
+        'Conoscere = avere familiarità: persone, città, locali, libri, canzoni.',
+        'Sapere = avere un\'informazione o essere capace di fare qualcosa.',
+        'sapere + infinito = capacità appresa (So guidare); potere + infinito = permesso o possibilità (Non posso guidare oggi).',
+        'Passato prossimo: ho conosciuto = I met · ho saputo = I found out.',
+        'La risposta standard è "Non lo so", non "non conosco".',
+        'Presentazioni: "Piacere di conoscerti / conoscerla".'
+      ],
+      tips: [
+        'Test in un secondo: guarda cosa viene DOPO il verbo. Un nome? → conoscere. Una frase o un infinito? → sapere.',
+        'Frase-riassunto da memorizzare: «Conosco questa canzone, ma non so le parole». Contiene tutta la lezione.',
+        'Al passato ricordati la coppia: conoscere → incontrare; sapere → scoprire. Se vuoi dire "lo conoscevo da tempo", ti servirà l\'imperfetto (B1).'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

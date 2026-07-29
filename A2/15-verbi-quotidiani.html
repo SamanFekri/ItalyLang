@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I 100 verbi italiani più utili per la conversazione quotidiana, raggruppati per argomento con esempi, audio, flashcard e quiz.">
+  <title>100 Verbi Quotidiani · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/wordbank.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 15 — I 100 VERBI PIÙ UTILI, PER ARGOMENTO
+     pos: "reg" = regolare · "irr" = irregolare al presente
+          "rifl" = riflessivo · "E" = passato prossimo con ESSERE
+     ========================================================================== */
+  window.WORDBANK = {
+    num: 15, file: '15-verbi-quotidiani.html', icon: '🗂️',
+    title: '100 Verbi Quotidiani',
+    subtitle: 'I cento verbi che coprono la quasi totalità delle conversazioni di tutti i giorni, raggruppati per argomento.',
+    introTitle: 'Come studiare 100 verbi senza impazzire',
+    intro: 'Non studiarli tutti insieme. Scegli <b>una categoria al giorno</b> (dieci verbi), leggi l\'esempio ad alta voce con il pulsante 🔊, poi fai il quiz della categoria. In dieci giorni avrai coperto tutti i verbi essenziali dell\'A2. L\'etichetta <b>irr</b> segnala un verbo irregolare al presente, <b>E</b> significa che al passato prossimo vuole <i>essere</i> (sono andato), <b>rifl</b> che è riflessivo.',
+    showFarsi: false,
+    searchPlaceholder: 'Cerca un verbo (es. mangiare, to sleep, alzarsi)…',
+
+    categories: [
+      { id: 'routine',  label: 'Routine quotidiana', icon: '🌅' },
+      { id: 'casa',     label: 'Casa e cucina',      icon: '🏠' },
+      { id: 'lavoro',   label: 'Lavoro e studio',    icon: '💼' },
+      { id: 'comunic',  label: 'Comunicazione',      icon: '💬' },
+      { id: 'movimento',label: 'Movimento e viaggi', icon: '✈️' },
+      { id: 'libero',   label: 'Tempo libero',       icon: '🎧' },
+      { id: 'mente',    label: 'Mente e sentimenti', icon: '💭' },
+      { id: 'salute',   label: 'Corpo e salute',     icon: '🩺' },
+      { id: 'soldi',    label: 'Acquisti e soldi',   icon: '🛒' },
+      { id: 'base',     label: 'Verbi fondamentali', icon: '⭐' }
+    ],
+
+    words: [
+      /* ── 1. ROUTINE QUOTIDIANA ─────────────────────────────────────── */
+      { it: 'svegliarsi', en: 'to wake up', cat: 'routine', pos: 'rifl E', ex: 'Mi sveglio alle sette.', exEn: 'I wake up at seven.' },
+      { it: 'alzarsi', en: 'to get up', cat: 'routine', pos: 'rifl E', ex: 'Ti alzi presto la domenica?', exEn: 'Do you get up early on Sundays?' },
+      { it: 'lavarsi', en: 'to wash oneself', cat: 'routine', pos: 'rifl E', ex: 'Mi lavo i denti dopo colazione.', exEn: 'I brush my teeth after breakfast.' },
+      { it: 'vestirsi', en: 'to get dressed', cat: 'routine', pos: 'rifl E', ex: 'Mi vesto in cinque minuti.', exEn: 'I get dressed in five minutes.' },
+      { it: 'fare colazione', en: 'to have breakfast', cat: 'routine', pos: 'irr', ex: 'Faccio colazione al bar.', exEn: 'I have breakfast at the bar.' },
+      { it: 'prepararsi', en: 'to get ready', cat: 'routine', pos: 'rifl E', ex: 'Mi preparo per uscire.', exEn: "I'm getting ready to go out." },
+      { it: 'uscire', en: 'to go out', cat: 'routine', pos: 'irr E', ex: 'Esco di casa alle otto.', exEn: 'I leave home at eight.' },
+      { it: 'tornare', en: 'to come back', cat: 'routine', pos: 'reg E', ex: 'Torno a casa alle sette.', exEn: 'I come home at seven.' },
+      { it: 'riposarsi', en: 'to rest', cat: 'routine', pos: 'rifl E', ex: 'Mi riposo un\'ora dopo pranzo.', exEn: 'I rest for an hour after lunch.' },
+      { it: 'addormentarsi', en: 'to fall asleep', cat: 'routine', pos: 'rifl E', ex: 'Mi addormento verso mezzanotte.', exEn: 'I fall asleep around midnight.' },
+
+      /* ── 2. CASA E CUCINA ──────────────────────────────────────────── */
+      { it: 'cucinare', en: 'to cook', cat: 'casa', pos: 'reg', ex: 'Stasera cucino io.', exEn: "I'm cooking tonight." },
+      { it: 'mangiare', en: 'to eat', cat: 'casa', pos: 'reg', ex: 'Mangiamo alle otto.', exEn: 'We eat at eight.' },
+      { it: 'bere', en: 'to drink', cat: 'casa', pos: 'irr', ex: 'Bevo un caffè la mattina.', exEn: 'I drink a coffee in the morning.' },
+      { it: 'pulire', en: 'to clean', cat: 'casa', pos: 'isc', ex: 'Pulisco la casa il sabato.', exEn: 'I clean the house on Saturdays.' },
+      { it: 'lavare', en: 'to wash (something)', cat: 'casa', pos: 'reg', ex: 'Lavo i piatti dopo cena.', exEn: 'I wash the dishes after dinner.' },
+      { it: 'apparecchiare', en: 'to set the table', cat: 'casa', pos: 'reg', ex: 'Puoi apparecchiare la tavola?', exEn: 'Can you set the table?' },
+      { it: 'aprire', en: 'to open', cat: 'casa', pos: 'reg', ex: 'Apri la finestra, per favore.', exEn: 'Open the window, please.' },
+      { it: 'chiudere', en: 'to close', cat: 'casa', pos: 'reg', ex: 'Chiudi la porta quando esci.', exEn: 'Close the door when you leave.' },
+      { it: 'accendere', en: 'to turn on', cat: 'casa', pos: 'reg', ex: 'Accendo la luce.', exEn: 'I turn on the light.' },
+      { it: 'spegnere', en: 'to turn off', cat: 'casa', pos: 'irr', ex: 'Spegni la televisione!', exEn: 'Turn off the TV!' },
+
+      /* ── 3. LAVORO E STUDIO ────────────────────────────────────────── */
+      { it: 'lavorare', en: 'to work', cat: 'lavoro', pos: 'reg', ex: 'Lavoro in un ufficio.', exEn: 'I work in an office.' },
+      { it: 'studiare', en: 'to study', cat: 'lavoro', pos: 'reg', ex: 'Studio italiano da due anni.', exEn: "I've been studying Italian for two years." },
+      { it: 'imparare', en: 'to learn', cat: 'lavoro', pos: 'reg', ex: 'Imparo a cucinare.', exEn: "I'm learning to cook." },
+      { it: 'insegnare', en: 'to teach', cat: 'lavoro', pos: 'reg', ex: 'Insegna matematica al liceo.', exEn: 'He teaches maths at high school.' },
+      { it: 'leggere', en: 'to read', cat: 'lavoro', pos: 'reg', ex: 'Leggo il giornale ogni mattina.', exEn: 'I read the paper every morning.' },
+      { it: 'scrivere', en: 'to write', cat: 'lavoro', pos: 'reg', ex: 'Scrivo un\'email al capo.', exEn: 'I write an email to my boss.' },
+      { it: 'finire', en: 'to finish', cat: 'lavoro', pos: 'isc', ex: 'Finisco di lavorare alle sei.', exEn: 'I finish work at six.' },
+      { it: 'cominciare', en: 'to start', cat: 'lavoro', pos: 'reg', ex: 'Comincio a lavorare alle nove.', exEn: 'I start working at nine.' },
+      { it: 'provare', en: 'to try', cat: 'lavoro', pos: 'reg', ex: 'Provo a finire oggi.', exEn: "I'll try to finish today." },
+      { it: 'riuscire', en: 'to manage / succeed', cat: 'lavoro', pos: 'irr E', ex: 'Non riesco a concentrarmi.', exEn: "I can't concentrate." },
+
+      /* ── 4. COMUNICAZIONE ──────────────────────────────────────────── */
+      { it: 'parlare', en: 'to speak', cat: 'comunic', pos: 'reg', ex: 'Parlo italiano e inglese.', exEn: 'I speak Italian and English.' },
+      { it: 'dire', en: 'to say / tell', cat: 'comunic', pos: 'irr', ex: 'Dimmi cosa è successo.', exEn: 'Tell me what happened.' },
+      { it: 'chiedere', en: 'to ask', cat: 'comunic', pos: 'reg', ex: 'Posso chiederti un favore?', exEn: 'Can I ask you a favour?' },
+      { it: 'rispondere', en: 'to answer', cat: 'comunic', pos: 'reg', ex: 'Non ha risposto al telefono.', exEn: "He didn't answer the phone." },
+      { it: 'raccontare', en: 'to tell (a story)', cat: 'comunic', pos: 'reg', ex: 'Ti racconto tutto domani.', exEn: "I'll tell you everything tomorrow." },
+      { it: 'spiegare', en: 'to explain', cat: 'comunic', pos: 'reg', ex: 'Puoi spiegare di nuovo?', exEn: 'Can you explain again?' },
+      { it: 'ascoltare', en: 'to listen', cat: 'comunic', pos: 'reg', ex: 'Ascolto la radio in macchina.', exEn: 'I listen to the radio in the car.' },
+      { it: 'sentire', en: 'to hear / feel', cat: 'comunic', pos: 'reg', ex: 'Non ti sento bene.', exEn: "I can't hear you well." },
+      { it: 'chiamare', en: 'to call', cat: 'comunic', pos: 'reg', ex: 'Ti chiamo stasera.', exEn: "I'll call you tonight." },
+      { it: 'salutare', en: 'to greet / say goodbye', cat: 'comunic', pos: 'reg', ex: 'Salutami tua sorella!', exEn: 'Say hi to your sister for me!' },
+
+      /* ── 5. MOVIMENTO E VIAGGI ─────────────────────────────────────── */
+      { it: 'andare', en: 'to go', cat: 'movimento', pos: 'irr E', ex: 'Vado al lavoro in metro.', exEn: 'I go to work by metro.' },
+      { it: 'venire', en: 'to come', cat: 'movimento', pos: 'irr E', ex: 'Vieni con noi?', exEn: 'Are you coming with us?' },
+      { it: 'partire', en: 'to leave / depart', cat: 'movimento', pos: 'reg E', ex: 'Il treno parte alle nove.', exEn: 'The train leaves at nine.' },
+      { it: 'arrivare', en: 'to arrive', cat: 'movimento', pos: 'reg E', ex: 'Arrivo tra dieci minuti.', exEn: "I'll arrive in ten minutes." },
+      { it: 'camminare', en: 'to walk', cat: 'movimento', pos: 'reg', ex: 'Camminiamo un po\'?', exEn: 'Shall we walk a bit?' },
+      { it: 'correre', en: 'to run', cat: 'movimento', pos: 'reg', ex: 'Corro ogni mattina al parco.', exEn: 'I run in the park every morning.' },
+      { it: 'guidare', en: 'to drive', cat: 'movimento', pos: 'reg', ex: 'Non so guidare.', exEn: "I can't drive." },
+      { it: 'prendere', en: 'to take / catch', cat: 'movimento', pos: 'reg', ex: 'Prendo l\'autobus numero 5.', exEn: 'I take bus number 5.' },
+      { it: 'viaggiare', en: 'to travel', cat: 'movimento', pos: 'reg', ex: 'Mi piace viaggiare in treno.', exEn: 'I like travelling by train.' },
+      { it: 'visitare', en: 'to visit (a place)', cat: 'movimento', pos: 'reg', ex: 'Abbiamo visitato il museo.', exEn: 'We visited the museum.' },
+
+      /* ── 6. TEMPO LIBERO ───────────────────────────────────────────── */
+      { it: 'giocare', en: 'to play (a game)', cat: 'libero', pos: 'reg', ex: 'Gioco a calcio il sabato.', exEn: 'I play football on Saturdays.' },
+      { it: 'suonare', en: 'to play (an instrument)', cat: 'libero', pos: 'reg', ex: 'Suono la chitarra.', exEn: 'I play the guitar.' },
+      { it: 'cantare', en: 'to sing', cat: 'libero', pos: 'reg', ex: 'Canta sempre sotto la doccia.', exEn: 'He always sings in the shower.' },
+      { it: 'ballare', en: 'to dance', cat: 'libero', pos: 'reg', ex: 'Balliamo insieme?', exEn: 'Shall we dance?' },
+      { it: 'guardare', en: 'to watch / look at', cat: 'libero', pos: 'reg', ex: 'Guardiamo un film stasera.', exEn: "Let's watch a film tonight." },
+      { it: 'nuotare', en: 'to swim', cat: 'libero', pos: 'reg', ex: 'D\'estate nuoto ogni giorno.', exEn: 'In summer I swim every day.' },
+      { it: 'divertirsi', en: 'to have fun', cat: 'libero', pos: 'rifl E', ex: 'Ci siamo divertiti molto!', exEn: 'We had a great time!' },
+      { it: 'incontrare', en: 'to meet (by arrangement)', cat: 'libero', pos: 'reg', ex: 'Incontro gli amici alle otto.', exEn: "I'm meeting friends at eight." },
+      { it: 'invitare', en: 'to invite', cat: 'libero', pos: 'reg', ex: 'Ti invito a cena.', exEn: "I'm inviting you to dinner." },
+      { it: 'festeggiare', en: 'to celebrate', cat: 'libero', pos: 'reg', ex: 'Festeggiamo il tuo compleanno!', exEn: "Let's celebrate your birthday!" },
+
+      /* ── 7. MENTE E SENTIMENTI ─────────────────────────────────────── */
+      { it: 'pensare', en: 'to think', cat: 'mente', pos: 'reg', ex: 'Penso di partire domani.', exEn: "I'm thinking of leaving tomorrow." },
+      { it: 'credere', en: 'to believe', cat: 'mente', pos: 'reg', ex: 'Credo di aver capito.', exEn: 'I think I understood.' },
+      { it: 'sapere', en: 'to know (facts)', cat: 'mente', pos: 'irr', ex: 'Non lo so.', exEn: "I don't know." },
+      { it: 'conoscere', en: 'to know (people/places)', cat: 'mente', pos: 'reg', ex: 'Conosci Marco?', exEn: 'Do you know Marco?' },
+      { it: 'capire', en: 'to understand', cat: 'mente', pos: 'isc', ex: 'Non capisco questa parola.', exEn: "I don't understand this word." },
+      { it: 'ricordare', en: 'to remember', cat: 'mente', pos: 'reg', ex: 'Non ricordo il suo nome.', exEn: "I don't remember his name." },
+      { it: 'dimenticare', en: 'to forget', cat: 'mente', pos: 'reg', ex: 'Ho dimenticato le chiavi.', exEn: 'I forgot my keys.' },
+      { it: 'sperare', en: 'to hope', cat: 'mente', pos: 'reg', ex: 'Spero di rivederti presto.', exEn: 'I hope to see you again soon.' },
+      { it: 'preoccuparsi', en: 'to worry', cat: 'mente', pos: 'rifl E', ex: 'Non ti preoccupare!', exEn: "Don't worry!" },
+      { it: 'arrabbiarsi', en: 'to get angry', cat: 'mente', pos: 'rifl E', ex: 'Si arrabbia facilmente.', exEn: 'He gets angry easily.' },
+
+      /* ── 8. CORPO E SALUTE ─────────────────────────────────────────── */
+      { it: 'stare', en: 'to be (health) / to stay', cat: 'salute', pos: 'irr E', ex: 'Come stai? — Sto bene.', exEn: 'How are you? — I\'m fine.' },
+      { it: 'sentirsi', en: 'to feel', cat: 'salute', pos: 'rifl E', ex: 'Mi sento male oggi.', exEn: 'I feel unwell today.' },
+      { it: 'dormire', en: 'to sleep', cat: 'salute', pos: 'reg', ex: 'Dormo otto ore per notte.', exEn: 'I sleep eight hours a night.' },
+      { it: 'fare male', en: 'to hurt', cat: 'salute', pos: 'irr', ex: 'Mi fa male la testa.', exEn: 'My head hurts.' },
+      { it: 'farsi male', en: 'to hurt oneself', cat: 'salute', pos: 'rifl E', ex: 'Mi sono fatto male al ginocchio.', exEn: 'I hurt my knee.' },
+      { it: 'guarire', en: 'to recover / heal', cat: 'salute', pos: 'isc E', ex: 'Sono guarito in tre giorni.', exEn: 'I recovered in three days.' },
+      { it: 'respirare', en: 'to breathe', cat: 'salute', pos: 'reg', ex: 'Respira profondamente.', exEn: 'Breathe deeply.' },
+      { it: 'muoversi', en: 'to move', cat: 'salute', pos: 'rifl E', ex: 'Devo muovermi di più.', exEn: 'I need to move more.' },
+      { it: 'crescere', en: 'to grow', cat: 'salute', pos: 'reg E', ex: 'I bambini crescono in fretta.', exEn: 'Children grow up fast.' },
+      { it: 'vivere', en: 'to live', cat: 'salute', pos: 'reg', ex: 'Vivo a Milano da tre anni.', exEn: "I've lived in Milan for three years." },
+
+      /* ── 9. ACQUISTI E SOLDI ───────────────────────────────────────── */
+      { it: 'comprare', en: 'to buy', cat: 'soldi', pos: 'reg', ex: 'Compro il pane ogni giorno.', exEn: 'I buy bread every day.' },
+      { it: 'vendere', en: 'to sell', cat: 'soldi', pos: 'reg', ex: 'Hanno venduto la casa.', exEn: 'They sold the house.' },
+      { it: 'pagare', en: 'to pay', cat: 'soldi', pos: 'reg', ex: 'Posso pagare con la carta?', exEn: 'Can I pay by card?' },
+      { it: 'costare', en: 'to cost', cat: 'soldi', pos: 'reg E', ex: 'Quanto costa questo?', exEn: 'How much does this cost?' },
+      { it: 'spendere', en: 'to spend (money)', cat: 'soldi', pos: 'reg', ex: 'Ho speso troppo ieri.', exEn: 'I spent too much yesterday.' },
+      { it: 'risparmiare', en: 'to save (money)', cat: 'soldi', pos: 'reg', ex: 'Cerco di risparmiare.', exEn: "I'm trying to save money." },
+      { it: 'ordinare', en: 'to order', cat: 'soldi', pos: 'reg', ex: 'Ordiniamo due pizze.', exEn: "Let's order two pizzas." },
+      { it: 'prenotare', en: 'to book', cat: 'soldi', pos: 'reg', ex: 'Ho prenotato un tavolo per due.', exEn: 'I booked a table for two.' },
+      { it: 'scegliere', en: 'to choose', cat: 'soldi', pos: 'irr', ex: 'Scegli tu il ristorante!', exEn: 'You choose the restaurant!' },
+      { it: 'cercare', en: 'to look for', cat: 'soldi', pos: 'reg', ex: 'Cerco un regalo per mia madre.', exEn: "I'm looking for a gift for my mother." },
+
+      /* ── 10. VERBI FONDAMENTALI ────────────────────────────────────── */
+      { it: 'essere', en: 'to be', cat: 'base', pos: 'irr E', ex: 'Sono di Teheran.', exEn: "I'm from Tehran." },
+      { it: 'avere', en: 'to have', cat: 'base', pos: 'irr', ex: 'Ho due fratelli.', exEn: 'I have two brothers.' },
+      { it: 'fare', en: 'to do / make', cat: 'base', pos: 'irr', ex: 'Che cosa fai stasera?', exEn: 'What are you doing tonight?' },
+      { it: 'dare', en: 'to give', cat: 'base', pos: 'irr', ex: 'Mi dai una mano?', exEn: 'Can you give me a hand?' },
+      { it: 'potere', en: 'can / to be able', cat: 'base', pos: 'irr', ex: 'Posso entrare?', exEn: 'May I come in?' },
+      { it: 'dovere', en: 'must / to have to', cat: 'base', pos: 'irr', ex: 'Devo andare adesso.', exEn: 'I have to go now.' },
+      { it: 'volere', en: 'to want', cat: 'base', pos: 'irr', ex: 'Voglio imparare l\'italiano.', exEn: 'I want to learn Italian.' },
+      { it: 'piacere', en: 'to like (to be pleasing)', cat: 'base', pos: 'irr E', ex: 'Mi piace la musica italiana.', exEn: 'I like Italian music.' },
+      { it: 'mettere', en: 'to put', cat: 'base', pos: 'reg', ex: 'Metti le chiavi sul tavolo.', exEn: 'Put the keys on the table.' },
+      { it: 'trovare', en: 'to find', cat: 'base', pos: 'reg', ex: 'Non trovo il telefono.', exEn: "I can't find my phone." }
+    ]
+  };
+
+  ITA.mountWordbank(window.WORDBANK);
+  </script>
+</body>
+</html>

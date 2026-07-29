@@ -1,0 +1,1084 @@
+{
+  "_comment": "Compact source for the irregular-verb dataset. Only SIMPLE tenses are stored — every compound tense is derived by tools/build-verbs.js from the auxiliary + past participle, so compounds cannot drift or be invented. Order of forms is always [io, tu, lui/lei, noi, voi, loro]. Run: node tools/build-verbs.js",
+  "verbs": [
+    {
+      "infinitive": "essere",
+      "english": "to be",
+      "cefr": "A1",
+      "frequency": "very_common",
+      "auxiliary": "essere",
+      "irregularity": {
+        "type": ["completely_irregular", "suppletive_form"],
+        "description": "The most irregular verb in Italian. Its forms come from three different Latin verbs (esse, fui, stare), so the stems bear no relation to the infinitive: sono/sei/è, ero, fui, sarò. The past participle 'stato' is borrowed wholesale from stare."
+      },
+      "participio_passato": "stato",
+      "participio_presente": "ente",
+      "gerundio": "essendo",
+      "presente": ["sono", "sei", "è", "siamo", "siete", "sono"],
+      "imperfetto": ["ero", "eri", "era", "eravamo", "eravate", "erano"],
+      "passato_remoto": ["fui", "fosti", "fu", "fummo", "foste", "furono"],
+      "futuro_semplice": ["sarò", "sarai", "sarà", "saremo", "sarete", "saranno"],
+      "congiuntivo_presente": ["sia", "sia", "sia", "siamo", "siate", "siano"],
+      "congiuntivo_imperfetto": ["fossi", "fossi", "fosse", "fossimo", "foste", "fossero"],
+      "condizionale_presente": ["sarei", "saresti", "sarebbe", "saremmo", "sareste", "sarebbero"],
+      "imperativo": { "tu": "sii", "Lei": "sia", "noi": "siamo", "voi": "siate", "loro": "siano" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "imperfetto": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "passato_remoto": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "futuro_semplice": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "participio_passato": true
+      },
+      "examples": {
+        "presente": { "italian": "Sono italiano e abito a Roma.", "english": "I am Italian and I live in Rome." },
+        "passato_prossimo": { "italian": "Ieri sono stato al mare.", "english": "Yesterday I went to the seaside." },
+        "imperfetto": { "italian": "Da bambino ero molto timido.", "english": "As a child I was very shy." },
+        "passato_remoto": { "italian": "Dante fu un grande poeta.", "english": "Dante was a great poet." },
+        "futuro_semplice": { "italian": "Domani sarò a Milano.", "english": "Tomorrow I will be in Milan." },
+        "congiuntivo_presente": { "italian": "Penso che sia una buona idea.", "english": "I think it is a good idea." },
+        "condizionale_presente": { "italian": "Sarei felice di aiutarti.", "english": "I would be happy to help you." },
+        "imperativo": { "italian": "Sii gentile con tua sorella!", "english": "Be kind to your sister!" }
+      },
+      "notes": [
+        "Auxiliary of itself: 'sono stato', not 'ho stato'.",
+        "With essere the past participle agrees with the subject: sono stato / sono stata / siamo stati / siamo state.",
+        "The present participle 'ente' survives only inside compounds and is not used as a verb form in modern Italian.",
+        "The passato remoto is alive in writing and in southern speech; in the north the passato prossimo replaces it in conversation."
+      ]
+    },
+    {
+      "infinitive": "avere",
+      "english": "to have",
+      "cefr": "A1",
+      "frequency": "very_common",
+      "auxiliary": "avere",
+      "irregularity": {
+        "type": ["completely_irregular", "contracted_form", "spelling_change"],
+        "description": "Four present forms are contracted and written with a silent h (ho, hai, ha, hanno) purely to distinguish them from o, ai, a, anno. The future and conditional drop the theme vowel (avrò, not *averò), and the passato remoto has the strong forms ebbi/ebbe/ebbero."
+      },
+      "participio_passato": "avuto",
+      "participio_presente": "avente",
+      "gerundio": "avendo",
+      "presente": ["ho", "hai", "ha", "abbiamo", "avete", "hanno"],
+      "imperfetto": ["avevo", "avevi", "aveva", "avevamo", "avevate", "avevano"],
+      "passato_remoto": ["ebbi", "avesti", "ebbe", "avemmo", "aveste", "ebbero"],
+      "futuro_semplice": ["avrò", "avrai", "avrà", "avremo", "avrete", "avranno"],
+      "congiuntivo_presente": ["abbia", "abbia", "abbia", "abbiamo", "abbiate", "abbiano"],
+      "congiuntivo_imperfetto": ["avessi", "avessi", "avesse", "avessimo", "aveste", "avessero"],
+      "condizionale_presente": ["avrei", "avresti", "avrebbe", "avremmo", "avreste", "avrebbero"],
+      "imperativo": { "tu": "abbi", "Lei": "abbia", "noi": "abbiamo", "voi": "abbiate", "loro": "abbiano" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "passato_remoto": ["io", "lui", "loro"],
+        "futuro_semplice": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "noi", "voi", "loro"]
+      },
+      "examples": {
+        "presente": { "italian": "Ho due sorelle e un fratello.", "english": "I have two sisters and one brother." },
+        "passato_prossimo": { "italian": "Ho avuto la febbre per tre giorni.", "english": "I had a fever for three days." },
+        "imperfetto": { "italian": "Avevo molta fame.", "english": "I was very hungry." },
+        "passato_remoto": { "italian": "Ebbe un'idea geniale.", "english": "He had a brilliant idea." },
+        "futuro_semplice": { "italian": "Domani avrò più tempo.", "english": "Tomorrow I will have more time." },
+        "congiuntivo_presente": { "italian": "Credo che abbia ragione.", "english": "I think he is right." },
+        "condizionale_presente": { "italian": "Avrei bisogno di un consiglio.", "english": "I would need some advice." },
+        "imperativo": { "italian": "Abbi pazienza, per favore.", "english": "Be patient, please." }
+      },
+      "notes": [
+        "Auxiliary of itself: 'ho avuto'.",
+        "The h is never pronounced; it exists only in writing.",
+        "Used for physical sensations and age where English uses 'to be': ho fame, ho sete, ho freddo, ho vent'anni.",
+        "Auxiliary for the great majority of transitive verbs in the compound tenses."
+      ]
+    },
+    {
+      "infinitive": "andare",
+      "english": "to go",
+      "cefr": "A1",
+      "frequency": "very_common",
+      "auxiliary": "essere",
+      "irregularity": {
+        "type": ["suppletive_form", "contracted_form"],
+        "description": "The present and subjunctive present use the suppletive stem 'vad-/va-' from Latin vadere, unrelated to the infinitive; noi and voi keep the regular stem (andiamo, andate). The future and conditional contract to andr-."
+      },
+      "participio_passato": "andato",
+      "participio_presente": "andante",
+      "gerundio": "andando",
+      "presente": ["vado", "vai", "va", "andiamo", "andate", "vanno"],
+      "imperfetto": ["andavo", "andavi", "andava", "andavamo", "andavate", "andavano"],
+      "passato_remoto": ["andai", "andasti", "andò", "andammo", "andaste", "andarono"],
+      "futuro_semplice": ["andrò", "andrai", "andrà", "andremo", "andrete", "andranno"],
+      "congiuntivo_presente": ["vada", "vada", "vada", "andiamo", "andiate", "vadano"],
+      "congiuntivo_imperfetto": ["andassi", "andassi", "andasse", "andassimo", "andaste", "andassero"],
+      "condizionale_presente": ["andrei", "andresti", "andrebbe", "andremmo", "andreste", "andrebbero"],
+      "imperativo": { "tu": "va' (vai)", "Lei": "vada", "noi": "andiamo", "voi": "andate", "loro": "vadano" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "loro"],
+        "futuro_semplice": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "loro"]
+      },
+      "examples": {
+        "presente": { "italian": "Vado al lavoro in metro.", "english": "I go to work by underground." },
+        "passato_prossimo": { "italian": "Siamo andati al cinema ieri sera.", "english": "We went to the cinema last night." },
+        "imperfetto": { "italian": "Ogni estate andavamo in Sicilia.", "english": "Every summer we used to go to Sicily." },
+        "passato_remoto": { "italian": "Nel 1990 andò a vivere all'estero.", "english": "In 1990 he went to live abroad." },
+        "futuro_semplice": { "italian": "L'anno prossimo andrò in Giappone.", "english": "Next year I will go to Japan." },
+        "congiuntivo_presente": { "italian": "Voglio che tu vada dal medico.", "english": "I want you to go to the doctor." },
+        "condizionale_presente": { "italian": "Andrei volentieri, ma non posso.", "english": "I would gladly go, but I can't." },
+        "imperativo": { "italian": "Va' a casa, è tardi!", "english": "Go home, it's late!" }
+      },
+      "notes": [
+        "Takes essere, so the participle agrees: sono andato / sono andata / siamo andati / siamo andate.",
+        "andare a + infinitive expresses purpose: 'Vado a mangiare' (I'm going to eat).",
+        "The imperative tu has two written forms: va' (with apostrophe) and vai; both are standard.",
+        "Before pronouns the short imperative doubles the consonant: vacci, vattene."
+      ]
+    },
+    {
+      "infinitive": "fare",
+      "english": "to do, to make",
+      "cefr": "A1",
+      "frequency": "very_common",
+      "auxiliary": "avere",
+      "irregularity": {
+        "type": ["contracted_form", "stem_change", "irregular_participle"],
+        "description": "A contracted infinitive from Latin facere: the full stem fac- resurfaces throughout (faccio, facevo, facendo, facessi), while the infinitive itself is short. Passato remoto is strong (feci, fece, fecero) and the participle is fatto."
+      },
+      "participio_passato": "fatto",
+      "participio_presente": "facente",
+      "gerundio": "facendo",
+      "presente": ["faccio", "fai", "fa", "facciamo", "fate", "fanno"],
+      "imperfetto": ["facevo", "facevi", "faceva", "facevamo", "facevate", "facevano"],
+      "passato_remoto": ["feci", "facesti", "fece", "facemmo", "faceste", "fecero"],
+      "futuro_semplice": ["farò", "farai", "farà", "faremo", "farete", "faranno"],
+      "congiuntivo_presente": ["faccia", "faccia", "faccia", "facciamo", "facciate", "facciano"],
+      "congiuntivo_imperfetto": ["facessi", "facessi", "facesse", "facessimo", "faceste", "facessero"],
+      "condizionale_presente": ["farei", "faresti", "farebbe", "faremmo", "fareste", "farebbero"],
+      "imperativo": { "tu": "fa' (fai)", "Lei": "faccia", "noi": "facciamo", "voi": "fate", "loro": "facciano" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "imperfetto": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "passato_remoto": ["io", "lui", "loro"],
+        "participio_passato": true
+      },
+      "examples": {
+        "presente": { "italian": "Faccio colazione alle sette.", "english": "I have breakfast at seven." },
+        "passato_prossimo": { "italian": "Che cosa hai fatto ieri?", "english": "What did you do yesterday?" },
+        "imperfetto": { "italian": "Faceva molto freddo quella notte.", "english": "It was very cold that night." },
+        "passato_remoto": { "italian": "Michelangelo fece il David.", "english": "Michelangelo made the David." },
+        "futuro_semplice": { "italian": "Domani farò la spesa.", "english": "Tomorrow I will do the shopping." },
+        "congiuntivo_presente": { "italian": "Spero che faccia bel tempo.", "english": "I hope the weather is nice." },
+        "condizionale_presente": { "italian": "Farei di tutto per aiutarti.", "english": "I would do anything to help you." },
+        "imperativo": { "italian": "Fa' attenzione!", "english": "Be careful!" }
+      },
+      "notes": [
+        "Weather expressions use fare, not essere or avere: fa freddo, fa caldo, fa bel tempo.",
+        "fare + infinitive is causative: 'Faccio riparare la macchina' (I have the car repaired).",
+        "Very productive in set phrases: fare colazione, fare la spesa, fare una passeggiata, fare sport.",
+        "Before pronouns the short imperative doubles the consonant: fallo, fammi, fatti."
+      ]
+    },
+    {
+      "infinitive": "stare",
+      "english": "to stay, to be (state, health)",
+      "cefr": "A1",
+      "frequency": "very_common",
+      "auxiliary": "essere",
+      "irregularity": {
+        "type": ["stem_change", "irregular_passato_remoto"],
+        "description": "Regular in the imperfetto but irregular elsewhere: monosyllabic io form (sto), subjunctive in stia, and a strong passato remoto with -tt- (stetti, stette, stettero). Shares its participle 'stato' with essere."
+      },
+      "participio_passato": "stato",
+      "participio_presente": "stante",
+      "gerundio": "stando",
+      "presente": ["sto", "stai", "sta", "stiamo", "state", "stanno"],
+      "imperfetto": ["stavo", "stavi", "stava", "stavamo", "stavate", "stavano"],
+      "passato_remoto": ["stetti", "stesti", "stette", "stemmo", "steste", "stettero"],
+      "futuro_semplice": ["starò", "starai", "starà", "staremo", "starete", "staranno"],
+      "congiuntivo_presente": ["stia", "stia", "stia", "stiamo", "stiate", "stiano"],
+      "congiuntivo_imperfetto": ["stessi", "stessi", "stesse", "stessimo", "steste", "stessero"],
+      "condizionale_presente": ["starei", "staresti", "starebbe", "staremmo", "stareste", "starebbero"],
+      "imperativo": { "tu": "sta' (stai)", "Lei": "stia", "noi": "stiamo", "voi": "state", "loro": "stiano" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "passato_remoto": ["io", "lui", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "noi", "voi", "loro"]
+      },
+      "examples": {
+        "presente": { "italian": "Come stai? — Sto bene, grazie.", "english": "How are you? — I'm fine, thanks." },
+        "passato_prossimo": { "italian": "Sono stato a casa tutto il giorno.", "english": "I stayed home all day." },
+        "imperfetto": { "italian": "Stavo per uscire quando hai chiamato.", "english": "I was about to go out when you called." },
+        "passato_remoto": { "italian": "Stette in silenzio per un'ora.", "english": "He stayed silent for an hour." },
+        "futuro_semplice": { "italian": "Starò a Roma tre giorni.", "english": "I will stay in Rome for three days." },
+        "congiuntivo_presente": { "italian": "Spero che tu stia meglio.", "english": "I hope you are feeling better." },
+        "condizionale_presente": { "italian": "Starei volentieri ancora un po'.", "english": "I would happily stay a bit longer." },
+        "imperativo": { "italian": "Sta' tranquillo, ci penso io.", "english": "Don't worry, I'll take care of it." }
+      },
+      "notes": [
+        "Health and wellbeing use stare, not essere: 'Come stai?', 'Sto male'.",
+        "stare + gerundio expresses an action in progress: 'Sto mangiando' (I am eating).",
+        "stare per + infinitive means 'to be about to': 'Sto per uscire'.",
+        "Shares the participle 'stato' with essere, so 'sono stato' can mean both 'I was' and 'I stayed'."
+      ]
+    },
+    {
+      "infinitive": "dare",
+      "english": "to give",
+      "cefr": "A1",
+      "frequency": "very_common",
+      "auxiliary": "avere",
+      "irregularity": {
+        "type": ["stem_change", "irregular_passato_remoto", "spelling_change"],
+        "description": "Monosyllabic io form (do) and a third person written with an accent (dà) to distinguish it from the preposition da. The passato remoto has two accepted series, diedi/diede/diedero and detti/dette/dettero."
+      },
+      "participio_passato": "dato",
+      "participio_presente": "dante",
+      "gerundio": "dando",
+      "presente": ["do", "dai", "dà", "diamo", "date", "danno"],
+      "imperfetto": ["davo", "davi", "dava", "davamo", "davate", "davano"],
+      "passato_remoto": ["diedi (detti)", "desti", "diede (dette)", "demmo", "deste", "diedero (dettero)"],
+      "futuro_semplice": ["darò", "darai", "darà", "daremo", "darete", "daranno"],
+      "congiuntivo_presente": ["dia", "dia", "dia", "diamo", "diate", "diano"],
+      "congiuntivo_imperfetto": ["dessi", "dessi", "desse", "dessimo", "deste", "dessero"],
+      "condizionale_presente": ["darei", "daresti", "darebbe", "daremmo", "dareste", "darebbero"],
+      "imperativo": { "tu": "da' (dai)", "Lei": "dia", "noi": "diamo", "voi": "date", "loro": "diano" },
+      "irregular_forms": {
+        "presente": ["io", "lui", "loro"],
+        "passato_remoto": ["io", "lui", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "noi", "voi", "loro"]
+      },
+      "examples": {
+        "presente": { "italian": "Ti do il mio numero.", "english": "I'll give you my number." },
+        "passato_prossimo": { "italian": "Mi ha dato un buon consiglio.", "english": "He gave me good advice." },
+        "imperfetto": { "italian": "Mi dava sempre una mano.", "english": "He always used to give me a hand." },
+        "passato_remoto": { "italian": "Le diede un anello d'oro.", "english": "He gave her a gold ring." },
+        "futuro_semplice": { "italian": "Ti darò una risposta domani.", "english": "I will give you an answer tomorrow." },
+        "congiuntivo_presente": { "italian": "Basta che tu mi dia il tuo indirizzo.", "english": "It's enough for you to give me your address." },
+        "condizionale_presente": { "italian": "Darei qualsiasi cosa per capirlo.", "english": "I would give anything to understand it." },
+        "imperativo": { "italian": "Dammi una mano, per favore.", "english": "Give me a hand, please." }
+      },
+      "notes": [
+        "'dà' (verb) carries an accent; 'da' without it is the preposition 'from/by'.",
+        "The detti/dette/dettero series is fully standard but less frequent in writing than diedi/diede/diedero.",
+        "Set phrases: dare del tu/del Lei, dare una mano, dare fastidio, dare un esame.",
+        "Before pronouns the short imperative doubles the consonant: dammi, dallo, dacci."
+      ]
+    },
+    {
+      "infinitive": "dire",
+      "english": "to say, to tell",
+      "cefr": "A1",
+      "frequency": "very_common",
+      "auxiliary": "avere",
+      "irregularity": {
+        "type": ["contracted_form", "stem_change", "irregular_participle"],
+        "description": "Contracted from Latin dicere: the full stem dic- reappears in most forms (dico, dicevo, dicendo), while voi keeps the short form 'dite'. Strong passato remoto (dissi, disse, dissero) and participle detto."
+      },
+      "participio_passato": "detto",
+      "participio_presente": "dicente",
+      "gerundio": "dicendo",
+      "presente": ["dico", "dici", "dice", "diciamo", "dite", "dicono"],
+      "imperfetto": ["dicevo", "dicevi", "diceva", "dicevamo", "dicevate", "dicevano"],
+      "passato_remoto": ["dissi", "dicesti", "disse", "dicemmo", "diceste", "dissero"],
+      "futuro_semplice": ["dirò", "dirai", "dirà", "diremo", "direte", "diranno"],
+      "congiuntivo_presente": ["dica", "dica", "dica", "diciamo", "diciate", "dicano"],
+      "congiuntivo_imperfetto": ["dicessi", "dicessi", "dicesse", "dicessimo", "diceste", "dicessero"],
+      "condizionale_presente": ["direi", "diresti", "direbbe", "diremmo", "direste", "direbbero"],
+      "imperativo": { "tu": "di'", "Lei": "dica", "noi": "diciamo", "voi": "dite", "loro": "dicano" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "imperfetto": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "passato_remoto": ["io", "lui", "loro"],
+        "participio_passato": true
+      },
+      "examples": {
+        "presente": { "italian": "Ti dico sempre la verità.", "english": "I always tell you the truth." },
+        "passato_prossimo": { "italian": "Che cosa hai detto?", "english": "What did you say?" },
+        "imperfetto": { "italian": "Diceva sempre le stesse cose.", "english": "He always used to say the same things." },
+        "passato_remoto": { "italian": "Disse di no e se ne andò.", "english": "He said no and left." },
+        "futuro_semplice": { "italian": "Glielo dirò domani.", "english": "I will tell him tomorrow." },
+        "congiuntivo_presente": { "italian": "Non credo che dica la verità.", "english": "I don't think he is telling the truth." },
+        "condizionale_presente": { "italian": "Direi di sì.", "english": "I would say yes." },
+        "imperativo": { "italian": "Dimmi tutto!", "english": "Tell me everything!" }
+      },
+      "notes": [
+        "dire is followed by 'che' for reported statements and by 'di' + infinitive for reported orders: 'Dice che viene' vs 'Dice di venire'.",
+        "Do not confuse with parlare (to speak) or raccontare (to tell a story).",
+        "The imperative 'di'' always takes an apostrophe, never an accent.",
+        "Before pronouns the short imperative doubles the consonant: dimmi, dillo, digli."
+      ]
+    },
+    {
+      "infinitive": "venire",
+      "english": "to come",
+      "cefr": "A1",
+      "frequency": "very_common",
+      "auxiliary": "essere",
+      "irregularity": {
+        "type": ["stem_change", "irregular_future_stem", "irregular_passato_remoto"],
+        "description": "The velar stem veng- appears before -o and -ono, and the diphthong ie- in tu/lui (vieni, viene). The future contracts with a double r (verrò) and the passato remoto is strong (venni, venne, vennero)."
+      },
+      "participio_passato": "venuto",
+      "participio_presente": "veniente",
+      "gerundio": "venendo",
+      "presente": ["vengo", "vieni", "viene", "veniamo", "venite", "vengono"],
+      "imperfetto": ["venivo", "venivi", "veniva", "venivamo", "venivate", "venivano"],
+      "passato_remoto": ["venni", "venisti", "venne", "venimmo", "veniste", "vennero"],
+      "futuro_semplice": ["verrò", "verrai", "verrà", "verremo", "verrete", "verranno"],
+      "congiuntivo_presente": ["venga", "venga", "venga", "veniamo", "veniate", "vengano"],
+      "congiuntivo_imperfetto": ["venissi", "venissi", "venisse", "venissimo", "veniste", "venissero"],
+      "condizionale_presente": ["verrei", "verresti", "verrebbe", "verremmo", "verreste", "verrebbero"],
+      "imperativo": { "tu": "vieni", "Lei": "venga", "noi": "veniamo", "voi": "venite", "loro": "vengano" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "loro"],
+        "passato_remoto": ["io", "lui", "loro"],
+        "futuro_semplice": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "loro"]
+      },
+      "examples": {
+        "presente": { "italian": "Vieni con noi stasera?", "english": "Are you coming with us tonight?" },
+        "passato_prossimo": { "italian": "È venuta a trovarmi ieri.", "english": "She came to visit me yesterday." },
+        "imperfetto": { "italian": "Veniva a scuola in bicicletta.", "english": "He used to come to school by bike." },
+        "passato_remoto": { "italian": "Venne da noi nel 1985.", "english": "He came to us in 1985." },
+        "futuro_semplice": { "italian": "Verrò a prenderti alle otto.", "english": "I will come and pick you up at eight." },
+        "congiuntivo_presente": { "italian": "Spero che venga anche lui.", "english": "I hope he comes too." },
+        "condizionale_presente": { "italian": "Verrei volentieri, ma lavoro.", "english": "I would gladly come, but I'm working." },
+        "imperativo": { "italian": "Vieni qui un attimo!", "english": "Come here a second!" }
+      },
+      "notes": [
+        "Takes essere: sono venuto / sono venuta / siamo venuti / siamo venute.",
+        "venire a + infinitive expresses purpose: 'Vengo a prenderti'.",
+        "venire also forms the passive in place of essere: 'Il libro viene letto' = the book is (being) read.",
+        "The same pattern is followed by all its derivatives: divenire, provenire, avvenire, convenire, intervenire."
+      ]
+    },
+    {
+      "infinitive": "uscire",
+      "english": "to go out, to exit",
+      "cefr": "A1",
+      "frequency": "very_common",
+      "auxiliary": "essere",
+      "irregularity": {
+        "type": ["stem_change"],
+        "description": "The stressed stem changes u- to e- in the four forms where the stress falls on the stem (esco, esci, esce, escono); noi and voi keep the regular stem. Everything else is regular."
+      },
+      "participio_passato": "uscito",
+      "participio_presente": "uscente",
+      "gerundio": "uscendo",
+      "presente": ["esco", "esci", "esce", "usciamo", "uscite", "escono"],
+      "imperfetto": ["uscivo", "uscivi", "usciva", "uscivamo", "uscivate", "uscivano"],
+      "passato_remoto": ["uscii", "uscisti", "uscì", "uscimmo", "usciste", "uscirono"],
+      "futuro_semplice": ["uscirò", "uscirai", "uscirà", "usciremo", "uscirete", "usciranno"],
+      "congiuntivo_presente": ["esca", "esca", "esca", "usciamo", "usciate", "escano"],
+      "congiuntivo_imperfetto": ["uscissi", "uscissi", "uscisse", "uscissimo", "usciste", "uscissero"],
+      "condizionale_presente": ["uscirei", "usciresti", "uscirebbe", "usciremmo", "uscireste", "uscirebbero"],
+      "imperativo": { "tu": "esci", "Lei": "esca", "noi": "usciamo", "voi": "uscite", "loro": "escano" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "loro"]
+      },
+      "examples": {
+        "presente": { "italian": "Esco con gli amici il venerdì.", "english": "I go out with friends on Fridays." },
+        "passato_prossimo": { "italian": "Siamo usciti alle nove.", "english": "We went out at nine." },
+        "imperfetto": { "italian": "Uscivo sempre tardi dall'ufficio.", "english": "I always used to leave the office late." },
+        "passato_remoto": { "italian": "Uscì senza dire una parola.", "english": "He went out without saying a word." },
+        "futuro_semplice": { "italian": "Stasera usciremo a cena.", "english": "Tonight we will go out for dinner." },
+        "congiuntivo_presente": { "italian": "Non credo che esca con questo tempo.", "english": "I don't think he'll go out in this weather." },
+        "condizionale_presente": { "italian": "Uscirei, ma sono stanchissimo.", "english": "I would go out, but I'm exhausted." },
+        "imperativo": { "italian": "Esci di qui!", "english": "Get out of here!" }
+      },
+      "notes": [
+        "Takes essere: sono uscito / sono uscita.",
+        "Note the spelling: esci is pronounced with the soft sound /ʃ/, no h is added.",
+        "riuscire (to succeed, to manage) follows exactly the same pattern: riesco, riesci, riesce, riusciamo, riuscite, riescono.",
+        "riuscire a + infinitive = to manage to do something."
+      ]
+    },
+    {
+      "infinitive": "potere",
+      "english": "can, to be able to",
+      "cefr": "A1",
+      "frequency": "very_common",
+      "auxiliary": "avere",
+      "irregularity": {
+        "type": ["stem_change", "irregular_future_stem"],
+        "description": "Modal verb with the stem posso/può alternation in the present, a subjunctive in possa, and a contracted future stem potr-. It has no imperative, since one cannot order somebody to be able to."
+      },
+      "participio_passato": "potuto",
+      "participio_presente": "potente",
+      "gerundio": "potendo",
+      "presente": ["posso", "puoi", "può", "possiamo", "potete", "possono"],
+      "imperfetto": ["potevo", "potevi", "poteva", "potevamo", "potevate", "potevano"],
+      "passato_remoto": ["potei (potetti)", "potesti", "poté (potette)", "potemmo", "poteste", "poterono (potettero)"],
+      "futuro_semplice": ["potrò", "potrai", "potrà", "potremo", "potrete", "potranno"],
+      "congiuntivo_presente": ["possa", "possa", "possa", "possiamo", "possiate", "possano"],
+      "congiuntivo_imperfetto": ["potessi", "potessi", "potesse", "potessimo", "poteste", "potessero"],
+      "condizionale_presente": ["potrei", "potresti", "potrebbe", "potremmo", "potreste", "potrebbero"],
+      "imperativo": { "tu": "—", "Lei": "—", "noi": "—", "voi": "—", "loro": "—" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "noi", "loro"],
+        "futuro_semplice": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "noi", "voi", "loro"]
+      },
+      "examples": {
+        "presente": { "italian": "Non posso venire stasera.", "english": "I can't come tonight." },
+        "passato_prossimo": { "italian": "Non ho potuto finire il lavoro.", "english": "I couldn't finish the work." },
+        "imperfetto": { "italian": "Da bambino non potevo uscire da solo.", "english": "As a child I couldn't go out alone." },
+        "passato_remoto": { "italian": "Non poté partecipare alla riunione.", "english": "He could not attend the meeting." },
+        "futuro_semplice": { "italian": "Domani potrò aiutarti.", "english": "Tomorrow I will be able to help you." },
+        "congiuntivo_presente": { "italian": "Credo che possa farcela.", "english": "I think he can make it." },
+        "condizionale_presente": { "italian": "Potresti parlare più lentamente?", "english": "Could you speak more slowly?" },
+        "imperativo": { "italian": "—", "english": "Potere has no imperative." }
+      },
+      "notes": [
+        "Modal verb: it is followed directly by the infinitive, with no preposition — 'posso venire', never *'posso di venire'.",
+        "In the compound tenses the auxiliary is normally that of the following infinitive: 'ho potuto lavorare' but 'sono potuto andare'. Spoken Italian widely tolerates avere in both cases.",
+        "The conditional 'potresti / potrebbe' is the standard polite way to make a request.",
+        "The passato remoto series potetti/potette/potettero is correct but rarer than potei/poté/poterono."
+      ]
+    },
+    {
+      "infinitive": "dovere",
+      "english": "must, to have to",
+      "cefr": "A1",
+      "frequency": "very_common",
+      "auxiliary": "avere",
+      "irregularity": {
+        "type": ["stem_change", "irregular_future_stem"],
+        "description": "Modal verb alternating dev-/dobb- in the present, with the older variants debbo and debbono still admitted. The subjunctive is debba (also deva) and the future contracts to dovr-."
+      },
+      "participio_passato": "dovuto",
+      "participio_presente": "dovente",
+      "gerundio": "dovendo",
+      "presente": ["devo (debbo)", "devi", "deve", "dobbiamo", "dovete", "devono (debbono)"],
+      "imperfetto": ["dovevo", "dovevi", "doveva", "dovevamo", "dovevate", "dovevano"],
+      "passato_remoto": ["dovetti (dovei)", "dovesti", "dovette (dové)", "dovemmo", "doveste", "dovettero (doverono)"],
+      "futuro_semplice": ["dovrò", "dovrai", "dovrà", "dovremo", "dovrete", "dovranno"],
+      "congiuntivo_presente": ["debba (deva)", "debba (deva)", "debba (deva)", "dobbiamo", "dobbiate", "debbano (devano)"],
+      "congiuntivo_imperfetto": ["dovessi", "dovessi", "dovesse", "dovessimo", "doveste", "dovessero"],
+      "condizionale_presente": ["dovrei", "dovresti", "dovrebbe", "dovremmo", "dovreste", "dovrebbero"],
+      "imperativo": { "tu": "—", "Lei": "—", "noi": "—", "voi": "—", "loro": "—" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "noi", "loro"],
+        "futuro_semplice": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "noi", "voi", "loro"]
+      },
+      "examples": {
+        "presente": { "italian": "Devo studiare per l'esame.", "english": "I have to study for the exam." },
+        "passato_prossimo": { "italian": "Ho dovuto lavorare fino a tardi.", "english": "I had to work until late." },
+        "imperfetto": { "italian": "Dovevo alzarmi presto ogni mattina.", "english": "I had to get up early every morning." },
+        "passato_remoto": { "italian": "Dovette rinunciare al viaggio.", "english": "He had to give up the trip." },
+        "futuro_semplice": { "italian": "Dovrai decidere presto.", "english": "You will have to decide soon." },
+        "congiuntivo_presente": { "italian": "Non credo che debba preoccuparsi.", "english": "I don't think he needs to worry." },
+        "condizionale_presente": { "italian": "Dovresti riposarti di più.", "english": "You should rest more." },
+        "imperativo": { "italian": "—", "english": "Dovere has no imperative." }
+      },
+      "notes": [
+        "Modal verb: directly followed by the infinitive, with no preposition.",
+        "The conditional 'dovrei / dovresti' is how Italian expresses English 'should'.",
+        "debbo / debbono / deva are standard but formal or literary; devo / devono / debba are the everyday choice.",
+        "Also means 'to owe' with a direct object: 'Ti devo dieci euro'."
+      ]
+    },
+    {
+      "infinitive": "volere",
+      "english": "to want",
+      "cefr": "A1",
+      "frequency": "very_common",
+      "auxiliary": "avere",
+      "irregularity": {
+        "type": ["stem_change", "irregular_future_stem", "irregular_passato_remoto"],
+        "description": "Modal verb with the palatal stem vogli- before -o and -ono, the diphthong vuo- in tu/lui, a double-r future (vorrò) and a strong passato remoto (volli, volle, vollero)."
+      },
+      "participio_passato": "voluto",
+      "participio_presente": "volente",
+      "gerundio": "volendo",
+      "presente": ["voglio", "vuoi", "vuole", "vogliamo", "volete", "vogliono"],
+      "imperfetto": ["volevo", "volevi", "voleva", "volevamo", "volevate", "volevano"],
+      "passato_remoto": ["volli", "volesti", "volle", "volemmo", "voleste", "vollero"],
+      "futuro_semplice": ["vorrò", "vorrai", "vorrà", "vorremo", "vorrete", "vorranno"],
+      "congiuntivo_presente": ["voglia", "voglia", "voglia", "vogliamo", "vogliate", "vogliano"],
+      "congiuntivo_imperfetto": ["volessi", "volessi", "volesse", "volessimo", "voleste", "volessero"],
+      "condizionale_presente": ["vorrei", "vorresti", "vorrebbe", "vorremmo", "vorreste", "vorrebbero"],
+      "imperativo": { "tu": "vogli", "Lei": "voglia", "noi": "vogliamo", "voi": "vogliate", "loro": "vogliano" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "noi", "loro"],
+        "passato_remoto": ["io", "lui", "loro"],
+        "futuro_semplice": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "noi", "voi", "loro"]
+      },
+      "examples": {
+        "presente": { "italian": "Voglio imparare l'italiano.", "english": "I want to learn Italian." },
+        "passato_prossimo": { "italian": "Ha voluto pagare lui.", "english": "He insisted on paying." },
+        "imperfetto": { "italian": "Volevo chiederti un favore.", "english": "I wanted to ask you a favour." },
+        "passato_remoto": { "italian": "Volle partire da solo.", "english": "He wanted to leave alone." },
+        "futuro_semplice": { "italian": "Vorrà sapere tutto.", "english": "He will want to know everything." },
+        "congiuntivo_presente": { "italian": "Non credo che voglia venire.", "english": "I don't think he wants to come." },
+        "condizionale_presente": { "italian": "Vorrei un caffè, per favore.", "english": "I would like a coffee, please." },
+        "imperativo": { "italian": "Vogliate scusare il ritardo.", "english": "Please excuse the delay." }
+      },
+      "notes": [
+        "'Vorrei' is the standard polite form when ordering or requesting; plain 'voglio' sounds blunt to strangers.",
+        "Modal verb: followed directly by the infinitive — 'voglio andare', never *'voglio di andare'.",
+        "With a noun it works as an ordinary transitive verb: 'Voglio un gelato'.",
+        "The imperative exists mainly in the formal written formula 'Vogliate…' (Please be so kind as to…)."
+      ]
+    },
+    {
+      "infinitive": "sapere",
+      "english": "to know (facts), to know how to",
+      "cefr": "A1",
+      "frequency": "very_common",
+      "auxiliary": "avere",
+      "irregularity": {
+        "type": ["completely_irregular", "irregular_future_stem", "irregular_passato_remoto"],
+        "description": "Highly irregular present (so, sai, sa, sappiamo, sapete, sanno) with a subjunctive and imperative built on sappi-. The future contracts to sapr- and the passato remoto is strong (seppi, seppe, seppero)."
+      },
+      "participio_passato": "saputo",
+      "participio_presente": "sapiente",
+      "gerundio": "sapendo",
+      "presente": ["so", "sai", "sa", "sappiamo", "sapete", "sanno"],
+      "imperfetto": ["sapevo", "sapevi", "sapeva", "sapevamo", "sapevate", "sapevano"],
+      "passato_remoto": ["seppi", "sapesti", "seppe", "sapemmo", "sapeste", "seppero"],
+      "futuro_semplice": ["saprò", "saprai", "saprà", "sapremo", "saprete", "sapranno"],
+      "congiuntivo_presente": ["sappia", "sappia", "sappia", "sappiamo", "sappiate", "sappiano"],
+      "congiuntivo_imperfetto": ["sapessi", "sapessi", "sapesse", "sapessimo", "sapeste", "sapessero"],
+      "condizionale_presente": ["saprei", "sapresti", "saprebbe", "sapremmo", "sapreste", "saprebbero"],
+      "imperativo": { "tu": "sappi", "Lei": "sappia", "noi": "sappiamo", "voi": "sappiate", "loro": "sappiano" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "noi", "loro"],
+        "passato_remoto": ["io", "lui", "loro"],
+        "futuro_semplice": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "noi", "voi", "loro"]
+      },
+      "examples": {
+        "presente": { "italian": "So parlare tre lingue.", "english": "I can speak three languages." },
+        "passato_prossimo": { "italian": "Ho saputo la notizia ieri.", "english": "I found out the news yesterday." },
+        "imperfetto": { "italian": "Non sapevo che fossi qui.", "english": "I didn't know you were here." },
+        "passato_remoto": { "italian": "Seppe la verità troppo tardi.", "english": "He found out the truth too late." },
+        "futuro_semplice": { "italian": "Domani sapremo il risultato.", "english": "Tomorrow we will know the result." },
+        "congiuntivo_presente": { "italian": "Non credo che sappia nuotare.", "english": "I don't think he can swim." },
+        "condizionale_presente": { "italian": "Non saprei che cosa dire.", "english": "I wouldn't know what to say." },
+        "imperativo": { "italian": "Sappi che ti sono grato.", "english": "Know that I am grateful to you." }
+      },
+      "notes": [
+        "sapere = to know a fact or to know how to do something; conoscere = to be acquainted with a person or place.",
+        "In the passato prossimo it shifts meaning to 'to find out': 'Ho saputo che ti sposi'.",
+        "sapere + infinitive means 'to be able to' through learned skill: 'So guidare' (I can drive).",
+        "'Sa di…' means 'it tastes/smells of': 'Questo sa di limone'."
+      ]
+    },
+    {
+      "infinitive": "bere",
+      "english": "to drink",
+      "cefr": "A1",
+      "frequency": "very_common",
+      "auxiliary": "avere",
+      "irregularity": {
+        "type": ["contracted_form", "irregular_passato_remoto", "irregular_future_stem"],
+        "description": "Contracted infinitive from Latin bibere: the full stem bev- returns in nearly every form (bevo, bevevo, bevendo). The future has a double r (berrò) and the passato remoto is strong with -vv- (bevvi, bevve, bevvero)."
+      },
+      "participio_passato": "bevuto",
+      "participio_presente": "bevente",
+      "gerundio": "bevendo",
+      "presente": ["bevo", "bevi", "beve", "beviamo", "bevete", "bevono"],
+      "imperfetto": ["bevevo", "bevevi", "beveva", "bevevamo", "bevevate", "bevevano"],
+      "passato_remoto": ["bevvi (bevetti)", "bevesti", "bevve (bevette)", "bevemmo", "beveste", "bevvero (bevettero)"],
+      "futuro_semplice": ["berrò", "berrai", "berrà", "berremo", "berrete", "berranno"],
+      "congiuntivo_presente": ["beva", "beva", "beva", "beviamo", "beviate", "bevano"],
+      "congiuntivo_imperfetto": ["bevessi", "bevessi", "bevesse", "bevessimo", "beveste", "bevessero"],
+      "condizionale_presente": ["berrei", "berresti", "berrebbe", "berremmo", "berreste", "berrebbero"],
+      "imperativo": { "tu": "bevi", "Lei": "beva", "noi": "beviamo", "voi": "bevete", "loro": "bevano" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "passato_remoto": ["io", "lui", "loro"],
+        "futuro_semplice": ["io", "tu", "lui", "noi", "voi", "loro"]
+      },
+      "examples": {
+        "presente": { "italian": "Bevo un caffè ogni mattina.", "english": "I drink a coffee every morning." },
+        "passato_prossimo": { "italian": "Abbiamo bevuto un ottimo vino.", "english": "We drank an excellent wine." },
+        "imperfetto": { "italian": "Da bambino bevevo solo latte.", "english": "As a child I only drank milk." },
+        "passato_remoto": { "italian": "Bevve tutto d'un fiato.", "english": "He drank it all in one go." },
+        "futuro_semplice": { "italian": "Stasera berremo una birra.", "english": "Tonight we will have a beer." },
+        "congiuntivo_presente": { "italian": "Voglio che tu beva più acqua.", "english": "I want you to drink more water." },
+        "condizionale_presente": { "italian": "Berrei volentieri un tè.", "english": "I would gladly have a tea." },
+        "imperativo": { "italian": "Bevi, ti farà bene!", "english": "Drink, it will do you good!" }
+      },
+      "notes": [
+        "Only the infinitive is short; every conjugated form is built on bev-.",
+        "Note the double r of the future and conditional: berrò, berrei — a very common spelling mistake.",
+        "The bevetti/bevette/bevettero series is admitted but far less common than bevvi/bevve/bevvero."
+      ]
+    },
+    {
+      "infinitive": "tenere",
+      "english": "to hold, to keep",
+      "cefr": "A2",
+      "frequency": "very_common",
+      "auxiliary": "avere",
+      "irregularity": {
+        "type": ["stem_change", "irregular_future_stem", "irregular_passato_remoto"],
+        "description": "Velar stem teng- before -o and -ono, diphthong ie- in tu/lui (tieni, tiene), double-r future (terrò) and strong passato remoto (tenni, tenne, tennero). The pattern is identical to venire."
+      },
+      "participio_passato": "tenuto",
+      "participio_presente": "tenente",
+      "gerundio": "tenendo",
+      "presente": ["tengo", "tieni", "tiene", "teniamo", "tenete", "tengono"],
+      "imperfetto": ["tenevo", "tenevi", "teneva", "tenevamo", "tenevate", "tenevano"],
+      "passato_remoto": ["tenni", "tenesti", "tenne", "tenemmo", "teneste", "tennero"],
+      "futuro_semplice": ["terrò", "terrai", "terrà", "terremo", "terrete", "terranno"],
+      "congiuntivo_presente": ["tenga", "tenga", "tenga", "teniamo", "teniate", "tengano"],
+      "congiuntivo_imperfetto": ["tenessi", "tenessi", "tenesse", "tenessimo", "teneste", "tenessero"],
+      "condizionale_presente": ["terrei", "terresti", "terrebbe", "terremmo", "terreste", "terrebbero"],
+      "imperativo": { "tu": "tieni", "Lei": "tenga", "noi": "teniamo", "voi": "tenete", "loro": "tengano" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "loro"],
+        "passato_remoto": ["io", "lui", "loro"],
+        "futuro_semplice": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "loro"]
+      },
+      "examples": {
+        "presente": { "italian": "Tengo le chiavi in tasca.", "english": "I keep the keys in my pocket." },
+        "passato_prossimo": { "italian": "Ho tenuto il bambino in braccio.", "english": "I held the child in my arms." },
+        "imperfetto": { "italian": "Teneva sempre la finestra aperta.", "english": "He always kept the window open." },
+        "passato_remoto": { "italian": "Tenne un discorso memorabile.", "english": "He gave a memorable speech." },
+        "futuro_semplice": { "italian": "Terrò io i documenti.", "english": "I will keep the documents." },
+        "congiuntivo_presente": { "italian": "Bisogna che tu tenga la calma.", "english": "You need to keep calm." },
+        "condizionale_presente": { "italian": "Terrei la macchina ancora un anno.", "english": "I would keep the car another year." },
+        "imperativo": { "italian": "Tieni, questo è per te.", "english": "Here, this is for you." }
+      },
+      "notes": [
+        "tenere a + noun/infinitive means 'to care about': 'Ci tengo molto'.",
+        "All derivatives follow the same pattern: mantenere, ottenere, contenere, appartenere, sostenere, trattenere.",
+        "'Tieni!' is the everyday way of handing something over, like English 'Here you go'."
+      ]
+    },
+    {
+      "infinitive": "rimanere",
+      "english": "to stay, to remain",
+      "cefr": "A2",
+      "frequency": "common",
+      "auxiliary": "essere",
+      "irregularity": {
+        "type": ["stem_change", "irregular_future_stem", "irregular_passato_remoto", "irregular_participle"],
+        "description": "Velar stem rimang- before -o and -ono, double-r future (rimarrò), strong passato remoto (rimasi, rimase, rimasero) and the irregular participle rimasto."
+      },
+      "participio_passato": "rimasto",
+      "participio_presente": "rimanente",
+      "gerundio": "rimanendo",
+      "presente": ["rimango", "rimani", "rimane", "rimaniamo", "rimanete", "rimangono"],
+      "imperfetto": ["rimanevo", "rimanevi", "rimaneva", "rimanevamo", "rimanevate", "rimanevano"],
+      "passato_remoto": ["rimasi", "rimanesti", "rimase", "rimanemmo", "rimaneste", "rimasero"],
+      "futuro_semplice": ["rimarrò", "rimarrai", "rimarrà", "rimarremo", "rimarrete", "rimarranno"],
+      "congiuntivo_presente": ["rimanga", "rimanga", "rimanga", "rimaniamo", "rimaniate", "rimangano"],
+      "congiuntivo_imperfetto": ["rimanessi", "rimanessi", "rimanesse", "rimanessimo", "rimaneste", "rimanessero"],
+      "condizionale_presente": ["rimarrei", "rimarresti", "rimarrebbe", "rimarremmo", "rimarreste", "rimarrebbero"],
+      "imperativo": { "tu": "rimani", "Lei": "rimanga", "noi": "rimaniamo", "voi": "rimanete", "loro": "rimangano" },
+      "irregular_forms": {
+        "presente": ["io", "loro"],
+        "passato_remoto": ["io", "lui", "loro"],
+        "futuro_semplice": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "loro"],
+        "participio_passato": true
+      },
+      "examples": {
+        "presente": { "italian": "Rimango a casa stasera.", "english": "I'm staying home tonight." },
+        "passato_prossimo": { "italian": "Siamo rimasti in ufficio fino a tardi.", "english": "We stayed at the office until late." },
+        "imperfetto": { "italian": "Rimanevo sempre l'ultimo.", "english": "I always used to remain the last one." },
+        "passato_remoto": { "italian": "Rimase in silenzio tutta la sera.", "english": "He remained silent all evening." },
+        "futuro_semplice": { "italian": "Rimarrò qui ancora due giorni.", "english": "I will stay here two more days." },
+        "congiuntivo_presente": { "italian": "Spero che rimanga con noi.", "english": "I hope he stays with us." },
+        "condizionale_presente": { "italian": "Rimarrei, ma devo andare.", "english": "I would stay, but I have to go." },
+        "imperativo": { "italian": "Rimani ancora un po'!", "english": "Stay a little longer!" }
+      },
+      "notes": [
+        "Takes essere: sono rimasto / sono rimasta / siamo rimasti / siamo rimaste.",
+        "Also means 'to be left over': 'Sono rimasti due biglietti'.",
+        "'Rimanere' + adjective describes a reaction: rimanere sorpreso, rimanere deluso.",
+        "permanere and the everyday synonym restare follow a regular -are pattern instead."
+      ]
+    },
+    {
+      "infinitive": "scegliere",
+      "english": "to choose",
+      "cefr": "A2",
+      "frequency": "common",
+      "auxiliary": "avere",
+      "irregularity": {
+        "type": ["stem_change", "irregular_passato_remoto", "irregular_participle"],
+        "description": "The palatal gli becomes lg before -o and -ono (scelgo, scelgono), the passato remoto is strong (scelsi, scelse, scelsero) and the participle is scelto."
+      },
+      "participio_passato": "scelto",
+      "participio_presente": "scegliente",
+      "gerundio": "scegliendo",
+      "presente": ["scelgo", "scegli", "sceglie", "scegliamo", "scegliete", "scelgono"],
+      "imperfetto": ["sceglievo", "sceglievi", "sceglieva", "sceglievamo", "sceglievate", "sceglievano"],
+      "passato_remoto": ["scelsi", "scegliesti", "scelse", "scegliemmo", "sceglieste", "scelsero"],
+      "futuro_semplice": ["sceglierò", "sceglierai", "sceglierà", "sceglieremo", "sceglierete", "sceglieranno"],
+      "congiuntivo_presente": ["scelga", "scelga", "scelga", "scegliamo", "scegliate", "scelgano"],
+      "congiuntivo_imperfetto": ["scegliessi", "scegliessi", "scegliesse", "scegliessimo", "sceglieste", "scegliessero"],
+      "condizionale_presente": ["sceglierei", "sceglieresti", "sceglierebbe", "sceglieremmo", "scegliereste", "sceglierebbero"],
+      "imperativo": { "tu": "scegli", "Lei": "scelga", "noi": "scegliamo", "voi": "scegliete", "loro": "scelgano" },
+      "irregular_forms": {
+        "presente": ["io", "loro"],
+        "passato_remoto": ["io", "lui", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "loro"],
+        "participio_passato": true
+      },
+      "examples": {
+        "presente": { "italian": "Scelgo sempre il menù del giorno.", "english": "I always choose the menu of the day." },
+        "passato_prossimo": { "italian": "Ho scelto questo modello.", "english": "I chose this model." },
+        "imperfetto": { "italian": "Sceglieva sempre il posto vicino alla finestra.", "english": "He always used to choose the seat by the window." },
+        "passato_remoto": { "italian": "Scelse di restare in Italia.", "english": "He chose to stay in Italy." },
+        "futuro_semplice": { "italian": "Sceglieremo insieme il regalo.", "english": "We will choose the present together." },
+        "congiuntivo_presente": { "italian": "È meglio che scelga lui.", "english": "It's better that he chooses." },
+        "condizionale_presente": { "italian": "Sceglierei il rosso.", "english": "I would choose the red one." },
+        "imperativo": { "italian": "Scegli quello che preferisci.", "english": "Choose whichever you prefer." }
+      },
+      "notes": [
+        "The same gli → lg alternation appears in cogliere, togliere, sciogliere, raccogliere.",
+        "scegliere di + infinitive: 'Ho scelto di partire'.",
+        "The participle scelto is also used as an adjective meaning 'select, choice'."
+      ]
+    },
+    {
+      "infinitive": "vedere",
+      "english": "to see",
+      "cefr": "A1",
+      "frequency": "very_common",
+      "auxiliary": "avere",
+      "irregularity": {
+        "type": ["irregular_passato_remoto", "irregular_future_stem", "irregular_participle"],
+        "description": "The present is regular; irregularity is concentrated in the strong passato remoto (vidi, vide, videro), the contracted future stem vedr- and the participle visto (with the regular veduto still admitted)."
+      },
+      "participio_passato": "visto",
+      "participio_presente": "vedente",
+      "gerundio": "vedendo",
+      "presente": ["vedo", "vedi", "vede", "vediamo", "vedete", "vedono"],
+      "imperfetto": ["vedevo", "vedevi", "vedeva", "vedevamo", "vedevate", "vedevano"],
+      "passato_remoto": ["vidi", "vedesti", "vide", "vedemmo", "vedeste", "videro"],
+      "futuro_semplice": ["vedrò", "vedrai", "vedrà", "vedremo", "vedrete", "vedranno"],
+      "congiuntivo_presente": ["veda", "veda", "veda", "vediamo", "vediate", "vedano"],
+      "congiuntivo_imperfetto": ["vedessi", "vedessi", "vedesse", "vedessimo", "vedeste", "vedessero"],
+      "condizionale_presente": ["vedrei", "vedresti", "vedrebbe", "vedremmo", "vedreste", "vedrebbero"],
+      "imperativo": { "tu": "vedi", "Lei": "veda", "noi": "vediamo", "voi": "vedete", "loro": "vedano" },
+      "irregular_forms": {
+        "passato_remoto": ["io", "lui", "loro"],
+        "futuro_semplice": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "participio_passato": true
+      },
+      "examples": {
+        "presente": { "italian": "Non vedo bene da lontano.", "english": "I can't see well from a distance." },
+        "passato_prossimo": { "italian": "Ieri ho visto un bel film.", "english": "Yesterday I saw a good film." },
+        "imperfetto": { "italian": "Da qui si vedeva tutta la città.", "english": "From here you could see the whole city." },
+        "passato_remoto": { "italian": "La vide per l'ultima volta nel 1970.", "english": "He saw her for the last time in 1970." },
+        "futuro_semplice": { "italian": "Ci vedremo domani.", "english": "We will see each other tomorrow." },
+        "congiuntivo_presente": { "italian": "Non credo che veda il problema.", "english": "I don't think he sees the problem." },
+        "condizionale_presente": { "italian": "Vedrei volentieri quel museo.", "english": "I would gladly see that museum." },
+        "imperativo": { "italian": "Vedi di arrivare puntuale!", "english": "See that you arrive on time!" }
+      },
+      "notes": [
+        "'visto' is the everyday participle; 'veduto' is correct but literary.",
+        "'Ci vediamo!' is the standard way of saying 'See you!'.",
+        "provvedere and prevedere follow the pattern but keep regular participles: provveduto/provvisto, previsto.",
+        "vedere is also used impersonally: 'Si vede che…' = 'Clearly…'."
+      ]
+    },
+    {
+      "infinitive": "vivere",
+      "english": "to live",
+      "cefr": "A2",
+      "frequency": "very_common",
+      "auxiliary": "both",
+      "irregularity": {
+        "type": ["irregular_passato_remoto", "irregular_future_stem", "irregular_participle"],
+        "description": "Regular present, but a strong passato remoto (vissi, visse, vissero), a contracted future stem vivr- and the irregular participle vissuto."
+      },
+      "participio_passato": "vissuto",
+      "participio_presente": "vivente",
+      "gerundio": "vivendo",
+      "presente": ["vivo", "vivi", "vive", "viviamo", "vivete", "vivono"],
+      "imperfetto": ["vivevo", "vivevi", "viveva", "vivevamo", "vivevate", "vivevano"],
+      "passato_remoto": ["vissi", "vivesti", "visse", "vivemmo", "viveste", "vissero"],
+      "futuro_semplice": ["vivrò", "vivrai", "vivrà", "vivremo", "vivrete", "vivranno"],
+      "congiuntivo_presente": ["viva", "viva", "viva", "viviamo", "viviate", "vivano"],
+      "congiuntivo_imperfetto": ["vivessi", "vivessi", "vivesse", "vivessimo", "viveste", "vivessero"],
+      "condizionale_presente": ["vivrei", "vivresti", "vivrebbe", "vivremmo", "vivreste", "vivrebbero"],
+      "imperativo": { "tu": "vivi", "Lei": "viva", "noi": "viviamo", "voi": "vivete", "loro": "vivano" },
+      "irregular_forms": {
+        "passato_remoto": ["io", "lui", "loro"],
+        "futuro_semplice": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "participio_passato": true
+      },
+      "examples": {
+        "presente": { "italian": "Vivo a Milano da tre anni.", "english": "I have been living in Milan for three years." },
+        "passato_prossimo": { "italian": "Ho vissuto due anni all'estero.", "english": "I lived abroad for two years." },
+        "imperfetto": { "italian": "Vivevamo in campagna.", "english": "We used to live in the countryside." },
+        "passato_remoto": { "italian": "Visse fino a novant'anni.", "english": "He lived to be ninety." },
+        "futuro_semplice": { "italian": "Vivremo insieme dall'anno prossimo.", "english": "We will live together from next year." },
+        "congiuntivo_presente": { "italian": "Credo che viva ancora qui.", "english": "I think he still lives here." },
+        "condizionale_presente": { "italian": "Vivrei volentieri al mare.", "english": "I would happily live by the sea." },
+        "imperativo": { "italian": "Vivi il presente!", "english": "Live in the present!" }
+      },
+      "notes": [
+        "Takes either auxiliary: 'Ho vissuto a Roma' and 'Sono vissuto a Roma' are both correct, avere being far more common in modern usage.",
+        "With a direct object only avere is possible: 'Ho vissuto un'esperienza incredibile'.",
+        "'Viva!' as an exclamation ('Long live…!') is the subjunctive form.",
+        "sopravvivere follows the same pattern and prefers essere."
+      ]
+    },
+    {
+      "infinitive": "porre",
+      "english": "to put, to place, to pose",
+      "cefr": "B1",
+      "frequency": "common",
+      "auxiliary": "avere",
+      "irregularity": {
+        "type": ["contracted_form", "stem_change", "irregular_passato_remoto", "irregular_participle"],
+        "description": "Contracted from Latin ponere: the stem pon- reappears everywhere (pongo, ponevo, ponendo), with a velar g before -o and -ono. Double-r future (porrò), strong passato remoto (posi, pose, posero) and participle posto."
+      },
+      "participio_passato": "posto",
+      "participio_presente": "ponente",
+      "gerundio": "ponendo",
+      "presente": ["pongo", "poni", "pone", "poniamo", "ponete", "pongono"],
+      "imperfetto": ["ponevo", "ponevi", "poneva", "ponevamo", "ponevate", "ponevano"],
+      "passato_remoto": ["posi", "ponesti", "pose", "ponemmo", "poneste", "posero"],
+      "futuro_semplice": ["porrò", "porrai", "porrà", "porremo", "porrete", "porranno"],
+      "congiuntivo_presente": ["ponga", "ponga", "ponga", "poniamo", "poniate", "pongano"],
+      "congiuntivo_imperfetto": ["ponessi", "ponessi", "ponesse", "ponessimo", "poneste", "ponessero"],
+      "condizionale_presente": ["porrei", "porresti", "porrebbe", "porremmo", "porreste", "porrebbero"],
+      "imperativo": { "tu": "poni", "Lei": "ponga", "noi": "poniamo", "voi": "ponete", "loro": "pongano" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "passato_remoto": ["io", "lui", "loro"],
+        "futuro_semplice": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "participio_passato": true
+      },
+      "examples": {
+        "presente": { "italian": "Pongo una domanda semplice.", "english": "I am asking a simple question." },
+        "passato_prossimo": { "italian": "Hanno posto fine alla discussione.", "english": "They put an end to the discussion." },
+        "imperfetto": { "italian": "Poneva sempre molta attenzione ai dettagli.", "english": "He always paid great attention to detail." },
+        "passato_remoto": { "italian": "Pose la prima pietra nel 1900.", "english": "He laid the first stone in 1900." },
+        "futuro_semplice": { "italian": "Porremo la questione domani.", "english": "We will raise the issue tomorrow." },
+        "congiuntivo_presente": { "italian": "Bisogna che si ponga il problema.", "english": "The problem needs to be raised." },
+        "condizionale_presente": { "italian": "Porrei la domanda in modo diverso.", "english": "I would put the question differently." },
+        "imperativo": { "italian": "Poni attenzione a quello che dici.", "english": "Pay attention to what you say." }
+      },
+      "notes": [
+        "Formal register: everyday Italian prefers mettere for the physical sense.",
+        "The whole family follows the same pattern: comporre, disporre, esporre, imporre, opporre, proporre, supporre.",
+        "Common set phrases: porre una domanda, porre fine a, porre attenzione."
+      ]
+    },
+    {
+      "infinitive": "salire",
+      "english": "to go up, to climb, to get on",
+      "cefr": "A2",
+      "frequency": "common",
+      "auxiliary": "both",
+      "irregularity": {
+        "type": ["stem_change"],
+        "description": "A velar g appears before -o and -ono (salgo, salgono) and throughout the singular subjunctive (salga); every other form is regular."
+      },
+      "participio_passato": "salito",
+      "participio_presente": "saliente",
+      "gerundio": "salendo",
+      "presente": ["salgo", "sali", "sale", "saliamo", "salite", "salgono"],
+      "imperfetto": ["salivo", "salivi", "saliva", "salivamo", "salivate", "salivano"],
+      "passato_remoto": ["salii", "salisti", "salì", "salimmo", "saliste", "salirono"],
+      "futuro_semplice": ["salirò", "salirai", "salirà", "saliremo", "salirete", "saliranno"],
+      "congiuntivo_presente": ["salga", "salga", "salga", "saliamo", "saliate", "salgano"],
+      "congiuntivo_imperfetto": ["salissi", "salissi", "salisse", "salissimo", "saliste", "salissero"],
+      "condizionale_presente": ["salirei", "saliresti", "salirebbe", "saliremmo", "salireste", "salirebbero"],
+      "imperativo": { "tu": "sali", "Lei": "salga", "noi": "saliamo", "voi": "salite", "loro": "salgano" },
+      "irregular_forms": {
+        "presente": ["io", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "loro"]
+      },
+      "examples": {
+        "presente": { "italian": "Salgo sempre a piedi.", "english": "I always walk up." },
+        "passato_prossimo": { "italian": "Siamo saliti in cima alla torre.", "english": "We climbed to the top of the tower." },
+        "imperfetto": { "italian": "Il prezzo saliva ogni anno.", "english": "The price used to rise every year." },
+        "passato_remoto": { "italian": "Salì sul treno all'ultimo momento.", "english": "He got on the train at the last moment." },
+        "futuro_semplice": { "italian": "Saliremo con l'ascensore.", "english": "We will go up by lift." },
+        "congiuntivo_presente": { "italian": "Temo che il prezzo salga ancora.", "english": "I fear the price will rise further." },
+        "condizionale_presente": { "italian": "Salirei, ma ho paura dell'altezza.", "english": "I would go up, but I'm afraid of heights." },
+        "imperativo": { "italian": "Sali, ti accompagno io.", "english": "Get in, I'll take you." }
+      },
+      "notes": [
+        "essere when intransitive ('Sono salito sull'autobus'), avere with a direct object ('Ho salito le scale').",
+        "Also used for prices and temperature going up.",
+        "Its opposite scendere is irregular in a different way: scesi, sceso."
+      ]
+    },
+    {
+      "infinitive": "morire",
+      "english": "to die",
+      "cefr": "A2",
+      "frequency": "common",
+      "auxiliary": "essere",
+      "irregularity": {
+        "type": ["stem_change", "irregular_participle"],
+        "description": "The stressed stem takes the diphthong uo (muoio, muori, muore, muoiono) while noi and voi keep mor-. The participle is the irregular morto."
+      },
+      "participio_passato": "morto",
+      "participio_presente": "morente",
+      "gerundio": "morendo",
+      "presente": ["muoio", "muori", "muore", "moriamo", "morite", "muoiono"],
+      "imperfetto": ["morivo", "morivi", "moriva", "morivamo", "morivate", "morivano"],
+      "passato_remoto": ["morii", "moristi", "morì", "morimmo", "moriste", "morirono"],
+      "futuro_semplice": ["morirò", "morirai", "morirà", "moriremo", "morirete", "moriranno"],
+      "congiuntivo_presente": ["muoia", "muoia", "muoia", "moriamo", "moriate", "muoiano"],
+      "congiuntivo_imperfetto": ["morissi", "morissi", "morisse", "morissimo", "moriste", "morissero"],
+      "condizionale_presente": ["morirei", "moriresti", "morirebbe", "moriremmo", "morireste", "morirebbero"],
+      "imperativo": { "tu": "muori", "Lei": "muoia", "noi": "moriamo", "voi": "morite", "loro": "muoiano" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "loro"],
+        "participio_passato": true
+      },
+      "examples": {
+        "presente": { "italian": "Muoio di fame!", "english": "I'm starving!" },
+        "passato_prossimo": { "italian": "Il suo cane è morto l'anno scorso.", "english": "His dog died last year." },
+        "imperfetto": { "italian": "Moriva di paura.", "english": "He was dying of fear." },
+        "passato_remoto": { "italian": "Morì nel 1912.", "english": "He died in 1912." },
+        "futuro_semplice": { "italian": "Queste piante moriranno senza acqua.", "english": "These plants will die without water." },
+        "congiuntivo_presente": { "italian": "Non voglio che muoia così.", "english": "I don't want it to die like this." },
+        "condizionale_presente": { "italian": "Morirei per un gelato adesso.", "english": "I'd die for an ice cream right now." },
+        "imperativo": { "italian": "Non morire di noia, esci!", "english": "Don't die of boredom, go out!" }
+      },
+      "notes": [
+        "Takes essere: è morto / è morta / sono morti / sono morte.",
+        "The archaic future morrò and conditional morrei are found in poetry; modern Italian uses morirò and morirei.",
+        "Very common hyperbolically: morire di fame, morire di sonno, morire dal ridere."
+      ]
+    },
+    {
+      "infinitive": "nascere",
+      "english": "to be born",
+      "cefr": "A2",
+      "frequency": "common",
+      "auxiliary": "essere",
+      "irregularity": {
+        "type": ["irregular_passato_remoto", "irregular_participle"],
+        "description": "The present is regular apart from the spelling of the soft/hard c; the passato remoto is strong with -cqu- (nacqui, nacque, nacquero) and the participle is nato."
+      },
+      "participio_passato": "nato",
+      "participio_presente": "nascente",
+      "gerundio": "nascendo",
+      "presente": ["nasco", "nasci", "nasce", "nasciamo", "nascete", "nascono"],
+      "imperfetto": ["nascevo", "nascevi", "nasceva", "nascevamo", "nascevate", "nascevano"],
+      "passato_remoto": ["nacqui", "nascesti", "nacque", "nascemmo", "nasceste", "nacquero"],
+      "futuro_semplice": ["nascerò", "nascerai", "nascerà", "nasceremo", "nascerete", "nasceranno"],
+      "congiuntivo_presente": ["nasca", "nasca", "nasca", "nasciamo", "nasciate", "nascano"],
+      "congiuntivo_imperfetto": ["nascessi", "nascessi", "nascesse", "nascessimo", "nasceste", "nascessero"],
+      "condizionale_presente": ["nascerei", "nasceresti", "nascerebbe", "nasceremmo", "nascereste", "nascerebbero"],
+      "imperativo": { "tu": "nasci", "Lei": "nasca", "noi": "nasciamo", "voi": "nascete", "loro": "nascano" },
+      "irregular_forms": {
+        "passato_remoto": ["io", "lui", "loro"],
+        "participio_passato": true
+      },
+      "examples": {
+        "presente": { "italian": "Ogni giorno nascono nuove idee.", "english": "New ideas are born every day." },
+        "passato_prossimo": { "italian": "Sono nato a Teheran.", "english": "I was born in Tehran." },
+        "imperfetto": { "italian": "In quegli anni nascevano molte imprese.", "english": "In those years many companies were being founded." },
+        "passato_remoto": { "italian": "Nacque nel 1895.", "english": "He was born in 1895." },
+        "futuro_semplice": { "italian": "Il bambino nascerà a maggio.", "english": "The baby will be born in May." },
+        "congiuntivo_presente": { "italian": "Spero che nasca sano.", "english": "I hope he is born healthy." },
+        "condizionale_presente": { "italian": "Da quell'idea nascerebbe un bel progetto.", "english": "A fine project would come out of that idea." },
+        "imperativo": { "italian": "—", "english": "Rarely used in the imperative." }
+      },
+      "notes": [
+        "Takes essere: sono nato / sono nata.",
+        "Unlike English, Italian uses the passato prossimo for one's own birth: 'Sono nato nel 1990'.",
+        "Figuratively used for ideas, projects and rivers: 'Il fiume nasce dalle Alpi'.",
+        "The related conoscere shares the -cqu- passato remoto pattern (conobbi, conobbe, conobbero)."
+      ]
+    },
+    {
+      "infinitive": "piacere",
+      "english": "to please, to be liked",
+      "cefr": "A2",
+      "frequency": "very_common",
+      "auxiliary": "essere",
+      "irregularity": {
+        "type": ["stem_change", "irregular_passato_remoto"],
+        "description": "The stem doubles the c before -o, -io and -iono (piaccio, piacciono) and throughout the subjunctive (piaccia). The passato remoto is strong with -cqu- (piacqui, piacque, piacquero)."
+      },
+      "participio_passato": "piaciuto",
+      "participio_presente": "piacente",
+      "gerundio": "piacendo",
+      "presente": ["piaccio", "piaci", "piace", "piacciamo", "piacete", "piacciono"],
+      "imperfetto": ["piacevo", "piacevi", "piaceva", "piacevamo", "piacevate", "piacevano"],
+      "passato_remoto": ["piacqui", "piacesti", "piacque", "piacemmo", "piaceste", "piacquero"],
+      "futuro_semplice": ["piacerò", "piacerai", "piacerà", "piaceremo", "piacerete", "piaceranno"],
+      "congiuntivo_presente": ["piaccia", "piaccia", "piaccia", "piacciamo", "piacciate", "piacciano"],
+      "congiuntivo_imperfetto": ["piacessi", "piacessi", "piacesse", "piacessimo", "piaceste", "piacessero"],
+      "condizionale_presente": ["piacerei", "piaceresti", "piacerebbe", "piaceremmo", "piacereste", "piacerebbero"],
+      "imperativo": { "tu": "piaci", "Lei": "piaccia", "noi": "piacciamo", "voi": "piacete", "loro": "piacciano" },
+      "irregular_forms": {
+        "presente": ["io", "noi", "loro"],
+        "passato_remoto": ["io", "lui", "loro"],
+        "congiuntivo_presente": ["io", "tu", "lui", "noi", "voi", "loro"]
+      },
+      "examples": {
+        "presente": { "italian": "Mi piace la musica italiana.", "english": "I like Italian music." },
+        "passato_prossimo": { "italian": "Ci è piaciuto molto il film.", "english": "We really liked the film." },
+        "imperfetto": { "italian": "Da bambino mi piacevano i fumetti.", "english": "As a child I liked comics." },
+        "passato_remoto": { "italian": "Quel libro piacque a tutti.", "english": "Everyone liked that book." },
+        "futuro_semplice": { "italian": "Ti piacerà questo posto.", "english": "You will like this place." },
+        "congiuntivo_presente": { "italian": "Non credo che gli piaccia il pesce.", "english": "I don't think he likes fish." },
+        "condizionale_presente": { "italian": "Mi piacerebbe visitare Napoli.", "english": "I would like to visit Naples." },
+        "imperativo": { "italian": "—", "english": "Rarely used in the imperative." }
+      },
+      "notes": [
+        "The English subject becomes the Italian indirect object: 'I like pizza' = 'Mi piace la pizza' (literally: pizza pleases me).",
+        "The verb agrees with the thing liked: mi piace il libro / mi piacciono i libri.",
+        "Takes essere, so the participle agrees with the thing liked: 'Mi è piaciuta la casa', 'Mi sono piaciuti i film'.",
+        "The same construction governs mancare, servire, bastare, restare, interessare and dispiacere."
+      ]
+    },
+    {
+      "infinitive": "tradurre",
+      "english": "to translate",
+      "cefr": "B1",
+      "frequency": "common",
+      "auxiliary": "avere",
+      "irregularity": {
+        "type": ["contracted_form", "stem_change", "irregular_passato_remoto", "irregular_participle"],
+        "description": "Contracted from Latin traducere: the stem traduc- returns in every conjugated form (traduco, traducevo, traducendo). The passato remoto is strong with -ss- (tradussi, tradusse, tradussero) and the participle is tradotto."
+      },
+      "participio_passato": "tradotto",
+      "participio_presente": "traducente",
+      "gerundio": "traducendo",
+      "presente": ["traduco", "traduci", "traduce", "traduciamo", "traducete", "traducono"],
+      "imperfetto": ["traducevo", "traducevi", "traduceva", "traducevamo", "traducevate", "traducevano"],
+      "passato_remoto": ["tradussi", "traducesti", "tradusse", "traducemmo", "traduceste", "tradussero"],
+      "futuro_semplice": ["tradurrò", "tradurrai", "tradurrà", "tradurremo", "tradurrete", "tradurranno"],
+      "congiuntivo_presente": ["traduca", "traduca", "traduca", "traduciamo", "traduciate", "traducano"],
+      "congiuntivo_imperfetto": ["traducessi", "traducessi", "traducesse", "traducessimo", "traduceste", "traducessero"],
+      "condizionale_presente": ["tradurrei", "tradurresti", "tradurrebbe", "tradurremmo", "tradurreste", "tradurrebbero"],
+      "imperativo": { "tu": "traduci", "Lei": "traduca", "noi": "traduciamo", "voi": "traducete", "loro": "traducano" },
+      "irregular_forms": {
+        "presente": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "passato_remoto": ["io", "lui", "loro"],
+        "futuro_semplice": ["io", "tu", "lui", "noi", "voi", "loro"],
+        "participio_passato": true
+      },
+      "examples": {
+        "presente": { "italian": "Traduco articoli dall'inglese.", "english": "I translate articles from English." },
+        "passato_prossimo": { "italian": "Ho tradotto tutto il documento.", "english": "I translated the whole document." },
+        "imperfetto": { "italian": "Traduceva libri per una casa editrice.", "english": "She used to translate books for a publisher." },
+        "passato_remoto": { "italian": "Tradusse la Divina Commedia in inglese.", "english": "He translated the Divine Comedy into English." },
+        "futuro_semplice": { "italian": "Tradurrò il testo entro venerdì.", "english": "I will translate the text by Friday." },
+        "congiuntivo_presente": { "italian": "Voglio che tu traduca questa frase.", "english": "I want you to translate this sentence." },
+        "condizionale_presente": { "italian": "Tradurrei diversamente questo titolo.", "english": "I would translate this title differently." },
+        "imperativo": { "italian": "Traduci questa pagina, per favore.", "english": "Translate this page, please." }
+      },
+      "notes": [
+        "The whole -durre family behaves identically: condurre, produrre, ridurre, introdurre, sedurre, dedurre.",
+        "Note the double r in the future and conditional: tradurrò, tradurrei.",
+        "tradurre da … a / in: 'tradurre dall'italiano all'inglese'."
+      ]
+    }
+  ]
+}

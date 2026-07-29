@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Verbo + preposizione in italiano: andare a, cominciare a, cercare di, finire di, avere voglia di. Il sistema logico delle preposizioni A e DI.">
+  <title>Verbo + Preposizione · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 9 — VERBO + PREPOSIZIONE (a / di / zero)
+     ========================================================================== */
+  window.LESSON = {
+    num: 9, file: '09-preposizioni.html', icon: '🔗', title: 'Verbo + Preposizione', group: 'Strutture',
+    subtitle: 'Non memorizzare cento verbi separati: capisci la logica di A (movimento verso l\'azione), DI (contenuto dell\'azione) e zero (il verbo basta a se stesso).',
+
+    intro: {
+      what: 'Quando due verbi si incontrano, il secondo va all\'infinito — ma il primo decide se serve una preposizione e quale: <b>a</b>, <b>di</b>, oppure <b>niente</b>. "Comincio <b>a</b> studiare", "Finisco <b>di</b> studiare", "Devo studiare".',
+      when: 'In ogni frase con due verbi: voglio uscire, provo a cucinare, spero di riuscire, ho voglia di dormire. È una delle strutture più frequenti dell\'italiano parlato.',
+      why: 'Perché è l\'errore più persistente degli studenti stranieri di ogni livello. La buona notizia: non sono regole casuali. Esiste una logica, e i verbi si raggruppano in famiglie.',
+      mistakes: [
+        'Copiare l\'inglese: ❌ "Comincio studiare" (I start studying) → ✅ "Comincio a studiare".',
+        'Mettere una preposizione dopo i modali: ❌ "Devo di andare" → ✅ "Devo andare".',
+        'Confondere "provare a" (tentare) con "provare" (assaggiare/misurare).',
+        'Dimenticare la preposizione dopo le espressioni con avere: ❌ "Ho voglia dormire" → ✅ "Ho voglia di dormire".'
+      ]
+    },
+
+    formulas: [
+      {
+        label: 'Le tre possibilità',
+        rows: [
+          { parts: [
+              { text: 'VERBO 1', type: 'verb' },
+              { text: 'A', type: 'extra' },
+              { text: 'INFINITO', type: 'object' }
+            ], example: 'Comincio a studiare.', translation: 'I start studying.' },
+          { parts: [
+              { text: 'VERBO 1', type: 'verb' },
+              { text: 'DI', type: 'extra' },
+              { text: 'INFINITO', type: 'object' }
+            ], example: 'Finisco di studiare.', translation: 'I finish studying.' },
+          { parts: [
+              { text: 'VERBO 1', type: 'verb' },
+              { text: '—', note: 'niente', type: 'subject' },
+              { text: 'INFINITO', type: 'object' }
+            ], example: 'Devo studiare.', translation: 'I have to study.' }
+        ]
+      },
+      {
+        label: 'La logica di A — movimento verso l\'azione',
+        rows: [
+          { parts: [
+              { text: 'inizio / direzione / sforzo', type: 'verb' },
+              { text: 'A', type: 'extra' },
+              { text: 'l\'azione a cui vado', type: 'object' }
+            ], example: 'Vado a mangiare. · Imparo a nuotare. · Provo a capire.' }
+        ]
+      },
+      {
+        label: 'La logica di DI — contenuto dell\'azione',
+        rows: [
+          { parts: [
+              { text: 'fine / opinione / desiderio', type: 'verb' },
+              { text: 'DI', type: 'extra' },
+              { text: 'il contenuto', type: 'object' }
+            ], example: 'Finisco di mangiare. · Penso di partire. · Ho voglia di dormire.' }
+        ]
+      }
+    ],
+    formulaNote: 'Immagine mentale: A è una freccia → che ti porta verso l\'azione. DI è un contenitore che racchiude l\'azione di cui parli.',
+
+    rules: [
+      {
+        title: 'Gruppo A — verbi di inizio, movimento, sforzo e apprendimento',
+        body: 'Il verbo 1 ti "spinge verso" l\'azione del verbo 2. Sono i verbi che indicano un percorso: si comincia, si continua, si prova, si riesce, si impara.',
+        points: [
+          '<b>andare a</b> — Vado a fare la spesa.',
+          '<b>venire a</b> — Vieni a mangiare da me?',
+          '<b>cominciare a</b> / <b>iniziare a</b> — Comincio a capire.',
+          '<b>continuare a</b> — Continua a piovere.',
+          '<b>imparare a</b> — Sto imparando a guidare.',
+          '<b>riuscire a</b> — Non riesco ad aprire la porta.',
+          '<b>provare a</b> — Prova a chiamarlo.',
+          '<b>aiutare a</b> — Mi aiuti a portare le valigie?',
+          '<b>insegnare a</b> — Mi insegni a cucinare?'
+        ],
+        exception: 'Davanti a una parola che inizia per vocale, "a" diventa spesso <b>ad</b> per il suono: "riesco <b>ad</b> aprire", "comincio <b>ad</b> avere fame".'
+      },
+      {
+        title: 'Gruppo DI — verbi di fine, opinione, desiderio, memoria',
+        body: 'Il verbo 2 è il "contenuto" di ciò che pensi, dici, speri, finisci o dimentichi.',
+        points: [
+          '<b>finire di</b> — Ho finito di lavorare.',
+          '<b>smettere di</b> — Ho smesso di fumare.',
+          '<b>cercare di</b> — Cerco di arrivare in orario.',
+          '<b>decidere di</b> — Abbiamo deciso di partire.',
+          '<b>pensare di</b> — Penso di andare al mare.',
+          '<b>sperare di</b> — Spero di rivederti.',
+          '<b>credere di</b> — Credo di aver capito.',
+          '<b>dimenticare(si) di</b> — Mi sono dimenticato di chiamarti.',
+          '<b>ricordarsi di</b> — Ricordati di comprare il pane!',
+          '<b>avere bisogno di</b> — Ho bisogno di dormire.',
+          '<b>avere voglia di</b> — Ho voglia di uscire.',
+          '<b>avere paura di</b> — Ho paura di volare.',
+          '<b>chiedere di</b> / <b>dire di</b> — Mi ha chiesto di aiutarlo.'
+        ],
+        exception: 'Tutte le espressioni con avere (avere bisogno / voglia / paura / intenzione / tempo) vogliono DI. È una famiglia intera con una sola regola.'
+      },
+      {
+        title: 'Gruppo ZERO — nessuna preposizione',
+        body: 'Alcuni verbi si attaccano direttamente all\'infinito. Sono i modali e i verbi di preferenza e percezione.',
+        points: [
+          'Modali: <b>dovere, potere, volere</b> — Devo andare. Posso entrare? Voglio dormire.',
+          'Preferenza: <b>preferire</b>, <b>desiderare</b>, <b>amare</b>, <b>odiare</b> — Preferisco restare a casa.',
+          'Impersonali: <b>piacere</b>, <b>bisogna</b>, <b>basta</b> — Mi piace leggere. Bisogna partire presto.',
+          'Percezione: <b>vedere</b>, <b>sentire</b>, <b>ascoltare</b>, <b>guardare</b> — Ti ho sentito arrivare.',
+          '<b>sapere</b> (= essere capace) — So nuotare.',
+          '<b>fare</b> (= far fare) — Mi fai ridere.'
+        ],
+        exception: '"Cominciare" e "finire" hanno preposizione, ma "preferire" e "desiderare" no. Se il verbo esprime una preferenza o un potere, di solito non serve nulla.'
+      },
+      {
+        title: 'Attenzione ai cambi di significato',
+        body: 'Alcuni verbi cambiano senso a seconda della preposizione.',
+        points: [
+          '<b>pensare a</b> (pensare a qualcuno/qualcosa) vs <b>pensare di</b> + infinito (avere l\'intenzione): "Penso a te" / "Penso di partire".',
+          '<b>provare a</b> + infinito (tentare) vs <b>provare</b> + nome (assaggiare, provare un vestito): "Provo a cucinare" / "Provo questo dolce".',
+          '<b>finire di</b> + infinito vs <b>finire</b> + nome: "Finisco di studiare" / "Finisco il libro".',
+          '<b>smettere di</b> + infinito: non esiste "smettere" + infinito senza di.'
+        ],
+        exception: '"Cominciare/iniziare" possono anche reggere un oggetto diretto senza preposizione: "Comincio il libro", ma con un altro verbo serve sempre A: "Comincio a leggere".'
+      },
+      {
+        title: 'Preposizioni + nome (non solo infinito)',
+        body: 'Le stesse preposizioni compaiono anche prima di un nome, con la stessa logica.',
+        points: [
+          '<b>giocare a</b> + sport/gioco: giocare a calcio, a tennis, a carte.',
+          '<b>suonare</b> + strumento (senza preposizione): suonare la chitarra.',
+          '<b>pensare a</b> + persona: Penso a mia madre.',
+          '<b>parlare di</b> + argomento: Parliamo di lavoro. · <b>parlare con</b> + persona: Parlo con Marco.',
+          '<b>innamorarsi di</b>: Si è innamorato di lei.'
+        ],
+        exception: 'Con "giocare" gli italiani dicono "giocare a calcio" ma "suonare il piano" — i verbi non seguono la stessa logica dell\'inglese "play".'
+      }
+    ],
+
+    timeline: {
+      title: 'Le fasi di un\'azione e le loro preposizioni',
+      intro: 'Un modo semplice di ricordare: l\'inizio prende A, la fine prende DI.',
+      points: [
+        { time: 'Inizio', label: 'cominciare A', example: 'Comincio a studiare.', note: 'freccia verso l\'azione' },
+        { time: 'Durante', label: 'continuare A', example: 'Continuo a studiare.', now: true },
+        { time: 'Sforzo', label: 'cercare DI / provare A', example: 'Cerco di capire. / Provo a capire.' },
+        { time: 'Fine', label: 'finire DI / smettere DI', example: 'Finisco di studiare.', note: 'contenuto concluso' }
+      ],
+      caption: 'Regola pratica: inizio e movimento → A. Fine, opinione e desiderio → DI.'
+    },
+
+    tables: [
+      {
+        title: 'GRUPPO A — i 12 verbi da sapere',
+        note: 'Logica: movimento o percorso verso l\'azione.',
+        columns: ['Verbo + a', 'Inglese', 'Esempio'],
+        rows: [
+          { cells: ['andare a', 'to go and…', 'Vado a fare la spesa.'] },
+          { cells: ['venire a', 'to come and…', 'Vieni a cena da noi?'] },
+          { cells: ['cominciare a', 'to start', 'Ho cominciato a lavorare.'] },
+          { cells: ['iniziare a', 'to begin', 'Inizia a fare freddo.'] },
+          { cells: ['continuare a', 'to keep on', 'Continua a piovere.'] },
+          { cells: ['imparare a', 'to learn (how)', 'Imparo a suonare la chitarra.'] },
+          { cells: ['insegnare a', 'to teach (how)', 'Mi insegni a cucinare?'] },
+          { cells: ['riuscire a', 'to manage to', 'Non riesco a dormire.'] },
+          { cells: ['provare a', 'to try to', 'Prova a chiamarlo.'] },
+          { cells: ['aiutare a', 'to help to', 'Ti aiuto a studiare.'] },
+          { cells: ['abituarsi a', 'to get used to', 'Mi sono abituato a svegliarmi presto.'] },
+          { cells: ['fermarsi a', 'to stop to', 'Ci fermiamo a mangiare.'] }
+        ]
+      },
+      {
+        title: 'GRUPPO DI — i 15 verbi da sapere',
+        note: 'Logica: contenuto dell\'azione, fine, opinione, desiderio.',
+        columns: ['Verbo + di', 'Inglese', 'Esempio'],
+        rows: [
+          { cells: ['finire di', 'to finish', 'Ho finito di mangiare.'] },
+          { cells: ['smettere di', 'to stop (doing)', 'Ho smesso di fumare.'] },
+          { cells: ['cercare di', 'to try to', 'Cerco di essere puntuale.'] },
+          { cells: ['decidere di', 'to decide', 'Ho deciso di restare.'] },
+          { cells: ['pensare di', 'to plan / think of', 'Penso di partire domani.'] },
+          { cells: ['sperare di', 'to hope', 'Spero di vederti presto.'] },
+          { cells: ['credere di', 'to believe', 'Credo di aver capito.'] },
+          { cells: ['dimenticarsi di', 'to forget', 'Mi sono dimenticato di chiamarti.'] },
+          { cells: ['ricordarsi di', 'to remember', 'Ricordati di chiudere la porta.'] },
+          { cells: ['avere bisogno di', 'to need', 'Ho bisogno di riposare.'] },
+          { cells: ['avere voglia di', 'to feel like', 'Ho voglia di un gelato.'] },
+          { cells: ['avere paura di', 'to be afraid', 'Ho paura di volare.'] },
+          { cells: ['avere intenzione di', 'to intend', 'Ho intenzione di studiare.'] },
+          { cells: ['chiedere di', 'to ask to', 'Mi ha chiesto di aiutarlo.'] },
+          { cells: ['essere contento di', 'to be happy to', 'Sono contento di conoscerti.'] }
+        ]
+      },
+      {
+        title: 'GRUPPO ZERO — nessuna preposizione',
+        note: 'Il verbo si attacca direttamente all\'infinito.',
+        columns: ['Verbo', 'Inglese', 'Esempio'],
+        rows: [
+          { cells: ['dovere', 'must', 'Devo partire.'] },
+          { cells: ['potere', 'can', 'Posso aiutarti.'] },
+          { cells: ['volere', 'to want', 'Voglio dormire.'] },
+          { cells: ['preferire', 'to prefer', 'Preferisco restare.'] },
+          { cells: ['desiderare', 'to wish', 'Desidero parlare con lei.'] },
+          { cells: ['sapere', 'to know how', 'So nuotare.'] },
+          { cells: ['piacere', 'to like', 'Mi piace leggere.'] },
+          { cells: ['bisogna', 'one must', 'Bisogna prenotare.'] },
+          { cells: ['vedere / sentire', 'to see / hear', 'Ti ho sentito uscire.'] },
+          { cells: ['fare', 'to make (someone do)', 'Mi fai ridere.'] },
+          { cells: ['amare / odiare', 'to love / hate', 'Odio aspettare.'] }
+        ]
+      },
+      {
+        title: 'Coppie pericolose — stesso verbo, senso diverso',
+        columns: ['Struttura', 'Significato', 'Esempio'],
+        rows: [
+          { cells: ['pensare a + nome/persona', 'to think about', 'Penso a te.'], irregular: [0] },
+          { cells: ['pensare di + infinito', 'to plan to', 'Penso di partire.'], irregular: [0] },
+          { cells: ['provare a + infinito', 'to try to', 'Provo a cucinare.'], irregular: [0] },
+          { cells: ['provare + nome', 'to taste / try on', 'Provo questo dolce.'], irregular: [0] },
+          { cells: ['finire di + infinito', 'to finish doing', 'Finisco di studiare.'], irregular: [0] },
+          { cells: ['finire + nome', 'to finish something', 'Finisco il libro.'], irregular: [0] },
+          { cells: ['cercare di + infinito', 'to try to', 'Cerco di capire.'], irregular: [0] },
+          { cells: ['cercare + nome', 'to look for', 'Cerco le chiavi.'], irregular: [0] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Vado a fare la spesa.', literal: 'I-go to to-do the shopping.', natural: "I'm going to do the shopping.", note: 'andare A + infinito: movimento con uno scopo.' },
+      { it: 'Ho cominciato a studiare italiano due anni fa.', literal: 'I-have begun to to-study Italian two years ago.', natural: 'I started studying Italian two years ago.', note: 'cominciare A: l\'inizio è una freccia verso l\'azione.' },
+      { it: 'Continua a piovere da tre giorni.', literal: 'It-continues to to-rain from three days.', natural: "It's been raining for three days.", note: 'continuare A. Presente + da per il tempo continuato.' },
+      { it: 'Sto imparando a guidare.', literal: 'I-stay learning to to-drive.', natural: "I'm learning to drive.", note: 'imparare A + infinito. Combinata con stare + gerundio.' },
+      { it: 'Non riesco ad aprire questa bottiglia.', literal: 'Not I-succeed to to-open this bottle.', natural: "I can't manage to open this bottle.", note: 'riuscire A; davanti a vocale "a" diventa "ad".' },
+      { it: 'Prova a chiamarlo, forse risponde.', literal: 'Try to to-call-him, maybe he-answers.', natural: 'Try calling him, maybe he\'ll answer.', note: 'provare A = tentare. Il pronome si attacca all\'infinito.' },
+      { it: 'Mi aiuti a portare le valigie?', literal: 'Me you-help to to-carry the suitcases?', natural: 'Can you help me carry the suitcases?', note: 'aiutare A.' },
+      { it: 'Ho finito di lavorare alle sette.', literal: 'I-have finished of to-work at-the seven.', natural: 'I finished work at seven.', note: 'finire DI: la fine "contiene" l\'azione.' },
+      { it: 'Ho smesso di fumare l\'anno scorso.', literal: 'I-have stopped of to-smoke the year past.', natural: 'I quit smoking last year.', note: 'smettere DI: sempre con di.' },
+      { it: 'Cerco di arrivare sempre in orario.', literal: 'I-try of to-arrive always in time.', natural: 'I try to always arrive on time.', note: 'cercare DI = fare uno sforzo. Diverso da "cercare le chiavi".' },
+      { it: 'Abbiamo deciso di andare in Sicilia.', literal: 'We-have decided of to-go in Sicily.', natural: 'We decided to go to Sicily.', note: 'decidere DI.' },
+      { it: 'Penso di partire lunedì.', literal: 'I-think of to-leave Monday.', natural: "I'm thinking of leaving on Monday.", note: 'pensare DI + infinito = avere l\'intenzione. "Penso a te" è un\'altra cosa.' },
+      { it: 'Spero di rivederti presto.', literal: 'I-hope of to-see-you-again soon.', natural: 'I hope to see you again soon.', note: 'sperare DI.' },
+      { it: 'Mi sono dimenticato di comprare il latte.', literal: 'Myself I-am forgotten of to-buy the milk.', natural: 'I forgot to buy the milk.', note: 'dimenticarsi DI: riflessivo + preposizione.' },
+      { it: 'Ricordati di chiudere la finestra!', literal: 'Remember-yourself of to-close the window!', natural: 'Remember to close the window!', note: 'ricordarsi DI, all\'imperativo.' },
+      { it: 'Ho bisogno di parlare con te.', literal: 'I-have need of to-speak with you.', natural: 'I need to talk to you.', note: 'avere bisogno DI: tutta la famiglia "avere + nome" vuole di.' },
+      { it: 'Ho voglia di mangiare qualcosa di dolce.', literal: 'I-have desire of to-eat something of sweet.', natural: 'I feel like eating something sweet.', note: 'avere voglia DI.' },
+      { it: 'Devo andare, è tardi.', literal: 'I-must to-go, is late.', natural: 'I have to go, it\'s late.', note: 'Modale = nessuna preposizione.' },
+      { it: 'Preferisco restare a casa stasera.', literal: 'I-prefer to-stay at home this-evening.', natural: "I'd rather stay home tonight.", note: 'preferire: gruppo zero, niente preposizione.' },
+      { it: 'Mi piace cucinare per gli amici.', literal: 'To-me is-pleasing to-cook for the friends.', natural: 'I like cooking for friends.', note: 'piacere + infinito nudo.' },
+      { it: 'So nuotare, ma non so sciare.', literal: 'I-know to-swim, but not I-know to-ski.', natural: "I can swim, but I can't ski.", note: 'sapere + infinito = essere capace (lezione 10). Nessuna preposizione.' },
+      { it: 'Giochiamo a carte stasera?', literal: 'We-play at cards this-evening?', natural: 'Shall we play cards tonight?', note: 'giocare A + gioco/sport, anche con un nome.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Comincio studiare adesso.', right: 'Comincio a studiare adesso.', why: 'Cominciare appartiene al gruppo A: l\'inizio è un movimento verso l\'azione.' },
+      { wrong: 'Ho finito a mangiare.', right: 'Ho finito di mangiare.', why: 'Finire appartiene al gruppo DI. Inizio → A, fine → DI.' },
+      { wrong: 'Devo di partire domani.', right: 'Devo partire domani.', why: 'I verbi modali non prendono mai preposizione.' },
+      { wrong: 'Ho bisogno dormire.', right: 'Ho bisogno di dormire.', why: 'Tutte le espressioni con avere (bisogno, voglia, paura, intenzione) reggono DI.' },
+      { wrong: 'Cerco capire questa regola.', right: 'Cerco di capire questa regola.', why: 'cercare DI + infinito = fare uno sforzo.' },
+      { wrong: 'Non riesco dormire.', right: 'Non riesco a dormire.', why: 'riuscire A: c\'è uno sforzo che porta verso il risultato.' },
+      { wrong: 'Mi piace di leggere.', right: 'Mi piace leggere.', why: 'Piacere non vuole preposizione davanti all\'infinito.' },
+      { wrong: 'Ho smesso fumare.', right: 'Ho smesso di fumare.', why: 'smettere DI: non esiste senza la preposizione.' },
+      { wrong: 'Vado fare la spesa.', right: 'Vado a fare la spesa.', why: 'andare A + infinito quando c\'è uno scopo.' },
+      { wrong: 'Penso a partire domani.', right: 'Penso di partire domani.', why: '"pensare a" riguarda persone o cose; con un infinito e il senso di "intendo", si usa DI.' }
+    ],
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Comincio ___ capire.»', options: ['a', 'di', 'da', '—'], answer: 0, hint: 'inizio', why: 'cominciare A.' },
+        { q: 'Completa: «Ho finito ___ lavorare.»', options: ['a', 'di', 'da', '—'], answer: 1, hint: 'fine', why: 'finire DI.' },
+        { q: 'Completa: «Devo ___ andare.»', options: ['a', 'di', 'da', '— (niente)'], answer: 3, hint: 'è un modale', why: 'I modali non prendono preposizione.' },
+        { q: 'Completa: «Non riesco ___ dormire.»', options: ['a', 'di', 'da', '—'], answer: 0, hint: 'sforzo verso un risultato', why: 'riuscire A.' },
+        { q: 'Completa: «Ho voglia ___ un caffè.»', options: ['a', 'di', 'per', '—'], answer: 1, hint: 'espressione con avere', why: 'avere voglia DI.' },
+        { q: 'Completa: «Mi piace ___ viaggiare.»', options: ['a', 'di', '— (niente)', 'da'], answer: 2, hint: 'gruppo zero', why: 'piacere + infinito nudo.' },
+        { q: 'Completa: «Prova ___ chiamarlo.»', options: ['a', 'di', 'per', '—'], answer: 0, hint: 'tentativo', why: 'provare A + infinito.' },
+        { q: 'Completa: «Ho smesso ___ fumare.»', options: ['a', 'di', 'da', '—'], answer: 1, hint: 'fine di un\'abitudine', why: 'smettere DI.' },
+        { q: 'Completa: «Spero ___ rivederti.»', options: ['a', 'di', 'per', '—'], answer: 1, hint: 'opinione/desiderio', why: 'sperare DI.' },
+        { q: 'Completa: «Vado ___ fare la spesa.»', options: ['a', 'di', 'per', '—'], answer: 0, hint: 'movimento con scopo', why: 'andare A + infinito.' },
+        { q: 'Completa: «Preferisco ___ restare a casa.»', options: ['a', 'di', '— (niente)', 'da'], answer: 2, hint: 'preferenza', why: 'preferire non vuole preposizione.' },
+        { q: 'Completa: «Continua ___ piovere.»', options: ['a', 'di', 'da', '—'], answer: 0, hint: 'durata dell\'azione iniziata', why: 'continuare A.' }
+      ],
+      fill: [
+        { before: 'Ho cominciato', after: 'studiare italiano.', answers: ['a', 'ad'], en: 'I started studying Italian.' },
+        { before: 'Ho finito', after: 'mangiare.', answers: ['di'], en: 'I finished eating.' },
+        { before: 'Non riesco', after: 'aprire la porta.', answers: ['ad', 'a'], en: "I can't manage to open the door.", hint: 'davanti a vocale: ad' },
+        { before: 'Cerco', after: 'essere puntuale.', answers: ['di'], en: 'I try to be on time.' },
+        { before: 'Ho bisogno', after: 'riposare.', answers: ['di'], en: 'I need to rest.' },
+        { before: 'Vieni', after: 'cena da me?', answers: ['a'], en: 'Are you coming to dinner at my place?' },
+        { before: 'Mi sono dimenticato', after: 'chiamarti.', answers: ['di'], en: 'I forgot to call you.' },
+        { before: 'Sto imparando', after: 'guidare.', answers: ['a'], en: 'I am learning to drive.' },
+        { before: 'Abbiamo deciso', after: 'partire lunedì.', answers: ['di'], en: 'We decided to leave on Monday.' },
+        { before: 'Giochiamo', after: 'carte?', answers: ['a'], en: 'Shall we play cards?' }
+      ],
+      order: [
+        { words: ['Comincio', 'a', 'capire', 'la', 'regola'], answer: 'Comincio a capire la regola', en: 'I am starting to understand the rule.' },
+        { words: ['Ho', 'finito', 'di', 'lavorare', 'alle', 'sette'], answer: 'Ho finito di lavorare alle sette', en: 'I finished working at seven.' },
+        { words: ['Non', 'riesco', 'a', 'dormire', 'la', 'notte'], answer: 'Non riesco a dormire la notte', en: "I can't sleep at night." },
+        { words: ['Ho', 'voglia', 'di', 'mangiare', 'una', 'pizza'], answer: 'Ho voglia di mangiare una pizza', en: 'I feel like eating a pizza.' },
+        { words: ['Devo', 'andare', 'a', 'fare', 'la', 'spesa'], answer: 'Devo andare a fare la spesa', en: 'I have to go do the shopping.', hint: 'devo (zero) + andare a' },
+        { words: ['Mi', 'piace', 'cucinare', 'per', 'gli', 'amici'], answer: 'Mi piace cucinare per gli amici', en: 'I like cooking for friends.' }
+      ],
+      dnd: {
+        instructions: 'Quale preposizione regge ogni verbo? Trascina ogni verbo nella colonna giusta.',
+        buckets: [
+          { id: 'a', label: 'verbo + A', icon: '➡️' },
+          { id: 'di', label: 'verbo + DI', icon: '📦' },
+          { id: 'zero', label: 'niente preposizione', icon: '🚫' }
+        ],
+        items: [
+          { text: 'andare', bucket: 'a' },
+          { text: 'cominciare', bucket: 'a' },
+          { text: 'imparare', bucket: 'a' },
+          { text: 'riuscire', bucket: 'a' },
+          { text: 'continuare', bucket: 'a' },
+          { text: 'provare', bucket: 'a' },
+          { text: 'finire', bucket: 'di' },
+          { text: 'smettere', bucket: 'di' },
+          { text: 'cercare', bucket: 'di' },
+          { text: 'decidere', bucket: 'di' },
+          { text: 'sperare', bucket: 'di' },
+          { text: 'avere voglia', bucket: 'di' },
+          { text: 'dovere', bucket: 'zero' },
+          { text: 'potere', bucket: 'zero' },
+          { text: 'volere', bucket: 'zero' },
+          { text: 'preferire', bucket: 'zero' },
+          { text: 'piacere', bucket: 'zero' },
+          { text: 'sapere', bucket: 'zero' }
+        ]
+      },
+      match: [
+        { a: 'andare a', b: 'to go (and do)' },
+        { a: 'cominciare a', b: 'to start doing' },
+        { a: 'riuscire a', b: 'to manage to' },
+        { a: 'finire di', b: 'to finish doing' },
+        { a: 'smettere di', b: 'to quit doing' },
+        { a: 'cercare di', b: 'to try to' },
+        { a: 'avere bisogno di', b: 'to need to' },
+        { a: 'avere voglia di', b: 'to feel like' },
+        { a: 'dovere (+ nulla)', b: 'to have to' },
+        { a: 'sapere (+ nulla)', b: 'to know how to' }
+      ],
+      tf: [
+        { statement: 'I verbi modali non prendono preposizione davanti all\'infinito.', answer: true, why: 'Sì: devo andare, posso venire, voglio dormire.' },
+        { statement: '«Comincio di studiare» è corretto.', answer: false, why: 'No: cominciare vuole A → "Comincio a studiare".' },
+        { statement: 'Tutte le espressioni con avere (voglia, bisogno, paura) vogliono DI.', answer: true, why: 'Esatto, è una famiglia con una sola regola.' },
+        { statement: '«Mi piace di leggere» è corretto.', answer: false, why: 'No: piacere non vuole preposizione → "Mi piace leggere".' },
+        { statement: '«Riuscire» regge la preposizione A.', answer: true, why: 'Sì: "Non riesco a dormire".' },
+        { statement: '«Pensare a» e «pensare di» significano la stessa cosa.', answer: false, why: 'No: "penso a te" (think about) vs "penso di partire" (plan to).' },
+        { statement: 'Davanti a una vocale, "a" può diventare "ad".', answer: true, why: 'Sì: "riesco ad aprire", per ragioni di suono.' },
+        { statement: '«Finire» e «smettere» reggono entrambi DI.', answer: true, why: 'Sì: finire di, smettere di.' }
+      ],
+      translate: [
+        { en: 'I started studying Italian.', answers: ['Ho cominciato a studiare italiano', 'Ho iniziato a studiare italiano'] },
+        { en: 'I finished working.', answers: ['Ho finito di lavorare'] },
+        { en: "I can't manage to sleep.", answers: ['Non riesco a dormire'] },
+        { en: 'I need to rest.', answers: ['Ho bisogno di riposare', 'Ho bisogno di riposarmi'] },
+        { en: 'I have to go.', answers: ['Devo andare'], hint: 'nessuna preposizione' },
+        { en: 'I like reading.', answers: ['Mi piace leggere'] },
+        { en: 'I quit smoking.', answers: ['Ho smesso di fumare'] },
+        { en: 'Try to call him.', answers: ['Prova a chiamarlo', 'Cerca di chiamarlo'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Nuovi propositi',
+      lines: [
+        { speaker: 'Luca', icon: '🧑', it: 'Quest\'anno ho deciso di cambiare vita!', en: "This year I've decided to change my life!",
+          glosses: [{ term: 'ho deciso di', expl: 'decidere DI: la decisione "contiene" l\'azione.' }] },
+        { speaker: 'Sara', icon: '👩', side: 'right', it: 'Davvero? E che cosa vuoi fare?', en: 'Really? And what do you want to do?',
+          glosses: [{ term: 'vuoi fare', expl: 'Modale: nessuna preposizione.' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Ho smesso di fumare e ho cominciato a correre.', en: "I quit smoking and I've started running.",
+          glosses: [{ term: 'smesso di', expl: 'smettere DI: fine di un\'abitudine.' }, { term: 'cominciato a', expl: 'cominciare A: inizio, freccia verso l\'azione.' }] },
+        { speaker: 'Sara', icon: '👩', side: 'right', it: 'Bravissimo! Anch\'io sto cercando di fare più sport.', en: "Well done! I'm trying to do more sport too.",
+          glosses: [{ term: 'cercando di', expl: 'cercare DI = fare uno sforzo (≠ cercare le chiavi).' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Non riesco ad alzarmi presto, però. È la parte difficile.', en: "I can't manage to get up early, though. That's the hard part.",
+          glosses: [{ term: 'riesco ad', expl: 'riuscire A; "ad" davanti a vocale.' }, { term: 'alzarmi', expl: 'Riflessivo con il pronome attaccato all\'infinito.' }] },
+        { speaker: 'Sara', icon: '👩', side: 'right', it: 'Prova a mettere la sveglia lontano dal letto!', en: 'Try putting the alarm far from the bed!',
+          glosses: [{ term: 'Prova a', expl: 'provare A + infinito = tentare.' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Buona idea. Ho anche voglia di imparare a cucinare meglio.', en: 'Good idea. I also feel like learning to cook better.',
+          glosses: [{ term: 'voglia di', expl: 'avere voglia DI.' }, { term: 'imparare a', expl: 'imparare A + infinito.' }] },
+        { speaker: 'Sara', icon: '👩', side: 'right', it: 'Ti posso insegnare a fare la pasta fresca!', en: 'I can teach you to make fresh pasta!',
+          glosses: [{ term: 'posso insegnare', expl: 'Modale + infinito nudo.' }, { term: 'insegnare a', expl: 'insegnare A + infinito.' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Perfetto. Ricordati di portare la farina!', en: 'Perfect. Remember to bring the flour!',
+          glosses: [{ term: 'Ricordati di', expl: 'ricordarsi DI, all\'imperativo con pronome attaccato.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'andare / venire ___ + infinito', back: 'A — Vado a mangiare' },
+      { front: 'cominciare / iniziare ___', back: 'A — Comincio a studiare' },
+      { front: 'continuare ___', back: 'A — Continua a piovere' },
+      { front: 'imparare / insegnare ___', back: 'A — Imparo a nuotare' },
+      { front: 'riuscire ___', back: 'A — Non riesco a dormire' },
+      { front: 'provare ___ + infinito', back: 'A — Prova a chiamarlo' },
+      { front: 'finire / smettere ___', back: 'DI — Ho finito di lavorare' },
+      { front: 'cercare ___ + infinito', back: 'DI — Cerco di capire' },
+      { front: 'decidere / pensare / sperare ___', back: 'DI — Penso di partire' },
+      { front: 'ricordarsi / dimenticarsi ___', back: 'DI — Ricordati di chiamare' },
+      { front: 'avere bisogno / voglia / paura ___', back: 'DI — Ho voglia di uscire' },
+      { front: 'dovere / potere / volere ___', back: 'NIENTE — Devo andare' },
+      { front: 'preferire / sapere / piacere ___', back: 'NIENTE — Mi piace leggere' },
+      { front: 'giocare ___ + sport', back: 'A — Gioco a calcio' }
+    ],
+
+    summary: {
+      formula: 'VERBO 1 + [A · DI · niente] + INFINITO  →  Comincio A studiare · Finisco DI studiare · Devo studiare',
+      rules: [
+        'Gruppo A (movimento, inizio, sforzo, apprendimento): andare, venire, cominciare, iniziare, continuare, imparare, insegnare, riuscire, provare, aiutare, abituarsi.',
+        'Gruppo DI (fine, opinione, desiderio, memoria): finire, smettere, cercare, decidere, pensare, sperare, credere, ricordarsi, dimenticarsi, chiedere.',
+        'Tutte le espressioni con avere + nome vogliono DI: avere bisogno/voglia/paura/intenzione di.',
+        'Gruppo ZERO: dovere, potere, volere, preferire, desiderare, sapere, piacere, vedere, sentire, fare, amare, odiare.',
+        'Davanti a vocale, "a" diventa spesso "ad": riesco ad aprire.',
+        'Attenzione alle coppie: pensare a (persona) / pensare di (intenzione); provare a (tentare) / provare (assaggiare).'
+      ],
+      tips: [
+        'Immagine mentale: <b>A</b> è una freccia → ti muovi verso l\'azione (inizio, tentativo, apprendimento). <b>DI</b> è un contenitore 📦 che racchiude ciò che pensi, speri o finisci.',
+        'Inizio → A, fine → DI. "Comincio A" ma "finisco DI": ricordare questa coppia risolve metà dei casi.',
+        'Se il verbo esprime potere, dovere, volere o preferenza, non serve niente: la forza del verbo basta a se stessa.',
+        'Impara sempre il verbo insieme alla sua preposizione, come una parola sola: "cominciare-a", "finire-di". Il cervello le memorizza meglio in blocco.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

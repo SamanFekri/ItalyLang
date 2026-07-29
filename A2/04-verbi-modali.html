@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I verbi modali italiani: dovere, potere, volere + infinito, anche al passato prossimo.">
+  <title>Verbi Modali · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 4 — VERBI MODALI (dovere, potere, volere)
+     ========================================================================== */
+  window.LESSON = {
+    num: 4, file: '04-verbi-modali.html', icon: '🔑', title: 'Verbi Modali', group: 'Strutture',
+    subtitle: 'Dovere, potere, volere: tre verbi che aprono la porta all\'infinito e ti fanno esprimere obbligo, possibilità e volontà.',
+
+    intro: {
+      what: 'I verbi modali (o servili) sono <b>dovere</b> (must / to have to), <b>potere</b> (can / to be able to) e <b>volere</b> (to want). Non stanno quasi mai da soli: reggono un altro verbo all\'infinito, cioè nella forma del dizionario (-are, -ere, -ire).',
+      when: 'Quando esprimi un obbligo (devo studiare), un permesso o una possibilità (posso entrare?), un desiderio (voglio dormire), e nelle richieste gentili (puoi aiutarmi? vorrei un caffè).',
+      why: 'Con tre soli verbi coniugati puoi usare centinaia di altri verbi senza coniugarli: il secondo verbo resta all\'infinito. È il modo più veloce per moltiplicare quello che sai dire.',
+      mistakes: [
+        'Coniugare anche il secondo verbo: ❌ "Devo studio" → ✅ "Devo studiare".',
+        'Mettere una preposizione: ❌ "Devo di studiare" / "Posso a venire" → i modali non vogliono preposizioni.',
+        'Confondere "posso" (permesso/capacità fisica) con "so" (capacità appresa, lezione 10).',
+        'Usare "voglio" con estranei: suona brusco. Meglio "vorrei" (I would like).'
+      ]
+    },
+
+    formulas: [
+      {
+        label: 'La formula d\'oro dei modali',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'MODALE coniugato', note: 'devo / posso / voglio', type: 'verb' },
+              { text: 'INFINITO', note: 'mai coniugato!', type: 'object' }
+            ], example: 'Io devo studiare.', translation: 'I have to study.' },
+          { parts: [
+              { text: 'Noi', type: 'subject' },
+              { text: 'possiamo', type: 'verb' },
+              { text: 'partire', type: 'object' }
+            ], example: 'Noi possiamo partire domani.', translation: 'We can leave tomorrow.' }
+        ]
+      },
+      {
+        label: 'Negazione',
+        rows: [
+          { parts: [
+              { text: 'NON', type: 'extra' },
+              { text: 'MODALE', type: 'verb' },
+              { text: 'INFINITO', type: 'object' }
+            ], example: 'Non posso venire stasera.', translation: 'I can\'t come tonight.' }
+        ]
+      },
+      {
+        label: 'Passato prossimo con i modali',
+        rows: [
+          { parts: [
+              { text: 'ausiliare', note: 'ho / sono', type: 'subject' },
+              { text: 'participio del modale', note: 'dovuto / potuto / voluto', type: 'verb' },
+              { text: 'INFINITO', type: 'object' }
+            ], example: 'Ho dovuto lavorare. / Sono dovuto andare.', translation: 'I had to work. / I had to go.' }
+        ]
+      }
+    ],
+    formulaNote: 'Regola non negoziabile: dopo un modale il verbo resta SEMPRE all\'infinito, senza preposizione.',
+
+    rules: [
+      {
+        title: 'I tre modali e il loro significato preciso',
+        body: 'Ogni modale copre un\'area di significato ben definita.',
+        points: [
+          '<b>DOVERE</b> = obbligo, necessità, dovere morale → "Devo andare dal dottore" (I must / I have to).',
+          '<b>POTERE</b> = permesso, possibilità, capacità dovuta alle circostanze → "Posso uscire?" (May I / Can I).',
+          '<b>VOLERE</b> = volontà, desiderio → "Voglio imparare l\'italiano" (I want).',
+          'Dovere può anche significare "dovere del denaro": "Ti devo 10 euro".'
+        ],
+        exception: '"Dovere" al condizionale (dovrei) significa "should": "Dovrei studiare di più". Lo vedrai bene a B1, ma è utilissimo già ora.'
+      },
+      {
+        title: 'Dopo il modale: infinito nudo',
+        body: 'Il secondo verbo non si coniuga mai e non prende preposizioni. Questo vale anche quando il verbo all\'infinito ne richiederebbe una in altri contesti.',
+        points: [
+          '✅ Devo <b>partire</b>. ❌ Devo <b>parto</b>. ❌ Devo <b>di partire</b>.',
+          'Anche in catena: "Devo <b>cominciare a studiare</b>" — la preposizione appartiene a cominciare, non a devo.',
+          'La negazione va prima del modale: "Non voglio mangiare", mai "Voglio non mangiare" (che significa altro).'
+        ],
+        exception: 'Volere e potere possono stare da soli quando hanno un oggetto diretto: "Voglio un caffè", "Puoi il sale?" — no, quest\'ultima non è corretta: solo volere regge un oggetto diretto ("Voglio un caffè").'
+      },
+      {
+        title: 'Vorrei: la forma della cortesia',
+        body: '"Voglio" è corretto ma diretto — con estranei, camerieri, negozianti suona quasi maleducato. Il condizionale <b>vorrei</b> è la forma standard della gentilezza.',
+        points: [
+          'Al bar: <b>Vorrei</b> un caffè, per favore. (I would like)',
+          'Richiesta: <b>Potresti</b> aiutarmi? / <b>Potrebbe</b> aiutarmi? (formale)',
+          'Con amici "voglio" va benissimo: "Voglio andare al mare!"'
+        ],
+        exception: 'Anche "Posso avere un caffè?" e "Mi dà un caffè?" sono comunissimi e gentili.'
+      },
+      {
+        title: 'I modali al passato: quale ausiliare?',
+        body: 'Al passato prossimo, il modale prende <b>l\'ausiliare del verbo all\'infinito che lo segue</b>. Questa è la regola "da manuale".',
+        points: [
+          'Il verbo dopo vuole AVERE → "Ho dovuto <b>lavorare</b>" (lavorare → ho lavorato).',
+          'Il verbo dopo vuole ESSERE → "Sono dovuto <b>andare</b>" (andare → sono andato) — e il participio "dovuto" concorda: <i>sono dovuta andare</i> (donna).',
+          'Participi: dovere → <b>dovuto</b>, potere → <b>potuto</b>, volere → <b>voluto</b>.'
+        ],
+        exception: 'Nell\'italiano parlato di tutti i giorni moltissimi italiani dicono "Ho dovuto andare" invece di "Sono dovuto andare". Non è considerato un errore grave: è tollerato. Ma nella scrittura e negli esami usa la regola.'
+      },
+      {
+        title: 'Modale + verbo riflessivo: due posizioni possibili',
+        body: 'Con un verbo riflessivo (lezione 6) il pronome può stare prima del modale o attaccarsi all\'infinito.',
+        points: [
+          '<b>Mi</b> devo alzare presto. = Devo alzar<b>mi</b> presto. (identiche!)',
+          '<b>Ti</b> puoi sedere. = Puoi seder<b>ti</b>.',
+          'Attenzione: attaccando il pronome, l\'infinito perde la -e finale: alzare → alzar<b>mi</b>.'
+        ],
+        exception: 'Al passato, la posizione del pronome decide l\'ausiliare: "Mi sono dovuto alzare" (pronome prima → essere) / "Ho dovuto alzarmi" (pronome attaccato → avere). Entrambe corrette.'
+      }
+    ],
+
+    timeline: {
+      title: 'I modali nel tempo',
+      points: [
+        { time: 'Passato', label: 'Passato prossimo', example: 'Ieri ho dovuto lavorare.', note: 'obbligo compiuto' },
+        { time: 'Adesso', label: 'Presente', example: 'Devo lavorare.', now: true, note: 'obbligo attuale' },
+        { time: 'Futuro vicino', label: 'Presente', example: 'Domani devo lavorare.' },
+        { time: 'Ipotesi', label: 'Condizionale (B1)', example: 'Dovrei lavorare, ma sono stanco.', note: '= I should' }
+      ],
+      caption: 'A A2 ti bastano presente e passato prossimo, più le forme di cortesia vorrei / potrei.'
+    },
+
+    tables: [
+      {
+        title: 'I tre modali al presente (tutti irregolari)',
+        note: 'Nota lo schema comune: la forma "noi" è sempre regolare in -iamo.',
+        columns: ['Persona', 'DOVERE (must)', 'POTERE (can)', 'VOLERE (want)'],
+        rows: [
+          { cells: ['io', 'devo', 'posso', 'voglio'], irregular: [1, 2, 3] },
+          { cells: ['tu', 'devi', 'puoi', 'vuoi'], irregular: [1, 2, 3] },
+          { cells: ['lui / lei', 'deve', 'può', 'vuole'], irregular: [1, 2, 3] },
+          { cells: ['noi', 'dobbiamo', 'possiamo', 'vogliamo'], irregular: [1] },
+          { cells: ['voi', 'dovete', 'potete', 'volete'] },
+          { cells: ['loro', 'devono', 'possono', 'vogliono'], irregular: [1, 2, 3] }
+        ]
+      },
+      {
+        title: 'Forme di cortesia (condizionale) — da usare subito',
+        note: 'Non è ancora grammatica A2, ma senza queste forme suoni scortese.',
+        columns: ['Forma diretta', 'Forma gentile', 'Uso'],
+        rows: [
+          { cells: ['Voglio un caffè.', 'Vorrei un caffè.', 'al bar, al ristorante'], irregular: [1] },
+          { cells: ['Puoi aiutarmi?', 'Potresti aiutarmi?', 'a un amico'], irregular: [1] },
+          { cells: ['Può aiutarmi?', 'Potrebbe aiutarmi?', 'a uno sconosciuto (Lei)'], irregular: [1] },
+          { cells: ['Devi provare.', 'Dovresti provare.', 'consiglio (= you should)'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Passato prossimo dei modali',
+        note: 'L\'ausiliare lo decide il verbo che segue, non il modale.',
+        columns: ['Frase al presente', 'Passato prossimo', 'Perché'],
+        rows: [
+          { cells: ['Devo lavorare.', 'Ho dovuto lavorare.', 'lavorare → avere'] },
+          { cells: ['Devo andare.', 'Sono dovuto/a andare.', 'andare → essere'], irregular: [1] },
+          { cells: ['Posso finire.', 'Ho potuto finire.', 'finire → avere'] },
+          { cells: ['Posso uscire.', 'Sono potuto/a uscire.', 'uscire → essere'], irregular: [1] },
+          { cells: ['Voglio mangiare.', 'Ho voluto mangiare.', 'mangiare → avere'] },
+          { cells: ['Voglio partire.', 'Sono voluto/a partire.', 'partire → essere'], irregular: [1] },
+          { cells: ['Mi devo alzare.', 'Mi sono dovuto alzare.', 'pronome prima → essere'], irregular: [1] },
+          { cells: ['Devo alzarmi.', 'Ho dovuto alzarmi.', 'pronome attaccato → avere'] }
+        ]
+      },
+      {
+        title: 'Espressioni frequentissime con i modali',
+        columns: ['Espressione', 'Significato', 'Situazione'],
+        rows: [
+          { cells: ['Devo andare.', 'I have to go.', 'per congedarsi'] },
+          { cells: ['Posso?', 'May I?', 'chiedere permesso, brevissimo'] },
+          { cells: ['Non posso.', "I can't.", 'rifiutare gentilmente'] },
+          { cells: ['Vorrei…', 'I would like…', 'ordinare qualcosa'] },
+          { cells: ['Puoi ripetere, per favore?', 'Can you repeat, please?', 'non hai capito'] },
+          { cells: ['Cosa vuoi fare?', 'What do you want to do?', 'proporre un piano'] },
+          { cells: ['Si può fumare qui?', 'Can one smoke here?', 'regole di un luogo'] },
+          { cells: ['Devo dire una cosa.', 'I have to tell you something.', 'introdurre un argomento'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Devo studiare per l\'esame.', literal: 'I-must to-study for the exam.', natural: 'I have to study for the exam.', note: 'devo + infinito. Il secondo verbo non si tocca.' },
+      { it: 'Non posso venire stasera.', literal: 'Not I-can to-come this-evening.', natural: "I can't come tonight.", note: 'NON va prima del modale, mai tra modale e infinito.' },
+      { it: 'Voglio imparare bene l\'italiano.', literal: 'I-want to-learn well the Italian.', natural: 'I want to learn Italian well.', note: 'volere + infinito, senza "di".' },
+      { it: 'Puoi aiutarmi, per favore?', literal: 'Can-you to-help-me, for favour?', natural: 'Can you help me, please?', note: 'Il pronome "mi" si attacca all\'infinito: aiutar + mi.' },
+      { it: 'Dobbiamo partire alle sei.', literal: 'We-must to-leave at-the six.', natural: 'We have to leave at six.', note: 'noi → dobbiamo (unica forma con doppia b).' },
+      { it: 'Vorrei un caffè, grazie.', literal: 'I-would-want a coffee, thanks.', natural: "I'd like a coffee, thank you.", note: 'Forma di cortesia: al bar si dice sempre vorrei, non voglio.' },
+      { it: 'Scusi, posso entrare?', literal: 'Excuse-me, can-I to-enter?', natural: 'Excuse me, may I come in?', note: 'potere per il permesso. "Scusi" è la forma formale.' },
+      { it: 'I bambini non vogliono dormire.', literal: 'The children not want to-sleep.', natural: "The children don't want to sleep.", note: 'loro → vogliono.' },
+      { it: 'Che cosa vuoi fare stasera?', literal: 'What thing you-want to-do this-evening?', natural: 'What do you want to do tonight?', note: 'Due verbi: vuoi (coniugato) + fare (infinito).' },
+      { it: 'Mi devo alzare presto domani.', literal: 'Myself I-must to-get-up early tomorrow.', natural: 'I have to get up early tomorrow.', note: 'Riflessivo: il pronome "mi" sta prima del modale. Uguale a "Devo alzarmi presto".' },
+      { it: 'Devo alzarmi alle sei.', literal: 'I-must to-get-up-myself at-the six.', natural: 'I have to get up at six.', note: 'Stessa frase, pronome attaccato: alzar(e) + mi.' },
+      { it: 'Ieri ho dovuto lavorare fino a tardi.', literal: 'Yesterday I-have had to-work until to late.', natural: 'Yesterday I had to work until late.', note: 'lavorare vuole avere → ho dovuto.' },
+      { it: 'Sono dovuta andare in ospedale.', literal: 'I-am had to-go in hospital.', natural: 'I had to go to the hospital.', note: 'Parla una donna: andare vuole essere → sono dovuta (participio concordato).' },
+      { it: 'Non ho potuto finire il lavoro.', literal: 'Not I-have been-able to-finish the work.', natural: "I couldn't finish the work.", note: 'finire vuole avere → ho potuto.' },
+      { it: 'Si può pagare con la carta?', literal: 'One can to-pay with the card?', natural: 'Can I pay by card?', note: 'Forma impersonale "si può" = is it allowed / can one.' },
+      { it: 'Devi assolutamente vedere questo film!', literal: 'You-must absolutely to-see this film!', natural: 'You absolutely have to see this film!', note: 'L\'avverbio va tra modale e infinito.' },
+      { it: 'Potresti parlare più lentamente?', literal: 'Could-you to-speak more slowly?', natural: 'Could you speak more slowly?', note: 'Frase di sopravvivenza per ogni studente.' },
+      { it: 'Non dobbiamo dimenticare di comprare il pane.', literal: 'Not we-must to-forget of to-buy the bread.', natural: "We mustn't forget to buy bread.", note: 'Catena: modale + infinito, e "dimenticare DI" porta la sua preposizione.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Devo studio stasera.', right: 'Devo studiare stasera.', why: 'Dopo un modale il verbo resta all\'infinito: mai coniugato due volte.' },
+      { wrong: 'Voglio di andare a casa.', right: 'Voglio andare a casa.', why: 'I modali non vogliono nessuna preposizione prima dell\'infinito.' },
+      { wrong: 'Posso a venire?', right: 'Posso venire?', why: 'Stessa regola: infinito nudo dopo potere.' },
+      { wrong: 'Voglio un caffè! (al bar, a uno sconosciuto)', right: 'Vorrei un caffè, per favore.', why: 'Grammaticalmente corretto ma scortese. "Vorrei" è la forma standard nei negozi e nei bar.' },
+      { wrong: 'Noi dobiamo partire.', right: 'Noi dobbiamo partire.', why: '"Dobbiamo" ha due b. È l\'errore di ortografia più comune con dovere.' },
+      { wrong: 'Ho dovuto andare... anzi: sono dovuto andato.', right: 'Sono dovuto andare.', why: 'Solo il modale va al participio; il secondo verbo resta all\'infinito anche al passato.' },
+      { wrong: 'Loro possono ha ragione.', right: 'Loro possono avere ragione.', why: 'Dopo il modale serve l\'infinito "avere", non la forma coniugata.' },
+      { wrong: 'Non voglio non mangiare.', right: 'Non voglio mangiare.', why: 'Una sola negazione, prima del modale. La doppia negazione cambia completamente il senso.' }
+    ],
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Io ___ studiare.»', options: ['devo', 'devi', 'deve', 'dobbiamo'], answer: 0, hint: 'io', why: 'io → devo.' },
+        { q: 'Completa: «Noi ___ partire alle otto.»', options: ['dobiamo', 'dobbiamo', 'doviamo', 'devono'], answer: 1, hint: 'attenzione all\'ortografia', why: 'noi → dobbiamo, con due b.' },
+        { q: 'Quale frase è corretta?', options: ['Devo studio.', 'Devo di studiare.', 'Devo studiare.', 'Devo a studiare.'], answer: 2, hint: 'infinito nudo', why: 'Modale + infinito senza preposizione.' },
+        { q: 'Al bar, la forma più gentile è:', options: ['Voglio un caffè.', 'Vorrei un caffè.', 'Devo un caffè.', 'Posso caffè.'], answer: 1, hint: 'condizionale di cortesia', why: '"Vorrei" è la formula standard nei bar italiani.' },
+        { q: 'Completa: «Loro non ___ venire.»', options: ['possono', 'possiamo', 'potete', 'può'], answer: 0, hint: 'loro', why: 'loro → possono.' },
+        { q: 'Passato: «Devo lavorare» diventa…', options: ['Sono dovuto lavorare.', 'Ho dovuto lavorare.', 'Ho dovuto lavorato.', 'Ho dovere lavorato.'], answer: 1, hint: 'quale ausiliare vuole "lavorare"?', why: 'lavorare vuole avere → ho dovuto lavorare.' },
+        { q: 'Passato: «Devo andare» (parla un uomo) diventa…', options: ['Ho dovuto andare.', 'Sono dovuto andare.', 'Sono dovuta andare.', 'Sono dovuto andato.'], answer: 1, hint: 'andare vuole essere', why: 'Con essere il participio del modale concorda: sono dovuto (uomo).' },
+        { q: '«Mi devo alzare» equivale a:', options: ['Devo mi alzare.', 'Devo alzarmi.', 'Devo alzare mi.', 'Mi devo alzarmi.'], answer: 1, hint: 'il pronome può attaccarsi all\'infinito', why: 'Le due posizioni sono equivalenti; attaccandolo, l\'infinito perde la -e.' },
+        { q: 'Come si chiede se è permesso fumare?', options: ['Si deve fumare qui?', 'Si può fumare qui?', 'Si vuole fumare qui?', 'Puoi fumo qui?'], answer: 1, hint: 'permesso', why: 'potere = permesso; "si può" è la forma impersonale.' },
+        { q: 'Completa: «Voi ___ aiutarmi?»', options: ['potete', 'possono', 'possiamo', 'può'], answer: 0, hint: 'voi', why: 'voi → potete.' }
+      ],
+      fill: [
+        { before: 'Io (dovere)', after: 'andare dal dentista.', answers: ['devo'], en: 'I have to go to the dentist.' },
+        { before: 'Tu (potere)', after: 'venire con noi?', answers: ['puoi'], en: 'Can you come with us?' },
+        { before: 'Marco (volere)', after: 'imparare il farsi.', answers: ['vuole'], en: 'Marco wants to learn Farsi.' },
+        { before: 'Noi (potere)', after: 'iniziare adesso.', answers: ['possiamo'], en: 'We can start now.' },
+        { before: 'Voi (dovere)', after: 'finire il progetto.', answers: ['dovete'], en: 'You must finish the project.' },
+        { before: 'Loro (volere)', after: 'uscire stasera.', answers: ['vogliono'], en: 'They want to go out tonight.' },
+        { before: 'Ieri (io) ho', after: 'lavorare fino a tardi.', answers: ['dovuto'], en: 'Yesterday I had to work late.', hint: 'participio di dovere' },
+        { before: 'Scusi,', after: 'un caffè, per favore.', answers: ['vorrei'], en: 'Excuse me, I would like a coffee, please.', hint: 'forma di cortesia' }
+      ],
+      order: [
+        { words: ['Devo', 'studiare', 'per', 'l\'esame'], answer: "Devo studiare per l'esame", en: 'I have to study for the exam.' },
+        { words: ['Non', 'posso', 'venire', 'stasera'], answer: 'Non posso venire stasera', en: "I can't come tonight." },
+        { words: ['Che', 'cosa', 'vuoi', 'fare', 'domani'], answer: 'Che cosa vuoi fare domani', en: 'What do you want to do tomorrow?' },
+        { words: ['Ieri', 'ho', 'dovuto', 'lavorare'], answer: 'Ieri ho dovuto lavorare', en: 'Yesterday I had to work.' },
+        { words: ['Potresti', 'parlare', 'più', 'lentamente'], answer: 'Potresti parlare più lentamente', en: 'Could you speak more slowly?' },
+        { words: ['Mi', 'devo', 'alzare', 'presto'], answer: 'Mi devo alzare presto', en: 'I have to get up early.' }
+      ],
+      dnd: {
+        instructions: 'Quale modale serve in ogni situazione? Trascina la situazione sotto il verbo giusto.',
+        buckets: [
+          { id: 'dovere', label: 'DOVERE (obbligo)', icon: '⚠️' },
+          { id: 'potere', label: 'POTERE (permesso/possibilità)', icon: '🔓' },
+          { id: 'volere', label: 'VOLERE (desiderio)', icon: '💛' }
+        ],
+        items: [
+          { text: 'Ho un appuntamento: ___ andare.', bucket: 'dovere' },
+          { text: '___ entrare? La porta è aperta?', bucket: 'potere' },
+          { text: '___ un gelato al cioccolato!', bucket: 'volere' },
+          { text: 'Sono malato, ___ restare a casa.', bucket: 'dovere' },
+          { text: '___ pagare con la carta?', bucket: 'potere' },
+          { text: 'Non ___ studiare, sono stanco.', bucket: 'volere' },
+          { text: 'È obbligatorio: ___ avere il biglietto.', bucket: 'dovere' },
+          { text: 'Se hai tempo, ___ aiutarmi?', bucket: 'potere' },
+          { text: 'Da grande ___ fare il medico.', bucket: 'volere' }
+        ]
+      },
+      match: [
+        { a: 'devo', b: 'I have to' },
+        { a: 'puoi', b: 'you can' },
+        { a: 'vuole', b: 'he/she wants' },
+        { a: 'dobbiamo', b: 'we have to' },
+        { a: 'potete', b: 'you (pl.) can' },
+        { a: 'vogliono', b: 'they want' },
+        { a: 'vorrei', b: 'I would like' },
+        { a: 'ho dovuto', b: 'I had to' },
+        { a: 'sono potuto andare', b: 'I was able to go' }
+      ],
+      tf: [
+        { statement: 'Dopo un verbo modale il secondo verbo va all\'infinito.', answer: true, why: 'Sì: devo studiare, posso venire, voglio partire.' },
+        { statement: 'Si dice «Voglio di mangiare».', answer: false, why: 'No: i modali non prendono preposizioni. "Voglio mangiare".' },
+        { statement: 'Al passato, «Devo andare» diventa «Sono dovuto andare».', answer: true, why: 'Sì: l\'ausiliare è quello del verbo all\'infinito (andare → essere).' },
+        { statement: '«Vorrei» è più gentile di «voglio».', answer: true, why: 'Sì: è il condizionale di cortesia, obbligatorio con estranei.' },
+        { statement: '«Mi devo alzare» e «Devo alzarmi» hanno significati diversi.', answer: false, why: 'No: sono identiche. Cambia solo la posizione del pronome.' },
+        { statement: '«Noi dobiamo» si scrive con una sola b.', answer: false, why: 'No: dobbiamo, con due b.' },
+        { statement: 'La negazione va tra il modale e l\'infinito.', answer: false, why: 'No: NON va prima del modale → "Non posso venire".' }
+      ],
+      translate: [
+        { en: 'I have to go now.', answers: ['Devo andare adesso', 'Devo andare ora', 'Adesso devo andare'] },
+        { en: "I can't come tomorrow.", answers: ['Non posso venire domani', 'Domani non posso venire'] },
+        { en: 'We want to learn Italian.', answers: ['Vogliamo imparare l\'italiano', 'Noi vogliamo imparare l\'italiano'] },
+        { en: 'I would like a coffee, please.', answers: ['Vorrei un caffè per favore', 'Vorrei un caffè'], hint: 'forma di cortesia' },
+        { en: 'Can you help me?', answers: ['Puoi aiutarmi', 'Mi puoi aiutare', 'Può aiutarmi', 'Potresti aiutarmi'] },
+        { en: 'Yesterday I had to work.', answers: ['Ieri ho dovuto lavorare', 'Ho dovuto lavorare ieri'] },
+        { en: 'I have to get up early.', answers: ['Devo alzarmi presto', 'Mi devo alzare presto'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Organizzare la serata',
+      lines: [
+        { speaker: 'Chiara', icon: '👩', it: 'Stasera vuoi venire al cinema con noi?', en: 'Do you want to come to the cinema with us tonight?',
+          glosses: [{ term: 'vuoi venire', expl: 'volere coniugato + venire all\'infinito. Nessuna preposizione.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Mi piacerebbe, ma devo finire un lavoro.', en: "I'd love to, but I have to finish some work.",
+          glosses: [{ term: 'devo finire', expl: 'dovere + infinito: obbligo.' }] },
+        { speaker: 'Chiara', icon: '👩', it: 'A che ora puoi essere libero?', en: 'What time can you be free?',
+          glosses: [{ term: 'puoi essere', expl: 'potere + essere all\'infinito.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Non lo so… Devo alzarmi presto domani, quindi non posso fare tardi.', en: "I don't know… I have to get up early tomorrow, so I can't stay out late.",
+          glosses: [{ term: 'Devo alzarmi', expl: 'Modale + riflessivo: il pronome si attacca all\'infinito (alzar+mi). Uguale a "Mi devo alzare".' }, { term: 'non posso', expl: 'La negazione precede sempre il modale.' }] },
+        { speaker: 'Chiara', icon: '👩', it: 'Capisco. Possiamo andare allo spettacolo delle otto, finisce presto.', en: 'I see. We can go to the eight o\'clock show, it ends early.',
+          glosses: [{ term: 'Possiamo andare', expl: 'noi → possiamo + infinito.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Perfetto! Ma prima vorrei mangiare qualcosa.', en: 'Perfect! But first I\'d like to eat something.',
+          glosses: [{ term: 'vorrei mangiare', expl: 'Condizionale di cortesia + infinito: più gentile di "voglio".' }] },
+        { speaker: 'Chiara', icon: '👩', it: 'Va bene. Ieri ho dovuto saltare la cena, quindi ho fame anch\'io!', en: 'Alright. Yesterday I had to skip dinner, so I\'m hungry too!',
+          glosses: [{ term: 'ho dovuto saltare', expl: 'Passato prossimo del modale: saltare vuole avere → ho dovuto.' }, { term: 'ho fame', expl: 'Espressione con avere (lezione 2).' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Allora dobbiamo sbrigarci. Puoi prenotare i biglietti?', en: 'Then we have to hurry. Can you book the tickets?',
+          glosses: [{ term: 'dobbiamo sbrigarci', expl: 'Modale + riflessivo sbrigarsi (to hurry): sbrigar + ci.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'devo, devi, deve, dobbiamo, dovete, devono', back: 'dovere — must / to have to' },
+      { front: 'posso, puoi, può, possiamo, potete, possono', back: 'potere — can / may' },
+      { front: 'voglio, vuoi, vuole, vogliamo, volete, vogliono', back: 'volere — to want' },
+      { front: 'Devo studiare.', back: 'I have to study', note: 'modale + INFINITO, senza preposizione' },
+      { front: 'Vorrei…', back: 'I would like…', note: 'la forma gentile di "voglio"' },
+      { front: 'Potresti / Potrebbe…?', back: 'Could you…? (informale / formale)' },
+      { front: 'Ho dovuto lavorare.', back: 'I had to work', note: 'lavorare → avere' },
+      { front: 'Sono dovuto andare.', back: 'I had to go', note: 'andare → essere, participio concordato' },
+      { front: 'Mi devo alzare = Devo alzarmi', back: 'due posizioni, stesso significato' },
+      { front: 'Si può fumare qui?', back: 'Can one smoke here?' },
+      { front: 'Non posso.', back: "I can't." }
+    ],
+
+    summary: {
+      formula: 'Soggetto + DOVERE / POTERE / VOLERE coniugato + VERBO ALL\'INFINITO (senza preposizione)',
+      rules: [
+        'dovere = obbligo · potere = permesso/possibilità · volere = desiderio.',
+        'Il secondo verbo resta sempre all\'infinito: "Devo studiare", mai "Devo studio".',
+        'Nessuna preposizione dopo il modale: ❌ "voglio di andare".',
+        'La negazione precede il modale: "Non posso venire".',
+        'Al passato prossimo l\'ausiliare è quello del verbo all\'infinito: ho dovuto lavorare / sono dovuto andare.',
+        'Con i riflessivi il pronome sta prima del modale o attaccato all\'infinito: "Mi devo alzare" = "Devo alzarmi".',
+        'Per la cortesia usa vorrei, potresti, potrebbe, dovresti.'
+      ],
+      tips: [
+        'Pensa al modale come a una chiave 🔑: la chiave gira (si coniuga), la porta (l\'infinito) resta ferma.',
+        'Ricorda la triade in ordine di forza: DEVO (obbligo) > POSSO (permesso) > VOGLIO (desiderio).',
+        'Al bar, in negozio, con gli sconosciuti: "vorrei" al posto di "voglio", sempre. È la differenza tra suonare turista e suonare educato.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

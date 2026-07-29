@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il verbo fare in italiano: fare colazione, fare la spesa, fare una passeggiata, fa freddo. Espressioni e coniugazione.">
+  <title>Fare · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 11 — FARE
+     ========================================================================== */
+  window.LESSON = {
+    num: 11, file: '11-fare.html', icon: '🛠️', title: 'Fare', group: 'Verbi chiave',
+    subtitle: 'Il verbo tuttofare: colazione, spesa, doccia, sport, passeggiate, e persino il tempo atmosferico.',
+
+    intro: {
+      what: 'Fare significa "to do" e "to make", ma il suo vero valore per uno studente A2 sono le decine di <b>espressioni fisse</b> in cui compare: fare colazione, fare la spesa, fare una domanda, fare una passeggiata, fare freddo.',
+      when: 'Ogni volta che parli della tua giornata, del tempo atmosferico, dello sport, dei pasti, del lavoro ("Che lavoro fai?"), delle domande e delle fotografie.',
+      why: 'Perché queste espressioni non si traducono: in inglese si dice "have breakfast", in italiano "fare colazione". Se traduci letteralmente, sbagli. Impararle in blocco è il modo più rapido di suonare naturale.',
+      mistakes: [
+        'Tradurre "I have breakfast": ❌ "Ho colazione" → ✅ "Faccio colazione".',
+        'Usare avere per il tempo: ❌ "Ha freddo oggi" → ✅ "Fa freddo oggi".',
+        'Usare "chiedere" al posto di "fare una domanda" quando serve il sostantivo: entrambi esistono, ma "fare una domanda" è la formula standard.',
+        'Sbagliare la coniugazione: la forma noi è "facciamo", voi è "fate" (non "facete").'
+      ]
+    },
+
+    formulas: [
+      {
+        label: 'Fare + nome = espressione fissa',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'FARE', type: 'verb' },
+              { text: 'NOME', note: 'colazione, la spesa…', type: 'object' }
+            ], example: 'Faccio colazione alle otto.', translation: 'I have breakfast at eight.' }
+        ]
+      },
+      {
+        label: 'Fare per il tempo atmosferico — sempre 3ª persona',
+        rows: [
+          { parts: [
+              { text: 'FA', note: 'invariabile', type: 'verb' },
+              { text: 'caldo / freddo / bel tempo', type: 'extra' }
+            ], example: 'Oggi fa freddo.', translation: "It's cold today." }
+        ]
+      },
+      {
+        label: 'Fare + infinito = far fare a qualcuno',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'FARE', type: 'verb' },
+              { text: 'INFINITO', note: 'senza preposizione', type: 'object' }
+            ], example: 'Mi fai ridere.', translation: 'You make me laugh.' }
+        ]
+      }
+    ],
+    formulaNote: 'Le espressioni con fare + nome non prendono quasi mai l\'articolo indeterminativo: "faccio colazione", non "faccio una colazione".',
+
+    rules: [
+      {
+        title: 'La coniugazione: irregolare ma corta',
+        body: 'Fare deriva dal latino <i>facere</i>: per questo alcune forme recuperano la sillaba <b>fac-</b>.',
+        points: [
+          'Presente: <b>faccio, fai, fa, facciamo, fate, fanno</b>.',
+          'Participio passato: <b>fatto</b> → "Ho fatto colazione".',
+          'Gerundio: <b>facendo</b> → "Sto facendo i compiti".',
+          'Imperativo tu: <b>fai</b> (o <b>fa\'</b>) → "Fai attenzione!" (lezione 14).'
+        ],
+        exception: 'Attenzione: "voi fate", non "facete". E "noi facciamo" con due c.'
+      },
+      {
+        title: 'Le espressioni della giornata',
+        body: 'Sono le più frequenti in assoluto: falle diventare automatiche.',
+        points: [
+          '<b>fare colazione</b> — to have breakfast (mai "avere colazione")',
+          '<b>fare la doccia / il bagno</b> — to take a shower / a bath',
+          '<b>fare la spesa</b> — to do the food shopping (≠ fare shopping = comprare vestiti)',
+          '<b>fare da mangiare</b> — to cook, prepare food',
+          '<b>fare i compiti</b> — to do homework',
+          '<b>fare il letto</b> — to make the bed',
+          '<b>fare una passeggiata</b> — to go for a walk',
+          '<b>fare un giro</b> — to go around, to hang out'
+        ],
+        exception: 'Pranzo e cena hanno un verbo proprio: <b>pranzare</b> e <b>cenare</b>. Ma la colazione no: si "fa".'
+      },
+      {
+        title: 'Fare e il tempo atmosferico',
+        body: 'Il tempo non "è" né "ha": <b>fa</b>. Il verbo resta sempre alla terza persona singolare.',
+        points: [
+          '<b>Fa caldo / freddo / fresco.</b> — It\'s hot / cold / cool.',
+          '<b>Fa bel tempo / brutto tempo.</b> — The weather is nice / bad.',
+          'Confronto: "Fa freddo" (il clima) vs "Ho freddo" (io sento freddo) vs "Il caffè è freddo" (temperatura di una cosa).'
+        ],
+        exception: 'Alcuni fenomeni hanno un verbo proprio: <b>piove</b> (it rains), <b>nevica</b> (it snows), <b>c\'è vento / c\'è nebbia</b>.'
+      },
+      {
+        title: 'Fare per parlare di lavoro e sport',
+        body: 'Due contesti dove l\'italiano usa fare dove l\'inglese usa altri verbi.',
+        points: [
+          'Lavoro: "<b>Che lavoro fai?</b>" — "<b>Faccio</b> l\'ingegnere." (con l\'articolo determinativo!)',
+          'Sport generico: "<b>Faccio</b> sport", "<b>Faccio</b> palestra", "<b>Faccio</b> yoga".',
+          'Sport con la palla: si usa <b>giocare a</b> → "Gioco a calcio", "Gioco a tennis".',
+          'Nuoto e corsa: "<b>Faccio</b> nuoto" oppure "nuoto"; "<b>Faccio</b> jogging" oppure "corro".'
+        ],
+        exception: 'Con gli strumenti musicali si usa <b>suonare</b>, non fare: "Suono la chitarra".'
+      },
+      {
+        title: 'Fare + infinito: far fare qualcosa a qualcuno',
+        body: 'Questa costruzione significa "causare che qualcuno faccia qualcosa". È frequentissima nel parlato.',
+        points: [
+          '<b>Mi fai ridere.</b> — You make me laugh.',
+          '<b>Mi ha fatto aspettare un\'ora.</b> — He/she made me wait an hour.',
+          '<b>Fammi sapere.</b> — Let me know.',
+          '<b>Fai vedere!</b> — Show me! (lett. "fai vedere [a me]")'
+        ],
+        exception: 'Non serve nessuna preposizione tra fare e l\'infinito, esattamente come con i modali.'
+      },
+      {
+        title: 'Farsi: la forma riflessiva',
+        body: 'Con il pronome riflessivo, fare significa "fare per sé".',
+        points: [
+          '<b>farsi la doccia</b> — Mi faccio la doccia. (= faccio la doccia a me stesso)',
+          '<b>farsi male</b> — Mi sono fatto male. (I hurt myself)',
+          '<b>farsi capire</b> — Non riesco a farmi capire. (to make oneself understood)',
+          '<b>farsi vedere</b> — Fatti vedere ogni tanto! (come around sometimes)'
+        ],
+        exception: 'Al passato, la forma riflessiva usa essere: "Mi sono fatto male", non "ho fatto male a me".'
+      }
+    ],
+
+    timeline: {
+      title: 'Una giornata con fare',
+      points: [
+        { time: 'Mattina', label: 'Faccio colazione', example: 'Faccio colazione alle sette e mezza.' },
+        { time: 'Giorno', label: 'Faccio la spesa', example: 'Poi faccio la spesa al supermercato.', now: true },
+        { time: 'Pomeriggio', label: 'Faccio sport', example: 'Il pomeriggio faccio palestra.' },
+        { time: 'Sera', label: 'Faccio una passeggiata', example: 'Dopo cena faccio una passeggiata.' }
+      ],
+      caption: 'Con quattro espressioni racconti già mezza giornata.'
+    },
+
+    tables: [
+      {
+        title: 'Fare — presente, passato e gerundio',
+        columns: ['Persona', 'Presente', 'Passato prossimo', 'Esempio'],
+        rows: [
+          { cells: ['io', 'faccio', 'ho fatto', 'Faccio colazione.'], irregular: [1] },
+          { cells: ['tu', 'fai', 'hai fatto', 'Che cosa fai?'], irregular: [1] },
+          { cells: ['lui / lei', 'fa', 'ha fatto', 'Fa freddo oggi.'], irregular: [1] },
+          { cells: ['noi', 'facciamo', 'abbiamo fatto', 'Facciamo una pausa.'], irregular: [1] },
+          { cells: ['voi', 'fate', 'avete fatto', 'Che lavoro fate?'], irregular: [1] },
+          { cells: ['loro', 'fanno', 'hanno fatto', 'Fanno molto sport.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Le 24 espressioni con FARE da sapere',
+        note: 'Impara ogni riga come una parola sola.',
+        columns: ['Espressione', 'Inglese', 'Esempio'],
+        rows: [
+          { cells: ['fare colazione', 'to have breakfast', 'Faccio colazione al bar.'] },
+          { cells: ['fare la spesa', 'to buy groceries', 'Faccio la spesa il sabato.'] },
+          { cells: ['fare shopping', 'to go shopping (clothes)', 'Facciamo shopping in centro.'] },
+          { cells: ['fare la doccia', 'to take a shower', 'Mi faccio la doccia la mattina.'] },
+          { cells: ['fare il bagno', 'to take a bath / to swim', 'I bambini fanno il bagno al mare.'] },
+          { cells: ['fare una passeggiata', 'to go for a walk', 'Facciamo una passeggiata?'] },
+          { cells: ['fare un giro', 'to take a stroll / drive', 'Facciamo un giro in centro.'] },
+          { cells: ['fare sport / palestra', 'to do sport / go to the gym', 'Faccio sport tre volte a settimana.'] },
+          { cells: ['fare una domanda', 'to ask a question', 'Posso farti una domanda?'] },
+          { cells: ['fare una foto', 'to take a photo', 'Mi fai una foto?'] },
+          { cells: ['fare un viaggio', 'to take a trip', 'Abbiamo fatto un viaggio in Sicilia.'] },
+          { cells: ['fare una telefonata', 'to make a phone call', 'Devo fare una telefonata.'] },
+          { cells: ['fare i compiti', 'to do homework', 'I bambini fanno i compiti.'] },
+          { cells: ['fare il letto', 'to make the bed', 'Fai sempre il letto?'] },
+          { cells: ['fare da mangiare', 'to cook', 'Stasera faccio da mangiare io.'] },
+          { cells: ['fare tardi', 'to be / stay late', 'Ieri abbiamo fatto tardi.'] },
+          { cells: ['fare presto', 'to hurry up', 'Fai presto, siamo in ritardo!'] },
+          { cells: ['fare attenzione', 'to pay attention', 'Fai attenzione alla strada!'] },
+          { cells: ['fare finta', 'to pretend', 'Fa finta di dormire.'] },
+          { cells: ['fare male', 'to hurt', 'Mi fa male la testa.'] },
+          { cells: ['farsi male', 'to hurt oneself', 'Mi sono fatto male al ginocchio.'] },
+          { cells: ['fare piacere', 'to please someone', 'Mi fa piacere vederti.'] },
+          { cells: ['fare la fila', 'to queue', 'Abbiamo fatto la fila per un\'ora.'] },
+          { cells: ['fare festa', 'to celebrate / party', 'Ieri abbiamo fatto festa.'] }
+        ]
+      },
+      {
+        title: 'FARE e il tempo atmosferico',
+        note: 'Sempre alla terza persona singolare: "fa".',
+        columns: ['Espressione', 'Inglese', 'Alternativa'],
+        rows: [
+          { cells: ['Fa caldo.', "It's hot.", 'C\'è un caldo terribile!'] },
+          { cells: ['Fa freddo.', "It's cold.", 'Si gela!'] },
+          { cells: ['Fa fresco.', "It's cool.", '—'] },
+          { cells: ['Fa bel tempo.', 'The weather is nice.', 'C\'è il sole.'] },
+          { cells: ['Fa brutto tempo.', 'The weather is bad.', 'È nuvoloso.'] },
+          { cells: ['Piove.', "It's raining.", 'Sta piovendo.'], irregular: [0] },
+          { cells: ['Nevica.', "It's snowing.", 'Sta nevicando.'], irregular: [0] },
+          { cells: ['C\'è vento / nebbia.', "It's windy / foggy.", '—'], irregular: [0] }
+        ]
+      },
+      {
+        title: 'FARE vs altri verbi — non confonderli',
+        columns: ['Contesto', 'Si dice', 'NON si dice'],
+        rows: [
+          { cells: ['colazione', 'fare colazione', 'avere colazione'], irregular: [2] },
+          { cells: ['pranzo / cena', 'pranzare / cenare', 'fare pranzo (raro)'], irregular: [2] },
+          { cells: ['clima', 'fa freddo', 'ha freddo / è freddo'], irregular: [2] },
+          { cells: ['sport con la palla', 'giocare a calcio', 'fare calcio'], irregular: [2] },
+          { cells: ['strumento musicale', 'suonare la chitarra', 'fare la chitarra'], irregular: [2] },
+          { cells: ['domanda', 'fare una domanda / chiedere', '—'] },
+          { cells: ['professione', 'Faccio l\'ingegnere.', 'Sono ingegnere. (anche corretto!)'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Faccio colazione con caffè e biscotti.', literal: 'I-do breakfast with coffee and biscuits.', natural: 'I have breakfast with coffee and biscuits.', note: 'Mai "ho colazione": in italiano la colazione si fa.' },
+      { it: 'Che lavoro fai? — Faccio l\'insegnante.', literal: 'What work you-do? I-do the teacher.', natural: 'What do you do? — I\'m a teacher.', note: 'Con la professione si usa l\'articolo determinativo: "faccio l\'insegnante".' },
+      { it: 'Oggi fa molto freddo.', literal: 'Today it-does much cold.', natural: "It's very cold today.", note: 'Il tempo atmosferico usa fare, sempre alla terza persona.' },
+      { it: 'Ieri ha fatto bel tempo.', literal: 'Yesterday it-has done nice weather.', natural: 'The weather was nice yesterday.', note: 'Al passato: ha fatto.' },
+      { it: 'Facciamo una passeggiata dopo cena?', literal: 'We-do a walk after dinner?', natural: 'Shall we go for a walk after dinner?', note: 'Proposta: presente + intonazione interrogativa.' },
+      { it: 'Devo fare la spesa, il frigo è vuoto.', literal: 'I-must to-do the shopping, the fridge is empty.', natural: 'I need to do the shopping, the fridge is empty.', note: '"fare la spesa" = comprare cibo, ≠ "fare shopping" = vestiti.' },
+      { it: 'Posso farti una domanda?', literal: 'Can-I to-do-you a question?', natural: 'Can I ask you a question?', note: 'Modale + fare + pronome attaccato all\'infinito.' },
+      { it: 'Mi fai una foto, per favore?', literal: 'To-me you-do a photo, please?', natural: 'Can you take a photo of me, please?', note: '"fare una foto" = to take a photo.' },
+      { it: 'I bambini stanno facendo i compiti.', literal: 'The children stay doing the homework.', natural: 'The children are doing their homework.', note: 'Gerundio: facendo. Nota: "i compiti", non "i loro compiti".' },
+      { it: 'Ieri sera abbiamo fatto tardi.', literal: 'Yesterday evening we-have done late.', natural: 'Last night we stayed out late.', note: '"fare tardi" = fare le ore piccole o arrivare tardi.' },
+      { it: 'Fai attenzione, la strada è bagnata!', literal: 'Do attention, the street is wet!', natural: 'Be careful, the road is wet!', note: 'Imperativo di fare: fai (o "fa\'").' },
+      { it: 'Mi fa male la testa.', literal: 'To-me does bad the head.', natural: 'My head hurts. / I have a headache.', note: 'Struttura rovesciata come piacere: la testa è il soggetto.' },
+      { it: 'Mi sono fatto male al ginocchio.', literal: 'Myself I-am done bad to-the knee.', natural: 'I hurt my knee.', note: 'farsi male: riflessivo → passato con essere.' },
+      { it: 'Faccio sport tre volte a settimana.', literal: 'I-do sport three times a week.', natural: 'I do sport three times a week.', note: 'Sport generico → fare. Con la palla → giocare a.' },
+      { it: 'Gioco a calcio, ma faccio anche nuoto.', literal: 'I-play at football, but I-do also swimming.', natural: 'I play football, but I also swim.', note: 'Due verbi diversi per due tipi di sport.' },
+      { it: 'Che cosa hai fatto nel weekend?', literal: 'What thing you-have done in-the weekend?', natural: 'What did you do at the weekend?', note: 'Domanda del lunedì mattina in ogni ufficio italiano.' },
+      { it: 'Fammi sapere se vieni.', literal: 'Make-me to-know if you-come.', natural: 'Let me know if you\'re coming.', note: 'fare + infinito, con pronome attaccato all\'imperativo.' },
+      { it: 'Mi fai ridere quando parli così.', literal: 'Me you-make to-laugh when you-speak so.', natural: 'You make me laugh when you talk like that.', note: 'fare + infinito senza preposizione.' },
+      { it: 'Abbiamo fatto la fila per mezz\'ora.', literal: 'We-have done the queue for half-hour.', natural: 'We queued for half an hour.', note: '"fare la fila" = to stand in line.' },
+      { it: 'Mi fa piacere vederti!', literal: 'To-me does pleasure to-see-you!', natural: "It's great to see you!", note: 'Espressione di cortesia molto usata.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Ho colazione alle otto.', right: 'Faccio colazione alle otto.', why: 'In italiano la colazione si "fa", non si "ha". È un\'espressione fissa.' },
+      { wrong: 'Ha freddo oggi. (parlando del tempo)', right: 'Fa freddo oggi.', why: 'Il tempo atmosferico usa fare. "Ha freddo" significa che una persona sente freddo.' },
+      { wrong: 'È freddo oggi. (il tempo)', right: 'Fa freddo oggi.', why: '"È freddo" si usa per la temperatura di una cosa: "Il caffè è freddo".' },
+      { wrong: 'Noi facete i compiti.', right: 'Noi facciamo i compiti.', why: 'noi → facciamo (due c), voi → fate.' },
+      { wrong: 'Faccio calcio il sabato.', right: 'Gioco a calcio il sabato.', why: 'Gli sport con la palla usano "giocare a"; "fare" si usa per sport generici (fare sport, fare palestra).' },
+      { wrong: 'Faccio la chitarra.', right: 'Suono la chitarra.', why: 'Gli strumenti musicali si suonano.' },
+      { wrong: 'Ho fatto male al ginocchio.', right: 'Mi sono fatto male al ginocchio.', why: 'Con "farsi male" serve il pronome riflessivo e l\'ausiliare essere.' },
+      { wrong: 'Faccio una domanda a te?', right: 'Posso farti una domanda?', why: 'La formula naturale è "posso farti una domanda?" con il pronome attaccato.' },
+      { wrong: 'Fa il freddo.', right: 'Fa freddo.', why: 'Le espressioni meteo con fare non prendono l\'articolo.' }
+    ],
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Io ___ colazione alle sette.»', options: ['ho', 'faccio', 'sono', 'prendo'], answer: 1, hint: 'espressione fissa', why: 'fare colazione.' },
+        { q: 'Completa: «Oggi ___ molto caldo.»', options: ['ha', 'è', 'fa', 'sta'], answer: 2, hint: 'tempo atmosferico', why: 'Il clima usa fare.' },
+        { q: 'Completa: «Noi ___ una passeggiata.»', options: ['facciamo', 'facete', 'fanno', 'fate'], answer: 0, hint: 'noi', why: 'noi → facciamo.' },
+        { q: 'Completa: «Voi ___ sport?»', options: ['facciamo', 'fate', 'facete', 'fanno'], answer: 1, hint: 'voi', why: 'voi → fate.' },
+        { q: 'Come si dice "I play football"?', options: ['Faccio calcio.', 'Gioco a calcio.', 'Suono calcio.', 'Faccio il calcio.'], answer: 1, hint: 'sport con la palla', why: 'Gli sport con la palla usano "giocare a".' },
+        { q: 'Come si dice "I play the guitar"?', options: ['Faccio la chitarra.', 'Gioco la chitarra.', 'Suono la chitarra.', 'Gioco a chitarra.'], answer: 2, hint: 'strumento musicale', why: 'Gli strumenti si suonano.' },
+        { q: 'Participio passato di fare:', options: ['facuto', 'fatto', 'fato', 'facciuto'], answer: 1, hint: 'irregolare', why: 'fare → fatto.' },
+        { q: '«Mi fa male la testa» significa:', options: ['I make my head hurt.', 'My head hurts.', 'I have a hard head.', 'I hit my head.'], answer: 1, hint: 'struttura rovesciata', why: 'La testa è il soggetto: "fa male a me".' },
+        { q: 'Completa: «Ieri ___ bel tempo.»', options: ['ha fatto', 'è fatto', 'faceva fatto', 'ha fato'], answer: 0, hint: 'passato prossimo', why: 'fare → ho/ha fatto.' },
+        { q: '«Fare la spesa» significa:', options: ['comprare vestiti', 'comprare cibo', 'spendere soldi', 'fare un regalo'], answer: 1, hint: 'supermercato', why: '"Fare la spesa" = comprare generi alimentari; "fare shopping" = vestiti.' }
+      ],
+      fill: [
+        { before: 'Io', after: 'colazione al bar.', answers: ['faccio'], en: 'I have breakfast at the bar.' },
+        { before: 'Oggi', after: 'freddo, metti la giacca.', answers: ['fa'], en: 'It is cold today, put on a jacket.' },
+        { before: 'Che lavoro', after: '? (tu)', answers: ['fai'], en: 'What do you do for a living?' },
+        { before: 'Noi', after: 'la spesa il sabato.', answers: ['facciamo'], en: 'We do the shopping on Saturdays.' },
+        { before: 'Voi', after: 'sport?', answers: ['fate'], en: 'Do you do sport?' },
+        { before: 'Loro', after: 'sempre tardi la sera.', answers: ['fanno'], en: 'They always stay up late.' },
+        { before: 'Ieri ho', after: 'una passeggiata in centro.', answers: ['fatto'], en: 'Yesterday I went for a walk downtown.' },
+        { before: 'Mi sono', after: 'male al braccio.', answers: ['fatto', 'fatta'], en: 'I hurt my arm.' },
+        { before: 'Posso', after: 'una domanda?', answers: ['farti', 'fare'], en: 'Can I ask you a question?' },
+        { before: 'Sto', after: 'i compiti adesso.', answers: ['facendo'], en: 'I am doing my homework now.' }
+      ],
+      order: [
+        { words: ['Faccio', 'colazione', 'alle', 'otto'], answer: 'Faccio colazione alle otto', en: 'I have breakfast at eight.' },
+        { words: ['Oggi', 'fa', 'molto', 'freddo'], answer: 'Oggi fa molto freddo', en: 'It is very cold today.' },
+        { words: ['Facciamo', 'una', 'passeggiata', 'dopo', 'cena'], answer: 'Facciamo una passeggiata dopo cena', en: 'Let\'s go for a walk after dinner.' },
+        { words: ['Che', 'cosa', 'hai', 'fatto', 'nel', 'weekend'], answer: 'Che cosa hai fatto nel weekend', en: 'What did you do at the weekend?' },
+        { words: ['Mi', 'fa', 'male', 'la', 'testa'], answer: 'Mi fa male la testa', en: 'My head hurts.' }
+      ],
+      dnd: {
+        instructions: 'Quale verbo serve? Trascina ogni espressione sotto il verbo giusto.',
+        buckets: [
+          { id: 'fare', label: 'FARE', icon: '🛠️' },
+          { id: 'giocare', label: 'GIOCARE A', icon: '⚽' },
+          { id: 'suonare', label: 'SUONARE', icon: '🎸' }
+        ],
+        items: [
+          { text: 'colazione', bucket: 'fare' },
+          { text: 'la spesa', bucket: 'fare' },
+          { text: 'calcio', bucket: 'giocare' },
+          { text: 'il pianoforte', bucket: 'suonare' },
+          { text: 'una passeggiata', bucket: 'fare' },
+          { text: 'tennis', bucket: 'giocare' },
+          { text: 'la chitarra', bucket: 'suonare' },
+          { text: 'sport', bucket: 'fare' },
+          { text: 'carte', bucket: 'giocare' },
+          { text: 'una foto', bucket: 'fare' },
+          { text: 'il violino', bucket: 'suonare' },
+          { text: 'la doccia', bucket: 'fare' }
+        ]
+      },
+      match: [
+        { a: 'fare colazione', b: 'to have breakfast' },
+        { a: 'fare la spesa', b: 'to buy groceries' },
+        { a: 'fare una passeggiata', b: 'to go for a walk' },
+        { a: 'fare una domanda', b: 'to ask a question' },
+        { a: 'fare tardi', b: 'to stay out late' },
+        { a: 'fare attenzione', b: 'to pay attention' },
+        { a: 'farsi male', b: 'to hurt oneself' },
+        { a: 'Fa freddo.', b: "It's cold." },
+        { a: 'Mi fa male la testa.', b: 'My head hurts.' },
+        { a: 'Fammi sapere.', b: 'Let me know.' }
+      ],
+      tf: [
+        { statement: 'In italiano si dice "faccio colazione".', answer: true, why: 'Sì: la colazione si fa, non si ha.' },
+        { statement: 'Per il tempo atmosferico si usa avere.', answer: false, why: 'No: si usa fare → "fa freddo".' },
+        { statement: 'La forma "voi" di fare è "facete".', answer: false, why: 'No: è "fate".' },
+        { statement: 'Il participio passato di fare è "fatto".', answer: true, why: 'Sì: ho fatto, hai fatto…' },
+        { statement: 'Si dice "faccio calcio".', answer: false, why: 'No: gli sport con la palla usano giocare a → "gioco a calcio".' },
+        { statement: '«Mi fa male la testa» ha la testa come soggetto.', answer: true, why: 'Sì, come con piacere: la struttura è rovesciata.' },
+        { statement: '«Fare la spesa» e «fare shopping» sono la stessa cosa.', answer: false, why: 'No: la spesa è il cibo, lo shopping sono i vestiti.' }
+      ],
+      translate: [
+        { en: 'I have breakfast at seven.', answers: ['Faccio colazione alle sette'] },
+        { en: "It's cold today.", answers: ['Oggi fa freddo', 'Fa freddo oggi'] },
+        { en: 'What do you do for a living?', answers: ['Che lavoro fai', 'Che lavoro fa', 'Che cosa fai nella vita'] },
+        { en: 'Shall we go for a walk?', answers: ['Facciamo una passeggiata'] },
+        { en: 'Can I ask you a question?', answers: ['Posso farti una domanda', 'Posso farle una domanda'] },
+        { en: 'My head hurts.', answers: ['Mi fa male la testa'] },
+        { en: 'What did you do yesterday?', answers: ['Che cosa hai fatto ieri', 'Cosa hai fatto ieri'] },
+        { en: 'Let me know.', answers: ['Fammi sapere'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Programmi per il sabato',
+      lines: [
+        { speaker: 'Marco', icon: '🧑', it: 'Che cosa fai sabato?', en: 'What are you doing on Saturday?',
+          glosses: [{ term: 'fai', expl: 'fare, 2ª persona. Il presente indica il futuro vicino.' }] },
+        { speaker: 'Leila', icon: '👩', side: 'right', it: 'La mattina faccio la spesa, poi faccio palestra.', en: 'In the morning I do the shopping, then I go to the gym.',
+          glosses: [{ term: 'faccio la spesa', expl: 'Comprare cibo (≠ fare shopping = vestiti).' }, { term: 'faccio palestra', expl: 'Sport generico → fare.' }] },
+        { speaker: 'Marco', icon: '🧑', it: 'E il pomeriggio? Se fa bel tempo potremmo fare una passeggiata.', en: 'And in the afternoon? If the weather is nice we could go for a walk.',
+          glosses: [{ term: 'fa bel tempo', expl: 'Il tempo atmosferico usa sempre "fa".' }, { term: 'fare una passeggiata', expl: 'Espressione fissa.' }] },
+        { speaker: 'Leila', icon: '👩', side: 'right', it: 'Volentieri! Ma non facciamo tardi, domenica lavoro.', en: "Gladly! But let's not stay out late, I work on Sunday.",
+          glosses: [{ term: 'facciamo tardi', expl: '"fare tardi" = fare le ore piccole.' }] },
+        { speaker: 'Marco', icon: '🧑', it: 'Certo. Posso farti una domanda? Che lavoro fai esattamente?', en: 'Of course. Can I ask you a question? What exactly do you do?',
+          glosses: [{ term: 'farti una domanda', expl: 'fare una domanda + pronome attaccato all\'infinito.' }, { term: 'Che lavoro fai', expl: 'Formula standard per chiedere la professione.' }] },
+        { speaker: 'Leila', icon: '👩', side: 'right', it: 'Faccio l\'architetta. E tu?', en: "I'm an architect. And you?",
+          glosses: [{ term: "Faccio l'architetta", expl: 'Con la professione si usa l\'articolo determinativo.' }] },
+        { speaker: 'Marco', icon: '🧑', it: 'Faccio l\'insegnante. Ieri ho fatto sei ore di lezione, sono distrutto!', en: "I'm a teacher. Yesterday I taught six hours, I'm exhausted!",
+          glosses: [{ term: 'ho fatto', expl: 'Passato prossimo: avere + fatto.' }] },
+        { speaker: 'Leila', icon: '👩', side: 'right', it: 'Immagino! Allora sabato riposiamo. Fammi sapere l\'orario.', en: 'I can imagine! Then let\'s rest on Saturday. Let me know the time.',
+          glosses: [{ term: 'Fammi sapere', expl: 'fare + infinito con pronome: espressione fissa.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'faccio, fai, fa, facciamo, fate, fanno', back: 'fare — presente' },
+      { front: 'ho fatto / facendo', back: 'participio e gerundio di fare' },
+      { front: 'fare colazione', back: 'to have breakfast' },
+      { front: 'fare la spesa', back: 'to buy groceries', note: 'shopping = vestiti' },
+      { front: 'fare una passeggiata', back: 'to go for a walk' },
+      { front: 'fare una domanda', back: 'to ask a question' },
+      { front: 'fare la doccia', back: 'to take a shower' },
+      { front: 'fare tardi / fare presto', back: 'to be late / to hurry up' },
+      { front: 'fare attenzione', back: 'to pay attention' },
+      { front: 'Fa caldo / freddo.', back: "It's hot / cold.", note: 'clima → fare' },
+      { front: 'Mi fa male la testa.', back: 'My head hurts.' },
+      { front: 'Mi sono fatto male.', back: 'I hurt myself.' },
+      { front: 'Che lavoro fai?', back: 'What do you do for a living?' },
+      { front: 'Fammi sapere.', back: 'Let me know.' }
+    ],
+
+    summary: {
+      formula: 'FARE (faccio / fai / fa / facciamo / fate / fanno) + NOME  →  espressione fissa · FA + clima · FARE + INFINITO = far fare',
+      rules: [
+        'Presente irregolare: faccio, fai, fa, facciamo, fate, fanno. Participio: fatto. Gerundio: facendo.',
+        'Le espressioni con fare + nome non si traducono letteralmente: fare colazione, fare la spesa, fare una domanda.',
+        'Il tempo atmosferico usa sempre "fa": fa caldo, fa freddo, fa bel tempo.',
+        'Professione: "Faccio l\'ingegnere" (con l\'articolo) oppure "Sono ingegnere".',
+        'Sport generico → fare; sport con la palla → giocare a; strumenti → suonare.',
+        'fare + infinito = causare: "Mi fai ridere", "Fammi sapere".',
+        'farsi male / farsi la doccia: riflessivi, al passato con essere.'
+      ],
+      tips: [
+        'Impara le espressioni come blocchi unici. Il tuo cervello deve sentire "farecolazione" come una parola sola.',
+        'Tre freddi diversi: <b>Fa</b> freddo (il tempo) · <b>Ho</b> freddo (io) · <b>È</b> freddo (il caffè). Sono tre verbi per tre significati.',
+        'Se in inglese usi "have", "take", "go for" o "make" davanti a un\'attività quotidiana, in italiano c\'è una buona probabilità che il verbo sia FARE.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

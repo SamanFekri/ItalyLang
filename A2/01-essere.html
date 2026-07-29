@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il verbo essere in italiano: presente, participio passato, espressioni comuni, esercizi interattivi.">
+  <title>Essere · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 1 — ESSERE
+     ========================================================================== */
+  window.LESSON = {
+    num: 1, file: '01-essere.html', icon: '🟢', title: 'Essere', group: 'Le basi',
+    subtitle: 'Il verbo più importante dell\'italiano: dire chi sei, come stai, dove sei e com\'è il mondo intorno a te.',
+
+    /* 1 ─ Significato ---------------------------------------------------- */
+    intro: {
+      what: 'Essere significa "to be". È un verbo irregolare: le sue forme non seguono nessuna regola, quindi vanno imparate a memoria. Serve per identificare (io sono Saman), descrivere (la casa è grande), dire la provenienza (sono iraniano) e la posizione (siamo a Roma).',
+      when: 'Si usa per identità, nazionalità, professione, caratteristiche fisiche e di carattere, stati d\'animo, ora e data, posizione nello spazio. È anche uno dei due verbi ausiliari del passato prossimo (sono andato, sono stato).',
+      why: 'Senza essere non puoi presentarti né descrivere nulla. Inoltre metà del passato prossimo italiano si costruisce con essere: se sbagli qui, sbagli anche tutte le frasi al passato.',
+      mistakes: [
+        'Usare essere per l\'età: ❌ "Sono 30 anni" → in italiano si dice "Ho 30 anni" (con avere).',
+        'Usare essere per fame, sete, freddo: ❌ "Sono fame" → "Ho fame".',
+        'Dimenticare l\'accento su è (verbo) e confonderlo con e (= and): "Lui è alto" ≠ "Lui e alto".',
+        'Non accordare l\'aggettivo: ❌ "Maria è stanco" → "Maria è stanca".'
+      ]
+    },
+
+    /* 2 ─ Formula -------------------------------------------------------- */
+    formulas: [
+      {
+        label: 'Struttura base — descrivere qualcuno o qualcosa',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', note: 'io, tu, Maria…', type: 'subject' },
+              { text: 'essere', note: 'coniugato', type: 'verb' },
+              { text: 'Aggettivo / Nome', note: 'concorda!', type: 'object' }
+            ], example: 'Io sono italiano.', translation: 'I am Italian.' },
+          { parts: [
+              { text: 'Maria', type: 'subject' },
+              { text: 'è', type: 'verb' },
+              { text: 'stanca', type: 'object' }
+            ], example: 'Maria è stanca.', translation: 'Maria is tired.' }
+        ]
+      },
+      {
+        label: 'Struttura con luogo — dire dove sei',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'essere', type: 'verb' },
+              { text: 'a / in / da', note: 'preposizione', type: 'extra' },
+              { text: 'Luogo', type: 'object' }
+            ], example: 'Noi siamo a Roma.', translation: 'We are in Rome.' }
+        ]
+      },
+      {
+        label: 'Passato prossimo di essere (l\'ausiliare è essere stesso)',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'sono / sei / è…', note: 'essere presente', type: 'verb' },
+              { text: 'stato / stata / stati / state', note: 'concorda col soggetto', type: 'object' }
+            ], example: 'Ieri sono stato a Milano.', translation: 'Yesterday I was in Milan.' }
+        ]
+      }
+    ],
+    formulaNote: 'Nota: in italiano il soggetto (io, tu, lui…) si può togliere, perché la forma del verbo dice già chi parla. "Sono italiano" = "Io sono italiano".',
+
+    /* 3 ─ Regola --------------------------------------------------------- */
+    rules: [
+      {
+        title: 'Le sei forme del presente vanno imparate a memoria',
+        body: 'Essere è totalmente irregolare: <b>sono, sei, è, siamo, siete, sono</b>. Attenzione: la forma <b>sono</b> vale sia per <i>io</i> sia per <i>loro</i>.',
+        points: [
+          '<b>Io sono</b> stanco. / <b>Loro sono</b> stanchi. → il contesto o l\'aggettivo chiariscono chi è il soggetto.',
+          'La <b>è</b> di "lui/lei è" ha sempre l\'accento grave. Senza accento, <b>e</b> significa "and".'
+        ],
+        exception: 'Se non è chiaro chi è il soggetto tra "io" e "loro", il pronome va espresso: "Io sono in ritardo, loro sono puntuali".'
+      },
+      {
+        title: 'L\'aggettivo dopo essere concorda con il soggetto',
+        body: 'Dopo essere, l\'aggettivo cambia in genere (maschile/femminile) e numero (singolare/plurale).',
+        points: [
+          'Maschile singolare: <b>-o</b> → Marco è alt<b>o</b>.',
+          'Femminile singolare: <b>-a</b> → Anna è alt<b>a</b>.',
+          'Maschile plurale: <b>-i</b> → I ragazzi sono alt<b>i</b>.',
+          'Femminile plurale: <b>-e</b> → Le ragazze sono alt<b>e</b>.'
+        ],
+        exception: 'Gli aggettivi che finiscono in -e (grande, felice, interessante) hanno una sola forma al singolare e fanno -i al plurale: "Il libro è grande / I libri sono grandi".'
+      },
+      {
+        title: 'Essere ≠ avere: attenzione alle sensazioni fisiche',
+        body: 'In inglese e in farsi molte sensazioni si esprimono con "to be" / «بودن»: <i>I am hungry</i>, «گرسنه هستم». In italiano si usa <b>avere</b>.',
+        points: [
+          '❌ Sono fame → ✅ <b>Ho fame</b> (I have hunger)',
+          '❌ Sono 25 anni → ✅ <b>Ho 25 anni</b>',
+          '❌ Sono freddo → ✅ <b>Ho freddo</b> (io sento freddo)'
+        ],
+        exception: '"Sono freddo" è grammaticalmente corretto ma significa "sono una persona fredda / distaccata". Per il tempo atmosferico si usa fare: "Fa freddo" = it\'s cold.'
+      },
+      {
+        title: 'Il participio passato è "stato" — e si accorda',
+        body: 'Il passato prossimo di essere è <b>sono stato / sono stata</b>. Siccome l\'ausiliare è essere, il participio concorda con il soggetto.',
+        points: [
+          'Marco: <b>sono stato</b> · Anna: <b>sono stata</b>',
+          'Loro (m.): <b>sono stati</b> · Loro (f.): <b>sono state</b>',
+          'Curiosità utile: <b>stato</b> è il participio anche del verbo <i>stare</i>. "Sono stato a Roma" può voler dire "I was / I stayed in Rome".'
+        ],
+        exception: 'Nella forma di cortesia con Lei si usa il femminile solo se la persona è donna: "Signora, è stata gentile"; "Signor Rossi, è stato gentile".'
+      },
+      {
+        title: 'C\'è / ci sono — esistenza',
+        body: 'Per dire "there is / there are" si usa <b>c\'è</b> (singolare) e <b>ci sono</b> (plurale).',
+        points: [
+          'C\'è un problema. → There is a problem.',
+          'Ci sono due problemi. → There are two problems.',
+          'Al passato: <b>c\'era</b> / <b>c\'erano</b>, oppure <b>c\'è stato</b> / <b>ci sono stati</b>.'
+        ],
+        exception: 'Non confondere "c\'è" (there is) con "è" (he/she/it is): "C\'è Marco?" = Is Marco there? · "È Marco?" = Is it Marco?'
+      }
+    ],
+
+    /* 4 ─ Timeline ------------------------------------------------------- */
+    timeline: {
+      title: 'Essere nel tempo',
+      intro: 'A2 usa soprattutto presente e passato prossimo. Ecco come cambia essere.',
+      points: [
+        { time: 'Passato', label: 'Passato prossimo', example: 'Ieri sono stato malato.', note: 'azione conclusa' },
+        { time: 'Passato', label: 'Imperfetto (B1)', example: 'Da bambino ero timido.', note: 'stato prolungato' },
+        { time: 'Adesso', label: 'Presente', example: 'Oggi sono felice.', now: true },
+        { time: 'Futuro', label: 'Futuro semplice (B1)', example: 'Domani sarò a Roma.', note: 'a A2 basta: "Domani sono a Roma"' }
+      ],
+      caption: 'A2: per il futuro vicino, gli italiani usano spessissimo il presente — "Domani sono a casa".'
+    },
+
+    /* 5 ─ Tabelle -------------------------------------------------------- */
+    tables: [
+      {
+        title: 'Essere — Presente indicativo (tutte le forme sono irregolari)',
+        note: 'Nota che "sono" compare due volte: io e loro.',
+        columns: ['Persona', 'Forma', 'Esempio'],
+        rows: [
+          { cells: ['io', 'sono', 'Io sono studente.'], irregular: [1] },
+          { cells: ['tu', 'sei', 'Tu sei gentile.'], irregular: [1] },
+          { cells: ['lui / lei / Lei', 'è', 'Lei è la mia amica.'], irregular: [1] },
+          { cells: ['noi', 'siamo', 'Noi siamo pronti.'], irregular: [1] },
+          { cells: ['voi', 'siete', 'Voi siete in ritardo.'], irregular: [1] },
+          { cells: ['loro', 'sono', 'Loro sono italiani.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Essere — Passato prossimo (essere + stato/a/i/e)',
+        note: 'Il participio "stato" concorda sempre con il soggetto.',
+        columns: ['Persona', 'Forma', 'Esempio'],
+        rows: [
+          { cells: ['io', 'sono stato / stata', 'Sono stata in Italia.'], irregular: [1] },
+          { cells: ['tu', 'sei stato / stata', 'Sei stato bravo!'], irregular: [1] },
+          { cells: ['lui / lei', 'è stato / stata', 'È stata una bella giornata.'], irregular: [1] },
+          { cells: ['noi', 'siamo stati / state', 'Siamo stati fortunati.'], irregular: [1] },
+          { cells: ['voi', 'siete stati / state', 'Siete stati gentili.'], irregular: [1] },
+          { cells: ['loro', 'sono stati / state', 'Sono stati a Firenze.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Forma negativa e interrogativa',
+        note: 'La negazione è sempre NON prima del verbo. La domanda cambia solo l\'intonazione.',
+        columns: ['Tipo', 'Struttura', 'Esempio'],
+        rows: [
+          { cells: ['Affermativa', 'sogg. + essere', 'Tu sei stanco.'] },
+          { cells: ['Negativa', 'sogg. + non + essere', 'Tu non sei stanco.'], irregular: [1] },
+          { cells: ['Interrogativa', 'stessa frase + ?', 'Sei stanco?'] },
+          { cells: ['Neg. interrogativa', 'non + essere + ?', 'Non sei stanco?'] }
+        ]
+      },
+      {
+        title: 'Espressioni utilissime con essere',
+        note: 'Impara queste come blocchi unici, non parola per parola.',
+        columns: ['Espressione', 'Significato', 'Esempio'],
+        rows: [
+          { cells: ['essere in ritardo', 'to be late', 'Scusa, sono in ritardo.'] },
+          { cells: ['essere in anticipo', 'to be early', 'Sei sempre in anticipo!'] },
+          { cells: ['essere d\'accordo', 'to agree', 'Sono d\'accordo con te.'] },
+          { cells: ['essere di + città', 'to be from', 'Sono di Teheran.'] },
+          { cells: ['essere in punto', 'sharp (time)', 'Sono le otto in punto.'] },
+          { cells: ['esserci', 'there is / to be there', 'C\'è tempo. / Ci sono io!'] },
+          { cells: ['essere bravo in', 'to be good at', 'È brava in matematica.'] },
+          { cells: ['essere pronto', 'to be ready', 'Siete pronti?'] }
+        ]
+      }
+    ],
+
+    /* 6 ─ Esempi (15+) --------------------------------------------------- */
+    examples: [
+      { it: 'Io sono Saman.', literal: 'I am Saman.', natural: 'I\'m Saman.', note: 'Identità. Il pronome "io" si può togliere: "Sono Saman".' },
+      { it: 'Sei italiano?', literal: 'Are-you Italian?', natural: 'Are you Italian?', note: 'La domanda non cambia l\'ordine delle parole: cambia solo l\'intonazione.' },
+      { it: 'Marco è molto simpatico.', literal: 'Marco is very nice.', natural: 'Marco is really nice.', note: 'Aggettivo maschile singolare in -o perché Marco è maschile.' },
+      { it: 'Anna è stanca oggi.', literal: 'Anna is tired today.', natural: 'Anna is tired today.', note: 'stanc-a: l\'aggettivo si accorda con Anna (femminile).' },
+      { it: 'Noi siamo a scuola.', literal: 'We are at school.', natural: 'We\'re at school.', note: 'essere + a + luogo per la posizione.' },
+      { it: 'Voi siete in ritardo!', literal: 'You(pl) are in delay!', natural: 'You guys are late!', note: '"in ritardo" è un blocco fisso: mai "siete tardi".' },
+      { it: 'I miei amici sono simpatici.', literal: 'The my friends are nice.', natural: 'My friends are nice.', note: 'Plurale maschile: -i. In italiano l\'articolo resta prima del possessivo.' },
+      { it: 'Le ragazze sono contente.', literal: 'The girls are happy.', natural: 'The girls are happy.', note: 'Plurale femminile: -e.' },
+      { it: 'Non sono d\'accordo con te.', literal: 'Not I-am of-agreement with you.', natural: 'I don\'t agree with you.', note: 'NON va sempre prima del verbo. "essere d\'accordo con" = to agree with.' },
+      { it: 'Che ore sono? Sono le tre.', literal: 'What hours are? Are the three.', natural: 'What time is it? It\'s three o\'clock.', note: 'L\'ora usa il plurale "sono le…", tranne: "È l\'una", "È mezzogiorno".' },
+      { it: 'Oggi è lunedì.', literal: 'Today is Monday.', natural: 'Today is Monday.', note: 'I giorni della settimana non vogliono l\'articolo qui.' },
+      { it: 'C\'è un problema con il computer.', literal: 'There-is a problem with the computer.', natural: 'There\'s a problem with the computer.', note: 'c\'è = ci + è, per una cosa sola.' },
+      { it: 'Ci sono molti turisti a Roma.', literal: 'There are many tourists in Rome.', natural: 'There are lots of tourists in Rome.', note: 'ci sono per il plurale.' },
+      { it: 'Ieri sono stato al cinema.', literal: 'Yesterday I-am been at-the cinema.', natural: 'Yesterday I went to the cinema.', note: 'Passato prossimo: essere + stato. Un uomo dice "stato", una donna "stata".' },
+      { it: 'È stata una giornata bellissima.', literal: 'It-is been a day very-beautiful.', natural: 'It was a wonderful day.', note: '"giornata" è femminile → stata + bellissima.' },
+      { it: 'Siamo stati molto fortunati.', literal: 'We-are been very lucky.', natural: 'We were very lucky.', note: 'Plurale maschile (o gruppo misto): stati.' },
+      { it: 'Sono di Teheran, ma abito a Milano.', literal: 'I-am of Tehran, but I-live in Milan.', natural: 'I\'m from Tehran, but I live in Milan.', note: 'essere di + città = provenienza. Per il paese: "Sono iraniano".' },
+      { it: 'Scusa, non è colpa mia.', literal: 'Sorry, not is fault mine.', natural: 'Sorry, it\'s not my fault.', note: 'Frase fatta utilissima: "è colpa mia / tua / sua".' }
+    ],
+
+    /* 7 ─ Errori --------------------------------------------------------- */
+    mistakes: [
+      { wrong: 'Sono 30 anni.', right: 'Ho 30 anni.', why: 'L\'età in italiano si esprime con AVERE, non con essere. Pensa: "possiedo 30 anni".' },
+      { wrong: 'Sono fame.', right: 'Ho fame.', why: 'Fame, sete, sonno, paura, freddo, caldo e fretta vanno tutti con AVERE.' },
+      { wrong: 'Maria è stanco.', right: 'Maria è stanca.', why: 'Dopo essere l\'aggettivo concorda con il soggetto: Maria è femminile → stanca.' },
+      { wrong: 'Lui e alto.', right: 'Lui è alto.', why: '"e" senza accento significa "and". Il verbo è "è", con l\'accento grave.' },
+      { wrong: 'Io sono andato ieri sono stato al mare.', right: 'Ieri sono stato al mare.', why: 'Una sola forma di essere per frase: sono + participio. Non ripetere l\'ausiliare.' },
+      { wrong: 'Ci sono un problema.', right: 'C\'è un problema.', why: '"un problema" è singolare → c\'è. Usa "ci sono" solo con i plurali.' },
+      { wrong: 'Anna è stato in Italia.', right: 'Anna è stata in Italia.', why: 'Con l\'ausiliare essere il participio concorda col soggetto: Anna → stata.' },
+      { wrong: 'Sono studente italiano? Sì, sono.', right: 'Sei studente italiano? Sì, lo sono.', why: 'Nelle risposte brevi l\'italiano usa "lo sono" / "sì, certo", non il verbo nudo.' }
+    ],
+
+    /* 8 ─ Esercizi ------------------------------------------------------- */
+    exercises: {
+      mc: [
+        { q: 'Completa: «Noi ___ studenti.»', options: ['siamo', 'siete', 'sono', 'sei'], answer: 0,
+          hint: 'noi = we', why: 'noi → siamo.' },
+        { q: 'Completa: «Voi ___ in ritardo.»', options: ['siamo', 'siete', 'sono', 'è'], answer: 1,
+          hint: 'voi = you (plural)', why: 'voi → siete.' },
+        { q: 'Quale frase è corretta?', options: ['Sono 25 anni.', 'Ho 25 anni.', 'Sono di 25 anni.', 'Ho sono 25 anni.'], answer: 1,
+          hint: 'L\'età non usa essere.', why: 'L\'età si dice sempre con avere: "Ho 25 anni".' },
+        { q: 'Completa: «Anna ___ stanca.»', options: ['sono', 'sei', 'è', 'siamo'], answer: 2,
+          hint: 'Anna = lei', why: 'Terza persona singolare → è.' },
+        { q: 'Completa: «___ due libri sul tavolo.»', options: ['C\'è', 'Ci sono', 'È', 'Sono'], answer: 1,
+          hint: '"due libri" è plurale.', why: 'Plurale → ci sono.' },
+        { q: 'Passato prossimo, parla una donna: «Ieri ___ a Roma.»', options: ['sono stato', 'sono stata', 'ho stato', 'ero stata'], answer: 1,
+          hint: 'Il participio concorda col soggetto femminile.', why: 'Con essere, una donna dice "sono stata".' },
+        { q: 'Come si dice "I\'m from Tehran"?', options: ['Sono da Teheran.', 'Sono di Teheran.', 'Sono in Teheran.', 'Ho di Teheran.'], answer: 1,
+          hint: 'essere + di + città', why: 'La provenienza da una città usa "essere di".' },
+        { q: 'Quale forma vale sia per "io" sia per "loro"?', options: ['sei', 'è', 'sono', 'siamo'], answer: 2,
+          hint: 'Guarda la tabella del presente.', why: '"Sono" = io sono e loro sono.' }
+      ],
+      fill: [
+        { before: 'Io', after: 'iraniano.', answers: ['sono'], en: 'I am Iranian.', hint: 'prima persona singolare' },
+        { before: 'Tu', after: 'molto gentile.', answers: ['sei'], en: 'You are very kind.' },
+        { before: 'Marco e Luca', after: 'a scuola.', answers: ['sono'], en: 'Marco and Luca are at school.', hint: 'due persone = loro' },
+        { before: 'Che ore', after: '? — Sono le nove.', answers: ['sono'], en: 'What time is it?' },
+        { before: '', after: 'un problema con la macchina.', answers: ['c\'è', 'ce'], en: 'There is a problem with the car.', hint: 'singolare: there is', placeholder: "C'è" },
+        { before: 'Ieri Anna', after: 'stata al mare.', answers: ['è', 'e'], en: 'Yesterday Anna was at the beach.' },
+        { before: 'Noi non', after: 'd\'accordo.', answers: ['siamo'], en: 'We do not agree.' },
+        { before: 'Voi', after: 'stati molto gentili.', answers: ['siete'], en: 'You (pl.) were very kind.' }
+      ],
+      order: [
+        { words: ['Io', 'sono', 'in', 'ritardo'], answer: 'Io sono in ritardo', en: 'I am late.' },
+        { words: ['Anna', 'è', 'una', 'brava', 'studentessa'], answer: 'Anna è una brava studentessa', en: 'Anna is a good student.' },
+        { words: ['Non', 'sono', 'd\'accordo', 'con', 'te'], answer: 'Non sono d\'accordo con te', en: 'I don\'t agree with you.', hint: 'La negazione va prima del verbo.' },
+        { words: ['Ieri', 'siamo', 'stati', 'al', 'cinema'], answer: 'Ieri siamo stati al cinema', en: 'Yesterday we went to the cinema.' },
+        { words: ['Ci', 'sono', 'molti', 'turisti', 'a', 'Roma'], answer: 'Ci sono molti turisti a Roma', en: 'There are many tourists in Rome.' }
+      ],
+      dnd: {
+        instructions: 'Queste espressioni vanno con ESSERE o con AVERE? Trascinale nella colonna giusta.',
+        buckets: [
+          { id: 'essere', label: 'ESSERE', icon: '🟢' },
+          { id: 'avere', label: 'AVERE', icon: '🔵' }
+        ],
+        items: [
+          { text: 'in ritardo', bucket: 'essere' },
+          { text: 'fame', bucket: 'avere' },
+          { text: 'd\'accordo', bucket: 'essere' },
+          { text: '25 anni', bucket: 'avere' },
+          { text: 'italiano', bucket: 'essere' },
+          { text: 'sete', bucket: 'avere' },
+          { text: 'pronto', bucket: 'essere' },
+          { text: 'paura', bucket: 'avere' },
+          { text: 'stanco', bucket: 'essere' },
+          { text: 'sonno', bucket: 'avere' }
+        ]
+      },
+      match: [
+        { a: 'io', b: 'sono' },
+        { a: 'tu', b: 'sei' },
+        { a: 'lui / lei', b: 'è' },
+        { a: 'noi', b: 'siamo' },
+        { a: 'voi', b: 'siete' },
+        { a: 'loro', b: 'sono (loro)' },
+        { a: 'essere in ritardo', b: 'to be late' },
+        { a: 'essere d\'accordo', b: 'to agree' }
+      ],
+      tf: [
+        { statement: '«Sono» si usa sia per io sia per loro.', answer: true, why: 'Esatto: io sono / loro sono. Il contesto chiarisce il soggetto.' },
+        { statement: 'In italiano si dice «Sono 20 anni» per dire la propria età.', answer: false, why: 'No: l\'età usa avere → "Ho 20 anni".' },
+        { statement: 'Dopo essere, l\'aggettivo concorda con il soggetto.', answer: true, why: 'Sì: Marco è alto / Anna è alta / le ragazze sono alte.' },
+        { statement: '«C\'è» si usa con i sostantivi plurali.', answer: false, why: 'No: c\'è + singolare, ci sono + plurale.' },
+        { statement: 'Il participio passato di essere è «stato».', answer: true, why: 'Sì, ed è anche il participio di stare.' },
+        { statement: 'Il soggetto (io, tu, noi…) è obbligatorio in italiano.', answer: false, why: 'No: la desinenza del verbo indica già il soggetto. "Sono stanco" basta.' }
+      ],
+      translate: [
+        { en: 'I am a student.', answers: ['Sono studente', 'Io sono studente', 'Sono uno studente'], hint: 'Il pronome è facoltativo.' },
+        { en: 'We are late.', answers: ['Siamo in ritardo', 'Noi siamo in ritardo'], hint: '"in ritardo" è un blocco fisso.' },
+        { en: 'Anna is very tired.', answers: ['Anna è molto stanca'], note: 'Attenzione all\'accordo femminile: stanca.' },
+        { en: 'There is a problem.', answers: ['C\'è un problema', 'Ce un problema'], hint: 'singolare' },
+        { en: 'Yesterday we were in Rome.', answers: ['Ieri siamo stati a Roma', 'Ieri siamo state a Roma', 'Siamo stati a Roma ieri'] },
+        { en: "I don't agree with you.", answers: ['Non sono d\'accordo con te', 'Io non sono d\'accordo con te'] }
+      ]
+    },
+
+    /* 9 ─ Dialogo -------------------------------------------------------- */
+    dialogue: {
+      title: 'Mini conversazione — Al bar, primo incontro',
+      intro: 'Due persone si conoscono. Passa il mouse sulle parole evidenziate per la spiegazione.',
+      lines: [
+        { speaker: 'Giulia', icon: '👩', it: 'Ciao! Tu sei il nuovo collega, vero?', en: 'Hi! You\'re the new colleague, right?',
+          glosses: [{ term: 'sei', expl: 'essere, 2ª persona singolare (tu). Identifica una persona.' }, { term: 'vero?', expl: '"right?" — tag question universale in italiano.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Sì, sono Saman. Sono di Teheran.', en: 'Yes, I\'m Saman. I\'m from Tehran.',
+          glosses: [{ term: 'sono', expl: 'essere, 1ª persona singolare. Qui il pronome "io" è omesso.' }, { term: 'di Teheran', expl: 'essere + di + città = provenienza.' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'Che bello! Io sono di Napoli. Sei stanco oggi?', en: 'How nice! I\'m from Naples. Are you tired today?',
+          glosses: [{ term: 'Sei stanco', expl: 'Domanda senza inversione: solo l\'intonazione cambia. Aggettivo maschile → stanco.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Un po\'. Ho sonno, ieri sono stato in ufficio fino a tardi.', en: 'A bit. I\'m sleepy — yesterday I was at the office until late.',
+          glosses: [{ term: 'Ho sonno', expl: 'Sensazione fisica → AVERE, non essere. Mai "sono sonno".' }, { term: 'sono stato', expl: 'Passato prossimo di essere: essere + stato (uomo).' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'Capisco. C\'è un caffè qui vicino, è molto buono.', en: 'I see. There\'s a café nearby, it\'s very good.',
+          glosses: [{ term: 'C\'è', expl: 'there is + singolare (un caffè).' }, { term: 'è', expl: 'essere, 3ª persona: descrive il caffè.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Perfetto, sono pronto! Ma non siamo in ritardo per la riunione?', en: 'Perfect, I\'m ready! But aren\'t we late for the meeting?',
+          glosses: [{ term: 'sono pronto', expl: 'essere + aggettivo maschile singolare.' }, { term: 'non siamo in ritardo', expl: 'Negazione: NON prima del verbo + espressione fissa "in ritardo".' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'No, ci sono ancora venti minuti. Andiamo!', en: 'No, there are still twenty minutes. Let\'s go!',
+          glosses: [{ term: 'ci sono', expl: 'there are + plurale (venti minuti).' }] }
+      ]
+    },
+
+    /* Flashcards --------------------------------------------------------- */
+    flashcards: [
+      { front: 'io sono', back: 'I am', hint: 'vale anche per "loro"' },
+      { front: 'tu sei', back: 'you are (informal, sing.)' },
+      { front: 'lui / lei è', back: 'he / she is', hint: 'con l\'accento!' },
+      { front: 'noi siamo', back: 'we are' },
+      { front: 'voi siete', back: 'you are (plural)' },
+      { front: 'loro sono', back: 'they are' },
+      { front: 'sono stato / stata', back: 'I was / I have been', note: 'stato = uomo · stata = donna' },
+      { front: 'c\'è / ci sono', back: 'there is / there are' },
+      { front: 'essere in ritardo', back: 'to be late', note: 'mai "essere tardi"' },
+      { front: 'essere d\'accordo', back: 'to agree' },
+      { front: 'essere di + città', back: 'to be from (a city)', note: 'Sono di Teheran.' },
+      { front: 'Ho fame (non "sono fame")', back: 'I am hungry', note: 'sensazioni fisiche → avere' }
+    ],
+
+    /* 10 ─ Riassunto ----------------------------------------------------- */
+    summary: {
+      formula: 'Soggetto + essere (sono / sei / è / siamo / siete / sono) + aggettivo o nome che CONCORDA',
+      rules: [
+        'Presente irregolare: sono, sei, è, siamo, siete, sono.',
+        'L\'aggettivo dopo essere concorda in genere e numero: alto / alta / alti / alte.',
+        'Passato prossimo: essere + stato/stata/stati/state (il participio concorda col soggetto).',
+        'Esistenza: c\'è + singolare, ci sono + plurale.',
+        'Sensazioni fisiche ed età usano AVERE, non essere: ho fame, ho 30 anni.',
+        'La negazione è sempre NON + verbo: "Non sono d\'accordo".'
+      ],
+      tips: [
+        'Ricorda la coppia "SONO-SONO": la stessa forma apre (io) e chiude (loro) la coniugazione.',
+        '"È" ha il cappello (l\'accento) perché è un VERBO importante; "e" senza cappello è solo "and".',
+        'Trucco anti-errore: se in inglese dici "I am + sensazione fisica" (hungry, thirsty, cold, scared, 30 years old), in italiano quasi sempre serve HO.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

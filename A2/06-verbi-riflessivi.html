@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I verbi riflessivi italiani: mi alzo, ti chiami, ci svegliamo. Pronomi riflessivi, passato prossimo e accordo.">
+  <title>Verbi Riflessivi · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 6 — VERBI RIFLESSIVI
+     ========================================================================== */
+  window.LESSON = {
+    num: 6, file: '06-verbi-riflessivi.html', icon: '🪞', title: 'Verbi Riflessivi', group: 'Strutture',
+    subtitle: 'I verbi della giornata: mi sveglio, mi alzo, mi lavo, mi vesto. Il soggetto fa l\'azione e la riceve.',
+
+    intro: {
+      what: 'Un verbo riflessivo è un verbo in cui il soggetto fa l\'azione <b>su se stesso</b>. All\'infinito finisce in <b>-si</b>: alzar<b>si</b> (to get oneself up), lavar<b>si</b> (to wash oneself), chiamar<b>si</b> (to call oneself). Per coniugarlo servono due pezzi: il <b>pronome riflessivo</b> (mi, ti, si, ci, vi, si) e il verbo normale.',
+      when: 'Per la routine quotidiana (svegliarsi, alzarsi, vestirsi, lavarsi), per gli stati d\'animo (arrabbiarsi, annoiarsi, divertirsi), per dire il proprio nome (mi chiamo) e per azioni reciproche (ci vediamo, ci sentiamo).',
+      why: 'Sono la spina dorsale del racconto di una giornata — l\'argomento di conversazione più frequente in assoluto. E "mi chiamo" è probabilmente la prima frase che dirai a un italiano.',
+      mistakes: [
+        'Dimenticare il pronome: ❌ "Alzo alle sette" (= I lift something at seven) → ✅ "Mi alzo alle sette".',
+        'Usare avere al passato: ❌ "Ho alzato presto" → ✅ "Mi sono alzato presto".',
+        'Non accordare il participio: ❌ "Anna si è alzato" → ✅ "Anna si è alzata".',
+        'Sbagliare la posizione: ❌ "Io alzo mi" → il pronome va prima del verbo coniugato.'
+      ]
+    },
+
+    formulas: [
+      {
+        label: 'Struttura base',
+        rows: [
+          { parts: [
+              { text: '(Soggetto)', type: 'subject' },
+              { text: 'PRONOME', note: 'mi/ti/si/ci/vi/si', type: 'extra' },
+              { text: 'VERBO coniugato', type: 'verb' },
+              { text: 'resto', type: 'object' }
+            ], example: '(Io) mi alzo alle sette.', translation: 'I get up at seven.' }
+        ]
+      },
+      {
+        label: 'Come si passa dall\'infinito alla frase',
+        rows: [
+          { parts: [
+              { text: 'alzarsi', note: 'infinito', type: 'subject' },
+              { text: 'togli -si → alzare', type: 'extra' },
+              { text: 'coniuga: alzo', type: 'verb' },
+              { text: 'aggiungi mi', type: 'object' }
+            ], example: 'alzarsi → mi alzo, ti alzi, si alza…' }
+        ]
+      },
+      {
+        label: 'Passato prossimo — sempre ESSERE',
+        rows: [
+          { parts: [
+              { text: 'PRONOME', type: 'extra' },
+              { text: 'essere', note: 'sono/sei/è…', type: 'verb' },
+              { text: 'PARTICIPIO concordato', note: '-o/-a/-i/-e', type: 'object' }
+            ], example: 'Mi sono alzata tardi.', translation: 'I got up late. (a woman speaking)' }
+        ]
+      },
+      {
+        label: 'Con un modale — due posizioni',
+        rows: [
+          { parts: [
+              { text: 'Mi devo alzare', note: 'pronome prima', type: 'verb' },
+              { text: '=', type: 'extra' },
+              { text: 'Devo alzarmi', note: 'pronome attaccato', type: 'object' }
+            ], example: 'Mi devo alzare presto. = Devo alzarmi presto.' }
+        ]
+      }
+    ],
+    formulaNote: 'Il pronome riflessivo non si traduce quasi mai in inglese: "mi alzo" = "I get up", non "I get myself up".',
+
+    rules: [
+      {
+        title: 'I sei pronomi riflessivi',
+        body: 'Cambiano con la persona e vanno <b>prima</b> del verbo coniugato.',
+        points: [
+          'io → <b>mi</b> · tu → <b>ti</b> · lui/lei → <b>si</b>',
+          'noi → <b>ci</b> · voi → <b>vi</b> · loro → <b>si</b>',
+          'Nota: <b>si</b> serve sia per il singolare sia per il plurale.',
+          'Nella negazione, NON viene prima di tutto: "<b>Non</b> mi alzo presto".'
+        ],
+        exception: 'Il pronome si attacca al verbo (diventando una parola sola) con l\'infinito, il gerundio e l\'imperativo informale: alzar<b>mi</b>, alzando<b>mi</b>, alza<b>ti</b>!'
+      },
+      {
+        title: 'Riflessivi veri, pronominali e reciproci',
+        body: 'Non tutti i verbi in -si sono davvero "riflessivi", ma funzionano tutti allo stesso modo.',
+        points: [
+          '<b>Riflessivi veri</b>: l\'azione torna sul soggetto → lavarsi, vestirsi, pettinarsi, guardarsi.',
+          '<b>Pronominali</b>: il pronome fa parte del verbo, senza vero riflesso → arrabbiarsi (to get angry), annoiarsi (to get bored), divertirsi (to have fun), ricordarsi (to remember), dimenticarsi, sentirsi (to feel).',
+          '<b>Reciproci</b>: due o più persone fanno l\'azione l\'una all\'altra → "Ci vediamo domani", "Si sono sposati", "Vi conoscete?".'
+        ],
+        exception: 'Alcuni verbi cambiano significato con il pronome: sentire (to hear) → sentirsi (to feel); trovare (to find) → trovarsi (to be located / to feel comfortable); chiamare (to call) → chiamarsi (to be named).'
+      },
+      {
+        title: 'Riflessivo vs non riflessivo: il test dell\'oggetto',
+        body: 'Lo stesso verbo può essere riflessivo o no. Se dopo il verbo c\'è un\'altra persona o cosa, non è riflessivo.',
+        points: [
+          '<b>Mi sveglio</b> alle sette. (io sveglio me stesso) vs <b>Sveglio</b> mio figlio alle sette. (sveglio un\'altra persona)',
+          '<b>Mi lavo</b> le mani. (lavo le mie mani) vs <b>Lavo</b> la macchina.',
+          '<b>Mi chiamo</b> Saman. (il mio nome) vs <b>Chiamo</b> Marco. (telefono a Marco)'
+        ],
+        exception: 'Con le parti del corpo l\'italiano non usa il possessivo: si dice "Mi lavo <b>le</b> mani", non "Mi lavo <b>le mie</b> mani". Il pronome riflessivo dice già di chi sono.'
+      },
+      {
+        title: 'Al passato prossimo: sempre ESSERE + accordo',
+        body: 'Tutti i verbi riflessivi, senza eccezione, formano il passato prossimo con <b>essere</b>, e il participio concorda con il soggetto.',
+        points: [
+          'Marco <b>si è alzato</b> · Anna <b>si è alzata</b>',
+          'I ragazzi <b>si sono alzati</b> · Le ragazze <b>si sono alzate</b>',
+          'Ordine fisso: pronome + essere + participio → "mi sono lavato", mai "sono mi lavato".'
+        ],
+        exception: 'Anche se il verbo di base userebbe avere ("ho lavato la macchina"), la versione riflessiva usa essere ("mi sono lavato").'
+      },
+      {
+        title: 'Con i verbi modali il pronome ha due case',
+        body: 'Come hai visto nella lezione 4, con dovere/potere/volere puoi scegliere.',
+        points: [
+          '<b>Mi</b> voglio riposare. = Voglio riposar<b>mi</b>.',
+          '<b>Ci</b> dobbiamo svegliare presto. = Dobbiamo svegliar<b>ci</b> presto.',
+          'Attaccando il pronome, l\'infinito perde la -e: riposare + mi → riposarmi.',
+          'Al passato la scelta decide l\'ausiliare: "<b>Mi sono</b> dovuto alzare" / "<b>Ho</b> dovuto alzar<b>mi</b>".'
+        ],
+        exception: 'Con stare + gerundio il pronome può stare prima ("Mi sto vestendo") o attaccato al gerundio ("Sto vestendomi"). Entrambe corrette, la prima è più comune.'
+      }
+    ],
+
+    timeline: {
+      title: 'Una giornata tipo con i riflessivi',
+      intro: 'I verbi riflessivi raccontano la giornata dall\'inizio alla fine.',
+      points: [
+        { time: '07:00', label: 'Mi sveglio', example: 'Mi sveglio con la sveglia.', note: 'to wake up' },
+        { time: '07:10', label: 'Mi alzo', example: 'Mi alzo subito dopo.', note: 'to get up' },
+        { time: '07:30', label: 'Mi lavo e mi vesto', example: 'Mi lavo i denti e mi vesto.', now: true },
+        { time: '23:00', label: 'Mi addormento', example: 'Mi addormento verso le undici.', note: 'to fall asleep' }
+      ],
+      caption: 'Svegliarsi (aprire gli occhi) ≠ alzarsi (uscire dal letto). Gli italiani distinguono le due cose.'
+    },
+
+    tables: [
+      {
+        title: 'Alzarsi — presente indicativo',
+        note: 'Il pronome cambia, il verbo si coniuga normalmente.',
+        columns: ['Persona', 'Pronome', 'Forma completa', 'Inglese'],
+        rows: [
+          { cells: ['io', 'mi', 'mi alzo', 'I get up'], irregular: [1] },
+          { cells: ['tu', 'ti', 'ti alzi', 'you get up'], irregular: [1] },
+          { cells: ['lui / lei', 'si', 'si alza', 'he/she gets up'], irregular: [1] },
+          { cells: ['noi', 'ci', 'ci alziamo', 'we get up'], irregular: [1] },
+          { cells: ['voi', 'vi', 'vi alzate', 'you (pl.) get up'], irregular: [1] },
+          { cells: ['loro', 'si', 'si alzano', 'they get up'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Passato prossimo — sempre con essere, participio concordato',
+        columns: ['Soggetto', 'Frase', 'Finale'],
+        rows: [
+          { cells: ['io (uomo)', 'mi sono alzato', '-o'], irregular: [2] },
+          { cells: ['io (donna)', 'mi sono alzata', '-a'], irregular: [2] },
+          { cells: ['tu (uomo)', 'ti sei alzato', '-o'] },
+          { cells: ['lei', 'si è alzata', '-a'], irregular: [2] },
+          { cells: ['noi (misto)', 'ci siamo alzati', '-i'], irregular: [2] },
+          { cells: ['voi (donne)', 'vi siete alzate', '-e'], irregular: [2] },
+          { cells: ['loro (uomini)', 'si sono alzati', '-i'] }
+        ]
+      },
+      {
+        title: 'I 20 riflessivi più usati',
+        note: 'Impara prima quelli della routine: coprono l\'80% delle conversazioni.',
+        columns: ['Infinito', 'Significato', 'Esempio'],
+        rows: [
+          { cells: ['chiamarsi', 'to be called', 'Mi chiamo Saman.'] },
+          { cells: ['svegliarsi', 'to wake up', 'Mi sveglio alle sette.'] },
+          { cells: ['alzarsi', 'to get up', 'Mi alzo subito.'] },
+          { cells: ['lavarsi', 'to wash oneself', 'Mi lavo le mani.'] },
+          { cells: ['vestirsi', 'to get dressed', 'Mi vesto in fretta.'] },
+          { cells: ['prepararsi', 'to get ready', 'Mi preparo per uscire.'] },
+          { cells: ['pettinarsi', 'to comb one\'s hair', 'Si pettina allo specchio.'] },
+          { cells: ['farsi la doccia', 'to take a shower', 'Mi faccio la doccia.'] },
+          { cells: ['sedersi', 'to sit down', 'Ci sediamo qui?'] },
+          { cells: ['riposarsi', 'to rest', 'Mi riposo un po\'.'] },
+          { cells: ['divertirsi', 'to have fun', 'Ci siamo divertiti molto!'] },
+          { cells: ['annoiarsi', 'to get bored', 'Mi annoio a casa.'] },
+          { cells: ['arrabbiarsi', 'to get angry', 'Si arrabbia facilmente.'] },
+          { cells: ['sentirsi', 'to feel', 'Come ti senti?'] },
+          { cells: ['ricordarsi (di)', 'to remember', 'Ti ricordi di me?'] },
+          { cells: ['dimenticarsi (di)', 'to forget', 'Mi sono dimenticato le chiavi.'] },
+          { cells: ['innamorarsi (di)', 'to fall in love', 'Si è innamorato di lei.'] },
+          { cells: ['sposarsi', 'to get married', 'Si sposano a giugno.'] },
+          { cells: ['fermarsi', 'to stop', 'Il treno si ferma qui.'] },
+          { cells: ['addormentarsi', 'to fall asleep', 'Mi addormento tardi.'] }
+        ]
+      },
+      {
+        title: 'Reciproci: l\'azione va da una persona all\'altra',
+        note: 'Solo al plurale: ci, vi, si.',
+        columns: ['Frase', 'Significato', 'Nota'],
+        rows: [
+          { cells: ['Ci vediamo domani!', 'See you tomorrow!', 'la frase di saluto più usata'] },
+          { cells: ['Ci sentiamo presto.', 'We\'ll be in touch soon.', 'per telefono / messaggi'] },
+          { cells: ['Vi conoscete?', 'Do you know each other?', 'presentazioni'] },
+          { cells: ['Si sono sposati l\'anno scorso.', 'They got married last year.', 'passato con essere'] },
+          { cells: ['Ci siamo incontrati al bar.', 'We met at the bar.', 'incontrarsi = to meet'] },
+          { cells: ['Si aiutano sempre.', 'They always help each other.', 'reciprocità'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Mi chiamo Saman, e tu come ti chiami?', literal: 'Myself I-call Saman, and you how yourself you-call?', natural: "My name is Saman, and what's your name?", note: 'chiamarsi = letteralmente "chiamare se stessi".' },
+      { it: 'Mi sveglio alle sette, ma mi alzo alle sette e mezza.', literal: 'Myself I-wake at-the seven, but myself I-lift at seven and half.', natural: 'I wake up at seven but I get up at half past seven.', note: 'Due verbi diversi: svegliarsi (aprire gli occhi) e alzarsi (uscire dal letto).' },
+      { it: 'Ti lavi le mani prima di mangiare?', literal: 'Yourself you-wash the hands before of to-eat?', natural: 'Do you wash your hands before eating?', note: 'Con le parti del corpo niente possessivo: "le mani", non "le tue mani".' },
+      { it: 'Marco si veste sempre elegante.', literal: 'Marco himself dresses always elegant.', natural: 'Marco always dresses elegantly.', note: 'lui/lei → si.' },
+      { it: 'Ci svegliamo presto ogni mattina.', literal: 'Ourselves we-wake early every morning.', natural: 'We wake up early every morning.', note: 'noi → ci + verbo in -iamo.' },
+      { it: 'A che ora vi alzate il sabato?', literal: 'At what hour yourselves you-get-up the Saturday?', natural: 'What time do you get up on Saturdays?', note: 'voi → vi.' },
+      { it: 'I bambini si addormentano alle nove.', literal: 'The children themselves fall-asleep at-the nine.', natural: 'The children fall asleep at nine.', note: 'loro → si (uguale al singolare).' },
+      { it: 'Non mi ricordo il suo nome.', literal: 'Not myself I-remember the his name.', natural: "I don't remember his name.", note: 'NON viene prima del pronome riflessivo.' },
+      { it: 'Come ti senti oggi? — Mi sento meglio.', literal: 'How yourself you-feel today? Myself I-feel better.', natural: 'How do you feel today? — I feel better.', note: 'sentirsi = to feel (stato personale); sentire = to hear.' },
+      { it: 'Mi sono alzato tardi stamattina.', literal: 'Myself I-am gotten-up late this-morning.', natural: 'I got up late this morning.', note: 'Passato: pronome + essere + participio. Parla un uomo.' },
+      { it: 'Anna si è svegliata alle sei.', literal: 'Anna herself is woken at-the six.', natural: 'Anna woke up at six.', note: 'Il participio concorda: Anna → svegliata.' },
+      { it: 'Ci siamo divertiti moltissimo alla festa.', literal: 'Ourselves we-are amused very-much at-the party.', natural: 'We had a great time at the party.', note: 'divertirsi è pronominale: non c\'è un vero "riflesso", ma funziona uguale.' },
+      { it: 'Le ragazze si sono preparate in dieci minuti.', literal: 'The girls themselves are prepared in ten minutes.', natural: 'The girls got ready in ten minutes.', note: 'Femminile plurale → preparate.' },
+      { it: 'Devo alzarmi presto domani.', literal: 'I-must to-get-up-myself early tomorrow.', natural: 'I have to get up early tomorrow.', note: 'Con il modale il pronome si attacca all\'infinito (o va prima: "Mi devo alzare").' },
+      { it: 'Mi sto preparando, arrivo tra cinque minuti.', literal: 'Myself I-am preparing, I-arrive within five minutes.', natural: "I'm getting ready, I'll be there in five minutes.", note: 'Con stare + gerundio il pronome va prima: mi sto preparando.' },
+      { it: 'Ci vediamo domani sera!', literal: 'Ourselves we-see tomorrow evening!', natural: 'See you tomorrow evening!', note: 'Uso reciproco: l\'uno vede l\'altro. È il saluto italiano più comune.' },
+      { it: 'Si sono conosciuti all\'università.', literal: 'Themselves they-are known at-the university.', natural: 'They met at university.', note: 'Reciproco: conoscersi = to meet each other.' },
+      { it: 'Mi sono dimenticato di comprare il latte.', literal: 'Myself I-am forgotten of to-buy the milk.', natural: 'I forgot to buy the milk.', note: 'dimenticarsi DI + infinito (lezione 9).' },
+      { it: 'Perché ti arrabbi sempre?', literal: 'Why yourself you-get-angry always?', natural: 'Why do you always get angry?', note: 'arrabbiarsi = to get angry: senza pronome il verbo non esiste.' },
+      { it: 'Il treno si ferma a tutte le stazioni.', literal: 'The train itself stops at all the stations.', natural: 'The train stops at every station.', note: 'Anche gli oggetti possono avere verbi riflessivi: fermarsi = to stop.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Alzo alle sette.', right: 'Mi alzo alle sette.', why: 'Senza il pronome, "alzo" significa "sollevo qualcosa". Il pronome riflessivo è obbligatorio.' },
+      { wrong: 'Io alzo mi presto.', right: 'Io mi alzo presto.', why: 'Il pronome sta prima del verbo coniugato, non dopo.' },
+      { wrong: 'Ho alzato alle sette.', right: 'Mi sono alzato alle sette.', why: 'Al passato i riflessivi usano SEMPRE essere, mai avere.' },
+      { wrong: 'Anna si è alzato tardi.', right: 'Anna si è alzata tardi.', why: 'Con essere il participio concorda col soggetto: Anna → alzata.' },
+      { wrong: 'Mi lavo le mie mani.', right: 'Mi lavo le mani.', why: 'Con le parti del corpo l\'italiano non usa il possessivo: il pronome riflessivo dice già di chi sono.' },
+      { wrong: 'Sono mi svegliato alle otto.', right: 'Mi sono svegliato alle otto.', why: 'L\'ordine è fisso: pronome + ausiliare + participio.' },
+      { wrong: 'Ci siamo divertito molto.', right: 'Ci siamo divertiti molto.', why: 'Il soggetto è plurale (noi) → participio plurale.' },
+      { wrong: 'Devo mi alzare presto.', right: 'Devo alzarmi presto. / Mi devo alzare presto.', why: 'Il pronome o sta prima del modale o si attacca all\'infinito, mai in mezzo.' },
+      { wrong: 'Come senti oggi?', right: 'Come ti senti oggi?', why: 'sentirsi (to feel) ha bisogno del pronome; "sentire" senza pronome significa "to hear".' }
+    ],
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Io ___ alzo alle sette.»', options: ['mi', 'ti', 'si', 'ci'], answer: 0, hint: 'io → ?', why: 'io → mi.' },
+        { q: 'Completa: «Noi ___ svegliamo presto.»', options: ['mi', 'vi', 'ci', 'si'], answer: 2, hint: 'noi → ?', why: 'noi → ci.' },
+        { q: 'Completa: «Loro ___ divertono sempre.»', options: ['ci', 'vi', 'si', 'ti'], answer: 2, hint: 'loro usa lo stesso pronome di lui/lei', why: 'loro → si.' },
+        { q: 'Passato prossimo: «Anna ___ alzata tardi.»', options: ['ha', 'si è', 'è si', 'si ha'], answer: 1, hint: 'riflessivo → essere', why: 'Ordine: si + è + participio concordato.' },
+        { q: 'Quale frase è corretta?', options: ['Ho alzato presto.', 'Sono alzato presto.', 'Mi sono alzato presto.', 'Mi ho alzato presto.'], answer: 2, hint: 'servono pronome + essere', why: 'I riflessivi usano essere e il pronome.' },
+        { q: 'Come si dice "My name is Anna"?', options: ['Io sono chiamata Anna.', 'Mi chiamo Anna.', 'Chiamo Anna.', 'Ho nome Anna.'], answer: 1, hint: 'chiamarsi', why: 'chiamarsi = to be called.' },
+        { q: '«Mi lavo ___ mani.»', options: ['le mie', 'le', 'mie', 'i miei'], answer: 1, hint: 'niente possessivo con le parti del corpo', why: 'Il riflessivo dice già di chi sono le mani.' },
+        { q: 'Quale verbo NON è riflessivo?', options: ['svegliarsi', 'divertirsi', 'mangiare', 'arrabbiarsi'], answer: 2, hint: 'guarda la finale -si', why: 'mangiare non finisce in -si.' },
+        { q: 'Con un modale: «___ devo svegliare presto» oppure…', options: ['Devo svegliarmi presto.', 'Devo mi svegliare presto.', 'Devo svegliare mi presto.', 'Mi devo svegliarmi presto.'], answer: 0, hint: 'il pronome si attacca all\'infinito', why: 'Le due forme corrette sono "Mi devo svegliare" e "Devo svegliarmi".' },
+        { q: 'Completa: «I ragazzi si sono ___ molto.» (divertirsi)', options: ['divertito', 'divertiti', 'divertite', 'divertita'], answer: 1, hint: 'maschile plurale', why: 'Accordo col soggetto plurale maschile → divertiti.' }
+      ],
+      fill: [
+        { before: 'Io', after: 'sveglio alle sei.', answers: ['mi'], en: 'I wake up at six.' },
+        { before: 'Tu come', after: 'chiami?', answers: ['ti'], en: 'What is your name?' },
+        { before: 'Marco', after: 'veste elegante.', answers: ['si'], en: 'Marco dresses elegantly.' },
+        { before: 'Noi', after: 'divertiamo insieme.', answers: ['ci'], en: 'We have fun together.' },
+        { before: 'Voi a che ora', after: 'alzate?', answers: ['vi'], en: 'What time do you get up?' },
+        { before: 'Ieri Anna si è', after: 'tardi. (alzarsi)', answers: ['alzata'], en: 'Yesterday Anna got up late.', hint: 'accordo femminile' },
+        { before: 'Noi ci', after: 'divertiti alla festa.', answers: ['siamo'], en: 'We had fun at the party.', hint: 'ausiliare essere' },
+        { before: 'Non mi', after: 'il tuo nome. (ricordarsi)', answers: ['ricordo'], en: "I don't remember your name." },
+        { before: 'Devo', after: 'presto domani. (alzarsi)', answers: ['alzarmi'], en: 'I have to get up early tomorrow.', hint: 'pronome attaccato all\'infinito' },
+        { before: 'Come', after: 'senti oggi?', answers: ['ti'], en: 'How do you feel today?' }
+      ],
+      order: [
+        { words: ['Mi', 'alzo', 'alle', 'sette'], answer: 'Mi alzo alle sette', en: 'I get up at seven.' },
+        { words: ['Come', 'ti', 'chiami'], answer: 'Come ti chiami', en: 'What is your name?' },
+        { words: ['Anna', 'si', 'è', 'svegliata', 'tardi'], answer: 'Anna si è svegliata tardi', en: 'Anna woke up late.' },
+        { words: ['Ci', 'siamo', 'divertiti', 'molto'], answer: 'Ci siamo divertiti molto', en: 'We had a lot of fun.' },
+        { words: ['Non', 'mi', 'ricordo', 'il', 'suo', 'nome'], answer: 'Non mi ricordo il suo nome', en: "I don't remember his name." },
+        { words: ['Devo', 'alzarmi', 'presto', 'domani'], answer: 'Devo alzarmi presto domani', en: 'I have to get up early tomorrow.' }
+      ],
+      dnd: {
+        instructions: 'La frase richiede il verbo riflessivo o quello normale? Trascina.',
+        buckets: [
+          { id: 'rifl', label: 'RIFLESSIVO (mi lavo)', icon: '🪞' },
+          { id: 'norm', label: 'NORMALE (lavo)', icon: '➡️' }
+        ],
+        items: [
+          { text: '___ le mani prima di mangiare.', bucket: 'rifl' },
+          { text: '___ la macchina ogni sabato.', bucket: 'norm' },
+          { text: '___ alle sette con la sveglia.', bucket: 'rifl' },
+          { text: '___ mio figlio alle sette.', bucket: 'norm' },
+          { text: '___ Saman, piacere!', bucket: 'rifl' },
+          { text: '___ Marco al telefono.', bucket: 'norm' },
+          { text: '___ elegante per la festa.', bucket: 'rifl' },
+          { text: '___ il bambino con i vestiti nuovi.', bucket: 'norm' }
+        ]
+      },
+      match: [
+        { a: 'chiamarsi', b: 'to be called' },
+        { a: 'svegliarsi', b: 'to wake up' },
+        { a: 'alzarsi', b: 'to get up' },
+        { a: 'vestirsi', b: 'to get dressed' },
+        { a: 'divertirsi', b: 'to have fun' },
+        { a: 'annoiarsi', b: 'to get bored' },
+        { a: 'arrabbiarsi', b: 'to get angry' },
+        { a: 'sentirsi', b: 'to feel' },
+        { a: 'addormentarsi', b: 'to fall asleep' },
+        { a: 'ricordarsi', b: 'to remember' }
+      ],
+      tf: [
+        { statement: 'I verbi riflessivi finiscono in -si all\'infinito.', answer: true, why: 'Sì: alzarsi, lavarsi, chiamarsi.' },
+        { statement: 'Al passato prossimo i riflessivi usano avere.', answer: false, why: 'No: usano sempre essere, con il participio concordato.' },
+        { statement: '«Mi lavo le mani» è corretto (senza possessivo).', answer: true, why: 'Sì: con le parti del corpo l\'italiano non usa il possessivo.' },
+        { statement: 'Il pronome "si" vale sia per lui/lei sia per loro.', answer: true, why: 'Esatto: si alza / si alzano.' },
+        { statement: '«Devo mi alzare» è corretto.', answer: false, why: 'No: "Mi devo alzare" o "Devo alzarmi".' },
+        { statement: '«Ci vediamo domani» è un uso reciproco.', answer: true, why: 'Sì: l\'uno vede l\'altro.' },
+        { statement: 'Svegliarsi e alzarsi significano la stessa cosa.', answer: false, why: 'No: svegliarsi = aprire gli occhi, alzarsi = uscire dal letto.' }
+      ],
+      translate: [
+        { en: 'My name is Marco.', answers: ['Mi chiamo Marco'] },
+        { en: 'I get up at seven.', answers: ['Mi alzo alle sette', 'Io mi alzo alle sette'] },
+        { en: 'What time do you wake up?', answers: ['A che ora ti svegli', 'A che ora si sveglia'] },
+        { en: 'We had a lot of fun.', answers: ['Ci siamo divertiti molto', 'Ci siamo divertite molto'] },
+        { en: 'Anna got up late.', answers: ['Anna si è alzata tardi'] },
+        { en: 'How do you feel?', answers: ['Come ti senti', 'Come si sente'] },
+        { en: 'See you tomorrow!', answers: ['Ci vediamo domani'] },
+        { en: 'I have to get up early.', answers: ['Devo alzarmi presto', 'Mi devo alzare presto'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — La mia giornata',
+      lines: [
+        { speaker: 'Anna', icon: '👩', it: 'A che ora ti svegli di solito?', en: 'What time do you usually wake up?',
+          glosses: [{ term: 'ti svegli', expl: 'svegliarsi, 2ª persona: ti + svegli.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Mi sveglio alle sei e mezza, ma mi alzo alle sette.', en: 'I wake up at half past six, but I get up at seven.',
+          glosses: [{ term: 'Mi sveglio', expl: 'aprire gli occhi.' }, { term: 'mi alzo', expl: 'uscire dal letto: due azioni diverse in italiano.' }] },
+        { speaker: 'Anna', icon: '👩', it: 'Presto! E poi? Ti fai la doccia subito?', en: 'Early! And then? Do you shower right away?',
+          glosses: [{ term: 'Ti fai la doccia', expl: 'farsi la doccia: riflessivo con fare.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Sì, mi faccio la doccia, mi lavo i denti e mi vesto in dieci minuti.', en: 'Yes, I shower, brush my teeth and get dressed in ten minutes.',
+          glosses: [{ term: 'mi lavo i denti', expl: 'Parti del corpo senza possessivo: "i denti", non "i miei denti".' }, { term: 'mi vesto', expl: 'vestirsi = to get dressed.' }] },
+        { speaker: 'Anna', icon: '👩', it: 'Io invece mi preparo lentamente. E ieri? Ti sei alzato presto?', en: 'I get ready slowly instead. And yesterday? Did you get up early?',
+          glosses: [{ term: 'mi preparo', expl: 'prepararsi = to get ready.' }, { term: 'Ti sei alzato', expl: 'Passato prossimo riflessivo: ti + sei + alzato (uomo).' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'No! Mi sono svegliato alle nove, mi sono dimenticato la sveglia.', en: "No! I woke up at nine, I forgot the alarm.",
+          glosses: [{ term: 'Mi sono svegliato', expl: 'Sempre essere con i riflessivi.' }, { term: 'mi sono dimenticato', expl: 'dimenticarsi: pronominale, anche al passato con essere.' }] },
+        { speaker: 'Anna', icon: '👩', it: 'Ahah! E ti sei arrabbiato?', en: 'Haha! And did you get angry?',
+          glosses: [{ term: 'ti sei arrabbiato', expl: 'arrabbiarsi = to get angry, passato con essere.' }] },
+        { speaker: 'Saman', icon: '🧑', side: 'right', it: 'Un po\'. Stasera devo addormentarmi presto. Ci sentiamo domani!', en: 'A bit. Tonight I have to fall asleep early. Talk to you tomorrow!',
+          glosses: [{ term: 'devo addormentarmi', expl: 'Modale + riflessivo: pronome attaccato all\'infinito.' }, { term: 'Ci sentiamo', expl: 'Uso reciproco: "we\'ll hear from each other" = talk soon.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'mi, ti, si, ci, vi, si', back: 'i pronomi riflessivi' },
+      { front: 'mi chiamo…', back: 'my name is…' },
+      { front: 'mi sveglio / mi alzo', back: 'I wake up / I get up', note: 'due azioni diverse!' },
+      { front: 'mi lavo / mi vesto', back: 'I wash / I get dressed' },
+      { front: 'mi sono alzato/a', back: 'I got up', note: 'riflessivi → sempre ESSERE' },
+      { front: 'ci siamo divertiti', back: 'we had fun' },
+      { front: 'divertirsi / annoiarsi', back: 'to have fun / to get bored' },
+      { front: 'arrabbiarsi', back: 'to get angry' },
+      { front: 'sentirsi', back: 'to feel', note: 'Come ti senti?' },
+      { front: 'ricordarsi di / dimenticarsi di', back: 'to remember / to forget' },
+      { front: 'Ci vediamo!', back: 'See you!', note: 'uso reciproco' },
+      { front: 'Devo alzarmi = Mi devo alzare', back: 'due posizioni, stesso senso' }
+    ],
+
+    summary: {
+      formula: '(Soggetto) + mi/ti/si/ci/vi/si + VERBO coniugato · Passato: pronome + ESSERE + participio concordato',
+      rules: [
+        'Infinito in -si: alzarsi, lavarsi, chiamarsi.',
+        'Pronomi: mi, ti, si, ci, vi, si — sempre prima del verbo coniugato.',
+        'Al passato prossimo l\'ausiliare è SEMPRE essere e il participio concorda col soggetto.',
+        'Con le parti del corpo niente possessivo: "Mi lavo le mani".',
+        'Con i modali: "Mi devo alzare" = "Devo alzarmi".',
+        'Usi reciproci al plurale: ci vediamo, ci sentiamo, si sono sposati.',
+        'Alcuni verbi cambiano senso col pronome: sentire→sentirsi, chiamare→chiamarsi, trovare→trovarsi.'
+      ],
+      tips: [
+        'Immagina uno specchio 🪞: il verbo parte dal soggetto e torna indietro. Se torna indietro, serve il pronome.',
+        'Passato prossimo riflessivo = ESSERE, sempre e comunque. Anche se il verbo normale userebbe avere.',
+        'Impara la giornata come una filastrocca: "mi sveglio, mi alzo, mi lavo, mi vesto, mi preparo, esco". Sei già a metà dell\'A2.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

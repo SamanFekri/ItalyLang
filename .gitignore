@@ -1,0 +1,62 @@
+# ── Claude Code / AI tooling ────────────────────────────────────────────────
+.claude/
+.claude-*
+CLAUDE.local.md
+graphify-out/
+
+# ── Node ────────────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.node_repl_history
+*.tsbuildinfo
+
+# ── Environment / secrets ───────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ── Build & deploy output ───────────────────────────────────────────────────
+dist/
+build/
+.cache/
+.parcel-cache/
+.vercel/
+.netlify/
+.firebase/
+
+# ── Editors & IDEs ──────────────────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+.idea/
+*.swp
+*.swo
+*~
+
+# ── macOS ───────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ── Windows / Linux ─────────────────────────────────────────────────────────
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.directory
+
+# ── Logs & temp ─────────────────────────────────────────────────────────────
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak

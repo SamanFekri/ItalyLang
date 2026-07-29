@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Le 200 parole italiane più importanti con traduzione in inglese e in farsi (فارسی), esempi, audio, flashcard e quiz.">
+  <title>200 Parole + فارسی · Italiano A2</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'A2';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/wordbank.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     LEZIONE 16 — LE 200 PAROLE PIÙ IMPORTANTI
+     Ogni voce: italiano · inglese · farsi (فارسی) · esempio
+     pos: m. = maschile · f. = femminile · agg. = aggettivo · avv. = avverbio
+     ========================================================================== */
+  window.WORDBANK = {
+    num: 16, file: '16-vocabolario-200.html', icon: '🇮🇷',
+    title: '200 Parole Essenziali',
+    subtitle: 'Le duecento parole che coprono la maggior parte dell\'italiano quotidiano, con significato in inglese e in farsi (فارسی).',
+    introTitle: 'Come usare queste 200 parole',
+    intro: 'Queste parole sono scelte per <b>frequenza d\'uso</b>: sono quelle che sentirai davvero ogni giorno in Italia. Ogni scheda dà l\'italiano, l\'inglese, il farsi (فارسی) e una frase d\'esempio. Studia <b>una categoria alla volta</b>, poi passa al quiz: le domande usano il farsi come risposta, così alleni il collegamento diretto tra le due lingue senza passare dall\'inglese.',
+    showFarsi: true,
+    searchPlaceholder: 'Cerca in italiano, inglese o فارسی…',
+
+    categories: [
+      { id: 'persone',  label: 'Persone e famiglia',  icon: '👨‍👩‍👧' },
+      { id: 'casa',     label: 'Casa e oggetti',      icon: '🏠' },
+      { id: 'cibo',     label: 'Cibo e bevande',      icon: '🍝' },
+      { id: 'tempo',    label: 'Tempo e calendario',  icon: '🕐' },
+      { id: 'luoghi',   label: 'Luoghi e città',      icon: '🏙️' },
+      { id: 'corpo',    label: 'Corpo e salute',      icon: '🩺' },
+      { id: 'vestiti',  label: 'Vestiti e acquisti',  icon: '👕' },
+      { id: 'lavoro',   label: 'Lavoro e scuola',     icon: '💼' },
+      { id: 'natura',   label: 'Natura e meteo',      icon: '🌤️' },
+      { id: 'agg',      label: 'Aggettivi',           icon: '✨' },
+      { id: 'connett',  label: 'Parole di legame',    icon: '🔗' },
+      { id: 'espr',     label: 'Espressioni utili',   icon: '💬' }
+    ],
+
+    words: [
+      /* ── 1. PERSONE E FAMIGLIA (20) ─────────────────────────────────── */
+      { it: 'uomo', en: 'man', fa: 'مرد', cat: 'persone', pos: 'm.', ex: 'Quell\'uomo è mio zio.' },
+      { it: 'donna', en: 'woman', fa: 'زن', cat: 'persone', pos: 'f.', ex: 'La donna con il cappello è mia madre.' },
+      { it: 'bambino', en: 'child', fa: 'کودک / بچه', cat: 'persone', pos: 'm.', ex: 'I bambini giocano in giardino.' },
+      { it: 'ragazzo', en: 'boy / young man', fa: 'پسر', cat: 'persone', pos: 'm.', ex: 'Quel ragazzo studia con me.' },
+      { it: 'ragazza', en: 'girl / young woman', fa: 'دختر', cat: 'persone', pos: 'f.', ex: 'La ragazza parla tre lingue.' },
+      { it: 'amico', en: 'friend', fa: 'دوست', cat: 'persone', pos: 'm.', ex: 'Esco con i miei amici.' },
+      { it: 'famiglia', en: 'family', fa: 'خانواده', cat: 'persone', pos: 'f.', ex: 'La mia famiglia vive in Iran.' },
+      { it: 'madre', en: 'mother', fa: 'مادر', cat: 'persone', pos: 'f.', ex: 'Mia madre cucina benissimo.' },
+      { it: 'padre', en: 'father', fa: 'پدر', cat: 'persone', pos: 'm.', ex: 'Mio padre lavora in banca.' },
+      { it: 'figlio', en: 'son', fa: 'پسر (فرزند)', cat: 'persone', pos: 'm.', ex: 'Hanno due figli.' },
+      { it: 'figlia', en: 'daughter', fa: 'دختر (فرزند)', cat: 'persone', pos: 'f.', ex: 'Sua figlia ha dieci anni.' },
+      { it: 'fratello', en: 'brother', fa: 'برادر', cat: 'persone', pos: 'm.', ex: 'Mio fratello abita a Roma.' },
+      { it: 'sorella', en: 'sister', fa: 'خواهر', cat: 'persone', pos: 'f.', ex: 'Ho una sorella più grande.' },
+      { it: 'nonno', en: 'grandfather', fa: 'پدربزرگ', cat: 'persone', pos: 'm.', ex: 'Vado a trovare mio nonno.' },
+      { it: 'nonna', en: 'grandmother', fa: 'مادربزرگ', cat: 'persone', pos: 'f.', ex: 'La nonna fa il pane in casa.' },
+      { it: 'marito', en: 'husband', fa: 'شوهر', cat: 'persone', pos: 'm.', ex: 'Suo marito è insegnante.' },
+      { it: 'moglie', en: 'wife', fa: 'همسر (زن)', cat: 'persone', pos: 'f.', ex: 'Mia moglie arriva domani.' },
+      { it: 'persona', en: 'person', fa: 'شخص', cat: 'persone', pos: 'f.', ex: 'È una persona molto gentile.' },
+      { it: 'gente', en: 'people', fa: 'مردم', cat: 'persone', pos: 'f.', ex: 'C\'è troppa gente qui.' },
+      { it: 'nome', en: 'name', fa: 'اسم', cat: 'persone', pos: 'm.', ex: 'Come si scrive il tuo nome?' },
+
+      /* ── 2. CASA E OGGETTI (20) ─────────────────────────────────────── */
+      { it: 'casa', en: 'house / home', fa: 'خانه', cat: 'casa', pos: 'f.', ex: 'Torno a casa alle sette.' },
+      { it: 'porta', en: 'door', fa: 'در', cat: 'casa', pos: 'f.', ex: 'Chiudi la porta, per favore.' },
+      { it: 'finestra', en: 'window', fa: 'پنجره', cat: 'casa', pos: 'f.', ex: 'Apri la finestra, fa caldo.' },
+      { it: 'tavolo', en: 'table', fa: 'میز', cat: 'casa', pos: 'm.', ex: 'Le chiavi sono sul tavolo.' },
+      { it: 'sedia', en: 'chair', fa: 'صندلی', cat: 'casa', pos: 'f.', ex: 'Prendi una sedia e siediti.' },
+      { it: 'letto', en: 'bed', fa: 'تخت', cat: 'casa', pos: 'm.', ex: 'Vado a letto presto.' },
+      { it: 'cucina', en: 'kitchen', fa: 'آشپزخانه', cat: 'casa', pos: 'f.', ex: 'La cucina è piccola ma comoda.' },
+      { it: 'bagno', en: 'bathroom', fa: 'حمام / دستشویی', cat: 'casa', pos: 'm.', ex: 'Scusi, dov\'è il bagno?' },
+      { it: 'camera', en: 'room / bedroom', fa: 'اتاق', cat: 'casa', pos: 'f.', ex: 'Ho prenotato una camera doppia.' },
+      { it: 'chiave', en: 'key', fa: 'کلید', cat: 'casa', pos: 'f.', ex: 'Ho perso le chiavi di casa.' },
+      { it: 'telefono', en: 'phone', fa: 'تلفن', cat: 'casa', pos: 'm.', ex: 'Il mio telefono è scarico.' },
+      { it: 'computer', en: 'computer', fa: 'کامپیوتر', cat: 'casa', pos: 'm.', ex: 'Lavoro tutto il giorno al computer.' },
+      { it: 'libro', en: 'book', fa: 'کتاب', cat: 'casa', pos: 'm.', ex: 'Sto leggendo un libro italiano.' },
+      { it: 'penna', en: 'pen', fa: 'خودکار', cat: 'casa', pos: 'f.', ex: 'Mi presti una penna?' },
+      { it: 'borsa', en: 'bag', fa: 'کیف', cat: 'casa', pos: 'f.', ex: 'La borsa è sulla sedia.' },
+      { it: 'macchina', en: 'car / machine', fa: 'ماشین', cat: 'casa', pos: 'f.', ex: 'Vado al lavoro in macchina.' },
+      { it: 'specchio', en: 'mirror', fa: 'آینه', cat: 'casa', pos: 'm.', ex: 'Si guarda allo specchio.' },
+      { it: 'orologio', en: 'watch / clock', fa: 'ساعت (مچی)', cat: 'casa', pos: 'm.', ex: 'Il mio orologio è avanti.' },
+      { it: 'televisione', en: 'television', fa: 'تلویزیون', cat: 'casa', pos: 'f.', ex: 'Guardiamo la televisione dopo cena.' },
+      { it: 'giardino', en: 'garden', fa: 'باغ / حیاط', cat: 'casa', pos: 'm.', ex: 'I bambini giocano in giardino.' },
+
+      /* ── 3. CIBO E BEVANDE (25) ─────────────────────────────────────── */
+      { it: 'pane', en: 'bread', fa: 'نان', cat: 'cibo', pos: 'm.', ex: 'Compro il pane ogni mattina.' },
+      { it: 'acqua', en: 'water', fa: 'آب', cat: 'cibo', pos: 'f.', ex: 'Un bicchiere d\'acqua, per favore.' },
+      { it: 'vino', en: 'wine', fa: 'شراب', cat: 'cibo', pos: 'm.', ex: 'Vuoi un bicchiere di vino rosso?' },
+      { it: 'birra', en: 'beer', fa: 'آبجو', cat: 'cibo', pos: 'f.', ex: 'Prendiamo una birra fredda.' },
+      { it: 'caffè', en: 'coffee', fa: 'قهوه', cat: 'cibo', pos: 'm.', ex: 'Bevo tre caffè al giorno.' },
+      { it: 'tè', en: 'tea', fa: 'چای', cat: 'cibo', pos: 'm.', ex: 'Preferisco il tè al caffè.' },
+      { it: 'latte', en: 'milk', fa: 'شیر', cat: 'cibo', pos: 'm.', ex: 'Il latte è finito.' },
+      { it: 'formaggio', en: 'cheese', fa: 'پنیر', cat: 'cibo', pos: 'm.', ex: 'Questo formaggio è ottimo.' },
+      { it: 'carne', en: 'meat', fa: 'گوشت', cat: 'cibo', pos: 'f.', ex: 'Non mangio molta carne.' },
+      { it: 'pollo', en: 'chicken', fa: 'مرغ', cat: 'cibo', pos: 'm.', ex: 'Stasera faccio il pollo al forno.' },
+      { it: 'pesce', en: 'fish', fa: 'ماهی', cat: 'cibo', pos: 'm.', ex: 'Al mare mangiamo sempre pesce.' },
+      { it: 'riso', en: 'rice', fa: 'برنج', cat: 'cibo', pos: 'm.', ex: 'In Iran si mangia molto riso.' },
+      { it: 'pasta', en: 'pasta', fa: 'پاستا / ماکارونی', cat: 'cibo', pos: 'f.', ex: 'La pasta è pronta!' },
+      { it: 'pizza', en: 'pizza', fa: 'پیتزا', cat: 'cibo', pos: 'f.', ex: 'Ordiniamo due pizze margherita.' },
+      { it: 'verdura', en: 'vegetables', fa: 'سبزیجات', cat: 'cibo', pos: 'f.', ex: 'Mangia più verdura!' },
+      { it: 'frutta', en: 'fruit', fa: 'میوه', cat: 'cibo', pos: 'f.', ex: 'La frutta di stagione costa meno.' },
+      { it: 'mela', en: 'apple', fa: 'سیب', cat: 'cibo', pos: 'f.', ex: 'Mangio una mela ogni giorno.' },
+      { it: 'arancia', en: 'orange', fa: 'پرتقال', cat: 'cibo', pos: 'f.', ex: 'Vorrei un succo di arancia.' },
+      { it: 'patata', en: 'potato', fa: 'سیب‌زمینی', cat: 'cibo', pos: 'f.', ex: 'Le patate al forno sono buonissime.' },
+      { it: 'pomodoro', en: 'tomato', fa: 'گوجه‌فرنگی', cat: 'cibo', pos: 'm.', ex: 'Una insalata di pomodori, grazie.' },
+      { it: 'uovo', en: 'egg', fa: 'تخم‌مرغ', cat: 'cibo', pos: 'm.', ex: 'Faccio due uova per colazione.' },
+      { it: 'zucchero', en: 'sugar', fa: 'شکر', cat: 'cibo', pos: 'm.', ex: 'Prendo il caffè senza zucchero.' },
+      { it: 'sale', en: 'salt', fa: 'نمک', cat: 'cibo', pos: 'm.', ex: 'Manca il sale nella pasta.' },
+      { it: 'olio', en: 'oil', fa: 'روغن', cat: 'cibo', pos: 'm.', ex: 'Usiamo olio d\'oliva.' },
+      { it: 'dolce', en: 'dessert / sweet', fa: 'دسر / شیرینی', cat: 'cibo', pos: 'm.', ex: 'Prendiamo un dolce dopo cena?' },
+
+      /* ── 4. TEMPO E CALENDARIO (18) ─────────────────────────────────── */
+      { it: 'tempo', en: 'time / weather', fa: 'زمان / هوا', cat: 'tempo', pos: 'm.', ex: 'Non ho tempo oggi.' },
+      { it: 'giorno', en: 'day', fa: 'روز', cat: 'tempo', pos: 'm.', ex: 'Lavoro cinque giorni a settimana.' },
+      { it: 'notte', en: 'night', fa: 'شب', cat: 'tempo', pos: 'f.', ex: 'Ho dormito male questa notte.' },
+      { it: 'mattina', en: 'morning', fa: 'صبح', cat: 'tempo', pos: 'f.', ex: 'La mattina bevo un caffè.' },
+      { it: 'pomeriggio', en: 'afternoon', fa: 'بعدازظهر', cat: 'tempo', pos: 'm.', ex: 'Ci vediamo nel pomeriggio.' },
+      { it: 'sera', en: 'evening', fa: 'عصر / شب', cat: 'tempo', pos: 'f.', ex: 'Domani sera esco con amici.' },
+      { it: 'settimana', en: 'week', fa: 'هفته', cat: 'tempo', pos: 'f.', ex: 'La settimana scorsa ero a Roma.' },
+      { it: 'mese', en: 'month', fa: 'ماه', cat: 'tempo', pos: 'm.', ex: 'Il mese prossimo cambio casa.' },
+      { it: 'anno', en: 'year', fa: 'سال', cat: 'tempo', pos: 'm.', ex: 'Studio italiano da un anno.' },
+      { it: 'ora', en: 'hour / time (clock)', fa: 'ساعت', cat: 'tempo', pos: 'f.', ex: 'Che ora è?' },
+      { it: 'oggi', en: 'today', fa: 'امروز', cat: 'tempo', pos: 'avv.', ex: 'Oggi è lunedì.' },
+      { it: 'domani', en: 'tomorrow', fa: 'فردا', cat: 'tempo', pos: 'avv.', ex: 'Domani parto per Milano.' },
+      { it: 'ieri', en: 'yesterday', fa: 'دیروز', cat: 'tempo', pos: 'avv.', ex: 'Ieri ho lavorato molto.' },
+      { it: 'adesso', en: 'now', fa: 'الان', cat: 'tempo', pos: 'avv.', ex: 'Adesso non posso parlare.' },
+      { it: 'sempre', en: 'always', fa: 'همیشه', cat: 'tempo', pos: 'avv.', ex: 'Arrivo sempre in ritardo.' },
+      { it: 'mai', en: 'never', fa: 'هرگز', cat: 'tempo', pos: 'avv.', ex: 'Non sono mai stato in Giappone.' },
+      { it: 'presto', en: 'early / soon', fa: 'زود', cat: 'tempo', pos: 'avv.', ex: 'Mi alzo presto la mattina.' },
+      { it: 'tardi', en: 'late', fa: 'دیر', cat: 'tempo', pos: 'avv.', ex: 'Ieri siamo tornati tardi.' },
+
+      /* ── 5. LUOGHI E CITTÀ (20) ─────────────────────────────────────── */
+      { it: 'città', en: 'city', fa: 'شهر', cat: 'luoghi', pos: 'f.', ex: 'Milano è una città grande.' },
+      { it: 'paese', en: 'country / village', fa: 'کشور / روستا', cat: 'luoghi', pos: 'm.', ex: 'Vengo da un paese piccolo.' },
+      { it: 'strada', en: 'street / road', fa: 'خیابان / جاده', cat: 'luoghi', pos: 'f.', ex: 'Attraversa la strada con attenzione.' },
+      { it: 'piazza', en: 'square', fa: 'میدان', cat: 'luoghi', pos: 'f.', ex: 'Ci vediamo in piazza alle sei.' },
+      { it: 'negozio', en: 'shop', fa: 'مغازه', cat: 'luoghi', pos: 'm.', ex: 'Il negozio chiude alle otto.' },
+      { it: 'supermercato', en: 'supermarket', fa: 'سوپرمارکت', cat: 'luoghi', pos: 'm.', ex: 'Vado al supermercato a fare la spesa.' },
+      { it: 'mercato', en: 'market', fa: 'بازار', cat: 'luoghi', pos: 'm.', ex: 'Il mercato c\'è il sabato mattina.' },
+      { it: 'ristorante', en: 'restaurant', fa: 'رستوران', cat: 'luoghi', pos: 'm.', ex: 'Conosci un buon ristorante?' },
+      { it: 'bar', en: 'café / bar', fa: 'کافه', cat: 'luoghi', pos: 'm.', ex: 'Faccio colazione al bar.' },
+      { it: 'scuola', en: 'school', fa: 'مدرسه', cat: 'luoghi', pos: 'f.', ex: 'I bambini vanno a scuola alle otto.' },
+      { it: 'università', en: 'university', fa: 'دانشگاه', cat: 'luoghi', pos: 'f.', ex: 'Studio all\'università di Bologna.' },
+      { it: 'ospedale', en: 'hospital', fa: 'بیمارستان', cat: 'luoghi', pos: 'm.', ex: 'L\'ospedale è vicino alla stazione.' },
+      { it: 'farmacia', en: 'pharmacy', fa: 'داروخانه', cat: 'luoghi', pos: 'f.', ex: 'Vado in farmacia a comprare le medicine.' },
+      { it: 'banca', en: 'bank', fa: 'بانک', cat: 'luoghi', pos: 'f.', ex: 'La banca apre alle nove.' },
+      { it: 'ufficio', en: 'office', fa: 'دفتر / اداره', cat: 'luoghi', pos: 'm.', ex: 'Il mio ufficio è in centro.' },
+      { it: 'stazione', en: 'station', fa: 'ایستگاه', cat: 'luoghi', pos: 'f.', ex: 'Ci vediamo alla stazione.' },
+      { it: 'aeroporto', en: 'airport', fa: 'فرودگاه', cat: 'luoghi', pos: 'm.', ex: 'L\'aeroporto è lontano dal centro.' },
+      { it: 'albergo', en: 'hotel', fa: 'هتل', cat: 'luoghi', pos: 'm.', ex: 'Abbiamo prenotato un albergo economico.' },
+      { it: 'chiesa', en: 'church', fa: 'کلیسا', cat: 'luoghi', pos: 'f.', ex: 'La chiesa è del Quattrocento.' },
+      { it: 'museo', en: 'museum', fa: 'موزه', cat: 'luoghi', pos: 'm.', ex: 'Il museo è chiuso il lunedì.' },
+
+      /* ── 6. CORPO E SALUTE (15) ─────────────────────────────────────── */
+      { it: 'testa', en: 'head', fa: 'سر', cat: 'corpo', pos: 'f.', ex: 'Mi fa male la testa.' },
+      { it: 'occhio', en: 'eye', fa: 'چشم', cat: 'corpo', pos: 'm.', ex: 'Ha gli occhi verdi.' },
+      { it: 'mano', en: 'hand', fa: 'دست', cat: 'corpo', pos: 'f.', ex: 'Lavati le mani prima di mangiare.' },
+      { it: 'piede', en: 'foot', fa: 'پا', cat: 'corpo', pos: 'm.', ex: 'Vado a piedi, non è lontano.' },
+      { it: 'braccio', en: 'arm', fa: 'بازو', cat: 'corpo', pos: 'm.', ex: 'Mi sono fatto male al braccio.' },
+      { it: 'gamba', en: 'leg', fa: 'پا (ساق)', cat: 'corpo', pos: 'f.', ex: 'Dopo la corsa mi fanno male le gambe.' },
+      { it: 'bocca', en: 'mouth', fa: 'دهان', cat: 'corpo', pos: 'f.', ex: 'Apri la bocca, per favore.' },
+      { it: 'naso', en: 'nose', fa: 'بینی', cat: 'corpo', pos: 'm.', ex: 'Ho il naso chiuso, sono raffreddato.' },
+      { it: 'orecchio', en: 'ear', fa: 'گوش', cat: 'corpo', pos: 'm.', ex: 'Mi fa male un orecchio.' },
+      { it: 'capelli', en: 'hair', fa: 'مو', cat: 'corpo', pos: 'm. pl.', ex: 'Ha i capelli neri e lunghi.' },
+      { it: 'cuore', en: 'heart', fa: 'قلب', cat: 'corpo', pos: 'm.', ex: 'Il cuore batte forte.' },
+      { it: 'stomaco', en: 'stomach', fa: 'معده', cat: 'corpo', pos: 'm.', ex: 'Ho mal di stomaco.' },
+      { it: 'dolore', en: 'pain', fa: 'درد', cat: 'corpo', pos: 'm.', ex: 'Sento un dolore alla schiena.' },
+      { it: 'medico', en: 'doctor', fa: 'پزشک / دکتر', cat: 'corpo', pos: 'm.', ex: 'Devo andare dal medico.' },
+      { it: 'medicina', en: 'medicine', fa: 'دارو', cat: 'corpo', pos: 'f.', ex: 'Prendi questa medicina due volte al giorno.' },
+
+      /* ── 7. VESTITI E ACQUISTI (12) ─────────────────────────────────── */
+      { it: 'vestito', en: 'dress / suit', fa: 'لباس', cat: 'vestiti', pos: 'm.', ex: 'Che bel vestito!' },
+      { it: 'camicia', en: 'shirt', fa: 'پیراهن', cat: 'vestiti', pos: 'f.', ex: 'Porto una camicia bianca.' },
+      { it: 'pantaloni', en: 'trousers', fa: 'شلوار', cat: 'vestiti', pos: 'm. pl.', ex: 'Questi pantaloni sono troppo stretti.' },
+      { it: 'scarpe', en: 'shoes', fa: 'کفش', cat: 'vestiti', pos: 'f. pl.', ex: 'Ho comprato scarpe nuove.' },
+      { it: 'giacca', en: 'jacket', fa: 'کت', cat: 'vestiti', pos: 'f.', ex: 'Metti la giacca, fa freddo.' },
+      { it: 'cappello', en: 'hat', fa: 'کلاه', cat: 'vestiti', pos: 'm.', ex: 'Con il sole porto sempre il cappello.' },
+      { it: 'gonna', en: 'skirt', fa: 'دامن', cat: 'vestiti', pos: 'f.', ex: 'Preferisco la gonna nera.' },
+      { it: 'prezzo', en: 'price', fa: 'قیمت', cat: 'vestiti', pos: 'm.', ex: 'Qual è il prezzo di questo?' },
+      { it: 'soldi', en: 'money', fa: 'پول', cat: 'vestiti', pos: 'm. pl.', ex: 'Non ho soldi con me.' },
+      { it: 'sconto', en: 'discount', fa: 'تخفیف', cat: 'vestiti', pos: 'm.', ex: 'Mi fa uno sconto?' },
+      { it: 'taglia', en: 'size (clothes)', fa: 'سایز', cat: 'vestiti', pos: 'f.', ex: 'Avete una taglia più grande?' },
+      { it: 'regalo', en: 'gift', fa: 'هدیه', cat: 'vestiti', pos: 'm.', ex: 'Cerco un regalo per mia sorella.' },
+
+      /* ── 8. LAVORO E SCUOLA (15) ────────────────────────────────────── */
+      { it: 'lavoro', en: 'work / job', fa: 'کار', cat: 'lavoro', pos: 'm.', ex: 'Che lavoro fai?' },
+      { it: 'lezione', en: 'lesson / class', fa: 'درس / کلاس', cat: 'lavoro', pos: 'f.', ex: 'La lezione comincia alle nove.' },
+      { it: 'studente', en: 'student', fa: 'دانشجو / دانش‌آموز', cat: 'lavoro', pos: 'm.', ex: 'Sono uno studente di ingegneria.' },
+      { it: 'insegnante', en: 'teacher', fa: 'معلم', cat: 'lavoro', pos: 'm./f.', ex: 'La nostra insegnante è molto brava.' },
+      { it: 'esame', en: 'exam', fa: 'امتحان', cat: 'lavoro', pos: 'm.', ex: 'Ho un esame la settimana prossima.' },
+      { it: 'compito', en: 'homework / task', fa: 'تکلیف', cat: 'lavoro', pos: 'm.', ex: 'I bambini fanno i compiti.' },
+      { it: 'riunione', en: 'meeting', fa: 'جلسه', cat: 'lavoro', pos: 'f.', ex: 'Alle tre ho una riunione.' },
+      { it: 'collega', en: 'colleague', fa: 'همکار', cat: 'lavoro', pos: 'm./f.', ex: 'Vado a pranzo con un collega.' },
+      { it: 'capo', en: 'boss', fa: 'رئیس', cat: 'lavoro', pos: 'm.', ex: 'Il mio capo è simpatico.' },
+      { it: 'stipendio', en: 'salary', fa: 'حقوق', cat: 'lavoro', pos: 'm.', ex: 'Lo stipendio arriva il 27.' },
+      { it: 'azienda', en: 'company', fa: 'شرکت', cat: 'lavoro', pos: 'f.', ex: 'Lavoro in un\'azienda di software.' },
+      { it: 'progetto', en: 'project', fa: 'پروژه', cat: 'lavoro', pos: 'm.', ex: 'Il progetto finisce a giugno.' },
+      { it: 'appuntamento', en: 'appointment', fa: 'قرار ملاقات', cat: 'lavoro', pos: 'm.', ex: 'Ho un appuntamento dal dentista.' },
+      { it: 'domanda', en: 'question', fa: 'سؤال', cat: 'lavoro', pos: 'f.', ex: 'Posso farti una domanda?' },
+      { it: 'risposta', en: 'answer', fa: 'جواب / پاسخ', cat: 'lavoro', pos: 'f.', ex: 'Non conosco la risposta.' },
+
+      /* ── 9. NATURA E METEO (12) ─────────────────────────────────────── */
+      { it: 'sole', en: 'sun', fa: 'خورشید / آفتاب', cat: 'natura', pos: 'm.', ex: 'Oggi c\'è il sole.' },
+      { it: 'pioggia', en: 'rain', fa: 'باران', cat: 'natura', pos: 'f.', ex: 'Dopo la pioggia fa fresco.' },
+      { it: 'neve', en: 'snow', fa: 'برف', cat: 'natura', pos: 'f.', ex: 'In montagna c\'è ancora la neve.' },
+      { it: 'vento', en: 'wind', fa: 'باد', cat: 'natura', pos: 'm.', ex: 'Oggi c\'è molto vento.' },
+      { it: 'cielo', en: 'sky', fa: 'آسمان', cat: 'natura', pos: 'm.', ex: 'Il cielo è azzurro.' },
+      { it: 'mare', en: 'sea', fa: 'دریا', cat: 'natura', pos: 'm.', ex: 'D\'estate andiamo al mare.' },
+      { it: 'montagna', en: 'mountain', fa: 'کوه', cat: 'natura', pos: 'f.', ex: 'Preferisco la montagna al mare.' },
+      { it: 'albero', en: 'tree', fa: 'درخت', cat: 'natura', pos: 'm.', ex: 'C\'è un albero davanti alla casa.' },
+      { it: 'fiore', en: 'flower', fa: 'گل', cat: 'natura', pos: 'm.', ex: 'Le ho regalato dei fiori.' },
+      { it: 'animale', en: 'animal', fa: 'حیوان', cat: 'natura', pos: 'm.', ex: 'Adoro gli animali.' },
+      { it: 'cane', en: 'dog', fa: 'سگ', cat: 'natura', pos: 'm.', ex: 'Il mio cane si chiama Leo.' },
+      { it: 'gatto', en: 'cat', fa: 'گربه', cat: 'natura', pos: 'm.', ex: 'Il gatto dorme sul divano.' },
+
+      /* ── 10. AGGETTIVI (25) ─────────────────────────────────────────── */
+      { it: 'grande', en: 'big', fa: 'بزرگ', cat: 'agg', pos: 'agg.', ex: 'Roma è una città grande.' },
+      { it: 'piccolo', en: 'small', fa: 'کوچک', cat: 'agg', pos: 'agg.', ex: 'Ho un appartamento piccolo.' },
+      { it: 'buono', en: 'good / tasty', fa: 'خوب / خوشمزه', cat: 'agg', pos: 'agg.', ex: 'Questa pizza è molto buona.' },
+      { it: 'cattivo', en: 'bad', fa: 'بد', cat: 'agg', pos: 'agg.', ex: 'Non è una cattiva idea.' },
+      { it: 'bello', en: 'beautiful / nice', fa: 'زیبا / قشنگ', cat: 'agg', pos: 'agg.', ex: 'Che bella giornata!' },
+      { it: 'brutto', en: 'ugly / bad', fa: 'زشت', cat: 'agg', pos: 'agg.', ex: 'Oggi fa brutto tempo.' },
+      { it: 'nuovo', en: 'new', fa: 'نو / جدید', cat: 'agg', pos: 'agg.', ex: 'Ho una macchina nuova.' },
+      { it: 'vecchio', en: 'old', fa: 'کهنه / پیر', cat: 'agg', pos: 'agg.', ex: 'Questo telefono è vecchio.' },
+      { it: 'giovane', en: 'young', fa: 'جوان', cat: 'agg', pos: 'agg.', ex: 'È ancora molto giovane.' },
+      { it: 'alto', en: 'tall / high', fa: 'بلند / قدبلند', cat: 'agg', pos: 'agg.', ex: 'Mio fratello è molto alto.' },
+      { it: 'basso', en: 'short / low', fa: 'کوتاه', cat: 'agg', pos: 'agg.', ex: 'Il tavolo è troppo basso.' },
+      { it: 'lungo', en: 'long', fa: 'دراز / طولانی', cat: 'agg', pos: 'agg.', ex: 'È stato un viaggio lungo.' },
+      { it: 'corto', en: 'short (length)', fa: 'کوتاه', cat: 'agg', pos: 'agg.', ex: 'Ho i capelli corti.' },
+      { it: 'caldo', en: 'hot / warm', fa: 'گرم', cat: 'agg', pos: 'agg.', ex: 'Il caffè è ancora caldo.' },
+      { it: 'freddo', en: 'cold', fa: 'سرد', cat: 'agg', pos: 'agg.', ex: 'L\'acqua è troppo fredda.' },
+      { it: 'facile', en: 'easy', fa: 'آسان', cat: 'agg', pos: 'agg.', ex: 'Questo esercizio è facile.' },
+      { it: 'difficile', en: 'difficult', fa: 'سخت / دشوار', cat: 'agg', pos: 'agg.', ex: 'L\'italiano non è difficile.' },
+      { it: 'felice', en: 'happy', fa: 'خوشحال', cat: 'agg', pos: 'agg.', ex: 'Sono felice di vederti.' },
+      { it: 'triste', en: 'sad', fa: 'غمگین', cat: 'agg', pos: 'agg.', ex: 'Perché sei triste?' },
+      { it: 'stanco', en: 'tired', fa: 'خسته', cat: 'agg', pos: 'agg.', ex: 'Oggi sono molto stanco.' },
+      { it: 'veloce', en: 'fast', fa: 'سریع', cat: 'agg', pos: 'agg.', ex: 'Il treno è più veloce.' },
+      { it: 'lento', en: 'slow', fa: 'آهسته / کند', cat: 'agg', pos: 'agg.', ex: 'Il traffico è molto lento.' },
+      { it: 'aperto', en: 'open', fa: 'باز', cat: 'agg', pos: 'agg.', ex: 'Il negozio è aperto fino alle otto.' },
+      { it: 'chiuso', en: 'closed', fa: 'بسته', cat: 'agg', pos: 'agg.', ex: 'Il museo è chiuso il lunedì.' },
+      { it: 'importante', en: 'important', fa: 'مهم', cat: 'agg', pos: 'agg.', ex: 'Ho una riunione importante.' },
+
+      /* ── 11. PAROLE DI LEGAME (8) ───────────────────────────────────── */
+      { it: 'e', en: 'and', fa: 'و', cat: 'connett', pos: 'cong.', ex: 'Pane e formaggio.' },
+      { it: 'ma', en: 'but', fa: 'اما / ولی', cat: 'connett', pos: 'cong.', ex: 'Vorrei venire, ma non posso.' },
+      { it: 'perché', en: 'because / why', fa: 'چون / چرا', cat: 'connett', pos: 'cong.', ex: 'Perché non vieni?' },
+      { it: 'quando', en: 'when', fa: 'وقتی / کِی', cat: 'connett', pos: 'cong.', ex: 'Quando arrivi?' },
+      { it: 'dove', en: 'where', fa: 'کجا', cat: 'connett', pos: 'avv.', ex: 'Dove abiti?' },
+      { it: 'come', en: 'how / like', fa: 'چطور / مثل', cat: 'connett', pos: 'avv.', ex: 'Come stai?' },
+      { it: 'anche', en: 'also / too', fa: 'هم / همچنین', cat: 'connett', pos: 'avv.', ex: 'Vengo anch\'io.' },
+      { it: 'molto', en: 'very / a lot', fa: 'خیلی', cat: 'connett', pos: 'avv.', ex: 'Mi piace molto.' },
+
+      /* ── 12. ESPRESSIONI UTILI (10) ─────────────────────────────────── */
+      { it: 'ciao', en: 'hi / bye', fa: 'سلام / خداحافظ', cat: 'espr', pos: 'espr.', ex: 'Ciao, come stai?' },
+      { it: 'buongiorno', en: 'good morning', fa: 'صبح بخیر / روز بخیر', cat: 'espr', pos: 'espr.', ex: 'Buongiorno, un caffè per favore.' },
+      { it: 'buonasera', en: 'good evening', fa: 'عصر بخیر', cat: 'espr', pos: 'espr.', ex: 'Buonasera, avete un tavolo?' },
+      { it: 'grazie', en: 'thank you', fa: 'ممنون / متشکرم', cat: 'espr', pos: 'espr.', ex: 'Grazie mille!' },
+      { it: 'prego', en: "you're welcome / please", fa: 'خواهش می‌کنم', cat: 'espr', pos: 'espr.', ex: 'Grazie! — Prego.' },
+      { it: 'per favore', en: 'please', fa: 'لطفاً', cat: 'espr', pos: 'espr.', ex: 'Un bicchiere d\'acqua, per favore.' },
+      { it: 'scusa / scusi', en: 'sorry / excuse me', fa: 'ببخشید', cat: 'espr', pos: 'espr.', ex: 'Scusi, dov\'è la stazione?' },
+      { it: 'arrivederci', en: 'goodbye', fa: 'خداحافظ', cat: 'espr', pos: 'espr.', ex: 'Arrivederci e buona giornata!' },
+      { it: 'sì', en: 'yes', fa: 'بله', cat: 'espr', pos: 'espr.', ex: 'Sì, certo!' },
+      { it: 'no', en: 'no', fa: 'نه', cat: 'espr', pos: 'espr.', ex: 'No, grazie.' }
+    ]
+  };
+
+  ITA.mountWordbank(window.WORDBANK);
+  </script>
+</body>
+</html>
