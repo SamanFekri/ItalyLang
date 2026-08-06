@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il discorso indiretto in italiano: affermazioni, domande e ordini riportati, il cambiamento dei pronomi, del tempo e del luogo, e lo spostamento dei tempi verbali quando il verbo introduttivo è al passato.">
+  <title>Discorso Indiretto · Italiano B1</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     UNITÀ 6 — DISCORSO INDIRETTO
+     ========================================================================== */
+  window.LESSON = {
+    num: 6, file: '06-discorso-indiretto.html', icon: '🗣️', title: 'Discorso Indiretto', group: 'Strutture avanzate',
+    subtitle: 'Ha detto che veniva: come cambiano verbi, pronomi e tempo quando riporti le parole di un altro.',
+
+    intro: {
+      what: 'Il discorso indiretto riporta le parole di qualcuno senza citarle tra virgolette: invece di dire «Ha detto: "Vengo"», dici «Ha detto <b>che</b> veniva». La frase originale entra in una subordinata introdotta da <b>che</b> (affermazioni), <b>se</b> o una parola interrogativa (domande), oppure <b>di</b> + infinito (ordini).',
+      when: 'Ogni volta che racconti quello che qualcuno ha detto, chiesto o ordinato: al lavoro («Il capo ha detto che…»), a scuola, nei pettegolezzi, nel giornalismo, in qualsiasi conversazione in cui riferisci le parole di un\'altra persona.',
+      why: 'Senza il discorso indiretto non puoi raccontare una riunione, un\'intervista o un litigio senza citare tutto tra virgolette come in un fumetto. È la struttura che rende naturale il racconto di qualsiasi conversazione.',
+      mistakes: [
+        'Usare "che" anche per le domande: ❌ "Mi ha chiesto che venivo" → ✅ "Mi ha chiesto se venivo".',
+        'Lasciare il presente dopo un verbo introduttivo al passato: ❌ "Ha detto che viene" → ✅ "Ha detto che veniva".',
+        'Riportare l\'imperativo com\'è: ❌ "Ha detto che vai via" → ✅ "Ha detto di andare via".',
+        'Dimenticare di cambiare i pronomi: ❌ "Ha detto che vengo io" → ✅ "Ha detto che veniva lui".'
+      ]
+    },
+
+    objectives: [
+      'Distinguere la struttura delle tre trasformazioni: affermazioni (<b>che</b>), domande (<b>se</b> o parola interrogativa) e ordini (<b>di</b> + infinito).',
+      'Applicare il <b>backshift</b>: presente→imperfetto, passato prossimo→trapassato, futuro→condizionale passato (unità 2), imperativo→di+infinito.',
+      'Riportare domande sì/no e domande con parola interrogativa mantenendo l\'ordine affermativo.',
+      'Cambiare correttamente pronomi e possessivi (io→lui/lei, mio→suo) secondo il nuovo punto di vista.',
+      'Adattare le espressioni di tempo e luogo (oggi→quel giorno, domani→il giorno dopo, qui→lì).',
+      'Riconoscere quando il tempo NON cambia: verbo introduttivo al presente, verità permanenti.'
+    ],
+
+    formulas: [
+      {
+        label: 'Formula generale — l\'affermazione',
+        rows: [
+          { parts: [
+              { text: 'Ha detto', note: 'verbo dichiarativo al passato', type: 'subject' },
+              { text: 'CHE', type: 'verb' },
+              { text: 'VERBO "RETROCESSO"', note: 'imperfetto, trapassato, condizionale passato…', type: 'object' }
+            ], example: 'Ha detto che veniva.', translation: 'He said he was coming.' }
+        ]
+      },
+      {
+        label: 'La domanda sì/no',
+        rows: [
+          { parts: [
+              { text: 'Mi ha chiesto', type: 'subject' },
+              { text: 'SE', type: 'verb' },
+              { text: 'VERBO "RETROCESSO"', type: 'object' }
+            ], example: 'Mi ha chiesto se venivo.', translation: 'He asked me if I was coming.' }
+        ]
+      },
+      {
+        label: 'La domanda con parola interrogativa',
+        rows: [
+          { parts: [
+              { text: 'Mi ha chiesto', type: 'subject' },
+              { text: 'DOVE / QUANDO / CHI…', note: 'la parola resta, sparisce il "?"', type: 'verb' },
+              { text: 'VERBO "RETROCESSO"', type: 'object' }
+            ], example: 'Mi ha chiesto dove andavo.', translation: 'He asked me where I was going.' }
+        ]
+      },
+      {
+        label: 'L\'ordine',
+        rows: [
+          { parts: [
+              { text: 'Mi ha detto', type: 'subject' },
+              { text: 'DI', type: 'verb' },
+              { text: 'INFINITO', note: 'mai l\'imperativo', type: 'object' }
+            ], example: 'Mi ha detto di andare.', translation: 'He told me to go.' }
+        ]
+      }
+    ],
+    formulaNote: 'Il segreto è il verbo introduttivo: se è al passato, tutto "retrocede" di un gradino — esattamente come il futuro che diventa condizionale passato nel futuro nel passato (unità 2). Se è al presente, spesso non cambia nulla.',
+
+    rules: [
+      {
+        title: 'Discorso diretto e discorso indiretto: la struttura di base',
+        body: 'Il discorso diretto riporta le parole esatte tra virgolette; il discorso indiretto le racconta con un verbo dichiarativo (dire, spiegare, raccontare…) più una congiunzione.',
+        points: [
+          'Affermazione → <b>che</b>: «Vengo» → Ha detto <b>che</b> veniva.',
+          'Il verbo dichiarativo introduce sempre la frase: dire, spiegare, raccontare, rispondere, ammettere, confermare…',
+          'Con lo stesso soggetto tra principale e secondaria si può usare <b>di + infinito</b>: «Ha detto di essere stanco» (=ha detto che lui stesso era stanco).',
+          'La punteggiatura cambia: le virgolette scompaiono, la frase diventa una subordinata.'
+        ],
+        exception: 'Con i verbi che riferiscono un fatto oggettivo (spiegare, informare) il "che" è quasi obbligatorio; con "di" ci deve essere identità di soggetto tra chi parla e chi riporta.'
+      },
+      {
+        title: 'Le domande indirette: SE per sì/no, la parola interrogativa per le altre',
+        body: 'Il tipo di domanda originale decide come introdurla nel discorso indiretto.',
+        points: [
+          'Domanda chiusa (sì/no) → <b>se</b>: «Vieni?» → Mi ha chiesto <b>se</b> venivo.',
+          'Domanda con parola interrogativa → la parola resta, sparisce solo il punto interrogativo: «Dove vai?» → Mi ha chiesto <b>dove</b> andavo.',
+          'Le parole interrogative più comuni: dove, quando, come, perché, chi, che cosa, quale, quanto.',
+          'L\'ordine soggetto-verbo torna quello normale della frase affermativa: «Dove vai?» diventa «dove andavo», non «dove vado io?».'
+        ],
+        exception: '«Che cosa?» spesso diventa semplicemente <b>cosa</b> nella domanda indiretta: «Mi ha chiesto cosa volevo».'
+      },
+      {
+        title: 'Gli ordini e i consigli: imperativo → DI + infinito',
+        body: 'L\'imperativo non esiste al discorso indiretto: si trasforma sempre in una costruzione con l\'infinito.',
+        points: [
+          'Imperativo affermativo → <b>di</b> + infinito: «Vai!» → Mi ha detto <b>di andare</b>.',
+          'Imperativo negativo → <b>di non</b> + infinito: «Non venire!» → Mi ha detto <b>di non venire</b>.',
+          'Vale anche per consigli e inviti con il condizionale: «Dovresti riposare» → Mi ha detto <b>di riposare</b>.',
+          'I pronomi atoni che erano attaccati all\'imperativo si staccano, cambiano persona e vanno prima dell\'infinito: «Chiamami!» → Mi ha detto <b>di chiamarlo</b>.'
+        ],
+        exception: 'Con l\'imperativo di cortesia (forma di Lei) vale la stessa regola: «Si accomodi!» → Mi ha detto di accomodarmi.'
+      },
+      {
+        title: 'Il cambiamento dei pronomi e dei possessivi',
+        body: 'Chi parla cambia: la prospettiva passa da chi ha detto la frase a chi la riporta ora.',
+        points: [
+          '<b>io</b> → lui/lei (o resta "io" se riferisco le mie stesse parole).',
+          '<b>mio/mia/miei/mie</b> → suo/sua/suoi/sue.',
+          '<b>mi</b> (pronome oggetto) → gli/le.',
+          '<b>tu</b> → io / lui / lei, secondo chi ascolta ora la frase riportata.',
+          '<b>questo/questa</b> → quello/quella (quando l\'oggetto è lontano nel tempo o nello spazio del racconto).'
+        ],
+        exception: 'Se riferisci subito, alla stessa persona, quello che tu stesso avevi detto, i pronomi possono restare invariati: «Ti avevo detto che venivo» (io = io).'
+      },
+      {
+        title: 'Il cambiamento delle espressioni di tempo e luogo',
+        body: 'Se il momento del racconto è diverso dal momento in cui la frase originale è stata detta, anche gli avverbi di tempo e luogo cambiano.',
+        points: [
+          '<b>oggi</b> → quel giorno · <b>domani</b> → il giorno dopo · <b>ieri</b> → il giorno prima.',
+          '<b>ora / adesso</b> → allora · <b>qui</b> → lì / là · <b>questo</b> → quello.',
+          '<b>la settimana prossima</b> → la settimana dopo · <b>due giorni fa</b> → due giorni prima.',
+          'La tabella completa è più avanti in questa unità: consultala ogni volta che hai un dubbio.'
+        ],
+        exception: 'Se riporti la frase lo stesso giorno o nello stesso luogo, spesso non serve cambiare nulla: «Mi ha detto stamattina che viene oggi» resta naturale.'
+      },
+      {
+        title: 'Lo spostamento dei tempi verbali: il backshift (la regola più importante)',
+        body: 'Quando il verbo che introduce il discorso è al <b>passato</b>, il tempo della frase riportata "retrocede" di un gradino. È lo stesso meccanismo del futuro nel passato (unità 2).',
+        points: [
+          'presente → imperfetto: «Vengo» → ha detto che veniva.',
+          'passato prossimo → trapassato prossimo: «Sono venuto» → ha detto che era venuto (unità 1).',
+          'futuro semplice → condizionale passato: «Verrò» → ha detto che sarebbe venuto (unità 2).',
+          'condizionale presente → condizionale passato: «Verrei» → ha detto che sarebbe venuto.',
+          'imperativo → di + infinito: «Vieni!» → ha detto di venire.',
+          'l\'imperfetto NON cambia: era già "sullo sfondo" e resta imperfetto.'
+        ],
+        exception: 'Con verbo introduttivo al presente (dice che…) non c\'è backshift: «Dice che viene» resta al presente. Il backshift scatta solo se il verbo che introduce è al passato.'
+      },
+      {
+        title: 'Quando il tempo NON cambia: verità e fatti sempre validi',
+        body: 'Se quello che viene riportato è ancora vero adesso — una regola generale, un fatto scientifico, un\'abitudine — l\'italiano permette di lasciare il presente anche dopo un verbo al passato.',
+        points: [
+          'Ha detto che <b>la Terra gira</b> intorno al Sole. (verità permanente)',
+          'Mi ha detto che <b>abita</b> a Roma. (probabilmente è ancora vero oggi)',
+          'È una scelta di stile più che un obbligo: il backshift resta comunque corretto, anzi più formale.',
+          'Nei testi scritti (giornalismo, narrativa) si preferisce quasi sempre il backshift completo.'
+        ],
+        exception: 'All\'esame B1, se non sei sicuro, applica sempre il backshift: è la forma più sicura e più valutata positivamente.'
+      }
+    ],
+
+    timeline: {
+      title: 'Il discorso indiretto nel tempo',
+      intro: 'Il momento in cui la frase originale è stata detta si allontana: tutto il resto del racconto retrocede insieme a lui.',
+      points: [
+        { time: 'Prima', label: 'La frase originale', example: '«Vengo domani.» (detto ieri)', note: 'discorso diretto' },
+        { time: 'Poi', label: 'Il momento del racconto', example: 'Ha detto che sarebbe venuto il giorno dopo.', note: 'discorso indiretto, verbo al passato' },
+        { time: 'Sfondo', label: 'Un fatto sempre vero', example: 'Ha detto che il negozio chiude alle otto.', note: 'può restare al presente' },
+        { time: 'Adesso', label: 'Chi racconta, ora', example: 'Te lo racconto adesso.', now: true }
+      ],
+      caption: '«Vengo domani» diventa «ha detto che sarebbe venuto il giorno dopo»: il verbo retrocede, «domani» cambia perché il giorno di riferimento non è più oggi.'
+    },
+
+    tables: [
+      {
+        title: 'Lo spostamento dei tempi — la tabella del backshift',
+        note: 'La tabella più importante dell\'unità: consultala per ogni trasformazione.',
+        columns: ['Discorso diretto', 'Discorso indiretto (verbo al passato)', 'Esempio'],
+        rows: [
+          { cells: ['Presente', 'Imperfetto', '«Vengo» → ha detto che veniva'], irregular: [1] },
+          { cells: ['Passato prossimo', 'Trapassato prossimo', '«Sono venuto» → ha detto che era venuto'], irregular: [1] },
+          { cells: ['Imperfetto', 'Imperfetto (invariato)', '«Ero stanco» → ha detto che era stanco'], irregular: [1] },
+          { cells: ['Futuro semplice', 'Condizionale passato', '«Verrò» → ha detto che sarebbe venuto'], irregular: [1] },
+          { cells: ['Condizionale presente', 'Condizionale passato', '«Verrei» → ha detto che sarebbe venuto'], irregular: [1] },
+          { cells: ['Imperativo', 'DI + infinito', '«Vieni!» → ha detto di venire'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Pronomi e possessivi che cambiano',
+        columns: ['Discorso diretto', 'Discorso indiretto', 'Esempio'],
+        rows: [
+          { cells: ['io', 'lui / lei', 'Ha detto: «Vengo io» → ha detto che veniva lui.'] },
+          { cells: ['tu', 'io / lui / lei', 'Mi ha detto: «Tu hai ragione» → mi ha detto che avevo ragione io.'] },
+          { cells: ['mio / mia', 'suo / sua', 'Ha detto: «È mio.» → Ha detto che era suo.'] },
+          { cells: ['questo / questa', 'quello / quella', 'Ha detto: «Prendo questo.» → Ha detto che prendeva quello.'] },
+          { cells: ['qui', 'lì / là', 'Ha detto: «Resto qui.» → Ha detto che restava lì.'] }
+        ]
+      },
+      {
+        title: 'Le espressioni di tempo che cambiano',
+        columns: ['Discorso diretto', 'Discorso indiretto', 'Esempio'],
+        rows: [
+          { cells: ['oggi', 'quel giorno', '«Parto oggi» → ha detto che partiva quel giorno'] },
+          { cells: ['domani', 'il giorno dopo', '«Arrivo domani» → ha detto che arrivava il giorno dopo'] },
+          { cells: ['ieri', 'il giorno prima', '«Sono partito ieri» → ha detto che era partito il giorno prima'] },
+          { cells: ['ora / adesso', 'allora', '«Non posso ora» → ha detto che non poteva allora'] },
+          { cells: ['questa settimana', 'quella settimana', '«Lavoro questa settimana» → ha detto che lavorava quella settimana'] },
+          { cells: ['la settimana prossima', 'la settimana dopo', '«Parto la settimana prossima» → ha detto che partiva la settimana dopo'] },
+          { cells: ['due giorni fa', 'due giorni prima', '«L\'ho visto due giorni fa» → ha detto che l\'aveva visto due giorni prima'] }
+        ]
+      },
+      {
+        title: 'Le domande indirette',
+        columns: ['Domanda diretta', 'Domanda indiretta', 'Nota'],
+        rows: [
+          { cells: ['«Vieni?»', 'Mi ha chiesto se venivo.', 'sì/no → se'] },
+          { cells: ['«Hai finito?»', 'Mi ha chiesto se avevo finito.', 'sì/no → se + trapassato'] },
+          { cells: ['«Dove vai?»', 'Mi ha chiesto dove andavo.', 'la parola resta'] },
+          { cells: ['«Quando parti?»', 'Mi ha chiesto quando partivo.', 'la parola resta'] },
+          { cells: ['«Perché sei triste?»', 'Mi ha chiesto perché ero triste.', 'la parola resta'] },
+          { cells: ['«Chi è quella donna?»', 'Mi ha chiesto chi fosse quella donna.', 'spesso col congiuntivo, unità 7'] }
+        ]
+      },
+      {
+        title: 'Gli ordini e i consigli',
+        columns: ['Imperativo diretto', 'Discorso indiretto', 'Nota'],
+        rows: [
+          { cells: ['«Vai!»', 'Mi ha detto di andare.', 'imperativo → di + infinito'] },
+          { cells: ['«Non venire!»', 'Mi ha detto di non venire.', 'negativo → di non + infinito'] },
+          { cells: ['«Chiamami!»', 'Mi ha detto di chiamarlo.', 'il pronome si stacca e cambia'] },
+          { cells: ['«Stia tranquillo!»', 'Mi ha detto di stare tranquillo.', 'forma di cortesia → stessa regola'] },
+          { cells: ['«Fate silenzio!»', 'Ci ha detto di fare silenzio.', 'plurale → stessa regola'] }
+        ]
+      },
+      {
+        title: 'I verbi introduttivi più comuni',
+        columns: ['Verbo', 'Regge', 'Esempio'],
+        rows: [
+          { cells: ['dire', 'che / di', 'Ha detto che veniva. / Ha detto di venire.'] },
+          { cells: ['chiedere, domandare', 'se / parola interrogativa', 'Ha chiesto se venivo.'] },
+          { cells: ['rispondere', 'che', 'Ha risposto che non lo sapeva.'] },
+          { cells: ['spiegare, raccontare', 'che', 'Ha spiegato che il treno era in ritardo.'] },
+          { cells: ['promettere', 'che / di', 'Ha promesso che sarebbe tornato.'] },
+          { cells: ['ordinare, comandare', 'di', 'Ha ordinato di uscire.'] },
+          { cells: ['consigliare, suggerire', 'di', 'Mi ha consigliato di aspettare.'] },
+          { cells: ['annunciare, comunicare', 'che', 'Ha annunciato che la riunione era rimandata.'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Ha detto che veniva alla riunione.', literal: 'He-has said that he-came(impf) to-the meeting.', natural: 'He said he was coming to the meeting.', note: 'Presente «vengo» → imperfetto, perché il verbo introduttivo è al passato.' },
+      { it: 'Mi ha chiesto se ero già arrivato.', literal: 'To-me he-has asked if I-was already arrived.', natural: 'He asked me if I had already arrived.', note: 'Domanda sì/no → se + trapassato («sono arrivato» → «ero arrivato»).' },
+      { it: 'Mi ha chiesto dove abitavo.', literal: 'To-me he-has asked where I-lived.', natural: 'He asked me where I lived.', note: 'La parola interrogativa «dove» resta; il presente diventa imperfetto.' },
+      { it: 'Mi ha detto di chiudere la porta.', literal: 'To-me he-has said of to-close the door.', natural: 'He told me to close the door.', note: 'Imperativo «Chiudi!» → di + infinito.' },
+      { it: 'Mi ha detto di non preoccuparmi.', literal: 'To-me he-has said of not to-worry-myself.', natural: 'He told me not to worry.', note: 'Imperativo negativo → di non + infinito.' },
+      { it: 'Ha promesso che sarebbe tornato presto.', literal: 'He-has promised that he-would-be returned soon.', natural: 'He promised he would come back soon.', note: 'Futuro «tornerò» → condizionale passato (unità 2).' },
+      { it: 'Ha spiegato che il treno era già partito.', literal: 'He-has explained that the train was already left.', natural: 'He explained that the train had already left.', note: 'Passato prossimo «è partito» → trapassato prossimo (unità 1).' },
+      { it: 'Ha detto che quel giorno non poteva venire.', literal: 'He-has said that that day not he-could to-come.', natural: "He said he couldn't come that day.", note: '«Oggi» diventa «quel giorno»: cambia il punto di riferimento temporale.' },
+      { it: 'Mi ha chiesto se sarei andato alla festa.', literal: 'To-me he-has asked if I-would-be gone to-the party.', natural: 'He asked me if I would go to the party.', note: 'Domanda sul futuro → se + condizionale passato.' },
+      { it: 'Ha detto che era stanco perché aveva lavorato tutto il giorno.', literal: 'He-has said that he-was tired because he-had worked all the day.', natural: 'He said he was tired because he had worked all day.', note: 'Due backshift insieme: imperfetto e trapassato.' },
+      { it: 'Mi ha chiesto che cosa volevo per cena.', literal: 'To-me he-has asked what I-wanted for dinner.', natural: 'He asked me what I wanted for dinner.', note: '«Che cosa» resta come parola interrogativa.' },
+      { it: 'Ha detto che il suo capo era molto esigente.', literal: 'He-has said that the his boss was very demanding.', natural: 'He said his boss was very demanding.', note: '«Il mio capo» → «il suo capo»: il possessivo cambia persona.' },
+      { it: 'Ha annunciato che la riunione sarebbe cominciata alle nove.', literal: 'He-has announced that the meeting would-be begun at-the nine.', natural: 'He announced that the meeting would start at nine.', note: 'Futuro nel discorso riportato → condizionale passato.' },
+      { it: 'Ci ha detto di aspettare lì.', literal: 'To-us he-has said of to-wait there.', natural: 'He told us to wait there.', note: '«Qui» diventa «lì» quando cambia il punto di vista di chi parla.' },
+      { it: 'Ha ammesso che aveva sbagliato.', literal: 'He-has admitted that he-had made-mistake.', natural: 'He admitted he had been wrong.', note: 'Passato prossimo → trapassato prossimo.' },
+      { it: 'Ha detto che la riunione era stata rimandata al giorno dopo.', literal: 'He-has said that the meeting was been postponed to-the day after.', natural: 'He said the meeting had been postponed to the next day.', note: '«Domani» diventa «il giorno dopo».' },
+      { it: 'Ha detto che la Terra gira intorno al Sole.', literal: 'He-has said that the Earth turns around the Sun.', natural: 'He said the Earth goes around the Sun.', note: 'Verità permanente: il presente può restare invariato anche dopo un verbo al passato.' },
+      { it: 'Mi ha chiesto se avevo capito la lezione.', literal: 'To-me he-has asked if I-had understood the lesson.', natural: 'He asked me if I had understood the lesson.', note: 'Passato prossimo nella domanda originale → trapassato nella domanda riportata.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Mi ha chiesto che venivo.', right: 'Mi ha chiesto se venivo.', why: 'Le domande sì/no si riportano con "se", non con "che".' },
+      { wrong: 'Ha detto che viene domani. (in un racconto al passato)', right: 'Ha detto che sarebbe venuto il giorno dopo.', why: 'Con verbo introduttivo al passato, il futuro diventa condizionale passato e "domani" cambia in "il giorno dopo".' },
+      { wrong: 'Mi ha detto che chiudo la porta. (per riportare un ordine)', right: 'Mi ha detto di chiudere la porta.', why: 'L\'imperativo si riporta con "di" + infinito, non con "che" + indicativo.' },
+      { wrong: 'Ha detto che veniva io.', right: 'Ha detto che veniva lui.', why: 'Il pronome soggetto cambia con il cambio di prospettiva: io → lui/lei.' },
+      { wrong: 'Mi ha chiesto dove vado.', right: 'Mi ha chiesto dove andavo.', why: 'Anche nelle domande indirette scatta il backshift se il verbo introduttivo è al passato.' },
+      { wrong: 'Ha detto che partiva domani. (riferendo il giorno dopo un discorso fatto ieri)', right: 'Ha detto che partiva il giorno dopo.', why: 'L\'avverbio di tempo deve adattarsi al nuovo punto di riferimento, non restare "domani".' },
+      { wrong: 'Mi ha detto di non preoccupo.', right: 'Mi ha detto di non preoccuparmi.', why: 'Dopo "di" ci vuole sempre l\'infinito, mai un verbo coniugato.' },
+      { wrong: 'Ha detto che era il mio libro. (parlando del libro di lui)', right: 'Ha detto che era il suo libro.', why: 'Il possessivo deve cambiare persona insieme al pronome.' },
+      { wrong: 'Ha promesso che tornerebbe.', right: 'Ha promesso che sarebbe tornato.', why: 'Il futuro nel passato si esprime sempre con il condizionale passato, non con quello presente.' },
+      { wrong: 'Mi ha chiesto se ho finito.', right: 'Mi ha chiesto se avevo finito.', why: 'Il passato prossimo della domanda originale retrocede al trapassato prossimo.' }
+    ],
+
+    vocab: {
+      title: 'Vocabolario — comunicazione, riunioni, scuola e lavoro (60 parole)',
+      intro: 'Il discorso indiretto vive nelle riunioni, nelle aule e negli uffici: ogni volta che qualcuno riferisce quello che è stato detto. Ecco il lessico, con italiano, inglese, farsi (فارسی) ed esempio che quasi sempre riporta un discorso.',
+      categories: [
+        { id: 'comunicazione', label: 'Comunicazione', icon: '📣' },
+        { id: 'riunioni', label: 'Riunioni', icon: '🗓️' },
+        { id: 'scuola', label: 'Scuola', icon: '🎓' },
+        { id: 'lavoro', label: 'Lavoro', icon: '💼' },
+        { id: 'verbi', label: 'Verbi del riportare', icon: '🔁' },
+        { id: 'espr', label: 'Espressioni', icon: '✨' }
+      ],
+      words: [
+        /* ── Comunicazione (10) ── */
+        { it: 'comunicare', en: 'to communicate', fa: 'ارتباط برقرار کردن', cat: 'comunicazione', pos: 'v.', ex: 'Ha detto che avrebbero comunicato la decisione entro venerdì.' },
+        { it: 'annunciare', en: 'to announce', fa: 'اعلام کردن', cat: 'comunicazione', pos: 'v.', ex: 'Ha annunciato che il progetto era stato approvato.' },
+        { it: 'il messaggio', en: 'message', fa: 'پیام', cat: 'comunicazione', pos: 'm.', ex: 'Mi ha chiesto se avevo letto il messaggio.' },
+        { it: 'la comunicazione', en: 'communication', fa: 'ارتباط', cat: 'comunicazione', pos: 'f.', ex: 'Ha detto che la comunicazione tra i reparti era migliorata.' },
+        { it: 'spiegare', en: 'to explain', fa: 'توضیح دادن', cat: 'comunicazione', pos: 'v.', ex: 'Ha spiegato che il ritardo dipendeva dal traffico.' },
+        { it: 'informare', en: 'to inform', fa: 'مطلع کردن', cat: 'comunicazione', pos: 'v.', ex: 'Mi ha informato che la riunione era stata spostata.' },
+        { it: 'il malinteso', en: 'misunderstanding', fa: 'سوءتفاهم', cat: 'comunicazione', pos: 'm.', ex: 'Ha detto che era stato tutto un malinteso.' },
+        { it: 'chiarire', en: 'to clarify', fa: 'روشن کردن', cat: 'comunicazione', pos: 'v.', ex: 'Ha chiesto di chiarire meglio il punto.' },
+        { it: 'il tono', en: 'tone', fa: 'لحن', cat: 'comunicazione', pos: 'm.', ex: 'Mi ha detto di abbassare il tono.' },
+        { it: 'confermare', en: 'to confirm', fa: 'تأیید کردن', cat: 'comunicazione', pos: 'v.', ex: 'Ha confermato che sarebbe venuto.' },
+
+        /* ── Riunioni (10) ── */
+        { it: 'la riunione', en: 'meeting', fa: 'جلسه', cat: 'riunioni', pos: 'f.', ex: 'Ha detto che la riunione cominciava alle dieci.' },
+        { it: 'l\'ordine del giorno', en: 'agenda', fa: 'دستور جلسه', cat: 'riunioni', pos: 'm.', ex: 'Ha spiegato l\'ordine del giorno prima di iniziare.' },
+        { it: 'convocare', en: 'to summon, to call (a meeting)', fa: 'فراخواندن', cat: 'riunioni', pos: 'v.', ex: 'Il capo ha detto di convocare tutti i responsabili.' },
+        { it: 'il verbale', en: 'minutes (of a meeting)', fa: 'صورتجلسه', cat: 'riunioni', pos: 'm.', ex: 'Mi ha chiesto di scrivere il verbale.' },
+        { it: 'rimandare', en: 'to postpone', fa: 'به تعویق انداختن', cat: 'riunioni', pos: 'v.', ex: 'Ha detto che la riunione era stata rimandata.' },
+        { it: 'partecipare', en: 'to take part', fa: 'شرکت کردن', cat: 'riunioni', pos: 'v.', ex: 'Ha chiesto se avrei partecipato.' },
+        { it: 'intervenire', en: 'to speak up, to intervene', fa: 'مداخله کردن', cat: 'riunioni', pos: 'v.', ex: 'Mi ha chiesto di intervenire alla riunione.' },
+        { it: 'la proposta', en: 'proposal', fa: 'پیشنهاد', cat: 'riunioni', pos: 'f.', ex: 'Ha detto che la sua proposta era stata accettata.' },
+        { it: 'votare', en: 'to vote', fa: 'رأی دادن', cat: 'riunioni', pos: 'v.', ex: 'Ha chiesto se avremmo votato subito.' },
+        { it: 'la scadenza', en: 'deadline', fa: 'مهلت', cat: 'riunioni', pos: 'f.', ex: 'Ha ricordato che la scadenza era vicina.' },
+
+        /* ── Scuola (10) ── */
+        { it: 'la lezione', en: 'lesson', fa: 'درس', cat: 'scuola', pos: 'f.', ex: 'La maestra ha detto che la lezione sarebbe finita presto.' },
+        { it: 'l\'insegnante', en: 'teacher', fa: 'معلم', cat: 'scuola', pos: 'm./f.', ex: 'L\'insegnante ha chiesto chi non aveva fatto i compiti.' },
+        { it: 'l\'aula', en: 'classroom', fa: 'کلاس درس', cat: 'scuola', pos: 'f.', ex: 'Ha detto di aspettare fuori dall\'aula.' },
+        { it: 'il compito', en: 'homework, assignment', fa: 'تکلیف', cat: 'scuola', pos: 'm.', ex: 'Ha chiesto se avevamo finito i compiti.' },
+        { it: 'l\'esame', en: 'exam', fa: 'امتحان', cat: 'scuola', pos: 'm.', ex: 'Ha detto che l\'esame sarebbe stato difficile.' },
+        { it: 'bocciare', en: 'to fail (a student)', fa: 'رد کردن (دانش‌آموز)', cat: 'scuola', pos: 'v.', ex: 'Ha detto che non avrebbero bocciato nessuno.' },
+        { it: 'promuovere', en: 'to pass (a student)', fa: 'قبول کردن', cat: 'scuola', pos: 'v.', ex: 'Ha annunciato che tutti erano stati promossi.' },
+        { it: 'interrogare', en: 'to quiz, to question (in class)', fa: 'از دانش‌آموز پرسیدن', cat: 'scuola', pos: 'v.', ex: 'Ha detto di prepararsi perché ci avrebbe interrogati.' },
+        { it: 'il preside', en: 'headteacher, principal', fa: 'مدیر مدرسه', cat: 'scuola', pos: 'm.', ex: 'Il preside ha detto di rispettare le regole.' },
+        { it: 'spiegare la lezione', en: 'to explain the lesson', fa: 'درس را توضیح دادن', cat: 'scuola', pos: 'loc. v.', ex: 'Ha promesso che avrebbe spiegato di nuovo la lezione.' },
+
+        /* ── Lavoro (10) ── */
+        { it: 'il capo', en: 'boss', fa: 'رئیس', cat: 'lavoro', pos: 'm.', ex: 'Il capo ha detto di finire il rapporto entro oggi.' },
+        { it: 'il collega', en: 'colleague', fa: 'همکار', cat: 'lavoro', pos: 'm.', ex: 'Un collega mi ha chiesto se ero libero venerdì.' },
+        { it: 'il dipendente', en: 'employee', fa: 'کارمند', cat: 'lavoro', pos: 'm.', ex: 'Ha detto che ogni dipendente avrebbe ricevuto una risposta.' },
+        { it: 'le dimissioni', en: 'resignation', fa: 'استعفا', cat: 'lavoro', pos: 'f. pl.', ex: 'Ha annunciato che avrebbe dato le dimissioni.' },
+        { it: 'assumere', en: 'to hire', fa: 'استخدام کردن', cat: 'lavoro', pos: 'v.', ex: 'Ha detto che avrebbero assunto due persone nuove.' },
+        { it: 'licenziare', en: 'to fire, to dismiss', fa: 'اخراج کردن', cat: 'lavoro', pos: 'v.', ex: 'Ha detto che non avrebbe licenziato nessuno.' },
+        { it: 'lo stipendio', en: 'salary', fa: 'حقوق', cat: 'lavoro', pos: 'm.', ex: 'Ha chiesto se lo stipendio sarebbe aumentato.' },
+        { it: 'la promozione', en: 'promotion', fa: 'ارتقا', cat: 'lavoro', pos: 'f.', ex: 'Ha detto che meritava la promozione.' },
+        { it: 'il progetto', en: 'project', fa: 'پروژه', cat: 'lavoro', pos: 'm.', ex: 'Ha spiegato che il progetto era in ritardo.' },
+        { it: 'lo straordinario', en: 'overtime', fa: 'اضافه‌کاری', cat: 'lavoro', pos: 'm.', ex: 'Ha chiesto se avrei fatto lo straordinario.' },
+
+        /* ── Verbi del riportare (10) ── */
+        { it: 'dire', en: 'to say, to tell', fa: 'گفتن', cat: 'verbi', pos: 'v.', ex: 'Ha detto che sarebbe arrivato tardi.' },
+        { it: 'chiedere', en: 'to ask', fa: 'پرسیدن', cat: 'verbi', pos: 'v.', ex: 'Mi ha chiesto se ero pronto.' },
+        { it: 'domandare', en: 'to ask (a question)', fa: 'سؤال کردن', cat: 'verbi', pos: 'v.', ex: 'Ha domandato dove fossi stato.' },
+        { it: 'rispondere', en: 'to answer', fa: 'پاسخ دادن', cat: 'verbi', pos: 'v.', ex: 'Ha risposto che non lo sapeva.' },
+        { it: 'promettere', en: 'to promise', fa: 'قول دادن', cat: 'verbi', pos: 'v.', ex: 'Ha promesso che avrebbe chiamato.' },
+        { it: 'ordinare', en: 'to order, to command', fa: 'دستور دادن', cat: 'verbi', pos: 'v.', ex: 'Ha ordinato di uscire subito.' },
+        { it: 'consigliare', en: 'to advise', fa: 'توصیه کردن', cat: 'verbi', pos: 'v.', ex: 'Mi ha consigliato di aspettare.' },
+        { it: 'avvisare', en: 'to warn, to notify', fa: 'هشدار دادن', cat: 'verbi', pos: 'v.', ex: 'Ha avvisato che sarebbe stato in ritardo.' },
+        { it: 'ripetere', en: 'to repeat', fa: 'تکرار کردن', cat: 'verbi', pos: 'v.', ex: 'Ha ripetuto che non era colpa sua.' },
+        { it: 'aggiungere', en: 'to add', fa: 'اضافه کردن', cat: 'verbi', pos: 'v.', ex: 'Ha aggiunto che ci avrebbe pensato lui.' },
+
+        /* ── Espressioni (10) ── */
+        { it: 'secondo lui/lei', en: 'according to him/her', fa: 'به گفته او', cat: 'espr', pos: 'loc.', ex: 'Secondo lui la riunione era stata inutile.' },
+        { it: 'a quanto pare', en: 'apparently', fa: 'ظاهراً', cat: 'espr', pos: 'loc.', ex: 'A quanto pare aveva già deciso.' },
+        { it: 'a proposito di', en: 'regarding, speaking of', fa: 'در مورد', cat: 'espr', pos: 'loc.', ex: 'Ha parlato a proposito del progetto.' },
+        { it: 'come mi ha detto', en: 'as he/she told me', fa: 'همان‌طور که به من گفت', cat: 'espr', pos: 'loc.', ex: 'Come mi ha detto lui, il treno era in ritardo.' },
+        { it: 'il giorno dopo', en: 'the next day', fa: 'روز بعد', cat: 'espr', pos: 'loc.', ex: 'Ha detto che sarebbe tornato il giorno dopo.' },
+        { it: 'il giorno prima', en: 'the day before', fa: 'روز قبل', cat: 'espr', pos: 'loc.', ex: 'Ha detto che era arrivato il giorno prima.' },
+        { it: 'allora', en: 'then, at that time', fa: 'در آن زمان', cat: 'espr', pos: 'avv.', ex: 'Ha detto che allora non lo sapeva ancora.' },
+        { it: 'per l\'appunto', en: 'precisely, exactly', fa: 'دقیقاً همینطور', cat: 'espr', pos: 'loc.', ex: 'Ha confermato per l\'appunto quello che pensavo.' },
+        { it: 'testualmente', en: 'word for word', fa: 'عیناً', cat: 'espr', pos: 'avv.', ex: 'Mi ha detto testualmente di non aspettarlo.' },
+        { it: 'riferire', en: 'to report, to relate', fa: 'گزارش دادن', cat: 'espr', pos: 'v.', ex: 'Mi ha chiesto di riferire tutto al direttore.' }
+      ]
+    },
+
+    guided: {
+      title: 'Trasformiamo insieme il discorso diretto',
+      intro: 'Tre domande in ordine: è un\'affermazione, una domanda o un ordine? Il verbo introduttivo è al passato? Cambiano pronomi o avverbi di tempo?',
+      steps: [
+        {
+          prompt: 'Trasforma: Marco dice: «Vengo alla festa.» (Ha detto che…)',
+          think: 'Affermazione → che. Verbo introduttivo al passato → backshift: presente "vengo" → imperfetto "venivo".',
+          answer: 'Ha detto che veniva alla festa.',
+          why: 'Il presente retrocede sempre a imperfetto quando il verbo che introduce è al passato.'
+        },
+        {
+          prompt: 'Trasforma la domanda: «Vieni anche tu?» (Mi ha chiesto…)',
+          think: 'Domanda sì/no → introdotta da "se", non da "che". Presente → imperfetto.',
+          answer: 'Mi ha chiesto se venivo anche io.',
+          why: '"Se" sostituisce il punto interrogativo delle domande chiuse.'
+        },
+        {
+          prompt: 'Trasforma la domanda: «Dove abiti?» (Mi ha chiesto…)',
+          think: 'Parola interrogativa "dove" resta; l\'ordine diventa quello di una frase affermativa; presente → imperfetto.',
+          answer: 'Mi ha chiesto dove abitavo.',
+          why: 'Con le domande a parola interrogativa la parola non sparisce mai, a differenza delle domande sì/no.'
+        },
+        {
+          prompt: 'Trasforma l\'ordine: «Chiudi la finestra!» (Mi ha detto…)',
+          think: 'Imperativo affermativo → di + infinito.',
+          answer: 'Mi ha detto di chiudere la finestra.',
+          why: 'L\'imperativo non esiste al discorso indiretto: diventa sempre di + infinito.'
+        },
+        {
+          prompt: 'Trasforma: «Verrò domani» (detto ieri, raccontato oggi). (Ha detto che…)',
+          think: 'Futuro semplice → condizionale passato (unità 2); "domani", riferito al giorno dopo del momento in cui parlava, diventa "il giorno dopo".',
+          answer: 'Ha detto che sarebbe venuto il giorno dopo.',
+          why: 'Doppio cambiamento: il tempo del verbo e l\'espressione temporale.'
+        },
+        {
+          prompt: 'Trasforma: «Ho già finito il lavoro.» (Ha detto che…)',
+          think: 'Passato prossimo → trapassato prossimo (unità 1): il fatto è anteriore al momento del racconto.',
+          answer: 'Ha detto che aveva già finito il lavoro.',
+          why: 'Il passato prossimo di una frase riportata al passato retrocede sempre al trapassato.'
+        }
+      ]
+    },
+
+    exercises: {
+      mc: [
+        { q: 'Trasforma: «Vengo domani.» → Ha detto che ___.', options: ['viene domani', 'veniva il giorno dopo', 'è venuto domani', 'sarebbe venuto domani'], answer: 1, hint: 'presente + verbo introduttivo al passato', why: 'Presente→imperfetto e "domani"→"il giorno dopo".' },
+        { q: '«Vieni?» diventa, al discorso indiretto:', options: ['Mi ha chiesto che venivo.', 'Mi ha chiesto se venivo.', 'Mi ha chiesto venivo.', 'Mi ha chiesto di venire.'], answer: 1, hint: 'domanda sì/no', why: 'Le domande chiuse si introducono con "se".' },
+        { q: '«Dove vai?» diventa:', options: ['Mi ha chiesto se andavo.', 'Mi ha chiesto dove vado.', 'Mi ha chiesto dove andavo.', 'Mi ha chiesto di andare dove.'], answer: 2, hint: 'parola interrogativa', why: '"Dove" resta, il verbo retrocede a imperfetto.' },
+        { q: '«Vai via!» diventa:', options: ['Ha detto che vai via.', 'Ha detto di andare via.', 'Ha detto se vai via.', 'Ha detto vada via.'], answer: 1, hint: 'imperativo', why: 'Imperativo → di + infinito.' },
+        { q: '«Verrò alle otto» (detto ieri), raccontato oggi:', options: ['Ha detto che viene alle otto.', 'Ha detto che verrebbe alle otto.', 'Ha detto che sarebbe venuto alle otto.', 'Ha detto che è venuto alle otto.'], answer: 2, hint: 'futuro nel passato, unità 2', why: 'Futuro semplice → condizionale passato.' },
+        { q: '«Ho finito» diventa:', options: ['Ha detto che ha finito.', 'Ha detto che finiva.', 'Ha detto che aveva finito.', 'Ha detto che avrebbe finito.'], answer: 2, hint: 'passato prossimo', why: 'Passato prossimo → trapassato prossimo.' },
+        { q: 'Completa: «Il mio capo…» diventa «ha detto che ___ capo era esigente.»', options: ['il mio', 'il tuo', 'il suo', 'il loro'], answer: 2, hint: 'cambio di persona', why: 'Il possessivo segue il cambio del pronome: mio → suo.' },
+        { q: '«Oggi non posso» diventa, in un racconto:', options: ['ha detto che oggi non poteva', 'ha detto che quel giorno non poteva', 'ha detto che ora non poteva', 'ha detto che ieri non poteva'], answer: 1, hint: 'avverbio di tempo', why: '"Oggi" diventa "quel giorno" quando il punto di riferimento cambia.' },
+        { q: '«Non venire!» diventa:', options: ['Ha detto di venire.', 'Ha detto di non venire.', 'Ha detto che non vieni.', 'Ha detto non venire.'], answer: 1, hint: 'imperativo negativo', why: 'Imperativo negativo → di non + infinito.' },
+        { q: 'Quale frase riporta correttamente una verità permanente?', options: ['Ha detto che la Terra girava intorno al Sole.', 'Ha detto che la Terra gira intorno al Sole.', 'Ha detto che la Terra sarebbe girata intorno al Sole.', 'Ha detto che la Terra girerebbe intorno al Sole.'], answer: 1, hint: 'fatto sempre vero', why: 'I fatti permanenti possono restare al presente anche dopo un verbo al passato.' },
+        { q: '«Chiamami stasera» diventa:', options: ['Mi ha detto di chiamarlo quella sera.', 'Mi ha detto di chiamarmi stasera.', 'Mi ha detto che lo chiamo stasera.', 'Mi ha detto chiama quella sera.'], answer: 0, hint: 'pronome + avverbio di tempo', why: 'Il pronome cambia persona e "stasera" diventa "quella sera".' },
+        { q: '«Sarei venuto, ma stavo male» diventa:', options: ['Ha detto che sarebbe venuto, ma stava male.', 'Ha detto che era venuto, ma stava male.', 'Ha detto che verrebbe, ma stava male.', 'Ha detto che veniva, ma stava male.'], answer: 0, hint: 'condizionale presente', why: 'Il condizionale presente diventa condizionale passato, proprio come il futuro.' },
+        { q: 'Qual è la parola giusta? «Mi ha chiesto ___ avevo capito.»', options: ['che', 'se', 'di', 'cosa'], answer: 1, hint: 'domanda sì/no', why: '"Se" introduce le domande chiuse indirette.' },
+        { q: 'Quale coppia è corretta?', options: ['presente → passato prossimo', 'passato prossimo → trapassato prossimo', 'futuro → presente', 'imperfetto → passato remoto'], answer: 1, hint: 'la tabella del backshift', why: 'Il passato prossimo retrocede sempre al trapassato prossimo.' }
+      ],
+      fill: [
+        { before: 'Ha detto che', after: 'alla riunione. (venire, imperfetto)', answers: ['veniva'], en: 'He said he was coming to the meeting.' },
+        { before: 'Mi ha chiesto', after: 'venivo anche io. (se)', answers: ['se'], en: 'He asked me if I was coming too.' },
+        { before: 'Mi ha chiesto dove', after: '. (abitare, imperfetto)', answers: ['abitavo'], en: 'He asked me where I lived.' },
+        { before: 'Mi ha detto', after: 'chiudere la porta. (preposizione)', answers: ['di'], en: 'He told me to close the door.' },
+        { before: 'Ha promesso che', after: 'tornato presto. (essere, condizionale passato)', answers: ['sarebbe'], en: 'He promised he would come back soon.' },
+        { before: 'Ha spiegato che il treno era già', after: '. (partire)', answers: ['partito'], en: 'He explained the train had already left.' },
+        { before: 'Ha detto che', after: 'giorno non poteva venire. (aggettivo dimostrativo)', answers: ['quel'], en: 'He said he could not come that day.' },
+        { before: 'Mi ha detto di non', after: '. (preoccuparsi)', answers: ['preoccuparmi'], en: 'He told me not to worry.' },
+        { before: 'Ha detto che era', after: 'libro. (possessivo, lui)', answers: ['il suo'], en: 'He said it was his book.', hint: 'possessivo di terza persona' },
+        { before: 'Ha annunciato che la riunione sarebbe', after: 'alle nove. (cominciare)', answers: ['cominciata'], en: 'He announced the meeting would start at nine.' },
+        { before: 'Mi ha chiesto se', after: 'finito i compiti. (avere, trapassato)', answers: ['avevo'], en: 'He asked me if I had finished my homework.' },
+        { before: 'Ci ha detto di aspettare', after: '. (avverbio di luogo)', answers: ['lì', 'là'], en: 'He told us to wait there.' }
+      ],
+      order: [
+        { words: ['Ha', 'detto', 'che', 'veniva', 'alla', 'riunione'], answer: 'Ha detto che veniva alla riunione', en: 'He said he was coming to the meeting.' },
+        { words: ['Mi', 'ha', 'chiesto', 'se', 'venivo', 'anche', 'io'], answer: 'Mi ha chiesto se venivo anche io', en: 'He asked me if I was coming too.' },
+        { words: ['Mi', 'ha', 'chiesto', 'dove', 'abitavo'], answer: 'Mi ha chiesto dove abitavo', en: 'He asked me where I lived.' },
+        { words: ['Mi', 'ha', 'detto', 'di', 'chiudere', 'la', 'porta'], answer: 'Mi ha detto di chiudere la porta', en: 'He told me to close the door.' },
+        { words: ['Ha', 'promesso', 'che', 'sarebbe', 'tornato', 'presto'], answer: 'Ha promesso che sarebbe tornato presto', en: 'He promised he would come back soon.' },
+        { words: ['Ha', 'detto', 'che', 'aveva', 'già', 'finito', 'il', 'lavoro'], answer: 'Ha detto che aveva già finito il lavoro', en: 'He said he had already finished the work.' },
+        { words: ['Mi', 'ha', 'detto', 'di', 'non', 'preoccuparmi'], answer: 'Mi ha detto di non preoccuparmi', en: 'He told me not to worry.' }
+      ],
+      dnd: {
+        instructions: 'Questi verbi al discorso diretto, con un verbo introduttivo al passato, diventano IMPERFETTO o TRAPASSATO PROSSIMO? Trascinali nella colonna giusta.',
+        buckets: [
+          { id: 'imperfetto', label: 'IMPERFETTO (dal presente)', icon: '🟢' },
+          { id: 'trapassato', label: 'TRAPASSATO (dal passato prossimo)', icon: '🔵' }
+        ],
+        items: [
+          { text: 'vengo', bucket: 'imperfetto' },
+          { text: 'sono venuto', bucket: 'trapassato' },
+          { text: 'mangio', bucket: 'imperfetto' },
+          { text: 'ho mangiato', bucket: 'trapassato' },
+          { text: 'parto', bucket: 'imperfetto' },
+          { text: 'sono partito', bucket: 'trapassato' },
+          { text: 'capisco', bucket: 'imperfetto' },
+          { text: 'ho capito', bucket: 'trapassato' },
+          { text: 'dormo', bucket: 'imperfetto' },
+          { text: 'ho dormito', bucket: 'trapassato' },
+          { text: 'esco', bucket: 'imperfetto' },
+          { text: 'sono uscito', bucket: 'trapassato' },
+          { text: 'faccio', bucket: 'imperfetto' },
+          { text: 'ho fatto', bucket: 'trapassato' }
+        ]
+      },
+      match: [
+        { a: 'oggi', b: 'quel giorno' },
+        { a: 'domani', b: 'il giorno dopo' },
+        { a: 'ieri', b: 'il giorno prima' },
+        { a: 'ora', b: 'allora' },
+        { a: 'qui', b: 'lì' },
+        { a: 'questo', b: 'quello' },
+        { a: 'mio', b: 'suo' },
+        { a: 'io', b: 'lui/lei' },
+        { a: 'Vieni?', b: 'Mi ha chiesto se venivo.' },
+        { a: 'Vai!', b: 'Mi ha detto di andare.' }
+      ],
+      tf: [
+        { statement: 'Le domande sì/no si riportano con "se".', answer: true, why: 'Esatto: Mi ha chiesto se venivo.' },
+        { statement: 'Con le domande con parola interrogativa, la parola sparisce nel discorso indiretto.', answer: false, why: 'No: la parola interrogativa resta sempre (dove, quando, chi…).' },
+        { statement: 'L\'imperativo si riporta con "che" + congiuntivo.', answer: false, why: 'No: si usa "di" + infinito.' },
+        { statement: 'Il futuro semplice diventa condizionale passato quando il verbo introduttivo è al passato.', answer: true, why: 'Esatto, come nel futuro nel passato (unità 2).' },
+        { statement: 'Con un verbo introduttivo al presente, di solito non c\'è backshift.', answer: true, why: '«Dice che viene» resta al presente.' },
+        { statement: '"Oggi" diventa sempre "ieri" nel discorso indiretto.', answer: false, why: 'No: diventa "quel giorno".' },
+        { statement: 'Il possessivo "mio" può diventare "suo" quando cambia la persona che parla.', answer: true, why: 'Esatto: riflette il cambio di prospettiva.' },
+        { statement: 'Le verità permanenti possono restare al presente anche dopo un verbo introduttivo al passato.', answer: true, why: '«Ha detto che la Terra gira intorno al Sole» è corretto.' },
+        { statement: 'L\'imperfetto della frase originale cambia tempo nel discorso indiretto.', answer: false, why: 'No: l\'imperfetto resta invariato.' }
+      ],
+      translate: [
+        { en: 'He said he was coming.', answers: ['Ha detto che veniva'] },
+        { en: 'He asked me if I was coming.', answers: ['Mi ha chiesto se venivo'] },
+        { en: 'He asked me where I lived.', answers: ['Mi ha chiesto dove abitavo'] },
+        { en: 'He told me to close the door.', answers: ['Mi ha detto di chiudere la porta'] },
+        { en: 'He told me not to worry.', answers: ['Mi ha detto di non preoccuparmi'] },
+        { en: 'He promised he would come back soon.', answers: ['Ha promesso che sarebbe tornato presto'] },
+        { en: 'He said he had already finished the work.', answers: ['Ha detto che aveva già finito il lavoro'] },
+        { en: 'He said the meeting would start at nine.', answers: ['Ha detto che la riunione sarebbe cominciata alle nove'] },
+        { en: 'He asked me if I had finished my homework.', answers: ['Mi ha chiesto se avevo finito i compiti'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Cosa ha detto il capo?',
+      intro: 'Due colleghi si scambiano quello che il capo ha detto durante la riunione: tutto il discorso passa attraverso il filtro del discorso indiretto.',
+      lines: [
+        { speaker: 'Luca', icon: '🧑', it: 'Allora, cosa ha detto il capo alla riunione?', en: 'So, what did the boss say at the meeting?' },
+        { speaker: 'Sara', icon: '👩', side: 'right', it: 'Ha detto che il progetto era in ritardo e che dovevamo finirlo entro venerdì.', en: 'He said the project was behind schedule and that we had to finish it by Friday.',
+          glosses: [{ term: 'era in ritardo', expl: 'Imperfetto: il presente originale «è in ritardo» retrocede.' }, { term: 'dovevamo', expl: 'Backshift: «dobbiamo» → «dovevamo».' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Ha chiesto se avevamo già contattato il cliente?', en: 'Did he ask if we had already contacted the client?' },
+        { speaker: 'Sara', icon: '👩', side: 'right', it: 'Sì, mi ha chiesto se avevo già scritto l\'email.', en: 'Yes, he asked me if I had already written the email.',
+          glosses: [{ term: 'se avevo già scritto', expl: 'Domanda sì/no → se + trapassato prossimo.' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'E cosa gli hai risposto?', en: 'And what did you tell him?' },
+        { speaker: 'Sara', icon: '👩', side: 'right', it: 'Gli ho detto che l\'avrei mandata quel giorno stesso.', en: 'I told him I would send it that very day.',
+          glosses: [{ term: 'avrei mandata', expl: 'Futuro «la manderò» → condizionale passato.' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Ha detto qualcosa sulla prossima riunione?', en: 'Did he say anything about the next meeting?' },
+        { speaker: 'Sara', icon: '👩', side: 'right', it: 'Sì, ha annunciato che l\'avrebbe convocata per il giorno dopo, e mi ha detto di preparare il verbale.', en: 'Yes, he announced he would call it for the following day, and told me to prepare the minutes.',
+          glosses: [{ term: 'l\'avrebbe convocata', expl: 'Futuro nel passato: convocherà → avrebbe convocato.' }, { term: 'di preparare', expl: 'Ordine → di + infinito.' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Meno male che me l\'hai raccontato: io non c\'ero!', en: "Good thing you told me: I wasn't there!" }
+      ]
+    },
+
+    flashcards: [
+      { front: 'discorso indiretto', back: 'verbo dichiarativo + che/se/di' },
+      { front: 'presente →', back: 'imperfetto' },
+      { front: 'passato prossimo →', back: 'trapassato prossimo' },
+      { front: 'futuro semplice →', back: 'condizionale passato', note: 'come il futuro nel passato, unità 2' },
+      { front: 'imperativo →', back: 'di + infinito' },
+      { front: 'domanda sì/no →', back: 'se' },
+      { front: 'domanda con parola interrogativa →', back: 'la parola resta' },
+      { front: 'oggi →', back: 'quel giorno' },
+      { front: 'domani →', back: 'il giorno dopo' },
+      { front: 'ieri →', back: 'il giorno prima' },
+      { front: 'qui →', back: 'lì' },
+      { front: 'mio →', back: 'suo' },
+      { front: 'io →', back: 'lui/lei' }
+    ],
+
+    summary: {
+      formula: 'Verbo dichiarativo (passato) + CHE/SE/DI + verbo "retrocesso" (imperfetto, trapassato, condizionale passato, di + infinito)',
+      rules: [
+        'Affermazioni → che; domande sì/no → se; domande con parola interrogativa → la parola resta; ordini → di + infinito.',
+        'Con verbo introduttivo al passato scatta il backshift: presente→imperfetto, passato prossimo→trapassato, futuro→condizionale passato, condizionale presente→condizionale passato.',
+        'L\'imperativo non esiste al discorso indiretto: diventa sempre di (+ non) + infinito.',
+        'I pronomi e i possessivi cambiano prospettiva: io→lui/lei, mio→suo.',
+        'Le espressioni di tempo e luogo si adattano al nuovo punto di riferimento: oggi→quel giorno, domani→il giorno dopo, qui→lì.',
+        'Con verbo introduttivo al presente di solito non c\'è backshift.',
+        'Le verità permanenti possono restare al presente anche dopo un verbo al passato.'
+      ],
+      tips: [
+        'Chiediti sempre: è un\'affermazione, una domanda o un ordine? Poi scegli che, se o di.',
+        'Il backshift del discorso indiretto è lo stesso meccanismo del futuro nel passato (unità 2): un tempo "retrocede" di un gradino.',
+        'Immagina di dover raccontare la stessa frase una settimana dopo: cosa cambierebbe? Tempo, pronomi, avverbi.',
+        'Se hai dubbi sul tempo giusto, guarda la tabella del backshift: è la chiave di tutta l\'unità.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

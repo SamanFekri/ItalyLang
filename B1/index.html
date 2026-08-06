@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Corso interattivo di grammatica italiana livello B1: congiuntivo, periodo ipotetico, discorso indiretto, forma passiva, esercizi, flashcard e vocabolario.">
+  <title>Italiano B1 · Corso di grammatica interattivo</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     B1 course home: progress dashboard + lesson grid + search + bookmarks.
+     Same structure as the A2 home page — only the copy changes.
+     ========================================================================== */
+  const { store, coursePct, completedCount, level, levelPct } = ITA;
+
+  ITA.createPage({
+    data: () => ({ store, lessons: ITA.lessons, q: '', filter: 'all' }),
+    computed: {
+      pct() { return coursePct.value; },
+      done() { return completedCount.value; },
+      lvl() { return level.value; },
+      lvlPct() { return levelPct.value; },
+      filtered() {
+        const q = ITA.normalise(this.q);
+        return this.lessons.filter(l => {
+          if (this.filter === 'todo' && store.completed[l.file]) return false;
+          if (this.filter === 'done' && !store.completed[l.file]) return false;
+          if (this.filter === 'saved' && store.bookmarks.indexOf(l.file) < 0) return false;
+          if (!q) return true;
+          return ITA.normalise(l.title + ' ' + l.blurb + ' ' + l.group).indexOf(q) >= 0;
+        });
+      },
+      nextLesson() { return this.lessons.find(l => !store.completed[l.file]) || this.lessons[0]; },
+      totalScore() {
+        const s = Object.values(store.scores);
+        if (!s.length) return null;
+        const c = s.reduce((a, x) => a + x.correct, 0), t = s.reduce((a, x) => a + x.total, 0);
+        return { correct: c, total: t, pct: t ? Math.round(c / t * 100) : 0 };
+      },
+      wordsLearned() { return Object.keys(store.known).length; }
+    },
+    methods: {
+      isDone(f) { return !!store.completed[f]; },
+      isSaved(f) { return store.bookmarks.indexOf(f) >= 0; }
+    },
+    template: `
+      <a class="skip-link" href="#main">Vai al contenuto</a>
+      <site-header current="index.html"></site-header>
+
+      <main id="main" class="container">
+        <header class="hero animate-in">
+          <p class="card-kicker" style="color:rgba(255,255,255,.85)">Livello B1 · Intermedio</p>
+          <h1>Dire quello che pensi, non solo quello che fai 🇮🇹</h1>
+          <p>15 unità per passare dal racconto dei fatti all'espressione delle idee: congiuntivo,
+             condizionale passato, periodo ipotetico, discorso indiretto, forma passiva,
+             pronomi combinati e verbi pronominali — con oltre 700 parole nuove
+             tradotte in inglese e in farsi.</p>
+          <div class="hero-stats">
+            <div class="hero-stat"><b>{{ done }}/{{ lessons.length }}</b><span>unità</span></div>
+            <div class="hero-stat"><b>{{ store.xp }}</b><span>XP</span></div>
+            <div class="hero-stat"><b>Lv. {{ lvl }}</b><span>{{ lvlPct }}/100 al prossimo</span></div>
+            <div class="hero-stat"><b>{{ store.streak }} 🔥</b><span>serie · record {{ store.bestStreak }}</span></div>
+          </div>
+        </header>
+
+        <!-- Progress dashboard -->
+        <section class="card">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">📈</span>
+            <div><p class="card-kicker">Dashboard</p><h2 style="font-size:1.2rem">I tuoi progressi</h2></div>
+          </div>
+          <div class="stack">
+            <progress-bar :value="pct" label="Corso completato" :right="pct + '%'"></progress-bar>
+            <progress-bar :value="lvlPct" :label="'Livello ' + lvl" :right="lvlPct + '/100 XP'"></progress-bar>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" :href="nextLesson.file">▶ Continua: {{ nextLesson.title }}</a>
+            <a class="btn btn-ghost" href="15-ripasso-b1.html">🏆 Esame finale B1</a>
+            <a class="btn btn-ghost" href="../A2/index.html">↩ Torna al livello A2</a>
+            <a class="btn btn-ghost" href="../verbi.html">🔀 Verbi irregolari</a>
+          </div>
+          <p v-if="totalScore" class="small muted" style="margin:12px 0 0">
+            Esercizi svolti: <b>{{ totalScore.correct }}/{{ totalScore.total }}</b> risposte corrette ({{ totalScore.pct }}%)<span v-if="wordsLearned"> · parole imparate: <b>{{ wordsLearned }}</b></span>.
+          </p>
+        </section>
+
+        <!-- Search + filters -->
+        <div class="vocab-toolbar" style="margin-top:26px">
+          <div class="search-box">
+            <span class="s-icon" aria-hidden="true">🔍</span>
+            <input type="search" v-model="q" placeholder="Cerca un'unità (es. congiuntivo, ipotetico, passiva)…" aria-label="Cerca un'unità">
+          </div>
+        </div>
+        <div class="chip-row">
+          <button class="chip" :class="{ active: filter === 'all' }" @click="filter = 'all'">Tutte <small>{{ lessons.length }}</small></button>
+          <button class="chip" :class="{ active: filter === 'todo' }" @click="filter = 'todo'">Da fare <small>{{ lessons.length - done }}</small></button>
+          <button class="chip" :class="{ active: filter === 'done' }" @click="filter = 'done'">Completate <small>{{ done }}</small></button>
+          <button class="chip" :class="{ active: filter === 'saved' }" @click="filter = 'saved'">🔖 Salvate <small>{{ store.bookmarks.length }}</small></button>
+        </div>
+
+        <!-- Lesson grid -->
+        <div class="grid grid-lessons">
+          <a v-for="l in filtered" :key="l.file" class="lesson-card" :href="l.file">
+            <div class="lc-top">
+              <span class="lc-icon" aria-hidden="true">{{ l.icon }}</span>
+              <h3>{{ l.title }}</h3>
+              <span class="lc-num">{{ String(l.num).padStart(2, '0') }}</span>
+            </div>
+            <p>{{ l.blurb }}</p>
+            <div class="row" style="margin-top:auto;gap:6px">
+              <span class="pill">{{ l.group }}</span>
+              <span v-if="isDone(l.file)" class="pill pill-ok">✓ completata</span>
+              <span v-if="isSaved(l.file)" class="pill pill-warn">🔖 salvata</span>
+              <span v-if="store.scores[l.file]" class="pill pill-info">{{ store.scores[l.file].pct }}%</span>
+            </div>
+          </a>
+        </div>
+        <p v-if="!filtered.length" class="muted center" style="margin-top:20px">Nessuna unità trovata.</p>
+
+        <!-- Study advice -->
+        <section class="card card--tip" style="margin-top:26px">
+          <h2 style="font-size:1.1rem">💡 Come studiare il B1</h2>
+          <ol>
+            <li>Il B1 non aggiunge solo tempi verbali: aggiunge <b>punti di vista</b>. Chiediti sempre <i>chi</i> parla e <i>quando</i>.</li>
+            <li>Leggi <b>Introduzione → Formula → Regola</b>, poi guarda la <b>linea del tempo</b>: al B1 quasi tutto è questione di ordine dei fatti.</li>
+            <li>Studia il <b>vocabolario</b> dell'unità prima degli esercizi: le frasi diventano molto più facili.</li>
+            <li>Fai la <b>pratica guidata</b> ad alta voce, poi tutti e 7 gli esercizi.</li>
+            <li>Chiudi con le <b>flashcard</b> e torna il giorno dopo per mantenere la serie 🔥.</li>
+          </ol>
+        </section>
+
+        <!-- Level map -->
+        <section class="card" style="margin-top:26px">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">🧭</span>
+            <div><p class="card-kicker">Percorso</p><h2 style="font-size:1.2rem">Che cosa saprai fare alla fine</h2></div>
+          </div>
+          <div class="grid grid-3">
+            <div><b>Raccontare</b><p class="small muted">Ordinare i fatti nel tempo con trapassato e concordanza.</p></div>
+            <div><b>Ipotizzare</b><p class="small muted">Periodo ipotetico completo, dal reale all'impossibile.</p></div>
+            <div><b>Opinare</b><p class="small muted">Congiuntivo passato e imperfetto dopo credere, pensare, sperare.</p></div>
+            <div><b>Riportare</b><p class="small muted">Discorso indiretto: affermazioni, domande e ordini.</p></div>
+            <div><b>Formalizzare</b><p class="small muted">Forma passiva e italiano dei giornali e degli uffici.</p></div>
+            <div><b>Parlare naturale</b><p class="small muted">Pronomi combinati e verbi pronominali come un madrelingua.</p></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Italiano B1 · Corso interattivo di grammatica · I progressi restano nel tuo browser (localStorage).</p>
+      </footer>
+      <toast-host></toast-host>
+    `
+  });
+  </script>
+</body>
+</html>

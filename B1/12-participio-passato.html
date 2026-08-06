@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il participio passato italiano in profondità: participi irregolari, accordo con avere e i pronomi diretti o «ne», participio come aggettivo, participio assoluto e il suo ruolo in tutti i tempi composti.">
+  <title>Participio Passato · Italiano B1</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     UNITÀ 12 — PARTICIPIO PASSATO
+     ========================================================================== */
+  window.LESSON = {
+    num: 12, file: '12-participio-passato.html', icon: '📜', title: 'Participio Passato', group: 'Forme implicite',
+    subtitle: 'Non solo passato prossimo: participi irregolari, accordo con i pronomi, participio come aggettivo e la costruzione assoluta.',
+
+    intro: {
+      what: 'Il participio passato è la forma verbale in <b>-ato / -uto / -ito</b> (o irregolare) che hai già usato in ogni tempo composto: mangiato, creduto, dormito, fatto, scritto. All\'A2 l\'hai incontrato dentro il passato prossimo; qui lo studiamo da solo, in profondità: le sue forme irregolari, le sue regole d\'accordo e i suoi usi da protagonista.',
+      when: 'Ogni volta che costruisci un tempo composto (passato prossimo, trapassato, condizionale passato, congiuntivo passato/trapassato, gerundio passato, forma passiva), ogni volta che descrivi qualcosa con un aggettivo che viene da un verbo (una porta chiusa) e ogni volta che vuoi comprimere due frasi in una con il participio assoluto (Finito il lavoro, è uscito).',
+      why: 'Il participio è il pezzo che non cambia mai: se lo conosci bene — soprattutto le forme irregolari e le regole d\'accordo — hai già risolto metà della grammatica dei tempi composti dell\'italiano, dal passato prossimo dell\'A2 fino al congiuntivo trapassato e alla forma passiva del B1.',
+      mistakes: [
+        'Dimenticare l\'accordo con avere quando c\'è un pronome diretto davanti: ❌ "La lettera? L\'ho scritto" → ✅ "L\'ho scritta".',
+        'Inventare un participio regolare per un verbo irregolare: ❌ "Ho scrivuto" → ✅ "Ho scritto".',
+        'Dimenticare l\'accordo del participio assoluto col proprio soggetto: ❌ "Finita il lavoro, è uscito" (lavoro è maschile) → ✅ "Finito il lavoro, è uscito".',
+        'Far concordare il participio con avere quando NON c\'è nessun pronome davanti: ❌ "Ho mangiata la pizza" → ✅ "Ho mangiato la pizza".'
+      ]
+    },
+
+    objectives: [
+      'Formare il participio passato regolare di tutti e tre i gruppi (-are, -ere, -ire).',
+      'Riconoscere e usare correttamente più di trenta participi irregolari.',
+      'Applicare la regola dell\'accordo con <b>avere</b> quando precede un pronome diretto (lo/la/li/le) o il partitivo <b>ne</b>.',
+      'Usare il participio come un vero <b>aggettivo</b>, con accordo di genere e numero.',
+      'Costruire il <b>participio assoluto</b> per esprimere causa o tempo in modo compatto.',
+      'Riconoscere il participio — sempre identico — dentro tutti i tempi composti già studiati.'
+    ],
+
+    formulas: [
+      {
+        label: 'Formula generale (in tutti i tempi composti)',
+        rows: [
+          { parts: [
+              { text: 'AVERE o ESSERE', note: 'nel tempo/modo richiesto', type: 'verb' },
+              { text: 'PARTICIPIO PASSATO', note: '-ato / -uto / -ito o forma irregolare', type: 'object' }
+            ], example: 'Ho già tagliato le verdure.', translation: 'I have already cut the vegetables.' }
+        ]
+      },
+      {
+        label: 'Con AVERE + pronome diretto o "ne" — il participio concorda',
+        rows: [
+          { parts: [
+              { text: 'LO / LA / LI / LE / NE', note: 'pronome prima del verbo', type: 'subject' },
+              { text: 'ho / hai / ha…', type: 'verb' },
+              { text: 'PARTICIPIO concordato', note: '-o / -a / -i / -e', type: 'object' }
+            ], example: 'La valigia? L\'ho già preparata.', translation: 'The suitcase? I already packed it.' }
+        ]
+      },
+      {
+        label: 'Il participio come aggettivo',
+        rows: [
+          { parts: [
+              { text: 'articolo + nome', type: 'subject' },
+              { text: 'PARTICIPIO-aggettivo', note: 'concorda come un normale aggettivo', type: 'object' }
+            ], example: 'Una porta chiusa, un uomo stanco.', translation: 'A closed door, a tired man.' }
+        ]
+      },
+      {
+        label: 'Il participio assoluto',
+        rows: [
+          { parts: [
+              { text: 'PARTICIPIO PASSATO', note: 'in testa alla frase', type: 'verb' },
+              { text: 'soggetto proprio', note: 'concorda col participio', type: 'subject' },
+              { text: ', + frase principale', type: 'extra' }
+            ], example: 'Finito il lavoro, è uscito.', translation: 'Once the work was finished, he went out.' }
+        ]
+      }
+    ],
+    formulaNote: 'Il participio passato è la costante di tutti i tempi composti: cambia solo che cosa lo precede (ausiliare, pronome, o niente). Impara bene i participi irregolari una volta sola: li userai ovunque, per il resto della tua vita in italiano.',
+
+    rules: [
+      {
+        title: 'Formazione regolare — ripasso veloce',
+        body: 'Il participio regolare si forma togliendo la desinenza dell\'infinito e aggiungendo -ato, -uto o -ito. Lo conosci già dall\'A2: qui è solo un ripasso lampo prima di affrontare gli irregolari.',
+        points: [
+          '<b>-ARE → -ATO</b>: tagli-are → tagli-ato, cucin-are → cucin-ato.',
+          '<b>-ERE → -UTO</b>: cred-ere → cred-uto, ricev-ere → ricev-uto.',
+          '<b>-IRE → -ITO</b>: pul-ire → pul-ito, dorm-ire → dorm-ito.'
+        ],
+        exception: 'Moltissimi verbi in -ere hanno un participio irregolare: è il gruppo più imprevedibile e va imparato a memoria, verbo per verbo (vedi la tabella qui sotto).'
+      },
+      {
+        title: 'I participi irregolari — la lista da sapere',
+        body: 'Al B1 la lista degli irregolari si allunga parecchio rispetto all\'A2: qui ne trovi più di trenta, i più usati nella lingua di tutti i giorni.',
+        points: [
+          'I verbi in -ere sono i più numerosi tra gli irregolari: chiudere → chiuso, scrivere → scritto, prendere → preso…',
+          'Alcuni participi finiscono in <b>-so</b>: chiuso, deciso, diviso, acceso, ucciso, nascosto.',
+          'Altri finiscono in <b>-tto</b>: fatto, detto, scritto, rotto, corretto, tradotto.',
+          'Altri ancora in <b>-rto</b> o <b>-sto</b>: aperto, offerto, rimasto, risposto.'
+        ],
+        exception: 'Alcuni verbi hanno due forme accettate: perso/perduto, visto/veduto. La prima è oggi molto più comune nel parlato.'
+      },
+      {
+        title: 'L\'accordo con ESSERE — nessuna eccezione',
+        body: 'Con l\'ausiliare essere il participio concorda SEMPRE in genere e numero col soggetto: qui non c\'è scelta.',
+        points: [
+          'ero/era/eravamo + participio in -o/-a/-i/-e a seconda del soggetto.',
+          'Vale per tutti i verbi di movimento e cambiamento di stato: partito/a/i/e, arrivato/a/i/e, diventato/a/i/e.',
+          'Vale per tutti i riflessivi e pronominali: mi sono lavato/a, ci siamo svegliati/e.',
+          'Vale nella forma passiva: la porta è stata chiusa, i pacchi sono stati spediti.'
+        ],
+        exception: 'Nessuna: è l\'unica regola di accordo del participio che non ha eccezioni.'
+      },
+      {
+        title: 'L\'accordo con AVERE — la regola ferma del B1',
+        body: 'All\'A2 hai imparato che con avere il participio di solito non cambia. Al B1 questa regola si precisa: il participio con avere concorda quando un pronome diretto (<b>lo, la, li, le</b>) o il partitivo <b>ne</b> lo precede.',
+        points: [
+          'Senza pronome: il participio resta invariabile in -o → «Ho mangiato la pizza».',
+          'Con lo/la/li/le prima del verbo: accordo <b>obbligatorio</b> → «La pizza? L\'ho mangiata».',
+          'Con "ne" partitivo: accordo col nome sottinteso → «Di pizze ne ho mangiate due».',
+          'Con mi/ti/ci/vi l\'accordo è facoltativo (più raro nel parlato): «Ci hanno visti» o «Ci hanno visto».'
+        ],
+        exception: 'Con gli altri pronomi — quelli indiretti (gli, le indiretto, mi, ti, ci, vi come indiretti) — il participio NON concorda: «Le ho scritto una lettera» (a lei), mai «scritta».'
+      },
+      {
+        title: 'Il participio come aggettivo',
+        body: 'Quando il participio descrive un nome senza far parte di un verbo composto, funziona esattamente come un aggettivo qualsiasi: concorda in genere e numero col nome che accompagna.',
+        points: [
+          'una porta chiusa, dei negozi chiusi, delle finestre aperte.',
+          'un uomo stanco, una ragazza stanca — participi diventati aggettivi di uso comune.',
+          'acqua depurata, verdure tagliate, carne cotta — moltissimi esempi legati alla cucina.',
+          'Come ogni aggettivo può stare prima o dopo il nome, ma di solito lo segue.'
+        ],
+        exception: 'Alcuni participi-aggettivo hanno un significato leggermente diverso dal verbo di origine: "stanco" (tired) nel parlato comune si comporta come un aggettivo autonomo, più che come participio di "stancare".'
+      },
+      {
+        title: 'Il participio assoluto (costruzione compatta, tipica dello scritto)',
+        body: 'Il participio passato da solo, in testa alla frase, può sostituire un\'intera subordinata di tempo o causa. È una costruzione un po\' letteraria ma frequente anche in email formali e articoli di giornale.',
+        points: [
+          '«Finito il lavoro, è uscito» = «Dopo che aveva finito il lavoro, è uscito».',
+          'Il participio concorda col <b>proprio</b> soggetto, non con quello della frase principale: «Preparata la valigia, ha controllato il passaporto» (la valigia, femminile).',
+          'Il soggetto del participio assoluto può comparire subito dopo il participio: «Finito IL LAVORO…», oppure restare sottinteso se coincide con quello della frase principale.',
+          'Con i verbi transitivi il soggetto grammaticale del participio è l\'oggetto dell\'azione: chi ha finito il lavoro sono "io" o "loro", ma il participio concorda con "il lavoro", cioè con la cosa finita.'
+        ],
+        exception: 'Con i verbi intransitivi di movimento il participio assoluto concorda comunque col soggetto logico dell\'azione: «Arrivati in albergo, ci siamo riposati» (noi siamo arrivati).'
+      },
+      {
+        title: 'Il participio nei tempi composti: la costante',
+        body: 'Hai già incontrato il participio passato in molte strutture di questo corso: è sempre lui, senza variazioni di forma — cambia solo l\'ausiliare o il modo che lo precede.',
+        points: [
+          'Passato prossimo: ho cucinato · trapassato prossimo (unità 1): avevo cucinato.',
+          'Condizionale passato (unità 2): avrei cucinato · congiuntivo passato (unità 3): abbia cucinato · congiuntivo trapassato (unità 4): avessi cucinato.',
+          'Gerundio passato (unità 11): avendo cucinato · forma passiva (unità 5): è stato cucinato.',
+          'Se sai il participio di un verbo, lo sai per SEMPRE: non cambia mai, in nessuna di queste strutture.'
+        ],
+        exception: 'L\'unica variazione possibile è l\'accordo di genere/numero (con essere, o con avere + pronome/ne): la radice del participio resta identica in ogni struttura.'
+      }
+    ],
+
+    timeline: {
+      title: 'Il participio passato attraverso tutti i tempi composti',
+      intro: 'Lo stesso participio, sempre uguale, entra in strutture diverse: cambia solo che cosa lo precede. Il participio è il filo che unisce tutta la grammatica dei tempi composti che hai studiato finora.',
+      points: [
+        { time: 'A2', label: 'Passato prossimo', example: 'Ho cucinato.', note: 'presente di avere/essere + participio' },
+        { time: 'Unità 1', label: 'Trapassato prossimo', example: 'Avevo già cucinato.', note: 'imperfetto + participio' },
+        { time: 'Unità 2-4', label: 'Condizionale / congiuntivo passato', example: 'Avrei cucinato · abbia cucinato.', note: 'stesso participio, altro modo' },
+        { time: 'Adesso', label: 'Participio assoluto', example: 'Finito di cucinare, sono uscito.', now: true, note: 'il participio da solo, senza ausiliare' }
+      ],
+      caption: 'Dal passato prossimo dell\'A2 fino al participio assoluto del B1, la forma del participio non cambia mai: cambia solo ciò che gli sta intorno.'
+    },
+
+    tables: [
+      {
+        title: 'Formazione regolare — ripasso',
+        note: 'Tre gruppi, tre desinenze: -ato, -uto, -ito.',
+        columns: ['Infinito', 'Gruppo', 'Participio passato', 'Esempio'],
+        rows: [
+          { cells: ['parlare', '-are → -ato', 'parlato', 'Ho parlato con il capo cuoco.'] },
+          { cells: ['credere', '-ere → -uto', 'creduto', 'Non ho creduto a quella scusa.'] },
+          { cells: ['dormire', '-ire → -ito', 'dormito', 'Abbiamo dormito in albergo.'] },
+          { cells: ['tagliare', '-are → -ato', 'tagliato', 'Ho tagliato le verdure.'] },
+          { cells: ['pulire', '-ire → -ito', 'pulito', 'Hanno pulito tutta la cucina.'] },
+          { cells: ['ricevere', '-ere → -uto', 'ricevuto', 'Ho ricevuto il pacco ieri.'] }
+        ]
+      },
+      {
+        title: 'I participi irregolari — la lista grande (39 verbi)',
+        note: 'Memorizzali: sono identici in ogni tempo composto.',
+        columns: ['Infinito', 'Participio passato', 'Esempio'],
+        rows: [
+          { cells: ['fare', 'fatto', 'Ho fatto la spesa per la cena.'], irregular: [1] },
+          { cells: ['dire', 'detto', 'Non ha detto niente durante il viaggio.'], irregular: [1] },
+          { cells: ['scrivere', 'scritto', 'Ho scritto la lista degli ingredienti.'], irregular: [1] },
+          { cells: ['leggere', 'letto', 'Ho letto la ricetta due volte.'], irregular: [1] },
+          { cells: ['prendere', 'preso', 'Ho preso il treno delle sette.'], irregular: [1] },
+          { cells: ['mettere', 'messo', 'Ho messo il sale nell\'acqua.'], irregular: [1] },
+          { cells: ['chiedere', 'chiesto', 'Ho chiesto il conto al cameriere.'], irregular: [1] },
+          { cells: ['rispondere', 'risposto', 'Non ha ancora risposto al messaggio.'], irregular: [1] },
+          { cells: ['vedere', 'visto', 'Abbiamo visto un bel panorama dal treno.'], irregular: [1] },
+          { cells: ['aprire', 'aperto', 'Ho aperto la valigia per controllare.'], irregular: [1] },
+          { cells: ['morire', 'morto', 'Il fuoco era quasi morto sotto la pentola.'], irregular: [1] },
+          { cells: ['nascere', 'nato', 'È nato in un piccolo paese di montagna.'], irregular: [1] },
+          { cells: ['venire', 'venuto', 'Sono venuti a cena da noi ieri sera.'], irregular: [1] },
+          { cells: ['rimanere', 'rimasto', 'Siamo rimasti senza farina a metà ricetta.'], irregular: [1] },
+          { cells: ['succedere', 'successo', 'Non so cosa sia successo in cucina.'], irregular: [1] },
+          { cells: ['vivere', 'vissuto', 'Ha vissuto un anno all\'estero.'], irregular: [1] },
+          { cells: ['bere', 'bevuto', 'Abbiamo bevuto un buon vino in viaggio.'], irregular: [1] },
+          { cells: ['essere', 'stato', 'Sono stato in aeroporto tre ore.'], irregular: [1] },
+          { cells: ['stare', 'stato', 'Siamo stati zitti per tutto il viaggio.'], irregular: [1] },
+          { cells: ['aggiungere', 'aggiunto', 'Ho aggiunto un pizzico di sale.'], irregular: [1] },
+          { cells: ['accendere', 'acceso', 'Ha acceso il forno per la torta.'], irregular: [1] },
+          { cells: ['chiudere', 'chiuso', 'Ho chiuso la valigia all\'ultimo momento.'], irregular: [1] },
+          { cells: ['correggere', 'corretto', 'Il cuoco ha corretto la ricetta originale.'], irregular: [1] },
+          { cells: ['decidere', 'deciso', 'Abbiamo deciso la meta del viaggio insieme.'], irregular: [1] },
+          { cells: ['dividere', 'diviso', 'Abbiamo diviso il conto del ristorante.'], irregular: [1] },
+          { cells: ['esprimere', 'espresso', 'Ha espresso subito la sua opinione sulla ricetta.'], irregular: [1] },
+          { cells: ['muovere', 'mosso', 'Non ha mosso un dito per aiutare in cucina.'], irregular: [1] },
+          { cells: ['nascondere', 'nascosto', 'Aveva nascosto i regali in fondo alla valigia.'], irregular: [1] },
+          { cells: ['offrire', 'offerto', 'Ci ha offerto un caffè prima della partenza.'], irregular: [1] },
+          { cells: ['perdere', 'perso', 'Ho perso il volo per un ritardo assurdo.'], irregular: [1] },
+          { cells: ['permettere', 'permesso', 'Il tempo non ci ha permesso di partire prima.'], irregular: [1] },
+          { cells: ['piangere', 'pianto', 'Ha pianto di gioia all\'aeroporto.'], irregular: [1] },
+          { cells: ['rompere', 'rotto', 'Ho rotto un piatto lavando i bicchieri.'], irregular: [1] },
+          { cells: ['scegliere', 'scelto', 'Abbiamo scelto la ricetta più semplice.'], irregular: [1] },
+          { cells: ['spegnere', 'spento', 'Ho spento il fuoco prima di uscire.'], irregular: [1] },
+          { cells: ['togliere', 'tolto', 'Ho tolto la pentola dal fornello.'], irregular: [1] },
+          { cells: ['tradurre', 'tradotto', 'Ha tradotto la ricetta dall\'italiano.'], irregular: [1] },
+          { cells: ['uccidere', 'ucciso', 'Il freddo ha ucciso tutte le piante del balcone.'], irregular: [1] },
+          { cells: ['vincere', 'vinto', 'Ha vinto un viaggio in Italia a una lotteria.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'L\'accordo con AVERE + pronome diretto o "ne"',
+        note: 'Senza pronome resta in -o; con lo/la/li/le o ne concorda.',
+        columns: ['Frase base (senza pronome)', 'Con pronome o "ne"', 'Accordo'],
+        rows: [
+          { cells: ['Ho letto il libro.', 'L\'ho letto.', 'invariato (masch. sing.)'] },
+          { cells: ['Ho letto la lettera.', 'L\'ho letta.', 'concorda: femm. sing.'], irregular: [1] },
+          { cells: ['Ho comprato i biglietti.', 'Li ho comprati.', 'concorda: masch. plur.'], irregular: [1] },
+          { cells: ['Ho preparato le valigie.', 'Le ho preparate.', 'concorda: femm. plur.'], irregular: [1] },
+          { cells: ['Ho comprato tre mele.', 'Ne ho comprate tre.', 'concorda con "mele": femm. plur.'], irregular: [1] },
+          { cells: ['Ho letto due libri.', 'Ne ho letti due.', 'concorda con "libri": masch. plur.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Il participio come aggettivo',
+        columns: ['Participio', 'Forme (m./f./m.pl./f.pl.)', 'Esempio'],
+        rows: [
+          { cells: ['chiudere → chiuso', 'chiuso / chiusa / chiusi / chiuse', 'I negozi erano chiusi la domenica.'] },
+          { cells: ['stancare → stanco*', 'stanco / stanca / stanchi / stanche', 'Era un uomo stanco dopo il viaggio.'] },
+          { cells: ['depurare → depurato', 'depurato / depurata / depurati / depurate', 'Bevevamo solo acqua depurata.'] },
+          { cells: ['organizzare → organizzato', 'organizzato / organizzata / organizzati / organizzate', 'Era un viaggio ben organizzato.'] },
+          { cells: ['cuocere → cotto', 'cotto / cotta / cotti / cotte', 'La pasta era cotta al punto giusto.'] }
+        ]
+      },
+      {
+        title: 'Il participio assoluto — esempi',
+        columns: ['Participio assoluto', 'Equivalente con subordinata', 'Traduzione'],
+        rows: [
+          { cells: ['Finito il lavoro, è uscito.', 'Dopo che aveva finito il lavoro, è uscito.', 'Once the work was finished, he went out.'] },
+          { cells: ['Preparata la valigia, ha controllato il passaporto.', 'Dopo che aveva preparato la valigia, ha controllato il passaporto.', 'Once the suitcase was packed, he checked his passport.'] },
+          { cells: ['Arrivati in albergo, ci siamo riposati.', 'Dopo che siamo arrivati in albergo, ci siamo riposati.', 'Once we arrived at the hotel, we rested.'] },
+          { cells: ['Chiusa la porta, ha acceso la luce.', 'Dopo aver chiuso la porta, ha acceso la luce.', 'Having closed the door, he turned on the light.'] },
+          { cells: ['Persa la pazienza, se n\'è andato.', 'Poiché aveva perso la pazienza, se n\'è andato.', 'Having lost his patience, he left.'] }
+        ]
+      },
+      {
+        title: 'Sintesi — il participio in tutti i tempi composti',
+        note: 'La forma del participio non cambia mai: cambia solo la struttura intorno.',
+        columns: ['Tempo composto', 'Formula', 'Esempio'],
+        rows: [
+          { cells: ['Passato prossimo (A2)', 'ho / sono + participio', 'Ho cucinato la cena.'] },
+          { cells: ['Trapassato prossimo (unità 1)', 'avevo / ero + participio', 'Avevo già cucinato la cena.'] },
+          { cells: ['Condizionale passato (unità 2)', 'avrei / sarei + participio', 'Avrei cucinato qualcos\'altro.'] },
+          { cells: ['Congiuntivo passato (unità 3)', 'abbia / sia + participio', 'Penso che abbia cucinato lui.'] },
+          { cells: ['Congiuntivo trapassato (unità 4)', 'avessi / fossi + participio', 'Se avessi cucinato prima…'] },
+          { cells: ['Gerundio passato (unità 11)', 'avendo / essendo + participio', 'Avendo cucinato tutto, mi sono seduto.'] },
+          { cells: ['Forma passiva (unità 5)', 'essere / venire + participio', 'La cena è stata cucinata da mio marito.'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Ho tagliato le verdure per la zuppa.', literal: 'I-have cut the vegetables for the soup.', natural: 'I cut the vegetables for the soup.', note: 'Participio regolare di -are: tagli-are → tagli-ato.' },
+      { it: 'Abbiamo creduto a ogni parola.', literal: 'We-have believed to every word.', natural: 'We believed every word.', note: '-ere regolare → -uto: cred-ere → cred-uto.' },
+      { it: 'Hanno pulito la cucina insieme.', literal: 'They-have cleaned the kitchen together.', natural: 'They cleaned the kitchen together.', note: '-ire regolare → -ito: pul-ire → pul-ito.' },
+      { it: 'Ho scelto il piatto più semplice della ricetta.', literal: 'I-have chosen the dish more simple of-the recipe.', natural: 'I chose the simplest dish on the recipe.', note: 'scegliere → scelto: participio irregolare.' },
+      { it: 'Il cameriere ha rotto un bicchiere in cucina.', literal: 'The waiter has broken a glass in kitchen.', natural: 'The waiter broke a glass in the kitchen.', note: 'rompere → rotto: participio irregolare.' },
+      { it: 'Le valigie sono arrivate all\'aeroporto sane e salve.', literal: 'The suitcases are arrived at-the airport sound and safe.', natural: 'The suitcases arrived at the airport safe and sound.', note: 'Con essere il participio concorda sempre: arrivate (femm. plur.).' },
+      { it: 'La valigia? L\'ho già preparata ieri sera.', literal: 'The suitcase? It I-have already prepared yesterday evening.', natural: 'The suitcase? I already packed it last night.', note: 'Con avere + pronome diretto (l\' = la) il participio concorda: preparata.' },
+      { it: 'Gli ingredienti? Li ho comprati stamattina al mercato.', literal: 'The ingredients? Them I-have bought this-morning at-the market.', natural: 'The ingredients? I bought them this morning at the market.', note: 'Pronome diretto "li" (masch. plur.) → participio concordato: comprati.' },
+      { it: 'Di mele ne ho comprate tre.', literal: 'Of apples of-them I-have bought three.', natural: 'Of apples, I bought three.', note: 'Con "ne" partitivo il participio concorda col nome sottinteso: mele (femm.) → comprate.' },
+      { it: 'Abbiamo trovato una porta chiusa e nessuno ha risposto.', literal: 'We-have found a door closed and nobody has answered.', natural: 'We found a closed door and nobody answered.', note: 'Participio-aggettivo: concorda come un normale aggettivo, qui femm. sing.: chiusa.' },
+      { it: 'Era un uomo stanco dopo un viaggio così lungo.', literal: 'He-was a man tired after a trip so long.', natural: 'He was a tired man after such a long trip.', note: 'stanco concorda col nome "uomo" come un vero aggettivo.' },
+      { it: 'Finito il lavoro in cucina, siamo usciti a fare due passi.', literal: 'Finished the work in kitchen, we-are gone-out to make two steps.', natural: 'Once the work in the kitchen was finished, we went out for a walk.', note: 'Participio assoluto: equivale a «Dopo che avevamo finito il lavoro…», concorda col proprio soggetto "il lavoro".' },
+      { it: 'Preparata la valigia, ha controllato il passaporto.', literal: 'Prepared the suitcase, he-has checked the passport.', natural: 'Once the suitcase was ready, he checked his passport.', note: 'Il soggetto del participio assoluto è "la valigia" (femm.): preparata.' },
+      { it: 'Quando siamo arrivati, il cuoco aveva già tagliato tutte le verdure.', literal: 'When we-are arrived, the cook had already cut all the vegetables.', natural: 'When we arrived, the cook had already cut all the vegetables.', note: 'Il participio dentro il trapassato prossimo (unità 1): identico a quello del passato prossimo.' },
+      { it: 'Avrei aggiunto più sale a questa ricetta.', literal: 'I-would-have added more salt to this recipe.', natural: 'I would have added more salt to this recipe.', note: 'Anche nel condizionale passato (unità 2) il participio non cambia forma.' },
+      { it: 'Penso che abbiano già spento il forno.', literal: 'I-think that they-have already turned-off the oven.', natural: 'I think they have already turned off the oven.', note: 'Il participio dentro il congiuntivo passato (unità 3): stessa forma, avviene solo il modo del verbo ausiliare.' },
+      { it: 'Avendo già cucinato tutto, ci siamo seduti a riposare.', literal: 'Having already cooked everything, ourselves we-are sat to rest.', natural: 'Having already cooked everything, we sat down to rest.', note: 'Il participio dentro il gerundio passato (unità 11): avendo + participio.' },
+      { it: 'La cena è stata preparata da mio marito.', literal: 'The dinner is been prepared by my husband.', natural: 'Dinner was prepared by my husband.', note: 'Nella forma passiva (unità 5) il participio concorda col soggetto: preparata.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Ho visto Maria ieri, l\'ho visto al bar.', right: 'L\'ho vista al bar.', why: 'Con avere + pronome diretto "l\'" (= la, riferito a Maria) il participio concorda al femminile.' },
+      { wrong: 'Ho scrivuto una lettera.', right: 'Ho scritto una lettera.', why: 'scrivere ha un participio irregolare: scritto, non "scrivuto".' },
+      { wrong: 'Di mele ne ho comprato tre.', right: 'Di mele ne ho comprate tre.', why: 'Con il partitivo "ne" il participio concorda col nome sottinteso: mele è femminile plurale.' },
+      { wrong: 'Una porta chiuso.', right: 'Una porta chiusa.', why: 'Come aggettivo, il participio concorda in genere e numero col nome: porta è femminile.' },
+      { wrong: 'Finita il lavoro, è uscito.', right: 'Finito il lavoro, è uscito.', why: 'Il participio assoluto concorda col proprio soggetto "il lavoro", che è maschile.' },
+      { wrong: 'Ho offrito un caffè a tutti.', right: 'Ho offerto un caffè a tutti.', why: 'offrire ha un participio irregolare: offerto, non "offrito".' },
+      { wrong: 'Ho aggiungto il sale alla fine.', right: 'Ho aggiunto il sale alla fine.', why: 'aggiungere ha un participio irregolare: aggiunto, non "aggiungto".' },
+      { wrong: 'Ho mangiata la pizza.', right: 'Ho mangiato la pizza.', why: 'Con avere e senza nessun pronome davanti, il participio resta invariabile in -o.' },
+      { wrong: 'Le ho scritta una lettera.', right: 'Le ho scritto una lettera.', why: '"Le" qui è pronome indiretto (a lei): con i pronomi indiretti il participio non concorda mai.' }
+    ],
+
+    vocab: {
+      title: 'Vocabolario — cucina, viaggi e azioni quotidiane (56 parole)',
+      intro: 'Il participio passato vive nelle azioni di tutti i giorni: cucinare, viaggiare, sistemare casa. Ecco il lessico per raccontarle, con diversi verbi dal participio irregolare per fissare bene la grammatica di questa unità. Ogni scheda dà l\'italiano, l\'inglese, il farsi (فارسی) e una frase d\'esempio.',
+      categories: [
+        { id: 'cucina', label: 'Cucina', icon: '🍳' },
+        { id: 'ingredienti', label: 'Ingredienti', icon: '🥕' },
+        { id: 'viaggio', label: 'Viaggio', icon: '✈️' },
+        { id: 'bagagli', label: 'Bagagli e partenza', icon: '🧳' },
+        { id: 'casa', label: 'Vita quotidiana', icon: '🏠' },
+        { id: 'azioni', label: 'Azioni e verbi utili', icon: '🔧' }
+      ],
+      words: [
+        /* ── Cucina (11) ── */
+        { it: 'cucinare', en: 'to cook', fa: 'پختن', cat: 'cucina', pos: 'v.', ex: 'Ha cucinato una cena squisita per tutti.' },
+        { it: 'cuocere', en: 'to cook (of food)', fa: 'پخته شدن', cat: 'cucina', pos: 'v.', ex: 'La pasta era cotta al punto giusto.' },
+        { it: 'tagliare', en: 'to cut', fa: 'بریدن', cat: 'cucina', pos: 'v.', ex: 'Ho tagliato le verdure a pezzetti.' },
+        { it: 'affettare', en: 'to slice', fa: 'برش زدن', cat: 'cucina', pos: 'v.', ex: 'Ha affettato il pane per la colazione.' },
+        { it: 'versare', en: 'to pour', fa: 'ریختن', cat: 'cucina', pos: 'v.', ex: 'Ho versato l\'olio nella padella calda.' },
+        { it: 'mescolare', en: 'to mix, to stir', fa: 'هم زدن', cat: 'cucina', pos: 'v.', ex: 'Mescola bene prima di servire.' },
+        { it: 'friggere', en: 'to fry', fa: 'سرخ کردن', cat: 'cucina', pos: 'v.', ex: 'Ha fritto le patatine in olio bollente.' },
+        { it: 'bollire', en: 'to boil', fa: 'جوشاندن', cat: 'cucina', pos: 'v.', ex: 'L\'acqua è bollita per dieci minuti.' },
+        { it: 'condire', en: 'to season, to dress', fa: 'چاشنی زدن', cat: 'cucina', pos: 'v.', ex: 'Ho condito l\'insalata con olio e limone.' },
+        { it: 'la ricetta', en: 'recipe', fa: 'دستور پخت', cat: 'cucina', pos: 'f.', ex: 'La ricetta era scritta in italiano.' },
+        { it: 'la padella', en: 'frying pan', fa: 'ماهیتابه', cat: 'cucina', pos: 'f.', ex: 'La padella era ancora calda quando l\'ho lavata.' },
+
+        /* ── Ingredienti (10) ── */
+        { it: 'l\'ingrediente', en: 'ingredient', fa: 'ماده لازم', cat: 'ingredienti', pos: 'm.', ex: 'Avevo dimenticato un ingrediente importante.' },
+        { it: 'la farina', en: 'flour', fa: 'آرد', cat: 'ingredienti', pos: 'f.', ex: 'La farina era già finita.' },
+        { it: 'l\'uovo', en: 'egg', fa: 'تخم‌مرغ', cat: 'ingredienti', pos: 'm.', ex: 'Le uova erano rotte nel trasporto.' },
+        { it: 'il sale', en: 'salt', fa: 'نمک', cat: 'ingredienti', pos: 'm.', ex: 'Ho aggiunto un po\' di sale alla fine.' },
+        { it: 'lo zucchero', en: 'sugar', fa: 'شکر', cat: 'ingredienti', pos: 'm.', ex: 'Lo zucchero non si era ancora sciolto.' },
+        { it: 'la verdura', en: 'vegetables', fa: 'سبزیجات', cat: 'ingredienti', pos: 'f.', ex: 'La verdura era già lavata e tagliata.' },
+        { it: 'la carne', en: 'meat', fa: 'گوشت', cat: 'ingredienti', pos: 'f.', ex: 'La carne era stata cotta troppo a lungo.' },
+        { it: 'il pesce', en: 'fish', fa: 'ماهی', cat: 'ingredienti', pos: 'm.', ex: 'Il pesce era stato pescato quella mattina.' },
+        { it: 'il forno', en: 'oven', fa: 'فر', cat: 'ingredienti', pos: 'm.', ex: 'La torta era ancora nel forno acceso.' },
+        { it: 'la pentola', en: 'pot', fa: 'قابلمه', cat: 'ingredienti', pos: 'f.', ex: 'La pentola era piena d\'acqua bollente.' },
+
+        /* ── Viaggio (9) ── */
+        { it: 'il viaggio', en: 'trip, journey', fa: 'سفر', cat: 'viaggio', pos: 'm.', ex: 'Il viaggio era stato organizzato bene.' },
+        { it: 'la partenza', en: 'departure', fa: 'حرکت', cat: 'viaggio', pos: 'f.', ex: 'Dopo la partenza, ci siamo finalmente rilassati.' },
+        { it: 'l\'arrivo', en: 'arrival', fa: 'ورود', cat: 'viaggio', pos: 'm.', ex: 'Prima del nostro arrivo aveva già nevicato.' },
+        { it: 'prenotare', en: 'to book', fa: 'رزرو کردن', cat: 'viaggio', pos: 'v.', ex: 'Avevo prenotato il volo con largo anticipo.' },
+        { it: 'il volo', en: 'flight', fa: 'پرواز', cat: 'viaggio', pos: 'm.', ex: 'Il volo era stato cancellato all\'ultimo minuto.' },
+        { it: 'l\'aeroporto', en: 'airport', fa: 'فرودگاه', cat: 'viaggio', pos: 'm.', ex: 'L\'aeroporto era pieno di gente.' },
+        { it: 'la dogana', en: 'customs', fa: 'گمرک', cat: 'viaggio', pos: 'f.', ex: 'Superata la dogana, siamo usciti finalmente.' },
+        { it: 'il passaporto', en: 'passport', fa: 'گذرنامه', cat: 'viaggio', pos: 'm.', ex: 'Il passaporto era scaduto da un mese.' },
+        { it: 'la meta', en: 'destination', fa: 'مقصد', cat: 'viaggio', pos: 'f.', ex: 'La meta era stata scelta insieme, senza discutere.' },
+
+        /* ── Bagagli e partenza (8) ── */
+        { it: 'il bagaglio', en: 'luggage', fa: 'بار سفر', cat: 'bagagli', pos: 'm.', ex: 'Il bagaglio era già stato caricato sull\'aereo.' },
+        { it: 'la valigia', en: 'suitcase', fa: 'چمدان', cat: 'bagagli', pos: 'f.', ex: 'Ho sistemato la valigia con cura la sera prima.' },
+        { it: 'sistemare', en: 'to arrange, to organise', fa: 'مرتب کردن', cat: 'bagagli', pos: 'v.', ex: 'Ha sistemato tutto prima di partire.' },
+        { it: 'fare le valigie', en: 'to pack', fa: 'چمدان بستن', cat: 'bagagli', pos: 'loc. v.', ex: 'Avevamo fatto le valigie la sera prima.' },
+        { it: 'lo zaino', en: 'backpack', fa: 'کوله‌پشتی', cat: 'bagagli', pos: 'm.', ex: 'Lo zaino era troppo pesante da portare.' },
+        { it: 'il documento', en: 'document', fa: 'مدرک', cat: 'bagagli', pos: 'm.', ex: 'I documenti erano scaduti da un anno.' },
+        { it: 'dimenticare', en: 'to forget', fa: 'فراموش کردن', cat: 'bagagli', pos: 'v.', ex: 'Ho dimenticato il caricabatterie a casa.' },
+        { it: 'imballare', en: 'to pack, to wrap', fa: 'بسته‌بندی کردن', cat: 'bagagli', pos: 'v.', ex: 'Ha imballato i regali con carta colorata.' },
+
+        /* ── Vita quotidiana (9) ── */
+        { it: 'lavare', en: 'to wash', fa: 'شستن', cat: 'casa', pos: 'v.', ex: 'Ho lavato i piatti subito dopo cena.' },
+        { it: 'stirare', en: 'to iron', fa: 'اتو کردن', cat: 'casa', pos: 'v.', ex: 'Le camicie erano già stirate e pronte.' },
+        { it: 'pulire', en: 'to clean', fa: 'تمیز کردن', cat: 'casa', pos: 'v.', ex: 'La cucina è stata pulita da cima a fondo.' },
+        { it: 'rifare il letto', en: 'to make the bed', fa: 'مرتب کردن تخت', cat: 'casa', pos: 'loc. v.', ex: 'Ho rifatto il letto appena sveglio.' },
+        { it: 'spegnere', en: 'to turn off', fa: 'خاموش کردن', cat: 'casa', pos: 'v.', ex: 'Ho spento la luce prima di uscire.' },
+        { it: 'accendere', en: 'to turn on', fa: 'روشن کردن', cat: 'casa', pos: 'v.', ex: 'Ha acceso il forno per la torta.' },
+        { it: 'chiudere', en: 'to close', fa: 'بستن', cat: 'casa', pos: 'v.', ex: 'Ho chiuso la porta a chiave.' },
+        { it: 'aprire', en: 'to open', fa: 'باز کردن', cat: 'casa', pos: 'v.', ex: 'La finestra era rimasta aperta tutta la notte.' },
+        { it: 'riordinare', en: 'to tidy up', fa: 'مرتب کردن', cat: 'casa', pos: 'v.', ex: 'Ho riordinato la stanza prima degli ospiti.' },
+
+        /* ── Azioni e verbi utili (9) ── */
+        { it: 'rompere', en: 'to break', fa: 'شکستن', cat: 'azioni', pos: 'v.', ex: 'Ho rotto un bicchiere lavando i piatti.' },
+        { it: 'perdere', en: 'to lose', fa: 'گم کردن', cat: 'azioni', pos: 'v.', ex: 'Ho perso le chiavi di casa, di nuovo.' },
+        { it: 'scegliere', en: 'to choose', fa: 'انتخاب کردن', cat: 'azioni', pos: 'v.', ex: 'Ho scelto il piatto del giorno.' },
+        { it: 'togliere', en: 'to remove, to take off', fa: 'برداشتن', cat: 'azioni', pos: 'v.', ex: 'Ho tolto la pentola dal fuoco appena in tempo.' },
+        { it: 'permettere', en: 'to allow', fa: 'اجازه دادن', cat: 'azioni', pos: 'v.', ex: 'Non mi ha permesso di aiutarlo in cucina.' },
+        { it: 'offrire', en: 'to offer', fa: 'پیشنهاد دادن', cat: 'azioni', pos: 'v.', ex: 'Mi ha offerto un caffè prima di partire.' },
+        { it: 'esprimere', en: 'to express', fa: 'بیان کردن', cat: 'azioni', pos: 'v.', ex: 'Ha espresso subito la sua opinione sulla ricetta.' },
+        { it: 'tradurre', en: 'to translate', fa: 'ترجمه کردن', cat: 'azioni', pos: 'v.', ex: 'Ha tradotto la ricetta dall\'italiano per me.' },
+        { it: 'vincere', en: 'to win', fa: 'بردن', cat: 'azioni', pos: 'v.', ex: 'Ha vinto una gara di cucina l\'anno scorso.' }
+      ]
+    },
+
+    guided: {
+      title: 'Costruiamo insieme il participio giusto',
+      intro: 'Tre domande in ordine: che tipo di participio è (regolare o irregolare)? C\'è un pronome o un "ne" davanti al verbo? Il participio è usato come aggettivo o come costruzione assoluta?',
+      steps: [
+        {
+          prompt: 'Metti al passato prossimo: «Il cuoco (tagliare) le verdure.»',
+          think: 'Verbo regolare in -are, ausiliare avere: il participio resta invariabile in -o.',
+          answer: 'Il cuoco ha tagliato le verdure.',
+          why: '-are → -ato, e con avere senza pronome il participio non concorda con nulla.'
+        },
+        {
+          prompt: 'Metti al passato prossimo: «Le valigie (arrivare).»',
+          think: 'arrivare è un verbo di movimento → ausiliare essere; il soggetto è femminile plurale → accordo obbligatorio.',
+          answer: 'Le valigie sono arrivate.',
+          why: 'Con essere il participio concorda sempre col soggetto: arrivate.'
+        },
+        {
+          prompt: 'Completa con l\'accordo giusto: «La ricetta? L\'ho già (leggere).»',
+          think: 'Il pronome diretto "la" (elisa in l\') precede avere → il participio concorda: femminile singolare.',
+          answer: 'La ricetta? L\'ho già letta.',
+          why: 'Con avere + lo/la/li/le l\'accordo è obbligatorio: letta, non letto.'
+        },
+        {
+          prompt: 'Completa: «Di quei libri, ne (leggere) solo due.»',
+          think: '"Ne" partitivo riprende "libri" (maschile plurale) → accordo maschile plurale.',
+          answer: 'Di quei libri, ne ho letti solo due.',
+          why: 'La regola del "ne" partitivo funziona come quella del pronome diretto.'
+        },
+        {
+          prompt: 'Usa il participio come aggettivo: «una porta (chiudere)»',
+          think: 'Il participio-aggettivo concorda come un aggettivo normale col nome "porta" (femminile singolare).',
+          answer: 'una porta chiusa',
+          why: 'Accordo di genere e numero, esattamente come "una porta piccola".'
+        },
+        {
+          prompt: 'Trasforma con il participio assoluto: «Dopo che avevamo finito la cena, siamo usciti.»',
+          think: 'Si può sostituire la subordinata con un participio assoluto che concorda col proprio soggetto "la cena" (femminile).',
+          answer: 'Finita la cena, siamo usciti.',
+          why: 'Costruzione compatta tipica della lingua scritta: participio + soggetto proprio, accordo obbligatorio.'
+        }
+      ]
+    },
+
+    exercises: {
+      mc: [
+        { q: 'Qual è il participio passato di "chiudere"?', options: ['chiuso', 'chiudetto', 'chiuduto', 'chiudito'], answer: 0, hint: 'finisce in -so', why: 'chiudere → chiuso, participio irregolare.' },
+        { q: 'Completa: «Le valigie ___ arrivate in ritardo.»', options: ['ha', 'hanno', 'sono', 'avevano'], answer: 2, hint: 'arrivare vuole essere', why: 'sono arrivate: presente di essere + participio.' },
+        { q: 'Completa: «La lettera? L\'ho già ___.»', options: ['scritto', 'scritta', 'scritti', 'scritte'], answer: 1, hint: 'accordo col pronome "la"', why: 'Con avere + pronome diretto femminile: scritta.' },
+        { q: 'Quale frase è corretta?', options: ['Di mele ne ho comprato tre.', 'Di mele ne ho comprate tre.', 'Di mele ne ho comprati tre.', 'Di mele ne ho comprata tre.'], answer: 1, hint: '"ne" riprende "mele", femminile plurale', why: 'ne ho comprate tre.' },
+        { q: 'Completa: «Una porta ___.» (chiudere)', options: ['chiuso', 'chiusa', 'chiusi', 'chiuse'], answer: 1, hint: 'porta è femminile singolare', why: 'Participio-aggettivo: accordo con "porta".' },
+        { q: 'Qual è il participio passato di "offrire"?', options: ['offrito', 'offerto', 'offresso', 'offruto'], answer: 1, hint: 'irregolare', why: 'offrire → offerto.' },
+        { q: 'Qual è il participio passato di "scegliere"?', options: ['scegliuto', 'scelto', 'scieso', 'sceglito'], answer: 1, hint: 'irregolare', why: 'scegliere → scelto.' },
+        { q: 'Completa: «___ la cena, siamo usciti.» (finire)', options: ['Finita', 'Finito', 'Finite', 'Finiti'], answer: 0, hint: 'il soggetto del participio è "la cena"', why: 'Participio assoluto: concorda col proprio soggetto, femminile singolare.' },
+        { q: 'Qual è il participio passato di "tradurre"?', options: ['traduto', 'tradutto', 'tradotto', 'traduciuto'], answer: 2, hint: 'irregolare', why: 'tradurre → tradotto.' },
+        { q: 'Con avere, il participio concorda quando…', options: ['sempre', 'mai', 'precede un pronome diretto (lo/la/li/le) o "ne"', 'solo con i verbi di movimento'], answer: 2, hint: 'la regola del B1', why: 'Con avere l\'accordo scatta solo davanti a lo/la/li/le o ne.' },
+        { q: 'Qual è il participio passato di "spegnere"?', options: ['spegnuto', 'spento', 'spengiuto', 'spentato'], answer: 1, hint: 'irregolare', why: 'spegnere → spento.' },
+        { q: 'Completa: «La cena ___ preparata da mio marito.» (forma passiva)', options: ['è stata', 'ha stato', 'è', 'aveva'], answer: 0, hint: 'essere + participio', why: 'Nella forma passiva: è stata preparata.' },
+        { q: 'Qual è il participio passato di "vincere"?', options: ['vincuto', 'vinto', 'vinciuto', 'vincito'], answer: 1, hint: 'irregolare', why: 'vincere → vinto.' }
+      ],
+      fill: [
+        { before: 'Ho', after: 'le verdure per la zuppa. (tagliare)', answers: ['tagliato'], en: 'I cut the vegetables for the soup.' },
+        { before: 'Abbiamo', after: 'a ogni parola. (credere)', answers: ['creduto'], en: 'We believed every word.' },
+        { before: 'Il cameriere ha', after: 'un bicchiere. (rompere)', answers: ['rotto'], en: 'The waiter broke a glass.', hint: 'participio irregolare' },
+        { before: 'Le valigie sono', after: 'in ritardo. (arrivare)', answers: ['arrivate'], en: 'The suitcases arrived late.' },
+        { before: 'La valigia? L\'ho già', after: 'ieri sera. (preparare)', answers: ['preparata'], en: 'The suitcase? I already packed it last night.', hint: 'accordo col pronome "la"' },
+        { before: 'Gli ingredienti? Li ho', after: 'stamattina. (comprare)', answers: ['comprati'], en: 'The ingredients? I bought them this morning.' },
+        { before: 'Di mele ne ho', after: 'tre. (comprare)', answers: ['comprate'], en: 'Of apples, I bought three.', hint: 'accordo con "ne" partitivo' },
+        { before: 'Abbiamo trovato una porta', after: '. (chiudere)', answers: ['chiusa'], en: 'We found a closed door.' },
+        { before: '', after: 'il lavoro, siamo usciti a fare due passi. (finire)', answers: ['Finito'], en: 'Once the work was finished, we went out for a walk.', hint: 'participio assoluto, concorda con "il lavoro" (maschile)' },
+        { before: 'Penso che abbiano già', after: 'il forno. (spegnere)', answers: ['spento'], en: 'I think they have already turned off the oven.' },
+        { before: 'La cena è stata', after: 'da mio marito. (preparare)', answers: ['preparata'], en: 'Dinner was prepared by my husband.' }
+      ],
+      order: [
+        { words: ['Ho', 'tagliato', 'le', 'verdure', 'per', 'la', 'zuppa'], answer: 'Ho tagliato le verdure per la zuppa', en: 'I cut the vegetables for the soup.' },
+        { words: ['Le', 'valigie', 'sono', 'arrivate', 'in', 'ritardo'], answer: 'Le valigie sono arrivate in ritardo', en: 'The suitcases arrived late.' },
+        { words: ['La', 'valigia', 'l\'ho', 'già', 'preparata'], answer: 'La valigia l\'ho già preparata', en: 'The suitcase, I already packed it.' },
+        { words: ['Di', 'mele', 'ne', 'ho', 'comprate', 'tre'], answer: 'Di mele ne ho comprate tre', en: 'Of apples I bought three.' },
+        { words: ['Abbiamo', 'trovato', 'una', 'porta', 'chiusa'], answer: 'Abbiamo trovato una porta chiusa', en: 'We found a closed door.' },
+        { words: ['Finito', 'il', 'lavoro', 'siamo', 'usciti'], answer: 'Finito il lavoro siamo usciti', en: 'Once the work was finished we went out.' },
+        { words: ['La', 'cena', 'è', 'stata', 'preparata', 'da', 'mio', 'marito'], answer: 'La cena è stata preparata da mio marito', en: 'Dinner was prepared by my husband.' }
+      ],
+      dnd: {
+        instructions: 'Questi verbi hanno un participio passato REGOLARE o IRREGOLARE? Trascinali nella colonna giusta.',
+        buckets: [
+          { id: 'regolare', label: 'REGOLARE (-ato/-uto/-ito)', icon: '🟢' },
+          { id: 'irregolare', label: 'IRREGOLARE', icon: '🔵' }
+        ],
+        items: [
+          { text: 'cucinare', bucket: 'regolare' },
+          { text: 'tagliare', bucket: 'regolare' },
+          { text: 'versare', bucket: 'regolare' },
+          { text: 'mescolare', bucket: 'regolare' },
+          { text: 'prenotare', bucket: 'regolare' },
+          { text: 'dimenticare', bucket: 'regolare' },
+          { text: 'lavare', bucket: 'regolare' },
+          { text: 'friggere', bucket: 'irregolare' },
+          { text: 'rompere', bucket: 'irregolare' },
+          { text: 'scegliere', bucket: 'irregolare' },
+          { text: 'spegnere', bucket: 'irregolare' },
+          { text: 'permettere', bucket: 'irregolare' },
+          { text: 'offrire', bucket: 'irregolare' },
+          { text: 'tradurre', bucket: 'irregolare' }
+        ]
+      },
+      match: [
+        { a: 'fare', b: 'fatto' },
+        { a: 'dire', b: 'detto' },
+        { a: 'scrivere', b: 'scritto' },
+        { a: 'chiudere', b: 'chiuso' },
+        { a: 'prendere', b: 'preso' },
+        { a: 'rompere', b: 'rotto' },
+        { a: 'scegliere', b: 'scelto' },
+        { a: 'offrire', b: 'offerto' },
+        { a: 'permettere', b: 'permesso' },
+        { a: 'tradurre', b: 'tradotto' }
+      ],
+      tf: [
+        { statement: 'Il participio passato regolare dei verbi in -are finisce in -ato.', answer: true, why: 'Esatto: tagliare → tagliato.' },
+        { statement: 'Con avere il participio concorda sempre col soggetto.', answer: false, why: 'No: concorda solo se precede un pronome diretto (lo/la/li/le) o "ne", non col soggetto.' },
+        { statement: 'Con essere il participio concorda sempre col soggetto.', answer: true, why: 'Esatto, senza eccezioni.' },
+        { statement: 'Il participio di "scegliere" è "sceglito".', answer: false, why: 'No: il participio irregolare è "scelto".' },
+        { statement: 'Il participio passato può funzionare come un aggettivo normale.', answer: true, why: 'Sì: una porta chiusa, un uomo stanco.' },
+        { statement: 'Nel participio assoluto, il participio concorda con il soggetto della frase principale.', answer: false, why: 'No: concorda col proprio soggetto, quello dell\'azione espressa dal participio stesso.' },
+        { statement: '«Di mele ne ho comprate tre» è corretto perché "ne" richiede l\'accordo come un pronome diretto.', answer: true, why: 'Esatto: il partitivo "ne" si comporta come lo/la/li/le.' },
+        { statement: 'La forma del participio passato non cambia mai nei diversi tempi composti.', answer: true, why: 'Vero: cambia solo l\'ausiliare o il modo che lo precede, non la radice del participio.' },
+        { statement: 'Nella forma passiva il participio concorda con il soggetto della frase.', answer: true, why: 'Sì: la cena è stata preparata, i pacchi sono stati spediti.' }
+      ],
+      translate: [
+        { en: 'I cut the vegetables for the soup.', answers: ['Ho tagliato le verdure per la zuppa'] },
+        { en: 'The suitcases arrived late.', answers: ['Le valigie sono arrivate in ritardo'] },
+        { en: 'The suitcase? I already packed it.', answers: ['La valigia? L\'ho già preparata'] },
+        { en: 'Of apples, I bought three.', answers: ['Di mele ne ho comprate tre'] },
+        { en: 'We found a closed door.', answers: ['Abbiamo trovato una porta chiusa'] },
+        { en: 'Once the work was finished, we went out.', answers: ['Finito il lavoro siamo usciti', 'Finito il lavoro, siamo usciti'] },
+        { en: 'The waiter broke a glass.', answers: ['Il cameriere ha rotto un bicchiere'] },
+        { en: 'I think they have already turned off the oven.', answers: ['Penso che abbiano già spento il forno'] },
+        { en: 'Dinner was prepared by my husband.', answers: ['La cena è stata preparata da mio marito'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Preparativi in cucina prima di partire',
+      intro: 'Elena e Marco preparano la cena e i bagagli insieme: nota quanti participi diversi entrano in un solo scambio di battute.',
+      lines: [
+        { speaker: 'Elena', icon: '👩', it: 'Hai già tagliato le verdure per la zuppa?', en: 'Have you already cut the vegetables for the soup?',
+          glosses: [{ term: 'hai già tagliato', expl: 'Passato prossimo regolare: tagli-are → tagliato.' }] },
+        { speaker: 'Marco', icon: '🧑', side: 'right', it: 'Sì, le ho tagliate e le ho anche lavate.', en: 'Yes, I cut them and I washed them too.',
+          glosses: [{ term: 'le ho tagliate', expl: 'Con avere + pronome diretto "le" il participio concorda: tagliate.' }] },
+        { speaker: 'Elena', icon: '👩', it: 'Hai spento il forno? Non voglio bruciare la torta.', en: "Did you turn off the oven? I don't want to burn the cake.",
+          glosses: [{ term: 'Hai spento', expl: 'spegnere → spento, participio irregolare.' }] },
+        { speaker: 'Marco', icon: '🧑', side: 'right', it: 'Sì, l\'ho spento cinque minuti fa.', en: 'Yes, I turned it off five minutes ago.',
+          glosses: [{ term: 'l\'ho spento', expl: '"l\'" = "lo" (il forno): accordo maschile, spento resta invariato.' }] },
+        { speaker: 'Elena', icon: '👩', it: 'Di pomodori ne hai comprati abbastanza?', en: 'Did you buy enough tomatoes?',
+          glosses: [{ term: 'ne hai comprati', expl: '"ne" partitivo riprende "pomodori" (masch. plur.): accordo obbligatorio.' }] },
+        { speaker: 'Marco', icon: '🧑', side: 'right', it: 'Sì, ne ho comprati un chilo al mercato.', en: 'Yes, I bought a kilo of them at the market.',
+          glosses: [{ term: 'ne ho comprati', expl: 'Stessa regola del pronome diretto: ne + accordo.' }] },
+        { speaker: 'Elena', icon: '👩', it: 'Bene. Finita la cena, dobbiamo ancora fare le valigie.', en: 'Good. Once dinner is finished, we still have to pack.',
+          glosses: [{ term: 'Finita la cena', expl: 'Participio assoluto: concorda col proprio soggetto "la cena" (femm.).' }] },
+        { speaker: 'Marco', icon: '🧑', side: 'right', it: 'Giusto, il volo è prenotato per le sei del mattino.', en: 'Right, the flight is booked for six in the morning.',
+          glosses: [{ term: 'è prenotato', expl: 'Participio come aggettivo/passiva: descrive lo stato del volo.' }] },
+        { speaker: 'Elena', icon: '👩', it: 'Perfetto. Una valigia preparata la sera prima è una valigia in meno da stressare domani.', en: 'Perfect. A suitcase packed the night before is one less thing to worry about tomorrow.',
+          glosses: [{ term: 'preparata', expl: 'Participio usato come aggettivo: concorda con "valigia" (femm. sing.).' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'participio passato regolare', back: '-ato / -uto / -ito', note: 'parlato · creduto · dormito' },
+      { front: 'chiudere →', back: 'chiuso' },
+      { front: 'scegliere →', back: 'scelto' },
+      { front: 'rompere →', back: 'rotto' },
+      { front: 'offrire →', back: 'offerto' },
+      { front: 'spegnere →', back: 'spento' },
+      { front: 'tradurre →', back: 'tradotto' },
+      { front: 'Con essere, il participio…', back: 'concorda sempre col soggetto' },
+      { front: 'Con avere, il participio concorda quando…', back: 'precede lo/la/li/le o ne', note: 'L\'ho vista · ne ho comprate tre' },
+      { front: 'una porta ___', back: 'chiusa', note: 'participio come aggettivo normale' },
+      { front: 'Finito il lavoro, …', back: 'è uscito', note: 'participio assoluto: causa/tempo compatto' },
+      { front: 'participio assoluto', back: 'concorda col proprio soggetto', note: 'Finita la cena, siamo usciti.' },
+      { front: 'Il participio è la parte che non cambia mai in…', back: 'tutti i tempi composti', note: 'passato prossimo, trapassato, condizionale passato, congiuntivo passato/trapassato, gerundio passato, passiva' }
+    ],
+
+    summary: {
+      formula: 'AVERE / ESSERE + PARTICIPIO PASSATO (-ato/-uto/-ito o forma irregolare) — con avere: invariabile, salvo pronome diretto lo/la/li/le o "ne" davanti; con essere: concorda sempre col soggetto.',
+      rules: [
+        'Il participio regolare finisce in -ato (-are), -uto (-ere), -ito (-ire).',
+        'Molti verbi comuni hanno un participio irregolare da memorizzare: fatto, detto, scritto, chiuso, rotto, scelto, offerto, spento…',
+        'Con essere il participio concorda sempre in genere e numero col soggetto.',
+        'Con avere il participio resta invariabile, TRANNE quando lo precede un pronome diretto (lo/la/li/le) o il partitivo "ne": allora concorda.',
+        'Il participio può funzionare come un aggettivo puro e concordare come tale: una porta chiusa, un uomo stanco.',
+        'Il participio assoluto (Finito il lavoro, …) sostituisce una subordinata di tempo o causa e concorda col proprio soggetto.',
+        'Il participio è l\'unico elemento che resta identico in tutti i tempi composti: passato prossimo, trapassato, condizionale passato, congiuntivo passato/trapassato, gerundio passato, forma passiva.'
+      ],
+      tips: [
+        'Impara gli irregolari a gruppi di rima: -so (chiuso, deciso, diviso), -tto (fatto, detto, scritto, rotto), -rto (aperto, offerto, morto).',
+        'Trucco per l\'accordo con avere: se prima del verbo c\'è lo/la/li/le o "ne", il participio si comporta come con essere.',
+        'Se puoi sostituire il participio con un vero aggettivo (bello, piccolo…) e la frase ha ancora senso, allora concorda come un aggettivo.',
+        'Il participio assoluto è più tipico della lingua scritta: nel parlato si preferisce "Dopo che + trapassato".'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

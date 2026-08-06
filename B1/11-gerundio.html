@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il gerundio italiano: presente e passato, formazione regolare e irregolare, uso per contemporaneità, causa, modo e nella forma progressiva stare + gerundio.">
+  <title>Gerundio · Italiano B1</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     UNITÀ 11 — GERUNDIO
+     ========================================================================== */
+  window.LESSON = {
+    num: 11, file: '11-gerundio.html', icon: '🎬', title: 'Gerundio', group: 'Forme implicite',
+    subtitle: 'Camminando, parlando, avendo finito: un verbo senza soggetto, per dire come, mentre e perché.',
+
+    intro: {
+      what: 'Il gerundio è una forma <b>implicita</b> del verbo: non ha soggetto proprio (non dice "io" o "tu"), non si coniuga per persona, ed è <b>invariabile</b>. Esiste in due forme: il <b>gerundio presente</b> (parlando, leggendo, dormendo — azione contemporanea) e il <b>gerundio passato</b> (avendo parlato, essendo uscito — azione anteriore).',
+      when: 'Per esprimere un\'azione simultanea a un\'altra ("Ascolto musica camminando"), il mezzo o modo con cui fai qualcosa ("È arrivato correndo"), o la causa di qualcosa ("Avendo fame, ho mangiato" = poiché avevo fame). E per la forma progressiva: <b>stare + gerundio</b> (già vista in A2 al presente: sto mangiando), che qui estendiamo al passato: stavo mangiando, stavo per uscire.',
+      why: 'Il gerundio rende il discorso più fluido e compatto: invece di due frasi separate ("Cammino e ascolto musica") ne fai una sola, più elegante e più simile a come parla un madrelingua. Ed è la forma progressiva vera: senza il gerundio, "sto mangiando" non esisterebbe.',
+      mistakes: [
+        'Usare il gerundio come soggetto della frase: ❌ "Nuotando fa bene" → ✅ "Nuotare fa bene" (in italiano il soggetto è sempre l\'infinito, mai il gerundio).',
+        'Mettere un pronome soggetto davanti al gerundio: ❌ "Io parlando…" → il gerundio non ha mai un soggetto espresso davanti a sé.',
+        'Coniugare il gerundio per persona: ❌ "parlandi, parlando, parliamando" → il gerundio è sempre invariabile: sempre e solo "parlando".',
+        'Confondere il gerundio italiano con l\'-ing inglese: "swimming" può essere sia un nome (il nuoto) sia un gerundio; in italiano il nome è "il nuoto" o l\'infinito "nuotare", il gerundio "nuotando" è SOLO modo/mezzo/causa, mai soggetto o oggetto.'
+      ]
+    },
+
+    objectives: [
+      'Formare il gerundio presente regolare (-ando / -endo) e i principali irregolari (facendo, dicendo, bevendo).',
+      'Formare il gerundio passato con <b>avendo</b> o <b>essendo</b> + participio passato, per esprimere anteriorità.',
+      'Usare <b>stare + gerundio</b> al passato (stavo mangiando) per un\'azione in corso in un momento passato.',
+      'Distinguere le funzioni del gerundio: contemporaneità, causa, modo/mezzo.',
+      'Riconoscere la trappola dell\'infinito italiano dove l\'inglese userebbe un gerundio-sostantivo ("Swimming is good" → "Nuotare fa bene", non "Nuotando fa bene").',
+      'Confrontare il gerundio con le costruzioni esplicite equivalenti (mentre + indicativo, perché + indicativo).'
+    ],
+
+    formulas: [
+      {
+        label: 'Gerundio presente — formazione',
+        rows: [
+          { parts: [
+              { text: 'parl-ARE → parl-ANDO', note: '-are → -ando', type: 'verb' },
+              { text: 'legg-ERE → legg-ENDO', note: '-ere → -endo', type: 'object' },
+              { text: 'dorm-IRE → dorm-ENDO', note: '-ire → -endo', type: 'extra' }
+            ], example: 'Parlando, leggendo, dormendo.', translation: 'Speaking, reading, sleeping.' }
+        ]
+      },
+      {
+        label: 'Gerundio passato — anteriorità',
+        rows: [
+          { parts: [
+              { text: 'AVENDO / ESSENDO', note: 'gerundio dell\'ausiliare', type: 'verb' },
+              { text: 'PARTICIPIO PASSATO', note: 'accordo se essendo', type: 'object' }
+            ], example: 'Avendo finito il lavoro, è uscito.', translation: 'Having finished work, he went out.' }
+        ]
+      },
+      {
+        label: 'Forma progressiva — stare + gerundio',
+        rows: [
+          { parts: [
+              { text: 'STARE coniugato', note: 'presente o imperfetto', type: 'subject' },
+              { text: 'GERUNDIO', note: 'invariabile', type: 'verb' }
+            ], example: 'Stavo mangiando quando hai chiamato.', translation: 'I was eating when you called.' }
+        ]
+      },
+      {
+        label: 'Gerundio di modo/mezzo — senza "mentre"',
+        rows: [
+          { parts: [
+              { text: 'GERUNDIO', note: 'sostituisce mentre + verbo', type: 'verb' },
+              { text: ', frase principale', note: 'stesso soggetto', type: 'object' }
+            ], example: 'Camminando, ascolto musica.', translation: 'While walking, I listen to music.' }
+        ]
+      }
+    ],
+    formulaNote: 'Il gerundio non ha MAI un soggetto proprio: il soggetto sottinteso del gerundio è sempre lo stesso soggetto della frase principale. "Camminando per strada, ho visto Marco" significa che ero IO a camminare, non Marco.',
+
+    rules: [
+      {
+        title: 'Formazione del gerundio presente',
+        body: 'Regola generale semplicissima: togli la desinenza dell\'infinito e aggiungi -ando (verbi in -are) o -endo (verbi in -ere e -ire).',
+        points: [
+          'parlare → parlando · mangiare → mangiando · studiare → studiando.',
+          'leggere → leggendo · scrivere → scrivendo · prendere → prendendo.',
+          'dormire → dormendo · partire → partendo · finire → finendo.',
+          'Il gerundio è sempre invariabile: non ha maschile/femminile, singolare/plurale, persona.'
+        ],
+        exception: 'Alcuni verbi in -arre, -orre, -urre (come trarre, porre, produrre) usano la radice del latino: traendo, ponendo, producendo.'
+      },
+      {
+        title: 'Gli irregolari più comuni',
+        body: 'Un piccolo gruppo di verbi ha un gerundio costruito su una radice diversa dall\'infinito — spesso la stessa radice dell\'imperfetto.',
+        points: [
+          'fare → fac-ENDO (non "farendo"): "Sbagliando si impara, facendo esperienza".',
+          'dire → dic-ENDO (non "direndo"): "L\'ha detto dicendo la verità".',
+          'bere → bev-ENDO (non "berendo"): "Ha ordinato bevendo un caffè".',
+          'tradurre → traduc-ENDO · porre → pon-ENDO · condurre → conduc-ENDO.'
+        ],
+        exception: 'Essere e avere hanno gerundi regolari ma poco usati da soli: essendo, avendo — si trovano soprattutto nel gerundio passato (avendo fatto, essendo andato).'
+      },
+      {
+        title: 'Il gerundio passato: avendo/essendo + participio',
+        body: 'Esprime un\'azione <b>anteriore</b> a quella della frase principale: prima succede l\'azione del gerundio passato, poi quella del verbo coniugato.',
+        points: [
+          'Con verbi che vogliono avere: avendo mangiato, avendo studiato, avendo finito.',
+          'Con verbi che vogliono essere: essendo uscito/a, essendo partiti/e — il participio concorda col soggetto, come nel passato prossimo.',
+          '«Avendo finito il lavoro, è uscito» = «Poiché/Dopo che aveva finito il lavoro, è uscito».',
+          '«Essendo arrivata tardi, si è scusata» = «Poiché era arrivata tardi, si è scusata» (participio femminile: arrivata).'
+        ],
+        exception: 'Con i verbi riflessivi il pronome si attacca al gerundio dell\'ausiliare essere: essendosi svegliato tardi, ha perso il treno (non "essendo si svegliato").'
+      },
+      {
+        title: 'La forma progressiva: stare + gerundio, anche al passato',
+        body: 'In A2 hai imparato "sto mangiando" per il presente. Ora estendi la stessa struttura all\'imperfetto per descrivere un\'azione in corso <b>in un momento passato specifico</b>.',
+        points: [
+          'Presente: sto mangiando, stai lavorando, sta piovendo.',
+          'Imperfetto (il più comune al passato): stavo mangiando, stavi lavorando, stava piovendo.',
+          '«Stavo mangiando quando hai chiamato» = l\'azione era già in corso nel momento della chiamata.',
+          '«Stavo per uscire» (stare per + infinito, diverso dal gerundio) = "I was about to go out" — non confondere le due strutture.'
+        ],
+        exception: 'Il progressivo al passato con l\'imperfetto di stare NON si usa al passato prossimo semplice ("sono stato mangiando" non esiste): solo presente e imperfetto di stare reggono il gerundio in modo naturale.'
+      },
+      {
+        title: 'Funzione 1: contemporaneità (mentre)',
+        body: 'Il gerundio sostituisce "mentre + verbo coniugato" quando il soggetto delle due azioni è lo stesso.',
+        points: [
+          '«Ascolto musica mentre cammino» = «Camminando, ascolto musica» (stesso soggetto: io).',
+          '«L\'ho vista uscendo di casa» = «L\'ho vista mentre uscivo di casa».',
+          'La posizione è flessibile: il gerundio può stare all\'inizio o all\'interno della frase.',
+          'Se i due soggetti sono diversi, il gerundio NON si può usare: bisogna tenere "mentre" + verbo coniugato.'
+        ],
+        exception: 'Il "gerundio assoluto" con soggetto diverso esiste in italiano molto formale/scritto ("Essendo il tempo brutto, la partita è stata rinviata" = essendo il tempo il soggetto, non il soggetto principale) ma è raro nel parlato: al livello B1 basta riconoscerlo, non serve produrlo attivamente.'
+      },
+      {
+        title: 'Funzione 2: causa (poiché, dato che)',
+        body: 'Il gerundio può spiegare la <b>causa</b> di un\'azione, sostituendo "poiché" o "dato che" + verbo coniugato.',
+        points: [
+          '«Avendo fame, ho mangiato» = «Poiché avevo fame, ho mangiato» — nota: qui è gerundio presente, ma la causa è comunque "prima" nel senso logico.',
+          '«Non sapendo cosa fare, ho chiamato un amico» = «Poiché non sapevo cosa fare…».',
+          '«Essendo stanco, sono andato a letto presto» = «Poiché ero stanco…».',
+          'Il gerundio di causa è tipico dello scritto e del parlato più curato; nel parlato informale si preferisce spesso "siccome" + indicativo.'
+        ],
+        exception: 'Con la causa anteriore e conclusa si preferisce il gerundio passato: «Avendo già mangiato, non aveva fame» (aveva già finito di mangiare prima).'
+      },
+      {
+        title: 'Funzione 3: modo/mezzo (come)',
+        body: 'Il gerundio descrive <b>come</b> viene fatta un\'azione, il mezzo con cui si realizza.',
+        points: [
+          '«È venuto correndo» = "he came running/by running" — correndo descrive COME è venuto.',
+          '«Ha risolto il problema chiedendo aiuto» = ha risolto il problema tramite questo mezzo.',
+          '«Si guadagna da vivere scrivendo» = il mezzo con cui guadagna.',
+          'Spesso si può parafrasare con "con il + infinito sostantivato": "chiedendo aiuto" ≈ "col chiedere aiuto".'
+        ],
+        exception: 'Attenzione alla trappola del soggetto-gerundio: "Nuotare fa bene" (infinito, soggetto della frase) ≠ "Nuotando dimagrisci" (gerundio di mezzo: dimagrisci TRAMITE il nuotare). L\'italiano non usa mai il gerundio come soggetto: quello è sempre lavoro dell\'infinito.'
+      }
+    ],
+
+    timeline: {
+      title: 'Presente, passato e progressivo: dove si colloca il gerundio',
+      intro: 'Il gerundio presente è sempre "simultaneo" al verbo principale, qualunque sia il tempo di quel verbo. Il gerundio passato è sempre "prima" del verbo principale.',
+      points: [
+        { time: 'Prima', label: 'Gerundio passato', example: 'Avendo finito il lavoro, è uscito.', note: 'anteriore al verbo principale' },
+        { time: 'Insieme', label: 'Gerundio presente', example: 'Camminando, ascolto musica.', note: 'simultaneo al verbo principale' },
+        { time: 'In corso (passato)', label: 'Stare (imperfetto) + gerundio', example: 'Stavo mangiando quando hai chiamato.', note: 'azione in corso in un momento passato' },
+        { time: 'Adesso', label: 'Stare (presente) + gerundio', example: 'Sto scrivendo questa frase.', now: true, note: 'progressivo al presente, da A2' }
+      ],
+      caption: 'Il gerundio presente non indica "il presente" in assoluto: indica simultaneità con qualunque tempo abbia il verbo principale (anche al passato o al futuro).'
+    },
+
+    tables: [
+      {
+        title: 'Gerundio presente regolare',
+        note: 'Togli la desinenza dell\'infinito, aggiungi -ando o -endo.',
+        columns: ['Infinito', 'Gerundio', 'Esempio'],
+        rows: [
+          { cells: ['parlare', 'parlando', 'Parlando lentamente, si capisce meglio.'] },
+          { cells: ['mangiare', 'mangiando', 'Ha risposto mangiando.'] },
+          { cells: ['lavorare', 'lavorando', 'Lavorando sodo, ha raggiunto l\'obiettivo.'] },
+          { cells: ['leggere', 'leggendo', 'Leggendo il giornale, ho scoperto la notizia.'] },
+          { cells: ['scrivere', 'scrivendo', 'Si guadagna da vivere scrivendo.'] },
+          { cells: ['prendere', 'prendendo', 'Prendendo l\'autobus arrivi prima.'] },
+          { cells: ['dormire', 'dormendo', 'Dormendo poco, sei sempre stanco.'] },
+          { cells: ['partire', 'partendo', 'Partendo presto, eviti il traffico.'] },
+          { cells: ['finire', 'finendo', 'Finendo in tempo, potremo uscire.'] }
+        ]
+      },
+      {
+        title: 'Gerundio presente — irregolari',
+        note: 'Radice diversa dall\'infinito, spesso quella dell\'imperfetto.',
+        columns: ['Infinito', 'Gerundio', 'Esempio'],
+        rows: [
+          { cells: ['fare', 'facendo', 'Impari facendo esperienza.'], irregular: [1] },
+          { cells: ['dire', 'dicendo', 'Ha chiarito tutto dicendo la verità.'], irregular: [1] },
+          { cells: ['bere', 'bevendo', 'Chiacchierano bevendo un caffè.'], irregular: [1] },
+          { cells: ['tradurre', 'traducendo', 'Si è specializzato traducendo romanzi.'], irregular: [1] },
+          { cells: ['porre', 'ponendo', 'Ha risolto il dubbio ponendo la domanda giusta.'], irregular: [1] },
+          { cells: ['condurre', 'conducendo', 'Ha vissuto conducendo una vita semplice.'], irregular: [1] },
+          { cells: ['essere', 'essendo', 'Essendo stanco, si è riposato.'], irregular: [1] },
+          { cells: ['avere', 'avendo', 'Avendo tempo, ho letto un libro.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Gerundio passato — con avere (participio invariabile)',
+        note: 'avendo + participio; esprime causa o anteriorità conclusa.',
+        columns: ['Verbo', 'Gerundio passato', 'Esempio'],
+        rows: [
+          { cells: ['mangiare', 'avendo mangiato', 'Avendo mangiato troppo, si è sentito male.'] },
+          { cells: ['finire', 'avendo finito', 'Avendo finito il lavoro, è uscito.'] },
+          { cells: ['studiare', 'avendo studiato', 'Avendo studiato bene, ha superato l\'esame.'] },
+          { cells: ['capire', 'avendo capito', 'Avendo capito l\'errore, l\'ha corretto subito.'] }
+        ]
+      },
+      {
+        title: 'Gerundio passato — con essere (participio concorda col soggetto)',
+        note: 'essendo + participio concordato, come nel passato prossimo.',
+        columns: ['Verbo', 'Gerundio passato', 'Esempio'],
+        rows: [
+          { cells: ['uscire (lui)', 'essendo uscito', 'Essendo uscito presto, ha evitato il traffico.'], irregular: [1] },
+          { cells: ['uscire (lei)', 'essendo uscita', 'Essendo uscita tardi, ha perso il treno.'], irregular: [1] },
+          { cells: ['partire (loro, m.)', 'essendo partiti', 'Essendo partiti insieme, sono arrivati alla stessa ora.'], irregular: [1] },
+          { cells: ['svegliarsi (lui)', 'essendosi svegliato', 'Essendosi svegliato tardi, ha perso il treno.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Stare + gerundio — presente e imperfetto (progressivo)',
+        note: 'Il presente lo conosci da A2; qui lo estendiamo all\'imperfetto per il passato.',
+        columns: ['Persona', 'Presente', 'Imperfetto'],
+        rows: [
+          { cells: ['io', 'sto mangiando', 'stavo mangiando'], irregular: [1] },
+          { cells: ['tu', 'stai mangiando', 'stavi mangiando'], irregular: [1] },
+          { cells: ['lui / lei', 'sta mangiando', 'stava mangiando'], irregular: [1] },
+          { cells: ['noi', 'stiamo mangiando', 'stavamo mangiando'], irregular: [1] },
+          { cells: ['voi', 'state mangiando', 'stavate mangiando'], irregular: [1] },
+          { cells: ['loro', 'stanno mangiando', 'stavano mangiando'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Le tre funzioni del gerundio a confronto',
+        columns: ['Funzione', 'Esempio', 'Parafrasi con congiunzione'],
+        rows: [
+          { cells: ['Contemporaneità', 'Camminando, ascolto musica.', 'Mentre cammino, ascolto musica.'] },
+          { cells: ['Causa', 'Avendo fame, ho mangiato.', 'Poiché avevo fame, ho mangiato.'] },
+          { cells: ['Modo/mezzo', 'È venuto correndo.', 'È venuto e per farlo ha corso.'] }
+        ]
+      },
+      {
+        title: 'Infinito (soggetto/nome) vs Gerundio (modo/causa) — la trappola',
+        note: 'In inglese "-ing" può essere entrambe le cose; in italiano no: mai il gerundio come soggetto.',
+        columns: ['Italiano', 'Funzione', 'Inglese'],
+        rows: [
+          { cells: ['Nuotare fa bene.', 'infinito come soggetto della frase', 'Swimming is good for you.'], irregular: [0] },
+          { cells: ['Nuotando, dimagrisci.', 'gerundio di modo/mezzo', 'By swimming / swimming, you lose weight.'], irregular: [0] },
+          { cells: ['Fumare fa male.', 'infinito come soggetto', 'Smoking is bad for you.'], irregular: [0] },
+          { cells: ['Fumando, rischi il cancro.', 'gerundio di causa/modo', 'By smoking, you risk cancer.'], irregular: [0] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Camminando per strada, ho incontrato un vecchio amico.', literal: 'Walking for street, I-have met an old friend.', natural: 'While walking down the street, I ran into an old friend.', note: 'Gerundio di contemporaneità: il soggetto (io) è lo stesso in entrambe le azioni.' },
+      { it: 'Ascolto sempre musica mentre cammino, quindi: camminando, ascolto musica.', literal: 'I-listen always music while I-walk, so: walking, I-listen music.', natural: 'I always listen to music while walking, so: while walking, I listen to music.', note: 'Confronto diretto tra "mentre + indicativo" e gerundio equivalente.' },
+      { it: 'L\'ho vista uscendo di casa stamattina.', literal: 'Her I-have seen going-out of house this-morning.', natural: 'I saw her while leaving the house this morning.', note: 'Il soggetto sottinteso di "uscendo" è io, non "lei".' },
+      { it: 'Avendo fame, ho mangiato subito un panino.', literal: 'Having hunger, I-have eaten right-away a sandwich.', natural: "Since I was hungry, I ate a sandwich right away.", note: 'Gerundio presente di causa: equivale a "poiché avevo fame".' },
+      { it: 'Avendo già mangiato, non aveva fame.', literal: 'Having already eaten, not he-had hunger.', natural: "Having already eaten, he wasn't hungry.", note: 'Gerundio passato: l\'azione del mangiare è conclusa PRIMA.' },
+      { it: 'È venuto correndo appena ha sentito la notizia.', literal: 'Is come running as-soon-as he-has heard the news.', natural: 'He came running as soon as he heard the news.', note: 'Gerundio di modo: descrive COME è venuto.' },
+      { it: 'Ha risolto il problema chiedendo aiuto a un collega.', literal: 'He-has solved the problem asking help to a colleague.', natural: 'He solved the problem by asking a colleague for help.', note: 'Gerundio di mezzo: il modo con cui ha risolto il problema.' },
+      { it: 'Nuotare fa bene alla schiena.', literal: 'To-swim does well to-the back.', natural: 'Swimming is good for your back.', note: 'Soggetto della frase = infinito, MAI gerundio: "Nuotando fa bene" è sbagliato.' },
+      { it: 'Nuotando tutti i giorni, ha perso cinque chili.', literal: 'Swimming all the days, he-has lost five kilos.', natural: 'By swimming every day, he lost five kilos.', note: 'Qui invece è corretto il gerundio: esprime il mezzo, non il soggetto.' },
+      { it: 'Stavo mangiando quando mi hai chiamato.', literal: 'I-was eating when to-me you-have called.', natural: 'I was eating when you called me.', note: 'Progressivo al passato: imperfetto di stare + gerundio, azione già in corso.' },
+      { it: 'Stavamo guardando un film quando è saltata la corrente.', literal: 'We-were watching a film when has jumped the power.', natural: 'We were watching a film when the power went out.', note: 'stavamo guardando: azione interrotta da un altro evento passato.' },
+      { it: 'Essendo stanco, ho deciso di non uscire stasera.', literal: 'Being tired, I-have decided to not go-out tonight.', natural: "Being tired, I decided not to go out tonight.", note: 'Gerundio di essere, funzione di causa.' },
+      { it: 'Essendosi svegliato tardi, ha perso il treno.', literal: 'Having-himself woken late, he-has lost the train.', natural: 'Having woken up late, he missed the train.', note: 'Riflessivo: il pronome "si" si attacca al gerundio dell\'ausiliare essere.' },
+      { it: 'Non sapendo cosa dire, sono rimasto in silenzio.', literal: 'Not knowing what to-say, I-am remained in silence.', natural: 'Not knowing what to say, I stayed silent.', note: 'Gerundio negativo: "non" precede direttamente il gerundio.' },
+      { it: 'Pur essendo tardi, ha deciso di uscire lo stesso.', literal: 'Even being late, he-has decided to go-out the same.', natural: "Even though it was late, he decided to go out anyway.", note: '"Pur" + gerundio = concessione: "anche se, sebbene".' },
+      { it: 'Guardando bene, si nota una piccola differenza.', literal: 'Looking well, itself notices a small difference.', natural: 'Looking closely, you notice a small difference.', note: 'Gerundio impersonale, molto comune nello scritto.' },
+      { it: 'Sbagliando, si impara.', literal: 'Erring, itself learns.', natural: 'You learn by making mistakes.', note: 'Proverbio: gerundio di causa/mezzo, forma impersonale con "si".' },
+      { it: 'Avendo capito l\'errore, l\'ha corretto immediatamente.', literal: 'Having understood the mistake, it-he-has corrected immediately.', natural: 'Having understood the mistake, he corrected it immediately.', note: 'Gerundio passato di causa: prima capisce, poi corregge.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Nuotando fa bene alla salute.', right: 'Nuotare fa bene alla salute.', why: 'Il soggetto della frase deve essere l\'infinito, mai il gerundio: in italiano il gerundio non fa mai da soggetto.' },
+      { wrong: 'Io parlando italiano ogni giorno.', right: 'Parlando italiano ogni giorno, migliori in fretta.', why: 'Il gerundio non ha mai un pronome soggetto espresso davanti a sé.' },
+      { wrong: 'Ha detto "farendo" invece di "facendo".', right: 'facendo', why: 'Fare ha il gerundio irregolare facendo, dalla radice latina fac-, non "farendo".' },
+      { wrong: 'Berendo un caffè, abbiamo parlato.', right: 'Bevendo un caffè, abbiamo parlato.', why: 'Bere ha il gerundio irregolare bevendo, non "berendo".' },
+      { wrong: 'Essendo io stanco.', right: 'Essendo stanco.', why: 'Il soggetto del gerundio è sottinteso, non si esprime con un pronome davanti.' },
+      { wrong: 'Avendo mangiato ha, si è sentito male.', right: 'Avendo mangiato troppo, si è sentito male.', why: 'Nel gerundio passato l\'ausiliare precede sempre il participio: avendo + participio, ordine fisso.' },
+      { wrong: 'Essendo uscito lei presto…', right: 'Essendo uscita lei presto…', why: 'Con essere il participio del gerundio passato concorda col soggetto: uscita (femminile).' },
+      { wrong: 'Sono stato mangiando quando hai chiamato.', right: 'Stavo mangiando quando hai chiamato.', why: 'Il progressivo al passato usa l\'imperfetto di stare, non il passato prossimo.' },
+      { wrong: 'Essendosi lui svegliato tardi.', right: 'Essendosi svegliato tardi.', why: 'Anche nel gerundio passato riflessivo il soggetto resta sottinteso: niente pronome soggetto espresso.' },
+      { wrong: 'Il nuoto fa bene: nuotando è uno sport completo.', right: 'Il nuoto fa bene: nuotare è uno sport completo.', why: 'Quando il verbo funziona da nome/soggetto, in italiano ci vuole l\'infinito (o il sostantivo "il nuoto"), mai il gerundio.' }
+    ],
+
+    vocab: {
+      title: 'Vocabolario — attività, lavoro e viaggi (60 parole)',
+      intro: 'Il gerundio descrive azioni: eccole nei contesti dove lo usi di più — attività quotidiane, vita d\'ufficio, viaggi. Ogni scheda dà l\'italiano, l\'inglese, il farsi (فارسی) e una frase d\'esempio, spesso al gerundio.',
+      categories: [
+        { id: 'attivita', label: 'Attività', icon: '🏃' },
+        { id: 'lavoro', label: 'Lavoro', icon: '💼' },
+        { id: 'viaggio', label: 'Viaggio', icon: '🧳' },
+        { id: 'aggettivi', label: 'Aggettivi utili', icon: '✨' },
+        { id: 'tempo', label: 'Tempo e sequenza', icon: '⏱️' }
+      ],
+      words: [
+        /* ── Attività (12) ── */
+        { it: 'allenarsi', en: 'to train, to work out', fa: 'تمرین کردن', cat: 'attivita', pos: 'v. rifl.', ex: 'Si mantiene in forma allenandosi ogni mattina.' },
+        { it: 'l\'allenamento', en: 'training, workout', fa: 'تمرین', cat: 'attivita', pos: 'm.', ex: 'Durante l\'allenamento non guardo mai il telefono.' },
+        { it: 'correre', en: 'to run', fa: 'دویدن', cat: 'attivita', pos: 'v.', ex: 'È arrivato correndo per non fare tardi.' },
+        { it: 'nuotare', en: 'to swim', fa: 'شنا کردن', cat: 'attivita', pos: 'v.', ex: 'Nuotando ogni giorno, ha migliorato la resistenza.' },
+        { it: 'dimagrire', en: 'to lose weight', fa: 'لاغر شدن', cat: 'attivita', pos: 'v.', ex: 'Camminando molto, si dimagrisce senza accorgersene.' },
+        { it: 'rilassante', en: 'relaxing', fa: 'آرامش‌بخش', cat: 'attivita', pos: 'agg.', ex: 'Leggendo un libro, trovo un momento rilassante.' },
+        { it: 'faticoso', en: 'tiring, strenuous', fa: 'خسته‌کننده', cat: 'attivita', pos: 'agg.', ex: 'È stato un allenamento molto faticoso.' },
+        { it: 'la passeggiata', en: 'walk, stroll', fa: 'پیاده‌روی', cat: 'attivita', pos: 'f.', ex: 'Facendo una passeggiata, penso meglio.' },
+        { it: 'l\'abitudine', en: 'habit', fa: 'عادت', cat: 'attivita', pos: 'f.', ex: 'Ripetendo un gesto ogni giorno, diventa un\'abitudine.' },
+        { it: 'migliorare', en: 'to improve', fa: 'بهبود یافتن', cat: 'attivita', pos: 'v.', ex: 'Si migliora una lingua parlandola ogni giorno.' },
+        { it: 'concentrarsi', en: 'to concentrate', fa: 'تمرکز کردن', cat: 'attivita', pos: 'v. rifl.', ex: 'Concentrandosi bene, si evitano errori.' },
+        { it: 'rischiare', en: 'to risk', fa: 'ریسک کردن', cat: 'attivita', pos: 'v.', ex: 'Correndo troppo veloce, rischi di cadere.' },
+
+        /* ── Lavoro (13) ── */
+        { it: 'il collega', en: 'colleague (m.)', fa: 'همکار (مرد)', cat: 'lavoro', pos: 'm.', ex: 'Parlando col collega, ho capito il problema.' },
+        { it: 'la collega', en: 'colleague (f.)', fa: 'همکار (زن)', cat: 'lavoro', pos: 'f.', ex: 'La collega ha risolto tutto restando calma.' },
+        { it: 'la scadenza', en: 'deadline', fa: 'ضرب‌الاجل', cat: 'lavoro', pos: 'f.', ex: 'Lavorando di notte, ha rispettato la scadenza.' },
+        { it: 'negoziare', en: 'to negotiate', fa: 'مذاکره کردن', cat: 'lavoro', pos: 'v.', ex: 'Negoziando con calma, ha ottenuto un buon contratto.' },
+        { it: 'la riunione', en: 'meeting', fa: 'جلسه', cat: 'lavoro', pos: 'f.', ex: 'Durante la riunione, prendendo appunti, capisco meglio.' },
+        { it: 'il progetto', en: 'project', fa: 'پروژه', cat: 'lavoro', pos: 'm.', ex: 'Avendo finito il progetto, si è preso una pausa.' },
+        { it: 'la scrivania', en: 'desk', fa: 'میز کار', cat: 'lavoro', pos: 'f.', ex: 'Passa ore intere lavorando alla scrivania.' },
+        { it: 'lo stipendio', en: 'salary', fa: 'حقوق', cat: 'lavoro', pos: 'm.', ex: 'Risparmiando parte dello stipendio, ha comprato casa.' },
+        { it: 'assumere', en: 'to hire', fa: 'استخدام کردن', cat: 'lavoro', pos: 'v.', ex: 'Cercando bene, l\'azienda ha assunto la persona giusta.' },
+        { it: 'licenziare', en: 'to fire, to lay off', fa: 'اخراج کردن', cat: 'lavoro', pos: 'v.', ex: 'Tagliando i costi, hanno dovuto licenziare due persone.' },
+        { it: 'lo straordinario', en: 'overtime', fa: 'اضافه‌کاری', cat: 'lavoro', pos: 'm.', ex: 'Facendo straordinari, guadagna di più.' },
+        { it: 'gestire', en: 'to manage, to handle', fa: 'مدیریت کردن', cat: 'lavoro', pos: 'v.', ex: 'Gestendo bene il tempo, finisce sempre in orario.' },
+        { it: 'delegare', en: 'to delegate', fa: 'واگذار کردن', cat: 'lavoro', pos: 'v.', ex: 'Delegando alcuni compiti, ha ridotto lo stress.' },
+
+        /* ── Viaggio (13) ── */
+        { it: 'lo zaino', en: 'backpack', fa: 'کوله‌پشتی', cat: 'viaggio', pos: 'm.', ex: 'Viaggiando con solo uno zaino, si muove liberamente.' },
+        { it: 'la prenotazione', en: 'reservation, booking', fa: 'رزرو', cat: 'viaggio', pos: 'f.', ex: 'Facendo la prenotazione online, risparmi tempo.' },
+        { it: 'il check-in', en: 'check-in', fa: 'ثبت‌نام / چک‌این', cat: 'viaggio', pos: 'm.', ex: 'Facendo il check-in online, salti la fila.' },
+        { it: 'l\'imbarco', en: 'boarding', fa: 'سوار شدن به هواپیما', cat: 'viaggio', pos: 'm.', ex: 'Correndo verso il gate, ha fatto in tempo per l\'imbarco.' },
+        { it: 'il bagaglio', en: 'luggage', fa: 'چمدان / بار سفر', cat: 'viaggio', pos: 'm.', ex: 'Viaggiando leggero, con un solo bagaglio a mano.' },
+        { it: 'la meta', en: 'destination', fa: 'مقصد', cat: 'viaggio', pos: 'f.', ex: 'Cercando bene, ha trovato la meta perfetta.' },
+        { it: 'l\'ostello', en: 'hostel', fa: 'هاستل', cat: 'viaggio', pos: 'm.', ex: 'Dormendo in ostello, ha risparmiato molto.' },
+        { it: 'il percorso', en: 'route, path', fa: 'مسیر', cat: 'viaggio', pos: 'm.', ex: 'Seguendo il percorso segnalato, non ti perdi.' },
+        { it: 'perdersi', en: 'to get lost', fa: 'گم شدن', cat: 'viaggio', pos: 'v. rifl.', ex: 'Camminando senza mappa, ci siamo persi.' },
+        { it: 'orientarsi', en: 'to find one\'s way, to orient oneself', fa: 'مسیریابی کردن', cat: 'viaggio', pos: 'v. rifl.', ex: 'Guardando le stelle, i marinai si orientavano.' },
+        { it: 'esplorare', en: 'to explore', fa: 'کاوش کردن', cat: 'viaggio', pos: 'v.', ex: 'Esplorando la città a piedi, scopri posti nuovi.' },
+        { it: 'l\'avventura', en: 'adventure', fa: 'ماجراجویی', cat: 'viaggio', pos: 'f.', ex: 'Viaggiando da soli, si vive un\'avventura diversa.' },
+        { it: 'noleggiare', en: 'to rent', fa: 'کرایه کردن', cat: 'viaggio', pos: 'v.', ex: 'Noleggiando una macchina, sei più libero.' },
+
+        /* ── Aggettivi utili (11) ── */
+        { it: 'produttivo', en: 'productive', fa: 'پرکار / بازده', cat: 'aggettivi', pos: 'agg.', ex: 'Lavorando al mattino sono più produttivo.' },
+        { it: 'efficiente', en: 'efficient', fa: 'کارآمد', cat: 'aggettivi', pos: 'agg.', ex: 'Organizzandosi bene, diventi più efficiente.' },
+        { it: 'distratto', en: 'distracted, absent-minded', fa: 'حواس‌پرت', cat: 'aggettivi', pos: 'agg.', ex: 'Camminando distratto, ha urtato un palo.' },
+        { it: 'concentrato', en: 'focused', fa: 'متمرکز', cat: 'aggettivi', pos: 'agg.', ex: 'Restando concentrato, ha finito prima.' },
+        { it: 'flessibile', en: 'flexible', fa: 'انعطاف‌پذیر', cat: 'aggettivi', pos: 'agg.', ex: 'Essendo flessibile, si adatta a ogni orario.' },
+        { it: 'puntuale', en: 'punctual, on time', fa: 'وقت‌شناس', cat: 'aggettivi', pos: 'agg.', ex: 'Partendo prima, riesce a essere puntuale.' },
+        { it: 'organizzato', en: 'organised', fa: 'منظم', cat: 'aggettivi', pos: 'agg.', ex: 'Pianificando tutto, è sempre organizzato.' },
+        { it: 'esausto', en: 'exhausted', fa: 'خسته و بی‌رمق', cat: 'aggettivi', pos: 'agg.', ex: 'Lavorando senza pause, è arrivato esausto.' },
+        { it: 'avventuroso', en: 'adventurous', fa: 'ماجراجو', cat: 'aggettivi', pos: 'agg.', ex: 'Viaggiando senza piani, si sente avventuroso.' },
+        { it: 'sorprendente', en: 'surprising', fa: 'شگفت‌انگیز', cat: 'aggettivi', pos: 'agg.', ex: 'Esplorando la città, ha fatto una scoperta sorprendente.' },
+        { it: 'motivato', en: 'motivated', fa: 'انگیزه‌دار', cat: 'aggettivi', pos: 'agg.', ex: 'Vedendo i progressi, si sente più motivato.' },
+
+        /* ── Tempo e sequenza (11) ── */
+        { it: 'nel frattempo', en: 'meanwhile', fa: 'در همین حین', cat: 'tempo', pos: 'loc.', ex: 'Nel frattempo, aspettando, ho letto un libro.' },
+        { it: 'contemporaneamente', en: 'simultaneously', fa: 'همزمان', cat: 'tempo', pos: 'avv.', ex: 'Lavora contemporaneamente a due progetti.' },
+        { it: 'man mano', en: 'gradually, bit by bit', fa: 'کم‌کم', cat: 'tempo', pos: 'loc.', ex: 'Man mano che studiando migliora, si fa più sicuro.' },
+        { it: 'poco a poco', en: 'little by little', fa: 'رفته‌رفته', cat: 'tempo', pos: 'loc.', ex: 'Allenandosi, poco a poco è migliorato.' },
+        { it: 'appena', en: 'as soon as, just', fa: 'به محض اینکه', cat: 'tempo', pos: 'avv.', ex: 'Appena arrivato, è andato subito in ufficio.' },
+        { it: 'subito dopo', en: 'right after', fa: 'بلافاصله بعد', cat: 'tempo', pos: 'loc.', ex: 'Subito dopo aver finito, è uscito a correre.' },
+        { it: 'durante', en: 'during', fa: 'در طول', cat: 'tempo', pos: 'prep.', ex: 'Durante il viaggio, leggendo, il tempo passa in fretta.' },
+        { it: 'pur + gerundio', en: 'even though, while + -ing', fa: 'با اینکه', cat: 'tempo', pos: 'loc.', ex: 'Pur essendo stanco, è andato ad allenarsi.' },
+        { it: 'mentre', en: 'while', fa: 'در حالی که', cat: 'tempo', pos: 'cong.', ex: 'Mentre lavoro, ascolto sempre un podcast.' },
+        { it: 'stare per + infinito', en: 'to be about to', fa: 'در شرف انجام کاری بودن', cat: 'tempo', pos: 'loc.', ex: 'Stavo per uscire quando ha squillato il telefono.' },
+        { it: 'di continuo', en: 'continuously', fa: 'مدام', cat: 'tempo', pos: 'loc.', ex: 'Lavorando di continuo, si stanca in fretta.' }
+      ]
+    },
+
+    guided: {
+      title: 'Costruiamo insieme un gerundio',
+      intro: 'Domande in ordine: è la stessa azione o un\'azione anteriore? Il verbo è regolare o uno dei pochi irregolari? Il soggetto della frase è lo stesso del gerundio, o serve l\'infinito?',
+      steps: [
+        {
+          prompt: 'Trasforma con il gerundio: "Ascolto la radio mentre guido."',
+          think: 'Stesso soggetto (io) in entrambe le azioni → posso sostituire "mentre guido" con il gerundio di guidare.',
+          answer: 'Guidando, ascolto la radio.',
+          why: 'Contemporaneità: guidando sostituisce "mentre guido", stesso soggetto sottinteso.'
+        },
+        {
+          prompt: 'Traduci: "Swimming is good for your health." — attenzione alla trappola!',
+          think: '"Swimming" qui è soggetto della frase → in italiano il soggetto è SEMPRE l\'infinito, mai il gerundio.',
+          answer: 'Nuotare fa bene alla salute.',
+          why: 'Non "Nuotando fa bene": il gerundio non può mai essere il soggetto di una frase italiana.'
+        },
+        {
+          prompt: 'Trasforma con il gerundio: "Poiché avevo fame, ho mangiato subito."',
+          think: '"Poiché avevo fame" esprime una causa contemporanea al momento del mangiare → gerundio presente di causa.',
+          answer: 'Avendo fame, ho mangiato subito.',
+          why: 'Gerundio di causa: sostituisce "poiché" + verbo coniugato.'
+        },
+        {
+          prompt: 'Trasforma con il gerundio passato: "Poiché aveva già finito il lavoro, è potuto uscire presto."',
+          think: 'L\'azione di finire è ANTERIORE a quella di uscire → serve il gerundio passato, non quello presente.',
+          answer: 'Avendo già finito il lavoro, è potuto uscire presto.',
+          why: 'Gerundio passato (avendo + participio) per un\'azione conclusa prima dell\'altra.'
+        },
+        {
+          prompt: 'Qual è il gerundio irregolare di "fare" e "bere"?',
+          think: 'Fare e bere prendono la radice dell\'imperfetto: fac- e bev-, non la radice dell\'infinito.',
+          answer: 'facendo, bevendo',
+          why: 'facENDO (non farendo), bevENDO (non berendo) — memorizzali come blocchi fissi.'
+        },
+        {
+          prompt: 'Traduci al passato progressivo: "I was working when you called me."',
+          think: 'Azione in corso in un momento passato specifico → imperfetto di stare + gerundio.',
+          answer: 'Stavo lavorando quando mi hai chiamato.',
+          why: 'stavo lavorando: stare all\'imperfetto + gerundio, per il progressivo al passato.'
+        }
+      ]
+    },
+
+    exercises: {
+      mc: [
+        { q: 'Gerundio di "parlare":', options: ['parlendo', 'parlando', 'parliando', 'parlato'], answer: 1, hint: '-are → -ando', why: 'parlare → parlando.' },
+        { q: 'Gerundio di "leggere":', options: ['leggando', 'leggendo', 'legguto', 'leggito'], answer: 1, hint: '-ere → -endo', why: 'leggere → leggendo.' },
+        { q: 'Gerundio irregolare di "fare":', options: ['farendo', 'facendo', 'fando', 'fatto'], answer: 1, hint: 'radice dell\'imperfetto: fac-', why: 'fare → facendo, non "farendo".' },
+        { q: 'Gerundio irregolare di "bere":', options: ['berendo', 'bevendo', 'bendo', 'beruto'], answer: 1, hint: 'radice dell\'imperfetto: bev-', why: 'bere → bevendo, non "berendo".' },
+        { q: 'Completa: «___ fa bene alla salute.» (soggetto della frase)', options: ['Nuotando', 'Nuotare', 'Nuotato', 'Nuoto (verbo)'], answer: 1, hint: 'in italiano il soggetto è sempre l\'infinito', why: 'Nuotare fa bene: mai il gerundio come soggetto.' },
+        { q: 'Completa: «___ tutti i giorni, ha perso cinque chili.» (mezzo/causa)', options: ['Nuotare', 'Nuotando', 'Nuota', 'Nuotato'], answer: 1, hint: 'qui è il mezzo con cui ha perso peso', why: 'Nuotando: gerundio di mezzo, funzione diversa da soggetto.' },
+        { q: 'Come si forma il gerundio passato con "finire"?', options: ['avendo finendo', 'avendo finito', 'essendo finito', 'aveva finito'], answer: 1, hint: 'finire vuole avere', why: 'avendo + participio: avendo finito.' },
+        { q: 'Come si forma il gerundio passato con "uscire" (lei)?', options: ['avendo uscita', 'essendo uscito', 'essendo uscita', 'avendo uscito'], answer: 2, hint: 'uscire vuole essere, accordo femminile', why: 'essendo uscita: participio concorda col soggetto femminile.' },
+        { q: 'Completa: «___ mangiando quando hai chiamato.» (io)', options: ['Sono stato', 'Stavo', 'Sto', 'Ero'], answer: 1, hint: 'progressivo al passato', why: 'Stavo mangiando: imperfetto di stare + gerundio.' },
+        { q: 'Quale frase esprime la CAUSA?', options: ['Camminando, ascolto musica.', 'Avendo fame, ho mangiato.', 'È venuto correndo.', 'Sto lavorando adesso.'], answer: 1, hint: 'poiché, dato che', why: 'Avendo fame = poiché avevo fame: causa.' },
+        { q: 'Quale frase esprime il MODO/MEZZO?', options: ['Camminando, ascolto musica.', 'Avendo fame, ho mangiato.', 'È venuto correndo.', 'Essendo stanco, si è riposato.'], answer: 2, hint: 'come ha fatto qualcosa', why: 'È venuto correndo: descrive come è venuto.' },
+        { q: 'Il gerundio in italiano si coniuga per persona (io, tu, lui…)?', options: ['Sì, sempre', 'No, è sempre invariabile', 'Solo al passato', 'Solo con essere'], answer: 1, hint: 'nessun accordo di persona', why: 'Il gerundio è sempre invariabile, senza soggetto proprio.' },
+        { q: 'Completa: «Essendo___ svegliato tardi, ha perso il treno.» (riflessivo)', options: ['si', 'gli', "si'", 'lo'], answer: 0, hint: 'pronome riflessivo attaccato al gerundio', why: 'Essendosi svegliato: il pronome "si" si attacca al gerundio.' },
+        { q: 'Qual è la traduzione corretta di "By reading every day, you improve"?', options: ['Leggere ogni giorno migliori.', 'Leggendo ogni giorno, migliori.', 'Leggendo ogni giorno migliora bene.', 'Leggere fa migliorare ogni giorno.'], answer: 1, hint: 'gerundio di mezzo', why: 'Leggendo ogni giorno, migliori: gerundio + frase principale.' }
+      ],
+      fill: [
+        { before: 'Camminando per strada, ho incontrato un vecchio', after: '. (amico)', answers: ['amico'], en: 'While walking down the street, I ran into an old friend.' },
+        { before: 'Ascolto sempre musica mentre cammino, quindi:', after: ', ascolto musica. (camminare)', answers: ['Camminando'], en: 'While walking, I listen to music.' },
+        { before: 'Avendo', after: ', ho mangiato subito un panino. (avere fame)', answers: ['fame'], en: 'Since I was hungry, I ate a sandwich right away.' },
+        { before: 'È venuto', after: 'appena ha sentito la notizia. (correre)', answers: ['correndo'], en: 'He came running as soon as he heard the news.' },
+        { before: 'Nuotare fa bene alla', after: '. (schiena)', answers: ['schiena'], en: 'Swimming is good for your back.' },
+        { before: 'Nuotando tutti i giorni, ha perso cinque', after: '. (chili)', answers: ['chili'], en: 'By swimming every day, he lost five kilos.' },
+        { before: '', after: 'mangiando quando mi hai chiamato. (stare — io, imperfetto)', answers: ['Stavo'], en: 'I was eating when you called me.' },
+        { before: 'Essendo', after: ', ho deciso di non uscire stasera. (stanco)', answers: ['stanco'], en: 'Being tired, I decided not to go out tonight.' },
+        { before: 'Non sapendo cosa dire, sono', after: 'in silenzio. (rimanere)', answers: ['rimasto', 'rimasta'], en: 'Not knowing what to say, I stayed silent.' },
+        { before: 'Fare al gerundio si scrive', after: ', non "farendo". (facendo)', answers: ['facendo'], en: 'Fare in the gerund is written "facendo", not "farendo".' },
+        { before: 'Bere al gerundio si scrive', after: ', non "berendo". (bevendo)', answers: ['bevendo'], en: 'Bere in the gerund is written "bevendo", not "berendo".' },
+        { before: 'Pur essendo tardi, ha deciso di uscire lo', after: '. (stesso)', answers: ['stesso'], en: 'Even though it was late, he decided to go out anyway.' }
+      ],
+      order: [
+        { words: ['Camminando', 'ascolto', 'sempre', 'musica'], answer: 'Camminando ascolto sempre musica', en: 'While walking, I always listen to music.' },
+        { words: ['Avendo', 'fame', 'ho', 'mangiato', 'subito'], answer: 'Avendo fame ho mangiato subito', en: 'Since I was hungry I ate right away.' },
+        { words: ['È', 'venuto', 'correndo', 'per', 'salutarmi'], answer: 'È venuto correndo per salutarmi', en: 'He came running to greet me.' },
+        { words: ['Nuotare', 'fa', 'bene', 'alla', 'schiena'], answer: 'Nuotare fa bene alla schiena', en: 'Swimming is good for your back.' },
+        { words: ['Stavo', 'mangiando', 'quando', 'hai', 'chiamato'], answer: 'Stavo mangiando quando hai chiamato', en: 'I was eating when you called.' },
+        { words: ['Essendo', 'stanco', 'si', 'è', 'riposato'], answer: 'Essendo stanco si è riposato', en: 'Being tired, he rested.' },
+        { words: ['Non', 'sapendo', 'cosa', 'dire', 'sono', 'rimasto', 'zitto'], answer: 'Non sapendo cosa dire sono rimasto zitto', en: "Not knowing what to say I stayed quiet." }
+      ],
+      dnd: {
+        instructions: 'Questi verbi al gerundio sono REGOLARI o IRREGOLARI? Trascinali nella colonna giusta.',
+        buckets: [
+          { id: 'regolare', label: 'REGOLARE', icon: '🟢' },
+          { id: 'irregolare', label: 'IRREGOLARE', icon: '🔴' }
+        ],
+        items: [
+          { text: 'parlando', bucket: 'regolare' },
+          { text: 'facendo', bucket: 'irregolare' },
+          { text: 'leggendo', bucket: 'regolare' },
+          { text: 'dicendo', bucket: 'irregolare' },
+          { text: 'dormendo', bucket: 'regolare' },
+          { text: 'bevendo', bucket: 'irregolare' },
+          { text: 'partendo', bucket: 'regolare' },
+          { text: 'traducendo', bucket: 'irregolare' },
+          { text: 'mangiando', bucket: 'regolare' },
+          { text: 'ponendo', bucket: 'irregolare' },
+          { text: 'scrivendo', bucket: 'regolare' },
+          { text: 'conducendo', bucket: 'irregolare' },
+          { text: 'finendo', bucket: 'regolare' },
+          { text: 'lavorando', bucket: 'regolare' }
+        ]
+      },
+      match: [
+        { a: 'parlando', b: 'speaking' },
+        { a: 'facendo', b: 'doing/making' },
+        { a: 'dicendo', b: 'saying' },
+        { a: 'bevendo', b: 'drinking' },
+        { a: 'avendo finito', b: 'having finished' },
+        { a: 'essendo uscito', b: 'having gone out' },
+        { a: 'stavo mangiando', b: 'I was eating' },
+        { a: 'nuotare fa bene', b: 'swimming is good for you' },
+        { a: 'è venuto correndo', b: 'he came running' },
+        { a: 'pur essendo tardi', b: 'even though it was late' }
+      ],
+      tf: [
+        { statement: 'Il gerundio italiano si coniuga per persona come il presente indicativo.', answer: false, why: 'No, è sempre invariabile: nessun accordo di persona.' },
+        { statement: 'Il gerundio può essere usato come soggetto della frase, come l\'-ing inglese.', answer: false, why: 'No: il soggetto in italiano è sempre l\'infinito (Nuotare fa bene), mai il gerundio.' },
+        { statement: 'Fare ha il gerundio irregolare "facendo".', answer: true, why: 'Sì, dalla radice dell\'imperfetto fac-.' },
+        { statement: 'Il gerundio passato si forma con avendo/essendo + participio passato.', answer: true, why: 'Esatto, per esprimere anteriorità.' },
+        { statement: 'Con essere, il participio nel gerundio passato non concorda mai col soggetto.', answer: false, why: 'No, concorda proprio come nel passato prossimo: essendo uscita (lei).' },
+        { statement: '"Stavo mangiando" usa l\'imperfetto di stare per descrivere un\'azione in corso nel passato.', answer: true, why: 'Sì, è il progressivo al passato.' },
+        { statement: 'Il gerundio può esprimere causa, come alternativa a "poiché" + verbo coniugato.', answer: true, why: 'Sì: "Avendo fame, ho mangiato" = "Poiché avevo fame…".' },
+        { statement: 'Il soggetto sottinteso del gerundio può essere diverso dal soggetto della frase principale, senza eccezioni.', answer: false, why: 'No: nel parlato comune il soggetto del gerundio coincide sempre con quello della frase principale.' }
+      ],
+      translate: [
+        { en: 'While walking, I listen to music.', answers: ['Camminando ascolto musica', 'Camminando, ascolto musica'] },
+        { en: 'Since I was hungry, I ate a sandwich.', answers: ['Avendo fame ho mangiato un panino', 'Avendo fame, ho mangiato un panino'] },
+        { en: 'He came running.', answers: ['È venuto correndo'] },
+        { en: 'Swimming is good for your health.', answers: ['Nuotare fa bene alla salute'] },
+        { en: 'By swimming every day, you lose weight.', answers: ['Nuotando ogni giorno dimagrisci', 'Nuotando tutti i giorni dimagrisci'] },
+        { en: 'I was eating when you called me.', answers: ['Stavo mangiando quando mi hai chiamato'] },
+        { en: 'Having finished the work, he went out.', answers: ['Avendo finito il lavoro è uscito', 'Avendo finito il lavoro, è uscito'] },
+        { en: 'Not knowing what to say, I stayed silent.', answers: ['Non sapendo cosa dire sono rimasto in silenzio', 'Non sapendo cosa dire sono rimasta in silenzio'] },
+        { en: 'Even though it was late, he went out anyway.', answers: ['Pur essendo tardi è uscito lo stesso', 'Pur essendo tardi, è uscito lo stesso'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Una giornata di lavoro da casa',
+      intro: 'Due colleghi si scrivono durante la giornata: nota come il gerundio rende tutto più naturale e compatto.',
+      lines: [
+        { speaker: 'Marco', icon: '🧑', it: 'Ciao! Come va la giornata? Stai lavorando al progetto?', en: "Hi! How's your day going? Are you working on the project?",
+          glosses: [{ term: 'Stai lavorando', expl: 'Progressivo al presente: stare + gerundio.' }] },
+        { speaker: 'Elisa', icon: '👩', side: 'right', it: 'Sì, avendo finito la riunione presto, ho potuto concentrarmi subito.', en: 'Yes, having finished the meeting early, I could focus right away.',
+          glosses: [{ term: 'avendo finito', expl: 'Gerundio passato: la riunione è finita PRIMA di concentrarsi.' }] },
+        { speaker: 'Marco', icon: '🧑', it: 'Ottimo! Io invece stavo ancora dormendo quando mi hai scritto stamattina.', en: 'Great! I was still sleeping when you wrote to me this morning.',
+          glosses: [{ term: 'stavo ancora dormendo', expl: 'Progressivo al passato: imperfetto di stare + gerundio.' }] },
+        { speaker: 'Elisa', icon: '👩', side: 'right', it: 'Ahah, capita! Comunque, negoziando bene con il cliente, abbiamo ottenuto una scadenza più lunga.', en: 'Haha, it happens! Anyway, by negotiating well with the client, we got a longer deadline.',
+          glosses: [{ term: 'negoziando bene', expl: 'Gerundio di mezzo: il modo con cui hanno ottenuto la scadenza.' }] },
+        { speaker: 'Marco', icon: '🧑', it: 'Perfetto, così non dobbiamo lavorare correndo all\'ultimo minuto.', en: "Perfect, so we don't have to work rushing at the last minute.",
+          glosses: [{ term: 'lavorare correndo', expl: 'Gerundio di modo: correndo descrive come lavoreremmo.' }] },
+        { speaker: 'Elisa', icon: '👩', side: 'right', it: 'Esatto. Pur essendo un progetto complicato, alla fine ce la stiamo cavando bene.', en: 'Exactly. Even though it\'s a complicated project, we\'re managing well in the end.',
+          glosses: [{ term: 'Pur essendo', expl: 'Gerundio con "pur": concessione, "anche se".' }] },
+        { speaker: 'Marco', icon: '🧑', it: 'Sentendo queste notizie, mi rilasso subito!', en: 'Hearing this news, I relax right away!',
+          glosses: [{ term: 'Sentendo', expl: 'Gerundio di causa: poiché sento queste notizie, mi rilasso.' }] },
+        { speaker: 'Elisa', icon: '👩', side: 'right', it: 'Stavo per chiamarti proprio adesso, ma preferisco scrivere mentre lavoro.', en: 'I was about to call you just now, but I prefer to write while working.',
+          glosses: [{ term: 'Stavo per chiamarti', expl: 'Stare per + infinito ≠ gerundio: "essere sul punto di" fare qualcosa.' }, { term: 'mentre lavoro', expl: 'Con soggetti diversi si userebbe "mentre"; qui il soggetto è lo stesso, quindi potresti anche dire "lavorando".' }] },
+        { speaker: 'Marco', icon: '🧑', it: 'Va bene, ci sentiamo dopo allora. Buon lavoro!', en: "Okay, we'll talk later then. Have a good workday!",
+          glosses: [] },
+        { speaker: 'Elisa', icon: '👩', side: 'right', it: 'Grazie, a dopo! Nuotare stasera mi farà bene dopo tutto questo lavoro.', en: 'Thanks, talk later! Swimming tonight will do me good after all this work.',
+          glosses: [{ term: 'Nuotare', expl: 'Infinito come soggetto della frase: "nuotare" è ciò che le farà bene, mai "nuotando".' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: '-are → ?', back: '-ando', note: 'parlare → parlando' },
+      { front: '-ere / -ire → ?', back: '-endo', note: 'leggere → leggendo · dormire → dormendo' },
+      { front: 'fare (gerundio)', back: 'facendo', note: 'non "farendo"' },
+      { front: 'dire (gerundio)', back: 'dicendo', note: 'non "direndo"' },
+      { front: 'bere (gerundio)', back: 'bevendo', note: 'non "berendo"' },
+      { front: 'gerundio passato', back: 'avendo/essendo + participio', note: 'avendo finito · essendo uscito' },
+      { front: 'stare + gerundio (passato)', back: 'stavo mangiando', note: 'imperfetto di stare + gerundio' },
+      { front: 'Nuotare fa bene.', back: 'infinito come soggetto', note: 'mai "Nuotando fa bene"' },
+      { front: 'Nuotando dimagrisci.', back: 'gerundio di modo/mezzo', note: 'qui è corretto, non è soggetto' },
+      { front: 'Avendo fame, ho mangiato.', back: 'gerundio di causa', note: '= poiché avevo fame' },
+      { front: 'È venuto correndo.', back: 'gerundio di modo', note: 'descrive come è venuto' },
+      { front: 'Camminando, ascolto musica.', back: 'gerundio di contemporaneità', note: '= mentre cammino' },
+      { front: 'pur + gerundio', back: 'anche se, sebbene', note: 'Pur essendo tardi, è uscito.' }
+    ],
+
+    summary: {
+      formula: '-ARE → -ANDO · -ERE/-IRE → -ENDO (presente) · AVENDO/ESSENDO + PARTICIPIO (passato) · STARE (coniugato) + GERUNDIO (progressivo)',
+      rules: [
+        'Il gerundio è invariabile: nessun accordo di persona, genere o numero, e non ha mai un soggetto espresso davanti a sé.',
+        'Formazione regolare: -are → -ando, -ere/-ire → -endo.',
+        'Irregolari da memorizzare: facendo, dicendo, bevendo, traducendo, ponendo, conducendo.',
+        'Il gerundio passato (avendo/essendo + participio) esprime un\'azione anteriore a quella della frase principale.',
+        'Stare + gerundio è la forma progressiva: al presente (sto mangiando) e all\'imperfetto per il passato (stavo mangiando).',
+        'Tre funzioni principali: contemporaneità (mentre), causa (poiché), modo/mezzo (come).',
+        'Il soggetto sottinteso del gerundio è sempre lo stesso della frase principale.',
+        'Trappola classica: l\'italiano non usa mai il gerundio come soggetto o nome — quello è sempre il lavoro dell\'infinito (Nuotare fa bene, non Nuotando fa bene).'
+      ],
+      tips: [
+        'Se puoi parafrasare la frase con "mentre", "poiché" o "col fatto di" + verbo coniugato, probabilmente stai davanti a un gerundio.',
+        'Se il verbo in -ing inglese è il soggetto o l\'oggetto della frase (Swimming is fun, I like swimming), in italiano userai l\'infinito, non il gerundio.',
+        'Impara facendo, dicendo, bevendo come un trio: sono le tre eccezioni più comuni e più usate.',
+        'Per il progressivo al passato pensa sempre all\'imperfetto di stare: è quasi automatico, "stavo + gerundio".'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

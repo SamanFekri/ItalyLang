@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I pronomi combinati italiani: mi/ti/ci/vi + lo/la/li/le/ne diventano me/te/ce/ve, gli e le diventano glie-; posizione nella frase e forme con imperativo e infinito.">
+  <title>Pronomi Combinati · Italiano B1</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     UNITÀ 9 — PRONOMI COMBINATI
+     ========================================================================== */
+  window.LESSON = {
+    num: 9, file: '09-pronomi-combinati.html', icon: '🔗', title: 'Pronomi Combinati', group: 'Pronomi e verbi',
+    subtitle: 'Me lo, te la, glielo: due pronomi in una parola sola.',
+
+    intro: {
+      what: 'I pronomi combinati uniscono un pronome indiretto (mi, ti, gli, le, ci, vi) e un pronome diretto (lo, la, li, le) o il particella <b>ne</b> in un\'unica coppia: <b>me lo</b>, <b>te la</b>, <b>ce li</b>, <b>ve ne</b>. Servono quando nella stessa frase ci sono sia un oggetto diretto che uno indiretto, entrambi già noti dal contesto.',
+      when: 'Ogni volta che rispondi a una domanda con due oggetti già menzionati: «Mi presti la macchina?» → «Sì, te la presto». Sono indispensabili nella lingua parlata: dire «Te la presto» invece di «Presto la macchina a te» è molto più naturale.',
+      why: 'Senza i pronomi combinati le frasi diventano pesanti e ripetitive: ripetere ogni volta il nome dell\'oggetto e della persona rende il discorso innaturale. I madrelingua li usano in ogni conversazione quotidiana: regali, prestiti, spiegazioni, richieste.',
+      mistakes: [
+        'Non fare la vocale cambiare: ❌ "Mi lo presti" → ✅ "Me lo presti".',
+        'Sbagliare l\'ordine dei due pronomi: ❌ "Lo mi presti" → ✅ "Me lo presti" (indiretto sempre prima).',
+        'Dimenticare glie-: ❌ "Gli lo do" → ✅ "Glielo do".',
+        'Staccare i pronomi dall\'infinito o dall\'imperativo informale: ❌ "Voglio dire te lo" → ✅ "Voglio dirtelo" / "Te lo voglio dire".'
+      ]
+    },
+
+    objectives: [
+      'Combinare correttamente pronome indiretto + pronome diretto (o <b>ne</b>) in un\'unica forma.',
+      'Applicare il cambio vocalico <b>mi/ti/ci/vi → me/te/ce/ve</b> davanti a lo/la/li/le/ne.',
+      'Usare la forma speciale <b>glielo/gliela/glieli/gliele/gliene</b> per lui, lei, loro.',
+      'Posizionare correttamente i pronomi combinati: prima del verbo, attaccati all\'infinito o all\'imperativo.',
+      'Scegliere tra le due posizioni possibili con potere/dovere/volere + infinito.',
+      'Riconoscere le forme irregolari e i casi più comuni della lingua parlata.'
+    ],
+
+    formulas: [
+      {
+        label: 'Formula generale',
+        rows: [
+          { parts: [
+              { text: 'Pronome indiretto', note: 'me/te/ce/ve/glie-', type: 'subject' },
+              { text: 'Pronome diretto', note: 'lo/la/li/le/ne', type: 'object' },
+              { text: 'Verbo', type: 'verb' }
+            ], example: 'Te lo dico subito.', translation: 'I\'ll tell it to you right away.' }
+        ]
+      },
+      {
+        label: 'Il cambio vocalico: mi/ti/ci/vi → me/te/ce/ve',
+        rows: [
+          { parts: [
+              { text: 'MI, TI, CI, VI', note: 'davanti a lo/la/li/le/ne', type: 'subject' },
+              { text: 'diventano', type: 'verb' },
+              { text: 'ME, TE, CE, VE', note: 'la -i diventa -e', type: 'object' }
+            ], example: 'mi + lo → me lo', translation: 'to me + it → it to me' }
+        ]
+      },
+      {
+        label: 'GLI e LE (a lui / a lei / a loro) → GLIE- unico',
+        rows: [
+          { parts: [
+              { text: 'GLI o LE', note: 'a lui, a lei, a loro', type: 'subject' },
+              { text: '+ lo/la/li/le/ne', type: 'verb' },
+              { text: '= GLIELO / GLIELA / GLIELI / GLIELE / GLIENE', note: 'una parola sola', type: 'object' }
+            ], example: 'Glielo regalo per il compleanno.', translation: "I'm giving it to him/her as a birthday present." }
+        ]
+      },
+      {
+        label: 'Posizione con infinito e imperativo',
+        rows: [
+          { parts: [
+              { text: 'INFINITO -e', note: 'si toglie', type: 'subject' },
+              { text: '+ pronome combinato', note: 'attaccato', type: 'object' }
+            ], example: 'Devo dirtelo. / Voglio spiegartelo.', translation: 'I have to tell you it. / I want to explain it to you.' }
+        ]
+      }
+    ],
+    formulaNote: 'Trucco: il pronome indiretto viene sempre prima e cambia vocale (mi→me, ti→te, ci→ce, vi→ve); il pronome diretto viene sempre dopo e resta invariato (lo, la, li, le, ne). Solo gli/le si comportano diversamente: si fondono in glie-.',
+
+    rules: [
+      {
+        title: 'Chi si combina con chi: indiretto + diretto',
+        body: 'Un pronome combinato nasce sempre dall\'unione di un pronome indiretto (a chi?) e un pronome diretto o <b>ne</b> (che cosa?).',
+        points: [
+          'Indiretti: mi, ti, gli, le, ci, vi, gli (a loro).',
+          'Diretti: lo, la, li, le. Anche <b>ne</b> (di esso/di essi) può combinarsi allo stesso modo.',
+          'L\'ordine è fisso: <b>indiretto + diretto</b>, mai il contrario.',
+          '«Mi presti la macchina?» → «Sì, te la presto» (te = a te, la = la macchina).'
+        ],
+        exception: 'I pronomi riflessivi (mi, ti, si, ci, vi, si) seguono la stessa regola vocalica quando si combinano con un diretto: «Mi lavo le mani» → «Me le lavo».'
+      },
+      {
+        title: 'Il cambio vocalico: mi/ti/ci/vi diventano me/te/ce/ve',
+        body: 'Davanti a lo, la, li, le, ne, la -i finale del pronome indiretto diventa sempre -e.',
+        points: [
+          'mi + lo/la/li/le/ne → me lo, me la, me li, me le, me ne.',
+          'ti + lo/la/li/le/ne → te lo, te la, te li, te le, te ne.',
+          'ci + lo/la/li/le/ne → ce lo, ce la, ce li, ce le, ce ne.',
+          'vi + lo/la/li/le/ne → ve lo, ve la, ve li, ve le, ve ne.',
+          'Il diretto non cambia mai forma: resta lo/la/li/le/ne, e concorda in genere e numero con l\'oggetto.'
+        ],
+        exception: 'Non esiste "mi lo", "ti la", "ci li": la vocale cambia sempre. È l\'errore più frequente degli studenti stranieri.'
+      },
+      {
+        title: 'GLI e LE si fondono sempre in GLIE-',
+        body: 'A differenza degli altri, il pronome indiretto <b>gli</b> (a lui, a loro) e <b>le</b> (a lei) non restano separati: si fondono col diretto in un\'unica parola che comincia con <b>glie-</b>.',
+        points: [
+          'gli/le + lo → <b>glielo</b> · gli/le + la → <b>gliela</b> · gli/le + li → <b>glieli</b> · gli/le + le → <b>gliele</b> · gli/le + ne → <b>gliene</b>.',
+          '«Regalo il libro a Marco» → «Glielo regalo» (a lui).',
+          '«Regalo il libro a Maria» → «Glielo regalo» (a lei — stessa forma!).',
+          '«Regalo il libro ai miei amici» → «Glielo regalo» (a loro — nell\'italiano moderno "gli" sostituisce anche "loro").'
+        ],
+        exception: 'Nell\'italiano formale e scritto esiste ancora «lo regalo loro» (loro dopo il verbo, mai fuso), ma nel parlato moderno si usa quasi sempre glielo anche per "a loro".'
+      },
+      {
+        title: 'Posizione: prima del verbo coniugato',
+        body: 'Con un verbo coniugato (tempo semplice o composto) il pronome combinato sta sempre <b>prima</b> del verbo, mai dopo.',
+        points: [
+          '«Te lo dico.» «Ce li hanno mandati.» «Me la sono dimenticata.»',
+          'Nei tempi composti l\'ausiliare (avere/essere) segue il pronome: «Me l\'hai già detto».',
+          'Con avere e un pronome diretto davanti, il participio concorda: «La lettera? Te l\'ho scritta».',
+          'Elisione: davanti a un verbo che inizia per vocale, lo/la si elidono in l\': «Te l\'ho detto», mai «gli/le» o «ne».'
+        ],
+        exception: 'Li e le (plurali) non si elidono mai: «Te li ho dati», non "te l\'ho dati" (che sarebbe ambiguo col singolare).'
+      },
+      {
+        title: 'Posizione: attaccati all\'infinito, con la -e che cade',
+        body: 'Con un verbo all\'infinito, il pronome combinato si attacca alla fine, e l\'infinito perde la -e finale.',
+        points: [
+          'dire + telo → <b>dirtelo</b> · spiegare + celo → <b>spiegarcelo</b> · dare + gliela → <b>dargliela</b>.',
+          '«Non riesco a spiegartelo bene.» «È ora di dirglielo.»',
+          'La regola vale anche con altri verbi che reggono l\'infinito: prima di, per, senza + infinito.',
+          '«Preferisco dirtelo di persona.» «È uscito senza dircelo.»'
+        ],
+        exception: 'Con fare causativo e verbi di percezione l\'infinito NON perde sempre la -e in modo prevedibile con pronomi combinati complessi: si preferisce la forma prima del verbo coniugato quando la frase è lunga.'
+      },
+      {
+        title: 'Attaccati all\'imperativo (tu, noi, voi) — con raddoppiamento in alcuni verbi',
+        body: 'Con l\'imperativo informale (tu, noi, voi) il pronome combinato si attacca alla fine del verbo, come con l\'infinito.',
+        points: [
+          '«Dammelo!» (da\' + me + lo, con raddoppiamento della consonante) · «Diglielo!» (di\' + glielo) · «Facceli vedere!» (fa\' + ce + li).',
+          'Con i verbi brevi all\'imperativo (da\', di\', fa\', sta\', va\') la prima consonante del pronome raddoppia: dammelo, dimmelo, fammelo, dacci, vacci — eccetto <b>gli-</b>, che non raddoppia mai: diglielo, non "diglielo" con doppia g.',
+          'Con l\'imperativo negativo (tu) il pronome può stare prima o dopo l\'infinito: «Non dirmelo!» = «Non me lo dire!».',
+          'Con Lei (forma di cortesia) il pronome sta sempre <b>prima</b> del verbo, mai attaccato: «Me lo dica, per favore» (mai "Dicamelo").'
+        ],
+        exception: 'L\'imperativo di cortesia (Lei) si comporta come un verbo coniugato normale: pronome prima, mai attaccato. È una delle poche differenze reali tra registro informale e formale in questa unità.'
+      },
+      {
+        title: 'Con potere/dovere/volere + infinito: due posizioni, entrambe corrette',
+        body: 'Quando un modale (potere, dovere, volere, sapere) regge un infinito, il pronome combinato può stare in due punti diversi, senza differenza di significato.',
+        points: [
+          'Prima del modale: «Te lo posso spiegare.» «Ce lo dovresti dire.»',
+          'Attaccato all\'infinito: «Posso spiegartelo.» «Dovresti dircelo.»',
+          'Entrambe le forme sono standard e ugualmente corrette: è solo una scelta di stile.',
+          'Non si può spezzare in due il pronome combinato tra le due posizioni: mai «Te lo posso dirlo».'
+        ],
+        exception: 'Con i verbi di percezione (vedere, sentire, guardare) + infinito si preferisce quasi sempre la posizione prima del verbo coniugato: «Te lo vedo fare», più naturale di «Vedo fartelo».'
+      }
+    ],
+
+    timeline: {
+      title: 'Come si costruisce un pronome combinato',
+      intro: 'Tre passi in ordine: trova l\'indiretto (a chi?), trova il diretto (che cosa?), uniscili con la vocale giusta.',
+      points: [
+        { time: '1', label: 'A chi?', example: 'mi, ti, gli, le, ci, vi', note: 'pronome indiretto' },
+        { time: '2', label: 'Che cosa?', example: 'lo, la, li, le, ne', note: 'pronome diretto' },
+        { time: '3', label: 'Combinali', example: 'mi + lo → me lo · gli + la → gliela', note: 'indiretto cambia vocale, va sempre prima' },
+        { time: 'Ora', label: 'Nella frase', example: 'Te lo dico subito.', now: true }
+      ],
+      caption: 'Confronto: «Do il libro a Marco» (nome + nome) → «Glielo do» (pronome combinato, una parola sola).'
+    },
+
+    tables: [
+      {
+        title: 'La tabella completa dei pronomi combinati',
+        note: 'Riga = indiretto, colonna = diretto. Nota il cambio vocalico e la fusione di gli/le in glie-.',
+        columns: ['Indiretto', '+ lo', '+ la', '+ li', '+ le', '+ ne'],
+        rows: [
+          { cells: ['mi', 'me lo', 'me la', 'me li', 'me le', 'me ne'] },
+          { cells: ['ti', 'te lo', 'te la', 'te li', 'te le', 'te ne'] },
+          { cells: ['gli / le (lui/lei)', 'glielo', 'gliela', 'glieli', 'gliele', 'gliene'], irregular: [1, 2, 3, 4, 5] },
+          { cells: ['ci', 'ce lo', 'ce la', 'ce li', 'ce le', 'ce ne'] },
+          { cells: ['vi', 've lo', 've la', 've li', 've le', 've ne'] },
+          { cells: ['gli (loro, moderno)', 'glielo', 'gliela', 'glieli', 'gliele', 'gliene'], irregular: [1, 2, 3, 4, 5] }
+        ]
+      },
+      {
+        title: 'Pronomi riflessivi combinati',
+        note: 'Stessa logica: il riflessivo cambia vocale come l\'indiretto.',
+        columns: ['Riflessivo', '+ lo', '+ la', '+ li', '+ le'],
+        rows: [
+          { cells: ['mi (io)', 'me lo lavo', 'me la lavo', 'me li lavo', 'me le lavo'] },
+          { cells: ['ti (tu)', 'te lo lavi', 'te la lavi', 'te li lavi', 'te le lavi'] },
+          { cells: ['si (lui/lei)', 'se lo lava', 'se la lava', 'se li lava', 'se le lava'], irregular: [0] },
+          { cells: ['ci (noi)', 'ce lo laviamo', 'ce la laviamo', 'ce li laviamo', 'ce le laviamo'] },
+          { cells: ['vi (voi)', 've lo lavate', 've la lavate', 've li lavate', 've le lavate'] },
+          { cells: ['si (loro)', 'se lo lavano', 'se la lavano', 'se li lavano', 'se le lavano'], irregular: [0] }
+        ]
+      },
+      {
+        title: 'Posizione: prima del verbo vs attaccati',
+        columns: ['Costruzione', 'Esempio', 'Nota'],
+        rows: [
+          { cells: ['Verbo coniugato', 'Te lo dico.', 'pronome sempre prima'] },
+          { cells: ['Infinito', 'Voglio dirtelo.', '-e cade, pronome attaccato'] },
+          { cells: ['Imperativo tu/noi/voi', 'Dimmelo! Diteglielo!', 'attaccato, raddoppiamento con da\'/di\'/fa\'/sta\'/va\''] },
+          { cells: ['Imperativo Lei', 'Me lo dica.', 'MAI attaccato: prima del verbo'] },
+          { cells: ['Modale + infinito', 'Te lo posso dire. / Posso dirtelo.', 'entrambe le posizioni corrette'] }
+        ]
+      },
+      {
+        title: 'Imperativo con raddoppiamento — i cinque verbi brevi',
+        note: 'da\', di\', fa\', sta\', va\' raddoppiano la consonante iniziale del pronome che segue (tranne gli-).',
+        columns: ['Imperativo', '+ lo', '+ mi/ci', 'Esempio completo'],
+        rows: [
+          { cells: ['da\' (dare)', 'dallo', 'dammi / dacci', 'Dammelo subito!'], irregular: [0, 1] },
+          { cells: ['di\' (dire)', 'dillo', 'dimmi / dicci', 'Dimmelo, ti prego.'], irregular: [0, 1] },
+          { cells: ['fa\' (fare)', 'fallo', 'fammi / facci', 'Fammelo vedere.'], irregular: [0, 1] },
+          { cells: ['sta\' (stare)', '—', 'stammi vicino', 'Stammi a sentire.'], irregular: [1] },
+          { cells: ['va\' (andare)', '—', 'vacci tu', 'Vacci tu, per favore.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Verbi che vogliono spesso due oggetti',
+        note: 'Con questi verbi il pronome combinato è quasi sempre la scelta più naturale.',
+        columns: ['Verbo', 'Con due nomi', 'Con pronomi combinati'],
+        rows: [
+          { cells: ['dare', 'Do il regalo a Luca.', 'Glielo do.'] },
+          { cells: ['dire', 'Dico la verità a te.', 'Te la dico.'] },
+          { cells: ['prestare', 'Presto la macchina a voi.', 'Ve la presto.'] },
+          { cells: ['regalare', 'Regalo i fiori a lei.', 'Glieli regalo.'] },
+          { cells: ['spiegare', 'Spiego la regola a noi.', 'Ce la spiega.'] },
+          { cells: ['restituire', 'Restituisco i soldi a te.', 'Te li restituisco.'] },
+          { cells: ['mandare', 'Mando la lettera a loro.', 'Gliela mando.'] },
+          { cells: ['portare', 'Porto il caffè a te.', 'Te lo porto.'] }
+        ]
+      },
+      {
+        title: 'Accordo del participio nei tempi composti',
+        note: 'Con il diretto (lo/la/li/le) davanti al verbo, il participio concorda; con l\'indiretto da solo, no.',
+        columns: ['Frase', 'Accordo?', 'Esempio'],
+        rows: [
+          { cells: ['pronome combinato (indiretto+diretto)', 'sì, con il diretto', 'Te l\'ho scritta (la lettera).'] },
+          { cells: ['solo pronome indiretto', 'no', 'Le ho scritto (a lei).'] },
+          { cells: ['glielo/gliela/glieli/gliele', 'sì, con il diretto', 'Gliel\'ho data (la chiave).'] },
+          { cells: ['ne partitivo', 'sì, se numerico', 'Ne ho comprati due.'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Mi presti la macchina? Sì, te la presto volentieri.', literal: 'To-me you-lend the car? Yes, to-you it I-lend gladly.', natural: 'Will you lend me the car? Yes, I\'ll gladly lend it to you.', note: 'ti + la → te la, con inversione tra domanda e risposta (mi→te).' },
+      { it: 'Il regalo per Marco? Glielo do domani.', literal: 'The present for Marco? To-him-it I-give tomorrow.', natural: "Marco's present? I'll give it to him tomorrow.", note: 'gli + lo → glielo, un\'unica parola.' },
+      { it: 'Non riesco a spiegartelo al telefono, è troppo complicato.', literal: 'Not I-manage to explain-to-you-it on-the phone, it-is too complicated.', natural: "I can't explain it to you on the phone, it's too complicated.", note: 'infinito + pronome combinato attaccato: spiegartelo.' },
+      { it: 'Dammelo subito, per favore!', literal: 'Give-to-me-it right-away, for favour!', natural: 'Give it to me right away, please!', note: 'imperativo da\' + raddoppiamento: dammelo.' },
+      { it: 'Diglielo tu, io non ho il coraggio.', literal: 'Tell-to-him/her-it you, I not I-have the courage.', natural: "You tell him/her, I don't have the courage.", note: 'imperativo di\' + glielo, senza raddoppiamento della g.' },
+      { it: 'Ce li hanno mandati ieri, dovrebbero arrivare oggi.', literal: 'To-us them they-have sent yesterday, they-should arrive today.', natural: 'They sent them to us yesterday, they should arrive today.', note: 'ci + li → ce li, participio concordato: mandati.' },
+      { it: 'La chiave? Gliel\'ho data prima di uscire.', literal: 'The key? To-him/her-it I-have given before to go-out.', natural: 'The key? I gave it to him/her before leaving.', note: 'gliela si elide in gliel\' davanti a vocale; participio concordato: data.' },
+      { it: 'Ve ne parlerò con calma domani.', literal: 'To-you of-it I-will-speak with calm tomorrow.', natural: "I'll talk to you about it calmly tomorrow.", note: 've + ne → ve ne, con il particella ne al posto del diretto.' },
+      { it: 'Posso spiegartelo meglio domani? Oppure te lo posso spiegare adesso.', literal: 'Can I explain-to-you-it better tomorrow? Or to-you-it I-can explain now.', natural: 'Can I explain it to you better tomorrow? Or I can explain it to you now.', note: 'due posizioni corrette con il modale potere.' },
+      { it: 'Mi sono dimenticato le chiavi. Me le sono dimenticato a casa.', literal: 'To-me I-am forgotten the keys. To-me them I-am forgotten at home.', natural: 'I forgot my keys. I forgot them at home.', note: 'riflessivo mi + le → me le; accordo femminile plurale.' },
+      { it: 'Non dirmelo adesso, ho troppa fretta.', literal: 'Not tell-to-me-it now, I-have too-much hurry.', natural: "Don't tell me now, I'm in too much of a hurry.", note: 'imperativo negativo tu: pronome attaccato o «Non me lo dire».' },
+      { it: 'Signora, glielo mando per posta domani.', literal: 'Madam, to-you-it I-send by mail tomorrow.', natural: "Madam, I'll send it to you by mail tomorrow.", note: 'glielo usato anche come forma di cortesia (a Lei).' },
+      { it: 'Quanti libri hai comprato? Gliene ho comprati tre.', literal: 'How-many books you-have bought? To-him of-them I-have bought three.', natural: 'How many books did you buy? I bought him three of them.', note: 'gliene = a lui/lei + ne, con accordo numerico del participio.' },
+      { it: 'Facceli vedere, dai!', literal: 'Make-to-us-them see, come-on!', natural: 'Show them to us, come on!', note: 'fa\' + raddoppiamento + ce + li: facceli.' },
+      { it: 'Te la sei presa troppo per una sciocchezza.', literal: 'To-you it you-are taken too-much for a silliness.', natural: 'You got too upset over nothing.', note: 'prendersela (verbo pronominale, unità 10) al pronome combinato riflessivo.' },
+      { it: 'Non ce lo aspettavamo, sinceramente.', literal: 'Not to-us it we-expected, sincerely.', natural: "We honestly didn't expect it.", note: 'ci + lo → ce lo, con verbo all\'imperfetto.' },
+      { it: 'Se me lo avessi chiesto prima, te lo avrei detto subito.', literal: 'If to-me it you-had asked before, to-you it I-would-have said right-away.', natural: "If you had asked me sooner, I would have told you right away.", note: 'pronomi combinati in un periodo ipotetico del terzo tipo (unità 8).' },
+      { it: 'Mia nonna me lo raccontava sempre da bambina.', literal: 'My grandmother to-me it told always as child.', natural: 'My grandmother always told it to me as a child.', note: 'me lo con l\'imperfetto, azione abituale.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Mi lo presti?', right: 'Me lo presti?', why: 'Davanti a lo/la/li/le/ne, mi diventa sempre me.' },
+      { wrong: 'Lo mi presti?', right: 'Me lo presti?', why: 'L\'ordine è fisso: indiretto sempre prima del diretto.' },
+      { wrong: 'Gli lo do domani.', right: 'Glielo do domani.', why: 'gli + lo non restano separati: si fondono in glielo.' },
+      { wrong: 'Voglio dire te lo di persona.', right: 'Voglio dirtelo di persona.', why: 'Con l\'infinito il pronome combinato si attacca, non resta staccato davanti al verbo.' },
+      { wrong: 'Dicamelo, per favore.', right: 'Me lo dica, per favore.', why: 'Con Lei (cortesia) il pronome sta sempre prima del verbo, mai attaccato.' },
+      { wrong: 'Damelo subito!', right: 'Dammelo subito!', why: 'Con da\' l\'imperativo raddoppia la consonante del pronome che segue: dammelo.' },
+      { wrong: 'La lettera? Te l\'ho scritto ieri.', right: 'La lettera? Te l\'ho scritta ieri.', why: 'Con il pronome diretto davanti il participio concorda: scritta (femminile, la lettera).' },
+      { wrong: 'Non ho potuto dirlo te.', right: 'Non ho potuto dirtelo. / Non te lo ho potuto dire.', why: 'I due pronomi si combinano in un\'unica forma, non restano separati dopo il verbo.' },
+      { wrong: 'Te li ho dato ieri.', right: 'Te li ho dati ieri.', why: 'Con il diretto plurale davanti, il participio concorda al plurale: dati.' },
+      { wrong: 'Glielo regalo a Marco e Anna insieme, glielo do a tutti e due.', right: 'Glielo regalo a Marco e Anna insieme, lo do a tutti e due.', why: 'Il pronome "glielo" già contiene il destinatario: ripetere "a tutti e due" col pronome combinato è ridondante — basta il diretto lo con il complemento esplicito.' }
+    ],
+
+    vocab: {
+      title: 'Vocabolario — vita quotidiana, negozi e famiglia (57 parole)',
+      intro: 'I pronomi combinati vivono nei piccoli scambi di ogni giorno: prestare, regalare, restituire, spiegare. Ecco il lessico della vita quotidiana, degli acquisti e della famiglia, con italiano, inglese, farsi (فارسی) ed esempio — spesso con un pronome combinato.',
+      categories: [
+        { id: 'quotidiano', label: 'Vita quotidiana', icon: '🏠' },
+        { id: 'negozio', label: 'Negozio e acquisti', icon: '🛍️' },
+        { id: 'famiglia', label: 'Famiglia', icon: '👨‍👩‍👧' },
+        { id: 'scambi', label: 'Scambi e favori', icon: '🤝' },
+        { id: 'comunicazione', label: 'Comunicazione', icon: '💬' },
+        { id: 'espr', label: 'Espressioni', icon: '✨' }
+      ],
+      words: [
+        /* ── Vita quotidiana (9) ── */
+        { it: 'la faccenda', en: 'chore, task', fa: 'کار خانه', cat: 'quotidiano', pos: 'f.', ex: 'Le faccende? Te le lascio tutte a te oggi.' },
+        { it: 'prestare attenzione', en: 'to pay attention', fa: 'توجه کردن', cat: 'quotidiano', pos: 'loc. v.', ex: 'Prestaci attenzione, per favore.' },
+        { it: 'occuparsi (di)', en: 'to take care (of)', fa: 'رسیدگی کردن', cat: 'quotidiano', pos: 'v. rifl.', ex: 'Della cena me ne occupo io stasera.' },
+        { it: 'sistemare', en: 'to arrange, to sort out', fa: 'مرتب کردن', cat: 'quotidiano', pos: 'v.', ex: 'La stanza? Te la sistemo io.' },
+        { it: 'il vicino di casa', en: 'neighbour', fa: 'همسایه', cat: 'quotidiano', pos: 'm.', ex: 'Il vicino di casa me lo ha portato lui stesso.' },
+        { it: 'il favore', en: 'favour', fa: 'لطف', cat: 'quotidiano', pos: 'm.', ex: 'Mi faresti un favore? Te lo chiedo solo questa volta.' },
+        { it: 'la chiave', en: 'key', fa: 'کلید', cat: 'quotidiano', pos: 'f.', ex: 'La chiave di casa? Te la do io.' },
+        { it: 'il permesso', en: 'permission', fa: 'اجازه', cat: 'quotidiano', pos: 'm.', ex: 'Il permesso? Ce lo ha dato subito.' },
+        { it: 'sbrigarsi', en: 'to hurry up', fa: 'عجله کردن', cat: 'quotidiano', pos: 'v. rifl.', ex: 'Sbrigati, te lo dico per l\'ultima volta!' },
+
+        /* ── Negozio e acquisti (10) ── */
+        { it: 'il negozio', en: 'shop', fa: 'مغازه', cat: 'negozio', pos: 'm.', ex: 'Quel negozio? Te lo consiglio, hanno di tutto.' },
+        { it: 'la ricevuta', en: 'receipt', fa: 'رسید', cat: 'negozio', pos: 'f.', ex: 'La ricevuta? Gliela do subito, signora.' },
+        { it: 'lo scontrino', en: 'receipt (till)', fa: 'فیش خرید', cat: 'negozio', pos: 'm.', ex: 'Lo scontrino te lo do insieme al pacco.' },
+        { it: 'il commesso / la commessa', en: 'shop assistant', fa: 'فروشنده', cat: 'negozio', pos: 'm./f.', ex: 'La commessa me li ha mostrati tutti, i modelli.' },
+        { it: 'provare (un vestito)', en: 'to try on', fa: 'پرو کردن', cat: 'negozio', pos: 'v.', ex: 'Questi pantaloni? Me li provo subito.' },
+        { it: 'il saldo', en: 'sale, discount', fa: 'حراج', cat: 'negozio', pos: 'm.', ex: 'I saldi? Ce li annunciano ogni gennaio.' },
+        { it: 'il reso', en: 'return (of goods)', fa: 'مرجوعی', cat: 'negozio', pos: 'm.', ex: 'Il reso? Te lo accettano solo con lo scontrino.' },
+        { it: 'incartare', en: 'to gift-wrap', fa: 'کادو پیچ کردن', cat: 'negozio', pos: 'v.', ex: 'Me lo può incartare, per favore?' },
+        { it: 'la taglia', en: 'size (clothing)', fa: 'سایز', cat: 'negozio', pos: 'f.', ex: 'La taglia giusta? Gliela cerco subito.' },
+        { it: 'il carrello', en: 'shopping cart, trolley', fa: 'سبد خرید', cat: 'negozio', pos: 'm.', ex: 'Il carrello? Te lo lascio qui vicino.' },
+
+        /* ── Famiglia (9) ── */
+        { it: 'il nipote / la nipote', en: 'nephew, grandson / niece, granddaughter', fa: 'نوه / خواهرزاده', cat: 'famiglia', pos: 'm./f.', ex: 'Ai nipoti glielo racconto sempre volentieri.' },
+        { it: 'i parenti', en: 'relatives', fa: 'اقوام', cat: 'famiglia', pos: 'm. pl.', ex: 'Ai parenti? Gliela mandiamo ogni Natale, la foto di famiglia.' },
+        { it: 'il cugino / la cugina', en: 'cousin', fa: 'پسرخاله/دخترخاله و...', cat: 'famiglia', pos: 'm./f.', ex: 'La macchina? Gliela presto solo a mio cugino.' },
+        { it: 'crescere (un figlio)', en: 'to raise (a child)', fa: 'بزرگ کردن', cat: 'famiglia', pos: 'v.', ex: 'I valori? Glieli abbiamo insegnati fin da piccoli.' },
+        { it: 'viziare', en: 'to spoil (a child)', fa: 'لوس کردن', cat: 'famiglia', pos: 'v.', ex: 'I nonni? Ce lo dicono sempre di non viziarli troppo.' },
+        { it: 'l\'eredità', en: 'inheritance', fa: 'ارث', cat: 'famiglia', pos: 'f.', ex: 'L\'eredità? Gliel\'hanno lasciata i nonni.' },
+        { it: 'affidare', en: 'to entrust', fa: 'سپردن', cat: 'famiglia', pos: 'v.', ex: 'I bambini? Glieli affidiamo volentieri il weekend.' },
+        { it: 'accudire', en: 'to look after, to care for', fa: 'مراقبت کردن', cat: 'famiglia', pos: 'v.', ex: 'Il nonno? Ce ne occupiamo a turno.' },
+        { it: 'il ricordo di famiglia', en: 'family heirloom, memory', fa: 'یادگار خانوادگی', cat: 'famiglia', pos: 'm.', ex: 'Quell\'orologio? Me lo ha regalato mio nonno.' },
+
+        /* ── Scambi e favori (10) ── */
+        { it: 'prestare', en: 'to lend', fa: 'قرض دادن', cat: 'scambi', pos: 'v.', ex: 'La bici? Te la presto quando vuoi.' },
+        { it: 'chiedere in prestito', en: 'to borrow', fa: 'قرض گرفتن', cat: 'scambi', pos: 'loc. v.', ex: 'Il libro? Te lo chiedo in prestito solo per un giorno.' },
+        { it: 'regalare', en: 'to give (as a gift)', fa: 'هدیه دادن', cat: 'scambi', pos: 'v.', ex: 'I fiori? Glieli regalo ogni anno per il suo compleanno.' },
+        { it: 'restituire', en: 'to give back, to return', fa: 'برگرداندن', cat: 'scambi', pos: 'v.', ex: 'I soldi? Te li restituisco venerdì, promesso.' },
+        { it: 'scambiarsi', en: 'to exchange (with each other)', fa: 'مبادله کردن', cat: 'scambi', pos: 'v. rifl.', ex: 'I regali? Ce li scambiamo sempre a Capodanno.' },
+        { it: 'offrire', en: 'to offer, to treat', fa: 'پیشنهاد کردن / مهمان کردن', cat: 'scambi', pos: 'v.', ex: 'Il caffè? Te lo offro io oggi.' },
+        { it: 'condividere', en: 'to share', fa: 'به اشتراک گذاشتن', cat: 'scambi', pos: 'v.', ex: 'La stanza? Ce la dividiamo io e mia sorella.' },
+        { it: 'passare (qualcosa a qualcuno)', en: 'to pass (something to someone)', fa: 'رد کردن', cat: 'scambi', pos: 'v.', ex: 'Il sale? Me lo passi, per favore?' },
+        { it: 'ricambiare', en: 'to reciprocate', fa: 'جبران کردن', cat: 'scambi', pos: 'v.', ex: 'Il favore? Te lo ricambio appena posso.' },
+        { it: 'il debito', en: 'debt', fa: 'بدهی', cat: 'scambi', pos: 'm.', ex: 'Quel debito? Glielo salderò entro fine mese.' },
+
+        /* ── Comunicazione (10) ── */
+        { it: 'spiegare', en: 'to explain', fa: 'توضیح دادن', cat: 'comunicazione', pos: 'v.', ex: 'La regola? Ve la spiego un\'altra volta.' },
+        { it: 'consigliare', en: 'to advise, to recommend', fa: 'توصیه کردن', cat: 'comunicazione', pos: 'v.', ex: 'Questo film? Te lo consiglio davvero.' },
+        { it: 'raccontare', en: 'to tell (a story)', fa: 'تعریف کردن', cat: 'comunicazione', pos: 'v.', ex: 'Quella storia? Ce la racconti sempre volentieri.' },
+        { it: 'confessare', en: 'to confess', fa: 'اعتراف کردن', cat: 'comunicazione', pos: 'v.', ex: 'La verità? Gliel\'ho confessata solo ieri.' },
+        { it: 'promettere', en: 'to promise', fa: 'قول دادن', cat: 'comunicazione', pos: 'v.', ex: 'Il segreto? Te lo prometto, non lo dico a nessuno.' },
+        { it: 'ripetere', en: 'to repeat', fa: 'تکرار کردن', cat: 'comunicazione', pos: 'v.', ex: 'Puoi ripetermelo? Non ho capito bene.' },
+        { it: 'nascondere', en: 'to hide', fa: 'پنهان کردن', cat: 'comunicazione', pos: 'v.', ex: 'La sorpresa? Gliela nascondo fino a stasera.' },
+        { it: 'annunciare', en: 'to announce', fa: 'اعلام کردن', cat: 'comunicazione', pos: 'v.', ex: 'La notizia? Ce l\'hanno annunciata stamattina.' },
+        { it: 'mandare un messaggio', en: 'to send a message', fa: 'پیام فرستادن', cat: 'comunicazione', pos: 'loc. v.', ex: 'L\'indirizzo? Te lo mando subito per messaggio.' },
+        { it: 'ricordare (a qualcuno)', en: 'to remind (someone)', fa: 'یادآوری کردن', cat: 'comunicazione', pos: 'v.', ex: 'L\'appuntamento? Te lo ricordo domani mattina.' },
+
+        /* ── Espressioni (9) ── */
+        { it: 'te lo giuro', en: 'I swear it to you', fa: 'قسم می‌خورم', cat: 'espr', pos: 'espr.', ex: 'Te lo giuro, non sapevo niente.' },
+        { it: 'non me lo aspettavo', en: "I didn't expect it", fa: 'انتظارش را نداشتم', cat: 'espr', pos: 'espr.', ex: 'Non me lo aspettavo proprio, che sorpresa!' },
+        { it: 'me la cavo', en: 'I manage, I get by', fa: 'از پسش برمی‌آیم', cat: 'espr', pos: 'espr.', ex: 'Con l\'italiano ormai me la cavo bene.' },
+        { it: 'prendersela', en: 'to get upset (about something)', fa: 'ناراحت شدن', cat: 'espr', pos: 'v. pron.', ex: 'Non te la prendere, non era colpa tua.' },
+        { it: 'farcela', en: 'to manage, to make it', fa: 'موفق شدن', cat: 'espr', pos: 'v. pron.', ex: 'Ce la faccio da solo, grazie.' },
+        { it: 'come te lo devo dire', en: 'how many times do I have to tell you', fa: 'دیگه چطور بگم', cat: 'espr', pos: 'espr.', ex: 'Come te lo devo dire, non voglio andarci!' },
+        { it: 'te lo dico per esperienza', en: 'I tell you from experience', fa: 'از روی تجربه می‌گویم', cat: 'espr', pos: 'espr.', ex: 'Te lo dico per esperienza: non ne vale la pena.' },
+        { it: 'gliel\'ho fatta capire', en: 'I made him/her understand it', fa: 'فهماندم بهش', cat: 'espr', pos: 'espr.', ex: 'Alla fine gliel\'ho fatta capire, la situazione.' },
+        { it: 've lo assicuro', en: 'I assure you (pl.)', fa: 'به شما اطمینان می‌دهم', cat: 'espr', pos: 'espr.', ex: 'Ve lo assicuro, andrà tutto bene.' }
+      ]
+    },
+
+    guided: {
+      title: 'Costruiamo insieme i pronomi combinati',
+      intro: 'Tre domande in ordine: a chi? (indiretto), che cosa? (diretto), quale vocale prende l\'indiretto?',
+      steps: [
+        {
+          prompt: 'Combina: «Presto la macchina a te.» → forma con pronomi combinati.',
+          think: 'A te = ti → diventa te davanti a un diretto. La macchina = la (femminile). ti + la = te la.',
+          answer: 'Te la presto.',
+          why: 'ti → te davanti a lo/la/li/le/ne; l\'ordine è sempre indiretto + diretto.'
+        },
+        {
+          prompt: 'Combina: «Do il regalo a Marco.»',
+          think: 'A Marco = gli. Il regalo = lo. gli + lo non restano separati: si fondono in glielo.',
+          answer: 'Glielo do.',
+          why: 'gli/le + diretto = sempre glie- fuso in un\'unica parola.'
+        },
+        {
+          prompt: 'Trasforma con l\'infinito: «Voglio spiegare la regola a voi.»',
+          think: 'A voi = vi → ve. La regola = la. vi + la = ve la. Con l\'infinito il pronome si attacca e la -e cade.',
+          answer: 'Voglio spiegarvela.',
+          why: 'spiegare → spiegar- + vela, un\'unica parola.'
+        },
+        {
+          prompt: 'Trasforma all\'imperativo (tu): «Dammi le chiavi!»',
+          think: 'Da\' + mi + le → con raddoppiamento della m: dammele. Le chiavi = le, plurale.',
+          answer: 'Dammele!',
+          why: 'Con da\'/di\'/fa\'/sta\'/va\' la consonante del pronome raddoppia (tranne con gli-).'
+        },
+        {
+          prompt: 'Con Lei (cortesia): trasforma «Le do la ricevuta.»',
+          think: 'A Lei = le → diventa glie- + la = gliela. Con la forma di cortesia il pronome resta sempre prima del verbo, mai attaccato.',
+          answer: 'Gliela do.',
+          why: 'Mai "Dogliela": con Lei il pronome combinato precede sempre il verbo.'
+        },
+        {
+          prompt: 'Con un modale: trasforma in due modi «Posso spiegare questo a te.»',
+          think: 'ti + questo (diretto lo) → te lo. Due posizioni possibili col modale potere.',
+          answer: 'Te lo posso spiegare. / Posso spiegartelo.',
+          why: 'Entrambe le forme sono corrette con potere/dovere/volere + infinito.'
+        }
+      ]
+    },
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Mi presti la macchina?» «Sì, ___ presto.»', options: ['mi la', 'me la', 'te la', 'gliela'], answer: 1, hint: 'mi + la davanti al verbo', why: 'mi diventa me davanti a la: me la presto.' },
+        { q: 'Trasforma: «Do il libro a Marco» con pronomi combinati:', options: ['Gli lo do.', 'Glielo do.', 'Lo gli do.', 'Me lo do.'], answer: 1, hint: 'gli + lo si fondono', why: 'gli/le + diretto diventa sempre glie-: glielo.' },
+        { q: 'Quale forma è corretta con l\'infinito?', options: ['Voglio dire te lo.', 'Voglio dirtelo.', 'Voglio telo dire.', 'Voglio dirlo te.'], answer: 1, hint: 'la -e dell\'infinito cade', why: 'dire → dir- + telo: dirtelo, attaccato.' },
+        { q: 'Imperativo (tu) di «dare» + «me» + «lo»:', options: ['Damelo!', 'Dammelo!', 'Dagliemelo!', 'Melodà!'], answer: 1, hint: 'raddoppiamento con da\'', why: 'da\' raddoppia la consonante: dammelo.' },
+        { q: 'Con Lei (cortesia), come si dice «Give it to me»?', options: ['Dammelo!', 'Me lo dia.', 'Diamelo!', 'Dàmelo.'], answer: 1, hint: 'con Lei il pronome sta prima', why: 'Con la forma di cortesia il pronome precede sempre il verbo: me lo dia.' },
+        { q: '«La lettera? Te l\'ho ___.» (scrivere)', options: ['scritto', 'scritta', 'scritti', 'scrivere'], answer: 1, hint: 'accordo con il diretto', why: 'la lettera è femminile: te l\'ho scritta.' },
+        { q: 'Quale coppia NON è corretta?', options: ['ci + lo → ce lo', 'vi + la → ve la', 'gli + le → gliele', 'mi + li → mi li'], answer: 3, hint: 'la vocale finale cambia sempre', why: 'mi diventa me: me li, non "mi li".' },
+        { q: 'Completa con il modale (due forme possibili, scegli quella corretta): «___ spiegare.»', options: ['Te lo posso', 'Lo ti posso', 'Posso te lo', 'Ti lo posso'], answer: 0, hint: 'indiretto sempre prima, vocale cambiata', why: 'Te lo posso spiegare, oppure Posso spiegartelo — entrambe valide, ma non «Ti lo posso».' },
+        { q: 'Quale frase usa correttamente il pronome combinato con «ne»?', options: ['Ve ne parlerò domani.', 'Vi ne parlerò domani.', 'Ne vi parlerò domani.', 'Vene parlerò domani.'], answer: 0, hint: 'vi + ne → ve ne', why: 'vi diventa ve davanti a ne: ve ne parlerò.' },
+        { q: 'Imperativo (tu) di «dire» + «gli» + «lo»:', options: ['Digglielo!', 'Diglielo!', 'Dimmelo!', 'Dilloglie!'], answer: 1, hint: 'gli- non raddoppia mai', why: 'diglielo, senza raddoppiamento della g.' },
+        { q: '«I soldi? Te li ho ___ venerdì.» (restituire)', options: ['restituito', 'restituita', 'restituiti', 'restituire'], answer: 2, hint: 'accordo plurale con "li"', why: 'i soldi sono maschile plurale: restituiti.' },
+        { q: 'Qual è la forma corretta di «gli» + «ne»?', options: ['glielne', 'gliene', 'glieni', 'gline'], answer: 1, hint: 'segue lo stesso schema di glielo', why: 'gli/le + ne = gliene.' },
+        { q: 'Trasforma con pronome combinato: «Presto i libri a voi.»', options: ['Ve li presto.', 'Vi li presto.', 'Ve le presto.', 'Glieli presto.'], answer: 0, hint: 'vi + li, plurale maschile', why: 'vi → ve; i libri = li: ve li presto.' },
+        { q: 'Quale frase è nell\'italiano formale/scritto per «a loro»?', options: ['Solo glielo.', 'Solo lo do loro.', 'Sia "glielo" sia "lo do loro" sono possibili, ma glielo è più comune nel parlato.', 'Nessuna delle due.'], answer: 2, hint: 'due registri diversi', why: 'Nel parlato moderno "glielo" sostituisce quasi sempre "loro" separato.' }
+      ],
+      fill: [
+        { before: 'Mi presti la macchina? Sì,', after: 'presto volentieri. (te la)', answers: ['te la'], en: "Will you lend me the car? Yes, I'll gladly lend it to you." },
+        { before: 'Il regalo per Marco?', after: 'do domani. (glie)', answers: ['Glielo'], en: "Marco's present? I'll give it to him tomorrow." },
+        { before: 'Non riesco a spiegar', after: 'al telefono. (te + lo)', answers: ['telo'], en: "I can't explain it to you on the phone." },
+        { before: 'Dam', after: 'subito, per favore! (me + lo)', answers: ['melo'], en: 'Give it to me right away, please!' },
+        { before: 'La chiave?', after: 'ho data prima di uscire. (glie)', answers: ['Gliel\''], en: 'The key? I gave it to him/her before leaving.', hint: 'elisione davanti a vocale' },
+        { before: 'I soldi?', after: 'restituisco venerdì. (te)', answers: ['Te li'], en: 'The money? I\'ll give it back to you on Friday.' },
+        { before: 'Signora,', after: 'mando per posta domani. (glie)', answers: ['glielo'], en: "Madam, I'll send it to you by mail tomorrow." },
+        { before: 'Quanti libri hai comprato?', after: 'ho comprati tre. (glie + ne)', answers: ['Gliene'], en: 'How many books did you buy? I bought him three of them.' },
+        { before: 'Facce', after: 'vedere, dai! (li)', answers: ['li'], en: 'Show them to us, come on!' },
+        { before: 'Non', after: 'la prendere, non era colpa tua. (te)', answers: ['te'], en: "Don't get upset, it wasn't your fault." },
+        { before: 'Il permesso?', after: 'hanno dato subito. (ce lo)', answers: ['Ce lo'], en: 'The permission? They gave it to us right away.' },
+        { before: 'Con Lei, come glielo dico?', after: 'dica pure, sono pronto. (me lo)', answers: ['Me lo'], en: 'Go ahead and tell me, I\'m ready.' }
+      ],
+      order: [
+        { words: ['Mi', 'presti', 'la', 'macchina'], answer: 'Mi presti la macchina', en: 'Will you lend me the car?' },
+        { words: ['Te', 'la', 'presto', 'volentieri'], answer: 'Te la presto volentieri', en: "I'll gladly lend it to you." },
+        { words: ['Glielo', 'do', 'domani'], answer: 'Glielo do domani', en: "I'll give it to him tomorrow." },
+        { words: ['Voglio', 'spiegartelo', 'bene'], answer: 'Voglio spiegartelo bene', en: 'I want to explain it to you well.' },
+        { words: ['Dammelo', 'subito', 'per', 'favore'], answer: 'Dammelo subito per favore', en: 'Give it to me right away please.' },
+        { words: ['Ce', 'li', 'hanno', 'mandati', 'ieri'], answer: 'Ce li hanno mandati ieri', en: 'They sent them to us yesterday.' },
+        { words: ['Non', 'ce', 'lo', 'aspettavamo'], answer: 'Non ce lo aspettavamo', en: "We didn't expect it." }
+      ],
+      dnd: {
+        instructions: 'Questi pronomi combinati vanno con AVERE (participio invariabile con l\'indiretto da solo... ma qui è sempre indiretto+diretto, quindi il participio concorda) o sono forme irregolari con GLIE-? Trascinali nella colonna giusta.',
+        buckets: [
+          { id: 'glie', label: 'Con GLIE- (lui/lei/loro)', icon: '🟣' },
+          { id: 'vocale', label: 'Con cambio vocalico (me/te/ce/ve)', icon: '🟢' }
+        ],
+        items: [
+          { text: 'glielo', bucket: 'glie' },
+          { text: 'me lo', bucket: 'vocale' },
+          { text: 'gliela', bucket: 'glie' },
+          { text: 'te la', bucket: 'vocale' },
+          { text: 'glieli', bucket: 'glie' },
+          { text: 'ce li', bucket: 'vocale' },
+          { text: 'gliene', bucket: 'glie' },
+          { text: 've ne', bucket: 'vocale' },
+          { text: 'gliele', bucket: 'glie' },
+          { text: 'me ne', bucket: 'vocale' },
+          { text: 'glielo (a loro)', bucket: 'glie' },
+          { text: 'te ne', bucket: 'vocale' },
+          { text: 'ce ne', bucket: 'vocale' },
+          { text: 'gliela (a lei)', bucket: 'glie' }
+        ]
+      },
+      match: [
+        { a: 'mi + lo', b: 'me lo' },
+        { a: 'ti + la', b: 'te la' },
+        { a: 'ci + li', b: 'ce li' },
+        { a: 'vi + le', b: 've le' },
+        { a: 'gli + lo', b: 'glielo' },
+        { a: 'le + la', b: 'gliela' },
+        { a: 'mi + ne', b: 'me ne' },
+        { a: 'dammelo', b: 'give it to me!' },
+        { a: 'diglielo', b: 'tell it to him/her!' },
+        { a: 'dirtelo', b: 'to tell it to you' }
+      ],
+      tf: [
+        { statement: '«Mi lo presti» è una forma corretta.', answer: false, why: 'No: davanti a lo, mi diventa sempre me → me lo.' },
+        { statement: 'Nei pronomi combinati l\'indiretto viene sempre prima del diretto.', answer: true, why: 'Sì: me lo, te la, ce li, mai al contrario.' },
+        { statement: 'gli + lo diventa "glielo", un\'unica parola.', answer: true, why: 'Esatto: gli e le si fondono sempre in glie-.' },
+        { statement: 'Con l\'infinito il pronome combinato resta staccato davanti al verbo.', answer: false, why: 'No: si attacca alla fine dell\'infinito, che perde la -e: dirtelo.' },
+        { statement: 'Con Lei (cortesia) il pronome combinato si attacca sempre al verbo.', answer: false, why: 'No: con Lei il pronome sta sempre prima del verbo, mai attaccato.' },
+        { statement: 'Con da\', di\', fa\', sta\', va\' la consonante del pronome che segue raddoppia (tranne con gli-).', answer: true, why: 'Sì: dammelo, dimmelo, fammelo, ma diglielo senza raddoppiamento.' },
+        { statement: 'Con potere/dovere/volere + infinito esiste una sola posizione corretta per il pronome.', answer: false, why: 'No: sono corrette entrambe le posizioni, prima del modale o attaccato all\'infinito.' },
+        { statement: 'Il participio passato concorda con il pronome diretto anche nei pronomi combinati.', answer: true, why: 'Sì: te l\'ho scritta, te li ho dati.' },
+        { statement: '«ne» non può mai combinarsi con un pronome indiretto.', answer: false, why: 'Falso: ne si combina regolarmente, es. me ne, te ne, gliene.' }
+      ],
+      translate: [
+        { en: 'Will you lend me the car? Yes, I\'ll lend it to you.', answers: ['Mi presti la macchina Sì te la presto'] },
+        { en: "I'll give it to him tomorrow.", answers: ['Glielo do domani'] },
+        { en: "I can't explain it to you now.", answers: ['Non posso spiegartelo adesso', 'Non te lo posso spiegare adesso'] },
+        { en: 'Give it to me right away!', answers: ['Dammelo subito'] },
+        { en: 'Tell it to him, please.', answers: ['Diglielo per favore'] },
+        { en: 'They sent them to us yesterday.', answers: ['Ce li hanno mandati ieri'] },
+        { en: "I gave it to him/her before leaving.", answers: ['Gliel\'ho dato prima di uscire', 'Gliel\'ho data prima di uscire'] },
+        { en: "We didn't expect it.", answers: ['Non ce lo aspettavamo'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Il regalo per la nonna',
+      intro: 'Due fratelli organizzano il regalo per il compleanno della nonna: nota come i pronomi combinati sostituiscono ogni oggetto già menzionato.',
+      lines: [
+        { speaker: 'Chiara', icon: '👩', it: 'Hai già comprato il regalo per la nonna?', en: "Have you already bought grandma's present?",
+          glosses: [] },
+        { speaker: 'Paolo', icon: '🧑', side: 'right', it: 'No, non ancora. Me lo ricordi tu che compleanno fa quest\'anno?', en: "No, not yet. Can you remind me what birthday she's having this year?",
+          glosses: [{ term: 'Me lo ricordi', expl: 'mi + lo → me lo: chiedere a qualcuno di ricordare qualcosa a te.' }] },
+        { speaker: 'Chiara', icon: '👩', it: 'Ottanta! Ho visto una sciarpa bellissima, gliela regaliamo insieme?', en: "Eighty! I saw a beautiful scarf, shall we give it to her together?",
+          glosses: [{ term: 'gliela regaliamo', expl: 'le (a lei) + la (la sciarpa) → gliela, un\'unica parola.' }] },
+        { speaker: 'Paolo', icon: '🧑', side: 'right', it: 'Perfetto. Dove l\'hai vista? Dimmelo e vado subito a comprarla.', en: 'Perfect. Where did you see it? Tell me and I\'ll go buy it right away.',
+          glosses: [{ term: 'Dimmelo', expl: 'Imperativo di\' + mi + lo → dimmelo, con raddoppiamento della m.' }] },
+        { speaker: 'Chiara', icon: '👩', it: 'In centro, in quel negozio dove ci hanno fatto lo sconto l\'anno scorso. Te lo mando su una mappa.', en: "Downtown, in that shop where they gave us a discount last year. I'll send it to you on a map.",
+          glosses: [{ term: 'Te lo mando', expl: 'ti + lo (il negozio/la posizione) → te lo, con verbo mandare.' }] },
+        { speaker: 'Paolo', icon: '🧑', side: 'right', it: 'Grazie! E la ricevuta? Gliela do io direttamente, così sa quanto è costata.', en: 'Thanks! And the receipt? I\'ll give it to her directly, so she knows how much it cost.',
+          glosses: [{ term: 'Gliela do', expl: 'le + la → gliela, riferito alla ricevuta.' }] },
+        { speaker: 'Chiara', icon: '👩', it: 'No, non gliela dare! Vuole sempre sapere i prezzi e poi si preoccupa.', en: "No, don't give it to her! She always wants to know the prices and then worries.",
+          glosses: [{ term: 'non gliela dare', expl: 'Imperativo negativo: il pronome resta separato prima del verbo o attaccato, entrambe le forme sono corrette.' }] },
+        { speaker: 'Paolo', icon: '🧑', side: 'right', it: 'Va bene, non gliela do. La incarto io stesso, così è una sorpresa vera.', en: "Okay, I won't give it to her. I'll wrap it myself, so it's a real surprise.",
+          glosses: [{ term: 'non gliela do', expl: 'Pronome combinato prima del verbo coniugato.' }] },
+        { speaker: 'Chiara', icon: '👩', it: 'Perfetto! Grazie mille, davvero. Te lo dico sempre: sei il fratello migliore.', en: "Perfect! Thank you so much, really. I always tell you: you're the best brother.",
+          glosses: [{ term: 'Te lo dico', expl: 'ti + lo → te lo, chiusura naturale della conversazione.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'pronomi combinati', back: 'indiretto + diretto in un\'unica coppia', note: 'me lo, te la, ce li, glielo' },
+      { front: 'mi/ti/ci/vi + lo/la/li/le/ne', back: 'me/te/ce/ve + lo/la/li/le/ne', note: 'la -i diventa -e' },
+      { front: 'gli/le + lo/la/li/le/ne', back: 'glielo/gliela/glieli/gliele/gliene', note: 'sempre fuso in una parola' },
+      { front: 'Dammelo!', back: 'Give it to me!', note: 'raddoppiamento con da\'' },
+      { front: 'Diglielo!', back: "Tell it to him/her!", note: 'gli- non raddoppia mai' },
+      { front: 'Me lo dica.', back: '(cortesia) Tell it to me.', note: 'con Lei mai attaccato' },
+      { front: 'dirtelo, spiegartelo', back: 'infinito -e cade + pronome attaccato' },
+      { front: 'Te lo posso dire. / Posso dirtelo.', back: 'entrambe corrette', note: 'con potere/dovere/volere' },
+      { front: 'Te l\'ho scritta', back: 'participio concorda col diretto', note: 'la lettera → scritta' },
+      { front: 've ne parlerò', back: 'I will talk to you about it', note: 'vi + ne → ve ne' },
+      { front: 'prestare, regalare, restituire', back: 'verbi tipici con due oggetti' },
+      { front: 'farcela / prendersela', back: 'espressioni con pronome combinato riflessivo' },
+      { front: 'ordine fisso', back: 'indiretto SEMPRE prima del diretto' },
+      { front: 'gliel\'ho data', back: 'elisione + accordo femminile', note: 'davanti a vocale' }
+    ],
+
+    summary: {
+      formula: 'Pronome indiretto (me/te/ce/ve/glie-) + pronome diretto (lo/la/li/le/ne) + verbo — oppure attaccati a infinito/imperativo',
+      rules: [
+        'I pronomi combinati uniscono un indiretto (a chi?) e un diretto o ne (che cosa?): l\'indiretto viene sempre prima.',
+        'mi, ti, ci, vi diventano me, te, ce, ve davanti a lo/la/li/le/ne.',
+        'gli e le si fondono sempre in glielo/gliela/glieli/gliele/gliene, anche per "a loro" nel parlato moderno.',
+        'Con un verbo coniugato il pronome combinato sta sempre prima del verbo.',
+        'Con l\'infinito si attacca alla fine, e la -e finale dell\'infinito cade: dirtelo, spiegarcelo.',
+        'Con l\'imperativo tu/noi/voi si attacca; con da\'/di\'/fa\'/sta\'/va\' la consonante del pronome raddoppia (tranne gli-).',
+        'Con Lei (cortesia) il pronome resta sempre prima del verbo, mai attaccato.',
+        'Con potere/dovere/volere + infinito sono corrette entrambe le posizioni del pronome.'
+      ],
+      tips: [
+        'Ripeti ad alta voce la tabella me/te/ce/ve finché non diventa automatica: è la base di tutto il resto.',
+        'Pensa a "glie-" come a un blocco unico e invariabile: si aggiunge solo lo/la/li/le/ne alla fine.',
+        'Quando un verbo ha due oggetti (dare, dire, prestare, regalare, spiegare…) prova sempre a immaginare la risposta con un pronome combinato: è così che parlano i madrelingua.',
+        'Se hai dubbi sulla posizione, ricorda: verbo coniugato → prima; infinito/imperativo informale → attaccato; Lei → sempre prima.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ripasso generale e assessment finale del livello B1: quiz misto su tutte le 14 unità, lettura, ascolto, scrittura e spunti per il parlato.">
+  <title>Ripasso Generale B1 · Italiano B1</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     UNITÀ 15 — RIPASSO GENERALE B1 / ESAME FINALE
+     Stessa struttura del ripasso A2 (quiz misto, taggato per unità, con
+     diagnosi per argomento) più tre sezioni aggiuntive di livello B1:
+     lettura, ascolto (con audio TTS) e una prova di scrittura/parlato.
+     ========================================================================== */
+  const BANK = [
+    /* — 1. Trapassato prossimo — */
+    { t: 1, q: 'Completa: «Quando sono arrivato, il treno ___ già ___.»', o: ['è / partito', 'era / partito', 'aveva / partito', 'ha / partito'], a: 1, w: 'Trapassato: era già partito.' },
+    { t: 1, q: 'Trapassato di «sono andata» (donna):', o: ['avevo andata', 'ero andato', 'ero andata', 'avevo andato'], a: 2, w: 'ero andata, con accordo femminile.' },
+    { t: 1, q: 'Completa: «Non avevo mai ___ un film così bello.» (vedere)', o: ['visto', 'veduto solo', 'vedere', 'vedevo'], a: 0, w: 'Participio irregolare: visto.' },
+    { t: 1, q: 'Quando NON serve il trapassato?', o: ['C\'è un secondo fatto anteriore', 'Il racconto ha un solo fatto passato', 'Con "dopo che"', 'Con "già"'], a: 1, w: 'Con un solo fatto passato basta il passato prossimo.' },
+
+    /* — 2. Condizionale passato — */
+    { t: 2, q: 'Completa: «Ha detto che ___ alle otto.»', o: ['verrebbe', 'sarebbe venuto', 'verrà', 'veniva'], a: 1, w: 'Futuro nel passato: condizionale passato.' },
+    { t: 2, q: 'Come si dice "I should have studied"?', o: ['Dovrei studiare.', 'Avrei dovuto studiare.', 'Ho dovuto studiare.', 'Sarei dovuto studiare di più.'], a: 1, w: 'avrei dovuto + infinito.' },
+    { t: 2, q: 'Quale forma è il condizionale, non il futuro?', o: ['avremo', 'saremo', 'avremmo', 'saranno'], a: 2, w: 'avremmo, con due m.' },
+    { t: 2, q: '«Il ministro avrebbe firmato» significa:', o: ['ha certamente firmato', 'firmerà domani', 'pare abbia firmato, non confermato', 'avrebbe voluto firmare'], a: 2, w: 'Condizionale delle notizie non confermate.' },
+
+    /* — 3. Congiuntivo passato — */
+    { t: 3, q: 'Completa: «Penso che Marco ___ già partito.»', o: ['è', 'sia', 'ha', 'sarà'], a: 1, w: 'pensare che + congiuntivo: sia partito.' },
+    { t: 3, q: 'Completa: «So che ___ partito ieri.»', o: ['sia', 'è', 'fosse', 'sarebbe'], a: 1, w: 'sapere che + indicativo.' },
+    { t: 3, q: 'Stesso soggetto: «Penso ___ aver sbagliato.»', o: ['che', 'di', 'se', '—'], a: 1, w: 'Stesso soggetto → di + infinito.' },
+    { t: 3, q: 'Quale congiunzione vuole SEMPRE il congiuntivo?', o: ['perché (causa)', 'siccome', 'benché', 'quando'], a: 2, w: 'benché è concessiva → congiuntivo.' },
+
+    /* — 4. Congiuntivo imperfetto — */
+    { t: 4, q: 'Completa: «Pensavo che Marco ___ già partito.» (fosse/sia)', o: ['sia', 'fosse', 'sarebbe', 'era'], a: 1, w: 'Principale al passato → congiuntivo imperfetto/trapassato.' },
+    { t: 4, q: 'Congiuntivo imperfetto di "essere" (io):', o: ['sia', 'ero', 'fossi', 'sarei'], a: 2, w: 'che io fossi.' },
+    { t: 4, q: 'Come si esprime un desiderio impossibile?', o: ['Magari sono ricco!', 'Magari fossi ricco!', 'Magari sarò ricco!', 'Magari sia ricco!'], a: 1, w: 'magari + congiuntivo imperfetto.' },
+
+    /* — 5. Forma passiva — */
+    { t: 5, q: 'Passiva di «Calvino ha scritto questo libro»:', o: ['Questo libro ha scritto Calvino.', 'Questo libro è scritto da Calvino.', 'Questo libro è stato scritto da Calvino.', 'Questo libro viene scritto da Calvino.'], a: 2, w: 'essere al passato + participio + da + agente.' },
+    { t: 5, q: 'Quale ausiliare NON si usa nei tempi composti della passiva?', o: ['essere', 'venire', 'andare', 'venire è sempre usato in tutti i tempi'], a: 3, w: 'Venire si usa solo nei tempi semplici.' },
+    { t: 5, q: '«Il modulo va compilato» significa:', o: ['è stato compilato', 'deve essere compilato', 'è compilato da qualcuno', 'sarà compilato'], a: 1, w: 'andare + participio = necessità.' },
+
+    /* — 6. Discorso indiretto — */
+    { t: 6, q: '«Vengo domani» diventa, riferito ieri:', o: ['ha detto che viene domani', 'ha detto che sarebbe venuto il giorno dopo', 'ha detto che verrebbe domani', 'ha detto che è venuto domani'], a: 1, w: 'Backshift completo: futuro → condizionale passato, domani → il giorno dopo.' },
+    { t: 6, q: '«Vieni?» diventa nel discorso indiretto:', o: ['mi ha chiesto vieni', 'mi ha chiesto che vieni', 'mi ha chiesto se venivo', 'mi ha chiesto di venire'], a: 2, w: 'Domanda sì/no → se + imperfetto.' },
+    { t: 6, q: '«Vai!» diventa:', o: ['mi ha detto che vai', 'mi ha detto di andare', 'mi ha detto se andavo', 'mi ha detto vada'], a: 1, w: 'Imperativo → di + infinito.' },
+
+    /* — 7. Concordanza dei tempi — */
+    { t: 7, q: 'Principale al passato + azione anteriore →', o: ['presente', 'imperfetto', 'trapassato', 'futuro'], a: 2, w: 'Anteriorità nel passato → trapassato.' },
+    { t: 7, q: 'Principale al passato + azione posteriore (futuro nel passato) →', o: ['futuro semplice', 'condizionale passato', 'congiuntivo presente', 'passato prossimo'], a: 1, w: 'Posteriorità nel passato → condizionale passato.' },
+
+    /* — 8. Periodo ipotetico — */
+    { t: 8, q: 'Tipo 2 (possibile ma irreale): «Se ___ tempo, verrei.»', o: ['ho', 'avessi', 'avrò', 'avrei'], a: 1, w: 'Se + congiuntivo imperfetto, condizionale presente.' },
+    { t: 8, q: 'Tipo 3 (impossibile, passato): «Se avessi studiato, ___ l\'esame.»', o: ['supero', 'avrei superato', 'superavo', 'abbia superato'], a: 1, w: 'Se + congiuntivo trapassato, condizionale passato.' },
+    { t: 8, q: 'Tipo 1 (reale): «Se piove, ___ a casa.»', o: ['resterei', 'sarei restato', 'resto', 'restassi'], a: 2, w: 'Se + presente, presente/futuro indicativo.' },
+    { t: 8, q: 'Quale frase è sbagliata?', o: ['Se avrei tempo, verrei.', 'Se avessi tempo, verrei.', 'Se ho tempo, vengo.', 'Se avessi avuto tempo, sarei venuto.'], a: 0, w: 'Il condizionale non si usa mai nella frase con "se".' },
+
+    /* — 9. Pronomi combinati — */
+    { t: 9, q: '«Mi presti il libro?» → «Sì, ___ presto subito.» (te lo)', o: ['te lo', 'telo', 'ti lo', 'te il'], a: 0, w: 'ti + lo → te lo.' },
+    { t: 9, q: '«Lo dico a Marco» → «___ dico.» (glielo)', o: ['gli lo', 'glielo', 'lo gli', 'glilo'], a: 1, w: 'gli + lo → glielo (unica parola).' },
+    { t: 9, q: 'Con l\'imperativo «dammi» + «lo»:', o: ['dammelo', 'melo da', 'da mi lo', 'dammi lo'], a: 0, w: 'Il pronome si attacca: dammelo.' },
+
+    /* — 10. Verbi pronominali — */
+    { t: 10, q: '«Ce l\'hai fatta?» significa:', o: ['Hai un problema?', 'Sei riuscito a farlo?', 'Te ne sei andato?', 'Ti sei arrabbiato?'], a: 1, w: 'farcela = riuscire, avere successo.' },
+    { t: 10, q: '«Se n\'è andato» significa:', o: ['se lo è mangiato', 'è partito/uscito', 'se l\'è presa', 'ce l\'ha fatta'], a: 1, w: 'andarsene = andare via.' },
+    { t: 10, q: '«Quanto tempo ci vuole?» usa il verbo:', o: ['volere', 'volerci (impersonale)', 'volersi', 'farcela'], a: 1, w: 'volerci = essere necessario (tempo, ecc.).' },
+
+    /* — 11. Gerundio — */
+    { t: 11, q: 'Gerundio di «fare»:', o: ['fando', 'facendo', 'farendo', 'faciendo'], a: 1, w: 'fare → facendo.' },
+    { t: 11, q: '«___ finito il lavoro, è uscito.» (causa/tempo)', o: ['Finendo', 'Avendo', 'Avendo finito', 'Finito'], a: 2, w: 'Gerundio passato: avendo + participio.' },
+    { t: 11, q: 'Come si dice "By running, he arrived on time"?', o: ['Per correre è arrivato in tempo.', 'Correndo è arrivato in tempo.', 'Corre ed è arrivato in tempo.', 'Da correre è arrivato in tempo.'], a: 1, w: 'Gerundio di mezzo/modo: correndo.' },
+
+    /* — 12. Participio passato — */
+    { t: 12, q: 'Participio di «rompere»:', o: ['romputo', 'rotto', 'rompato', 'rosso'], a: 1, w: 'rompere → rotto.' },
+    { t: 12, q: '«Di mele, ne ho comprat___ tre.»', o: ['o', 'a', 'e', 'i'], a: 2, w: 'Con "ne" partitivo il participio concorda: comprate.' },
+    { t: 12, q: '«___ il lavoro, è uscito.» (participio assoluto)', o: ['Finendo', 'Finito', 'Avendo', 'Finisce'], a: 1, w: 'Participio assoluto: Finito il lavoro, è uscito.' },
+
+    /* — 13. Frasi relative — */
+    { t: 13, q: '«La persona ___ scrivo» (a chi scrivo):', o: ['che', 'a cui', 'il quale', 'chi'], a: 1, w: 'Dopo una preposizione serve cui, non che.' },
+    { t: 13, q: '«Non capisco ___ dici.» (= "quello che")', o: ['che', 'cui', 'ciò che', 'il quale'], a: 2, w: 'ciò che = what, senza antecedente esplicito.' },
+    { t: 13, q: 'Forma formale equivalente a «la città in cui vivo»:', o: ['la città che vivo', 'la città nella quale vivo', 'la città cui vivo', 'la città quale vivo'], a: 1, w: 'il quale/la quale concorda ed è più formale.' },
+
+    /* — 14. Preposizioni avanzate — */
+    { t: 14, q: 'Completa: «Mi occupo ___ marketing.»', o: ['a', 'di', 'su', 'con'], a: 1, w: 'occuparsi DI.' },
+    { t: 14, q: 'Completa: «Sono soddisfatto ___ risultato.»', o: ['di', 'a', 'per', 'su'], a: 0, w: 'soddisfatto DI.' },
+    { t: 14, q: 'Completa: «Conto ___ te per questo progetto.»', o: ['di', 'su', 'a', 'per'], a: 1, w: 'contare SU.' }
+  ];
+
+  const TOPICS = {
+    1: 'Trapassato prossimo', 2: 'Condizionale passato', 3: 'Congiuntivo passato',
+    4: 'Congiuntivo imperfetto', 5: 'Forma passiva', 6: 'Discorso indiretto',
+    7: 'Concordanza dei tempi', 8: 'Periodo ipotetico', 9: 'Pronomi combinati',
+    10: 'Verbi pronominali', 11: 'Gerundio', 12: 'Participio passato',
+    13: 'Frasi relative', 14: 'Preposizioni avanzate'
+  };
+
+  /* ── Reading comprehension ─────────────────────────────────────────── */
+  const READING = {
+    title: 'Un weekend imprevisto',
+    text: [
+      'Quando Marta è arrivata alla stazione, il treno per Torino era già partito da dieci minuti. Non aveva controllato l\'orario aggiornato e, se lo avesse fatto, avrebbe evitato tutto questo.',
+      'Aspettando il prossimo treno, ha telefonato a sua sorella: «Sono in ritardo, sarò a Torino verso le sette invece che alle cinque». La sorella, che stava già preparando la cena, le ha detto di non preoccuparsi.',
+      'Il viaggio, anche se più lungo del previsto, si è rivelato piacevole. Seduta accanto al finestrino, Marta ha letto un libro che le era stato regalato mesi prima e non aveva mai avuto tempo di aprire. A un certo punto ha pensato: «Se non avessi perso quel treno, non avrei mai finito questo libro».',
+      'Quando finalmente è arrivata, sua sorella l\'aspettava sorridente: «Meno male che sei arrivata sana e salva! Avevo cominciato a preoccuparmi». Le due sorelle si sono abbracciate, felici di essersi riviste dopo tanto tempo.'
+    ],
+    questions: [
+      { q: 'Perché Marta ha perso il treno?', o: ['Il treno era in ritardo', 'Non aveva controllato l\'orario aggiornato', 'Si era addormentata', 'Aveva sbagliato stazione'], a: 1 },
+      { q: 'Che cosa ha fatto Marta mentre aspettava?', o: ['Ha dormito', 'Ha chiamato un taxi', 'Ha telefonato alla sorella', 'È tornata a casa'], a: 2 },
+      { q: 'Che cosa ha fatto Marta durante il viaggio?', o: ['Ha lavorato', 'Ha letto un libro', 'Ha scritto una lettera', 'Ha dormito tutto il tempo'], a: 1 },
+      { q: 'Come si sentiva la sorella di Marta quando è arrivata?', o: ['Arrabbiata', 'Indifferente', 'Sollevata e felice', 'Stanca'], a: 2 },
+      { q: 'Quale frase del testo è un periodo ipotetico del terzo tipo?', o: ['«Sono in ritardo»', '«Se non avessi perso quel treno, non avrei mai finito questo libro»', '«Le due sorelle si sono abbracciate»', '«Sarò a Torino verso le sette»'], a: 1 }
+    ]
+  };
+
+  /* ── Listening (uses the site's built-in Italian text-to-speech) ────── */
+  const LISTENING = {
+    title: 'Ascolto — Un messaggio in segreteria',
+    audioText: 'Ciao, sono Luca. Ti chiamo perché volevo dirti che purtroppo non potrò venire alla cena di stasera. Avrei voluto avvisarti prima, ma mi hanno chiamato in ufficio per un\'emergenza proprio all\'ultimo momento. Il mio capo mi ha detto che, se non fossi andato, avrei potuto avere problemi con il progetto che stiamo seguendo insieme da settimane. Spero che tu non ti sia offeso: ci tenevo davvero a esserci. Appena esco, ti richiamo, anche se sarà probabilmente molto tardi. Nel frattempo, se qualcuno chiede di me, digli che sono al lavoro e che sarei dovuto essere lì con voi. A dopo, e mi dispiace ancora!',
+    questions: [
+      { q: 'Perché Luca non può venire alla cena?', o: ['È malato', 'Ha un\'emergenza in ufficio', 'Ha perso il treno', 'Si è dimenticato'], a: 1 },
+      { q: 'Che cosa gli ha detto il capo?', o: ['Di prendere ferie', 'Che avrebbe potuto avere problemi col progetto se non fosse andato', 'Di richiamare più tardi', 'Di andare comunque alla cena'], a: 1 },
+      { q: 'Come si sente Luca riguardo alla situazione?', o: ['Indifferente', 'Dispiaciuto', 'Sollevato', 'Arrabbiato'], a: 1 },
+      { q: 'Che cosa chiede Luca di fare se qualcuno domanda di lui?', o: ['Di dire che è malato', 'Di dire che è al lavoro', 'Di non rispondere', 'Di dire che sta arrivando'], a: 1 }
+    ]
+  };
+
+  /* ── Writing + speaking prompts (self-assessed, no auto-scoring) ─────── */
+  const WRITING_PROMPTS = [
+    'Racconta un episodio della tua vita in cui qualcosa non è andato come previsto. Usa almeno un trapassato prossimo, un condizionale passato e un periodo ipotetico del terzo tipo. (120–150 parole)',
+    'Scrivi un\'email formale al tuo capo per riferire quello che un cliente ti ha detto per telefono ieri (usa il discorso indiretto: almeno tre frasi riportate). (100–120 parole)',
+    'Descrivi la persona più interessante che tu abbia mai conosciuto, usando almeno due frasi relative con "che" e una con "cui" o "il quale". (100–120 parole)'
+  ];
+  const SPEAKING_PROMPTS = [
+    'Racconta a un compagno che cosa avresti fatto diversamente l\'anno scorso, se avessi potuto tornare indietro. (2 minuti)',
+    'Immagina di dover riferire a un amico una lunga telefonata di lavoro: usa il discorso indiretto per almeno cinque frasi. (2 minuti)',
+    'Discuti: secondo te, è meglio decidere velocemente o riflettere a lungo prima di una scelta importante? Usa almeno tre congiuntivi. (3 minuti)'
+  ];
+
+  const { store, shuffle, addXp, markComplete } = ITA;
+
+  ITA.createPage({
+    data: () => ({
+      store,
+      lessons: ITA.lessons,
+      TOPICS: TOPICS,
+      bankSize: BANK.length,
+      questions: [],
+      answers: {},
+      started: false,
+      length: 20,
+      topicFilter: 'all',
+      reading: READING,
+      readingAnswers: {},
+      readingDone: false,
+      listening: LISTENING,
+      listenAnswers: {},
+      listenDone: false,
+      listenPlayed: false,
+      writingPrompts: WRITING_PROMPTS,
+      speakingPrompts: SPEAKING_PROMPTS,
+      section: 'quiz'
+    }),
+    computed: {
+      answered() { return Object.keys(this.answers).length; },
+      correct() { return this.questions.filter((q, i) => this.answers[i] === q.a).length; },
+      done() { return this.questions.length > 0 && this.answered === this.questions.length; },
+      pct() { return this.questions.length ? Math.round(this.correct / this.questions.length * 100) : 0; },
+      byTopic() {
+        const m = {};
+        this.questions.forEach((q, i) => {
+          if (!m[q.t]) m[q.t] = { total: 0, ok: 0 };
+          m[q.t].total++;
+          if (this.answers[i] === q.a) m[q.t].ok++;
+        });
+        return Object.keys(m).map(t => ({
+          topic: TOPICS[t],
+          file: ITA.lessons.find(l => l.num === Number(t)),
+          total: m[t].total, ok: m[t].ok,
+          pct: Math.round(m[t].ok / m[t].total * 100)
+        })).sort((a, b) => a.pct - b.pct);
+      },
+      weakSpots() { return this.byTopic.filter(t => t.pct < 100); },
+      topicList() { return Object.keys(TOPICS).map(k => ({ n: Number(k), label: TOPICS[k] })); },
+      readingScore() {
+        return this.reading.questions.filter((q, i) => this.readingAnswers[i] === q.a).length;
+      },
+      readingAnswered() { return Object.keys(this.readingAnswers).length; },
+      listenScore() {
+        return this.listening.questions.filter((q, i) => this.listenAnswers[i] === q.a).length;
+      },
+      listenAnswered() { return Object.keys(this.listenAnswers).length; },
+      overallReady() { return this.pct >= 70 && this.readingDone && this.listenDone; }
+    },
+    methods: {
+      start(n) {
+        this.length = n;
+        let pool = BANK;
+        if (this.topicFilter !== 'all') pool = BANK.filter(q => q.t === Number(this.topicFilter));
+        this.questions = shuffle(pool).slice(0, Math.min(n, pool.length)).map(q => {
+          const right = q.o[q.a];
+          const opts = shuffle(q.o);
+          return { t: q.t, q: q.q, o: opts, a: opts.indexOf(right), w: q.w };
+        });
+        this.answers = {};
+        this.started = true;
+        this.$nextTick(() => {
+          const el = document.getElementById('quiz');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        });
+      },
+      pick(qi, oi) {
+        if (this.answers[qi] !== undefined) return;
+        this.answers[qi] = oi;
+        if (this.done) {
+          addXp(this.correct * 5);
+          store.scores['15-ripasso-b1.html'] = { correct: this.correct, total: this.questions.length, pct: this.pct };
+          if (this.overallReady) markComplete('15-ripasso-b1.html');
+        }
+      },
+      cls(qi, oi) {
+        if (this.answers[qi] === undefined) return '';
+        if (oi === this.questions[qi].a) return 'correct';
+        return this.answers[qi] === oi ? 'wrong' : '';
+      },
+      reset() { this.started = false; this.questions = []; this.answers = {}; },
+      lessonFile(n) { const l = ITA.lessons.find(x => x.num === n); return l ? l.file : '#'; },
+
+      pickReading(qi, oi) {
+        if (this.readingAnswers[qi] !== undefined) return;
+        this.readingAnswers[qi] = oi;
+        if (this.readingAnswered === this.reading.questions.length) {
+          this.readingDone = true;
+          addXp(this.readingScore * 5);
+        }
+      },
+      clsReading(qi, oi) {
+        if (this.readingAnswers[qi] === undefined) return '';
+        if (oi === this.reading.questions[qi].a) return 'correct';
+        return this.readingAnswers[qi] === oi ? 'wrong' : '';
+      },
+      resetReading() { this.readingAnswers = {}; this.readingDone = false; },
+
+      playListening() { this.listenPlayed = true; ITA.speak(this.listening.audioText, 'it-IT', { rate: 0.95 }); },
+      pickListen(qi, oi) {
+        if (this.listenAnswers[qi] !== undefined) return;
+        this.listenAnswers[qi] = oi;
+        if (this.listenAnswered === this.listening.questions.length) {
+          this.listenDone = true;
+          addXp(this.listenScore * 5);
+        }
+      },
+      clsListen(qi, oi) {
+        if (this.listenAnswers[qi] === undefined) return '';
+        if (oi === this.listening.questions[qi].a) return 'correct';
+        return this.listenAnswers[qi] === oi ? 'wrong' : '';
+      },
+      resetListen() { this.listenAnswers = {}; this.listenDone = false; this.listenPlayed = false; }
+    },
+
+    template: `
+      <a class="skip-link" href="#main">Vai al contenuto</a>
+      <site-header current="15-ripasso-b1.html"></site-header>
+
+      <main id="main" class="container">
+        <header class="hero animate-in">
+          <p class="card-kicker" style="color:rgba(255,255,255,.85)">Unità 15 · Esame finale</p>
+          <h1>🏆 Ripasso Generale B1</h1>
+          <p>La verifica completa del livello: un quiz misto su tutte le 14 unità, un testo di
+             lettura, un ascolto (con audio vero, generato dal tuo browser) e alcune tracce
+             di scrittura e di parlato per mettere alla prova quello che hai imparato.</p>
+          <div class="hero-stats">
+            <div class="hero-stat"><b>{{ bankSize }}</b><span>domande in archivio</span></div>
+            <div class="hero-stat"><b>14</b><span>unità</span></div>
+            <div class="hero-stat"><b>{{ store.xp }}</b><span>XP totali</span></div>
+            <div class="hero-stat" v-if="store.scores['15-ripasso-b1.html']">
+              <b>{{ store.scores['15-ripasso-b1.html'].pct }}%</b><span>ultimo risultato</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Section switcher -->
+        <div class="chip-row">
+          <button class="chip" :class="{ active: section === 'quiz' }" @click="section = 'quiz'">❓ Quiz grammaticale</button>
+          <button class="chip" :class="{ active: section === 'reading' }" @click="section = 'reading'">📖 Lettura</button>
+          <button class="chip" :class="{ active: section === 'listening' }" @click="section = 'listening'">🎧 Ascolto</button>
+          <button class="chip" :class="{ active: section === 'writing' }" @click="section = 'writing'">✍️ Scrittura e parlato</button>
+        </div>
+
+        <!-- ═══════════════ QUIZ ═══════════════ -->
+        <div v-if="section === 'quiz'">
+          <section v-if="!started" class="card">
+            <div class="card-head">
+              <span class="card-badge" aria-hidden="true">🎯</span>
+              <div><p class="card-kicker">Prepara il quiz</p><h2 style="font-size:1.2rem">Scegli argomento e lunghezza</h2></div>
+            </div>
+            <p class="small muted">Le domande e le risposte vengono mescolate ogni volta: puoi ripetere il quiz all'infinito.</p>
+
+            <h3 style="font-size:1rem;margin-top:14px">Argomento</h3>
+            <div class="chip-row">
+              <button class="chip" :class="{ active: topicFilter === 'all' }" @click="topicFilter = 'all'">Tutti gli argomenti</button>
+              <button v-for="t in topicList" :key="t.n" class="chip"
+                      :class="{ active: topicFilter === String(t.n) }" @click="topicFilter = String(t.n)">
+                {{ t.n }}. {{ t.label }}
+              </button>
+            </div>
+
+            <h3 style="font-size:1rem">Quante domande?</h3>
+            <div class="btn-row">
+              <button class="btn btn-ghost" @click="start(10)">⚡ 10 — veloce</button>
+              <button class="btn btn-primary" @click="start(20)">🎯 20 — consigliato</button>
+              <button class="btn btn-ghost" @click="start(bankSize)">🏁 Tutte — esame completo</button>
+            </div>
+          </section>
+
+          <section v-else id="quiz" class="card">
+            <div class="card-head">
+              <span class="card-badge" aria-hidden="true">❓</span>
+              <div><p class="card-kicker">Quiz in corso</p><h2 style="font-size:1.2rem">{{ questions.length }} domande</h2></div>
+              <button class="btn btn-ghost btn-sm" style="margin-left:auto" @click="reset">✕ Esci</button>
+            </div>
+
+            <div style="margin-bottom:18px">
+              <progress-bar :value="answered / questions.length * 100"
+                            :label="'Risposte: ' + answered + '/' + questions.length"
+                            :right="correct + ' corrette'"></progress-bar>
+            </div>
+
+            <div v-for="(q, qi) in questions" :key="qi" class="q-block">
+              <div class="q-prompt">
+                <span class="q-index" aria-hidden="true">{{ qi + 1 }}</span>
+                <span>
+                  {{ q.q }}
+                  <span class="pill" style="margin-left:6px;font-size:.66rem">{{ q.t }}. {{ TOPICS[q.t] }}</span>
+                </span>
+              </div>
+              <div class="opt-list">
+                <button v-for="(o, oi) in q.o" :key="oi" class="opt" :class="cls(qi, oi)"
+                        :disabled="answers[qi] !== undefined" @click="pick(qi, oi)">
+                  <span class="opt-key" aria-hidden="true">{{ 'ABCD'[oi] }}</span>
+                  <span class="it">{{ o }}</span>
+                </button>
+              </div>
+              <p v-if="answers[qi] !== undefined" class="feedback" :class="answers[qi] === q.a ? 'ok' : 'no'">
+                {{ answers[qi] === q.a ? '✅ Esatto! ' : '❌ ' }}{{ q.w }}
+                <a v-if="answers[qi] !== q.a" :href="lessonFile(q.t)" style="margin-left:6px">→ rivedi l'unità {{ q.t }}</a>
+              </p>
+            </div>
+
+            <div v-if="done" style="margin-top:22px">
+              <div class="score-box">
+                <div class="score-ring" :style="{ '--pct': pct }"><span>{{ pct }}%</span></div>
+                <div>
+                  <p style="margin:0;font-weight:800;font-size:1.05rem">{{ correct }} / {{ questions.length }} corrette</p>
+                  <p class="small muted" style="margin:0">
+                    {{ pct >= 90 ? 'Eccellente! Il tuo italiano è davvero a un buon livello B1. 🎉'
+                     : pct >= 70 ? 'Molto bene! Rivedi solo gli argomenti in rosso.'
+                     : pct >= 50 ? 'Buona base, ma serve ancora ripasso.'
+                     : 'Riparti dalle unità indicate qui sotto: è normale, si impara così.' }}
+                  </p>
+                </div>
+                <button class="btn btn-primary btn-sm" style="margin-left:auto" @click="reset">↻ Nuovo quiz</button>
+              </div>
+
+              <h3 style="margin-top:22px">📊 Risultato per argomento</h3>
+              <div class="grid grid-2">
+                <div v-for="t in byTopic" :key="t.topic" class="card" style="margin:0;padding:14px">
+                  <div class="row" style="justify-content:space-between">
+                    <b>{{ t.topic }}</b>
+                    <span class="pill" :class="t.pct === 100 ? 'pill-ok' : t.pct >= 50 ? 'pill-warn' : 'pill-err'">
+                      {{ t.ok }}/{{ t.total }}
+                    </span>
+                  </div>
+                  <progress-bar :value="t.pct"></progress-bar>
+                  <a v-if="t.pct < 100 && t.file" :href="t.file.file" class="small" style="display:inline-block;margin-top:8px">
+                    → Rivedi: {{ t.file.icon }} {{ t.file.title }}
+                  </a>
+                </div>
+              </div>
+
+              <div v-if="weakSpots.length" class="card card--warn" style="margin-top:18px">
+                <h3 style="font-size:1rem">📌 Piano di ripasso consigliato</h3>
+                <ol>
+                  <li v-for="t in weakSpots.slice(0, 4)" :key="t.topic">
+                    <b>{{ t.topic }}</b> ({{ t.pct }}%) —
+                    <a v-if="t.file" :href="t.file.file">apri l'unità {{ t.file.num }}</a>
+                  </li>
+                </ol>
+              </div>
+              <div v-else class="card card--tip" style="margin-top:18px">
+                <h3 style="font-size:1rem">🏅 Percorso completato senza errori!</h3>
+                <p style="margin:0">Passa alla lettura, all'ascolto e alle tracce di scrittura per completare l'esame B1.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- ═══════════════ READING ═══════════════ -->
+        <div v-else-if="section === 'reading'" class="card">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">📖</span>
+            <div><p class="card-kicker">Comprensione del testo</p><h2 style="font-size:1.2rem">{{ reading.title }}</h2></div>
+          </div>
+          <div class="example-card" style="margin-bottom:18px">
+            <p v-for="(p, i) in reading.text" :key="i" class="ex-nat" style="margin-bottom:10px">{{ p }}</p>
+          </div>
+          <div v-for="(q, qi) in reading.questions" :key="qi" class="q-block">
+            <div class="q-prompt">
+              <span class="q-index" aria-hidden="true">{{ qi + 1 }}</span>
+              <span class="q-sentence">{{ q.q }}</span>
+            </div>
+            <div class="opt-list">
+              <button v-for="(o, oi) in q.o" :key="oi" class="opt" :class="clsReading(qi, oi)"
+                      :disabled="readingAnswers[qi] !== undefined" @click="pickReading(qi, oi)">
+                <span class="opt-key" aria-hidden="true">{{ 'ABCD'[oi] }}</span>
+                <span class="it">{{ o }}</span>
+              </button>
+            </div>
+          </div>
+          <div class="btn-row" style="margin-top:12px">
+            <span class="pill" :class="readingDone ? 'pill-ok' : 'pill-info'">{{ readingScore }}/{{ reading.questions.length }}</span>
+            <button class="btn btn-ghost btn-sm" @click="resetReading">↻ Ricomincia</button>
+          </div>
+          <p v-if="readingDone" class="feedback ok" style="margin-top:10px">
+            {{ readingScore === reading.questions.length ? '🎉 Comprensione perfetta!' : '✅ Sezione completata. Rileggi le parti che ti hanno fatto dubitare.' }}
+          </p>
+        </div>
+
+        <!-- ═══════════════ LISTENING ═══════════════ -->
+        <div v-else-if="section === 'listening'" class="card">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">🎧</span>
+            <div><p class="card-kicker">Comprensione orale</p><h2 style="font-size:1.2rem">{{ listening.title }}</h2></div>
+          </div>
+          <p class="small muted">Ascolta il messaggio (audio generato dal tuo browser) tutte le volte che vuoi, poi rispondi alle domande. Se non senti nessun audio, controlla la pagina 🩺 <a href="../voci.html">Diagnostica voci</a>.</p>
+          <div class="btn-row" style="margin-bottom:16px">
+            <button class="btn btn-primary" @click="playListening">🔊 {{ listenPlayed ? 'Riascolta il messaggio' : 'Ascolta il messaggio' }}</button>
+          </div>
+          <details style="margin-bottom:16px">
+            <summary class="small" style="cursor:pointer">📝 Mostra la trascrizione (usala solo dopo aver provato ad ascoltare)</summary>
+            <p class="small muted" style="margin-top:8px">{{ listening.audioText }}</p>
+          </details>
+          <div v-for="(q, qi) in listening.questions" :key="qi" class="q-block">
+            <div class="q-prompt">
+              <span class="q-index" aria-hidden="true">{{ qi + 1 }}</span>
+              <span class="q-sentence">{{ q.q }}</span>
+            </div>
+            <div class="opt-list">
+              <button v-for="(o, oi) in q.o" :key="oi" class="opt" :class="clsListen(qi, oi)"
+                      :disabled="listenAnswers[qi] !== undefined" @click="pickListen(qi, oi)">
+                <span class="opt-key" aria-hidden="true">{{ 'ABCD'[oi] }}</span>
+                <span class="it">{{ o }}</span>
+              </button>
+            </div>
+          </div>
+          <div class="btn-row" style="margin-top:12px">
+            <span class="pill" :class="listenDone ? 'pill-ok' : 'pill-info'">{{ listenScore }}/{{ listening.questions.length }}</span>
+            <button class="btn btn-ghost btn-sm" @click="resetListen">↻ Ricomincia</button>
+          </div>
+        </div>
+
+        <!-- ═══════════════ WRITING + SPEAKING ═══════════════ -->
+        <div v-else class="card">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">✍️</span>
+            <div><p class="card-kicker">Produzione libera</p><h2 style="font-size:1.2rem">Scrittura e parlato</h2></div>
+          </div>
+          <p class="small muted">Queste tracce non hanno una correzione automatica: scrivile su un quaderno, poi rileggile
+             confrontandole con le unità del corso, o chiedi a un insegnante/madrelingua di correggerle.</p>
+
+          <h3 style="font-size:1.05rem;margin-top:18px">✍️ Tracce di scrittura</h3>
+          <div v-for="(p, i) in writingPrompts" :key="i" class="q-block">
+            <div class="q-prompt">
+              <span class="q-index" aria-hidden="true">{{ i + 1 }}</span>
+              <span class="q-sentence">{{ p }}</span>
+            </div>
+          </div>
+
+          <h3 style="font-size:1.05rem;margin-top:22px">🗣️ Spunti per il parlato</h3>
+          <div v-for="(p, i) in speakingPrompts" :key="i" class="q-block">
+            <div class="q-prompt">
+              <span class="q-index" aria-hidden="true">{{ i + 1 }}</span>
+              <span class="q-sentence">{{ p }}</span>
+            </div>
+          </div>
+
+          <div class="card card--tip" style="margin-top:18px">
+            <h3 style="font-size:1rem">💡 Checklist di autovalutazione</h3>
+            <ul style="margin:0">
+              <li>Ho usato almeno un tempo composto del passato in modo corretto (trapassato, condizionale passato)?</li>
+              <li>Ho usato il congiuntivo dopo le espressioni di opinione, dubbio o emozione?</li>
+              <li>Se ho fatto un'ipotesi, ho scelto il tipo giusto di periodo ipotetico?</li>
+              <li>Ho riportato le parole di qualcun altro con il discorso indiretto, cambiando tempi e pronomi?</li>
+              <li>Ho collegato le frasi con almeno una relativa (che / cui / il quale)?</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Course map -->
+        <section class="card" style="margin-top:22px">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">🗺️</span>
+            <div><p class="card-kicker">Mappa</p><h2 style="font-size:1.2rem">Tutte le unità del corso B1</h2></div>
+          </div>
+          <div class="grid grid-lessons">
+            <a v-for="l in lessons" :key="l.file" class="lesson-card" :href="l.file" style="padding:14px">
+              <div class="lc-top">
+                <span class="lc-icon" aria-hidden="true">{{ l.icon }}</span>
+                <h3 style="font-size:.98rem">{{ l.title }}</h3>
+                <span class="lc-num">{{ String(l.num).padStart(2, '0') }}</span>
+              </div>
+              <span v-if="store.completed[l.file]" class="pill pill-ok">✓ completata</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="card center" style="margin-top:22px">
+          <h2 style="font-size:1.15rem">Hai completato tutte le sezioni?</h2>
+          <p class="muted small">Con almeno il 70% nel quiz e le sezioni di lettura e ascolto completate, l'unità si segna automaticamente come completata.</p>
+          <p v-if="store.completed['15-ripasso-b1.html']" class="feedback ok">✓ Livello B1 completato! Complimenti 🎉</p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Italiano B1 · Corso interattivo di grammatica · I progressi restano nel tuo browser (localStorage).</p>
+      </footer>
+      <toast-host></toast-host>
+    `,
+    created() { this.TOPICS = TOPICS; }
+  });
+  </script>
+</body>
+</html>

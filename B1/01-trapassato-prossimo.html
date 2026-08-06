@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il trapassato prossimo italiano: formazione con l'imperfetto di essere e avere, accordo del participio, ordine dei fatti nel passato, differenze con passato prossimo e imperfetto.">
+  <title>Trapassato Prossimo · Italiano B1</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     UNITÀ 1 — TRAPASSATO PROSSIMO
+     ========================================================================== */
+  window.LESSON = {
+    num: 1, file: '01-trapassato-prossimo.html', icon: '🕰️', title: 'Trapassato Prossimo', group: 'Il passato',
+    subtitle: 'Il passato del passato: due azioni finite, e questa è successa prima dell\'altra.',
+
+    intro: {
+      what: 'Il trapassato prossimo è un tempo composto del passato: si forma con l\'<b>imperfetto</b> di essere o avere più il <b>participio passato</b> del verbo principale (ero andato, avevo mangiato). Corrisponde all\'inglese "I had gone", "I had eaten".',
+      when: 'Quando racconti al passato e devi dire che un\'azione era <b>già conclusa prima</b> di un\'altra azione passata: «Quando sono arrivato, il film era già cominciato».',
+      why: 'Senza il trapassato prossimo tutti i fatti passati sembrano succedere nello stesso momento. È il tempo che mette ordine nel racconto: dice al tuo ascoltatore che cosa è venuto prima e che cosa dopo.',
+      mistakes: [
+        'Usare il passato prossimo al posto del trapassato: ❌ "Quando sono arrivato, il film è già cominciato" → ✅ "…era già cominciato".',
+        'Usare il presente di essere/avere: ❌ "Sono andato via prima che…" al posto di ✅ "ero andato via".',
+        'Dimenticare l\'accordo con essere: ❌ "Maria era già uscito" → ✅ "Maria era già uscita".',
+        'Cambiare ausiliare rispetto al passato prossimo: se si dice "sono andato", si dice "ero andato", mai "avevo andato".'
+      ]
+    },
+
+    objectives: [
+      'Formare il trapassato prossimo di qualsiasi verbo, regolare o irregolare.',
+      'Scegliere l\'ausiliare giusto (<b>ero</b> o <b>avevo</b>) con la stessa regola del passato prossimo.',
+      'Accordare il participio quando l\'ausiliare è <b>essere</b>.',
+      'Mettere in ordine due fatti passati con <b>già</b>, <b>appena</b>, <b>quando</b>, <b>dopo che</b>, <b>prima</b>.',
+      'Distinguere trapassato prossimo, passato prossimo e imperfetto in un racconto.'
+    ],
+
+    formulas: [
+      {
+        label: 'Formula generale',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'ESSERE o AVERE', note: 'all\'imperfetto', type: 'verb' },
+              { text: 'PARTICIPIO PASSATO', note: '-ato / -uto / -ito', type: 'object' }
+            ], example: 'Io avevo già mangiato.', translation: 'I had already eaten.' }
+        ]
+      },
+      {
+        label: 'Con AVERE — il participio NON cambia',
+        rows: [
+          { parts: [
+              { text: 'Maria', type: 'subject' },
+              { text: 'aveva', note: 'imperfetto di avere', type: 'verb' },
+              { text: 'studiato', note: 'sempre -o', type: 'object' }
+            ], example: 'Maria aveva studiato tutta la notte.', translation: 'Maria had studied all night.' }
+        ]
+      },
+      {
+        label: 'Con ESSERE — il participio CONCORDA col soggetto',
+        rows: [
+          { parts: [
+              { text: 'Le ragazze', note: 'femm. plurale', type: 'subject' },
+              { text: 'erano', note: 'imperfetto di essere', type: 'verb' },
+              { text: 'partit-E', note: 'o / a / i / e', type: 'extra' }
+            ], example: 'Le ragazze erano già partite.', translation: 'The girls had already left.' }
+        ]
+      },
+      {
+        label: 'La struttura tipica del racconto',
+        rows: [
+          { parts: [
+              { text: 'QUANDO + passato prossimo', note: 'il fatto n° 2', type: 'verb' },
+              { text: 'TRAPASSATO', note: 'il fatto n° 1, già finito', type: 'object' }
+            ], example: 'Quando sono arrivato, il treno era già partito.', translation: 'When I arrived, the train had already left.' }
+        ]
+      }
+    ],
+    formulaNote: 'Trucco: il trapassato è semplicemente il passato prossimo con l\'ausiliare spostato all\'imperfetto. ho mangiato → avevo mangiato; sono andato → ero andato.',
+
+    rules: [
+      {
+        title: 'Come si forma: imperfetto dell\'ausiliare + participio',
+        body: 'Se sai fare il passato prossimo, sai già fare il trapassato: cambia solo il <b>tempo dell\'ausiliare</b>.',
+        points: [
+          'AVERE all\'imperfetto: avevo, avevi, aveva, avevamo, avevate, avevano.',
+          'ESSERE all\'imperfetto: ero, eri, era, eravamo, eravate, erano.',
+          'Il participio passato è identico a quello del passato prossimo: parlato, creduto, dormito, fatto, detto, visto…',
+          'ho mangiato → <b>avevo</b> mangiato · sono uscito → <b>ero</b> uscito · mi sono alzato → <b>mi ero</b> alzato.'
+        ],
+        exception: 'Non esiste un trapassato "misto": l\'ausiliare non cambia mai rispetto al passato prossimo. Se il verbo vuole essere, lo vuole in tutti i tempi composti.'
+      },
+      {
+        title: 'La scelta dell\'ausiliare: la stessa regola che già conosci',
+        body: 'Vale esattamente il criterio del passato prossimo (A2, lezione 5).',
+        points: [
+          '<b>AVERE</b> con i verbi transitivi, quelli che possono avere un oggetto diretto: «Avevo letto <i>il libro</i>».',
+          '<b>ESSERE</b> con i verbi di movimento e di cambiamento di stato: andare, venire, partire, arrivare, uscire, entrare, tornare, nascere, morire, diventare, restare, rimanere.',
+          '<b>ESSERE</b> con tutti i verbi riflessivi e pronominali: «Mi ero già svegliato», «Ci eravamo divertiti».',
+          '<b>ESSERE</b> con essere stesso e con piacere: «Ero stato in Italia», «Mi era piaciuto molto».'
+        ],
+        exception: 'I verbi modali seguono il verbo all\'infinito: «Avevo dovuto studiare» ma «Ero dovuto andare». Nell\'italiano parlato si sente spesso anche «avevo dovuto andare»: è tollerato, ma la forma con essere è quella corretta.'
+      },
+      {
+        title: 'L\'accordo del participio',
+        body: 'Identico al passato prossimo, senza sorprese.',
+        points: [
+          'Con <b>avere</b>: il participio resta invariabile in -o → «Anna aveva mangiato», «I ragazzi avevano mangiato».',
+          'Con <b>essere</b>: il participio concorda col soggetto → er<b>o</b> andat<b>o</b>/andat<b>a</b>, eravamo andat<b>i</b>/andat<b>e</b>.',
+          'Gruppo misto (uomini + donne) → maschile plurale: «Marco e Anna erano già usciti».',
+          'Con avere + pronome oggetto diretto (lo, la, li, le) il participio concorda con il pronome: «Il libro? L\'avevo già letto». «Le lettere? Le avevo già spedite».'
+        ],
+        exception: 'Con i verbi riflessivi il participio concorda col soggetto: «Si era lavata le mani» (lei) — l\'oggetto "le mani" non cambia nulla.'
+      },
+      {
+        title: 'Le parole-segnale del trapassato',
+        body: 'Alcune espressioni annunciano quasi sempre un trapassato.',
+        points: [
+          '<b>già</b> — «Quando sei arrivato, avevo già finito».',
+          '<b>appena</b> — «Era appena uscita quando ho telefonato».',
+          '<b>non… ancora</b> — «Non avevo ancora capito il problema».',
+          '<b>dopo che</b>, <b>quando</b>, <b>appena</b> (congiunzioni) — «Dopo che aveva mangiato, è uscito».',
+          '<b>prima</b>, <b>in precedenza</b>, <b>fino a quel momento</b> — «Non ci eravamo mai visti prima».',
+          'Gli avverbi brevi (già, mai, ancora, appena) stanno <b>tra ausiliare e participio</b>: «avevo <i>già</i> mangiato».'
+        ],
+        exception: '«Prima che» + verbo richiede il congiuntivo, non il trapassato indicativo: «Sono uscito prima che arrivasse» (unità 4).'
+      },
+      {
+        title: 'Trapassato prossimo vs passato prossimo',
+        body: 'Il passato prossimo racconta un fatto; il trapassato racconta il <b>fatto che c\'era già stato</b> prima di quel fatto.',
+        points: [
+          'Passato prossimo = un punto nella linea del tempo: «Ieri <b>ho perso</b> il treno».',
+          'Trapassato = un punto <b>più indietro</b> rispetto a quel punto: «Ho perso il treno perché mi <b>ero svegliato</b> tardi».',
+          'Se nella frase c\'è un solo fatto passato, il trapassato non serve: «Ieri sono andato al cinema» ✅.',
+          'Regola pratica: il trapassato ha quasi sempre bisogno di un <b>secondo verbo al passato</b> nella stessa frase o nel contesto immediato.'
+        ],
+        exception: 'Nell\'italiano parlato molto informale il trapassato viene a volte sostituito dal passato prossimo. Capire ✅, imitare ❌: all\'esame B1 la distinzione è richiesta.'
+      },
+      {
+        title: 'Trapassato prossimo vs imperfetto',
+        body: 'Attenzione: entrambi "guardano indietro", ma dicono cose diverse.',
+        points: [
+          '<b>Imperfetto</b> = situazione o abitudine in corso in quel momento passato: «Quando sono entrato, Marco <b>dormiva</b>» (stava dormendo).',
+          '<b>Trapassato</b> = azione già conclusa prima di quel momento: «Quando sono entrato, Marco <b>si era addormentato</b>» (si era già addormentato prima).',
+          'Descrizione dello sfondo → imperfetto. Fatto anteriore concluso → trapassato.',
+          'Confronto: «Pioveva» (stava piovendo) ≠ «Aveva piovuto» (la pioggia era finita, la strada era bagnata).'
+        ],
+        exception: 'Con le abitudini ripetute nel passato lontano si usa l\'imperfetto anche se l\'azione è anteriore: «Da bambino andavo sempre al mare» (non "ero andato").'
+      }
+    ],
+
+    timeline: {
+      title: 'Dove si colloca il trapassato prossimo',
+      intro: 'Il trapassato è il tempo più a sinistra della linea: tutto quello che era già successo prima del punto di cui stai parlando.',
+      points: [
+        { time: 'Prima', label: 'Trapassato prossimo', example: 'Il treno era già partito.', note: 'fatto n° 1 — concluso' },
+        { time: 'Poi', label: 'Passato prossimo', example: 'Sono arrivato in stazione.', note: 'fatto n° 2 — il racconto' },
+        { time: 'Sfondo', label: 'Imperfetto', example: 'Pioveva e non c\'era nessuno.', note: 'la situazione intorno' },
+        { time: 'Adesso', label: 'Presente', example: 'Adesso aspetto il prossimo treno.', now: true }
+      ],
+      caption: 'Confronto chiave: «Quando sono arrivato, il treno partiva» (partenza in corso) vs «…era già partito» (partenza conclusa prima).'
+    },
+
+    tables: [
+      {
+        title: 'Trapassato prossimo con AVERE — mangiare',
+        note: 'Il participio non cambia mai: sempre -ato.',
+        columns: ['Persona', 'Ausiliare', 'Participio', 'Esempio'],
+        rows: [
+          { cells: ['io', 'avevo', 'mangiato', 'Avevo già mangiato.'] },
+          { cells: ['tu', 'avevi', 'mangiato', 'Avevi mangiato troppo.'] },
+          { cells: ['lui / lei', 'aveva', 'mangiato', 'Aveva mangiato alle otto.'] },
+          { cells: ['noi', 'avevamo', 'mangiato', 'Avevamo mangiato in fretta.'] },
+          { cells: ['voi', 'avevate', 'mangiato', 'Avevate mangiato senza di me.'] },
+          { cells: ['loro', 'avevano', 'mangiato', 'Avevano mangiato tutto.'] }
+        ]
+      },
+      {
+        title: 'Trapassato prossimo con ESSERE — partire',
+        note: 'Qui il participio concorda: partito / partita / partiti / partite.',
+        columns: ['Persona', 'Ausiliare', 'Participio', 'Esempio'],
+        rows: [
+          { cells: ['io', 'ero', 'partito / partita', 'Ero partito la mattina presto.'], irregular: [2] },
+          { cells: ['tu', 'eri', 'partito / partita', 'Eri partita senza dirlo.'], irregular: [2] },
+          { cells: ['lui / lei', 'era', 'partito / partita', 'Era partita alle sei.'], irregular: [2] },
+          { cells: ['noi', 'eravamo', 'partiti / partite', 'Eravamo partiti insieme.'], irregular: [2] },
+          { cells: ['voi', 'eravate', 'partiti / partite', 'Eravate partite prima.'], irregular: [2] },
+          { cells: ['loro', 'erano', 'partiti / partite', 'Erano partiti all\'alba.'], irregular: [2] }
+        ]
+      },
+      {
+        title: 'Trapassato dei verbi riflessivi — svegliarsi',
+        note: 'Pronome + imperfetto di essere + participio concordato.',
+        columns: ['Persona', 'Forma', 'Esempio'],
+        rows: [
+          { cells: ['io', 'mi ero svegliato/a', 'Mi ero svegliato prima della sveglia.'] },
+          { cells: ['tu', 'ti eri svegliato/a', 'Ti eri svegliata tardi.'] },
+          { cells: ['lui / lei', 'si era svegliato/a', 'Si era svegliata alle cinque.'] },
+          { cells: ['noi', 'ci eravamo svegliati/e', 'Ci eravamo svegliati all\'alba.'] },
+          { cells: ['voi', 'vi eravate svegliati/e', 'Vi eravate svegliati troppo tardi.'] },
+          { cells: ['loro', 'si erano svegliati/e', 'Si erano svegliati per il rumore.'] }
+        ]
+      },
+      {
+        title: 'Dal passato prossimo al trapassato — verbi irregolari utili',
+        note: 'Il participio è lo stesso: cambia solo il tempo dell\'ausiliare.',
+        columns: ['Infinito', 'Passato prossimo', 'Trapassato prossimo'],
+        rows: [
+          { cells: ['fare', 'ho fatto', 'avevo fatto'], irregular: [2] },
+          { cells: ['dire', 'ho detto', 'avevo detto'], irregular: [2] },
+          { cells: ['vedere', 'ho visto', 'avevo visto'], irregular: [2] },
+          { cells: ['prendere', 'ho preso', 'avevo preso'], irregular: [2] },
+          { cells: ['scrivere', 'ho scritto', 'avevo scritto'], irregular: [2] },
+          { cells: ['leggere', 'ho letto', 'avevo letto'], irregular: [2] },
+          { cells: ['chiedere', 'ho chiesto', 'avevo chiesto'], irregular: [2] },
+          { cells: ['rimanere', 'sono rimasto', 'ero rimasto'], irregular: [2] },
+          { cells: ['nascere', 'sono nato', 'ero nato'], irregular: [2] },
+          { cells: ['venire', 'sono venuto', 'ero venuto'], irregular: [2] },
+          { cells: ['essere', 'sono stato', 'ero stato'], irregular: [2] },
+          { cells: ['avere', 'ho avuto', 'avevo avuto'], irregular: [2] }
+        ]
+      },
+      {
+        title: 'I tre passati a confronto',
+        note: 'Stessa scena, tre tempi diversi: cambia completamente il significato.',
+        columns: ['Tempo', 'Frase', 'Significato'],
+        rows: [
+          { cells: ['Imperfetto', 'Quando sono entrato, Marco dormiva.', 'Stava dormendo in quel momento.'] },
+          { cells: ['Passato prossimo', 'Quando sono entrato, Marco ha dormito.', 'Frase strana: due fatti in sequenza immediata.'] },
+          { cells: ['Trapassato', 'Quando sono entrato, Marco si era addormentato.', 'Si era addormentato prima del mio arrivo.'] },
+          { cells: ['Imperfetto', 'Pioveva.', 'La pioggia era in corso.'] },
+          { cells: ['Trapassato', 'Aveva piovuto.', 'Aveva piovuto prima: la strada era bagnata.'] }
+        ]
+      },
+      {
+        title: 'Espressioni di anteriorità',
+        columns: ['Espressione', 'Inglese', 'Esempio'],
+        rows: [
+          { cells: ['già', 'already', 'Avevo già visto quel film.'] },
+          { cells: ['appena', 'just', 'Era appena arrivata quando ho chiamato.'] },
+          { cells: ['non… ancora', 'not yet', 'Non avevo ancora finito.'] },
+          { cells: ['non… mai', 'never', 'Non ero mai stato all\'estero.'] },
+          { cells: ['dopo che', 'after', 'Dopo che aveva cenato, è uscito.'] },
+          { cells: ['prima', 'before / previously', 'Non l\'avevo mai visto prima.'] },
+          { cells: ['fino a quel momento', 'until then', 'Fino a quel momento non avevo capito niente.'] },
+          { cells: ['la sera prima', 'the night before', 'La sera prima avevamo litigato.'] },
+          { cells: ['il giorno precedente', 'the day before', 'Il giorno precedente era partito per Milano.'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Quando sono arrivato alla stazione, il treno era già partito.', literal: 'When I-am arrived at-the station, the train was already left.', natural: 'When I got to the station, the train had already left.', note: 'Due fatti: la partenza (prima) e il mio arrivo (dopo). Il primo va al trapassato.' },
+      { it: 'Non ho potuto entrare perché avevo dimenticato le chiavi.', literal: 'Not I-have could enter because I-had forgotten the keys.', natural: "I couldn't get in because I had forgotten my keys.", note: 'La causa è anteriore all\'effetto: dimenticare → trapassato.' },
+      { it: 'Maria era appena uscita quando ho telefonato.', literal: 'Maria was just gone-out when I-have telephoned.', natural: 'Maria had just left when I called.', note: 'uscire → essere, quindi il participio concorda: uscita.' },
+      { it: 'Non avevo mai visto un tramonto così bello.', literal: 'Not I-had never seen a sunset so beautiful.', natural: "I had never seen such a beautiful sunset.", note: '"mai" tra ausiliare e participio; la doppia negazione è obbligatoria.' },
+      { it: 'Dopo che avevamo cenato, siamo andati a fare una passeggiata.', literal: 'After that we-had dined, we-are gone to make a walk.', natural: 'After we had had dinner, we went for a walk.', note: '"Dopo che" + trapassato è la struttura classica dell\'anteriorità.' },
+      { it: 'Da bambino non ero mai stato in montagna.', literal: 'As child not I-was never been in mountain.', natural: "As a child I had never been to the mountains.", note: 'essere → ero stato. Ricordo dell\'infanzia.' },
+      { it: 'Le ragazze erano già partite per Firenze quando è arrivata la notizia.', literal: 'The girls were already left for Florence when is arrived the news.', natural: 'The girls had already left for Florence when the news arrived.', note: 'Femminile plurale → partite.' },
+      { it: 'Mi ero svegliato tardi, così ho perso l\'aereo.', literal: 'Me I-was woken late, so I-have lost the plane.', natural: 'I had woken up late, so I missed the plane.', note: 'Riflessivo: mi ero svegliato. La causa viene prima dell\'effetto.' },
+      { it: 'Ci eravamo conosciuti in Grecia, molti anni prima.', literal: 'Us we-were known in Greece, many years before.', natural: 'We had met in Greece, many years earlier.', note: 'conoscersi (reciproco) → essere + accordo: conosciuti.' },
+      { it: 'Il film era già cominciato da mezz\'ora.', literal: 'The film was already begun from half-hour.', natural: 'The film had already been on for half an hour.', note: 'cominciare senza oggetto → essere.' },
+      { it: 'Avevo studiato tutta la notte, ma all\'esame non ricordavo niente.', literal: 'I-had studied all the night, but at-the exam not I-remembered nothing.', natural: "I had studied all night, but at the exam I couldn't remember anything.", note: 'Trapassato (prima) + imperfetto (situazione all\'esame).' },
+      { it: 'Quando l\'ho incontrata, l\'avevo già vista in una foto.', literal: 'When her I-have met, her I-had already seen in a photo.', natural: "When I met her, I had already seen her in a photo.", note: 'Con avere + pronome "la" il participio concorda: vista.' },
+      { it: 'Non sapevo che si fossero già trasferiti a Milano.', literal: 'Not I-knew that themselves they-were already moved to Milan.', natural: "I didn't know they had already moved to Milan.", note: 'Nel congiuntivo l\'anteriorità usa il trapassato congiuntivo (unità 4 e 7).' },
+      { it: 'La casa era vuota: tutti se ne erano andati.', literal: 'The house was empty: all themselves of-it were gone.', natural: 'The house was empty: everybody had left.', note: 'andarsene al trapassato: se ne erano andati (unità 10).' },
+      { it: 'Il giorno prima aveva piovuto tutta la notte.', literal: 'The day before it-had rained all the night.', natural: 'The day before it had rained all night.', note: 'Impersonale: aveva piovuto (anche "era piovuto", entrambi corretti).' },
+      { it: 'Mi ha raccontato che da giovane aveva vissuto in Argentina.', literal: 'To-me he-has told that as young he-had lived in Argentina.', natural: 'He told me that when he was young he had lived in Argentina.', note: 'Discorso indiretto: il passato prossimo diventa trapassato (unità 6).' },
+      { it: 'Non avevamo ancora deciso dove andare quando è arrivato l\'invito.', literal: 'Not we-had yet decided where to-go when is arrived the invitation.', natural: "We hadn't yet decided where to go when the invitation arrived.", note: '"ancora" tra ausiliare e participio.' },
+      { it: 'Era la prima volta che tornavo nella città dove ero nata.', literal: 'It-was the first time that I-returned in-the city where I-was born.', natural: 'It was the first time I had gone back to the city where I was born.', note: 'nascere → essere; parla una donna: nata.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Quando sono arrivato, il treno è già partito.', right: 'Quando sono arrivato, il treno era già partito.', why: 'La partenza è anteriore all\'arrivo: serve il trapassato, non il passato prossimo.' },
+      { wrong: 'Avevo andato a scuola.', right: 'Ero andato a scuola.', why: 'Andare vuole essere in tutti i tempi composti: ero andato, mai "avevo andato".' },
+      { wrong: 'Maria era già uscito.', right: 'Maria era già uscita.', why: 'Con essere il participio concorda col soggetto femminile.' },
+      { wrong: 'Ho avevo mangiato.', right: 'Avevo mangiato.', why: 'Un solo ausiliare, e va all\'imperfetto: avevo + participio.' },
+      { wrong: 'Avevo già mai visto quel film.', right: 'Non avevo mai visto quel film.', why: '"Mai" richiede la negazione "non" davanti all\'ausiliare.' },
+      { wrong: 'Quando sono entrato, Marco era dormito.', right: 'Quando sono entrato, Marco dormiva.', why: 'Un\'azione in corso sullo sfondo vuole l\'imperfetto, non il trapassato.' },
+      { wrong: 'Dopo che ho mangiato, sono uscito. (in un racconto al passato)', right: 'Dopo che avevo mangiato, sono uscito.', why: 'Con "dopo che" il fatto anteriore va al trapassato.' },
+      { wrong: 'Mi avevo svegliato tardi.', right: 'Mi ero svegliato tardi.', why: 'I riflessivi usano sempre essere: mi ero, ti eri, si era…' },
+      { wrong: 'Avevo mai stato in Italia.', right: 'Non ero mai stato in Italia.', why: 'Essere è ausiliare di se stesso (ero stato) e serve la negazione.' },
+      { wrong: 'Le lettere? Le avevo già spedito.', right: 'Le lettere? Le avevo già spedite.', why: 'Con avere + pronome oggetto diretto (le) il participio concorda.' }
+    ],
+
+    vocab: {
+      title: 'Vocabolario — viaggi, ricordi e tappe della vita (56 parole)',
+      intro: 'Il trapassato vive nei racconti: viaggi, ricordi d\'infanzia, esperienze di vita. Ecco il lessico che ti serve per raccontarli. Ogni scheda dà l\'italiano, l\'inglese, il farsi (فارسی) e una frase d\'esempio — quasi tutte al trapassato.',
+      categories: [
+        { id: 'viaggio', label: 'Viaggi', icon: '✈️' },
+        { id: 'ricordi', label: 'Ricordi', icon: '💭' },
+        { id: 'infanzia', label: 'Infanzia', icon: '🧸' },
+        { id: 'vita', label: 'Tappe della vita', icon: '🎓' },
+        { id: 'esperienze', label: 'Esperienze', icon: '🌍' },
+        { id: 'tempo', label: 'Tempo e ordine', icon: '⏳' }
+      ],
+      words: [
+        /* ── Viaggi (11) ── */
+        { it: 'il viaggio', en: 'trip, journey', fa: 'سفر', cat: 'viaggio', pos: 'm.', ex: 'Era il viaggio più lungo che avessi mai fatto.' },
+        { it: 'la partenza', en: 'departure', fa: 'حرکت / عزیمت', cat: 'viaggio', pos: 'f.', ex: 'La partenza era stata rimandata di due ore.' },
+        { it: 'l\'arrivo', en: 'arrival', fa: 'ورود', cat: 'viaggio', pos: 'm.', ex: 'Prima del nostro arrivo aveva nevicato.' },
+        { it: 'la valigia', en: 'suitcase', fa: 'چمدان', cat: 'viaggio', pos: 'f.', ex: 'Avevo fatto la valigia la sera prima.' },
+        { it: 'il volo', en: 'flight', fa: 'پرواز', cat: 'viaggio', pos: 'm.', ex: 'Il volo era già decollato.' },
+        { it: 'la coincidenza', en: 'connection (transport)', fa: 'اتصال پرواز/قطار', cat: 'viaggio', pos: 'f.', ex: 'Avevamo perso la coincidenza per Roma.' },
+        { it: 'il biglietto', en: 'ticket', fa: 'بلیت', cat: 'viaggio', pos: 'm.', ex: 'Avevo prenotato il biglietto online.' },
+        { it: 'la dogana', en: 'customs', fa: 'گمرک', cat: 'viaggio', pos: 'f.', ex: 'Eravamo già passati dalla dogana.' },
+        { it: 'l\'itinerario', en: 'itinerary, route', fa: 'مسیر سفر', cat: 'viaggio', pos: 'm.', ex: 'Avevano cambiato l\'itinerario all\'ultimo momento.' },
+        { it: 'la meta', en: 'destination', fa: 'مقصد', cat: 'viaggio', pos: 'f.', ex: 'Non avevamo ancora scelto la meta.' },
+        { it: 'trasferirsi', en: 'to move (to another place)', fa: 'نقل مکان کردن', cat: 'viaggio', pos: 'v. rifl.', ex: 'Si erano trasferiti a Milano l\'anno prima.' },
+
+        /* ── Ricordi (10) ── */
+        { it: 'il ricordo', en: 'memory (a single one)', fa: 'خاطره', cat: 'ricordi', pos: 'm.', ex: 'Era un ricordo che avevo rimosso.' },
+        { it: 'la memoria', en: 'memory (the faculty)', fa: 'حافظه', cat: 'ricordi', pos: 'f.', ex: 'La memoria mi aveva tradito.' },
+        { it: 'ricordare', en: 'to remember', fa: 'به یاد آوردن', cat: 'ricordi', pos: 'v.', ex: 'Non ricordavo dove avevo messo le chiavi.' },
+        { it: 'dimenticare', en: 'to forget', fa: 'فراموش کردن', cat: 'ricordi', pos: 'v.', ex: 'Avevo dimenticato il suo compleanno.' },
+        { it: 'la nostalgia', en: 'nostalgia, homesickness', fa: 'دلتنگی', cat: 'ricordi', pos: 'f.', ex: 'Mi era venuta una gran nostalgia di casa.' },
+        { it: 'rimpiangere', en: 'to regret, to miss', fa: 'حسرت خوردن', cat: 'ricordi', pos: 'v.', ex: 'Aveva sempre rimpianto quella scelta.' },
+        { it: 'l\'album di foto', en: 'photo album', fa: 'آلبوم عکس', cat: 'ricordi', pos: 'm.', ex: 'Avevamo ritrovato un vecchio album di foto.' },
+        { it: 'raccontare', en: 'to tell (a story)', fa: 'تعریف کردن', cat: 'ricordi', pos: 'v.', ex: 'Mi aveva raccontato tutto il giorno prima.' },
+        { it: 'il racconto', en: 'story, account', fa: 'روایت / داستان', cat: 'ricordi', pos: 'm.', ex: 'Il suo racconto mi aveva commosso.' },
+        { it: 'commuovere', en: 'to move (emotionally)', fa: 'متأثر کردن', cat: 'ricordi', pos: 'v.', ex: 'Quella storia ci aveva commossi tutti.' },
+
+        /* ── Infanzia (9) ── */
+        { it: 'l\'infanzia', en: 'childhood', fa: 'کودکی', cat: 'infanzia', pos: 'f.', ex: 'Della sua infanzia non aveva mai parlato.' },
+        { it: 'crescere', en: 'to grow up', fa: 'بزرگ شدن', cat: 'infanzia', pos: 'v.', ex: 'Era cresciuto in campagna.' },
+        { it: 'il giocattolo', en: 'toy', fa: 'اسباب‌بازی', cat: 'infanzia', pos: 'm.', ex: 'Aveva conservato tutti i suoi giocattoli.' },
+        { it: 'la fiaba', en: 'fairy tale', fa: 'افسانه / قصه', cat: 'infanzia', pos: 'f.', ex: 'La nonna mi aveva letto quella fiaba mille volte.' },
+        { it: 'il compagno di classe', en: 'classmate', fa: 'هم‌کلاسی', cat: 'infanzia', pos: 'm.', ex: 'Non vedevo il mio compagno di classe da vent\'anni.' },
+        { it: 'il quartiere', en: 'neighbourhood', fa: 'محله', cat: 'infanzia', pos: 'm.', ex: 'Il quartiere era cambiato moltissimo.' },
+        { it: 'il cortile', en: 'courtyard, yard', fa: 'حیاط', cat: 'infanzia', pos: 'm.', ex: 'Avevamo giocato tutta l\'estate in quel cortile.' },
+        { it: 'la merenda', en: 'afternoon snack', fa: 'میان‌وعده', cat: 'infanzia', pos: 'f.', ex: 'La mamma ci aveva preparato la merenda.' },
+        { it: 'i nonni', en: 'grandparents', fa: 'پدربزرگ و مادربزرگ', cat: 'infanzia', pos: 'm. pl.', ex: 'I nonni si erano trasferiti in città.' },
+
+        /* ── Tappe della vita (10) ── */
+        { it: 'la nascita', en: 'birth', fa: 'تولد', cat: 'vita', pos: 'f.', ex: 'Prima della nascita del bambino avevano comprato casa.' },
+        { it: 'laurearsi', en: 'to graduate (university)', fa: 'فارغ‌التحصیل شدن', cat: 'vita', pos: 'v. rifl.', ex: 'Si era laureata a ventitré anni.' },
+        { it: 'la laurea', en: 'degree', fa: 'مدرک دانشگاهی', cat: 'vita', pos: 'f.', ex: 'Aveva preso la laurea con il massimo dei voti.' },
+        { it: 'sposarsi', en: 'to get married', fa: 'ازدواج کردن', cat: 'vita', pos: 'v. rifl.', ex: 'Si erano sposati in silenzio.' },
+        { it: 'il matrimonio', en: 'wedding, marriage', fa: 'ازدواج / عروسی', cat: 'vita', pos: 'm.', ex: 'Il matrimonio era stato rimandato.' },
+        { it: 'il trasloco', en: 'house move', fa: 'اسباب‌کشی', cat: 'vita', pos: 'm.', ex: 'Dopo il trasloco non avevamo più trovato quella scatola.' },
+        { it: 'il divorzio', en: 'divorce', fa: 'طلاق', cat: 'vita', pos: 'm.', ex: 'Il divorzio era arrivato dopo dieci anni.' },
+        { it: 'la pensione', en: 'retirement', fa: 'بازنشستگی', cat: 'vita', pos: 'f.', ex: 'Era andato in pensione l\'anno prima.' },
+        { it: 'il funerale', en: 'funeral', fa: 'مراسم خاکسپاری', cat: 'vita', pos: 'm.', ex: 'Al funerale erano venuti tutti i vicini.' },
+        { it: 'la tappa', en: 'stage, milestone', fa: 'مرحله', cat: 'vita', pos: 'f.', ex: 'Era stata una tappa importante della sua vita.' },
+
+        /* ── Esperienze (9) ── */
+        { it: 'l\'esperienza', en: 'experience', fa: 'تجربه', cat: 'esperienze', pos: 'f.', ex: 'Non avevo mai fatto un\'esperienza simile.' },
+        { it: 'l\'avventura', en: 'adventure', fa: 'ماجراجویی', cat: 'esperienze', pos: 'f.', ex: 'Era stata una vera avventura.' },
+        { it: 'l\'imprevisto', en: 'unexpected event', fa: 'اتفاق پیش‌بینی‌نشده', cat: 'esperienze', pos: 'm.', ex: 'C\'era stato un imprevisto all\'ultimo momento.' },
+        { it: 'la sfida', en: 'challenge', fa: 'چالش', cat: 'esperienze', pos: 'f.', ex: 'Aveva accettato la sfida senza pensarci.' },
+        { it: 'affrontare', en: 'to face, to tackle', fa: 'رویارویی کردن', cat: 'esperienze', pos: 'v.', ex: 'Aveva affrontato tutto da solo.' },
+        { it: 'superare', en: 'to overcome, to pass', fa: 'پشت سر گذاشتن', cat: 'esperienze', pos: 'v.', ex: 'Avevamo superato il momento più difficile.' },
+        { it: 'accorgersi (di)', en: 'to realise, to notice', fa: 'متوجه شدن', cat: 'esperienze', pos: 'v. rifl.', ex: 'Non mi ero accorto di niente.' },
+        { it: 'rendersi conto (di)', en: 'to realise', fa: 'پی بردن', cat: 'esperienze', pos: 'v. rifl.', ex: 'Solo dopo mi ero reso conto dell\'errore.' },
+        { it: 'pentirsi (di)', en: 'to regret', fa: 'پشیمان شدن', cat: 'esperienze', pos: 'v. rifl.', ex: 'Si era pentito subito di quelle parole.' },
+
+        /* ── Tempo e ordine (7) ── */
+        { it: 'il giorno precedente', en: 'the day before', fa: 'روز قبل', cat: 'tempo', pos: 'loc.', ex: 'Il giorno precedente era arrivata una lettera.' },
+        { it: 'la sera prima', en: 'the night before', fa: 'شب قبل', cat: 'tempo', pos: 'loc.', ex: 'La sera prima avevamo parlato a lungo.' },
+        { it: 'in precedenza', en: 'previously', fa: 'پیش از آن', cat: 'tempo', pos: 'avv.', ex: 'In precedenza non ci eravamo mai incontrati.' },
+        { it: 'ormai', en: 'by then, by now', fa: 'دیگر / تا آن موقع', cat: 'tempo', pos: 'avv.', ex: 'Ormai era troppo tardi: se n\'erano andati.' },
+        { it: 'nel frattempo', en: 'meanwhile', fa: 'در این میان', cat: 'tempo', pos: 'loc.', ex: 'Nel frattempo lui aveva già firmato.' },
+        { it: 'da allora', en: 'since then', fa: 'از آن زمان', cat: 'tempo', pos: 'loc.', ex: 'Da allora non l\'avevo più visto.' },
+        { it: 'poco prima', en: 'shortly before', fa: 'کمی قبل', cat: 'tempo', pos: 'loc.', ex: 'Poco prima era passato il postino.' }
+      ]
+    },
+
+    guided: {
+      title: 'Costruiamo insieme il trapassato',
+      intro: 'Tre domande in ordine: qual è il fatto anteriore? Quale ausiliare vuole quel verbo? Il participio deve concordare?',
+      steps: [
+        {
+          prompt: 'Metti in ordine: «Io (arrivare) alla festa. Tutti (mangiare) già.»',
+          think: 'Il mangiare è successo prima del mio arrivo → il primo verbo va al passato prossimo, il secondo al trapassato. Mangiare è transitivo → avere.',
+          answer: 'Quando sono arrivato alla festa, tutti avevano già mangiato.',
+          why: '"già" sta tra ausiliare e participio.'
+        },
+        {
+          prompt: 'Trasforma al trapassato: «Anna è uscita.»',
+          think: 'Uscire vuole essere: passo l\'ausiliare all\'imperfetto (è → era) e tengo l\'accordo femminile.',
+          answer: 'Anna era uscita.',
+          why: 'Con essere il participio resta concordato: uscita.'
+        },
+        {
+          prompt: 'Trasforma al trapassato: «Mi sono svegliato tardi.»',
+          think: 'Riflessivo → essere. Il pronome resta davanti: mi + ero + participio.',
+          answer: 'Mi ero svegliato tardi.',
+          why: 'Nei riflessivi il pronome non si tocca mai: cambia solo l\'ausiliare.'
+        },
+        {
+          prompt: 'Completa: «Il libro? L\'(io — leggere) già l\'estate prima.»',
+          think: 'Avere + pronome oggetto diretto "lo" → il participio concorda con il pronome maschile singolare.',
+          answer: 'Il libro? L\'avevo già letto l\'estate prima.',
+          why: 'Con "lo/la" elisi l\'accordo è obbligatorio: l\'avevo letto, l\'avevo letta.'
+        },
+        {
+          prompt: 'Imperfetto o trapassato? «Quando sono entrato, mio fratello (guardare) la TV.»',
+          think: 'Guardare la TV era in corso, non concluso → sfondo → imperfetto.',
+          answer: 'Quando sono entrato, mio fratello guardava la TV.',
+          why: 'Con "era già andato a letto" invece useresti il trapassato: fatto concluso prima.'
+        },
+        {
+          prompt: 'Spiega la causa: «Ho perso l\'aereo perché (io — dimenticare) il passaporto.»',
+          think: 'La causa precede l\'effetto: dimenticare va al trapassato, con avere.',
+          answer: 'Ho perso l\'aereo perché avevo dimenticato il passaporto.',
+          why: 'Struttura tipica: passato prossimo + perché + trapassato.'
+        }
+      ]
+    },
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Quando sono arrivato, il film ___ già ___.»', options: ['è / cominciato', 'era / cominciato', 'aveva / cominciato', 'ha / cominciato'], answer: 1, hint: 'cominciare senza oggetto vuole essere', why: 'Trapassato con essere: era già cominciato.' },
+        { q: 'Trapassato di «ho mangiato»:', options: ['ero mangiato', 'avevo mangiato', 'avevo mangiare', 'sono mangiato'], answer: 1, hint: 'stesso ausiliare, tempo imperfetto', why: 'ho → avevo, il participio non cambia.' },
+        { q: 'Trapassato di «sono andata»:', options: ['avevo andata', 'ero andato', 'ero andata', 'avevo andato'], answer: 2, hint: 'parla una donna', why: 'Andare vuole essere e il participio concorda: ero andata.' },
+        { q: 'Completa: «Maria ___ appena uscita.»', options: ['aveva', 'era', 'ha', 'è stata'], answer: 1, hint: 'uscire = movimento', why: 'era uscita, con accordo femminile.' },
+        { q: 'Completa: «Mi ___ svegliato tardi, così ho perso il treno.»', options: ['avevo', 'ero', 'avevo già', 'sono'], answer: 1, hint: 'verbo riflessivo', why: 'I riflessivi usano essere: mi ero svegliato.' },
+        { q: 'Quale frase è corretta?', options: ['Non avevo mai stato in Italia.', 'Non ero mai stato in Italia.', 'Non avevo mai essere in Italia.', 'Non ero mai avuto in Italia.'], answer: 1, hint: 'essere è ausiliare di se stesso', why: 'ero stato.' },
+        { q: 'Completa: «Le ragazze ___ già ___ per Roma.»', options: ['erano / partite', 'erano / partiti', 'avevano / partite', 'erano / partito'], answer: 0, hint: 'femminile plurale', why: 'erano partite.' },
+        { q: 'Dove va «già»?', options: ['Già avevo mangiato.', 'Avevo mangiato già.', 'Avevo già mangiato.', 'Avevo mangiato, già.'], answer: 2, hint: 'avverbi brevi', why: 'Gli avverbi brevi stanno tra ausiliare e participio.' },
+        { q: '«Quando sono entrato, Marco ___ .» (stava dormendo)', options: ['aveva dormito', 'era dormito', 'dormiva', 'ha dormito'], answer: 2, hint: 'azione in corso sullo sfondo', why: 'Situazione in corso → imperfetto, non trapassato.' },
+        { q: 'Completa: «Dopo che ___ cenato, siamo usciti.»', options: ['abbiamo', 'avevamo', 'eravamo', 'siamo'], answer: 1, hint: '"dopo che" + anteriorità', why: 'Dopo che avevamo cenato.' },
+        { q: 'Completa: «La casa era vuota: tutti se ne ___ andati.»', options: ['avevano', 'erano', 'sono', 'hanno'], answer: 1, hint: 'andarsene vuole essere', why: 'se ne erano andati.' },
+        { q: '«Il libro? L\'avevo già ___ .»', options: ['letto', 'letta', 'letti', 'leggere'], answer: 0, hint: 'accordo con il pronome "lo"', why: 'Il libro è maschile singolare: l\'avevo letto.' },
+        { q: 'Quale frase esprime anteriorità?', options: ['Ieri ho studiato molto.', 'Studiavo mentre pioveva.', 'Avevo studiato tutta la notte, ma non ricordavo niente.', 'Studio da tre ore.'], answer: 2, hint: 'due fatti passati in ordine', why: 'Lo studio precede il momento dell\'esame.' },
+        { q: 'Trapassato di «facciamo» (noi, fare):', options: ['abbiamo fatto', 'avevamo fatto', 'eravamo fatti', 'avevamo fare'], answer: 1, hint: 'participio irregolare: fatto', why: 'avevamo fatto.' }
+      ],
+      fill: [
+        { before: 'Quando sono arrivato, il treno era già', after: '. (partire)', answers: ['partito'], en: 'When I arrived, the train had already left.' },
+        { before: 'Non', after: 'mai visto un film così bello. (io — avere)', answers: ['avevo'], en: 'I had never seen such a beautiful film.', hint: 'imperfetto di avere' },
+        { before: 'Maria era appena', after: 'quando ho telefonato. (uscire)', answers: ['uscita'], en: 'Maria had just left when I called.', hint: 'accordo femminile' },
+        { before: 'Mi', after: 'svegliato tardi. (essere)', answers: ['ero'], en: 'I had woken up late.' },
+        { before: 'Dopo che', after: 'cenato, siamo usciti. (noi — avere)', answers: ['avevamo'], en: 'After we had had dinner, we went out.' },
+        { before: 'Le ragazze erano già', after: 'per Firenze. (partire)', answers: ['partite'], en: 'The girls had already left for Florence.' },
+        { before: 'Ci eravamo', after: 'in Grecia, molti anni prima. (conoscersi)', answers: ['conosciuti', 'conosciute'], en: 'We had met in Greece, many years earlier.' },
+        { before: 'Non avevo ancora', after: 'dove andare. (decidere)', answers: ['deciso'], en: "I hadn't yet decided where to go.", hint: 'participio irregolare' },
+        { before: 'Il giorno prima', after: 'piovuto tutta la notte. (avere)', answers: ['aveva'], en: 'The day before it had rained all night.' },
+        { before: 'Da bambina non', after: 'mai stata in montagna. (essere)', answers: ['ero'], en: 'As a child I had never been to the mountains.' },
+        { before: 'Le lettere? Le avevo già', after: '. (spedire)', answers: ['spedite'], en: 'The letters? I had already sent them.', hint: 'accordo con il pronome "le"' },
+        { before: 'Si', after: 'trasferiti a Milano l\'anno prima. (essere)', answers: ['erano'], en: 'They had moved to Milan the year before.' }
+      ],
+      order: [
+        { words: ['Quando', 'sono', 'arrivato', 'il', 'treno', 'era', 'già', 'partito'], answer: 'Quando sono arrivato il treno era già partito', en: 'When I arrived the train had already left.' },
+        { words: ['Non', 'avevo', 'mai', 'visto', 'quel', 'film'], answer: 'Non avevo mai visto quel film', en: "I had never seen that film.", hint: '"mai" tra ausiliare e participio' },
+        { words: ['Maria', 'era', 'appena', 'uscita', 'di', 'casa'], answer: 'Maria era appena uscita di casa', en: 'Maria had just left the house.' },
+        { words: ['Dopo', 'che', 'avevamo', 'cenato', 'siamo', 'usciti'], answer: 'Dopo che avevamo cenato siamo usciti', en: 'After we had had dinner we went out.' },
+        { words: ['Mi', 'ero', 'svegliato', 'tardi', 'e', 'ho', 'perso', 'l\'aereo'], answer: 'Mi ero svegliato tardi e ho perso l\'aereo', en: 'I had woken up late and I missed the plane.' },
+        { words: ['Ci', 'eravamo', 'conosciuti', 'molti', 'anni', 'prima'], answer: 'Ci eravamo conosciuti molti anni prima', en: 'We had met many years earlier.' },
+        { words: ['Le', 'ragazze', 'erano', 'già', 'partite', 'per', 'Firenze'], answer: 'Le ragazze erano già partite per Firenze', en: 'The girls had already left for Florence.' }
+      ],
+      dnd: {
+        instructions: 'Questi verbi al trapassato prossimo vogliono ERO o AVEVO? Trascinali nella colonna giusta.',
+        buckets: [
+          { id: 'essere', label: 'ERO / ERAVAMO…', icon: '🟢' },
+          { id: 'avere', label: 'AVEVO / AVEVAMO…', icon: '🔵' }
+        ],
+        items: [
+          { text: 'partire', bucket: 'essere' },
+          { text: 'dimenticare', bucket: 'avere' },
+          { text: 'uscire', bucket: 'essere' },
+          { text: 'leggere', bucket: 'avere' },
+          { text: 'svegliarsi', bucket: 'essere' },
+          { text: 'prenotare', bucket: 'avere' },
+          { text: 'nascere', bucket: 'essere' },
+          { text: 'raccontare', bucket: 'avere' },
+          { text: 'trasferirsi', bucket: 'essere' },
+          { text: 'superare', bucket: 'avere' },
+          { text: 'arrivare', bucket: 'essere' },
+          { text: 'perdere', bucket: 'avere' },
+          { text: 'andarsene', bucket: 'essere' },
+          { text: 'affrontare', bucket: 'avere' }
+        ]
+      },
+      match: [
+        { a: 'ho fatto', b: 'avevo fatto' },
+        { a: 'sono andato', b: 'ero andato' },
+        { a: 'mi sono alzato', b: 'mi ero alzato' },
+        { a: 'abbiamo visto', b: 'avevamo visto' },
+        { a: 'siete partiti', b: 'eravate partiti' },
+        { a: 'hanno detto', b: 'avevano detto' },
+        { a: 'è nata', b: 'era nata' },
+        { a: 'ci siamo conosciuti', b: 'ci eravamo conosciuti' },
+        { a: 'sono stato', b: 'ero stato' },
+        { a: 'hai letto', b: 'avevi letto' }
+      ],
+      tf: [
+        { statement: 'Il trapassato prossimo si forma con l\'imperfetto di essere o avere + participio passato.', answer: true, why: 'Esatto: avevo mangiato, ero andato.' },
+        { statement: 'L\'ausiliare del trapassato può essere diverso da quello del passato prossimo.', answer: false, why: 'No: se si dice "sono andato", si dice "ero andato". L\'ausiliare non cambia mai.' },
+        { statement: 'Con avere il participio del trapassato concorda sempre col soggetto.', answer: false, why: 'No: resta in -o, tranne quando c\'è un pronome oggetto diretto prima (l\'avevo letta).' },
+        { statement: 'Il trapassato indica un\'azione anteriore a un\'altra azione passata.', answer: true, why: 'È esattamente la sua funzione.' },
+        { statement: '«Quando sono entrato, Marco aveva dormito» è la frase giusta per dire che stava dormendo.', answer: false, why: 'No: azione in corso → imperfetto, «Marco dormiva».' },
+        { statement: 'Gli avverbi già, mai, ancora vanno tra ausiliare e participio.', answer: true, why: 'Avevo già mangiato, non ero mai stato…' },
+        { statement: 'I verbi riflessivi al trapassato usano avere.', answer: false, why: 'No: usano sempre essere → mi ero alzato.' },
+        { statement: '«Dopo che aveva mangiato, è uscito» è corretto.', answer: true, why: 'Sì: "dopo che" introduce il fatto anteriore, al trapassato.' },
+        { statement: 'Il trapassato si usa anche quando nella frase c\'è un solo fatto passato.', answer: false, why: 'Di norma no: serve un secondo fatto passato, esplicito o sottinteso.' }
+      ],
+      translate: [
+        { en: 'When I arrived, the train had already left.', answers: ['Quando sono arrivato il treno era già partito', 'Quando sono arrivata il treno era già partito'] },
+        { en: 'I had never seen that film.', answers: ['Non avevo mai visto quel film'] },
+        { en: 'Maria had just left.', answers: ['Maria era appena uscita', 'Maria era appena partita'] },
+        { en: 'We had met many years earlier.', answers: ['Ci eravamo conosciuti molti anni prima', 'Ci eravamo conosciute molti anni prima'] },
+        { en: 'They had already moved to Milan.', answers: ['Si erano già trasferiti a Milano', 'Si erano già trasferite a Milano'] },
+        { en: 'I had woken up late, so I missed the plane.', answers: ['Mi ero svegliato tardi così ho perso l\'aereo', 'Mi ero svegliata tardi così ho perso l\'aereo'] },
+        { en: "I couldn't get in because I had forgotten the keys.", answers: ['Non sono potuto entrare perché avevo dimenticato le chiavi', 'Non ho potuto entrare perché avevo dimenticato le chiavi'] },
+        { en: 'After we had had dinner, we went for a walk.', answers: ['Dopo che avevamo cenato siamo andati a fare una passeggiata', 'Dopo che avevamo cenato siamo usciti a fare una passeggiata'] },
+        { en: 'The day before it had rained all night.', answers: ['Il giorno prima aveva piovuto tutta la notte', 'Il giorno precedente aveva piovuto tutta la notte'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Il viaggio andato storto',
+      intro: 'Due amici si raccontano un viaggio: nota come ogni "disastro" viene spiegato da un fatto anteriore al trapassato.',
+      lines: [
+        { speaker: 'Sara', icon: '👩', it: 'Allora, com\'è andato il viaggio in Grecia?', en: 'So, how was the trip to Greece?',
+          glosses: [{ term: 'è andato', expl: 'Passato prossimo: il viaggio è il fatto principale del racconto.' }] },
+        { speaker: 'Davide', icon: '🧑', side: 'right', it: 'Un disastro all\'inizio! Quando siamo arrivati all\'aeroporto, il volo era già partito.', en: 'A disaster at first! When we got to the airport, the flight had already left.',
+          glosses: [{ term: 'era già partito', expl: 'Trapassato: la partenza del volo è anteriore al nostro arrivo.' }] },
+        { speaker: 'Sara', icon: '👩', it: 'Ma come? Non avevate controllato l\'orario?', en: 'How come? Hadn\'t you checked the time?',
+          glosses: [{ term: 'Non avevate controllato', expl: 'Trapassato con avere: il controllo (mancato) è anteriore al fatto.' }] },
+        { speaker: 'Davide', icon: '🧑', side: 'right', it: 'Sì, ma la compagnia aveva anticipato il volo di un\'ora e non ci aveva avvisati.', en: 'Yes, but the airline had moved the flight up an hour and hadn\'t told us.',
+          glosses: [{ term: 'aveva anticipato', expl: 'Fatto anteriore: la modifica è avvenuta prima del nostro arrivo.' }, { term: 'ci aveva avvisati', expl: 'Con avere + pronome oggetto "ci" il participio può concordare: avvisati.' }] },
+        { speaker: 'Sara', icon: '👩', it: 'E poi? Vi eravate portati almeno i documenti giusti?', en: 'And then? Had you at least brought the right documents?',
+          glosses: [{ term: 'Vi eravate portati', expl: 'Verbo pronominale al trapassato: essere + accordo con il soggetto.' }] },
+        { speaker: 'Davide', icon: '🧑', side: 'right', it: 'Per fortuna sì. Mi ero ricordato del passaporto la sera prima, mentre facevo la valigia.', en: 'Luckily yes. I had remembered my passport the night before, while packing.',
+          glosses: [{ term: 'Mi ero ricordato', expl: 'Riflessivo al trapassato: mi ero + participio concordato.' }, { term: 'facevo', expl: 'Imperfetto: azione in corso sullo sfondo.' }] },
+        { speaker: 'Sara', icon: '👩', it: 'E l\'albergo? Avevate prenotato prima di partire?', en: 'And the hotel? Had you booked before leaving?',
+          glosses: [{ term: 'Avevate prenotato', expl: 'Trapassato: la prenotazione precede la partenza.' }] },
+        { speaker: 'Davide', icon: '🧑', side: 'right', it: 'Certo, ma quando siamo arrivati avevano dato la nostra camera a un\'altra coppia.', en: 'Of course, but when we arrived they had given our room to another couple.',
+          glosses: [{ term: 'avevano dato', expl: 'Anteriore rispetto al nostro arrivo: la camera era già stata assegnata.' }] },
+        { speaker: 'Sara', icon: '👩', it: 'Incredibile! E alla fine come è finita?', en: 'Unbelievable! And how did it end up?',
+          glosses: [{ term: 'come è finita', expl: 'finire senza oggetto → essere: è finita.' }] },
+        { speaker: 'Davide', icon: '🧑', side: 'right', it: 'Benissimo: non ci eravamo mai divertiti così tanto. Alla fine l\'imprevisto era stato la parte migliore.', en: "Great: we had never had so much fun. In the end the mishap had been the best part.",
+          glosses: [{ term: 'non ci eravamo mai divertiti', expl: 'Riflessivo + "mai" tra ausiliare e participio.' }, { term: 'era stato', expl: 'Trapassato di essere: ero/era stato.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'trapassato prossimo', back: 'imperfetto di essere/avere + participio', note: 'avevo mangiato · ero andato' },
+      { front: 'ho mangiato →', back: 'avevo mangiato' },
+      { front: 'sono andata →', back: 'ero andata', note: 'con essere il participio concorda' },
+      { front: 'mi sono alzato →', back: 'mi ero alzato', note: 'i riflessivi vogliono essere' },
+      { front: 'avevo / avevi / aveva…', back: 'avevamo / avevate / avevano' },
+      { front: 'ero / eri / era…', back: 'eravamo / eravate / erano' },
+      { front: 'Dove va «già»?', back: 'tra ausiliare e participio', note: 'avevo già mangiato' },
+      { front: 'Quando sono arrivato, il treno…', back: '…era già partito' },
+      { front: 'Marco dormiva vs Marco si era addormentato', back: 'in corso vs concluso prima', note: 'imperfetto vs trapassato' },
+      { front: 'dopo che + ?', back: 'trapassato prossimo', note: 'Dopo che aveva mangiato, è uscito.' },
+      { front: 'Il libro? L\'avevo già…', back: 'letto', note: 'accordo con il pronome oggetto' },
+      { front: 'Non ero mai stato…', back: "I had never been…", note: 'essere è ausiliare di se stesso' },
+      { front: 'il giorno precedente', back: 'the day before', note: 'espressione tipica del trapassato' },
+      { front: 'se n\'erano andati', back: 'they had left', note: 'andarsene al trapassato' }
+    ],
+
+    summary: {
+      formula: 'Soggetto + [avevo/avevi/aveva/avevamo/avevate/avevano] oppure [ero/eri/era/eravamo/eravate/erano] + PARTICIPIO PASSATO',
+      rules: [
+        'Il trapassato prossimo = passato prossimo con l\'ausiliare all\'imperfetto.',
+        'L\'ausiliare è lo stesso del passato prossimo: se "sono andato", allora "ero andato".',
+        'Con essere il participio concorda col soggetto; con avere resta in -o (salvo pronome oggetto diretto prima del verbo).',
+        'Serve per indicare un fatto anteriore a un altro fatto passato: «Quando sono arrivato, era già partito».',
+        'Parole-segnale: già, appena, non… ancora, non… mai, dopo che, prima, il giorno precedente.',
+        'Gli avverbi brevi vanno tra ausiliare e participio: avevo già finito.',
+        'Imperfetto = situazione in corso; trapassato = azione conclusa prima. «Dormiva» ≠ «si era addormentato».'
+      ],
+      tips: [
+        'Immagina due gradini: il gradino più basso (più lontano) è il trapassato, quello sopra è il passato prossimo.',
+        'Se puoi tradurre con "had + participio" in inglese, in italiano è trapassato prossimo.',
+        'Non imparare nuovi participi: sono esattamente quelli del passato prossimo. Cambia solo "ho/sono" in "avevo/ero".',
+        'Nei racconti orali, ogni volta che dici "perché" o "dopo che" c\'è probabilmente un trapassato subito dopo.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

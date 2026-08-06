@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il condizionale passato italiano: formazione, rimpianto, ipotesi non realizzate, notizie non confermate e il futuro nel passato (ha detto che sarebbe venuto).">
+  <title>Condizionale Passato · Italiano B1</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     UNITÀ 2 — CONDIZIONALE PASSATO
+     ========================================================================== */
+  window.LESSON = {
+    num: 2, file: '02-condizionale-passato.html', icon: '💭', title: 'Condizionale Passato', group: 'Il passato',
+    subtitle: 'Quello che avresti fatto e non hai fatto: rimpianti, ipotesi mancate, notizie non confermate.',
+
+    intro: {
+      what: 'Il condizionale passato (o condizionale composto) si forma con il <b>condizionale presente</b> di essere o avere più il <b>participio passato</b>: avrei mangiato, sarei andato. In inglese corrisponde a "I would have eaten", "I would have gone".',
+      when: 'Per parlare di ciò che <b>non è successo</b> (rimpianto: «Avrei voluto dirtelo»), di ipotesi passate non realizzate («Sarei venuto, ma stavo male»), di notizie non confermate («Il ministro avrebbe firmato») e — usatissimo — del <b>futuro nel passato</b>: «Ha detto che sarebbe venuto».',
+      why: 'È il tempo delle emozioni adulte: rimpianto, rimorso, cortesia, prudenza. Ed è indispensabile nel discorso indiretto: senza di lui non puoi riferire quello che qualcuno aveva promesso di fare.',
+      mistakes: [
+        'Usare il condizionale presente per il futuro nel passato: ❌ "Ha detto che verrebbe" → ✅ "Ha detto che sarebbe venuto".',
+        'Sbagliare l\'ausiliare: ❌ "Avrei andato" → ✅ "Sarei andato".',
+        'Dimenticare l\'accordo con essere: ❌ "Anna sarebbe venuto" → ✅ "Anna sarebbe venuta".',
+        'Tradurre "I should have" con "dovrei avere": ✅ è "avrei dovuto" (+ infinito).'
+      ]
+    },
+
+    objectives: [
+      'Formare il condizionale passato di qualsiasi verbo, anche irregolare.',
+      'Esprimere <b>rimpianto</b> e <b>rimorso</b>: avrei voluto, avrei dovuto, avrei potuto.',
+      'Raccontare ipotesi passate non realizzate («Sarei venuto, ma…»).',
+      'Usare il condizionale passato come <b>futuro nel passato</b> nel discorso indiretto.',
+      'Riconoscere il condizionale delle <b>notizie non confermate</b> nella lingua dei giornali.'
+    ],
+
+    formulas: [
+      {
+        label: 'Formula generale',
+        rows: [
+          { parts: [
+              { text: 'Soggetto', type: 'subject' },
+              { text: 'AVREI / SAREI', note: 'condizionale presente', type: 'verb' },
+              { text: 'PARTICIPIO PASSATO', type: 'object' }
+            ], example: 'Avrei mangiato volentieri.', translation: 'I would have gladly eaten.' }
+        ]
+      },
+      {
+        label: 'Il rimpianto: modale + infinito',
+        rows: [
+          { parts: [
+              { text: 'AVREI', type: 'verb' },
+              { text: 'VOLUTO / DOVUTO / POTUTO', type: 'object' },
+              { text: 'INFINITO', type: 'extra' }
+            ], example: 'Avrei voluto dirtelo prima.', translation: 'I would have liked to tell you sooner.' }
+        ]
+      },
+      {
+        label: 'Il futuro nel passato',
+        rows: [
+          { parts: [
+              { text: 'Ha detto / Pensavo', note: 'verbo al passato', type: 'subject' },
+              { text: 'CHE', type: 'verb' },
+              { text: 'CONDIZIONALE PASSATO', note: 'l\'azione futura', type: 'object' }
+            ], example: 'Ha detto che sarebbe arrivato alle otto.', translation: 'He said he would arrive at eight.' }
+        ]
+      },
+      {
+        label: 'L\'ipotesi non realizzata (anticipazione dell\'unità 8)',
+        rows: [
+          { parts: [
+              { text: 'SE + congiuntivo trapassato', type: 'subject' },
+              { text: 'CONDIZIONALE PASSATO', type: 'object' }
+            ], example: 'Se avessi studiato, avrei superato l\'esame.', translation: 'If I had studied, I would have passed the exam.' }
+        ]
+      }
+    ],
+    formulaNote: 'Il condizionale passato è sempre composto: non esiste "andrei stato" o "vorrei fatto". La forma corretta è sempre AVREI/SAREI + participio.',
+
+    rules: [
+      {
+        title: 'Come si forma',
+        body: 'Condizionale presente dell\'ausiliare + participio passato. Il condizionale presente lo conosci già dalla formula di cortesia <i>vorrei</i>.',
+        points: [
+          'AVERE: avrei, avresti, avrebbe, avremmo, avreste, avrebbero.',
+          'ESSERE: sarei, saresti, sarebbe, saremmo, sareste, sarebbero.',
+          'avrei parlato · avresti creduto · avrebbe dormito · sarei andato · saremmo partiti.',
+          'La scelta dell\'ausiliare segue le regole di sempre: movimento, cambiamento di stato e riflessivi → essere.',
+          'Con essere il participio concorda col soggetto: «Anna sarebbe venuta», «Loro sarebbero partiti».'
+        ],
+        exception: 'Attenzione a <b>avremmo</b> (condizionale, due m) contro <b>avremo</b> (futuro, una m). Stessa cosa per saremmo / saremo. Un errore che fanno anche molti italiani.'
+      },
+      {
+        title: 'Uso 1 — il rimpianto e il rimorso',
+        body: 'È l\'uso più frequente nella conversazione: parli di qualcosa che desideravi ma che non è successo.',
+        points: [
+          '<b>Avrei voluto</b> + infinito = "I would have liked to" → «Avrei voluto studiare medicina».',
+          '<b>Avrei dovuto</b> + infinito = "I should have" → «Avrei dovuto ascoltarti».',
+          '<b>Avrei potuto</b> + infinito = "I could have" → «Avresti potuto avvisarmi!».',
+          'Con i modali l\'ausiliare è sempre <b>avere</b> se seguito da un infinito con avere; con un infinito che vuole essere si può dire «sarei dovuto andare» (forma corretta) o, nel parlato, «avrei dovuto andare».',
+          'Aggiungi <b>al posto tuo</b>, <b>invece</b>, <b>magari</b> per dare il tono giusto: «Io al posto tuo avrei accettato».'
+        ],
+        exception: '«Avrei voluto» ≠ «vorrei». «Vorrei un caffè» è una richiesta gentile adesso; «Avrei voluto un caffè» è un desiderio che non si è realizzato.'
+      },
+      {
+        title: 'Uso 2 — l\'azione non realizzata, con la sua causa',
+        body: 'Dici che cosa avresti fatto e perché non l\'hai fatto.',
+        points: [
+          '«<b>Sarei venuto</b>, ma stavo male.» — l\'azione era possibile, qualcosa l\'ha impedita.',
+          '«<b>Ti avrei chiamato</b>, però era troppo tardi.»',
+          'Spesso segue <b>ma</b>, <b>però</b>, <b>solo che</b>, <b>purtroppo</b>.',
+          'Nella forma completa diventa un periodo ipotetico del terzo tipo: «Se avessi potuto, sarei venuto» (unità 8).'
+        ],
+        exception: 'Se l\'azione era impossibile in partenza, in italiano si preferisce il periodo ipotetico completo; il condizionale passato da solo suggerisce che la cosa era realistica.'
+      },
+      {
+        title: 'Uso 3 — il futuro nel passato (fondamentale per il B1)',
+        body: 'Qui l\'italiano è diverso dall\'inglese e da quasi tutte le altre lingue: quando il verbo principale è al <b>passato</b>, il futuro si esprime con il <b>condizionale passato</b>, non con il condizionale presente.',
+        points: [
+          'Presente: «Dice che <b>verrà</b> domani.» → Passato: «Ha detto che <b>sarebbe venuto</b> il giorno dopo.»',
+          '«Pensavo che <b>avrebbe piovuto</b>.» — pensavo prima, la pioggia doveva arrivare dopo.',
+          '«Sapevo che ce l\'<b>avresti fatta</b>.» — la fiducia è nel passato, il successo dopo.',
+          'Vale con tutti i verbi di dichiarazione e opinione al passato: dire, promettere, pensare, credere, sapere, essere sicuro.',
+          'La regola vale anche se l\'azione è ormai passata anche per noi: il punto di riferimento è il verbo principale.'
+        ],
+        exception: '❌ «Ha detto che verrebbe» è un errore molto comune tra gli stranieri (e un calco dall\'inglese "he said he would come"). L\'italiano richiede «sarebbe venuto».'
+      },
+      {
+        title: 'Uso 4 — la notizia non confermata (il condizionale dei giornali)',
+        body: 'Nel linguaggio giornalistico il condizionale passato segnala che l\'informazione non è verificata: chi scrive non se ne assume la responsabilità.',
+        points: [
+          '«Il ministro <b>avrebbe firmato</b> l\'accordo ieri sera.» = pare che abbia firmato, ma non è confermato.',
+          '«I ladri <b>sarebbero entrati</b> dalla finestra.» = secondo le prime ricostruzioni.',
+          'Si accompagna spesso a <b>secondo</b>, <b>a quanto pare</b>, <b>sembra che</b>, <b>fonti vicine a…</b>.',
+          'In inglese si traduce con "reportedly", "allegedly", "would have".'
+        ],
+        exception: 'Nella lingua parlata questo uso è raro: se non stai leggendo un telegiornale, il condizionale passato che senti è quasi sempre un rimpianto o un futuro nel passato.'
+      },
+      {
+        title: 'Condizionale presente o passato?',
+        body: 'La scelta dipende da <i>quando</i> si colloca l\'azione ipotetica.',
+        points: [
+          '<b>Presente</b> = adesso o nel futuro, ancora possibile: «Andrei volentieri al mare» (potrei ancora).',
+          '<b>Passato</b> = nel passato, ormai impossibile: «Sarei andato volentieri al mare» (l\'occasione è persa).',
+          'Cortesia: «Vorrei un\'informazione» (adesso) / «Avrei voluto un\'informazione» (suona come un rimprovero: la volevo e non l\'ho avuta).',
+          'Nel periodo ipotetico: 2° tipo → condizionale presente; 3° tipo → condizionale passato (unità 8).'
+        ],
+        exception: 'In alcune espressioni fisse di cortesia commerciale si usa il condizionale passato con valore di presente: «Avrei bisogno di un\'informazione», «Avrei una domanda». Suona più discreto del presente.'
+      }
+    ],
+
+    timeline: {
+      title: 'Il condizionale passato nel tempo',
+      intro: 'Immagina un punto nel passato e una freccia che parte da lì: il condizionale passato è quello che, da quel punto, doveva ancora succedere — o che non è mai successo.',
+      points: [
+        { time: 'Prima', label: 'Il momento della promessa', example: 'Ieri Marco ha detto…', note: 'verbo principale al passato' },
+        { time: 'Dopo (nel passato)', label: 'Condizionale passato', example: '…che sarebbe venuto oggi.', note: 'futuro visto dal passato' },
+        { time: 'Mai successo', label: 'Rimpianto', example: 'Avrei voluto dirtelo.', note: 'azione non realizzata' },
+        { time: 'Adesso', label: 'Condizionale presente', example: 'Verrei volentieri.', now: true, note: 'ancora possibile' }
+      ],
+      caption: '«Dice che verrà» (presente → futuro) diventa «Ha detto che sarebbe venuto» (passato → condizionale passato).'
+    },
+
+    tables: [
+      {
+        title: 'Condizionale presente degli ausiliari (il pezzo che serve)',
+        note: 'Attenzione: avremmo e saremmo con due m — con una sola m sono futuri.',
+        columns: ['Persona', 'avere', 'essere'],
+        rows: [
+          { cells: ['io', 'avrei', 'sarei'] },
+          { cells: ['tu', 'avresti', 'saresti'] },
+          { cells: ['lui / lei', 'avrebbe', 'sarebbe'] },
+          { cells: ['noi', 'avremmo', 'saremmo'], irregular: [1, 2] },
+          { cells: ['voi', 'avreste', 'sareste'] },
+          { cells: ['loro', 'avrebbero', 'sarebbero'] }
+        ]
+      },
+      {
+        title: 'Condizionale passato con AVERE — parlare',
+        columns: ['Persona', 'Forma', 'Traduzione'],
+        rows: [
+          { cells: ['io', 'avrei parlato', 'I would have spoken'] },
+          { cells: ['tu', 'avresti parlato', 'you would have spoken'] },
+          { cells: ['lui / lei', 'avrebbe parlato', 'he/she would have spoken'] },
+          { cells: ['noi', 'avremmo parlato', 'we would have spoken'] },
+          { cells: ['voi', 'avreste parlato', 'you would have spoken'] },
+          { cells: ['loro', 'avrebbero parlato', 'they would have spoken'] }
+        ]
+      },
+      {
+        title: 'Condizionale passato con ESSERE — andare',
+        note: 'Il participio concorda col soggetto: andato / andata / andati / andate.',
+        columns: ['Persona', 'Forma', 'Esempio'],
+        rows: [
+          { cells: ['io', 'sarei andato/a', 'Sarei andata volentieri.'], irregular: [1] },
+          { cells: ['tu', 'saresti andato/a', 'Saresti dovuto venire.'], irregular: [1] },
+          { cells: ['lui / lei', 'sarebbe andato/a', 'Sarebbe andata a Roma.'], irregular: [1] },
+          { cells: ['noi', 'saremmo andati/e', 'Saremmo andati insieme.'], irregular: [1] },
+          { cells: ['voi', 'sareste andati/e', 'Sareste arrivati prima.'], irregular: [1] },
+          { cells: ['loro', 'sarebbero andati/e', 'Sarebbero partiti alle sei.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'I modali del rimpianto',
+        note: 'Sono le tre formule più usate della lingua parlata.',
+        columns: ['Italiano', 'Inglese', 'Esempio'],
+        rows: [
+          { cells: ['avrei voluto + infinito', 'I would have liked to', 'Avrei voluto vederti.'] },
+          { cells: ['avrei dovuto + infinito', 'I should have', 'Avrei dovuto studiare di più.'] },
+          { cells: ['avrei potuto + infinito', 'I could have', 'Avresti potuto avvisarmi.'] },
+          { cells: ['sarei dovuto andare', 'I should have gone', 'Sarei dovuto andare dal medico.'], irregular: [0] },
+          { cells: ['mi sarebbe piaciuto + infinito', 'I would have liked', 'Mi sarebbe piaciuto conoscerlo.'] },
+          { cells: ['avrei preferito + infinito', 'I would have preferred', 'Avrei preferito restare a casa.'] }
+        ]
+      },
+      {
+        title: 'Condizionale presente vs condizionale passato',
+        columns: ['Presente (ancora possibile)', 'Passato (non successo)', 'Differenza'],
+        rows: [
+          { cells: ['Verrei volentieri.', 'Sarei venuto volentieri.', 'posso ancora / non sono venuto'] },
+          { cells: ['Mi piacerebbe viaggiare.', 'Mi sarebbe piaciuto viaggiare.', 'desiderio aperto / occasione persa'] },
+          { cells: ['Dovresti riposare.', 'Avresti dovuto riposare.', 'consiglio / rimprovero'] },
+          { cells: ['Potresti aiutarmi?', 'Avresti potuto aiutarmi.', 'richiesta / rimprovero'] },
+          { cells: ['Direbbe la verità.', 'Avrebbe detto la verità.', 'ipotesi presente / ipotesi passata'] }
+        ]
+      },
+      {
+        title: 'Il futuro nel passato — trasformazioni',
+        note: 'Questa tabella è la chiave dell\'unità 6 (discorso indiretto).',
+        columns: ['Discorso diretto', 'Discorso indiretto (passato)', 'Nota'],
+        rows: [
+          { cells: ['«Verrò domani.»', 'Ha detto che sarebbe venuto il giorno dopo.', 'futuro → condizionale passato'] },
+          { cells: ['«Ti chiamerò.»', 'Aveva promesso che mi avrebbe chiamato.', 'promessa'] },
+          { cells: ['«Partiremo presto.»', 'Dissero che sarebbero partiti presto.', 'accordo del participio'] },
+          { cells: ['«Non lo farò più.»', 'Giurò che non l\'avrebbe più fatto.', 'negazione'] },
+          { cells: ['«Pioverà.»', 'Pensavo che avrebbe piovuto.', 'previsione'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Avrei voluto dirtelo prima, ma non ne ho avuto il coraggio.', literal: 'I-would-have wanted to-tell-you-it before, but not of-it I-have had the courage.', natural: "I would have liked to tell you sooner, but I didn't have the courage.", note: 'Rimpianto classico: avrei voluto + infinito.' },
+      { it: 'Sarei venuto alla festa, ma avevo la febbre.', literal: 'I-would-be come to-the party, but I-had the fever.', natural: 'I would have come to the party, but I had a fever.', note: 'venire → essere: sarei venuto. La causa va al passato.' },
+      { it: 'Ha detto che sarebbe arrivato alle otto.', literal: 'He-has said that he-would-be arrived at-the eight.', natural: 'He said he would arrive at eight.', note: 'Futuro nel passato: mai "che arriverebbe".' },
+      { it: 'Avresti dovuto avvisarmi!', literal: 'You-would-have had-to to-warn-me!', natural: 'You should have told me!', note: 'Rimprovero: avresti dovuto + infinito.' },
+      { it: 'Non pensavo che sarebbe stato così difficile.', literal: 'Not I-thought that it-would-be been so difficult.', natural: "I didn't think it would be that difficult.", note: 'Verbo principale al passato → condizionale passato.' },
+      { it: 'Al posto tuo non ci sarei andata.', literal: 'At-the place yours not there I-would-be gone.', natural: "In your place I wouldn't have gone.", note: 'Parla una donna: andata. "Al posto tuo" introduce il consiglio a posteriori.' },
+      { it: 'Mi sarebbe piaciuto conoscere tuo padre.', literal: 'To-me it-would-be pleased to-know your father.', natural: 'I would have liked to meet your father.', note: 'piacere → essere; il soggetto è l\'infinito, quindi participio singolare.' },
+      { it: 'Secondo i giornali, il ministro avrebbe già dato le dimissioni.', literal: 'According-to the newspapers, the minister would-have already given the resignations.', natural: 'According to the papers, the minister has reportedly already resigned.', note: 'Condizionale della notizia non confermata.' },
+      { it: 'I ladri sarebbero entrati da una finestra del primo piano.', literal: 'The thieves would-be entered from a window of-the first floor.', natural: 'The thieves reportedly got in through a first-floor window.', note: 'Cronaca: ricostruzione non ancora certa.' },
+      { it: 'Sapevo che ce l\'avresti fatta.', literal: 'I-knew that there it you-would-have made.', natural: 'I knew you would make it.', note: 'farcela al condizionale passato (unità 10).' },
+      { it: 'Avremmo dovuto prenotare prima: adesso è tutto pieno.', literal: 'We-would-have had-to to-book before: now is all full.', natural: 'We should have booked earlier: now everything is full.', note: 'Attenzione: avremmo con due m.' },
+      { it: 'Se avessi studiato, avrei superato l\'esame.', literal: 'If I-had studied, I-would-have overcome the exam.', natural: 'If I had studied, I would have passed the exam.', note: 'Periodo ipotetico del 3° tipo, unità 8.' },
+      { it: 'Mi aveva promesso che non l\'avrebbe più fatto.', literal: 'To-me he-had promised that not it he-would-have more done.', natural: 'He had promised me he would never do it again.', note: 'Promessa nel passato → condizionale passato.' },
+      { it: 'Anna sarebbe partita ieri, ma ha perso il volo.', literal: 'Anna would-be left yesterday, but she-has lost the flight.', natural: 'Anna would have left yesterday, but she missed her flight.', note: 'Accordo femminile: partita.' },
+      { it: 'Avrei preferito restare a casa, sinceramente.', literal: 'I-would-have preferred to-stay at home, sincerely.', natural: "I would have preferred to stay home, honestly.", note: 'Opinione delicata su un fatto già successo.' },
+      { it: 'Chi l\'avrebbe mai detto!', literal: 'Who it would-have ever said!', natural: 'Who would have thought!', note: 'Espressione idiomatica di sorpresa.' },
+      { it: 'Avrei bisogno di un\'informazione, per favore.', literal: 'I-would-have need of an information, please.', natural: 'I would need some information, please.', note: 'Cortesia formale: qui il condizionale passato vale come presente.' },
+      { it: 'Non avrei mai immaginato di rivederti qui.', literal: 'Not I-would-have never imagined to see-you-again here.', natural: 'I would never have imagined seeing you again here.', note: '"mai" tra ausiliare e participio.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Ha detto che verrebbe alle otto.', right: 'Ha detto che sarebbe venuto alle otto.', why: 'Con il verbo principale al passato, il futuro si esprime con il condizionale passato.' },
+      { wrong: 'Avrei andato al mare.', right: 'Sarei andato al mare.', why: 'Andare vuole essere in tutti i tempi composti.' },
+      { wrong: 'Anna sarebbe venuto.', right: 'Anna sarebbe venuta.', why: 'Con essere il participio concorda col soggetto femminile.' },
+      { wrong: 'Dovrei aver studiato di più.', right: 'Avrei dovuto studiare di più.', why: 'Il rimpianto si costruisce con il modale al condizionale passato + infinito semplice.' },
+      { wrong: 'Avremo dovuto prenotare.', right: 'Avremmo dovuto prenotare.', why: '"Avremo" è futuro; il condizionale è "avremmo", con due m.' },
+      { wrong: 'Vorrei venire ieri.', right: 'Sarei voluto venire ieri. / Avrei voluto venire ieri.', why: 'Se il momento è passato serve il condizionale passato, non il presente.' },
+      { wrong: 'Mi sarebbe piaciuta conoscere tuo padre.', right: 'Mi sarebbe piaciuto conoscere tuo padre.', why: 'Il soggetto è l\'infinito «conoscere»: participio maschile singolare.' },
+      { wrong: 'Sarei stato andato.', right: 'Sarei andato.', why: 'Il condizionale passato ha un solo ausiliare: sarei + participio.' },
+      { wrong: 'Pensavo che sarebbe piovuto ieri e infatti pioverebbe.', right: 'Pensavo che sarebbe piovuto ieri e infatti è piovuto.', why: 'Il condizionale esprime l\'ipotesi, non il fatto realmente accaduto.' },
+      { wrong: 'Avrei potuto di aiutarti.', right: 'Avrei potuto aiutarti.', why: 'Dopo i modali l\'infinito è nudo, senza preposizione.' }
+    ],
+
+    vocab: {
+      title: 'Vocabolario — opinioni, sentimenti, decisioni e consigli (58 parole)',
+      intro: 'Il condizionale passato serve a commentare le scelte: le proprie e quelle degli altri. Ecco il lessico dell\'opinione, dell\'emozione e del consiglio, con italiano, inglese, farsi (فارسی) ed esempio.',
+      categories: [
+        { id: 'opinioni', label: 'Opinioni', icon: '💬' },
+        { id: 'sentimenti', label: 'Sentimenti', icon: '❤️' },
+        { id: 'decisioni', label: 'Decisioni', icon: '⚖️' },
+        { id: 'consigli', label: 'Consigli', icon: '🧭' },
+        { id: 'relazioni', label: 'Relazioni', icon: '👥' },
+        { id: 'espr', label: 'Espressioni', icon: '✨' }
+      ],
+      words: [
+        /* ── Opinioni (10) ── */
+        { it: 'l\'opinione', en: 'opinion', fa: 'نظر', cat: 'opinioni', pos: 'f.', ex: 'Avrei voluto sentire la tua opinione.' },
+        { it: 'il parere', en: 'view, opinion', fa: 'دیدگاه', cat: 'opinioni', pos: 'm.', ex: 'A mio parere avresti dovuto rifiutare.' },
+        { it: 'il punto di vista', en: 'point of view', fa: 'زاویه دید', cat: 'opinioni', pos: 'm.', ex: 'Dal suo punto di vista aveva ragione.' },
+        { it: 'sostenere', en: 'to claim, to maintain', fa: 'ادعا کردن', cat: 'opinioni', pos: 'v.', ex: 'Ha sempre sostenuto che sarebbe tornato.' },
+        { it: 'ammettere', en: 'to admit', fa: 'اعتراف کردن', cat: 'opinioni', pos: 'v.', ex: 'Avrebbe dovuto ammettere l\'errore.' },
+        { it: 'negare', en: 'to deny', fa: 'انکار کردن', cat: 'opinioni', pos: 'v.', ex: 'Ha negato tutto, ma nessuno gli ha creduto.' },
+        { it: 'condividere', en: 'to share (an idea)', fa: 'هم‌نظر بودن', cat: 'opinioni', pos: 'v.', ex: 'Non condivido affatto la sua scelta.' },
+        { it: 'discutere', en: 'to discuss, to argue', fa: 'بحث کردن', cat: 'opinioni', pos: 'v.', ex: 'Avremmo dovuto discuterne prima.' },
+        { it: 'convincere', en: 'to convince', fa: 'متقاعد کردن', cat: 'opinioni', pos: 'v.', ex: 'Avrei potuto convincerlo, ma non ci ho provato.' },
+        { it: 'il malinteso', en: 'misunderstanding', fa: 'سوءتفاهم', cat: 'opinioni', pos: 'm.', ex: 'È stato solo un malinteso.' },
+
+        /* ── Sentimenti (11) ── */
+        { it: 'il rimpianto', en: 'regret (for what was missed)', fa: 'حسرت', cat: 'sentimenti', pos: 'm.', ex: 'Ho un solo rimpianto: non averglielo detto.' },
+        { it: 'il rimorso', en: 'remorse (for what was done)', fa: 'پشیمانی / عذاب وجدان', cat: 'sentimenti', pos: 'm.', ex: 'Non ha mai provato nessun rimorso.' },
+        { it: 'la delusione', en: 'disappointment', fa: 'ناامیدی', cat: 'sentimenti', pos: 'f.', ex: 'È stata una grande delusione.' },
+        { it: 'deludere', en: 'to disappoint', fa: 'ناامید کردن', cat: 'sentimenti', pos: 'v.', ex: 'Non avrei mai voluto deluderti.' },
+        { it: 'la vergogna', en: 'shame, embarrassment', fa: 'شرم', cat: 'sentimenti', pos: 'f.', ex: 'Avevo troppa vergogna per chiederglielo.' },
+        { it: 'il sollievo', en: 'relief', fa: 'آسودگی', cat: 'sentimenti', pos: 'm.', ex: 'Che sollievo! Avrei potuto perdere tutto.' },
+        { it: 'la speranza', en: 'hope', fa: 'امید', cat: 'sentimenti', pos: 'f.', ex: 'Avevo la speranza che sarebbe cambiato.' },
+        { it: 'il coraggio', en: 'courage', fa: 'شجاعت', cat: 'sentimenti', pos: 'm.', ex: 'Non ho avuto il coraggio di dirglielo.' },
+        { it: 'la paura', en: 'fear', fa: 'ترس', cat: 'sentimenti', pos: 'f.', ex: 'La paura mi ha bloccato.' },
+        { it: 'l\'orgoglio', en: 'pride', fa: 'غرور', cat: 'sentimenti', pos: 'm.', ex: 'L\'orgoglio gli ha impedito di scusarsi.' },
+        { it: 'commuoversi', en: 'to be moved', fa: 'متأثر شدن', cat: 'sentimenti', pos: 'v. rifl.', ex: 'Mi sarei commossa anch\'io.' },
+
+        /* ── Decisioni (10) ── */
+        { it: 'la decisione', en: 'decision', fa: 'تصمیم', cat: 'decisioni', pos: 'f.', ex: 'È stata la decisione più difficile della mia vita.' },
+        { it: 'decidere', en: 'to decide', fa: 'تصمیم گرفتن', cat: 'decisioni', pos: 'v.', ex: 'Avremmo dovuto decidere prima.' },
+        { it: 'la scelta', en: 'choice', fa: 'انتخاب', cat: 'decisioni', pos: 'f.', ex: 'Al posto tuo avrei fatto un\'altra scelta.' },
+        { it: 'rinunciare (a)', en: 'to give up', fa: 'صرف‌نظر کردن', cat: 'decisioni', pos: 'v.', ex: 'Non avrei mai rinunciato a quel posto.' },
+        { it: 'accettare', en: 'to accept', fa: 'پذیرفتن', cat: 'decisioni', pos: 'v.', ex: 'Avrei accettato subito.' },
+        { it: 'rifiutare', en: 'to refuse', fa: 'رد کردن', cat: 'decisioni', pos: 'v.', ex: 'Ha rifiutato l\'offerta senza pensarci.' },
+        { it: 'esitare', en: 'to hesitate', fa: 'تردید کردن', cat: 'decisioni', pos: 'v.', ex: 'Non avrei esitato un secondo.' },
+        { it: 'l\'occasione', en: 'opportunity', fa: 'فرصت', cat: 'decisioni', pos: 'f.', ex: 'Era un\'occasione da non perdere.' },
+        { it: 'il rischio', en: 'risk', fa: 'ریسک / خطر', cat: 'decisioni', pos: 'm.', ex: 'Avrei corso il rischio volentieri.' },
+        { it: 'ripensarci', en: 'to change one\'s mind', fa: 'نظر عوض کردن', cat: 'decisioni', pos: 'v. pron.', ex: 'Avresti fatto meglio a ripensarci.' },
+
+        /* ── Consigli (9) ── */
+        { it: 'il consiglio', en: 'piece of advice', fa: 'نصیحت / توصیه', cat: 'consigli', pos: 'm.', ex: 'Avrei dovuto seguire il tuo consiglio.' },
+        { it: 'consigliare', en: 'to advise', fa: 'توصیه کردن', cat: 'consigli', pos: 'v.', ex: 'Ti avrei consigliato di aspettare.' },
+        { it: 'suggerire', en: 'to suggest', fa: 'پیشنهاد دادن', cat: 'consigli', pos: 'v.', ex: 'Avrei suggerito un\'altra strada.' },
+        { it: 'avvertire', en: 'to warn', fa: 'هشدار دادن', cat: 'consigli', pos: 'v.', ex: 'Avresti dovuto avvertirmi.' },
+        { it: 'evitare', en: 'to avoid', fa: 'اجتناب کردن', cat: 'consigli', pos: 'v.', ex: 'Avremmo potuto evitare tutto questo.' },
+        { it: 'sbagliare', en: 'to make a mistake', fa: 'اشتباه کردن', cat: 'consigli', pos: 'v.', ex: 'Ho sbagliato e lo ammetto.' },
+        { it: 'scusarsi', en: 'to apologise', fa: 'عذرخواهی کردن', cat: 'consigli', pos: 'v. rifl.', ex: 'Si sarebbe dovuto scusare subito.' },
+        { it: 'il senno di poi', en: 'hindsight', fa: 'عقل بعد از واقعه', cat: 'consigli', pos: 'm.', ex: 'Con il senno di poi avrei fatto diversamente.' },
+        { it: 'al posto tuo', en: 'in your place', fa: 'اگر جای تو بودم', cat: 'consigli', pos: 'loc.', ex: 'Al posto tuo non ci sarei andato.' },
+
+        /* ── Relazioni (10) ── */
+        { it: 'il rapporto', en: 'relationship', fa: 'رابطه', cat: 'relazioni', pos: 'm.', ex: 'Il nostro rapporto sarebbe potuto durare.' },
+        { it: 'la fiducia', en: 'trust', fa: 'اعتماد', cat: 'relazioni', pos: 'f.', ex: 'Avrei dovuto avere più fiducia in te.' },
+        { it: 'fidarsi (di)', en: 'to trust', fa: 'اعتماد کردن', cat: 'relazioni', pos: 'v. rifl.', ex: 'Non mi sarei fidato di lui.' },
+        { it: 'tradire', en: 'to betray', fa: 'خیانت کردن', cat: 'relazioni', pos: 'v.', ex: 'Non avrei mai tradito un amico.' },
+        { it: 'perdonare', en: 'to forgive', fa: 'بخشیدن', cat: 'relazioni', pos: 'v.', ex: 'L\'avrei perdonata subito.' },
+        { it: 'litigare', en: 'to quarrel', fa: 'دعوا کردن', cat: 'relazioni', pos: 'v.', ex: 'Non avremmo dovuto litigare per così poco.' },
+        { it: 'fare pace', en: 'to make up', fa: 'آشتی کردن', cat: 'relazioni', pos: 'loc. v.', ex: 'Avrebbero fatto pace lo stesso.' },
+        { it: 'il malumore', en: 'bad mood', fa: 'بدخلقی', cat: 'relazioni', pos: 'm.', ex: 'Era di malumore tutta la sera.' },
+        { it: 'la coppia', en: 'couple', fa: 'زوج', cat: 'relazioni', pos: 'f.', ex: 'Erano una coppia perfetta.' },
+        { it: 'lasciarsi', en: 'to break up', fa: 'جدا شدن', cat: 'relazioni', pos: 'v. rifl.', ex: 'Si sarebbero lasciati comunque.' },
+
+        /* ── Espressioni (8) ── */
+        { it: 'chi l\'avrebbe mai detto', en: 'who would have thought', fa: 'کی فکرش را می‌کرد', cat: 'espr', pos: 'espr.', ex: 'Chi l\'avrebbe mai detto che si sposavano!' },
+        { it: 'magari', en: 'if only, maybe', fa: 'کاش / شاید', cat: 'espr', pos: 'avv.', ex: 'Magari fossi venuto anche tu!' },
+        { it: 'purtroppo', en: 'unfortunately', fa: 'متأسفانه', cat: 'espr', pos: 'avv.', ex: 'Purtroppo non sono riuscito a venire.' },
+        { it: 'per fortuna', en: 'luckily', fa: 'خوشبختانه', cat: 'espr', pos: 'loc.', ex: 'Per fortuna non è successo niente.' },
+        { it: 'a quanto pare', en: 'apparently', fa: 'ظاهراً', cat: 'espr', pos: 'loc.', ex: 'A quanto pare avrebbe già firmato.' },
+        { it: 'in fondo', en: 'after all, deep down', fa: 'در نهایت / در باطن', cat: 'espr', pos: 'loc.', ex: 'In fondo avresti fatto lo stesso.' },
+        { it: 'meno male', en: 'thank goodness', fa: 'خدا را شکر', cat: 'espr', pos: 'espr.', ex: 'Meno male che sei arrivato!' },
+        { it: 'ne è valsa la pena', en: 'it was worth it', fa: 'ارزشش را داشت', cat: 'espr', pos: 'espr.', ex: 'Alla fine ne è valsa la pena.' }
+      ]
+    },
+
+    guided: {
+      title: 'Dal desiderio al rimpianto',
+      intro: 'Ogni volta chiediti: l\'azione è ancora possibile (condizionale presente) o è ormai passata (condizionale passato)?',
+      steps: [
+        {
+          prompt: 'Trasforma al passato: «Vorrei dirtelo.»',
+          think: 'Il desiderio non si è realizzato → condizionale passato del modale + infinito.',
+          answer: 'Avrei voluto dirtelo.',
+          why: 'volere è transitivo qui → ausiliare avere.'
+        },
+        {
+          prompt: 'Trasforma al passato: «Verrei volentieri.» (parla una donna)',
+          think: 'venire vuole essere → sarei + participio concordato.',
+          answer: 'Sarei venuta volentieri.',
+          why: 'Con essere il participio segue il genere di chi parla.'
+        },
+        {
+          prompt: 'Riporta al passato: «Dice che partirà domani.»',
+          think: 'Verbo principale al passato → il futuro diventa condizionale passato, e "domani" diventa "il giorno dopo".',
+          answer: 'Ha detto che sarebbe partito il giorno dopo.',
+          why: 'Mai "che partirebbe": è l\'errore numero uno del B1.'
+        },
+        {
+          prompt: 'Esprimi il rimprovero: «Non mi hai avvisato.»',
+          think: 'Rimprovero su un\'azione mancata → avresti dovuto / avresti potuto + infinito.',
+          answer: 'Avresti dovuto avvisarmi! / Avresti potuto avvisarmi.',
+          why: '"Dovuto" suona come un obbligo mancato, "potuto" come un\'occasione persa.'
+        },
+        {
+          prompt: 'Notizia non confermata: «Sembra che il ministro abbia firmato.»',
+          think: 'Lingua giornalistica → condizionale passato con valore di notizia non verificata.',
+          answer: 'Il ministro avrebbe firmato.',
+          why: 'Il condizionale segnala che la fonte non è confermata.'
+        },
+        {
+          prompt: 'Completa: «Se avessi saputo, (io — venire) prima.»',
+          think: 'Periodo ipotetico del terzo tipo: se + congiuntivo trapassato → condizionale passato.',
+          answer: 'Se avessi saputo, sarei venuto prima.',
+          why: 'venire → essere, quindi sarei venuto/venuta.'
+        }
+      ]
+    },
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Ha detto che ___ alle otto.»', options: ['verrebbe', 'sarebbe venuto', 'verrà', 'veniva'], answer: 1, hint: 'futuro nel passato', why: 'Verbo principale al passato → condizionale passato.' },
+        { q: 'Condizionale passato di «vado»:', options: ['andrei', 'sarei andato', 'avrei andato', 'sarò andato'], answer: 1, hint: 'andare vuole essere', why: 'sarei andato/andata.' },
+        { q: 'Come si dice "I should have studied"?', options: ['Dovrei studiare.', 'Dovrei aver studiato.', 'Avrei dovuto studiare.', 'Sarei dovuto studiare.'], answer: 2, hint: 'modale al condizionale passato + infinito', why: 'avrei dovuto + infinito semplice.' },
+        { q: 'Quale forma è corretta?', options: ['Avremo dovuto prenotare.', 'Avremmo dovuto prenotare.', 'Avremo dovuti prenotare.', 'Saremo dovuti prenotare.'], answer: 1, hint: 'due m = condizionale', why: '"Avremo" è futuro, "avremmo" è condizionale.' },
+        { q: 'Completa: «Anna ___ venuta, ma stava male.»', options: ['avrebbe', 'sarebbe', 'sarà', 'era'], answer: 1, hint: 'venire + accordo', why: 'sarebbe venuta.' },
+        { q: '«Mi sarebbe ___ conoscerlo.»', options: ['piaciuta', 'piaciuto', 'piaciuti', 'piacere'], answer: 1, hint: 'il soggetto è l\'infinito', why: 'Participio maschile singolare: piaciuto.' },
+        { q: 'Nel linguaggio dei giornali «Il ministro avrebbe firmato» significa:', options: ['ha certamente firmato', 'firmerà', 'pare che abbia firmato, non è confermato', 'avrebbe voluto firmare'], answer: 2, hint: 'condizionale della notizia', why: 'Segnala un\'informazione non verificata.' },
+        { q: 'Completa: «Non pensavo che ___ così difficile.»', options: ['sarebbe stato', 'sarebbe', 'è stato', 'era'], answer: 0, hint: 'verbo principale al passato', why: 'Futuro nel passato → sarebbe stato.' },
+        { q: 'Quale frase esprime un rimprovero?', options: ['Potresti aiutarmi?', 'Avresti potuto aiutarmi.', 'Puoi aiutarmi?', 'Mi aiuterai?'], answer: 1, hint: 'occasione ormai persa', why: 'Il condizionale passato guarda a un\'occasione mancata.' },
+        { q: 'Completa: «Sapevo che ce l\'___ fatta.»', options: ['avresti', 'avrai', 'avevi', 'faresti'], answer: 0, hint: 'farcela al condizionale passato', why: 'ce l\'avresti fatta.' },
+        { q: 'Come si dice "I would need some information" (formale)?', options: ['Avrei bisogno di un\'informazione.', 'Avrò bisogno di un\'informazione.', 'Ho avuto bisogno di un\'informazione.', 'Sarei bisogno di un\'informazione.'], answer: 0, hint: 'cortesia commerciale', why: 'Formula fissa di cortesia.' },
+        { q: 'Completa: «I ladri ___ entrati dalla finestra.» (cronaca)', options: ['avrebbero', 'sarebbero', 'saranno', 'erano'], answer: 1, hint: 'entrare vuole essere', why: 'sarebbero entrati.' },
+        { q: 'Quale frase NON è corretta?', options: ['Avrei voluto vederti.', 'Sarei voluto venire.', 'Vorrei essere venuto ieri.', 'Avrei preferito restare.'], answer: 2, hint: 'guarda la costruzione', why: 'Per il passato si dice «sarei voluto venire» o «avrei voluto venire».' },
+        { q: 'Completa: «Mi aveva promesso che non l\'___ più fatto.»', options: ['avrebbe', 'avrà', 'aveva', 'farebbe'], answer: 0, hint: 'promessa nel passato', why: 'Futuro nel passato → avrebbe fatto.' }
+      ],
+      fill: [
+        { before: 'Ha detto che', after: 'venuto il giorno dopo. (essere)', answers: ['sarebbe'], en: 'He said he would come the next day.' },
+        { before: '(Io)', after: 'voluto dirtelo prima. (avere)', answers: ['avrei'], en: 'I would have liked to tell you sooner.' },
+        { before: 'Anna sarebbe', after: 'volentieri. (venire)', answers: ['venuta'], en: 'Anna would have come gladly.', hint: 'accordo femminile' },
+        { before: 'Noi', after: 'dovuto prenotare prima. (avere)', answers: ['avremmo'], en: 'We should have booked earlier.', hint: 'due m!' },
+        { before: 'Mi sarebbe', after: 'conoscere tuo padre. (piacere)', answers: ['piaciuto'], en: 'I would have liked to meet your father.' },
+        { before: 'Non pensavo che', after: 'stato così difficile. (essere)', answers: ['sarebbe'], en: "I didn't think it would be so hard." },
+        { before: 'Al posto tuo non ci', after: 'andato. (essere)', answers: ['sarei'], en: "In your place I wouldn't have gone." },
+        { before: 'Secondo i giornali il ministro', after: 'già firmato. (avere)', answers: ['avrebbe'], en: 'According to the papers the minister has reportedly already signed.' },
+        { before: 'Sapevo che ce l\'', after: 'fatta! (avere)', answers: ['avresti'], en: 'I knew you would make it!' },
+        { before: 'Loro sarebbero', after: 'alle sei, ma il treno era in ritardo. (partire)', answers: ['partiti', 'partite'], en: 'They would have left at six, but the train was late.' },
+        { before: 'Avresti', after: 'avvisarmi! (dovere)', answers: ['dovuto'], en: 'You should have told me!' },
+        { before: 'Non', after: 'mai immaginato di rivederti. (avere)', answers: ['avrei'], en: 'I would never have imagined seeing you again.' }
+      ],
+      order: [
+        { words: ['Ha', 'detto', 'che', 'sarebbe', 'venuto', 'alle', 'otto'], answer: 'Ha detto che sarebbe venuto alle otto', en: 'He said he would come at eight.' },
+        { words: ['Avrei', 'voluto', 'dirtelo', 'prima'], answer: 'Avrei voluto dirtelo prima', en: 'I would have liked to tell you sooner.' },
+        { words: ['Sarei', 'venuto', 'ma', 'avevo', 'la', 'febbre'], answer: 'Sarei venuto ma avevo la febbre', en: 'I would have come but I had a fever.' },
+        { words: ['Avresti', 'dovuto', 'avvisarmi', 'prima'], answer: 'Avresti dovuto avvisarmi prima', en: 'You should have told me earlier.' },
+        { words: ['Al', 'posto', 'tuo', 'non', 'ci', 'sarei', 'andata'], answer: 'Al posto tuo non ci sarei andata', en: "In your place I wouldn't have gone." },
+        { words: ['Mi', 'sarebbe', 'piaciuto', 'conoscere', 'tuo', 'padre'], answer: 'Mi sarebbe piaciuto conoscere tuo padre', en: 'I would have liked to meet your father.' },
+        { words: ['Non', 'pensavo', 'che', 'sarebbe', 'stato', 'così', 'difficile'], answer: 'Non pensavo che sarebbe stato così difficile', en: "I didn't think it would be so difficult." }
+      ],
+      dnd: {
+        instructions: 'Condizionale passato: questi verbi vogliono AVREI o SAREI? Trascinali nella colonna giusta.',
+        buckets: [
+          { id: 'essere', label: 'SAREI / SAREMMO…', icon: '🟢' },
+          { id: 'avere', label: 'AVREI / AVREMMO…', icon: '🔵' }
+        ],
+        items: [
+          { text: 'venire', bucket: 'essere' },
+          { text: 'dire', bucket: 'avere' },
+          { text: 'partire', bucket: 'essere' },
+          { text: 'accettare', bucket: 'avere' },
+          { text: 'restare', bucket: 'essere' },
+          { text: 'preferire', bucket: 'avere' },
+          { text: 'piacere', bucket: 'essere' },
+          { text: 'rifiutare', bucket: 'avere' },
+          { text: 'scusarsi', bucket: 'essere' },
+          { text: 'perdonare', bucket: 'avere' },
+          { text: 'diventare', bucket: 'essere' },
+          { text: 'convincere', bucket: 'avere' },
+          { text: 'lasciarsi', bucket: 'essere' },
+          { text: 'evitare', bucket: 'avere' }
+        ]
+      },
+      match: [
+        { a: 'avrei voluto', b: 'I would have liked to' },
+        { a: 'avrei dovuto', b: 'I should have' },
+        { a: 'avrei potuto', b: 'I could have' },
+        { a: 'sarei andato', b: 'I would have gone' },
+        { a: 'mi sarebbe piaciuto', b: 'I would have enjoyed' },
+        { a: 'avrebbe firmato', b: 'he reportedly signed' },
+        { a: 'ha detto che sarebbe venuto', b: 'he said he would come' },
+        { a: 'avremmo', b: 'condizionale (due m)' },
+        { a: 'avremo', b: 'futuro (una m)' },
+        { a: 'chi l\'avrebbe mai detto', b: 'who would have thought' }
+      ],
+      tf: [
+        { statement: 'Il condizionale passato si forma con avrei/sarei + participio passato.', answer: true, why: 'Esatto: avrei parlato, sarei andato.' },
+        { statement: 'Dopo un verbo principale al passato, il futuro si esprime con il condizionale presente.', answer: false, why: 'No: si usa il condizionale passato. «Ha detto che sarebbe venuto».' },
+        { statement: '«Avremmo» è il futuro di avere.', answer: false, why: 'No: il futuro è «avremo» con una m; «avremmo» è condizionale.' },
+        { statement: '«Avrei dovuto studiare» esprime un rimpianto.', answer: true, why: 'Sì: un obbligo che non è stato rispettato.' },
+        { statement: 'Con essere il participio del condizionale passato concorda col soggetto.', answer: true, why: 'Anna sarebbe venuta, i ragazzi sarebbero partiti.' },
+        { statement: 'Nei giornali il condizionale passato segnala una notizia certa.', answer: false, why: 'Al contrario: segnala che non è confermata.' },
+        { statement: '«Mi sarebbe piaciuta viaggiare» è corretto.', answer: false, why: 'No: il soggetto è l\'infinito, quindi «mi sarebbe piaciuto viaggiare».' },
+        { statement: 'Nel periodo ipotetico del terzo tipo la conseguenza va al condizionale passato.', answer: true, why: 'Se avessi studiato, avrei superato l\'esame.' },
+        { statement: '«Avrei bisogno di un\'informazione» è una formula di cortesia accettabile.', answer: true, why: 'Sì, molto usata negli uffici e nei negozi.' }
+      ],
+      translate: [
+        { en: 'He said he would arrive at eight.', answers: ['Ha detto che sarebbe arrivato alle otto'] },
+        { en: 'I would have liked to tell you sooner.', answers: ['Avrei voluto dirtelo prima'] },
+        { en: 'You should have told me!', answers: ['Avresti dovuto avvisarmi', 'Avresti dovuto dirmelo'] },
+        { en: 'I would have come, but I was ill.', answers: ['Sarei venuto ma stavo male', 'Sarei venuta ma stavo male'] },
+        { en: 'We should have booked earlier.', answers: ['Avremmo dovuto prenotare prima'] },
+        { en: 'In your place I would have accepted.', answers: ['Al posto tuo avrei accettato', 'Io al posto tuo avrei accettato'] },
+        { en: 'I would have liked to meet your father.', answers: ['Mi sarebbe piaciuto conoscere tuo padre'] },
+        { en: 'Who would have thought!', answers: ['Chi l\'avrebbe mai detto'] },
+        { en: 'They promised they would call me.', answers: ['Hanno promesso che mi avrebbero chiamato', 'Mi hanno promesso che mi avrebbero chiamato'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Il colloquio di lavoro andato male',
+      intro: 'Giulia racconta un colloquio a Marco: ogni frase è un rimpianto, un consiglio a posteriori o una promessa riferita.',
+      lines: [
+        { speaker: 'Marco', icon: '🧑', it: 'Allora? Com\'è andato il colloquio?', en: 'So? How did the interview go?' },
+        { speaker: 'Giulia', icon: '👩', side: 'right', it: 'Male. Avrei dovuto prepararmi meglio.', en: "Badly. I should have prepared better.",
+          glosses: [{ term: 'Avrei dovuto', expl: 'Rimpianto: obbligo non rispettato. avrei dovuto + infinito.' }] },
+        { speaker: 'Marco', icon: '🧑', it: 'Ma non ti avevano detto che ti avrebbero fatto anche un test?', en: "But hadn't they told you they would also give you a test?",
+          glosses: [{ term: 'avevano detto', expl: 'Trapassato prossimo: fatto anteriore (unità 1).' }, { term: 'avrebbero fatto', expl: 'Futuro nel passato: il verbo principale è al passato.' }] },
+        { speaker: 'Giulia', icon: '👩', side: 'right', it: 'Sì, ma pensavo che sarebbe stato più semplice.', en: 'Yes, but I thought it would be easier.',
+          glosses: [{ term: 'sarebbe stato', expl: 'Dopo «pensavo» (passato) il futuro diventa condizionale passato.' }] },
+        { speaker: 'Marco', icon: '🧑', it: 'Al posto tuo avrei chiesto qualche esempio in anticipo.', en: 'In your place I would have asked for some examples in advance.',
+          glosses: [{ term: 'Al posto tuo', expl: 'Formula del consiglio a posteriori: introduce il condizionale passato.' }] },
+        { speaker: 'Giulia', icon: '👩', side: 'right', it: 'Lo so. Avrei potuto scrivere alla responsabile, ma non ho avuto il coraggio.', en: "I know. I could have written to the manager, but I didn't have the courage.",
+          glosses: [{ term: 'Avrei potuto', expl: 'Occasione persa: possibilità non sfruttata.' }] },
+        { speaker: 'Marco', icon: '🧑', it: 'Dai, non è finita. Ti avevano promesso che ti avrebbero richiamata, no?', en: "Come on, it's not over. They promised they'd call you back, right?",
+          glosses: [{ term: 'avrebbero richiamata', expl: 'Promessa nel passato + accordo con il pronome «ti» femminile.' }] },
+        { speaker: 'Giulia', icon: '👩', side: 'right', it: 'Sì, hanno detto che mi avrebbero fatto sapere entro venerdì.', en: 'Yes, they said they would let me know by Friday.',
+          glosses: [{ term: 'avrebbero fatto sapere', expl: 'Ancora futuro nel passato: mai «farebbero sapere».' }] },
+        { speaker: 'Marco', icon: '🧑', it: 'Vedrai che ce la farai. Io non mi sarei nemmeno presentato, con quella febbre.', en: "You'll see, you'll make it. I wouldn't even have shown up, with that fever.",
+          glosses: [{ term: 'non mi sarei presentato', expl: 'Riflessivo al condizionale passato: essere + accordo.' }] },
+        { speaker: 'Giulia', icon: '👩', side: 'right', it: 'Hai ragione. In fondo ne è valsa la pena: ho imparato molto.', en: "You're right. After all it was worth it: I learned a lot.",
+          glosses: [{ term: 'ne è valsa la pena', expl: 'Espressione idiomatica con il pronome ne (unità 9).' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'condizionale passato', back: 'avrei / sarei + participio passato' },
+      { front: 'avrei voluto + infinito', back: 'I would have liked to' },
+      { front: 'avrei dovuto + infinito', back: 'I should have' },
+      { front: 'avrei potuto + infinito', back: 'I could have' },
+      { front: 'Ha detto che…', back: '…sarebbe venuto', note: 'futuro nel passato, mai "verrebbe"' },
+      { front: 'avremmo vs avremo', back: 'condizionale (2 m) vs futuro (1 m)' },
+      { front: 'Anna sarebbe ___', back: 'venuta', note: 'con essere il participio concorda' },
+      { front: 'Il ministro avrebbe firmato', back: 'notizia non confermata', note: 'condizionale dei giornali' },
+      { front: 'Al posto tuo…', back: '…avrei accettato', note: 'consiglio a posteriori' },
+      { front: 'Mi sarebbe piaciuto + infinito', back: 'I would have liked', note: 'participio sempre singolare maschile' },
+      { front: 'Se avessi studiato…', back: '…avrei superato l\'esame', note: 'ipotetico 3° tipo' },
+      { front: 'Chi l\'avrebbe mai detto!', back: 'Who would have thought!' },
+      { front: 'Avrei bisogno di…', back: 'I would need…', note: 'cortesia formale' },
+      { front: 'sarei dovuto andare', back: 'I should have gone', note: 'l\'ausiliare segue l\'infinito' }
+    ],
+
+    summary: {
+      formula: 'Soggetto + [avrei/avresti/avrebbe/avremmo/avreste/avrebbero] oppure [sarei/saresti/sarebbe/saremmo/sareste/sarebbero] + PARTICIPIO PASSATO',
+      rules: [
+        'Si forma con il condizionale presente di essere/avere + participio passato.',
+        'L\'ausiliare segue le solite regole; con essere il participio concorda col soggetto.',
+        'Uso 1 — rimpianto: avrei voluto / dovuto / potuto + infinito.',
+        'Uso 2 — azione non realizzata: «Sarei venuto, ma…».',
+        'Uso 3 — futuro nel passato: «Ha detto che sarebbe venuto» (MAI "che verrebbe").',
+        'Uso 4 — notizia non confermata nei giornali: «Il ministro avrebbe firmato».',
+        'Condizionale presente = ancora possibile; condizionale passato = occasione ormai persa.',
+        'Attenzione all\'ortografia: avremmo/saremmo (condizionale) ≠ avremo/saremo (futuro).'
+      ],
+      tips: [
+        'Se in inglese diresti "would have + participio", in italiano è condizionale passato.',
+        'Ogni volta che il verbo principale è al passato e l\'azione è successiva, scatta automaticamente il condizionale passato.',
+        'I tre rimpianti da memorizzare come un blocco unico: avrei VOLUTO (desiderio), avrei DOVUTO (obbligo), avrei POTUTO (possibilità).',
+        'Per non confondere avremo/avremmo: la m in più è il "peso" del dubbio del condizionale.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

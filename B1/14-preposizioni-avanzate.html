@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Preposizioni fisse dell'italiano B1: verbo, aggettivo e nome + preposizione (pensare a/di, occuparsi di, contare su, dipendere da, pronto a, responsabile di) e le locuzioni preposizionali della lingua formale.">
+  <title>Preposizioni Avanzate · Italiano B1</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     UNITÀ 14 — PREPOSIZIONI AVANZATE
+     ========================================================================== */
+  window.LESSON = {
+    num: 14, file: '14-preposizioni-avanzate.html', icon: '🧭', title: 'Preposizioni Avanzate', group: 'Sintassi',
+    subtitle: 'Pensare A o pensare DI? Contento DI, pronto A, bisogno DI: il sistema completo di verbo, aggettivo e nome + preposizione, più le locuzioni fisse della lingua formale.',
+
+    intro: {
+      what: 'In A2 (lezione 9) hai imparato che un verbo può volere <b>a</b>, <b>di</b> o niente davanti a un altro verbo all\'infinito. Ora il sistema si allarga: non solo verbo + infinito, ma anche verbo, aggettivo e nome + preposizione + <b>un nome o un pronome</b> — «mi fido di te», «sono pronto a partire», «ho bisogno di aiuto». La preposizione è fissa: non la scegli tu, la sceglie la parola che la precede.',
+      when: 'Ogni volta che colleghi un verbo, un aggettivo o un nome al suo complemento: al lavoro, all\'università, in una lettera formale, in una discussione. Sono le combinazioni che rendono il tuo italiano naturale invece che tradotto parola per parola dall\'inglese.',
+      why: 'L\'inglese spesso usa preposizioni diverse — o nessuna — dove l\'italiano ne vuole una precisa: "responsible for" → responsabile <b>di</b>, "interested in" → interessato <b>a</b>, "to rely on" → contare <b>su</b>. Non esiste una regola universale: la preposizione va imparata insieme alla parola, come un\'unica unità.',
+      mistakes: [
+        '❌ "Sono responsabile per il progetto" (calco dall\'inglese) → ✅ "Sono responsabile del progetto".',
+        '❌ "Conto con te" → ✅ "Conto su di te".',
+        '❌ "Sono interessato di questo lavoro" → ✅ "Sono interessato a questo lavoro".',
+        '❌ "Penso di te ogni giorno" (per dire "I think about you") → ✅ "Penso a te ogni giorno".'
+      ]
+    },
+
+    objectives: [
+      'Riconoscere quando un verbo, un aggettivo o un nome ha bisogno di una preposizione fissa prima del complemento.',
+      'Usare correttamente <b>pensare a</b> e <b>pensare di</b> a seconda del significato.',
+      'Costruire correttamente aggettivi come <b>contento di</b>, <b>pronto a</b>, <b>interessato a</b>, <b>responsabile di</b>.',
+      'Usare le espressioni con doppia preposizione: <b>congratularsi con... per</b>, <b>scusarsi con... per</b>.',
+      'Riconoscere e usare le locuzioni preposizionali fisse della lingua formale: <b>a causa di</b>, <b>per quanto riguarda</b>, <b>nei confronti di</b>.',
+      'Scrivere un\'email o una lettera formale usando il lessico della corrispondenza, del lavoro e dello studio.'
+    ],
+
+    formulas: [
+      {
+        label: 'Formula generale',
+        rows: [
+          { parts: [
+              { text: 'VERBO / AGGETTIVO / NOME', type: 'subject' },
+              { text: 'PREPOSIZIONE FISSA', note: 'a · di · su · da · con · per · in', type: 'verb' },
+              { text: 'NOME / PRONOME / INFINITO', type: 'object' }
+            ], example: 'Mi fido di te.', translation: 'I trust you.' }
+        ]
+      },
+      {
+        label: 'pensare A vs pensare DI — stesso verbo, significato diverso',
+        rows: [
+          { parts: [
+              { text: 'pensare', type: 'verb' },
+              { text: 'A', type: 'extra' },
+              { text: 'qualcuno / qualcosa', type: 'object' }
+            ], example: 'Penso a te.', translation: 'I think about you.' },
+          { parts: [
+              { text: 'pensare', type: 'verb' },
+              { text: 'DI', type: 'extra' },
+              { text: 'infinito', type: 'object' }
+            ], example: 'Penso di partire.', translation: "I'm planning to leave." }
+        ]
+      },
+      {
+        label: 'CON... PER — due preposizioni, due complementi',
+        rows: [
+          { parts: [
+              { text: 'congratularsi / scusarsi', type: 'verb' },
+              { text: 'CON qualcuno', type: 'object' },
+              { text: 'PER qualcosa', type: 'extra' }
+            ], example: 'Mi congratulo con te per la promozione.', translation: 'I congratulate you on the promotion.' }
+        ]
+      },
+      {
+        label: 'Le locuzioni preposizionali fisse',
+        rows: [
+          { parts: [
+              { text: 'A CAUSA DI / PER QUANTO RIGUARDA / NEI CONFRONTI DI…', type: 'verb' },
+              { text: 'NOME', type: 'object' }
+            ], example: 'A causa del maltempo, il volo è stato cancellato.', translation: 'Due to the bad weather, the flight was cancelled.' }
+        ]
+      }
+    ],
+    formulaNote: 'Trucco: quando impari un verbo, un aggettivo o un nome nuovo, impara subito anche la sua preposizione, come se fosse un\'unica parola: "fidarsi-di", "pronto-a", "bisogno-di". Il cervello le ricorda meglio in blocco che separate.',
+
+    rules: [
+      {
+        title: 'Ripasso: il sistema A2 (verbo + a/di/niente + infinito)',
+        body: 'In A2 hai imparato che un primo verbo decide la preposizione davanti a un secondo verbo all\'infinito: comincio <b>a</b> studiare, finisco <b>di</b> studiare, devo studiare. Questa lezione parte da lì, ma allarga il campo: non solo verbo + infinito, anche verbo/aggettivo/nome + <b>nome o pronome</b>.',
+        points: [
+          'Gruppo A (movimento, inizio, sforzo): cominciare a, riuscire a, imparare a…',
+          'Gruppo DI (fine, opinione, desiderio): finire di, pensare di, avere bisogno di…',
+          'Gruppo ZERO: dovere, potere, volere, preferire, sapere…',
+          'Da qui in poi: le stesse preposizioni compaiono anche davanti a un <b>nome</b>, non solo a un infinito.'
+        ],
+        exception: 'Attenzione: la preposizione che un verbo vuole davanti all\'infinito non è sempre la stessa che vuole davanti a un nome. «Penso di partire» (infinito) ma «penso a te» (persona): sono due costruzioni diverse dello stesso verbo.'
+      },
+      {
+        title: 'Verbi + preposizione + nome/pronome (le combinazioni B1)',
+        body: 'A B1 impari una nuova famiglia di verbi che reggono una preposizione fissa davanti a un complemento — spesso una persona o un argomento — non un infinito.',
+        points: [
+          '<b>occuparsi di</b> — Mi occupo di contabilità.',
+          '<b>rendersi conto di</b> — Non mi ero reso conto del problema.',
+          '<b>trattarsi di</b> — Si tratta di un errore tecnico (sempre impersonale, solo «si tratta»).',
+          '<b>contare su</b> — Puoi sempre contare su di me.',
+          '<b>riflettere su</b> / <b>insistere su</b> — Rifletti bene su questa decisione. Insiste sempre sugli stessi punti.',
+          '<b>dipendere da</b> — Dipende dal tempo che abbiamo.',
+          '<b>fidarsi di</b> / <b>innamorarsi di</b> — Mi fido di lei. Si è innamorato di un\'attrice.'
+        ],
+        exception: '«Trattarsi di» esiste solo alla terza persona singolare impersonale: si tratta di, mai «io mi tratto di» o «tu ti tratti di».'
+      },
+      {
+        title: 'Verbi che cambiano significato con la preposizione',
+        body: 'Alcuni di questi verbi hanno un significato completamente diverso a seconda della preposizione (o della sua assenza): occhio doppio.',
+        points: [
+          '<b>pensare a</b> (rivolgere il pensiero a qualcuno/qualcosa) ≠ <b>pensare di</b> + infinito (avere intenzione): «Penso a mia madre» / «Penso di chiamarla».',
+          '<b>contare</b> + numero (fare il conto) ≠ <b>contare su</b> (fare affidamento): «Conto i giorni» / «Conto su di te».',
+          '<b>rendere</b> + aggettivo (causare uno stato) ≠ <b>rendersi conto di</b> (capire, accorgersi): «Mi rende felice» / «Mi rendo conto di aver sbagliato».',
+          '<b>trattare</b> + nome (parlare di un argomento in un testo) ≠ <b>trattarsi di</b> (essere, consistere in): «Il libro tratta la guerra» / «Si tratta di un romanzo storico».'
+        ],
+        exception: 'Nel dubbio, cerca il significato dell\'intera combinazione sul dizionario: spesso è un\'espressione a sé, non la somma delle due parole.'
+      },
+      {
+        title: 'Aggettivo + preposizione',
+        body: 'Molti aggettivi, soprattutto quelli che esprimono un sentimento o una qualità, reggono una preposizione fissa prima del complemento.',
+        points: [
+          '<b>DI</b>: contento di, soddisfatto di, capace di, responsabile di, ricco/povero di, pieno di, stanco di — «Sono stanco di aspettare».',
+          '<b>A</b>: pronto a, abituato a, interessato a — «Sei pronto a partire?».',
+          'Con un infinito la preposizione resta la stessa: «Sono contento di conoscerti», «Sono interessato a saperne di più».',
+          'L\'aggettivo concorda sempre con il soggetto: «Maria è pronta», «I ragazzi sono pronti».'
+        ],
+        exception: '«Contento» può reggere anche «per» in senso più causale («contento per il tuo successo» = felice a causa di), ma con un complemento diretto o un infinito resta «di».'
+      },
+      {
+        title: 'Nome + preposizione',
+        body: 'Anche molti nomi astratti — spesso legati a un\'emozione o un atteggiamento — vogliono una preposizione fissa davanti al loro complemento.',
+        points: [
+          '<b>DI</b>: bisogno di, voglia di, paura di — «Ho bisogno di un consiglio».',
+          '<b>PER</b>: interesse per, rispetto per — «Ho molto rispetto per i miei colleghi».',
+          '<b>IN</b>: fiducia in — «Ho piena fiducia in te».',
+          '<b>A</b>: attenzione a — «Fai attenzione ai dettagli».'
+        ],
+        exception: 'Con «avere» + nome + preposizione, l\'intera espressione si comporta come un unico blocco: non separare mai «avere» dal nome («Ho di paura» ❌).'
+      },
+      {
+        title: 'CON... PER — verbi con due preposizioni',
+        body: 'Alcuni verbi hanno bisogno di due complementi con due preposizioni diverse: una per la persona, una per la causa o il motivo.',
+        points: [
+          '<b>congratularsi con qualcuno per qualcosa</b> — «Mi congratulo con te per la laurea».',
+          '<b>scusarsi con qualcuno per qualcosa</b> — «Mi sono scusato con il capo per il ritardo».',
+          'La persona prende sempre <b>con</b>; il motivo prende sempre <b>per</b>.',
+          'Si può omettere una delle due parti se il contesto è chiaro: «Mi congratulo per il risultato» (senza dire con chi).'
+        ],
+        exception: 'Non confondere con «scusare qualcuno di qualcosa» (forma più letteraria e meno comune): nella lingua corrente si preferisce sempre «scusarsi con... per».'
+      },
+      {
+        title: 'Le locuzioni preposizionali fisse',
+        body: 'Nella lingua formale, burocratica e giornalistica trovi espressioni intere che funzionano come una preposizione complessa: si scrivono sempre nello stesso modo.',
+        points: [
+          '<b>a causa di</b> (per una ragione, spesso negativa) — «A causa dello sciopero, il treno è in ritardo».',
+          '<b>a proposito di</b> (riguardo a) — «A proposito del progetto, hai novità?».',
+          '<b>nei confronti di</b> (verso, riguardo a un atteggiamento) — «Ha molto rispetto nei confronti dei colleghi».',
+          '<b>per quanto riguarda</b> (riguardo a) — «Per quanto riguarda il budget, ne parliamo domani».',
+          '<b>in base a</b> (secondo, sulla base di) — «In base al contratto, hai diritto a un mese di ferie».',
+          '<b>a seconda di</b> (in relazione a, secondo la variazione di) — «Il prezzo cambia a seconda della stagione».',
+          '<b>nonostante</b> + nome (visto anche come congiunzione, unità 3) — «Nonostante la pioggia, siamo usciti».',
+          '<b>a favore di</b> (in appoggio a) — «Ha votato a favore della proposta».',
+          '<b>all\'insegna di</b> (caratterizzato da) — «Una serata all\'insegna della musica dal vivo».'
+        ],
+        exception: 'Queste locuzioni sono invariabili: non si coniugano e non cambiano forma. Sono perfette per l\'italiano scritto formale (email, relazioni, articoli).'
+      }
+    ],
+
+    timeline: {
+      title: 'Dal verbo isolato alla frase completa',
+      intro: 'Le preposizioni fisse si costruiscono a strati: prima il verbo con l\'infinito (A2), poi lo stesso sistema si allarga a nomi, aggettivi e locuzioni fisse (B1).',
+      points: [
+        { time: 'A2', label: 'Verbo + a/di/niente + infinito', example: 'Comincio a studiare.', note: 'un solo verbo, un secondo verbo all\'infinito' },
+        { time: 'B1 — base', label: 'Verbo + preposizione + nome', example: 'Mi fido di te.', note: 'il complemento è una persona o una cosa' },
+        { time: 'B1 — aggettivo e nome', label: 'Aggettivo/nome + preposizione', example: 'Sono pronto a partire. Ho bisogno di aiuto.', note: 'lo stesso meccanismo con altre parti del discorso' },
+        { time: 'Adesso', label: 'Locuzioni fisse', example: 'Per quanto riguarda il progetto…', note: 'il livello più formale', now: true }
+      ],
+      caption: 'La logica non cambia mai: la parola "principale" decide la preposizione, e va imparata insieme a lei.'
+    },
+
+    tables: [
+      {
+        title: 'Chi vuole A — verbi, aggettivi, nomi',
+        columns: ['Parola', 'Tipo', 'Esempio'],
+        rows: [
+          { cells: ['pensare a (qualcuno/qualcosa)', 'verbo', 'Penso spesso a te.'] },
+          { cells: ['pronto a', 'aggettivo', 'Sei pronto a partire?'] },
+          { cells: ['abituato a', 'aggettivo', 'Siamo abituati a lavorare sotto pressione.'] },
+          { cells: ['interessato a', 'aggettivo', 'Sono interessato a questo lavoro.'] },
+          { cells: ['attenzione a', 'nome (fare attenzione a)', 'Fai attenzione ai dettagli.'] }
+        ]
+      },
+      {
+        title: 'Chi vuole DI — verbi, aggettivi, nomi',
+        note: 'DI è la preposizione più frequente in questa famiglia: fine, opinione, sentimento, quantità.',
+        columns: ['Parola', 'Tipo', 'Esempio'],
+        rows: [
+          { cells: ['occuparsi di', 'verbo', 'Mi occupo di contabilità.'] },
+          { cells: ['rendersi conto di', 'verbo', 'Mi sono reso conto dell\'errore.'] },
+          { cells: ['trattarsi di', 'verbo (impersonale)', 'Si tratta di un malinteso.'] },
+          { cells: ['fidarsi di', 'verbo', 'Mi fido di te.'] },
+          { cells: ['innamorarsi di', 'verbo', 'Si è innamorato di lei.'] },
+          { cells: ['contento di / soddisfatto di', 'aggettivo', 'Sono soddisfatto del risultato.'] },
+          { cells: ['capace di', 'aggettivo', 'È capace di risolvere tutto.'] },
+          { cells: ['responsabile di', 'aggettivo', 'È responsabile del progetto.'] },
+          { cells: ['ricco di / povero di', 'aggettivo', 'Un territorio ricco di storia.'] },
+          { cells: ['pieno di', 'aggettivo', 'Un\'agenda piena di impegni.'] },
+          { cells: ['stanco di', 'aggettivo', 'Sono stanco di aspettare.'] },
+          { cells: ['bisogno di / voglia di / paura di', 'nome', 'Ho bisogno di un consiglio.'] }
+        ]
+      },
+      {
+        title: 'Chi vuole SU',
+        note: 'SU introduce un argomento su cui si riflette, si insiste o si fa affidamento.',
+        columns: ['Parola', 'Tipo', 'Esempio'],
+        rows: [
+          { cells: ['contare su', 'verbo', 'Puoi contare su di me.'] },
+          { cells: ['riflettere su', 'verbo', 'Rifletti bene su questa scelta.'] },
+          { cells: ['insistere su', 'verbo', 'Insiste sempre sugli stessi punti.'] }
+        ]
+      },
+      {
+        title: 'Chi vuole DA',
+        note: 'DA introduce l\'origine, la causa o il fattore da cui qualcosa dipende o si distingue.',
+        columns: ['Parola', 'Tipo', 'Esempio'],
+        rows: [
+          { cells: ['dipendere da', 'verbo', 'Dipende dal tempo che abbiamo.'] },
+          { cells: ['distinguersi da', 'verbo', 'Si distingue dagli altri candidati.'] },
+          { cells: ['guardarsi da', 'verbo', 'Guardati dalle promesse troppo facili.'] }
+        ]
+      },
+      {
+        title: 'CON... PER — due preposizioni',
+        note: 'La persona prende sempre CON, il motivo prende sempre PER.',
+        columns: ['Verbo', 'Persona (CON)', 'Motivo (PER)'],
+        rows: [
+          { cells: ['congratularsi', 'con te', 'per la promozione'] },
+          { cells: ['scusarsi', 'con i colleghi', 'per il ritardo'] },
+          { cells: ['complimentarsi', 'con lei', 'per l\'ottimo lavoro'] }
+        ]
+      },
+      {
+        title: 'Locuzioni preposizionali fisse',
+        note: 'Espressioni invariabili tipiche dell\'italiano formale e scritto.',
+        columns: ['Locuzione', 'Significato', 'Esempio'],
+        rows: [
+          { cells: ['a causa di', 'per colpa di, a causa di', 'A causa dello sciopero, il treno è in ritardo.'] },
+          { cells: ['a proposito di', 'riguardo a, in tema di', 'A proposito del progetto, hai novità?'] },
+          { cells: ['nei confronti di', 'verso, riguardo all\'atteggiamento', 'Ha molto rispetto nei confronti dei colleghi.'] },
+          { cells: ['per quanto riguarda', 'riguardo a, per ciò che concerne', 'Per quanto riguarda il budget, ne parliamo domani.'] },
+          { cells: ['in base a', 'secondo, sulla base di', 'In base al contratto, hai un mese di ferie.'] },
+          { cells: ['a seconda di', 'in relazione a, secondo la variazione di', 'Il prezzo cambia a seconda della stagione.'] },
+          { cells: ['nonostante', 'malgrado', 'Nonostante la pioggia, siamo usciti.'] },
+          { cells: ['a favore di', 'in appoggio a', 'Ha votato a favore della proposta.'] },
+          { cells: ['all\'insegna di', 'caratterizzato da', 'Una serata all\'insegna della musica dal vivo.'] }
+        ]
+      },
+      {
+        title: 'Verbi che cambiano significato con la preposizione',
+        note: 'Stesso verbo, costruzione diversa: attenzione al significato.',
+        columns: ['Struttura', 'Significato', 'Esempio'],
+        rows: [
+          { cells: ['pensare a + nome/persona', 'rivolgere il pensiero a', 'Penso a mia madre.'], irregular: [0] },
+          { cells: ['pensare di + infinito', 'avere intenzione di', 'Penso di chiamarla stasera.'], irregular: [0] },
+          { cells: ['contare + numero', 'fare il conto', 'Conto i giorni che mancano.'], irregular: [0] },
+          { cells: ['contare su + persona', 'fare affidamento su', 'Conto su di te.'], irregular: [0] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Penso spesso a te, anche se siamo lontani.', literal: 'I-think often to you, even if we-are far.', natural: 'I think about you often, even though we are far apart.', note: 'pensare A + persona = rivolgere il pensiero a qualcuno.' },
+      { it: 'Ho deciso: penso di cambiare lavoro.', literal: 'I-have decided: I-think of to-change job.', natural: "I've decided: I'm planning to change jobs.", note: 'pensare DI + infinito = avere intenzione (diverso da "pensare a").' },
+      { it: 'Mi occupo di risorse umane da cinque anni.', literal: 'Myself I-occupy of resources human from five years.', natural: "I've been working in human resources for five years.", note: 'occuparsi DI = avere come mansione o argomento.' },
+      { it: 'Solo dopo mi sono resa conto di aver sbagliato numero.', literal: 'Only after myself I-am made account of to-have mistaken number.', natural: 'Only afterwards did I realize I had dialed the wrong number.', note: 'rendersi conto DI = accorgersi, capire.' },
+      { it: 'Di che cosa si tratta, esattamente?', literal: 'Of what thing itself it-treats, exactly?', natural: 'What exactly is this about?', note: 'trattarsi DI: sempre impersonale, solo terza persona singolare.' },
+      { it: 'Puoi contare su di me per qualsiasi cosa.', literal: 'You-can count on of me for whatever thing.', natural: 'You can count on me for anything.', note: 'contare SU (+ di me/te/lui con i pronomi tonici).' },
+      { it: 'Il capo insiste sempre sugli stessi errori.', literal: 'The boss insists always on-the same mistakes.', natural: 'The boss always dwells on the same mistakes.', note: 'insistere SU + argomento.' },
+      { it: 'Tutto dipende dal budget che avremo.', literal: 'Everything depends from-the budget that we-will-have.', natural: "It all depends on the budget we'll have.", note: 'dipendere DA + causa/fattore.' },
+      { it: 'Non mi fido di chi non guarda negli occhi.', literal: 'Not myself I-trust of who not looks in-the eyes.', natural: "I don't trust people who don't look you in the eye.", note: 'fidarsi DI + persona.' },
+      { it: 'Si è innamorato di una collega d\'ufficio.', literal: 'Himself he-is fallen-in-love of a colleague of-office.', natural: 'He fell in love with a coworker.', note: 'innamorarsi DI + persona.' },
+      { it: 'Sono molto soddisfatto del colloquio di oggi.', literal: 'I-am very satisfied of-the interview of today.', natural: "I'm very satisfied with today's interview.", note: 'soddisfatto DI (di + il = del).' },
+      { it: 'Sei pronto a presentare il progetto?', literal: 'You-are ready to to-present the project?', natural: 'Are you ready to present the project?', note: 'pronto A + infinito.' },
+      { it: 'Siamo abituati a lavorare sotto pressione.', literal: 'We-are used to to-work under pressure.', natural: "We're used to working under pressure.", note: 'abituato A + infinito.' },
+      { it: 'Il candidato è responsabile dell\'intero settore marketing.', literal: 'The candidate is responsible of-the entire sector marketing.', natural: 'The candidate is responsible for the whole marketing department.', note: 'responsabile DI (di + il = del): attenzione, non "per" come in inglese.' },
+      { it: 'Mi congratulo con te per la promozione!', literal: 'Myself I-congratulate with you for the promotion!', natural: 'I congratulate you on your promotion!', note: 'congratularsi CON (persona) PER (motivo).' },
+      { it: 'Mi sono scusato con i colleghi per il ritardo.', literal: 'Myself I-am excused with the colleagues for the delay.', natural: 'I apologized to my colleagues for being late.', note: 'scusarsi CON (persona) PER (motivo).' },
+      { it: 'A causa dello sciopero, la riunione è stata rimandata.', literal: 'To cause of-the strike, the meeting is been postponed.', natural: 'Due to the strike, the meeting was postponed.', note: 'a causa di = locuzione, sempre seguita da "di".' },
+      { it: 'Per quanto riguarda la scadenza, possiamo prorogarla.', literal: 'For how-much regards the deadline, we-can extend-it.', natural: 'As for the deadline, we can extend it.', note: 'per quanto riguarda = locuzione fissa, invariabile.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Sono responsabile per il progetto.', right: 'Sono responsabile del progetto.', why: 'Calco dall\'inglese "responsible for": in italiano responsabile vuole DI, non PER.' },
+      { wrong: 'Conto con te per questo lavoro.', right: 'Conto su di te per questo lavoro.', why: 'contare (fare affidamento) vuole SU, non CON.' },
+      { wrong: 'Sono interessato di questo posto.', right: 'Sono interessato a questo posto.', why: 'interessato vuole A, non DI.' },
+      { wrong: 'Penso di te ogni giorno.', right: 'Penso a te ogni giorno.', why: '"Pensare a" = rivolgere il pensiero a qualcuno; "pensare di" + infinito ha un altro significato.' },
+      { wrong: 'Mi congratulo di te per il risultato.', right: 'Mi congratulo con te per il risultato.', why: 'La persona prende sempre CON, non DI.' },
+      { wrong: 'Ho bisogno un consiglio.', right: 'Ho bisogno di un consiglio.', why: 'Le espressioni con avere + nome vogliono sempre DI.' },
+      { wrong: 'Si tratta un errore tecnico.', right: 'Si tratta di un errore tecnico.', why: 'trattarsi vuole sempre DI, mai un oggetto diretto.' },
+      { wrong: 'Non mi fido a lui.', right: 'Non mi fido di lui.', why: 'fidarsi vuole DI, non A.' },
+      { wrong: 'A causa del sciopero, il treno è in ritardo.', right: 'A causa dello sciopero, il treno è in ritardo.', why: '"a causa di" + articolo si fonde regolarmente: di + lo = dello.' },
+      { wrong: 'Per quanto riguarda a te, non ci sono problemi.', right: 'Per quanto riguarda te, non ci sono problemi.', why: '"Riguardare" è transitivo: nessuna preposizione dopo "riguarda".' }
+    ],
+
+    vocab: {
+      title: 'Vocabolario — comunicazione formale, studio e lavoro (60 parole)',
+      intro: 'Il lessico di email, colloqui, riunioni e candidature usa moltissimo le combinazioni fisse di questa lezione. Ogni scheda dà l\'italiano, l\'inglese, il farsi (فارسی) e una frase d\'esempio — molte con la preposizione giusta al posto giusto.',
+      categories: [
+        { id: 'comunicazione', label: 'Comunicazione formale', icon: '📧' },
+        { id: 'istruzione', label: 'Istruzione', icon: '🎓' },
+        { id: 'candidatura', label: 'La candidatura', icon: '📄' },
+        { id: 'lavoro', label: 'Il mondo del lavoro', icon: '💼' },
+        { id: 'riunioni', label: 'Riunioni e trattative', icon: '🤝' },
+        { id: 'qualita', label: 'Qualità e atteggiamenti', icon: '⭐' }
+      ],
+      words: [
+        /* ── Comunicazione formale (10) ── */
+        { it: 'la corrispondenza', en: 'correspondence', fa: 'مکاتبات', cat: 'comunicazione', pos: 'f.', ex: 'Mi occupo della corrispondenza con i clienti esteri.' },
+        { it: 'il mittente', en: 'sender', fa: 'فرستنده', cat: 'comunicazione', pos: 'm.', ex: 'Il mittente non ha lasciato un indirizzo.' },
+        { it: 'il destinatario', en: 'recipient', fa: 'گیرنده', cat: 'comunicazione', pos: 'm.', ex: 'La lettera è indirizzata al destinatario sbagliato.' },
+        { it: 'l\'oggetto (della lettera)', en: 'subject line', fa: 'موضوع', cat: 'comunicazione', pos: 'm.', ex: 'Scrivi sempre l\'oggetto dell\'email in modo chiaro.' },
+        { it: 'in allegato', en: 'attached', fa: 'پیوست‌شده', cat: 'comunicazione', pos: 'loc.', ex: 'Trovi il documento in allegato.' },
+        { it: 'cordiali saluti', en: 'kind regards', fa: 'با احترام', cat: 'comunicazione', pos: 'loc.', ex: 'Chiudi sempre l\'email con "cordiali saluti".' },
+        { it: 'egregio / gentile', en: 'dear (formal)', fa: 'محترم / گرامی', cat: 'comunicazione', pos: 'agg.', ex: 'Gentile Direttore, Le scrivo a proposito della Sua candidatura.' },
+        { it: 'la comunicazione', en: 'communication', fa: 'ارتباط', cat: 'comunicazione', pos: 'f.', ex: 'La comunicazione interna è migliorata molto.' },
+        { it: 'formale / informale', en: 'formal / informal', fa: 'رسمی / غیررسمی', cat: 'comunicazione', pos: 'agg.', ex: 'In ufficio si usa sempre un tono formale.' },
+        { it: 'la scadenza', en: 'deadline', fa: 'مهلت', cat: 'comunicazione', pos: 'f.', ex: 'La scadenza per la candidatura è venerdì.' },
+
+        /* ── Istruzione (10) ── */
+        { it: 'il diploma', en: 'diploma', fa: 'دیپلم', cat: 'istruzione', pos: 'm.', ex: 'Ha ottenuto il diploma con il massimo dei voti.' },
+        { it: 'la borsa di studio', en: 'scholarship', fa: 'بورس تحصیلی', cat: 'istruzione', pos: 'f.', ex: 'Ha vinto una borsa di studio per l\'estero.' },
+        { it: 'la formazione', en: 'training', fa: 'آموزش', cat: 'istruzione', pos: 'f.', ex: 'Offriamo formazione continua ai dipendenti.' },
+        { it: 'l\'ateneo', en: 'university (formal term)', fa: 'دانشگاه', cat: 'istruzione', pos: 'm.', ex: 'Si è laureato in un ateneo prestigioso.' },
+        { it: 'la specializzazione', en: 'specialization', fa: 'تخصص', cat: 'istruzione', pos: 'f.', ex: 'La sua specializzazione è il diritto internazionale.' },
+        { it: 'l\'aggiornamento professionale', en: 'professional development', fa: 'به‌روزرسانی حرفه‌ای', cat: 'istruzione', pos: 'm.', ex: 'Partecipiamo spesso a corsi di aggiornamento professionale.' },
+        { it: 'conseguire (un titolo)', en: 'to obtain (a degree)', fa: 'اخذ کردن (مدرک)', cat: 'istruzione', pos: 'v.', ex: 'Ha conseguito la laurea in economia.' },
+        { it: 'la tesi', en: 'thesis', fa: 'پایان‌نامه', cat: 'istruzione', pos: 'f.', ex: 'Sta scrivendo la tesi di laurea.' },
+        { it: 'l\'istruzione', en: 'education', fa: 'آموزش‌وپرورش', cat: 'istruzione', pos: 'f.', ex: 'L\'istruzione superiore è gratuita in alcuni paesi.' },
+        { it: 'iscriversi (a un corso)', en: 'to enroll (in a course)', fa: 'ثبت‌نام کردن', cat: 'istruzione', pos: 'v. rifl.', ex: 'Mi sono iscritto a un corso di specializzazione.' },
+
+        /* ── La candidatura (10) ── */
+        { it: 'il colloquio', en: 'job interview', fa: 'مصاحبه', cat: 'candidatura', pos: 'm.', ex: 'Sono molto interessato al colloquio di domani.' },
+        { it: 'il curriculum (vitae)', en: 'resume, CV', fa: 'رزومه', cat: 'candidatura', pos: 'm.', ex: 'Ho aggiornato il curriculum con l\'ultima esperienza.' },
+        { it: 'la candidatura', en: 'job application', fa: 'درخواست شغل', cat: 'candidatura', pos: 'f.', ex: 'Ho inviato la candidatura la settimana scorsa.' },
+        { it: 'la lettera di presentazione', en: 'cover letter', fa: 'نامه معرفی', cat: 'candidatura', pos: 'f.', ex: 'Allega sempre una lettera di presentazione.' },
+        { it: 'il selezionatore / la selezionatrice', en: 'recruiter', fa: 'کارشناس منابع انسانی', cat: 'candidatura', pos: 'm./f.', ex: 'Il selezionatore mi ha fatto domande difficili.' },
+        { it: 'l\'annuncio di lavoro', en: 'job posting', fa: 'آگهی استخدام', cat: 'candidatura', pos: 'm.', ex: 'Ho trovato l\'annuncio di lavoro online.' },
+        { it: 'il posto vacante', en: 'vacancy', fa: 'جای خالی شغلی', cat: 'candidatura', pos: 'm.', ex: 'C\'è un posto vacante nel reparto vendite.' },
+        { it: 'lo stipendio', en: 'salary', fa: 'حقوق', cat: 'candidatura', pos: 'm.', ex: 'Lo stipendio dipende dall\'esperienza.' },
+        { it: 'l\'esperienza lavorativa', en: 'work experience', fa: 'سابقه کار', cat: 'candidatura', pos: 'f.', ex: 'Cercano candidati con esperienza nel settore.' },
+        { it: 'assumere', en: 'to hire', fa: 'استخدام کردن', cat: 'candidatura', pos: 'v.', ex: 'L\'azienda ha deciso di assumermi.' },
+
+        /* ── Il mondo del lavoro (10) ── */
+        { it: 'il settore', en: 'industry, sector', fa: 'بخش / حوزه', cat: 'lavoro', pos: 'm.', ex: 'Lavoro nel settore della moda.' },
+        { it: 'la responsabilità', en: 'responsibility', fa: 'مسئولیت', cat: 'lavoro', pos: 'f.', ex: 'Ha grandi responsabilità nel nuovo ruolo.' },
+        { it: 'il/la collega', en: 'colleague', fa: 'همکار', cat: 'lavoro', pos: 'm./f.', ex: 'Mi fido molto dei miei colleghi.' },
+        { it: 'il capo / il dirigente', en: 'boss / manager', fa: 'رئیس / مدیر', cat: 'lavoro', pos: 'm.', ex: 'Il capo insiste sempre sulla puntualità.' },
+        { it: 'il dipendente', en: 'employee', fa: 'کارمند', cat: 'lavoro', pos: 'm.', ex: 'L\'azienda ha duecento dipendenti.' },
+        { it: 'l\'azienda', en: 'company', fa: 'شرکت', cat: 'lavoro', pos: 'f.', ex: 'L\'azienda è specializzata in tecnologia.' },
+        { it: 'il reparto', en: 'department', fa: 'بخش اداری', cat: 'lavoro', pos: 'm.', ex: 'Sono responsabile del reparto vendite.' },
+        { it: 'la promozione', en: 'promotion', fa: 'ارتقا', cat: 'lavoro', pos: 'f.', ex: 'Mi congratulo con te per la promozione!' },
+        { it: 'il progetto', en: 'project', fa: 'پروژه', cat: 'lavoro', pos: 'm.', ex: 'Sei pronto a presentare il progetto?' },
+        { it: 'gestire', en: 'to manage', fa: 'مدیریت کردن', cat: 'lavoro', pos: 'v.', ex: 'Gestisco un team di dieci persone.' },
+
+        /* ── Riunioni e trattative (10) ── */
+        { it: 'la riunione', en: 'meeting', fa: 'جلسه', cat: 'riunioni', pos: 'f.', ex: 'La riunione è stata rimandata a causa dello sciopero.' },
+        { it: 'l\'ordine del giorno', en: 'agenda', fa: 'دستور جلسه', cat: 'riunioni', pos: 'm.', ex: 'Per quanto riguarda l\'ordine del giorno, iniziamo dal budget.' },
+        { it: 'il budget', en: 'budget', fa: 'بودجه', cat: 'riunioni', pos: 'm.', ex: 'Tutto dipende dal budget che avremo.' },
+        { it: 'la trattativa', en: 'negotiation', fa: 'مذاکره', cat: 'riunioni', pos: 'f.', ex: 'La trattativa è ancora in corso.' },
+        { it: 'l\'accordo', en: 'agreement', fa: 'توافق', cat: 'riunioni', pos: 'm.', ex: 'Abbiamo raggiunto un accordo nei confronti dei fornitori.' },
+        { it: 'la proposta', en: 'proposal', fa: 'پیشنهاد', cat: 'riunioni', pos: 'f.', ex: 'Ha votato a favore della proposta.' },
+        { it: 'rimandare', en: 'to postpone', fa: 'به تعویق انداختن', cat: 'riunioni', pos: 'v.', ex: 'Possiamo rimandare la riunione a lunedì?' },
+        { it: 'il contratto', en: 'contract', fa: 'قرارداد', cat: 'riunioni', pos: 'm.', ex: 'In base al contratto, hai un mese di ferie.' },
+        { it: 'la clausola', en: 'clause', fa: 'بند قرارداد', cat: 'riunioni', pos: 'f.', ex: 'Questa clausola riguarda la privacy.' },
+        { it: 'concordare', en: 'to agree on', fa: 'توافق کردن', cat: 'riunioni', pos: 'v.', ex: 'Abbiamo concordato una nuova data.' },
+
+        /* ── Qualità e atteggiamenti (10) ── */
+        { it: 'responsabile (di)', en: 'responsible (for)', fa: 'مسئول', cat: 'qualita', pos: 'agg.', ex: 'È responsabile dell\'intero progetto.' },
+        { it: 'capace (di)', en: 'capable (of)', fa: 'توانا', cat: 'qualita', pos: 'agg.', ex: 'È capace di risolvere ogni problema.' },
+        { it: 'pronto (a)', en: 'ready (to)', fa: 'آماده', cat: 'qualita', pos: 'agg.', ex: 'Sei pronto a cominciare?' },
+        { it: 'abituato (a)', en: 'used (to)', fa: 'عادت‌کرده', cat: 'qualita', pos: 'agg.', ex: 'Siamo abituati a lavorare sotto pressione.' },
+        { it: 'interessato (a)', en: 'interested (in)', fa: 'علاقه‌مند', cat: 'qualita', pos: 'agg.', ex: 'Sono interessato a questa posizione.' },
+        { it: 'soddisfatto (di)', en: 'satisfied (with)', fa: 'راضی', cat: 'qualita', pos: 'agg.', ex: 'Sono soddisfatto del colloquio.' },
+        { it: 'affidabile', en: 'reliable', fa: 'قابل‌اعتماد', cat: 'qualita', pos: 'agg.', ex: 'Cerchiamo una persona affidabile.' },
+        { it: 'puntuale', en: 'punctual', fa: 'وقت‌شناس', cat: 'qualita', pos: 'agg.', ex: 'È sempre puntuale alle riunioni.' },
+        { it: 'la fiducia (in)', en: 'trust (in)', fa: 'اعتماد', cat: 'qualita', pos: 'f.', ex: 'Ho piena fiducia in te.' },
+        { it: 'il rispetto (per)', en: 'respect (for)', fa: 'احترام', cat: 'qualita', pos: 'm.', ex: 'Ho molto rispetto per i miei colleghi.' }
+      ]
+    },
+
+    guided: {
+      title: 'Costruiamo insieme le combinazioni giuste',
+      intro: 'Tre domande in ordine: la parola è un verbo, un aggettivo o un nome? Regge un complemento oggetto o vuole una preposizione? Se il verbo è "doppio" (pensare, contare…), qual è il significato preciso qui?',
+      steps: [
+        {
+          prompt: 'Completa: «Non so cosa fare. ___ molto a questa decisione.» (pensare)',
+          think: 'Il verbo è seguito da "questa decisione", un nome, non da un infinito: è "pensare a" nel senso di rivolgere il pensiero a qualcosa.',
+          answer: 'Penso molto a questa decisione.',
+          why: '"pensare a" + nome = riflettere su qualcosa; diverso da "pensare di" + infinito.'
+        },
+        {
+          prompt: 'Trasforma: «Ha l\'intenzione di cambiare lavoro.» → usa "pensare"',
+          think: 'L\'intenzione + un verbo all\'infinito → "pensare di" + infinito.',
+          answer: 'Pensa di cambiare lavoro.',
+          why: 'pensare DI + infinito = avere intenzione.'
+        },
+        {
+          prompt: 'Completa: «Il progetto? Me ne occupo io, sono ___ intero reparto.» (responsabile)',
+          think: 'responsabile vuole sempre DI, non "per" come in inglese; di + il = del.',
+          answer: 'Il progetto? Me ne occupo io, sono responsabile dell\'intero reparto.',
+          why: 'responsabile DI, con l\'elisione davanti a vocale: dell\'.'
+        },
+        {
+          prompt: 'Costruisci la frase: congratularsi, io, tu, per il nuovo lavoro',
+          think: 'congratularsi vuole due preposizioni: CON per la persona, PER per il motivo.',
+          answer: 'Mi congratulo con te per il nuovo lavoro.',
+          why: 'La persona con CON, il motivo con PER: non si scambiano mai.'
+        },
+        {
+          prompt: 'Completa con la locuzione giusta: «___ del maltempo, la riunione è stata annullata.»',
+          think: 'Serve una locuzione che introduce una causa negativa: "a causa di".',
+          answer: 'A causa del maltempo, la riunione è stata annullata.',
+          why: '"a causa di" introduce sempre una causa, spesso negativa.'
+        },
+        {
+          prompt: 'Scegli: «Si ___ di un semplice malinteso.» (trattare)',
+          think: 'trattarsi è impersonale, si usa solo alla terza persona con "si": si tratta di.',
+          answer: 'Si tratta di un semplice malinteso.',
+          why: 'trattarsi di non ha altre persone: si dice sempre e solo "si tratta di".'
+        }
+      ]
+    },
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Penso spesso ___ te.»', options: ['a', 'di', 'su', 'per'], answer: 0, hint: 'rivolgere il pensiero a qualcuno', why: 'pensare A + persona.' },
+        { q: 'Completa: «Penso ___ cambiare lavoro.»', options: ['a', 'di', 'su', 'con'], answer: 1, hint: 'infinito, intenzione', why: 'pensare DI + infinito = avere intenzione.' },
+        { q: 'Completa: «Mi occupo ___ marketing.»', options: ['a', 'di', 'su', 'in'], answer: 1, hint: 'mansione, argomento', why: 'occuparsi DI.' },
+        { q: 'Completa: «Puoi contare ___ di me.»', options: ['a', 'di', 'su', 'per'], answer: 2, hint: 'fare affidamento', why: 'contare SU (di me).' },
+        { q: 'Completa: «Tutto dipende ___ tempo.»', options: ['a', 'di', 'da', 'su'], answer: 2, hint: 'il fattore da cui dipende', why: 'dipendere DA.' },
+        { q: 'Completa: «Non mi fido ___ lui.»', options: ['a', 'di', 'su', 'con'], answer: 1, hint: 'avere fiducia', why: 'fidarsi DI.' },
+        { q: 'Completa: «Sei pronto ___ partire?»', options: ['a', 'di', 'su', 'per'], answer: 0, hint: 'aggettivo + infinito', why: 'pronto A + infinito.' },
+        { q: 'Completa: «Sono molto interessato ___ questo lavoro.»', options: ['a', 'di', 'su', 'per'], answer: 0, hint: 'aggettivo di interesse', why: 'interessato A.' },
+        { q: 'Completa: «Sono responsabile ___ reparto vendite.»', options: ['per il', 'del', 'al', 'sul'], answer: 1, hint: 'non è come in inglese', why: 'responsabile DI (di + il = del), non "per" come in inglese.' },
+        { q: 'Completa: «Ho bisogno ___ un consiglio.»', options: ['a', 'di', 'su', 'per'], answer: 1, hint: 'espressione con avere', why: 'avere bisogno DI.' },
+        { q: 'Completa: «Ho molto rispetto ___ i miei colleghi.»', options: ['di', 'per', 'su', 'in'], answer: 1, hint: 'nome + preposizione', why: 'rispetto PER.' },
+        { q: 'Completa: «Mi congratulo ___ te ___ la promozione.»', options: ['con / per', 'di / con', 'a / per', 'su / con'], answer: 0, hint: 'due preposizioni diverse', why: 'congratularsi CON (persona) PER (motivo).' },
+        { q: 'Completa: «___ del maltempo, il volo è stato cancellato.»', options: ['A causa', 'A proposito', 'Nei confronti', 'A favore'], answer: 0, hint: 'causa negativa', why: '"a causa di" introduce una causa negativa.' },
+        { q: 'Completa: «___ riguarda il budget, ne parliamo domani.»', options: ['Per quanto', 'A seconda', 'In base', 'Nei confronti'], answer: 0, hint: 'locuzione fissa', why: '"per quanto riguarda" = locuzione fissa.' }
+      ],
+      fill: [
+        { before: 'Penso spesso', after: 'te.', answers: ['a'], en: 'I often think about you.' },
+        { before: 'Penso', after: 'cambiare lavoro.', answers: ['di'], en: "I'm planning to change jobs." },
+        { before: 'Mi occupo', after: 'contabilità.', answers: ['di'], en: 'I work in accounting.' },
+        { before: 'Puoi contare', after: 'di me.', answers: ['su'], en: 'You can count on me.' },
+        { before: 'Tutto dipende', after: 'budget.', answers: ['dal', 'da'], en: 'Everything depends on the budget.', hint: 'da + il = dal' },
+        { before: 'Non mi fido', after: 'lui.', answers: ['di'], en: "I don't trust him." },
+        { before: 'Sei pronto', after: 'partire?', answers: ['a'], en: 'Are you ready to leave?' },
+        { before: 'Siamo abituati', after: 'lavorare sotto pressione.', answers: ['a'], en: 'We are used to working under pressure.' },
+        { before: 'Sono responsabile', after: 'intero progetto.', answers: ["dell'", 'dell'], en: 'I am responsible for the whole project.', hint: 'di + l\' = dell\'' },
+        { before: 'Ho bisogno', after: 'un consiglio.', answers: ['di'], en: 'I need some advice.' },
+        { before: 'Mi congratulo con te', after: 'la promozione!', answers: ['per'], en: 'I congratulate you on the promotion!' }
+      ],
+      order: [
+        { words: ['Penso', 'spesso', 'a', 'te'], answer: 'Penso spesso a te', en: 'I often think about you.' },
+        { words: ['Mi', 'occupo', 'di', 'marketing'], answer: 'Mi occupo di marketing', en: 'I work in marketing.' },
+        { words: ['Puoi', 'contare', 'su', 'di', 'me'], answer: 'Puoi contare su di me', en: 'You can count on me.' },
+        { words: ['Tutto', 'dipende', 'dal', 'tempo'], answer: 'Tutto dipende dal tempo', en: 'It all depends on the weather.' },
+        { words: ['Sei', 'pronto', 'a', 'cominciare'], answer: 'Sei pronto a cominciare', en: 'Are you ready to start?' },
+        { words: ['Ho', 'bisogno', 'di', 'un', 'consiglio'], answer: 'Ho bisogno di un consiglio', en: 'I need some advice.' },
+        { words: ['Mi', 'congratulo', 'con', 'te', 'per', 'la', 'promozione'], answer: 'Mi congratulo con te per la promozione', en: 'I congratulate you on the promotion.' }
+      ],
+      dnd: {
+        instructions: 'Ogni parola vuole una preposizione fissa: trascinala nella colonna giusta.',
+        buckets: [
+          { id: 'a', label: 'VUOLE A', icon: '➡️' },
+          { id: 'di', label: 'VUOLE DI', icon: '📦' },
+          { id: 'su', label: 'VUOLE SU', icon: '🔝' },
+          { id: 'da', label: 'VUOLE DA', icon: '⬅️' },
+          { id: 'per', label: 'VUOLE PER', icon: '🤝' }
+        ],
+        items: [
+          { text: 'pronto', bucket: 'a' },
+          { text: 'abituato', bucket: 'a' },
+          { text: 'interessato', bucket: 'a' },
+          { text: 'occuparsi', bucket: 'di' },
+          { text: 'rendersi conto', bucket: 'di' },
+          { text: 'trattarsi', bucket: 'di' },
+          { text: 'fidarsi', bucket: 'di' },
+          { text: 'contare', bucket: 'su' },
+          { text: 'riflettere', bucket: 'su' },
+          { text: 'insistere', bucket: 'su' },
+          { text: 'dipendere', bucket: 'da' },
+          { text: 'guardarsi', bucket: 'da' },
+          { text: 'interesse', bucket: 'per' },
+          { text: 'rispetto', bucket: 'per' }
+        ]
+      },
+      match: [
+        { a: 'pensare a', b: 'to think about (someone/something)' },
+        { a: 'pensare di', b: 'to plan / intend to' },
+        { a: 'contare su', b: 'to rely on' },
+        { a: 'rendersi conto di', b: 'to realize' },
+        { a: 'trattarsi di', b: 'to be about, to be a matter of' },
+        { a: 'fidarsi di', b: 'to trust' },
+        { a: 'innamorarsi di', b: 'to fall in love with' },
+        { a: 'congratularsi con... per', b: 'to congratulate someone on something' },
+        { a: 'nei confronti di', b: 'towards, with regard to' },
+        { a: 'per quanto riguarda', b: 'as regards, as for' }
+      ],
+      tf: [
+        { statement: '"Pensare a" e "pensare di" significano sempre la stessa cosa.', answer: false, why: 'No: pensare a (persona/cosa) ≠ pensare di + infinito (intenzione).' },
+        { statement: '"Trattarsi di" si usa solo alla terza persona singolare impersonale.', answer: true, why: 'Esatto: si tratta di, mai altre persone.' },
+        { statement: '"Responsabile" in italiano vuole la preposizione DI.', answer: true, why: 'Sì: responsabile di, non "per" come in inglese.' },
+        { statement: '"Congratularsi" regge solo una preposizione.', answer: false, why: 'No: ne regge due, CON per la persona e PER per il motivo.' },
+        { statement: '"Contare su" significa fare affidamento su qualcuno.', answer: true, why: 'Esatto: puoi contare su di me.' },
+        { statement: 'Le locuzioni come "a causa di" e "per quanto riguarda" cambiano forma secondo il soggetto.', answer: false, why: 'No, sono invariabili.' },
+        { statement: '"Fidarsi" regge la preposizione A.', answer: false, why: 'No, regge DI: fidarsi di qualcuno.' },
+        { statement: '"Interessato" regge la preposizione A.', answer: true, why: 'Sì: interessato a questo lavoro.' },
+        { statement: '"Rendersi conto di" significa accorgersi, capire qualcosa.', answer: true, why: 'Esatto.' }
+      ],
+      translate: [
+        { en: 'I often think about you.', answers: ['Penso spesso a te'] },
+        { en: "I'm planning to change jobs.", answers: ['Penso di cambiare lavoro'] },
+        { en: 'You can count on me.', answers: ['Puoi contare su di me'] },
+        { en: "I don't trust him.", answers: ['Non mi fido di lui'] },
+        { en: 'Are you ready to leave?', answers: ['Sei pronto a partire', 'Sei pronta a partire'] },
+        { en: 'I need some advice.', answers: ['Ho bisogno di un consiglio'] },
+        { en: 'I congratulate you on the promotion.', answers: ['Mi congratulo con te per la promozione'] },
+        { en: 'It all depends on the weather.', answers: ['Tutto dipende dal tempo'] },
+        { en: 'As for the deadline, we can extend it.', answers: ['Per quanto riguarda la scadenza possiamo prorogarla', 'Per quanto riguarda la scadenza, possiamo prorogarla'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Un colloquio di lavoro',
+      intro: 'Un candidato e una selezionatrice: nota tutte le combinazioni fisse di verbo/aggettivo/nome + preposizione nel linguaggio formale del lavoro.',
+      lines: [
+        { speaker: 'Selezionatrice', icon: '👩‍💼', it: 'Allora, di che cosa si occupa attualmente?', en: 'So, what do you currently work on?',
+          glosses: [{ term: 'si occupa', expl: 'occuparsi DI: la mansione attuale.' }] },
+        { speaker: 'Candidato', icon: '🧑', side: 'right', it: 'Mi occupo di comunicazione digitale per un\'azienda di moda.', en: 'I work in digital communication for a fashion company.',
+          glosses: [{ term: 'Mi occupo di', expl: 'occuparsi DI + argomento.' }] },
+        { speaker: 'Selezionatrice', icon: '👩‍💼', it: 'E perché pensa di cambiare lavoro proprio adesso?', en: 'And why are you thinking of changing jobs right now?',
+          glosses: [{ term: 'pensa di', expl: 'pensare DI + infinito = avere intenzione.' }] },
+        { speaker: 'Candidato', icon: '🧑', side: 'right', it: 'Sono molto interessato a nuove sfide, e mi rendo conto di aver imparato tutto quello che potevo lì.', en: "I'm very interested in new challenges, and I realize I've learned everything I could there.",
+          glosses: [{ term: 'interessato a', expl: 'aggettivo + A.' }, { term: 'mi rendo conto di', expl: 'rendersi conto DI = accorgersi.' }] },
+        { speaker: 'Selezionatrice', icon: '👩‍💼', it: 'Capisco. E sarebbe pronto ad assumersi la responsabilità di un intero reparto?', en: 'I understand. And would you be ready to take on responsibility for a whole department?',
+          glosses: [{ term: 'pronto ad', expl: 'pronto A + infinito (ad davanti a vocale).' }, { term: 'responsabilità di', expl: 'nome + DI.' }] },
+        { speaker: 'Candidato', icon: '🧑', side: 'right', it: 'Certamente. Sono abituato a lavorare sotto pressione e mi fido molto del mio istinto.', en: "Certainly. I'm used to working under pressure and I trust my instincts a lot.",
+          glosses: [{ term: 'abituato a', expl: 'aggettivo + A.' }, { term: 'mi fido', expl: 'fidarsi DI (qui: del mio istinto).' }] },
+        { speaker: 'Selezionatrice', icon: '👩‍💼', it: 'Ottimo. Per quanto riguarda lo stipendio, che aspettative ha?', en: 'Great. As for the salary, what are your expectations?',
+          glosses: [{ term: 'Per quanto riguarda', expl: 'locuzione fissa = riguardo a.' }] },
+        { speaker: 'Candidato', icon: '🧑', side: 'right', it: 'Dipende dal pacchetto completo, ma conto su una vostra proposta seria.', en: "It depends on the whole package, but I'm counting on a serious offer from you.",
+          glosses: [{ term: 'Dipende dal', expl: 'dipendere DA + fattore.' }, { term: 'conto su', expl: 'contare SU = fare affidamento.' }] },
+        { speaker: 'Selezionatrice', icon: '👩‍💼', it: 'Perfetto. Ci congratuliamo già con lei per come ha gestito questo colloquio!', en: 'Perfect. We already congratulate you on how you handled this interview!',
+          glosses: [{ term: 'Ci congratuliamo con', expl: 'congratularsi CON (persona) + PER (motivo).' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'pensare A', back: 'qualcuno/qualcosa', note: 'Penso a te.' },
+      { front: 'pensare DI', back: '+ infinito = avere intenzione', note: 'Penso di partire.' },
+      { front: 'occuparsi ___', back: 'DI', note: 'Mi occupo di marketing.' },
+      { front: 'rendersi conto ___', back: 'DI', note: 'Mi rendo conto di aver sbagliato.' },
+      { front: 'trattarsi ___', back: 'DI (sempre impersonale)', note: 'Si tratta di un errore.' },
+      { front: 'contare ___', back: 'SU', note: 'Conto su di te.' },
+      { front: 'dipendere ___', back: 'DA', note: 'Dipende dal tempo.' },
+      { front: 'fidarsi / innamorarsi ___', back: 'DI', note: 'Mi fido di lei.' },
+      { front: 'pronto / abituato / interessato ___', back: 'A', note: 'Sono pronto a partire.' },
+      { front: 'contento / soddisfatto / capace / responsabile ___', back: 'DI', note: 'Sono responsabile del progetto.' },
+      { front: 'bisogno / voglia / paura ___', back: 'DI', note: 'Ho bisogno di aiuto.' },
+      { front: 'congratularsi / scusarsi', back: 'CON qualcuno, PER qualcosa', note: 'Mi congratulo con te per il successo.' },
+      { front: 'a causa di / per quanto riguarda / nei confronti di', back: 'locuzioni fisse, invariabili', note: 'A causa dello sciopero…' },
+      { front: 'in base a / a seconda di / a favore di', back: 'altre locuzioni fisse', note: 'In base al contratto…' }
+    ],
+
+    summary: {
+      formula: 'VERBO / AGGETTIVO / NOME + [A · DI · SU · DA · CON...PER · IN] + NOME/PRONOME/INFINITO — la preposizione è fissa e va imparata insieme alla parola.',
+      rules: [
+        'Il sistema A2 (a/di/niente + infinito) si allarga a B1: le stesse preposizioni compaiono anche davanti a nomi e pronomi.',
+        'pensare A (persona/cosa) ≠ pensare DI + infinito (intenzione): stesso verbo, significati diversi.',
+        'Verbi B1 chiave: occuparsi di, rendersi conto di, trattarsi di, contare su, riflettere su, insistere su, dipendere da, fidarsi di, innamorarsi di.',
+        'Aggettivi: contento/soddisfatto/capace/responsabile/ricco/povero/pieno/stanco DI; pronto/abituato/interessato A.',
+        'Nomi: bisogno/voglia/paura DI; interesse/rispetto PER; fiducia IN; attenzione A.',
+        'congratularsi e scusarsi vogliono due preposizioni: CON la persona, PER il motivo.',
+        'Le locuzioni fisse (a causa di, per quanto riguarda, nei confronti di, in base a, a seconda di, a favore di, all\'insegna di) sono invariabili e tipiche della lingua formale.'
+      ],
+      tips: [
+        'Impara ogni parola insieme alla sua preposizione, come fosse un\'unica unità: "fidarsi-di", "pronto-a".',
+        'Quando hai un dubbio, chiediti: il complemento è una persona/cosa (spesso A o DI) o un argomento (spesso SU)?',
+        'Attenzione ai calchi dall\'inglese: "responsible for" ≠ "responsabile per", ma "responsabile di".',
+        'Nelle email e nei testi formali, le locuzioni fisse (per quanto riguarda, in base a…) ti fanno suonare subito più professionale.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

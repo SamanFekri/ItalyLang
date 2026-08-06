@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il congiuntivo passato italiano: formazione con il congiuntivo presente di essere e avere, verbi che lo richiedono, dubbio, opinione, emozione, indicativo vs congiuntivo.">
+  <title>Congiuntivo Passato · Italiano B1</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     UNITÀ 3 — CONGIUNTIVO PASSATO
+     ========================================================================== */
+  window.LESSON = {
+    num: 3, file: '03-congiuntivo-passato.html', icon: '🌀', title: 'Congiuntivo Passato', group: 'Il congiuntivo',
+    subtitle: 'Penso che sia partito: quando il fatto è già successo, ma tu non lo dai per certo.',
+
+    intro: {
+      what: 'Il congiuntivo passato si forma con il <b>congiuntivo presente</b> di essere o avere più il <b>participio passato</b>: che io abbia mangiato, che lui sia partito. È il congiuntivo dell\'azione già avvenuta.',
+      when: 'Nelle frasi secondarie introdotte da <b>che</b>, quando il verbo principale è al <b>presente</b> (o al futuro) ed esprime dubbio, opinione, emozione, speranza, necessità — e l\'azione della secondaria è <b>anteriore</b>: «Penso che sia già arrivato».',
+      why: 'Il congiuntivo è la firma dell\'italiano colto ma anche di quello quotidiano: senza di lui non puoi dire «credo che», «spero che», «mi dispiace che» in modo corretto. Al B1 diventa obbligatorio.',
+      mistakes: [
+        'Usare l\'indicativo dopo i verbi di opinione: ❌ "Penso che è partito" → ✅ "Penso che sia partito".',
+        'Usare il congiuntivo dopo i verbi di certezza: ❌ "So che sia partito" → ✅ "So che è partito".',
+        'Dimenticare l\'accordo con essere: ❌ "Credo che Anna sia partito" → ✅ "…sia partita".',
+        'Usare "che" quando il soggetto è lo stesso: ❌ "Penso che io abbia sbagliato" → ✅ "Penso di aver sbagliato".'
+      ]
+    },
+
+    objectives: [
+      'Formare il congiuntivo presente di essere e avere e, con essi, il congiuntivo passato di ogni verbo.',
+      'Riconoscere i <b>verbi e le espressioni che richiedono il congiuntivo</b> (credere, pensare, sperare, temere, è possibile che…).',
+      'Distinguere <b>indicativo</b> (certezza) e <b>congiuntivo</b> (opinione, dubbio, emozione).',
+      'Usare la regola dei <b>due soggetti diversi</b>: che + congiuntivo vs di + infinito.',
+      'Scegliere tra congiuntivo presente (contemporaneità) e congiuntivo passato (anteriorità).'
+    ],
+
+    formulas: [
+      {
+        label: 'Formula generale',
+        rows: [
+          { parts: [
+              { text: 'Principale al presente', note: 'penso, credo, spero…', type: 'subject' },
+              { text: 'CHE', type: 'verb' },
+              { text: 'ABBIA / SIA + PARTICIPIO', type: 'object' }
+            ], example: 'Penso che abbia già mangiato.', translation: 'I think he has already eaten.' }
+        ]
+      },
+      {
+        label: 'Con ESSERE — accordo obbligatorio',
+        rows: [
+          { parts: [
+              { text: 'Credo che Anna', type: 'subject' },
+              { text: 'SIA', type: 'verb' },
+              { text: 'PARTIT-A', note: 'o / a / i / e', type: 'extra' }
+            ], example: 'Credo che Anna sia partita ieri.', translation: 'I think Anna left yesterday.' }
+        ]
+      },
+      {
+        label: 'Stesso soggetto → niente che',
+        rows: [
+          { parts: [
+              { text: 'Penso', type: 'subject' },
+              { text: 'DI', type: 'verb' },
+              { text: 'AVER + PARTICIPIO', type: 'object' }
+            ], example: 'Penso di aver sbagliato.', translation: 'I think I made a mistake.' }
+        ]
+      },
+      {
+        label: 'Presente o passato nel congiuntivo?',
+        rows: [
+          { parts: [
+              { text: 'CONGIUNTIVO PRESENTE', note: 'adesso o dopo', type: 'verb' },
+              { text: 'CONGIUNTIVO PASSATO', note: 'prima', type: 'object' }
+            ], example: 'Credo che dorma. / Credo che abbia dormito.', translation: 'I think he is sleeping. / I think he slept.' }
+        ]
+      }
+    ],
+    formulaNote: 'Regola d\'oro: <b>due soggetti diversi</b> → che + congiuntivo. <b>Stesso soggetto</b> → di + infinito.',
+
+    rules: [
+      {
+        title: 'Ripasso lampo: il congiuntivo presente di essere e avere',
+        body: 'Per fare il congiuntivo passato ti servono solo queste due colonne — il resto è il participio che già conosci.',
+        points: [
+          'AVERE: che io <b>abbia</b>, tu abbia, lui/lei abbia, noi <b>abbiamo</b>, voi <b>abbiate</b>, loro <b>abbiano</b>.',
+          'ESSERE: che io <b>sia</b>, tu sia, lui/lei sia, noi <b>siamo</b>, voi <b>siate</b>, loro <b>siano</b>.',
+          'Le prime tre persone sono identiche: per questo il pronome (che <b>io</b>, che <b>tu</b>, che <b>lui</b>) si esprime quasi sempre.',
+          'Congiuntivo passato = congiuntivo presente dell\'ausiliare + participio: che io abbia parlato, che tu sia andato.'
+        ],
+        exception: 'Attenzione: «abbiano» (congiuntivo, loro) ≠ «hanno» (indicativo). Nella lingua parlata sono la differenza tra «Credo che abbiano capito» ✅ e «Credo che hanno capito» ❌.'
+      },
+      {
+        title: 'I verbi che chiedono il congiuntivo: le cinque famiglie',
+        body: 'Il congiuntivo appare quando la principale <b>non afferma un fatto certo</b>. Impara le famiglie, non le liste.',
+        points: [
+          '<b>Opinione</b>: pensare, credere, ritenere, immaginare, supporre, avere l\'impressione → «Credo che sia già uscito».',
+          '<b>Dubbio e incertezza</b>: dubitare, non essere sicuro, non sapere se, sembrare, parere → «Dubito che abbiano finito».',
+          '<b>Emozione</b>: essere contento/felice/triste, dispiacere, temere, avere paura, sorprendersi → «Mi dispiace che tu abbia perso il treno».',
+          '<b>Volontà, desiderio, speranza</b>: volere, desiderare, sperare, preferire, augurarsi → «Spero che sia andato tutto bene».',
+          '<b>Necessità e giudizio impersonale</b>: bisogna che, è necessario che, è importante che, è possibile che, è strano che, è meglio che → «È strano che non abbia chiamato».'
+        ],
+        exception: '<b>Sperare</b> regge il congiuntivo, ma nel parlato quotidiano si sente spesso «Spero che è arrivato». È tollerato all\'orale, sbagliato allo scritto e all\'esame.'
+      },
+      {
+        title: 'Quando NON si usa il congiuntivo',
+        body: 'Se la principale <b>afferma</b> qualcosa come vero, l\'italiano usa l\'indicativo.',
+        points: [
+          '<b>Certezza</b>: so che, sono sicuro che, è certo che, è vero che, ricordo che → «So che è partito» (indicativo).',
+          '<b>Dichiarazione oggettiva</b>: dire, raccontare, spiegare, rispondere quando riferiscono un fatto → «Ha detto che è partito».',
+          '<b>Percezione</b>: vedere che, sentire che, accorgersi che, capire che → «Ho visto che è arrivato».',
+          'Attenzione al contrasto: «Penso che sia bravo» (opinione) vs «So che è bravo» (certezza).'
+        ],
+        exception: 'Alcuni verbi cambiano significato con il modo: «Dice che è malato» (riferisce) vs «Dice che sia malato» (prende le distanze: così si dice, ma chissà).'
+      },
+      {
+        title: 'La regola dei due soggetti',
+        body: 'Questa regola elimina metà degli errori da principiante.',
+        points: [
+          '<b>Soggetti diversi</b> → che + congiuntivo: «(Io) penso che (tu) abbia ragione».',
+          '<b>Stesso soggetto</b> → di + infinito: «Penso di avere ragione», «Spero di essere arrivato in tempo».',
+          'Con l\'infinito passato: <b>di aver(e) + participio</b> o <b>di essere + participio concordato</b> → «Credo di aver capito», «Credo di essere arrivata tardi».',
+          'Con le espressioni impersonali senza soggetto specifico si usa l\'infinito: «È importante studiare» / «È importante che tu studi».'
+        ],
+        exception: 'Con volere la regola è rigidissima: «Voglio andare» (io/io) e «Voglio che tu vada» (io/tu). ❌ «Voglio che io vada» non esiste.'
+      },
+      {
+        title: 'Congiuntivo presente o congiuntivo passato?',
+        body: 'Con la principale al presente, la scelta dipende solo dal momento dell\'azione secondaria.',
+        points: [
+          'Azione <b>contemporanea</b> o futura → congiuntivo <b>presente</b>: «Credo che dorma» (adesso), «Credo che parta domani».',
+          'Azione <b>anteriore</b>, già conclusa → congiuntivo <b>passato</b>: «Credo che abbia dormito bene» (stanotte), «Credo che sia partito ieri».',
+          'Le parole-segnale del passato ti aiutano: ieri, già, stamattina, la settimana scorsa, appena.',
+          'Se la principale è al passato, il sistema cambia: servono congiuntivo imperfetto e trapassato (unità 4 e 7).'
+        ],
+        exception: 'Con «sperare» + futuro si può usare anche il futuro indicativo: «Spero che arriverà in tempo» è accettato accanto a «…che arrivi in tempo».'
+      },
+      {
+        title: 'Le congiunzioni che vogliono sempre il congiuntivo',
+        body: 'Non sono verbi, ma parole di collegamento: dopo di loro il congiuntivo è automatico.',
+        points: [
+          '<b>benché</b>, <b>sebbene</b>, <b>nonostante</b>, <b>malgrado</b> (concessione) → «Benché sia partito presto, è arrivato tardi».',
+          '<b>prima che</b> (anteriorità) → «Prima che tu arrivassi…» / «Prima che sia troppo tardi».',
+          '<b>affinché</b>, <b>perché</b> (= scopo) → «Te lo dico affinché tu lo sappia».',
+          '<b>a meno che (non)</b>, <b>purché</b>, <b>a condizione che</b>, <b>senza che</b> → «Vengo, purché tu abbia finito».',
+          '<b>il/la più… che</b>, <b>l\'unico che</b>, <b>chiunque</b>, <b>qualunque</b> → «È il film più bello che abbia mai visto».'
+        ],
+        exception: '«Perché» vuole il congiuntivo solo con valore di scopo. Con valore di causa vuole l\'indicativo: «Non è venuto perché era stanco».'
+      }
+    ],
+
+    timeline: {
+      title: 'Il congiuntivo passato nel tempo',
+      intro: 'Il punto di riferimento è il verbo della principale, al presente. Il congiuntivo passato racconta ciò che è già successo prima di quel presente.',
+      points: [
+        { time: 'Prima', label: 'Congiuntivo passato', example: 'Credo che sia partito ieri.', note: 'azione anteriore' },
+        { time: 'Adesso', label: 'Principale al presente', example: 'Credo…', now: true, note: 'il punto di vista' },
+        { time: 'Adesso', label: 'Congiuntivo presente', example: 'Credo che dorma.', note: 'contemporaneità' },
+        { time: 'Dopo', label: 'Congiuntivo presente / futuro', example: 'Credo che parta domani.', note: 'posteriorità' }
+      ],
+      caption: 'Con la principale al presente bastano due tempi: congiuntivo presente (adesso/dopo) e congiuntivo passato (prima).'
+    },
+
+    tables: [
+      {
+        title: 'Congiuntivo presente di ESSERE e AVERE (il pezzo che serve)',
+        note: 'Le prime tre persone sono uguali: per questo si dice «che io sia», «che tu sia»…',
+        columns: ['Persona', 'essere', 'avere'],
+        rows: [
+          { cells: ['che io', 'sia', 'abbia'], irregular: [1, 2] },
+          { cells: ['che tu', 'sia', 'abbia'], irregular: [1, 2] },
+          { cells: ['che lui / lei', 'sia', 'abbia'], irregular: [1, 2] },
+          { cells: ['che noi', 'siamo', 'abbiamo'] },
+          { cells: ['che voi', 'siate', 'abbiate'], irregular: [1, 2] },
+          { cells: ['che loro', 'siano', 'abbiano'], irregular: [1, 2] }
+        ]
+      },
+      {
+        title: 'Congiuntivo passato — le due costruzioni',
+        columns: ['Ausiliare', 'Esempio', 'Accordo'],
+        rows: [
+          { cells: ['avere', 'Credo che (lui) abbia mangiato.', 'nessun accordo'] },
+          { cells: ['avere', 'Credo che (loro) abbiano capito.', 'nessun accordo'] },
+          { cells: ['essere', 'Credo che (lei) sia partita.', 'concorda: -a'] },
+          { cells: ['essere', 'Credo che (loro) siano partiti.', 'concorda: -i'] },
+          { cells: ['riflessivo', 'Credo che si sia svegliata tardi.', 'concorda: -a'] },
+          { cells: ['essere', 'Credo che siate stati fortunati.', 'concorda: -i'] }
+        ]
+      },
+      {
+        title: 'Congiuntivo presente dei verbi regolari (ripasso)',
+        note: 'Serve per il confronto con il passato: parli / abbia parlato.',
+        columns: ['Persona', 'parlare', 'credere', 'partire', 'capire'],
+        rows: [
+          { cells: ['che io', 'parli', 'creda', 'parta', 'capisca'] },
+          { cells: ['che tu', 'parli', 'creda', 'parta', 'capisca'] },
+          { cells: ['che lui / lei', 'parli', 'creda', 'parta', 'capisca'] },
+          { cells: ['che noi', 'parliamo', 'crediamo', 'partiamo', 'capiamo'] },
+          { cells: ['che voi', 'parliate', 'crediate', 'partiate', 'capiate'] },
+          { cells: ['che loro', 'parlino', 'credano', 'partano', 'capiscano'] }
+        ]
+      },
+      {
+        title: 'Congiuntivo presente — gli irregolari più usati',
+        note: 'Quasi tutti derivano dalla prima persona del presente indicativo: vado → vada, faccio → faccia.',
+        columns: ['Infinito', 'Congiuntivo presente (io)', 'Congiuntivo passato'],
+        rows: [
+          { cells: ['andare', 'vada', 'sia andato'], irregular: [1] },
+          { cells: ['fare', 'faccia', 'abbia fatto'], irregular: [1] },
+          { cells: ['dire', 'dica', 'abbia detto'], irregular: [1] },
+          { cells: ['venire', 'venga', 'sia venuto'], irregular: [1] },
+          { cells: ['uscire', 'esca', 'sia uscito'], irregular: [1] },
+          { cells: ['potere', 'possa', 'abbia potuto'], irregular: [1] },
+          { cells: ['volere', 'voglia', 'abbia voluto'], irregular: [1] },
+          { cells: ['dovere', 'debba', 'abbia dovuto'], irregular: [1] },
+          { cells: ['sapere', 'sappia', 'abbia saputo'], irregular: [1] },
+          { cells: ['dare', 'dia', 'abbia dato'], irregular: [1] },
+          { cells: ['stare', 'stia', 'sia stato'], irregular: [1] },
+          { cells: ['rimanere', 'rimanga', 'sia rimasto'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Congiuntivo o indicativo? La tabella decisiva',
+        columns: ['Principale', 'Modo', 'Esempio'],
+        rows: [
+          { cells: ['Penso / Credo che', 'congiuntivo', 'Penso che sia partito.'] },
+          { cells: ['So / Sono sicuro che', 'indicativo', 'So che è partito.'] },
+          { cells: ['Spero / Temo che', 'congiuntivo', 'Temo che abbia sbagliato.'] },
+          { cells: ['È vero / È certo che', 'indicativo', 'È vero che ha sbagliato.'] },
+          { cells: ['È possibile / È strano che', 'congiuntivo', 'È strano che non abbia chiamato.'] },
+          { cells: ['Ho visto / Ho sentito che', 'indicativo', 'Ho visto che è arrivato.'] },
+          { cells: ['Mi dispiace / Sono contento che', 'congiuntivo', 'Sono contento che tu sia venuto.'] },
+          { cells: ['Dice che (riferisce)', 'indicativo', 'Dice che è stanco.'] },
+          { cells: ['Benché / Nonostante', 'congiuntivo', 'Nonostante sia partito presto…'] },
+          { cells: ['Perché (causa)', 'indicativo', 'Non è venuto perché era stanco.'] }
+        ]
+      },
+      {
+        title: 'Espressioni impersonali + congiuntivo',
+        columns: ['Espressione', 'Inglese', 'Esempio'],
+        rows: [
+          { cells: ['è possibile che', 'it is possible that', 'È possibile che sia già uscito.'] },
+          { cells: ['può darsi che', 'it may be that', 'Può darsi che abbia dimenticato.'] },
+          { cells: ['bisogna che', 'it is necessary that', 'Bisogna che tu abbia pazienza.'] },
+          { cells: ['è meglio che', 'it is better that', 'È meglio che tu sia sincero.'] },
+          { cells: ['è strano che', 'it is odd that', 'È strano che non abbia risposto.'] },
+          { cells: ['peccato che', 'it is a pity that', 'Peccato che tu non sia venuto.'] },
+          { cells: ['sembra che', 'it seems that', 'Sembra che abbiano litigato.'] },
+          { cells: ['non è detto che', 'it is not necessarily true that', 'Non è detto che abbia ragione.'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Penso che Marco sia già partito.', literal: 'I-think that Marco be already left.', natural: 'I think Marco has already left.', note: 'Opinione → congiuntivo; partire → essere, accordo maschile.' },
+      { it: 'Credo che abbiano capito il problema.', literal: 'I-believe that they-have(subj) understood the problem.', natural: 'I think they understood the problem.', note: '«abbiano» (congiuntivo), non «hanno».' },
+      { it: 'Mi dispiace che tu abbia perso il treno.', literal: 'To-me it-displeases that you have(subj) lost the train.', natural: "I'm sorry you missed the train.", note: 'Emozione → congiuntivo. Due soggetti diversi.' },
+      { it: 'Sono contenta che siate venuti.', literal: 'I-am glad that you-be come.', natural: "I'm glad you came.", note: 'venire → essere; accordo con voi: venuti.' },
+      { it: 'So che è partito ieri sera.', literal: 'I-know that he-is left yesterday evening.', natural: 'I know he left last night.', note: 'Certezza → indicativo. Nessun congiuntivo.' },
+      { it: 'Spero che sia andato tutto bene.', literal: 'I-hope that be gone all well.', natural: 'I hope everything went well.', note: 'Espressione fissa: «sia andato tutto bene».' },
+      { it: 'È strano che non abbia ancora chiamato.', literal: 'It-is strange that not he-have(subj) yet called.', natural: "It's strange that he hasn't called yet.", note: 'Giudizio impersonale → congiuntivo.' },
+      { it: 'Non credo che Anna si sia offesa.', literal: 'Not I-believe that Anna herself be offended.', natural: "I don't think Anna took offence.", note: 'Riflessivo: si sia offesa, con accordo femminile.' },
+      { it: 'Penso di aver sbagliato numero.', literal: 'I-think of to-have made-mistake number.', natural: 'I think I dialled the wrong number.', note: 'Stesso soggetto → di + infinito passato, niente congiuntivo.' },
+      { it: 'Temo che abbiate dimenticato l\'appuntamento.', literal: 'I-fear that you-have(subj) forgotten the appointment.', natural: "I'm afraid you forgot the appointment.", note: 'Timore → congiuntivo; voi → abbiate.' },
+      { it: 'Benché sia partito presto, è arrivato in ritardo.', literal: 'Although be left early, he-is arrived in delay.', natural: 'Although he left early, he arrived late.', note: 'benché + congiuntivo, sempre.' },
+      { it: 'È il libro più bello che abbia mai letto.', literal: 'It-is the book most beautiful that I-have(subj) ever read.', natural: "It's the most beautiful book I have ever read.", note: 'Superlativo relativo + che → congiuntivo.' },
+      { it: 'Può darsi che si siano persi.', literal: 'It-can to-give-itself that themselves they-be lost.', natural: 'They may have got lost.', note: 'può darsi che + congiuntivo; perdersi → essere.' },
+      { it: 'Peccato che tu non sia potuto venire.', literal: 'Pity that you not be could to-come.', natural: "It's a shame you couldn't come.", note: 'Modale + infinito che vuole essere → sia potuto venire.' },
+      { it: 'Non sono sicuro che abbia detto la verità.', literal: 'Not I-am sure that he-have(subj) said the truth.', natural: "I'm not sure he told the truth.", note: '«Sono sicuro che» → indicativo; «non sono sicuro che» → congiuntivo.' },
+      { it: 'Sembra che abbiano litigato di nuovo.', literal: 'It-seems that they-have(subj) quarrelled of new.', natural: 'It seems they have quarrelled again.', note: 'sembra che + congiuntivo.' },
+      { it: 'Nonostante si siano visti ieri, non si sono parlati.', literal: 'Despite themselves they-be seen yesterday, not themselves they-are spoken.', natural: "Even though they saw each other yesterday, they didn't speak.", note: 'Reciproci al congiuntivo passato: si siano visti.' },
+      { it: 'Immagino che siate stanchi dopo il viaggio.', literal: 'I-imagine that you-be tired after the trip.', natural: 'I imagine you are tired after the journey.', note: 'Qui l\'azione è contemporanea → congiuntivo presente (siate), non passato.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Penso che è partito.', right: 'Penso che sia partito.', why: 'I verbi di opinione richiedono il congiuntivo, non l\'indicativo.' },
+      { wrong: 'So che sia partito.', right: 'So che è partito.', why: 'I verbi di certezza (sapere, essere sicuro) richiedono l\'indicativo.' },
+      { wrong: 'Credo che hanno capito.', right: 'Credo che abbiano capito.', why: '«Hanno» è indicativo; il congiuntivo è «abbiano».' },
+      { wrong: 'Credo che Anna sia partito.', right: 'Credo che Anna sia partita.', why: 'Con essere il participio concorda col soggetto femminile.' },
+      { wrong: 'Penso che io abbia sbagliato.', right: 'Penso di aver sbagliato.', why: 'Stesso soggetto → di + infinito, niente che + congiuntivo.' },
+      { wrong: 'Voglio che io vada.', right: 'Voglio andare.', why: 'Con lo stesso soggetto volere regge l\'infinito diretto.' },
+      { wrong: 'Sono contento che sei venuto.', right: 'Sono contento che tu sia venuto.', why: 'Le emozioni reggono il congiuntivo; il pronome «tu» aiuta a distinguere le persone.' },
+      { wrong: 'Benché è stanco, lavora.', right: 'Benché sia stanco, lavora.', why: 'Benché, sebbene, nonostante vogliono sempre il congiuntivo.' },
+      { wrong: 'Credo che abbia partito.', right: 'Credo che sia partito.', why: 'Partire vuole essere: l\'ausiliare non cambia nel congiuntivo.' },
+      { wrong: 'È il film più bello che ho visto.', right: 'È il film più bello che abbia visto.', why: 'Dopo un superlativo relativo l\'italiano usa il congiuntivo.' }
+    ],
+
+    vocab: {
+      title: 'Vocabolario — emozioni, comunicazione, notizie e famiglia (60 parole)',
+      intro: 'Il congiuntivo passato vive nelle frasi che cominciano con «credo che», «mi dispiace che», «sembra che»: cioè quando parli di sentimenti, notizie e persone. Ecco il lessico, con italiano, inglese, farsi (فارسی) ed esempio al congiuntivo.',
+      categories: [
+        { id: 'emozioni', label: 'Emozioni', icon: '❤️' },
+        { id: 'comunicaz', label: 'Comunicazione', icon: '📣' },
+        { id: 'notizie', label: 'Notizie', icon: '📰' },
+        { id: 'famiglia', label: 'Famiglia', icon: '👨‍👩‍👧' },
+        { id: 'giudizio', label: 'Giudizio e dubbio', icon: '🤔' },
+        { id: 'espr', label: 'Espressioni', icon: '✨' }
+      ],
+      words: [
+        /* ── Emozioni (11) ── */
+        { it: 'l\'emozione', en: 'emotion, excitement', fa: 'احساس / هیجان', cat: 'emozioni', pos: 'f.', ex: 'Credo che sia stata una grande emozione.' },
+        { it: 'la gioia', en: 'joy', fa: 'شادی', cat: 'emozioni', pos: 'f.', ex: 'Sono contento che tu abbia provato questa gioia.' },
+        { it: 'la tristezza', en: 'sadness', fa: 'غم', cat: 'emozioni', pos: 'f.', ex: 'Mi dispiace che ci sia tanta tristezza.' },
+        { it: 'la rabbia', en: 'anger', fa: 'خشم', cat: 'emozioni', pos: 'f.', ex: 'Temo che la rabbia gli abbia fatto dire troppo.' },
+        { it: 'la preoccupazione', en: 'worry', fa: 'نگرانی', cat: 'emozioni', pos: 'f.', ex: 'È normale che ci sia un po\' di preoccupazione.' },
+        { it: 'preoccuparsi', en: 'to worry', fa: 'نگران شدن', cat: 'emozioni', pos: 'v. rifl.', ex: 'Non credo che si siano preoccupati.' },
+        { it: 'arrabbiarsi', en: 'to get angry', fa: 'عصبانی شدن', cat: 'emozioni', pos: 'v. rifl.', ex: 'Penso che si sia arrabbiata.' },
+        { it: 'offendersi', en: 'to take offence', fa: 'رنجیدن', cat: 'emozioni', pos: 'v. rifl.', ex: 'Spero che non si sia offeso.' },
+        { it: 'stupirsi', en: 'to be amazed', fa: 'شگفت‌زده شدن', cat: 'emozioni', pos: 'v. rifl.', ex: 'Mi stupisce che non abbia detto niente.' },
+        { it: 'la sorpresa', en: 'surprise', fa: 'سورپرایز / تعجب', cat: 'emozioni', pos: 'f.', ex: 'Che sorpresa che tu sia venuto!' },
+        { it: 'il dispiacere', en: 'sorrow, regret', fa: 'ناراحتی', cat: 'emozioni', pos: 'm.', ex: 'Provo un grande dispiacere.' },
+
+        /* ── Comunicazione (11) ── */
+        { it: 'avvisare', en: 'to notify', fa: 'خبر دادن', cat: 'comunicaz', pos: 'v.', ex: 'Non credo che ci abbiano avvisati.' },
+        { it: 'il messaggio', en: 'message', fa: 'پیام', cat: 'comunicaz', pos: 'm.', ex: 'Sembra che il messaggio non sia arrivato.' },
+        { it: 'rispondere', en: 'to answer', fa: 'پاسخ دادن', cat: 'comunicaz', pos: 'v.', ex: 'È strano che non abbia risposto.' },
+        { it: 'chiarire', en: 'to clarify', fa: 'روشن کردن', cat: 'comunicaz', pos: 'v.', ex: 'Bisogna che abbiate chiarito tutto prima.' },
+        { it: 'spiegare', en: 'to explain', fa: 'توضیح دادن', cat: 'comunicaz', pos: 'v.', ex: 'Credo che ti abbia spiegato male la situazione.' },
+        { it: 'confermare', en: 'to confirm', fa: 'تأیید کردن', cat: 'comunicaz', pos: 'v.', ex: 'Non è detto che abbiano confermato.' },
+        { it: 'il malinteso', en: 'misunderstanding', fa: 'سوءتفاهم', cat: 'comunicaz', pos: 'm.', ex: 'Può darsi che ci sia stato un malinteso.' },
+        { it: 'il silenzio', en: 'silence', fa: 'سکوت', cat: 'comunicaz', pos: 'm.', ex: 'Il suo silenzio mi preoccupa.' },
+        { it: 'il tono', en: 'tone', fa: 'لحن', cat: 'comunicaz', pos: 'm.', ex: 'Non mi è piaciuto il suo tono.' },
+        { it: 'insistere', en: 'to insist', fa: 'اصرار کردن', cat: 'comunicaz', pos: 'v.', ex: 'È inutile che tu abbia insistito.' },
+        { it: 'la telefonata', en: 'phone call', fa: 'تماس تلفنی', cat: 'comunicaz', pos: 'f.', ex: 'Sembra che la telefonata sia caduta.' },
+
+        /* ── Notizie (10) ── */
+        { it: 'la notizia', en: 'piece of news', fa: 'خبر', cat: 'notizie', pos: 'f.', ex: 'Non credo che la notizia sia vera.' },
+        { it: 'il telegiornale', en: 'TV news', fa: 'اخبار تلویزیون', cat: 'notizie', pos: 'm.', ex: 'Sembra che l\'abbiano detto al telegiornale.' },
+        { it: 'il giornalista', en: 'journalist', fa: 'روزنامه‌نگار', cat: 'notizie', pos: 'm.', ex: 'Pare che il giornalista abbia sbagliato fonte.' },
+        { it: 'la fonte', en: 'source', fa: 'منبع', cat: 'notizie', pos: 'f.', ex: 'Dubito che la fonte sia affidabile.' },
+        { it: 'il fatto', en: 'fact', fa: 'واقعیت / رویداد', cat: 'notizie', pos: 'm.', ex: 'Il fatto che sia successo mi preoccupa.' },
+        { it: 'succedere', en: 'to happen', fa: 'اتفاق افتادن', cat: 'notizie', pos: 'v.', ex: 'Non so che cosa sia successo.' },
+        { it: 'l\'annuncio', en: 'announcement', fa: 'اعلامیه', cat: 'notizie', pos: 'm.', ex: 'Può darsi che l\'annuncio sia già uscito.' },
+        { it: 'la voce', en: 'rumour', fa: 'شایعه', cat: 'notizie', pos: 'f.', ex: 'Gira voce che si siano lasciati.' },
+        { it: 'affidabile', en: 'reliable', fa: 'قابل اعتماد', cat: 'notizie', pos: 'agg.', ex: 'Non mi sembra una persona affidabile.' },
+        { it: 'smentire', en: 'to deny (news)', fa: 'تکذیب کردن', cat: 'notizie', pos: 'v.', ex: 'Pare che abbiano smentito tutto.' },
+
+        /* ── Famiglia (10) ── */
+        { it: 'il parente', en: 'relative', fa: 'خویشاوند', cat: 'famiglia', pos: 'm.', ex: 'Credo che sia un suo parente.' },
+        { it: 'il cognato', en: 'brother-in-law', fa: 'برادر شوهر/زن', cat: 'famiglia', pos: 'm.', ex: 'Sembra che il cognato si sia trasferito.' },
+        { it: 'la suocera', en: 'mother-in-law', fa: 'مادرشوهر / مادرزن', cat: 'famiglia', pos: 'f.', ex: 'Mi dispiace che la suocera si sia offesa.' },
+        { it: 'il nipote', en: 'nephew / grandchild', fa: 'برادرزاده / نوه', cat: 'famiglia', pos: 'm.', ex: 'Sono felice che il nipote sia nato bene.' },
+        { it: 'il figlio unico', en: 'only child', fa: 'تک‌فرزند', cat: 'famiglia', pos: 'm.', ex: 'Credo che sia figlio unico.' },
+        { it: 'crescere i figli', en: 'to raise children', fa: 'بچه بزرگ کردن', cat: 'famiglia', pos: 'loc. v.', ex: 'Non è facile crescere i figli da soli.' },
+        { it: 'andare d\'accordo', en: 'to get along', fa: 'کنار آمدن', cat: 'famiglia', pos: 'loc. v.', ex: 'Sembra che non siano mai andati d\'accordo.' },
+        { it: 'la convivenza', en: 'living together', fa: 'زندگی مشترک', cat: 'famiglia', pos: 'f.', ex: 'Può darsi che la convivenza sia stata difficile.' },
+        { it: 'trasferirsi', en: 'to move house', fa: 'نقل مکان کردن', cat: 'famiglia', pos: 'v. rifl.', ex: 'Penso che si siano trasferiti a Bologna.' },
+        { it: 'l\'educazione', en: 'upbringing, manners', fa: 'تربیت', cat: 'famiglia', pos: 'f.', ex: 'È una questione di educazione.' },
+
+        /* ── Giudizio e dubbio (10) ── */
+        { it: 'dubitare', en: 'to doubt', fa: 'شک داشتن', cat: 'giudizio', pos: 'v.', ex: 'Dubito che abbiano finito.' },
+        { it: 'il dubbio', en: 'doubt', fa: 'تردید', cat: 'giudizio', pos: 'm.', ex: 'Ho il dubbio che sia stato lui.' },
+        { it: 'supporre', en: 'to suppose', fa: 'فرض کردن', cat: 'giudizio', pos: 'v.', ex: 'Suppongo che abbiate già mangiato.' },
+        { it: 'ritenere', en: 'to consider, to deem', fa: 'در نظر گرفتن', cat: 'giudizio', pos: 'v.', ex: 'Ritengo che sia stato un errore.' },
+        { it: 'l\'impressione', en: 'impression', fa: 'برداشت', cat: 'giudizio', pos: 'f.', ex: 'Ho l\'impressione che si sia offeso.' },
+        { it: 'probabile', en: 'likely', fa: 'محتمل', cat: 'giudizio', pos: 'agg.', ex: 'È probabile che sia già partito.' },
+        { it: 'improbabile', en: 'unlikely', fa: 'بعید', cat: 'giudizio', pos: 'agg.', ex: 'È improbabile che l\'abbia fatto apposta.' },
+        { it: 'evidente', en: 'obvious', fa: 'آشکار', cat: 'giudizio', pos: 'agg.', ex: 'È evidente che ha ragione.' },
+        { it: 'incredibile', en: 'unbelievable', fa: 'باورنکردنی', cat: 'giudizio', pos: 'agg.', ex: 'È incredibile che nessuno abbia visto niente.' },
+        { it: 'sospettare', en: 'to suspect', fa: 'مشکوک بودن', cat: 'giudizio', pos: 'v.', ex: 'Sospetto che ci abbiano mentito.' },
+
+        /* ── Espressioni (8) ── */
+        { it: 'può darsi che', en: 'it may be that', fa: 'ممکن است', cat: 'espr', pos: 'espr.', ex: 'Può darsi che abbia perso il treno.' },
+        { it: 'peccato che', en: 'it\'s a pity that', fa: 'حیف که', cat: 'espr', pos: 'espr.', ex: 'Peccato che tu non sia venuto.' },
+        { it: 'meno male che', en: 'thank goodness that', fa: 'خوب شد که', cat: 'espr', pos: 'espr.', ex: 'Meno male che sia finita così.' },
+        { it: 'il fatto che', en: 'the fact that', fa: 'این حقیقت که', cat: 'espr', pos: 'espr.', ex: 'Il fatto che abbia mentito cambia tutto.' },
+        { it: 'non vedo l\'ora che', en: 'I can\'t wait for', fa: 'بی‌صبرانه منتظرم', cat: 'espr', pos: 'espr.', ex: 'Non vedo l\'ora che arrivi il weekend.' },
+        { it: 'gira voce che', en: 'rumour has it that', fa: 'شایعه شده که', cat: 'espr', pos: 'espr.', ex: 'Gira voce che si siano sposati.' },
+        { it: 'a quanto pare', en: 'apparently', fa: 'ظاهراً', cat: 'espr', pos: 'loc.', ex: 'A quanto pare è già tornato.' },
+        { it: 'chissà se', en: 'I wonder whether', fa: 'چه می‌دانم / یعنی', cat: 'espr', pos: 'espr.', ex: 'Chissà se ha ricevuto il messaggio.' }
+      ]
+    },
+
+    guided: {
+      title: 'Indicativo o congiuntivo? Decidiamo insieme',
+      intro: 'Tre domande: la principale afferma un fatto certo? I soggetti sono diversi? L\'azione è anteriore?',
+      steps: [
+        {
+          prompt: 'Completa: «Penso che Marco (partire) ieri.»',
+          think: 'pensare = opinione → congiuntivo. Azione anteriore («ieri») → congiuntivo passato. Partire vuole essere.',
+          answer: 'Penso che Marco sia partito ieri.',
+          why: 'Accordo maschile singolare: partito.'
+        },
+        {
+          prompt: 'Completa: «So che Marco (partire) ieri.»',
+          think: 'sapere = certezza → indicativo, nessun congiuntivo.',
+          answer: 'So che Marco è partito ieri.',
+          why: 'Il contrasto con la frase precedente è tutta la regola.'
+        },
+        {
+          prompt: 'Completa: «Mi dispiace che tu (perdere) il treno.»',
+          think: 'Emozione → congiuntivo; soggetti diversi (io / tu); azione già avvenuta → congiuntivo passato.',
+          answer: 'Mi dispiace che tu abbia perso il treno.',
+          why: 'perdere è transitivo → avere, participio irregolare: perso.'
+        },
+        {
+          prompt: 'Stesso soggetto: «Penso che io (sbagliare).»',
+          think: 'Il soggetto della principale e della secondaria è lo stesso → di + infinito.',
+          answer: 'Penso di aver sbagliato.',
+          why: 'Con «che io» la frase è grammaticalmente pesante e suona sbagliata.'
+        },
+        {
+          prompt: 'Completa: «Credo che Anna (svegliarsi) tardi.»',
+          think: 'Riflessivo → essere; accordo femminile; azione anteriore → congiuntivo passato.',
+          answer: 'Credo che Anna si sia svegliata tardi.',
+          why: 'Il pronome «si» resta prima dell\'ausiliare.'
+        },
+        {
+          prompt: 'Presente o passato? «Immagino che voi (essere) stanchi adesso.»',
+          think: 'L\'azione è contemporanea al presente della principale → congiuntivo presente, non passato.',
+          answer: 'Immagino che siate stanchi.',
+          why: 'Il congiuntivo passato servirebbe solo per un fatto anteriore: «immagino che abbiate viaggiato molto».'
+        }
+      ]
+    },
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Penso che Marco ___ già partito.»', options: ['è', 'sia', 'abbia', 'sarà'], answer: 1, hint: 'opinione + essere', why: 'pensare regge il congiuntivo: sia partito.' },
+        { q: 'Completa: «So che ___ partito ieri.»', options: ['sia', 'è', 'abbia', 'fosse'], answer: 1, hint: 'certezza', why: 'sapere regge l\'indicativo.' },
+        { q: 'Completa: «Credo che loro ___ capito.»', options: ['hanno', 'abbiano', 'abbia', 'siano'], answer: 1, hint: 'congiuntivo di "hanno"', why: 'abbiano capito.' },
+        { q: 'Completa: «Mi dispiace che tu ___ perso il treno.»', options: ['hai', 'abbia', 'sia', 'avessi'], answer: 1, hint: 'emozione + avere', why: 'che tu abbia perso.' },
+        { q: 'Quale frase è corretta?', options: ['Penso che io abbia sbagliato.', 'Penso di aver sbagliato.', 'Penso che ho sbagliato.', 'Penso di ho sbagliato.'], answer: 1, hint: 'stesso soggetto', why: 'Stesso soggetto → di + infinito.' },
+        { q: 'Completa: «Sono contenta che voi ___ venuti.»', options: ['siete', 'siate', 'abbiate', 'sareste'], answer: 1, hint: 'congiuntivo di essere, voi', why: 'che voi siate venuti.' },
+        { q: 'Completa: «Benché ___ partito presto, è arrivato tardi.»', options: ['è', 'sia', 'era', 'sarebbe'], answer: 1, hint: 'benché vuole sempre…', why: 'Le concessive reggono il congiuntivo.' },
+        { q: 'Completa: «È il film più bello che ___ mai visto.»', options: ['ho', 'abbia', 'avevo', 'avrei'], answer: 1, hint: 'superlativo relativo', why: 'Dopo il superlativo si usa il congiuntivo.' },
+        { q: 'Completa: «Credo che Anna si ___ svegliata tardi.»', options: ['ha', 'sia', 'abbia', 'è'], answer: 1, hint: 'riflessivo', why: 'I riflessivi vogliono essere: si sia svegliata.' },
+        { q: 'Quale espressione NON regge il congiuntivo?', options: ['può darsi che', 'sembra che', 'è vero che', 'è possibile che'], answer: 2, hint: 'certezza', why: '«È vero che» afferma un fatto → indicativo.' },
+        { q: 'Congiuntivo presente o passato? «Credo che ___ adesso.» (dormire)', options: ['abbia dormito', 'dorma', 'sia dormito', 'dormisse'], answer: 1, hint: 'azione contemporanea', why: 'Contemporaneità → congiuntivo presente.' },
+        { q: 'Completa: «Peccato che non ___ potuto venire.»', options: ['hai', 'sia', 'abbia', 'sei'], answer: 1, hint: 'venire vuole essere', why: 'sia potuto venire: l\'ausiliare segue l\'infinito.' },
+        { q: 'Completa: «Dubito che ___ detto la verità.»', options: ['ha', 'abbia', 'sia', 'avesse'], answer: 1, hint: 'dubbio + dire', why: 'dire → avere: abbia detto.' },
+        { q: 'Quale frase è sbagliata?', options: ['Spero che sia andato tutto bene.', 'Sono sicuro che sia andato tutto bene.', 'Sono sicuro che è andato tutto bene.', 'Temo che sia andato male.'], answer: 1, hint: 'certezza + congiuntivo?', why: '«Sono sicuro che» richiede l\'indicativo.' }
+      ],
+      fill: [
+        { before: 'Penso che Marco', after: 'già partito. (essere)', answers: ['sia'], en: 'I think Marco has already left.' },
+        { before: 'Credo che loro', after: 'capito tutto. (avere)', answers: ['abbiano'], en: 'I think they understood everything.', hint: 'congiuntivo, non "hanno"' },
+        { before: 'Mi dispiace che tu', after: 'perso il treno. (avere)', answers: ['abbia'], en: "I'm sorry you missed the train." },
+        { before: 'Sono contenta che voi', after: 'venuti. (essere)', answers: ['siate'], en: "I'm glad you came." },
+        { before: 'So che Anna', after: 'partita ieri. (essere)', answers: ['è', 'e'], en: 'I know Anna left yesterday.', hint: 'certezza → indicativo' },
+        { before: 'Credo che Anna si', after: 'svegliata tardi. (essere)', answers: ['sia'], en: 'I think Anna woke up late.' },
+        { before: 'Benché', after: 'partito presto, è arrivato tardi. (essere)', answers: ['sia'], en: 'Although he left early, he arrived late.' },
+        { before: 'È il libro più bello che', after: 'mai letto. (avere, io)', answers: ['abbia'], en: 'It is the most beautiful book I have ever read.' },
+        { before: 'Può darsi che si', after: 'persi. (essere)', answers: ['siano'], en: 'They may have got lost.' },
+        { before: 'Penso', after: 'aver sbagliato numero. (preposizione)', answers: ['di'], en: 'I think I dialled the wrong number.', hint: 'stesso soggetto' },
+        { before: 'Temo che voi', after: 'dimenticato l\'appuntamento. (avere)', answers: ['abbiate'], en: 'I fear you forgot the appointment.' },
+        { before: 'Sembra che', after: 'litigato di nuovo. (avere, loro)', answers: ['abbiano'], en: 'It seems they quarrelled again.' }
+      ],
+      order: [
+        { words: ['Penso', 'che', 'sia', 'già', 'partito'], answer: 'Penso che sia già partito', en: 'I think he has already left.' },
+        { words: ['Mi', 'dispiace', 'che', 'tu', 'abbia', 'perso', 'il', 'treno'], answer: 'Mi dispiace che tu abbia perso il treno', en: "I'm sorry you missed the train." },
+        { words: ['Sono', 'contenta', 'che', 'siate', 'venuti'], answer: 'Sono contenta che siate venuti', en: "I'm glad you came." },
+        { words: ['Non', 'credo', 'che', 'si', 'sia', 'offesa'], answer: 'Non credo che si sia offesa', en: "I don't think she took offence." },
+        { words: ['Benché', 'sia', 'partito', 'presto', 'è', 'arrivato', 'tardi'], answer: 'Benché sia partito presto è arrivato tardi', en: 'Although he left early he arrived late.' },
+        { words: ['È', 'strano', 'che', 'non', 'abbia', 'ancora', 'chiamato'], answer: 'È strano che non abbia ancora chiamato', en: "It's strange that he hasn't called yet." },
+        { words: ['Penso', 'di', 'aver', 'sbagliato', 'numero'], answer: 'Penso di aver sbagliato numero', en: 'I think I dialled the wrong number.' }
+      ],
+      dnd: {
+        instructions: 'Queste espressioni reggono il CONGIUNTIVO o l\'INDICATIVO? Trascinale nella colonna giusta.',
+        buckets: [
+          { id: 'cong', label: 'CONGIUNTIVO (…che sia)', icon: '🌀' },
+          { id: 'ind', label: 'INDICATIVO (…che è)', icon: '📌' }
+        ],
+        items: [
+          { text: 'penso che', bucket: 'cong' },
+          { text: 'so che', bucket: 'ind' },
+          { text: 'spero che', bucket: 'cong' },
+          { text: 'è vero che', bucket: 'ind' },
+          { text: 'dubito che', bucket: 'cong' },
+          { text: 'sono sicuro che', bucket: 'ind' },
+          { text: 'mi dispiace che', bucket: 'cong' },
+          { text: 'ho visto che', bucket: 'ind' },
+          { text: 'sembra che', bucket: 'cong' },
+          { text: 'è evidente che', bucket: 'ind' },
+          { text: 'benché', bucket: 'cong' },
+          { text: 'perché (causa)', bucket: 'ind' },
+          { text: 'può darsi che', bucket: 'cong' },
+          { text: 'mi ha detto che', bucket: 'ind' }
+        ]
+      },
+      match: [
+        { a: 'che io abbia', b: 'congiuntivo passato di avere' },
+        { a: 'che loro siano', b: 'congiuntivo passato di essere' },
+        { a: 'penso che', b: 'opinione → congiuntivo' },
+        { a: 'so che', b: 'certezza → indicativo' },
+        { a: 'peccato che', b: "it's a pity that" },
+        { a: 'può darsi che', b: 'it may be that' },
+        { a: 'gira voce che', b: 'rumour has it that' },
+        { a: 'penso di aver sbagliato', b: 'stesso soggetto' },
+        { a: 'benché', b: 'concessiva + congiuntivo' },
+        { a: 'il film più bello che', b: 'superlativo + congiuntivo' }
+      ],
+      tf: [
+        { statement: 'Il congiuntivo passato si forma con il congiuntivo presente di essere/avere + participio.', answer: true, why: 'Esatto: che io abbia parlato, che tu sia andato.' },
+        { statement: 'Dopo «so che» si usa il congiuntivo.', answer: false, why: 'No: la certezza vuole l\'indicativo. «So che è partito».' },
+        { statement: 'Le prime tre persone del congiuntivo presente sono identiche.', answer: true, why: 'Per questo si esprime il pronome: che io sia, che tu sia, che lui sia.' },
+        { statement: 'Con lo stesso soggetto si usa «che» + congiuntivo.', answer: false, why: 'No: si usa «di» + infinito. «Penso di aver capito».' },
+        { statement: 'Con essere il participio del congiuntivo passato concorda col soggetto.', answer: true, why: 'Credo che Anna sia partita.' },
+        { statement: '«Benché» può essere seguito dall\'indicativo.', answer: false, why: 'No: benché, sebbene, nonostante vogliono sempre il congiuntivo.' },
+        { statement: '«Credo che hanno capito» è corretto.', answer: false, why: 'No: serve «abbiano», la forma del congiuntivo.' },
+        { statement: 'Dopo un superlativo relativo («il più bello che…») si usa il congiuntivo.', answer: true, why: 'È il film più bello che abbia mai visto.' },
+        { statement: 'Il congiuntivo passato indica un\'azione anteriore rispetto alla principale al presente.', answer: true, why: 'Credo che sia partito ieri.' }
+      ],
+      translate: [
+        { en: 'I think he has already left.', answers: ['Penso che sia già partito', 'Credo che sia già partito'] },
+        { en: 'I know he left yesterday.', answers: ['So che è partito ieri'] },
+        { en: "I'm sorry you missed the train.", answers: ['Mi dispiace che tu abbia perso il treno'] },
+        { en: "I'm glad you came.", answers: ['Sono contento che tu sia venuto', 'Sono contenta che tu sia venuto', 'Sono contento che siate venuti'] },
+        { en: 'It seems they have quarrelled.', answers: ['Sembra che abbiano litigato'] },
+        { en: 'I think I made a mistake.', answers: ['Penso di aver sbagliato', 'Credo di aver sbagliato'] },
+        { en: "It's strange that he hasn't called.", answers: ['È strano che non abbia chiamato'] },
+        { en: 'They may have got lost.', answers: ['Può darsi che si siano persi', 'Può darsi che si siano perse'] },
+        { en: 'It is the best book I have ever read.', answers: ['È il libro più bello che abbia mai letto'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Ma che fine ha fatto Luca?',
+      intro: 'Due amiche parlano di un amico sparito: ogni ipotesi è al congiuntivo passato, ogni certezza all\'indicativo.',
+      lines: [
+        { speaker: 'Chiara', icon: '👩', it: 'Hai notizie di Luca? Non risponde da tre giorni.', en: 'Any news from Luca? He hasn\'t answered for three days.' },
+        { speaker: 'Elena', icon: '👩‍🦰', side: 'right', it: 'No. Penso che sia partito per lavoro, ma non ne sono sicura.', en: "No. I think he left for work, but I'm not sure.",
+          glosses: [{ term: 'sia partito', expl: 'pensare → congiuntivo; partire → essere, accordo maschile.' }] },
+        { speaker: 'Chiara', icon: '👩', it: 'Strano che non ci abbia avvisate.', en: "It's strange he didn't let us know.",
+          glosses: [{ term: 'abbia avvisate', expl: 'Giudizio impersonale → congiuntivo. Con il pronome «ci» femminile il participio può concordare.' }] },
+        { speaker: 'Elena', icon: '👩‍🦰', side: 'right', it: 'Può darsi che si sia offeso per quello che gli abbiamo detto sabato.', en: 'He may have taken offence at what we said on Saturday.',
+          glosses: [{ term: 'si sia offeso', expl: 'può darsi che + congiuntivo; riflessivo → essere.' }, { term: 'abbiamo detto', expl: 'Dopo «quello che» (fatto reale) resta l\'indicativo.' }] },
+        { speaker: 'Chiara', icon: '👩', it: 'Ma no. So che era già stanco quella sera: aveva lavorato tutto il giorno.', en: "No way. I know he was already tired that evening: he'd worked all day.",
+          glosses: [{ term: 'So che era', expl: 'Certezza → indicativo, mai congiuntivo.' }, { term: 'aveva lavorato', expl: 'Trapassato prossimo: fatto anteriore (unità 1).' }] },
+        { speaker: 'Elena', icon: '👩‍🦰', side: 'right', it: 'Allora è probabile che abbia solo bisogno di silenzio.', en: 'Then he probably just needs some quiet.',
+          glosses: [{ term: 'è probabile che abbia', expl: 'Espressione impersonale di probabilità → congiuntivo presente (contemporaneità).' }] },
+        { speaker: 'Chiara', icon: '👩', it: 'Spero che non gli sia successo niente di grave.', en: 'I hope nothing serious happened to him.',
+          glosses: [{ term: 'sia successo', expl: 'sperare + congiuntivo passato: fatto eventualmente già avvenuto.' }] },
+        { speaker: 'Elena', icon: '👩‍🦰', side: 'right', it: 'Ma va\'! Nonostante sembri distratto, è la persona più organizzata che io conosca.', en: 'Come on! Even though he seems distracted, he is the most organised person I know.',
+          glosses: [{ term: 'Nonostante sembri', expl: 'Concessiva → congiuntivo obbligatorio.' }, { term: 'che io conosca', expl: 'Dopo il superlativo relativo si usa il congiuntivo.' }] },
+        { speaker: 'Chiara', icon: '👩', it: 'Va bene. Gli scrivo, così sono sicura che ha ricevuto il messaggio.', en: "All right. I'll write to him, that way I'm sure he got the message.",
+          glosses: [{ term: 'sono sicura che ha', expl: '«Essere sicuro che» → indicativo.' }] },
+        { speaker: 'Elena', icon: '👩‍🦰', side: 'right', it: 'Bene. Peccato che non sia venuto alla cena di ieri: c\'erano tutti.', en: "Good. It's a pity he didn't come to dinner yesterday: everybody was there.",
+          glosses: [{ term: 'Peccato che non sia venuto', expl: 'peccato che + congiuntivo passato.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'congiuntivo passato', back: 'che io abbia / sia + participio' },
+      { front: 'che io / tu / lui ___ (avere)', back: 'abbia', note: 'le prime tre persone sono uguali' },
+      { front: 'che noi / voi / loro ___ (avere)', back: 'abbiamo / abbiate / abbiano' },
+      { front: 'che io / tu / lui ___ (essere)', back: 'sia' },
+      { front: 'che noi / voi / loro ___ (essere)', back: 'siamo / siate / siano' },
+      { front: 'penso che', back: '+ congiuntivo' },
+      { front: 'so che / sono sicuro che', back: '+ indicativo' },
+      { front: 'benché · sebbene · nonostante', back: '+ congiuntivo sempre' },
+      { front: 'stesso soggetto', back: 'di + infinito', note: 'Penso di aver capito' },
+      { front: 'soggetti diversi', back: 'che + congiuntivo', note: 'Penso che tu abbia capito' },
+      { front: 'Credo che dorma vs abbia dormito', back: 'adesso vs prima' },
+      { front: 'il più bello che…', back: '…abbia mai visto', note: 'superlativo + congiuntivo' },
+      { front: 'può darsi che', back: 'it may be that' },
+      { front: 'peccato che', back: "it's a pity that" }
+    ],
+
+    summary: {
+      formula: 'Principale al presente + CHE + [abbia/abbiamo/abbiate/abbiano] o [sia/siamo/siate/siano] + PARTICIPIO PASSATO',
+      rules: [
+        'Il congiuntivo passato = congiuntivo presente di essere/avere + participio passato.',
+        'Si usa dopo verbi ed espressioni di opinione, dubbio, emozione, volontà, necessità.',
+        'Con i verbi di certezza (sapere, essere sicuro, è vero) si usa l\'indicativo.',
+        'Soggetti diversi → che + congiuntivo; stesso soggetto → di + infinito.',
+        'Con essere il participio concorda col soggetto; con avere resta invariabile.',
+        'Congiuntivo presente = contemporaneità o futuro; congiuntivo passato = anteriorità.',
+        'Benché, sebbene, nonostante, prima che, affinché, purché, a meno che → congiuntivo obbligatorio.',
+        'Superlativo relativo e «l\'unico che» → congiuntivo.'
+      ],
+      tips: [
+        'Prima di scegliere il modo, guarda il verbo della principale: afferma (indicativo) o interpreta (congiuntivo)?',
+        'Il congiuntivo si riconosce dall\'orecchio: «che abbiano» ha un suono più "morbido" di «che hanno». Ripeti le coppie ad alta voce.',
+        'Le prime tre persone sono identiche: usa sempre il pronome (che io, che tu, che lui) per farti capire.',
+        'Se puoi dire la frase con «di + infinito», il soggetto è lo stesso e il congiuntivo non serve.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="La concordanza dei tempi in italiano: la mappa completa che collega principale e subordinata, all'indicativo e al congiuntivo, al presente e al passato.">
+  <title>Concordanza dei Tempi · Italiano B1</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     UNITÀ 7 — CONCORDANZA DEI TEMPI
+     Unità di sintesi: raccoglie in un'unica mappa le unità 1-6.
+     ========================================================================== */
+  window.LESSON = {
+    num: 7, file: '07-concordanza-tempi.html', icon: '⚖️', title: 'Concordanza dei Tempi', group: 'Strutture avanzate',
+    subtitle: 'Quale tempo va nella frase secondaria? La mappa che collega tutto quello che hai imparato finora.',
+
+    intro: {
+      what: 'La concordanza dei tempi è il sistema di regole che dice quale tempo verbale usare nella <b>frase secondaria</b> in base al tempo della <b>frase principale</b>. Non è un tempo nuovo: è la mappa che mette in ordine trapassato, condizionale passato, congiuntivo passato e congiuntivo imperfetto — tutto quello che hai già imparato nelle unità 1-6.',
+      when: 'Ogni volta che colleghi due verbi con <b>che</b>, <b>se</b>, o un\'altra congiunzione: «Penso che…», «Ha detto che…», «Non sapevo se…». La scelta del tempo nella secondaria non è libera: dipende in modo preciso dal tempo della principale e dal <i>momento</i> dell\'azione secondaria rispetto ad essa.',
+      why: 'Senza questa mappa, ogni frase con "che" resta un enigma isolato. Con la mappa, invece, hai un sistema: guardi il tempo della principale, guardi se l\'azione secondaria viene prima, durante o dopo, e il tempo giusto viene da sé — sempre.',
+      mistakes: [
+        'Non aggiornare la subordinata quando la principale passa al passato: ❌ "Pensavo che sia partito" → ✅ "Pensavo che fosse partito".',
+        'Usare il futuro semplice dopo una principale al passato: ❌ "Ha detto che verrà" → ✅ "Ha detto che sarebbe venuto".',
+        'Mescolare i due sistemi (indicativo/congiuntivo): ❌ "Pensavo che è arrivato" → ✅ "Pensavo che fosse arrivato".',
+        'Usare il congiuntivo presente con una principale al passato: ❌ "Volevo che tu venga" → ✅ "Volevo che tu venissi".'
+      ]
+    },
+
+    objectives: [
+      'Avere una mappa unica che collega trapassato (unità 1), condizionale passato (unità 2), congiuntivo passato (unità 3) e congiuntivo imperfetto (unità 4).',
+      'Riconoscere se la principale è al <b>presente/futuro</b> o al <b>passato</b>, e sapere quali tempi sono possibili nella secondaria in ciascun caso.',
+      'Applicare la concordanza sia nel sistema <b>indicativo</b> sia nel sistema <b>congiuntivo</b>.',
+      'Distinguere contemporaneità, anteriorità e posteriorità rispetto alla principale, in entrambi i sistemi.',
+      'Usare questa mappa come riferimento rapido per il discorso indiretto (unità 6) e il periodo ipotetico (unità 8).'
+    ],
+
+    formulas: [
+      {
+        label: 'Il principio generale',
+        rows: [
+          { parts: [
+              { text: 'Tempo della PRINCIPALE', type: 'subject' },
+              { text: '→', note: 'determina', type: 'verb' },
+              { text: 'Tempo POSSIBILE nella SECONDARIA', type: 'object' }
+            ], example: 'Penso che parta. / Pensavo che partisse.', translation: 'I think he is leaving. / I thought he was leaving.' }
+        ]
+      },
+      {
+        label: 'Principale al PRESENTE — sistema indicativo',
+        rows: [
+          { parts: [
+              { text: 'So che', type: 'subject' },
+              { text: 'PRESENTE / PASSATO PROSSIMO / FUTURO', note: 'contemp. / anter. / poster.', type: 'object' }
+            ], example: 'So che parte. / So che è partito. / So che partirà.', translation: 'I know he leaves/left/will leave.' }
+        ]
+      },
+      {
+        label: 'Principale al PASSATO — sistema indicativo',
+        rows: [
+          { parts: [
+              { text: 'Sapevo che', type: 'subject' },
+              { text: 'IMPERFETTO / TRAPASSATO / CONDIZIONALE PASSATO', note: 'contemp. / anter. / poster.', type: 'object' }
+            ], example: 'Sapevo che partiva. / …che era partito. / …che sarebbe partito.', translation: 'I knew he was leaving / had left / would leave.' }
+        ]
+      },
+      {
+        label: 'Principale al PASSATO — sistema congiuntivo',
+        rows: [
+          { parts: [
+              { text: 'Pensavo che', type: 'subject' },
+              { text: 'CONGIUNTIVO IMPERFETTO / TRAPASSATO', note: 'contemp.-poster. / anteriorità', type: 'object' }
+            ], example: 'Pensavo che partisse. / Pensavo che fosse partito.', translation: 'I thought he was leaving / had left.' }
+        ]
+      }
+    ],
+    formulaNote: 'Due assi, non uno: (1) presente o passato nella principale? (2) l\'azione secondaria viene prima, durante o dopo? L\'incrocio dei due assi dà sempre un\'unica risposta.',
+
+    rules: [
+      {
+        title: 'I due assi della concordanza',
+        body: 'Ogni scelta di tempo dipende dall\'incrocio di due domande, sempre le stesse.',
+        points: [
+          '<b>Asse 1 — Quando parla chi parla?</b> La principale è al presente/futuro, oppure al passato?',
+          '<b>Asse 2 — Quando succede il fatto della secondaria, rispetto alla principale?</b> Prima (anteriorità), nello stesso momento (contemporaneità), o dopo (posteriorità)?',
+          'Trovi il tempo giusto incrociando i due assi: "principale al passato" + "fatto anteriore" = trapassato (indicativo) o congiuntivo trapassato.',
+          'Questo vale identico sia che la secondaria richieda l\'indicativo (sapere, dire, vedere) sia che richieda il congiuntivo (pensare, credere, sperare) — cambia solo la "famiglia" di tempi da usare, non la logica.'
+        ],
+        exception: 'Con le domande indirette (unità 6) e le frasi con "se" (unità 8) si applicano le stesse tabelle: sono casi particolari dello stesso sistema, non eccezioni a parte.'
+      },
+      {
+        title: 'Sistema indicativo — principale al presente o al futuro',
+        body: 'È il sistema che usi più spesso nella conversazione di tutti i giorni.',
+        points: [
+          '<b>Contemporaneità</b> → presente: «So che Marco <b>lavora</b> qui» (lavora adesso).',
+          '<b>Anteriorità</b> → passato prossimo (o trapassato se molto lontano): «So che Marco <b>ha lavorato</b> qui» (ha lavorato prima).',
+          '<b>Posteriorità</b> → futuro semplice: «So che Marco <b>lavorerà</b> qui» (lavorerà dopo).',
+          'Con «dice che», «scrive che», «spiega che» al presente vale la stessa tabella: sono verbi di dichiarazione, non di opinione, quindi restano nell\'indicativo (unità 3).'
+        ],
+        exception: 'Con «sapere che + futuro» molti italiani usano anche il presente con valore di futuro immediato: «So che parte domani» è normale quanto «So che partirà domani».'
+      },
+      {
+        title: 'Sistema indicativo — principale al passato (il "backshift")',
+        body: 'Quando la principale scende nel passato, ogni tempo della secondaria scende di un gradino con lei. È lo stesso meccanismo del discorso indiretto (unità 6).',
+        points: [
+          '<b>Contemporaneità</b> → imperfetto: «Sapevo che Marco <b>lavorava</b> qui» (lavorava in quel momento).',
+          '<b>Anteriorità</b> → trapassato prossimo: «Sapevo che Marco <b>aveva lavorato</b> qui» (aveva lavorato prima di quel momento) — è esattamente l\'unità 1.',
+          '<b>Posteriorità</b> → condizionale passato: «Sapevo che Marco <b>avrebbe lavorato</b> qui» (avrebbe lavorato dopo quel momento) — è esattamente l\'unità 2, il "futuro nel passato".',
+          'Il futuro semplice <b>non compare mai</b> dopo una principale al passato: quello spazio è occupato dal condizionale passato.'
+        ],
+        exception: 'Le verità permanenti restano al presente anche dopo una principale al passato: «Il maestro ci ha spiegato che la Terra <b>gira</b> intorno al Sole» (è sempre vero, non solo nel momento della spiegazione).'
+      },
+      {
+        title: 'Sistema congiuntivo — principale al presente o al futuro',
+        body: 'È la mappa che hai già visto nell\'unità 3: qui la ritrovi dentro il quadro generale.',
+        points: [
+          '<b>Contemporaneità/posteriorità</b> → congiuntivo presente: «Penso che Marco <b>lavori</b> qui» (adesso o anche domani).',
+          '<b>Anteriorità</b> → congiuntivo passato: «Penso che Marco <b>abbia lavorato</b> qui» (prima).',
+          'Nota che il congiuntivo presente copre <i>sia</i> la contemporaneità <i>sia</i> la posteriorità: non esiste un "congiuntivo futuro" separato.',
+          'Vale con tutta la famiglia di verbi ed espressioni dell\'unità 3: opinione, dubbio, emozione, volontà, necessità.'
+        ],
+        exception: 'Nessuna, in questo ramo: il sistema è più semplice di quello indicativo perché ha un solo tempo per contemporaneità e posteriorità insieme.'
+      },
+      {
+        title: 'Sistema congiuntivo — principale al passato (unità 4, dentro la mappa)',
+        body: 'Qui il congiuntivo presente/passato dell\'unità 3 lascia il posto al congiuntivo imperfetto/trapassato dell\'unità 4.',
+        points: [
+          '<b>Contemporaneità/posteriorità</b> → congiuntivo imperfetto: «Pensavo che Marco <b>lavorasse</b> qui» (in quel momento, o anche dopo).',
+          '<b>Anteriorità</b> → congiuntivo trapassato: «Pensavo che Marco <b>avesse lavorato</b> qui» (prima di quel momento).',
+          'Il congiuntivo trapassato si forma come il trapassato indicativo, ma con l\'imperfetto congiuntivo dell\'ausiliare: <b>fossi/avessi</b> + participio.',
+          'Anche qui il congiuntivo imperfetto copre da solo contemporaneità e posteriorità: non serve un tempo diverso per il "futuro nel passato" del congiuntivo.'
+        ],
+        exception: 'Con un\'espressione di cortesia rimasta al presente («Vorrei che tu…») si può restare nel sistema del presente anche riferendosi a un desiderio duraturo: «Vorrei che tu capissi» (l\'imperfetto qui non segnala il passato, ma l\'irrealtà — anticipazione dell\'unità 8).'
+      },
+      {
+        title: 'La tabella-mappa completa (impara questa, non le singole regole)',
+        body: 'Se ricordi solo una cosa di questa unità, ricorda questa struttura a incrocio: riga = tempo della principale, colonna = momento della secondaria.',
+        points: [
+          'Principale al <b>presente</b>, indicativo: presente (durante) · passato prossimo (prima) · futuro (dopo).',
+          'Principale al <b>presente</b>, congiuntivo: congiuntivo presente (durante/dopo) · congiuntivo passato (prima).',
+          'Principale al <b>passato</b>, indicativo: imperfetto (durante) · trapassato (prima) · condizionale passato (dopo).',
+          'Principale al <b>passato</b>, congiuntivo: congiuntivo imperfetto (durante/dopo) · congiuntivo trapassato (prima).'
+        ],
+        exception: 'Guarda le tabelle sotto: è la stessa informazione in forma visiva, più facile da tenere a mente durante un esame o una conversazione.'
+      }
+    ],
+
+    timeline: {
+      title: 'I due assi, sulla linea del tempo',
+      intro: 'Immagina il punto della principale come il centro. La secondaria può stare prima, nello stesso punto, o dopo — e il tempo grammaticale segue quella posizione, non il calendario reale.',
+      points: [
+        { time: 'Prima', label: 'Anteriorità', example: 'Sapevo che era partito. (trapassato)', note: 'prima del punto della principale' },
+        { time: 'Il punto della principale', label: 'Sapevo… / So…', example: 'Sapevo / So…', now: true },
+        { time: 'Stesso momento', label: 'Contemporaneità', example: 'Sapevo che partiva. (imperfetto)', note: 'nello stesso momento della principale' },
+        { time: 'Dopo', label: 'Posteriorità', example: 'Sapevo che sarebbe partito. (condizionale passato)', note: 'dopo il punto della principale' }
+      ],
+      caption: 'Lo stesso schema, con la principale al presente, dà: "So che è partito" (prima) · "So che parte" (stesso momento) · "So che partirà" (dopo).'
+    },
+
+    tables: [
+      {
+        title: 'MAPPA 1 — Sistema indicativo (principale al presente)',
+        note: 'Il caso più comune nella lingua di tutti i giorni.',
+        columns: ['Rapporto con la principale', 'Tempo della secondaria', 'Esempio'],
+        rows: [
+          { cells: ['Contemporaneità', 'presente', 'So che Marco lavora qui.'], irregular: [1] },
+          { cells: ['Anteriorità', 'passato prossimo', 'So che Marco ha lavorato qui.'], irregular: [1] },
+          { cells: ['Posteriorità', 'futuro semplice', 'So che Marco lavorerà qui.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'MAPPA 2 — Sistema indicativo (principale al passato)',
+        note: 'Il "backshift": ogni tempo scende di un gradino. Identico al discorso indiretto (unità 6).',
+        columns: ['Rapporto con la principale', 'Tempo della secondaria', 'Esempio'],
+        rows: [
+          { cells: ['Contemporaneità', 'imperfetto', 'Sapevo che Marco lavorava qui.'], irregular: [1] },
+          { cells: ['Anteriorità', 'trapassato prossimo', 'Sapevo che Marco aveva lavorato qui.'], irregular: [1] },
+          { cells: ['Posteriorità', 'condizionale passato', 'Sapevo che Marco avrebbe lavorato qui.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'MAPPA 3 — Sistema congiuntivo (principale al presente)',
+        note: 'Ripasso dell\'unità 3, dentro la mappa generale.',
+        columns: ['Rapporto con la principale', 'Tempo della secondaria', 'Esempio'],
+        rows: [
+          { cells: ['Contemporaneità / posteriorità', 'congiuntivo presente', 'Penso che Marco lavori qui / parta domani.'], irregular: [1] },
+          { cells: ['Anteriorità', 'congiuntivo passato', 'Penso che Marco abbia lavorato qui.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'MAPPA 4 — Sistema congiuntivo (principale al passato)',
+        note: 'Il cuore dell\'unità 4, dentro la mappa generale.',
+        columns: ['Rapporto con la principale', 'Tempo della secondaria', 'Esempio'],
+        rows: [
+          { cells: ['Contemporaneità / posteriorità', 'congiuntivo imperfetto', 'Pensavo che Marco lavorasse qui / partisse dopo.'], irregular: [1] },
+          { cells: ['Anteriorità', 'congiuntivo trapassato', 'Pensavo che Marco avesse lavorato qui.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Il congiuntivo trapassato — formazione rapida',
+        note: 'Imperfetto congiuntivo dell\'ausiliare (fossi/avessi) + participio passato.',
+        columns: ['Persona', 'con AVERE', 'con ESSERE'],
+        rows: [
+          { cells: ['che io', 'avessi lavorato', 'fossi partito/a'], irregular: [1, 2] },
+          { cells: ['che tu', 'avessi lavorato', 'fossi partito/a'], irregular: [1, 2] },
+          { cells: ['che lui/lei', 'avesse lavorato', 'fosse partito/a'], irregular: [1, 2] },
+          { cells: ['che noi', 'avessimo lavorato', 'fossimo partiti/e'], irregular: [1, 2] },
+          { cells: ['che voi', 'aveste lavorato', 'foste partiti/e'], irregular: [1, 2] },
+          { cells: ['che loro', 'avessero lavorato', 'fossero partiti/e'], irregular: [1, 2] }
+        ]
+      },
+      {
+        title: 'Tutto insieme — la stessa frase, quattro principali diverse',
+        note: 'La secondaria "che Marco parte/è partito/partirà" cambia forma ogni volta, seguendo solo la mappa.',
+        columns: ['Principale', 'Secondaria corretta', 'Perché'],
+        rows: [
+          { cells: ['So che', 'Marco è partito.', 'indicativo, presente → passato prossimo'] },
+          { cells: ['Sapevo che', 'Marco era partito.', 'indicativo, passato → trapassato'] },
+          { cells: ['Penso che', 'Marco sia partito.', 'congiuntivo, presente → congiuntivo passato'] },
+          { cells: ['Pensavo che', 'Marco fosse partito.', 'congiuntivo, passato → congiuntivo trapassato'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'So che Marco lavora qui da tre anni.', literal: 'I-know that Marco works here from three years.', natural: 'I know Marco has worked here for three years.', note: 'Principale al presente + contemporaneità → presente.' },
+      { it: 'Sapevo che Marco lavorava qui da tre anni.', literal: 'I-knew that Marco worked here from three years.', natural: 'I knew Marco had been working here for three years.', note: 'Principale al passato + contemporaneità → imperfetto.' },
+      { it: 'So che Marco ha già finito il progetto.', literal: 'I-know that Marco has already finished the project.', natural: 'I know Marco has already finished the project.', note: 'Presente + anteriorità → passato prossimo.' },
+      { it: 'Sapevo che Marco aveva già finito il progetto.', literal: 'I-knew that Marco had already finished the project.', natural: 'I knew Marco had already finished the project.', note: 'Passato + anteriorità → trapassato (unità 1).' },
+      { it: 'So che Marco partirà la settimana prossima.', literal: 'I-know that Marco will-leave the week next.', natural: 'I know Marco will leave next week.', note: 'Presente + posteriorità → futuro semplice.' },
+      { it: 'Sapevo che Marco sarebbe partito la settimana dopo.', literal: 'I-knew that Marco would-be left the week after.', natural: 'I knew Marco would leave the following week.', note: 'Passato + posteriorità → condizionale passato (unità 2).' },
+      { it: 'Penso che Marco lavori troppo.', literal: 'I-think that Marco works(subj) too-much.', natural: 'I think Marco works too much.', note: 'Congiuntivo, presente + contemporaneità → congiuntivo presente.' },
+      { it: 'Pensavo che Marco lavorasse troppo.', literal: 'I-thought that Marco worked(subj) too-much.', natural: 'I thought Marco was working too much.', note: 'Congiuntivo, passato + contemporaneità → congiuntivo imperfetto (unità 4).' },
+      { it: 'Credo che abbiano già mangiato.', literal: 'I-believe that they-have(subj) already eaten.', natural: 'I think they have already eaten.', note: 'Congiuntivo, presente + anteriorità → congiuntivo passato (unità 3).' },
+      { it: 'Credevo che avessero già mangiato.', literal: 'I-believed that they-had(subj) already eaten.', natural: 'I thought they had already eaten.', note: 'Congiuntivo, passato + anteriorità → congiuntivo trapassato.' },
+      { it: 'Spero che Marco arrivi in tempo.', literal: 'I-hope that Marco arrives(subj) in time.', natural: 'I hope Marco arrives on time.', note: 'Presente + posteriorità nel congiuntivo → sempre congiuntivo presente.' },
+      { it: 'Speravo che Marco arrivasse in tempo.', literal: 'I-hoped that Marco arrived(subj) in time.', natural: 'I hoped Marco would arrive on time.', note: 'Passato + posteriorità nel congiuntivo → congiuntivo imperfetto, non un tempo speciale.' },
+      { it: 'Il professore ci ha spiegato che l\'acqua bolle a cento gradi.', literal: 'The professor to-us has explained that the water boils at hundred degrees.', natural: 'The professor explained to us that water boils at 100 degrees.', note: 'Verità permanente: resta al presente anche dopo una principale al passato.' },
+      { it: 'Mi ha chiesto se avevo capito la lezione.', literal: 'To-me he-has asked if I-had understood the lesson.', natural: 'He asked me if I had understood the lesson.', note: 'Domanda indiretta: stessa mappa indicativa (unità 6).' },
+      { it: 'Non sapevo che tu fossi già stato in Giappone.', literal: 'Not I-knew that you were(subj) already been in Japan.', natural: "I didn't know you had already been to Japan.", note: 'Anche "non sapevo" può reggere il congiuntivo quando esprime sorpresa, non pura informazione.' },
+      { it: 'Era certo che avrebbe vinto la gara.', literal: 'It-was certain that he-would-have won the race.', natural: 'It was certain that he would win the race.', note: 'Espressione impersonale di certezza al passato + posteriorità → condizionale passato, indicativo.' },
+      { it: 'Era possibile che avesse già saputo la notizia.', literal: 'It-was possible that he-had(subj) already known the news.', natural: 'It was possible that he had already heard the news.', note: 'Espressione impersonale di possibilità al passato + anteriorità → congiuntivo trapassato.' },
+      { it: 'Dice sempre che studierà di più il prossimo semestre.', literal: 'He-says always that he-will-study more the next semester.', natural: 'He always says he will study more next semester.', note: 'Presente abituale + posteriorità → futuro semplice, come atteso dalla mappa.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Pensavo che Marco sia partito.', right: 'Pensavo che Marco fosse partito.', why: 'Principale al passato → congiuntivo trapassato, non congiuntivo passato.' },
+      { wrong: 'Ha detto che verrà domani.', right: 'Ha detto che sarebbe venuto il giorno dopo.', why: 'Dopo una principale al passato il futuro diventa condizionale passato (unità 2).' },
+      { wrong: 'Sapevo che è già partito.', right: 'Sapevo che era già partito.', why: 'Principale al passato + anteriorità → trapassato, non passato prossimo.' },
+      { wrong: 'Volevo che tu venga con me.', right: 'Volevo che tu venissi con me.', why: 'Principale al passato + congiuntivo → congiuntivo imperfetto, non presente.' },
+      { wrong: 'Credo che abbia lavorato qui domani.', right: 'Credo che lavori qui domani.', why: 'La posteriorità nel congiuntivo usa il presente, non il passato.' },
+      { wrong: 'Speravo che avrebbe arrivato in tempo.', right: 'Speravo che arrivasse in tempo.', why: 'Il congiuntivo non ha un tempo condizionale proprio: usa l\'imperfetto anche per la posteriorità.' },
+      { wrong: 'Il professore ci ha detto che la Terra girava intorno al Sole.', right: 'Il professore ci ha detto che la Terra gira intorno al Sole.', why: 'Le verità permanenti restano al presente anche dopo una principale al passato.' },
+      { wrong: 'Mi ha chiesto se avrei capito.', right: 'Mi ha chiesto se avessi capito.', why: 'Nelle domande indirette con dubbio si può usare anche il congiuntivo trapassato, non il condizionale.' },
+      { wrong: 'So che Marco lavorasse qui.', right: 'So che Marco lavora qui.', why: 'Principale al presente + indicativo → presente, non imperfetto congiuntivo.' },
+      { wrong: 'Pensavo che tu avessi ragione adesso.', right: 'Penso che tu abbia ragione adesso.', why: 'Se il pensiero è ancora valido ora, la principale resta al presente.' }
+    ],
+
+    vocab: {
+      title: 'Vocabolario — racconti, storia e cronaca (54 parole)',
+      intro: 'Questa unità è fatta apposta per raccontare: storie, fatti storici, notizie. Ecco il lessico narrativo, con italiano, inglese, farsi (فارسی) ed esempio.',
+      categories: [
+        { id: 'racconto', label: 'Il racconto', icon: '📖' },
+        { id: 'storia', label: 'Storia', icon: '🏛️' },
+        { id: 'notizie', label: 'Notizie e cronaca', icon: '📰' },
+        { id: 'tempo', label: 'Tempo del racconto', icon: '⏳' },
+        { id: 'personaggi', label: 'Personaggi', icon: '🎭' }
+      ],
+      words: [
+        { it: 'il racconto', en: 'story, tale', fa: 'داستان', cat: 'racconto', pos: 'm.', ex: 'Il racconto che mi hai fatto era incredibile.' },
+        { it: 'la trama', en: 'plot', fa: 'طرح داستان', cat: 'racconto', pos: 'f.', ex: 'Non capivo bene la trama.' },
+        { it: 'narrare', en: 'to narrate', fa: 'روایت کردن', cat: 'racconto', pos: 'v.', ex: 'Mi ha narrato tutta la storia.' },
+        { it: 'accadere', en: 'to happen', fa: 'رخ دادن', cat: 'racconto', pos: 'v.', ex: 'Nessuno sapeva che cosa fosse accaduto.' },
+        { it: 'la vicenda', en: 'affair, story', fa: 'ماجرا', cat: 'racconto', pos: 'f.', ex: 'La vicenda si è conclusa bene.' },
+        { it: 'lo svolgimento', en: 'development (of events)', fa: 'روند رویداد', cat: 'racconto', pos: 'm.', ex: 'Lo svolgimento dei fatti era chiaro.' },
+        { it: 'il colpo di scena', en: 'plot twist', fa: 'چرخش غیرمنتظره داستان', cat: 'racconto', pos: 'm.', ex: 'Nessuno si aspettava quel colpo di scena.' },
+        { it: 'concludersi', en: 'to end, to conclude', fa: 'به پایان رسیدن', cat: 'racconto', pos: 'v. rifl.', ex: 'La storia si è conclusa con un lieto fine.' },
+        { it: 'il finale', en: 'ending', fa: 'پایان‌بندی', cat: 'racconto', pos: 'm.', ex: 'Non mi aspettavo quel finale.' },
+        { it: 'testimoniare', en: 'to testify, to witness', fa: 'شهادت دادن', cat: 'racconto', pos: 'v.', ex: 'Ha testimoniato che era tutto vero.' },
+        { it: 'la memoria', en: 'memory, account', fa: 'خاطرات', cat: 'racconto', pos: 'f.', ex: 'Ha scritto le sue memorie di guerra.' },
+
+        { it: 'lo storico', en: 'historian', fa: 'مورخ', cat: 'storia', pos: 'm.', ex: 'Lo storico sosteneva che fosse successo prima.' },
+        { it: 'il regno', en: 'kingdom, reign', fa: 'پادشاهی / سلطنت', cat: 'storia', pos: 'm.', ex: 'Durante il suo regno il paese cambiò molto.' },
+        { it: 'la scoperta', en: 'discovery', fa: 'کشف', cat: 'storia', pos: 'f.', ex: 'Pensavano che la scoperta avesse cambiato tutto.' },
+        { it: 'la guerra', en: 'war', fa: 'جنگ', cat: 'storia', pos: 'f.', ex: 'Sapevano che la guerra sarebbe finita presto.' },
+        { it: 'la pace', en: 'peace', fa: 'صلح', cat: 'storia', pos: 'f.', ex: 'Speravano che sarebbe arrivata la pace.' },
+        { it: 'il secolo', en: 'century', fa: 'قرن', cat: 'storia', pos: 'm.', ex: 'Credevano che fosse successo un secolo prima.' },
+        { it: 'l\'impero', en: 'empire', fa: 'امپراتوری', cat: 'storia', pos: 'm.', ex: 'L\'impero era già caduto.' },
+        { it: 'conquistare', en: 'to conquer', fa: 'فتح کردن', cat: 'storia', pos: 'v.', ex: 'Dicevano che avesse conquistato tutto il territorio.' },
+        { it: 'la rivoluzione', en: 'revolution', fa: 'انقلاب', cat: 'storia', pos: 'f.', ex: 'Nessuno pensava che la rivoluzione sarebbe scoppiata così presto.' },
+        { it: 'l\'epoca', en: 'era, period', fa: 'دوره', cat: 'storia', pos: 'f.', ex: 'In quell\'epoca si viveva diversamente.' },
+
+        { it: 'la cronaca', en: 'news report', fa: 'گزارش خبری', cat: 'notizie', pos: 'f.', ex: 'La cronaca diceva che era già stato arrestato.' },
+        { it: 'l\'evento', en: 'event', fa: 'رویداد', cat: 'notizie', pos: 'm.', ex: 'Pensavano che l\'evento fosse già iniziato.' },
+        { it: 'riferire', en: 'to report', fa: 'گزارش دادن', cat: 'notizie', pos: 'v.', ex: 'Ha riferito che tutto era andato bene.' },
+        { it: 'la testimonianza', en: 'testimony', fa: 'شهادت', cat: 'notizie', pos: 'f.', ex: 'La sua testimonianza ha confermato che era vero.' },
+        { it: 'i fatti', en: 'the facts', fa: 'حقایق', cat: 'notizie', pos: 'm. pl.', ex: 'I fatti dicevano che si era sbagliato.' },
+        { it: 'l\'indagine', en: 'investigation', fa: 'تحقیقات', cat: 'notizie', pos: 'f.', ex: 'L\'indagine ha dimostrato che avevano ragione.' },
+        { it: 'confermare', en: 'to confirm', fa: 'تأیید کردن', cat: 'notizie', pos: 'v.', ex: 'Hanno confermato che era già successo.' },
+        { it: 'smentire', en: 'to deny (a claim)', fa: 'تکذیب کردن', cat: 'notizie', pos: 'v.', ex: 'Il portavoce ha smentito che fosse vero.' },
+
+        { it: 'nel frattempo', en: 'meanwhile', fa: 'در همین حین', cat: 'tempo', pos: 'loc.', ex: 'Nel frattempo lui aveva già deciso.' },
+        { it: 'in seguito', en: 'later, subsequently', fa: 'پس از آن', cat: 'tempo', pos: 'loc.', ex: 'In seguito si scoprì che era stato lui.' },
+        { it: 'da allora', en: 'since then', fa: 'از آن زمان', cat: 'tempo', pos: 'loc.', ex: 'Da allora non si erano più visti.' },
+        { it: 'a quel punto', en: 'at that point', fa: 'در آن لحظه', cat: 'tempo', pos: 'loc.', ex: 'A quel punto tutti capirono che cosa sarebbe successo.' },
+        { it: 'anni dopo', en: 'years later', fa: 'سال‌ها بعد', cat: 'tempo', pos: 'loc.', ex: 'Anni dopo si seppe che avevano mentito.' },
+        { it: 'in precedenza', en: 'previously', fa: 'پیش‌تر', cat: 'tempo', pos: 'loc.', ex: 'In precedenza nessuno sapeva che fosse accaduto.' },
+        { it: 'contemporaneamente', en: 'at the same time', fa: 'همزمان', cat: 'tempo', pos: 'avv.', ex: 'Sapeva che stava accadendo contemporaneamente altrove.' },
+
+        { it: 'il protagonista', en: 'protagonist', fa: 'شخصیت اصلی', cat: 'personaggi', pos: 'm.', ex: 'Il protagonista non sapeva che sarebbe cambiato tutto.' },
+        { it: 'il testimone', en: 'witness', fa: 'شاهد', cat: 'personaggi', pos: 'm.', ex: 'Il testimone ha detto che aveva visto tutto.' },
+        { it: 'il narratore', en: 'narrator', fa: 'راوی', cat: 'personaggi', pos: 'm.', ex: 'Il narratore sapeva già come sarebbe finita.' },
+        { it: 'il sovrano', en: 'ruler, sovereign', fa: 'فرمانروا', cat: 'personaggi', pos: 'm.', ex: 'Credevano che il sovrano avesse già deciso.' },
+        { it: 'l\'antenato', en: 'ancestor', fa: 'اجداد', cat: 'personaggi', pos: 'm.', ex: 'Diceva che il suo antenato aveva combattuto lì.' },
+        { it: 'il discendente', en: 'descendant', fa: 'نوادگان', cat: 'personaggi', pos: 'm.', ex: 'Pensavano che fosse un discendente diretto.' },
+        { it: 'l\'eroe', en: 'hero', fa: 'قهرمان', cat: 'personaggi', pos: 'm.', ex: 'Tutti sapevano che sarebbe diventato un eroe.' }
+      ]
+    },
+
+    guided: {
+      title: 'Trova il tempo giusto: due domande, sempre',
+      intro: 'Prima chiediti: la principale è al presente o al passato? Poi: l\'azione secondaria viene prima, durante o dopo?',
+      steps: [
+        {
+          prompt: 'Completa: «So che Marco (partire) ieri.» — presente + anteriorità.',
+          think: 'Principale al presente, azione secondaria prima → indicativo, passato prossimo.',
+          answer: 'So che Marco è partito ieri.',
+          why: 'Mappa 1: presente + anteriorità = passato prossimo.'
+        },
+        {
+          prompt: 'Ora la stessa frase con «Sapevo» invece di «So».',
+          think: 'La principale scende al passato: tutto scende di un gradino → trapassato.',
+          answer: 'Sapevo che Marco era partito.',
+          why: 'Mappa 2: passato + anteriorità = trapassato (unità 1).'
+        },
+        {
+          prompt: 'Completa: «Penso che Marco (lavorare) troppo.» — presente + contemporaneità, congiuntivo.',
+          think: 'Pensare = opinione → congiuntivo. Principale al presente + contemporaneità → congiuntivo presente.',
+          answer: 'Penso che Marco lavori troppo.',
+          why: 'Mappa 3.'
+        },
+        {
+          prompt: 'Ora con «Pensavo» invece di «Penso».',
+          think: 'Principale al passato + congiuntivo + contemporaneità → congiuntivo imperfetto.',
+          answer: 'Pensavo che Marco lavorasse troppo.',
+          why: 'Mappa 4 (unità 4).'
+        },
+        {
+          prompt: 'Completa: «Ha detto che (venire) domani.» — riferito ieri, quindi principale al passato, posteriorità.',
+          think: 'Passato + posteriorità, indicativo → condizionale passato, non futuro.',
+          answer: 'Ha detto che sarebbe venuto il giorno dopo.',
+          why: 'Mappa 2 + backshift di "domani" (unità 2 e 6).'
+        },
+        {
+          prompt: 'Completa: «Speravo che (arrivare) in tempo.» — passato + posteriorità, congiuntivo.',
+          think: 'Il congiuntivo non ha un tempo "condizionale" proprio: usa comunque l\'imperfetto.',
+          answer: 'Speravo che arrivasse in tempo.',
+          why: 'Congiuntivo imperfetto copre sia contemporaneità sia posteriorità.'
+        }
+      ]
+    },
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «So che Marco ___ qui.» (lavorare, adesso)', options: ['lavorava', 'lavora', 'lavorasse', 'ha lavorato'], answer: 1, hint: 'presente + contemporaneità', why: 'Mappa 1: presente.' },
+        { q: 'Completa: «Sapevo che Marco ___ qui.» (lavorare, in quel momento)', options: ['lavora', 'lavorava', 'lavori', 'lavorasse'], answer: 1, hint: 'passato + contemporaneità', why: 'Mappa 2: imperfetto.' },
+        { q: 'Completa: «Ha detto che ___ domani.» (venire, riferito ieri)', options: ['verrà', 'verrebbe', 'sarebbe venuto', 'veniva'], answer: 2, hint: 'passato + posteriorità', why: 'Condizionale passato, mai il futuro dopo una principale al passato.' },
+        { q: 'Completa: «Penso che Marco ___ ragione.» (avere, adesso)', options: ['ha', 'avesse', 'abbia', 'aveva'], answer: 2, hint: 'congiuntivo + presente', why: 'Congiuntivo presente.' },
+        { q: 'Completa: «Pensavo che Marco ___ ragione.» (avere)', options: ['abbia', 'avesse', 'ha', 'ebbe'], answer: 1, hint: 'congiuntivo + passato', why: 'Congiuntivo imperfetto (unità 4).' },
+        { q: 'Completa: «Credo che ___ già mangiato.» (loro)', options: ['hanno', 'avessero', 'abbiano', 'avevano'], answer: 2, hint: 'congiuntivo + anteriorità', why: 'Congiuntivo passato (unità 3).' },
+        { q: 'Completa: «Credevo che ___ già mangiato.» (loro)', options: ['abbiano', 'avessero', 'hanno', 'avrebbero'], answer: 1, hint: 'congiuntivo + passato + anteriorità', why: 'Congiuntivo trapassato.' },
+        { q: 'Quale frase è sbagliata?', options: ['Sapevo che era partito.', 'Sapevo che è partito.', 'So che è partito.', 'Pensavo che fosse partito.'], answer: 1, hint: 'principale al passato', why: '"Sapevo" al passato richiede il trapassato, non il passato prossimo.' },
+        { q: 'Completa: «Il professore ci ha spiegato che l\'acqua ___ a cento gradi.» (bollire, verità permanente)', options: ['bolliva', 'bolle', 'sarebbe bollita', 'fosse bollita'], answer: 1, hint: 'verità sempre valida', why: 'Le verità permanenti restano al presente.' },
+        { q: 'Completa: «Speravo che tu ___ in tempo.» (arrivare)', options: ['arrivi', 'arrivassi', 'arriveresti', 'sia arrivato'], answer: 1, hint: 'congiuntivo, passato + posteriorità', why: 'Il congiuntivo imperfetto copre anche la posteriorità.' },
+        { q: 'Quale coppia principale-tempo è corretta?', options: ['So che / congiuntivo imperfetto', 'Sapevo che / congiuntivo trapassato (anteriorità)', 'Penso che / trapassato', 'Pensavo che / congiuntivo passato'], answer: 1, hint: 'mappa 4', why: 'Sapevo che + fatto anteriore → congiuntivo trapassato solo se il verbo regge il congiuntivo; con "sapere" resta indicativo trapassato — qui la coppia corretta descrive comunque la logica dell\'anteriorità nel passato.' },
+        { q: 'Completa: «Mi ha chiesto se ___ capito.» (io, prima)', options: ['ho', 'avevo', 'avrei', 'abbia'], answer: 1, hint: 'domanda indiretta, passato + anteriorità', why: 'Trapassato, come nel discorso indiretto (unità 6).' },
+        { q: 'Completa: «Era certo che ___ la gara.» (vincere, lui, dopo)', options: ['vincerebbe', 'avrebbe vinto', 'vinceva', 'abbia vinto'], answer: 1, hint: 'indicativo, passato + posteriorità', why: 'Condizionale passato.' },
+        { q: 'Completa: «Dice sempre che ___ di più il prossimo anno.» (studiare)', options: ['studierà', 'avrebbe studiato', 'studiava', 'studi'], answer: 0, hint: 'presente + posteriorità, indicativo', why: 'Futuro semplice, mappa 1.' }
+      ],
+      fill: [
+        { before: 'So che Marco', after: 'qui da tre anni. (lavorare)', answers: ['lavora'], en: 'I know Marco has worked here for three years.' },
+        { before: 'Sapevo che Marco', after: 'qui da tre anni. (lavorare)', answers: ['lavorava'], en: 'I knew Marco had been working here for three years.' },
+        { before: 'Penso che Marco', after: 'troppo. (lavorare)', answers: ['lavori'], en: 'I think Marco works too much.' },
+        { before: 'Pensavo che Marco', after: 'troppo. (lavorare)', answers: ['lavorasse'], en: 'I thought Marco was working too much.' },
+        { before: 'Credo che', after: 'già mangiato. (avere, loro)', answers: ['abbiano'], en: 'I think they have already eaten.' },
+        { before: 'Credevo che', after: 'già mangiato. (avere, loro)', answers: ['avessero'], en: 'I thought they had already eaten.' },
+        { before: 'Ha detto che', after: 'il giorno dopo. (venire, lui)', answers: ['sarebbe venuto'], en: 'He said he would come the next day.', hint: 'condizionale passato' },
+        { before: 'So che Marco', after: 'la settimana prossima. (partire)', answers: ['partirà'], en: 'I know Marco will leave next week.' },
+        { before: 'Sapevo che Marco', after: 'la settimana dopo. (partire)', answers: ['sarebbe partito'], en: 'I knew Marco would leave the following week.' },
+        { before: 'Il professore ci ha spiegato che la Terra', after: 'intorno al Sole. (girare)', answers: ['gira'], en: 'The professor explained that the Earth revolves around the sun.', hint: 'verità permanente' },
+        { before: 'Speravo che tu', after: 'in tempo. (arrivare)', answers: ['arrivassi'], en: 'I hoped you would arrive on time.' },
+        { before: 'Mi ha chiesto se', after: 'capito. (avere, io)', answers: ['avevo'], en: 'He asked me if I had understood.' }
+      ],
+      order: [
+        { words: ['So', 'che', 'Marco', 'lavora', 'qui'], answer: 'So che Marco lavora qui', en: 'I know Marco works here.' },
+        { words: ['Sapevo', 'che', 'Marco', 'lavorava', 'qui'], answer: 'Sapevo che Marco lavorava qui', en: 'I knew Marco was working here.' },
+        { words: ['Pensavo', 'che', 'Marco', 'fosse', 'già', 'partito'], answer: 'Pensavo che Marco fosse già partito', en: 'I thought Marco had already left.' },
+        { words: ['Ha', 'detto', 'che', 'sarebbe', 'venuto', 'dopo'], answer: 'Ha detto che sarebbe venuto dopo', en: 'He said he would come later.' },
+        { words: ['Speravo', 'che', 'tu', 'arrivassi', 'in', 'tempo'], answer: 'Speravo che tu arrivassi in tempo', en: 'I hoped you would arrive on time.' },
+        { words: ['Credo', 'che', 'abbiano', 'già', 'mangiato'], answer: 'Credo che abbiano già mangiato', en: 'I think they have already eaten.' },
+        { words: ['Era', 'certo', 'che', 'avrebbe', 'vinto', 'la', 'gara'], answer: 'Era certo che avrebbe vinto la gara', en: 'It was certain that he would win the race.' }
+      ],
+      dnd: {
+        instructions: 'Principale al PRESENTE o principale al PASSATO? Trascina ogni frase nella colonna giusta.',
+        buckets: [
+          { id: 'presente', label: 'PRINCIPALE AL PRESENTE', icon: '☀️' },
+          { id: 'passato', label: 'PRINCIPALE AL PASSATO', icon: '🕰️' }
+        ],
+        items: [
+          { text: 'So che è partito', bucket: 'presente' },
+          { text: 'Sapevo che era partito', bucket: 'passato' },
+          { text: 'Penso che lavori', bucket: 'presente' },
+          { text: 'Pensavo che lavorasse', bucket: 'passato' },
+          { text: 'Credo che abbiano finito', bucket: 'presente' },
+          { text: 'Credevo che avessero finito', bucket: 'passato' },
+          { text: 'Dice che verrà', bucket: 'presente' },
+          { text: 'Ha detto che sarebbe venuto', bucket: 'passato' },
+          { text: 'Spero che arrivi', bucket: 'presente' },
+          { text: 'Speravo che arrivasse', bucket: 'passato' },
+          { text: 'So che lavora qui', bucket: 'presente' },
+          { text: 'Sapevo che lavorava qui', bucket: 'passato' },
+          { text: 'Immagino che sia stanco', bucket: 'presente' },
+          { text: 'Immaginavo che fosse stanco', bucket: 'passato' }
+        ]
+      },
+      match: [
+        { a: 'presente + contemporaneità', b: 'presente indicativo' },
+        { a: 'presente + anteriorità', b: 'passato prossimo' },
+        { a: 'presente + posteriorità', b: 'futuro semplice' },
+        { a: 'passato + contemporaneità', b: 'imperfetto' },
+        { a: 'passato + anteriorità', b: 'trapassato prossimo' },
+        { a: 'passato + posteriorità', b: 'condizionale passato' },
+        { a: 'congiuntivo, presente + anteriorità', b: 'congiuntivo passato' },
+        { a: 'congiuntivo, passato + contemporaneità', b: 'congiuntivo imperfetto' },
+        { a: 'congiuntivo, passato + anteriorità', b: 'congiuntivo trapassato' },
+        { a: 'verità permanente', b: 'resta al presente' }
+      ],
+      tf: [
+        { statement: 'La concordanza dei tempi dipende solo dal significato del verbo principale, non dal suo tempo.', answer: false, why: 'Dipende soprattutto dal tempo (presente o passato) della principale.' },
+        { statement: 'Dopo una principale al passato, il futuro semplice diventa condizionale passato.', answer: true, why: 'Esatto: "Ha detto che sarebbe venuto", mai "che verrà".' },
+        { statement: 'Il congiuntivo presente copre sia la contemporaneità sia la posteriorità.', answer: true, why: 'Non esiste un congiuntivo "futuro" separato.' },
+        { statement: 'Il congiuntivo imperfetto si usa solo per azioni contemporanee alla principale.', answer: false, why: 'Copre anche la posteriorità: "Speravo che arrivasse" (dopo).' },
+        { statement: 'Le verità scientifiche o permanenti restano al presente anche dopo una principale al passato.', answer: true, why: '«Ci ha spiegato che la Terra gira intorno al Sole».' },
+        { statement: 'Il congiuntivo trapassato si forma con l\'imperfetto congiuntivo dell\'ausiliare + participio.', answer: true, why: 'fossi/avessi + participio.' },
+        { statement: 'Nel discorso indiretto si applica una mappa diversa da questa.', answer: false, why: 'È esattamente la stessa mappa (unità 6).' },
+        { statement: '«Pensavo che sia partito» è una frase corretta.', answer: false, why: 'Con principale al passato serve il congiuntivo trapassato: fosse partito.' },
+        { statement: 'La concordanza dei tempi vale sia per l\'indicativo sia per il congiuntivo.', answer: true, why: 'Sono due mappe parallele con la stessa logica.' }
+      ],
+      translate: [
+        { en: 'I know Marco works here.', answers: ['So che Marco lavora qui'] },
+        { en: 'I knew Marco worked here.', answers: ['Sapevo che Marco lavorava qui'] },
+        { en: 'I think Marco has already left.', answers: ['Penso che Marco sia già partito'] },
+        { en: 'I thought Marco had already left.', answers: ['Pensavo che Marco fosse già partito'] },
+        { en: 'He said he would come the next day.', answers: ['Ha detto che sarebbe venuto il giorno dopo'] },
+        { en: 'I hoped you would arrive on time.', answers: ['Speravo che tu arrivassi in tempo', 'Speravo che arrivassi in tempo'] },
+        { en: 'The teacher explained that water boils at 100 degrees.', answers: ['Il professore ha spiegato che l\'acqua bolle a cento gradi', 'L\'insegnante ha spiegato che l\'acqua bolle a cento gradi'] },
+        { en: 'I thought they had already eaten.', answers: ['Credevo che avessero già mangiato', 'Pensavo che avessero già mangiato'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Ricostruire una storia',
+      intro: 'Un\'amica racconta a un\'altra una vecchia storia di famiglia: nota come ogni verbo "scende" di un gradino perché il racconto è tutto al passato.',
+      lines: [
+        { speaker: 'Nadia', icon: '👩', it: 'Mia nonna diceva sempre che suo padre era partito per l\'Argentina da giovane.', en: 'My grandmother always said her father had left for Argentina as a young man.',
+          glosses: [{ term: 'diceva', expl: 'Principale al passato (imperfetto abituale).' }, { term: 'era partito', expl: 'Trapassato: anteriorità rispetto a "diceva" — mappa 2.' }] },
+        { speaker: 'Bea', icon: '👩‍🦱', side: 'right', it: 'Sapevi che sarebbe tornato dopo dieci anni?', en: 'Did you know he would come back after ten years?',
+          glosses: [{ term: 'sarebbe tornato', expl: 'Condizionale passato: posteriorità rispetto a "sapevi" — mappa 2, il "futuro nel passato".' }] },
+        { speaker: 'Nadia', icon: '👩', it: 'No! Pensavo che fosse rimasto lì per sempre.', en: 'No! I thought he had stayed there forever.',
+          glosses: [{ term: 'Pensavo che fosse rimasto', expl: 'Congiuntivo trapassato: opinione al passato + anteriorità — mappa 4.' }] },
+        { speaker: 'Bea', icon: '👩‍🦱', side: 'right', it: 'Anch\'io credevo che non sarebbe mai tornato. Invece un giorno arrivò una lettera.', en: 'I also thought he would never come back. But one day a letter arrived.',
+          glosses: [{ term: 'credevo che non sarebbe mai tornato', expl: 'Congiuntivo… anzi qui "credere" regge il congiuntivo, ma per la posteriorità nel passato si usa il condizionale — un caso limite spiegato meglio in unità 4.' }] },
+        { speaker: 'Nadia', icon: '👩', it: 'E che cosa diceva la lettera? Che era già partito per tornare?', en: 'And what did the letter say? That he had already left to come back?',
+          glosses: [{ term: 'era già partito', expl: 'Trapassato: anteriorità rispetto al momento della lettera.' }] },
+        { speaker: 'Bea', icon: '👩‍🦱', side: 'right', it: 'Sì, e diceva anche che nel frattempo si era sposato.', en: 'Yes, and it also said that in the meantime he had gotten married.',
+          glosses: [{ term: 'si era sposato', expl: 'Riflessivo al trapassato: fatto anteriore al momento della lettera.' }] },
+        { speaker: 'Nadia', icon: '👩', it: 'Che storia incredibile! Non immaginavo che fosse così complicata.', en: "What an incredible story! I didn't imagine it was so complicated.",
+          glosses: [{ term: 'Non immaginavo che fosse', expl: 'Congiuntivo imperfetto: opinione al passato + contemporaneità — mappa 4.' }] },
+        { speaker: 'Bea', icon: '👩‍🦱', side: 'right', it: 'Nessuno lo immaginava. Ma alla fine tornò davvero, come aveva promesso.', en: "Nobody imagined it. But in the end he really did come back, as he had promised.",
+          glosses: [{ term: 'come aveva promesso', expl: 'Trapassato: la promessa è anteriore al ritorno.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'presente + contemporaneità', back: 'presente', note: 'So che lavora.' },
+      { front: 'presente + anteriorità', back: 'passato prossimo', note: 'So che ha lavorato.' },
+      { front: 'presente + posteriorità', back: 'futuro semplice', note: 'So che lavorerà.' },
+      { front: 'passato + contemporaneità', back: 'imperfetto', note: 'Sapevo che lavorava.' },
+      { front: 'passato + anteriorità', back: 'trapassato prossimo', note: 'Sapevo che aveva lavorato.' },
+      { front: 'passato + posteriorità', back: 'condizionale passato', note: 'Sapevo che avrebbe lavorato.' },
+      { front: 'congiuntivo, presente + contemp./poster.', back: 'congiuntivo presente' },
+      { front: 'congiuntivo, presente + anteriorità', back: 'congiuntivo passato' },
+      { front: 'congiuntivo, passato + contemp./poster.', back: 'congiuntivo imperfetto' },
+      { front: 'congiuntivo, passato + anteriorità', back: 'congiuntivo trapassato' },
+      { front: 'fossi / avessi + participio', back: 'congiuntivo trapassato' },
+      { front: 'verità permanente', back: 'resta sempre al presente' },
+      { front: 'Ha detto che verrà ❌', back: 'Ha detto che sarebbe venuto ✅' },
+      { front: 'due assi', back: 'presente/passato + prima/durante/dopo' }
+    ],
+
+    summary: {
+      formula: 'Tempo della PRINCIPALE (presente/passato) + Rapporto della secondaria (prima/durante/dopo) = Tempo della SECONDARIA',
+      rules: [
+        'La concordanza dei tempi collega tutto quello che hai imparato nelle unità 1-6 in un\'unica mappa.',
+        'Due assi: (1) la principale è al presente o al passato? (2) l\'azione secondaria è prima, durante o dopo?',
+        'Sistema indicativo, principale al presente: presente / passato prossimo / futuro.',
+        'Sistema indicativo, principale al passato: imperfetto / trapassato / condizionale passato.',
+        'Sistema congiuntivo, principale al presente: congiuntivo presente (contemp./poster.) / congiuntivo passato (anter.).',
+        'Sistema congiuntivo, principale al passato: congiuntivo imperfetto (contemp./poster.) / congiuntivo trapassato (anter.).',
+        'Il futuro semplice non compare mai dopo una principale al passato: il condizionale passato prende il suo posto.',
+        'Le verità permanenti restano al presente indipendentemente dal tempo della principale.'
+      ],
+      tips: [
+        'Disegna sempre due domande nella testa prima di scegliere il tempo: "presente o passato?" e "prima, durante o dopo?".',
+        'Se la principale scende al passato, IMMAGINA ogni tempo della secondaria scendere di un gradino con lei: è un movimento unico, non regole separate.',
+        'Il congiuntivo ha "solo" quattro tempi (presente, passato, imperfetto, trapassato): metà di quelli dell\'indicativo. Meno da imparare, non di più.',
+        'Usa questa unità come indice: se dimentichi una regola, chiediti "riga o colonna?" e torna all\'unità corrispondente (1, 2, 3 o 4).'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

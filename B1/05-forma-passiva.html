@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="La forma passiva italiana: essere, venire e andare + participio passato, l'agente introdotto da da, la trasformazione attivo-passivo e il registro giornalistico/formale.">
+  <title>Forma Passiva · Italiano B1</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     UNITÀ 5 — FORMA PASSIVA
+     ========================================================================== */
+  window.LESSON = {
+    num: 5, file: '05-forma-passiva.html', icon: '🔄', title: 'Forma Passiva', group: 'Strutture avanzate',
+    subtitle: 'Il libro è stato scritto da Calvino: quando l\'azione conta più di chi la compie.',
+
+    intro: {
+      what: 'La forma passiva trasforma l\'oggetto di una frase attiva nel soggetto della frase passiva: si forma con <b>essere</b> + <b>participio passato</b> (che concorda col soggetto, come nel passato prossimo), oppure con <b>venire</b> o <b>andare</b> + participio nei tempi semplici.',
+      when: 'Quando l\'importante è <b>l\'azione o chi la subisce</b>, non chi la compie — oppure quando chi compie l\'azione non si conosce o non interessa: «Il quadro è stato rubato» (non importa chi, o non lo sappiamo).',
+      why: 'La forma passiva è il registro dei giornali, delle leggi, dei comunicati ufficiali: capirla è indispensabile per leggere un articolo di giornale o un contratto. Nel parlato è più rara, ma è essenziale per lo scritto formale.',
+      mistakes: [
+        'Dimenticare l\'accordo del participio: ❌ "La lettera è stato spedito" → ✅ "…è stata spedita".',
+        'Usare "venire" nei tempi composti: ❌ "Il libro è venuto scritto" → ✅ "Il libro è stato scritto" (venire solo nei tempi semplici).',
+        'Confondere l\'agente con il complemento di mezzo: ❌ "aperta da una chiave" → ✅ "aperta con una chiave".',
+        'Tradurre parola per parola l\'inglese "by": si usa sempre <b>da</b>, non "per" o "con".'
+      ]
+    },
+
+    objectives: [
+      'Formare la forma passiva con essere + participio passato, con l\'accordo corretto.',
+      'Usare venire + participio come alternativa nei tempi semplici.',
+      'Usare andare + participio per esprimere obbligo/necessità ("va fatto") o perdita ("è andato perso").',
+      'Introdurre l\'agente con da: «scritto da Calvino».',
+      'Trasformare frasi attive in passive e viceversa.',
+      'Riconoscere quando l\'italiano preferisce il passivo (scritto formale) e quando preferisce l\'attivo o il "si" impersonale (parlato).'
+    ],
+
+    formulas: [
+      {
+        label: 'Formula generale',
+        rows: [
+          { parts: [
+              { text: 'Soggetto (ex-oggetto)', type: 'subject' },
+              { text: 'ESSERE', note: 'nel tempo della frase attiva', type: 'verb' },
+              { text: 'PARTICIPIO PASSATO', note: 'concorda col soggetto', type: 'object' },
+              { text: 'DA + agente', note: 'opzionale', type: 'extra' }
+            ], example: 'Il libro è scritto da Calvino.', translation: 'The book is written by Calvino.' }
+        ]
+      },
+      {
+        label: 'Con VENIRE — solo tempi semplici',
+        rows: [
+          { parts: [
+              { text: 'La legge', type: 'subject' },
+              { text: 'VIENE', note: 'presente semplice', type: 'verb' },
+              { text: 'APPROVATA', type: 'object' }
+            ], example: 'La legge viene approvata domani.', translation: 'The law is being approved tomorrow.' }
+        ]
+      },
+      {
+        label: 'Con ANDARE — obbligo/necessità',
+        rows: [
+          { parts: [
+              { text: 'Il modulo', type: 'subject' },
+              { text: 'VA', note: 'andare, presente', type: 'verb' },
+              { text: 'COMPILATO', note: '= deve essere compilato', type: 'object' }
+            ], example: 'Il modulo va compilato con cura.', translation: 'The form must be filled in carefully.' }
+        ]
+      },
+      {
+        label: 'Attivo → passivo: come trasformare',
+        rows: [
+          { parts: [
+              { text: 'Oggetto attivo → SOGGETTO passivo', type: 'subject' },
+              { text: 'Verbo attivo → ESSERE + PARTICIPIO', type: 'verb' },
+              { text: 'Soggetto attivo → DA + agente', type: 'object' }
+            ], example: 'Calvino scrive il libro → Il libro è scritto da Calvino.', translation: 'Calvino writes the book → The book is written by Calvino.' }
+        ]
+      }
+    ],
+    formulaNote: 'Trucco: nella forma passiva il participio si comporta esattamente come con "essere" nel passato prossimo — concorda sempre col soggetto (che ora è l\'ex-oggetto).',
+
+    rules: [
+      {
+        title: 'La trasformazione di base: da attivo a passivo',
+        body: 'Il complemento oggetto della frase attiva diventa il soggetto della frase passiva; il verbo diventa essere + participio.',
+        points: [
+          'Frase attiva: SOGGETTO + VERBO + OGGETTO → «Il giornalista scrive l\'articolo».',
+          'Frase passiva: OGGETTO (ora soggetto) + ESSERE + PARTICIPIO + DA + SOGGETTO (ora agente) → «L\'articolo è scritto dal giornalista».',
+          'Solo i verbi <b>transitivi</b> (quelli con un oggetto diretto) possono avere la forma passiva.',
+          'Il tempo del verbo essere è lo stesso della frase attiva: scrive (presente) → è scritto; ha scritto (passato prossimo) → è stato scritto.'
+        ],
+        exception: 'I verbi intransitivi (andare, venire, dormire…) non hanno forma passiva: non esiste un equivalente passivo di "vado a scuola".'
+      },
+      {
+        title: 'L\'accordo del participio: la stessa regola di sempre',
+        body: 'Con essere il participio concorda sempre col soggetto — qui vale anche nei tempi semplici, non solo nei composti.',
+        points: [
+          'maschile singolare: il libro è scritto.',
+          'femminile singolare: la lettera è scritta.',
+          'maschile plurale: i libri sono scritti.',
+          'femminile plurale: le lettere sono scritte.'
+        ],
+        exception: 'Nei tempi composti del passivo (essere stato/a + participio) l\'accordo riguarda sia "stato" sia il participio principale: «La legge è stata approvata».'
+      },
+      {
+        title: 'Il passivo nei tempi composti: essere + stato + participio',
+        body: 'Per i tempi composti (passato prossimo, trapassato) il passivo usa essere al tempo giusto + "stato/a/i/e" + participio del verbo principale.',
+        points: [
+          'Presente: il libro è scritto.',
+          'Passato prossimo: il libro è stato scritto.',
+          'Imperfetto: il libro era scritto (o era stato scritto per l\'anteriorità).',
+          'Futuro: il libro sarà scritto / sarà stato scritto.'
+        ],
+        exception: '"Stato" concorda col soggetto come il participio di essere stesso, non con l\'ausiliare: «Le leggi sono state approvate».'
+      },
+      {
+        title: 'VENIRE + participio: l\'alternativa nei tempi semplici',
+        body: 'Venire può sostituire essere, ma <b>solo</b> nei tempi semplici (presente, imperfetto, futuro, passato remoto) — mai nei tempi composti.',
+        points: [
+          '«La legge viene approvata» = «La legge è approvata» (presente, entrambe corrette).',
+          '«Il pane veniva cotto ogni mattina» (imperfetto, abitudine).',
+          '❌ «Il libro è venuto scritto» — impossibile: nei tempi composti solo essere.',
+          'Venire dà un\'idea di processo/azione in corso, più che di stato: è frequente nello scritto formale e giornalistico.'
+        ],
+        exception: 'Con i verbi di percezione o stato (essere amato, essere conosciuto) si preferisce sempre essere, anche nei tempi semplici: «È conosciuto da tutti», non "viene conosciuto".'
+      },
+      {
+        title: 'ANDARE + participio: obbligo e perdita',
+        body: 'Andare + participio ha due usi speciali, diversi da essere/venire.',
+        points: [
+          '<b>Obbligo/necessità</b> (= dovere + essere + participio): «Il modulo va compilato» = «deve essere compilato».',
+          'Molto comune con verbi come fatto, detto, chiarito, sottolineato: «Va detto che…», «Va sottolineato che…».',
+          '<b>Perdita/smarrimento</b>, con pochi verbi fissi: «è andato perso», «è andato distrutto», «è andato sprecato».',
+          'Anche qui il participio concorda: «Le chiavi sono andate perse».'
+        ],
+        exception: 'Con "andare" nel senso di obbligo si usano solo i tempi semplici, come con venire: «Il modulo andava compilato» ✅.'
+      },
+      {
+        title: 'L\'agente: introdotto da DA',
+        body: 'Chi compie l\'azione (l\'agente) si introduce sempre con la preposizione da, mai con altre.',
+        points: [
+          '«Il libro è stato scritto <b>da</b> Calvino» — non "per Calvino", non "con Calvino".',
+          'L\'agente è spesso omesso quando non si conosce o non interessa: «Il museo è stato aperto nel 1980» (da chi, non importa).',
+          'Con un complemento di mezzo (uno strumento, non una persona) si usa "con": «La porta è stata aperta con una chiave».',
+          'Da + articolo si contrae normalmente: dal, dalla, dai, dalle…'
+        ],
+        exception: 'Con verbi come "essere conosciuto/apprezzato/amato" l\'agente introdotto da "da" indica spesso un gruppo generico: «È conosciuto da tutti».'
+      },
+      {
+        title: 'Quando usare il passivo (e quando evitarlo)',
+        body: 'Il passivo è comune nello scritto formale, nel giornalismo, nelle leggi. Nel parlato l\'italiano preferisce l\'attivo o il <b>si</b> impersonale/passivante.',
+        points: [
+          'Scritto formale/giornalistico: «La legge è stata approvata dal Parlamento».',
+          'Parlato quotidiano, equivalente più naturale: «Hanno approvato la legge» (attivo) o «Si è approvata la legge» (si passivante).',
+          'Il "si passivante" concorda col soggetto come il passivo con essere: «Qui si vendono libri» = «Qui i libri sono venduti».',
+          'Usa il passivo quando vuoi mettere in primo piano chi/cosa subisce l\'azione, non chi la compie.'
+        ],
+        exception: 'Nei titoli di giornale il passivo è frequentissimo perché mette subito in evidenza il fatto: «Approvata la nuova legge sul lavoro» (participio da solo, essere sottinteso).'
+      }
+    ],
+
+    timeline: {
+      title: 'Il passivo segue lo stesso tempo dell\'attivo',
+      intro: 'Il passivo non ha un suo proprio "tempo": prende lo stesso tempo verbale della frase attiva corrispondente, applicato a essere.',
+      points: [
+        { time: 'Presente', label: 'Attivo → Passivo', example: 'Scrive il libro → Il libro è scritto.', note: 'stesso tempo, verbo diverso' },
+        { time: 'Passato prossimo', label: 'Attivo → Passivo', example: 'Ha scritto il libro → Il libro è stato scritto.' },
+        { time: 'Futuro', label: 'Attivo → Passivo', example: 'Scriverà il libro → Il libro sarà scritto.' },
+        { time: 'Adesso', label: 'Il presente del racconto', example: 'Il libro viene letto in tutto il mondo.', now: true, note: 'venire nei tempi semplici' }
+      ],
+      caption: 'Il segreto: trasforma prima il verbo attivo nel tempo giusto, poi cambia essere/venire di conseguenza. Il participio resta lo stesso, cambia solo l\'accordo.'
+    },
+
+    tables: [
+      {
+        title: 'Coniugazione del passivo con ESSERE — scrivere',
+        note: 'Il participio concorda sempre col soggetto.',
+        columns: ['Tempo', 'Attivo', 'Passivo'],
+        rows: [
+          { cells: ['Presente', 'scrive il libro', 'il libro è scritto'] },
+          { cells: ['Passato prossimo', 'ha scritto il libro', 'il libro è stato scritto'] },
+          { cells: ['Imperfetto', 'scriveva il libro', 'il libro era scritto'] },
+          { cells: ['Futuro', 'scriverà il libro', 'il libro sarà scritto'] },
+          { cells: ['Condizionale', 'scriverebbe il libro', 'il libro sarebbe scritto'] },
+          { cells: ['Congiuntivo presente', 'che scriva il libro', 'che il libro sia scritto'] }
+        ]
+      },
+      {
+        title: 'L\'accordo del participio nel passivo — invitare',
+        columns: ['Soggetto', 'Passivo', 'Esempio'],
+        rows: [
+          { cells: ['Marco (m. sing.)', 'è invitato', 'Marco è invitato alla festa.'], irregular: [1] },
+          { cells: ['Anna (f. sing.)', 'è invitata', 'Anna è invitata alla festa.'], irregular: [1] },
+          { cells: ['I ragazzi (m. pl.)', 'sono invitati', 'I ragazzi sono invitati alla festa.'], irregular: [1] },
+          { cells: ['Le ragazze (f. pl.)', 'sono invitate', 'Le ragazze sono invitate alla festa.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'ESSERE vs VENIRE vs ANDARE',
+        columns: ['Ausiliare', 'Tempi possibili', 'Significato', 'Esempio'],
+        rows: [
+          { cells: ['essere', 'tutti i tempi', 'passivo neutro', 'La porta è chiusa ogni sera.'] },
+          { cells: ['venire', 'solo tempi semplici', 'alternativa, spesso più formale', 'La porta viene chiusa ogni sera.'] },
+          { cells: ['andare', 'solo tempi semplici', 'obbligo/necessità', 'La porta va chiusa ogni sera.'] },
+          { cells: ['andare', 'solo tempi semplici', 'perdita/smarrimento', 'La chiave è andata persa.'] }
+        ]
+      },
+      {
+        title: 'Participi passati irregolari utili per il passivo',
+        columns: ['Infinito', 'Participio', 'Esempio passivo'],
+        rows: [
+          { cells: ['scrivere', 'scritto', 'Il romanzo è scritto in italiano.'], irregular: [1] },
+          { cells: ['fare', 'fatto', 'Il lavoro è stato fatto bene.'], irregular: [1] },
+          { cells: ['dire', 'detto', 'Va detto che il progetto era buono.'], irregular: [1] },
+          { cells: ['aprire', 'aperto', 'Il museo è stato aperto nel 1980.'], irregular: [1] },
+          { cells: ['chiudere', 'chiuso', 'Il negozio viene chiuso alle otto.'], irregular: [1] },
+          { cells: ['approvare', 'approvato', 'La legge è stata approvata.'], irregular: [1] },
+          { cells: ['perdere', 'perso', 'Il pacco è andato perso.'], irregular: [1] },
+          { cells: ['rompere', 'rotto', 'Il vetro è stato rotto da un sasso.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'L\'agente: da chi è stata compiuta l\'azione',
+        columns: ['Preposizione', 'Uso', 'Esempio'],
+        rows: [
+          { cells: ['da (+ agente persona)', 'chi compie l\'azione', 'Il quadro è stato dipinto da Caravaggio.'] },
+          { cells: ['con (+ mezzo/strumento)', 'lo strumento usato', 'La porta è stata aperta con una chiave.'] },
+          { cells: ['(agente omesso)', 'quando non importa/non si sa chi', 'Il museo è stato aperto nel 1980.'] }
+        ]
+      },
+      {
+        title: 'Attivo, passivo e "si" impersonale a confronto',
+        columns: ['Costruzione', 'Registro', 'Esempio'],
+        rows: [
+          { cells: ['Attivo', 'parlato quotidiano', 'Hanno approvato la legge.'] },
+          { cells: ['Passivo con essere', 'scritto formale/giornalistico', 'La legge è stata approvata.'] },
+          { cells: ['Si passivante', 'parlato e scritto, molto comune', 'Si è approvata la legge.'] },
+          { cells: ['Passivo nei titoli', 'giornalismo (senza essere)', 'Approvata la nuova legge.'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Il libro è scritto da Italo Calvino.', literal: 'The book is written by Italo Calvino.', natural: 'The book is written by Italo Calvino.', note: 'Passivo presente: essere + participio, agente con da.' },
+      { it: 'La lettera è stata spedita ieri.', literal: 'The letter is been sent yesterday.', natural: 'The letter was sent yesterday.', note: 'Passato prossimo passivo: è stata + participio, accordo femminile.' },
+      { it: 'I documenti sono stati firmati dal direttore.', literal: 'The documents are been signed by-the director.', natural: 'The documents were signed by the director.', note: 'Accordo maschile plurale: sono stati firmati.' },
+      { it: 'Questo modulo va compilato in stampatello.', literal: 'This form goes filled-in in block-letters.', natural: 'This form must be filled in in block letters.', note: 'andare + participio = obbligo, come "deve essere compilato".' },
+      { it: 'Le chiavi sono andate perse durante il trasloco.', literal: 'The keys are gone lost during the move.', natural: 'The keys got lost during the move.', note: 'andare + perso: uso fisso per la perdita.' },
+      { it: 'La legge viene approvata dal Parlamento domani.', literal: 'The law comes approved by-the Parliament tomorrow.', natural: 'The law is being approved by Parliament tomorrow.', note: 'venire nei tempi semplici, più formale di essere.' },
+      { it: 'Il museo è stato aperto al pubblico nel 1980.', literal: 'The museum is been opened to-the public in 1980.', natural: 'The museum was opened to the public in 1980.', note: 'Agente omesso: non importa chi lo ha aperto.' },
+      { it: 'La porta è stata aperta con una chiave.', literal: 'The door is been opened with a key.', natural: 'The door was opened with a key.', note: 'Complemento di mezzo → con, non da.' },
+      { it: 'L\'articolo è stato pubblicato dal quotidiano ieri.', literal: 'The article is been published by-the daily-paper yesterday.', natural: 'The article was published by the newspaper yesterday.', note: 'Registro giornalistico tipico del passivo.' },
+      { it: 'Va detto che il progetto era ben organizzato.', literal: 'Goes said that the project was well organised.', natural: 'It must be said that the project was well organised.', note: '"Va detto che" = espressione fissa di obbligo/opportunità.' },
+      { it: 'Questi vini vengono prodotti in Toscana.', literal: 'These wines come produced in Tuscany.', natural: 'These wines are produced in Tuscany.', note: 'venire per un processo/produzione abituale.' },
+      { it: 'Il ponte è stato costruito dai romani duemila anni fa.', literal: 'The bridge is been built by-the Romans two-thousand years ago.', natural: 'The bridge was built by the Romans two thousand years ago.', note: 'Agente storico introdotto da "dai".' },
+      { it: 'Il vetro è stato rotto da un sasso.', literal: 'The glass is been broken by a stone.', natural: 'The glass was broken by a stone.', note: 'Anche un oggetto può essere agente, non solo una persona.' },
+      { it: 'Qui si parla italiano.', literal: 'Here itself speaks Italian.', natural: 'Italian is spoken here.', note: 'Si passivante: alternativa comune al passivo con essere.' },
+      { it: 'Hanno approvato la legge ieri.', literal: 'They-have approved the law yesterday.', natural: 'They approved the law yesterday.', note: 'Versione attiva, più naturale nel parlato, della frase con "la legge è stata approvata".' },
+      { it: 'Il colpevole non è stato ancora trovato.', literal: 'The culprit not is been yet found.', natural: 'The culprit has not been found yet.', note: 'Negazione nel passivo: non si sposta, resta prima di essere.' },
+      { it: 'Approvata ieri la nuova legge sul lavoro.', literal: 'Approved yesterday the new law on-the work.', natural: 'The new labour law approved yesterday.', note: 'Titolo di giornale: participio da solo, essere sottinteso.' },
+      { it: 'Il pacco andrà consegnato entro venerdì.', literal: 'The package will-go delivered by Friday.', natural: 'The package must be delivered by Friday.', note: 'andare al futuro + participio: obbligo futuro.' }
+    ],
+
+    mistakes: [
+      { wrong: 'La lettera è stato spedito.', right: 'La lettera è stata spedita.', why: 'Il participio deve concordare col soggetto femminile: spedita.' },
+      { wrong: 'Il libro è venuto scritto da Calvino.', right: 'Il libro è stato scritto da Calvino.', why: 'Venire sostituisce essere solo nei tempi semplici, mai in quelli composti.' },
+      { wrong: 'La porta è stata aperta da una chiave.', right: 'La porta è stata aperta con una chiave.', why: 'Uno strumento si introduce con "con", non "da" (che è per le persone/agenti).' },
+      { wrong: 'Il libro è stato scritto per Calvino.', right: 'Il libro è stato scritto da Calvino.', why: 'L\'agente si introduce sempre con "da", mai "per".' },
+      { wrong: 'Il modulo deve essere va compilato.', right: 'Il modulo va compilato.', why: '"Andare + participio" da solo esprime già l\'obbligo, senza bisogno di "dovere".' },
+      { wrong: 'Le chiavi hanno andato perse.', right: 'Le chiavi sono andate perse.', why: 'Andare è intransitivo e vuole sempre essere come ausiliare, anche in questa costruzione.' },
+      { wrong: 'Il giornale viene stato pubblicato ogni giorno.', right: 'Il giornale viene pubblicato ogni giorno.', why: 'Venire già sostituisce essere: non si combinano insieme.' },
+      { wrong: 'Hanno approvato la legge da Parlamento.', right: 'La legge è stata approvata dal Parlamento.', why: '"Da" introduce l\'agente solo in frasi passive, non dopo un verbo già attivo.' },
+      { wrong: 'I documenti sono stato firmati.', right: 'I documenti sono stati firmati.', why: 'Con soggetto plurale "stato" concorda: stati.' }
+    ],
+
+    vocab: {
+      title: 'Vocabolario — media, tecnologia, economia e legge (49 parole)',
+      intro: 'La forma passiva vive nei giornali, nei contratti, nelle leggi: ecco il lessico per leggerli e capirli. Ogni scheda dà l\'italiano, l\'inglese, il farsi (فارسی) e una frase d\'esempio, quasi tutte al passivo.',
+      categories: [
+        { id: 'media', label: 'Media e informazione', icon: '📰' },
+        { id: 'tecnologia', label: 'Tecnologia', icon: '💻' },
+        { id: 'affari', label: 'Economia e affari', icon: '💼' },
+        { id: 'legge', label: 'Legge e regole', icon: '⚖️' },
+        { id: 'espr', label: 'Espressioni', icon: '✨' }
+      ],
+      words: [
+        /* ── Media e informazione (11) ── */
+        { it: 'il quotidiano', en: 'daily newspaper', fa: 'روزنامه', cat: 'media', pos: 'm.', ex: 'Il quotidiano è letto da migliaia di persone.' },
+        { it: 'l\'articolo', en: 'article', fa: 'مقاله', cat: 'media', pos: 'm.', ex: 'L\'articolo è stato pubblicato ieri.' },
+        { it: 'pubblicare', en: 'to publish', fa: 'منتشر کردن', cat: 'media', pos: 'v.', ex: 'Il libro sarà pubblicato il mese prossimo.' },
+        { it: 'la testata', en: 'newspaper title, publication', fa: 'نشریه', cat: 'media', pos: 'f.', ex: 'La testata è conosciuta in tutto il paese.' },
+        { it: 'il servizio (giornalistico)', en: 'news report', fa: 'گزارش خبری', cat: 'media', pos: 'm.', ex: 'Il servizio è stato trasmesso ieri sera.' },
+        { it: 'l\'inchiesta', en: 'investigation (journalistic)', fa: 'تحقیق خبرنگاری', cat: 'media', pos: 'f.', ex: 'L\'inchiesta è stata condotta da un giornalista indipendente.' },
+        { it: 'il redattore', en: 'editor', fa: 'ویراستار', cat: 'media', pos: 'm.', ex: 'L\'articolo è stato corretto dal redattore.' },
+        { it: 'il comunicato', en: 'press release', fa: 'بیانیه', cat: 'media', pos: 'm.', ex: 'Il comunicato è stato diffuso stamattina.' },
+        { it: 'diffondere', en: 'to spread, to broadcast', fa: 'پخش کردن', cat: 'media', pos: 'v.', ex: 'La notizia è stata diffusa rapidamente.' },
+        { it: 'trasmettere', en: 'to broadcast', fa: 'پخش کردن', cat: 'media', pos: 'v.', ex: 'Il programma viene trasmesso ogni sera.' },
+        { it: 'la fonte (giornalistica)', en: 'source', fa: 'منبع', cat: 'media', pos: 'f.', ex: 'La fonte non è stata rivelata.' },
+
+        /* ── Tecnologia (10) ── */
+        { it: 'il dispositivo', en: 'device', fa: 'دستگاه', cat: 'tecnologia', pos: 'm.', ex: 'Il dispositivo è stato aggiornato automaticamente.' },
+        { it: 'aggiornare', en: 'to update', fa: 'به‌روزرسانی کردن', cat: 'tecnologia', pos: 'v.', ex: 'Il software viene aggiornato ogni settimana.' },
+        { it: 'l\'aggiornamento', en: 'update', fa: 'به‌روزرسانی', cat: 'tecnologia', pos: 'm.', ex: 'L\'aggiornamento è stato installato senza problemi.' },
+        { it: 'sviluppare', en: 'to develop', fa: 'توسعه دادن', cat: 'tecnologia', pos: 'v.', ex: 'L\'app è stata sviluppata da una piccola azienda.' },
+        { it: 'lo sviluppo', en: 'development', fa: 'توسعه', cat: 'tecnologia', pos: 'm.', ex: 'Lo sviluppo del progetto va seguito con attenzione.' },
+        { it: 'lanciare (un prodotto)', en: 'to launch', fa: 'عرضه کردن', cat: 'tecnologia', pos: 'v.', ex: 'Il nuovo modello sarà lanciato in autunno.' },
+        { it: 'l\'applicazione', en: 'app, application', fa: 'برنامه', cat: 'tecnologia', pos: 'f.', ex: 'L\'applicazione è stata scaricata milioni di volte.' },
+        { it: 'programmare', en: 'to code, to program', fa: 'برنامه‌نویسی کردن', cat: 'tecnologia', pos: 'v.', ex: 'Il sito è stato programmato in poche settimane.' },
+        { it: 'crittografare', en: 'to encrypt', fa: 'رمزگذاری کردن', cat: 'tecnologia', pos: 'v.', ex: 'I dati vengono crittografati automaticamente.' },
+        { it: 'violare (la sicurezza)', en: 'to breach (security)', fa: 'نقض کردن', cat: 'tecnologia', pos: 'v.', ex: 'Il sistema è stato violato da alcuni hacker.' },
+
+        /* ── Economia e affari (10) ── */
+        { it: 'l\'azienda', en: 'company', fa: 'شرکت', cat: 'affari', pos: 'f.', ex: 'L\'azienda è stata fondata dieci anni fa.' },
+        { it: 'l\'impresa', en: 'business, enterprise', fa: 'بنگاه اقتصادی', cat: 'affari', pos: 'f.', ex: 'L\'impresa è guidata da due soci.' },
+        { it: 'il contratto', en: 'contract', fa: 'قرارداد', cat: 'affari', pos: 'm.', ex: 'Il contratto è stato firmato ieri.' },
+        { it: 'firmare', en: 'to sign', fa: 'امضا کردن', cat: 'affari', pos: 'v.', ex: 'L\'accordo è stato firmato dalle due parti.' },
+        { it: 'finanziare', en: 'to fund, to finance', fa: 'تأمین مالی کردن', cat: 'affari', pos: 'v.', ex: 'Il progetto viene finanziato da investitori privati.' },
+        { it: 'l\'investimento', en: 'investment', fa: 'سرمایه‌گذاری', cat: 'affari', pos: 'm.', ex: 'L\'investimento è stato approvato dal consiglio.' },
+        { it: 'il fatturato', en: 'revenue, turnover', fa: 'گردش مالی', cat: 'affari', pos: 'm.', ex: 'Il fatturato è aumentato del dieci per cento.' },
+        { it: 'licenziare', en: 'to lay off, to fire', fa: 'اخراج کردن', cat: 'affari', pos: 'v.', ex: 'Cento dipendenti sono stati licenziati.' },
+        { it: 'fondare', en: 'to found', fa: 'تأسیس کردن', cat: 'affari', pos: 'v.', ex: 'L\'azienda è stata fondata a Milano.' },
+        { it: 'il socio', en: 'business partner', fa: 'شریک تجاری', cat: 'affari', pos: 'm.', ex: 'Il nuovo socio è stato scelto dal direttore.' },
+
+        /* ── Legge e regole (10) ── */
+        { it: 'la legge', en: 'law', fa: 'قانون', cat: 'legge', pos: 'f.', ex: 'La legge è stata approvata ieri.' },
+        { it: 'approvare', en: 'to approve, to pass', fa: 'تصویب کردن', cat: 'legge', pos: 'v.', ex: 'La riforma sarà approvata entro l\'anno.' },
+        { it: 'il decreto', en: 'decree', fa: 'بخشنامه', cat: 'legge', pos: 'm.', ex: 'Il decreto va rispettato da tutti.' },
+        { it: 'rispettare (le regole)', en: 'to comply with (rules)', fa: 'رعایت کردن', cat: 'legge', pos: 'v.', ex: 'Le regole devono essere rispettate.' },
+        { it: 'il regolamento', en: 'regulation', fa: 'آیین‌نامه', cat: 'legge', pos: 'm.', ex: 'Il regolamento è stato aggiornato quest\'anno.' },
+        { it: 'vietare', en: 'to forbid', fa: 'ممنوع کردن', cat: 'legge', pos: 'v.', ex: 'L\'uso del telefono è vietato durante l\'esame.' },
+        { it: 'il divieto', en: 'ban, prohibition', fa: 'ممنوعیت', cat: 'legge', pos: 'm.', ex: 'Il divieto è entrato in vigore ieri.' },
+        { it: 'multare', en: 'to fine', fa: 'جریمه کردن', cat: 'legge', pos: 'v.', ex: 'L\'automobilista è stato multato.' },
+        { it: 'la sanzione', en: 'sanction, penalty', fa: 'مجازات', cat: 'legge', pos: 'f.', ex: 'Le sanzioni sono state applicate subito.' },
+        { it: 'l\'accordo', en: 'agreement', fa: 'توافق', cat: 'legge', pos: 'm.', ex: 'L\'accordo è stato raggiunto dopo lunghe trattative.' },
+
+        /* ── Espressioni (8) ── */
+        { it: 'secondo fonti', en: 'according to sources', fa: 'به گفته منابع', cat: 'espr', pos: 'loc.', ex: 'Secondo fonti attendibili, l\'accordo sarà firmato domani.' },
+        { it: 'a quanto risulta', en: 'as far as is known', fa: 'بنا بر اطلاعات موجود', cat: 'espr', pos: 'loc.', ex: 'A quanto risulta, il progetto è stato approvato.' },
+        { it: 'si dice che', en: 'it is said that', fa: 'گفته می‌شود که', cat: 'espr', pos: 'espr.', ex: 'Si dice che l\'azienda sarà venduta.' },
+        { it: 'va detto che', en: 'it must be said that', fa: 'باید گفت که', cat: 'espr', pos: 'loc.', ex: 'Va detto che il risultato era prevedibile.' },
+        { it: 'va notato che', en: 'it should be noted that', fa: 'باید توجه داشت که', cat: 'espr', pos: 'loc.', ex: 'Va notato che i dati non sono definitivi.' },
+        { it: 'in via ufficiale', en: 'officially', fa: 'به‌طور رسمی', cat: 'espr', pos: 'loc.', ex: 'La notizia non è stata confermata in via ufficiale.' },
+        { it: 'tuttora', en: 'still (formal)', fa: 'هنوز', cat: 'espr', pos: 'avv.', ex: 'La questione è tuttora in discussione.' },
+        { it: 'tempestivamente', en: 'promptly', fa: 'به‌موقع', cat: 'espr', pos: 'avv.', ex: 'La notizia è stata diffusa tempestivamente.' }
+      ]
+    },
+
+    guided: {
+      title: 'Costruiamo insieme la forma passiva',
+      intro: 'Tre domande: qual è l\'oggetto della frase attiva? In che tempo è il verbo? L\'agente si conosce o va omesso?',
+      steps: [
+        {
+          prompt: 'Trasforma in passivo: «Calvino scrive il libro.»',
+          think: 'Oggetto "il libro" diventa soggetto; il verbo "scrive" (presente) diventa "è scritto"; il soggetto "Calvino" diventa agente con "da".',
+          answer: 'Il libro è scritto da Calvino.',
+          why: 'Stesso tempo (presente), participio maschile singolare: scritto.'
+        },
+        {
+          prompt: 'Trasforma al passato prossimo passivo: «Hanno spedito la lettera.»',
+          think: 'Nei tempi composti serve essere + stato/a + participio. La lettera è femminile.',
+          answer: 'La lettera è stata spedita.',
+          why: '"stata" concorda col soggetto femminile, così come "spedita".'
+        },
+        {
+          prompt: 'Obbligo: «Bisogna compilare questo modulo.»',
+          think: 'Andare + participio esprime lo stesso obbligo, in modo più naturale in italiano scritto.',
+          answer: 'Questo modulo va compilato.',
+          why: '"va compilato" = "deve essere compilato".'
+        },
+        {
+          prompt: 'Con agente o senza? «Il museo è stato aperto nel 1980 (non sappiamo da chi).»',
+          think: 'Se l\'agente non si conosce o non interessa, si omette semplicemente.',
+          answer: 'Il museo è stato aperto nel 1980.',
+          why: 'Nessun "da" obbligatorio: l\'agente è facoltativo.'
+        },
+        {
+          prompt: 'Strumento o persona? «La porta è stata aperta ___ una chiave.»',
+          think: 'Una chiave è uno strumento, non un agente animato → si usa "con", non "da".',
+          answer: 'La porta è stata aperta con una chiave.',
+          why: 'Da = persona/causa animata; con = strumento.'
+        },
+        {
+          prompt: 'Passivo o "si" impersonale? Riformula in un modo più colloquiale: «La legge è stata approvata.»',
+          think: 'Nel parlato l\'italiano preferisce spesso il si passivante o l\'attivo.',
+          answer: 'Si è approvata la legge. (oppure: Hanno approvato la legge.)',
+          why: 'Stesso significato, registro più informale.'
+        }
+      ]
+    },
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Il libro ___ scritto da Calvino.»', options: ['ha', 'è', 'viene stato', 'sta'], answer: 1, hint: 'passivo presente', why: 'essere + participio: è scritto.' },
+        { q: 'Completa: «La lettera ___ spedita ieri.»', options: ['è stato', 'è stata', 'ha stato', 'era stato'], answer: 1, hint: 'accordo femminile', why: 'è stata spedita.' },
+        { q: 'Completa: «I documenti ___ firmati dal direttore.»', options: ['è stato', 'sono stati', 'sono stata', 'è stata'], answer: 1, hint: 'plurale maschile', why: 'sono stati firmati.' },
+        { q: 'Quale frase è impossibile?', options: ['Il libro è scritto da Calvino.', 'Il libro viene scritto da Calvino.', 'Il libro è venuto scritto da Calvino.', 'Il libro sarà scritto da Calvino.'], answer: 2, hint: 'venire nei tempi composti?', why: 'Venire non si usa mai nei tempi composti.' },
+        { q: 'Completa: «Questo modulo ___ compilato in stampatello.»', options: ['viene', 'va', 'è stato', 'sta'], answer: 1, hint: 'obbligo', why: 'andare + participio = obbligo: va compilato.' },
+        { q: 'Completa: «Le chiavi sono ___ perse.»', options: ['andato', 'andati', 'andate', 'andata'], answer: 2, hint: 'plurale femminile', why: 'sono andate perse.' },
+        { q: 'Completa: «Il quadro è stato dipinto ___ Caravaggio.»', options: ['per', 'con', 'da', 'di'], answer: 2, hint: 'agente', why: 'L\'agente si introduce sempre con "da".' },
+        { q: 'Completa: «La porta è stata aperta ___ una chiave.»', options: ['da', 'con', 'per', 'di'], answer: 1, hint: 'strumento, non persona', why: 'Con introduce lo strumento.' },
+        { q: 'Quale forma NON esiste?', options: ['viene approvata', 'è approvata', 'va approvata', 'viene stata approvata'], answer: 3, hint: 'venire + essere insieme?', why: 'Venire ed essere non si combinano mai.' },
+        { q: 'Completa: «Il pacco ___ consegnato entro venerdì.» (obbligo futuro)', options: ['va', 'andrà', 'è andato', 'viene'], answer: 1, hint: 'futuro di andare', why: 'andrà consegnato = dovrà essere consegnato.' },
+        { q: 'Trasforma in passivo: «Hanno approvato la legge.»', options: ['La legge ha approvato.', 'La legge è approvata.', 'La legge è stata approvata.', 'La legge viene approvata.'], answer: 2, hint: 'passato prossimo passivo', why: 'è stata approvata.' },
+        { q: 'Quale frase è un titolo di giornale tipico?', options: ['La legge è stata approvata ieri dal Parlamento.', 'Approvata ieri la nuova legge.', 'Il Parlamento ha approvato la legge ieri.', 'La legge veniva approvata ieri.'], answer: 1, hint: 'participio da solo', why: 'Nei titoli l\'essere è spesso sottinteso.' },
+        { q: 'Qual è l\'equivalente più colloquiale di «La legge è stata approvata»?', options: ['La legge va approvata.', 'Hanno approvato la legge.', 'La legge viene stata approvata.', 'La legge era approvata da sempre.'], answer: 1, hint: 'attivo, parlato', why: 'Nel parlato si preferisce l\'attivo.' },
+        { q: 'Completa: «Questi vini ___ prodotti in Toscana.»', options: ['vanno', 'vengono', 'sono andati', 'stanno'], answer: 1, hint: 'processo abituale', why: 'venire per un processo/produzione regolare.' }
+      ],
+      fill: [
+        { before: 'Il libro', after: 'scritto da Calvino. (essere)', answers: ['è'], en: 'The book is written by Calvino.' },
+        { before: 'La lettera', after: 'spedita ieri. (essere, passato prossimo)', answers: ['è stata'], en: 'The letter was sent yesterday.' },
+        { before: 'I documenti sono', after: 'firmati dal direttore. (stato/i)', answers: ['stati'], en: 'The documents were signed by the director.' },
+        { before: 'Questo modulo', after: 'compilato con cura. (andare)', answers: ['va'], en: 'This form must be filled in with care.' },
+        { before: 'Le chiavi sono', after: 'perse. (andare)', answers: ['andate'], en: 'The keys got lost.' },
+        { before: 'Il quadro è stato dipinto', after: 'Caravaggio.', answers: ['da'], en: 'The painting was painted by Caravaggio.' },
+        { before: 'La porta è stata aperta', after: 'una chiave.', answers: ['con'], en: 'The door was opened with a key.' },
+        { before: 'La legge', after: 'approvata dal Parlamento domani. (venire)', answers: ['viene'], en: 'The law is being approved by Parliament tomorrow.' },
+        { before: 'Il museo è stato', after: 'al pubblico nel 1980. (aprire)', answers: ['aperto'], en: 'The museum was opened to the public in 1980.' },
+        { before: 'Va', after: 'che il progetto era ben organizzato. (dire)', answers: ['detto'], en: 'It must be said that the project was well organised.' },
+        { before: 'Il colpevole non è', after: 'ancora trovato. (essere)', answers: ['stato'], en: 'The culprit has not been found yet.' },
+        { before: 'Il pacco', after: 'consegnato entro venerdì. (andare, futuro)', answers: ['andrà'], en: 'The package must be delivered by Friday.' }
+      ],
+      order: [
+        { words: ['Il', 'libro', 'è', 'scritto', 'da', 'Calvino'], answer: 'Il libro è scritto da Calvino', en: 'The book is written by Calvino.' },
+        { words: ['La', 'lettera', 'è', 'stata', 'spedita', 'ieri'], answer: 'La lettera è stata spedita ieri', en: 'The letter was sent yesterday.' },
+        { words: ['Questo', 'modulo', 'va', 'compilato', 'con', 'cura'], answer: 'Questo modulo va compilato con cura', en: 'This form must be filled in with care.' },
+        { words: ['Le', 'chiavi', 'sono', 'andate', 'perse'], answer: 'Le chiavi sono andate perse', en: 'The keys got lost.' },
+        { words: ['La', 'legge', 'viene', 'approvata', 'domani'], answer: 'La legge viene approvata domani', en: 'The law is being approved tomorrow.' },
+        { words: ['Il', 'museo', 'è', 'stato', 'aperto', 'nel', '1980'], answer: 'Il museo è stato aperto nel 1980', en: 'The museum was opened in 1980.' },
+        { words: ['La', 'porta', 'è', 'stata', 'aperta', 'con', 'una', 'chiave'], answer: 'La porta è stata aperta con una chiave', en: 'The door was opened with a key.' }
+      ],
+      dnd: {
+        instructions: 'Questi participi passivi si formano con ESSERE, VENIRE o ANDARE (obbligo/perdita)? Trascinali nella colonna giusta.',
+        buckets: [
+          { id: 'essere', label: 'ESSERE (tutti i tempi)', icon: '🟢' },
+          { id: 'venire', label: 'VENIRE (solo tempi semplici)', icon: '🔵' },
+          { id: 'andare', label: 'ANDARE (obbligo/perdita)', icon: '🟠' }
+        ],
+        items: [
+          { text: 'è stato scritto', bucket: 'essere' },
+          { text: 'viene approvata', bucket: 'venire' },
+          { text: 'va compilato', bucket: 'andare' },
+          { text: 'è andata persa', bucket: 'andare' },
+          { text: 'sono stati firmati', bucket: 'essere' },
+          { text: 'vengono prodotti', bucket: 'venire' },
+          { text: 'va detto', bucket: 'andare' },
+          { text: 'è stata aperta', bucket: 'essere' },
+          { text: 'viene trasmesso', bucket: 'venire' },
+          { text: 'andrà consegnato', bucket: 'andare' },
+          { text: 'è stato pubblicato', bucket: 'essere' },
+          { text: 'veniva cotto', bucket: 'venire' },
+          { text: 'sono andate distrutte', bucket: 'andare' },
+          { text: 'sarà firmato', bucket: 'essere' }
+        ]
+      },
+      match: [
+        { a: 'essere + participio', b: 'passivo in tutti i tempi' },
+        { a: 'venire + participio', b: 'passivo, solo tempi semplici' },
+        { a: 'andare + participio', b: 'obbligo o perdita' },
+        { a: 'è stato scritto da Calvino', b: 'agente introdotto da "da"' },
+        { a: 'aperta con una chiave', b: 'strumento introdotto da "con"' },
+        { a: 'va fatto', b: 'must be done' },
+        { a: 'è andato perso', b: 'got lost' },
+        { a: 'si passivante', b: 'alternativa informale al passivo' },
+        { a: 'titolo di giornale', b: 'participio senza essere' },
+        { a: 'verbo transitivo', b: 'unico tipo di verbo con forma passiva' }
+      ],
+      tf: [
+        { statement: 'La forma passiva si forma con essere + participio passato.', answer: true, why: 'Esatto: il libro è scritto.' },
+        { statement: 'Venire può sostituire essere anche nei tempi composti.', answer: false, why: 'No: venire si usa solo nei tempi semplici.' },
+        { statement: '"Andare + participio" può esprimere obbligo.', answer: true, why: 'Esatto: il modulo va compilato = deve essere compilato.' },
+        { statement: 'L\'agente di un\'azione passiva si introduce con "per".', answer: false, why: 'No: si introduce sempre con "da".' },
+        { statement: 'Uno strumento si introduce con "da", come un agente animato.', answer: false, why: 'No: lo strumento si introduce con "con".' },
+        { statement: 'Solo i verbi transitivi possono avere la forma passiva.', answer: true, why: 'Esatto: serve un oggetto diretto da trasformare in soggetto.' },
+        { statement: 'Nel parlato l\'italiano preferisce spesso l\'attivo o il "si" impersonale al posto del passivo.', answer: true, why: 'Esatto: il passivo è più tipico dello scritto formale.' },
+        { statement: 'Nei titoli di giornale il verbo essere è spesso sottinteso.', answer: true, why: 'Esatto: «Approvata la nuova legge» invece di «È stata approvata…».' },
+        { statement: 'Il participio nella forma passiva non concorda mai col soggetto.', answer: false, why: 'No: concorda sempre, come con essere nel passato prossimo.' }
+      ],
+      translate: [
+        { en: 'The book is written by Calvino.', answers: ['Il libro è scritto da Calvino'] },
+        { en: 'The letter was sent yesterday.', answers: ['La lettera è stata spedita ieri'] },
+        { en: 'This form must be filled in.', answers: ['Questo modulo va compilato', 'Questo modulo va compilato con cura'] },
+        { en: 'The keys got lost.', answers: ['Le chiavi sono andate perse'] },
+        { en: 'The law is being approved by Parliament.', answers: ['La legge viene approvata dal Parlamento'] },
+        { en: 'The door was opened with a key.', answers: ['La porta è stata aperta con una chiave'] },
+        { en: 'The museum was opened in 1980.', answers: ['Il museo è stato aperto nel 1980'] },
+        { en: 'They approved the law.', answers: ['Hanno approvato la legge'] },
+        { en: 'It must be said that the project was good.', answers: ['Va detto che il progetto era buono'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Le notizie del giorno',
+      intro: 'Due colleghi commentano le notizie: nota come lo scritto del giornale usa il passivo, mentre nel parlato loro tornano spesso all\'attivo.',
+      lines: [
+        { speaker: 'Luca', icon: '🧑', it: 'Hai letto? La nuova legge sul lavoro è stata approvata ieri.', en: 'Did you read? The new labour law was passed yesterday.',
+          glosses: [{ term: 'è stata approvata', expl: 'Passivo al passato prossimo: essere + stata + participio, accordo femminile.' }] },
+        { speaker: 'Sara', icon: '👩', side: 'right', it: 'Sì, l\'ho vista al telegiornale. Il servizio è stato trasmesso anche stamattina.', en: 'Yes, I saw it on the news. The report was broadcast again this morning.',
+          glosses: [{ term: 'è stato trasmesso', expl: 'Passivo: soggetto maschile singolare, accordo su "trasmesso".' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Pare che il testo vada rivisto ancora una volta prima di entrare in vigore.', en: 'It seems the text still needs to be revised once more before it takes effect.',
+          glosses: [{ term: 'vada rivisto', expl: 'andare + participio (al congiuntivo) = obbligo/necessità: deve essere rivisto.' }] },
+        { speaker: 'Sara', icon: '👩', side: 'right', it: 'A quanto risulta, alcuni articoli sono stati scritti troppo in fretta.', en: 'Apparently, some articles were written too hastily.',
+          glosses: [{ term: 'sono stati scritti', expl: 'Plurale maschile: sono stati + participio scritti.' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Chi l\'ha proposta, in realtà?', en: 'Who actually proposed it?',
+          glosses: [{ term: 'l\'ha proposta', expl: 'Qui torniamo all\'attivo: nel parlato è più naturale di "è stata proposta da chi?".' }] },
+        { speaker: 'Sara', icon: '👩', side: 'right', it: 'È stata proposta da un gruppo di deputati, ma poi è stata modificata dal Senato.', en: 'It was proposed by a group of MPs, but then it was amended by the Senate.',
+          glosses: [{ term: 'proposta da', expl: 'Agente introdotto da "da": chi ha proposto la legge.' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Comunque, va detto che era un provvedimento necessario.', en: 'Anyway, it must be said that it was a necessary measure.',
+          glosses: [{ term: 'va detto', expl: 'andare + participio: espressione fissa di opportunità/obbligo.' }] },
+        { speaker: 'Sara', icon: '👩', side: 'right', it: 'Vero. Anche se, sinceramente, molte leggi vengono dimenticate dopo pochi mesi.', en: 'True. Although, honestly, many laws are forgotten after just a few months.',
+          glosses: [{ term: 'vengono dimenticate', expl: 'venire nei tempi semplici: alternativa a "sono dimenticate".' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Speriamo di no. Questa, almeno, è stata scritta con più attenzione delle altre.', en: 'Let\'s hope not. This one, at least, was written more carefully than the others.',
+          glosses: [{ term: 'è stata scritta', expl: 'Passivo: accordo femminile su "scritta" (questa = la legge).' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'forma passiva', back: 'essere + participio passato', note: 'Il libro è scritto.' },
+      { front: 'agente', back: 'introdotto da "da"', note: 'scritto da Calvino' },
+      { front: 'strumento/mezzo', back: 'introdotto da "con"', note: 'aperta con una chiave' },
+      { front: 'venire + participio', back: 'solo nei tempi semplici', note: 'viene approvata' },
+      { front: 'andare + participio (obbligo)', back: '= deve essere + participio', note: 'va compilato' },
+      { front: 'andare + participio (perdita)', back: 'got lost / destroyed', note: 'è andato perso' },
+      { front: 'il libro è scritto', back: 'the book is written' },
+      { front: 'la lettera è stata spedita', back: 'the letter was sent' },
+      { front: 'le chiavi sono andate perse', back: 'the keys got lost' },
+      { front: 'va detto che', back: 'it must be said that' },
+      { front: 'si passivante', back: 'alternativa informale al passivo', note: 'Qui si vendono libri.' },
+      { front: 'titolo di giornale', back: 'participio senza essere', note: 'Approvata la nuova legge.' },
+      { front: 'solo verbi transitivi', back: 'possono avere il passivo' },
+      { front: 'attivo vs passivo (parlato)', back: 'l\'italiano parlato preferisce l\'attivo' }
+    ],
+
+    summary: {
+      formula: 'Soggetto (ex-oggetto) + [essere / venire / andare, nel tempo giusto] + PARTICIPIO PASSATO (concorda) + [DA + agente]',
+      rules: [
+        'Il passivo si forma con essere + participio, che concorda sempre col soggetto.',
+        'Venire sostituisce essere solo nei tempi semplici, mai in quelli composti.',
+        'Andare + participio esprime obbligo/necessità (va fatto) o perdita/smarrimento (è andato perso).',
+        'L\'agente si introduce sempre con "da"; lo strumento con "con".',
+        'Solo i verbi transitivi hanno una forma passiva.',
+        'Il passivo è tipico dello scritto formale e del giornalismo; il parlato preferisce l\'attivo o il "si" impersonale.',
+        'Nei titoli di giornale l\'essere è spesso sottinteso: resta solo il participio.'
+      ],
+      tips: [
+        'Per trasformare attivo → passivo: l\'oggetto diventa soggetto, il verbo diventa essere+participio, il soggetto diventa agente con "da".',
+        'Se non sai chi ha compiuto l\'azione (o non ti interessa), puoi semplicemente omettere "da + agente".',
+        'Prova sempre a dire la stessa frase in forma attiva: ti aiuta a controllare se hai capito bene il senso.',
+        'Nel parlato di tutti i giorni, preferisci l\'attivo o il "si": suoneranno più naturali del passivo.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

@@ -6,8 +6,13 @@
    course is structured identically:
 
      1 Meaning → 2 Formula → 3 Rule → 4 Timeline → 5 Tables → 6 Examples
-     → 7 Mistakes → 8 Practice → 9 Conversation → 10 Summary → Review
+     → Vocabulary → 7 Mistakes → 8 Practice → 9 Conversation → 10 Summary
+     → Review
 
+   Optional blocks (rendered only when the lesson declares them):
+     L.objectives  learning objectives, listed in the introduction card
+     L.vocab       the lesson's vocabulary set (<vocab-list>)
+     L.guided      worked examples shown before the free exercises
    ========================================================================== */
 (function () {
   'use strict';
@@ -20,6 +25,7 @@
       return {
         store,
         L: this.lesson,
+        levelName: ITA.LEVEL,
         query: '',
         randomCard: null
       };
@@ -48,6 +54,7 @@
         if (this.L.timeline) s.push({ id: 'timeline', label: '4 · Linea del tempo' });
         if (this.L.tables && this.L.tables.length) s.push({ id: 'tabelle', label: '5 · Coniugazione' });
         s.push({ id: 'esempi', label: '6 · Esempi' });
+        if (this.L.vocab) s.push({ id: 'vocabolario', label: '📖 Vocabolario' });
         s.push({ id: 'errori', label: '7 · Errori comuni' });
         s.push({ id: 'esercizi', label: '8 · Esercizi' });
         if (this.L.dialogue) s.push({ id: 'dialogo', label: '9 · Conversazione' });
@@ -78,7 +85,7 @@
         <!-- ── Lesson hero ─────────────────────────────────────────── -->
         <header class="hero animate-in">
           <p class="card-kicker" style="color:rgba(255,255,255,.85)">
-            Lezione {{ L.num }} · Italiano A2{{ L.group ? ' · ' + L.group : '' }}
+            Lezione {{ L.num }} · Italiano {{ levelName }}{{ L.group ? ' · ' + L.group : '' }}
           </p>
           <h1>{{ L.icon }} {{ L.title }}</h1>
           <p>{{ L.subtitle }}</p>
@@ -122,6 +129,13 @@
           <p><b>Che cos'è?</b> {{ L.intro.what }}</p>
           <p><b>Quando si usa?</b> {{ L.intro.when }}</p>
           <p><b>Perché è importante?</b> {{ L.intro.why }}</p>
+          <div v-if="L.objectives && L.objectives.length" class="card card--accent" style="margin:14px 0 0">
+            <h3 style="font-size:1rem;margin-bottom:8px">🎯 Obiettivi della lezione</h3>
+            <p class="small muted" style="margin:0 0 6px">Alla fine di questa lezione saprai:</p>
+            <ul style="margin:0">
+              <li v-for="(o, i) in L.objectives" :key="i" v-html="o"></li>
+            </ul>
+          </div>
           <div class="card card--warn" style="margin:14px 0 0">
             <h3 style="font-size:1rem;margin-bottom:8px">⚠️ Errori tipici dei principianti</h3>
             <ul style="margin:0">
@@ -181,13 +195,20 @@
           <p v-if="!shownExamples.length" class="muted center">Nessun esempio trovato per «{{ query }}».</p>
         </grammar-card>
 
+        <!-- ── Vocabulary of the lesson ────────────────────────────── -->
+        <grammar-card v-if="L.vocab" id="vocabolario" icon="📖" kicker="Lessico"
+                      :title="L.vocab.title || ('Vocabolario — ' + L.vocab.words.length + ' parole')">
+          <vocab-list :vocab="L.vocab" :deck-id="L.file"></vocab-list>
+        </grammar-card>
+
         <!-- ── 7. Common mistakes ──────────────────────────────────── -->
         <grammar-card id="errori" icon="🚨" kicker="Passo 5 · Errori" title="Errori comuni — e perché">
           <mistake-card v-for="(m, i) in L.mistakes" :key="i" :m="m"></mistake-card>
         </grammar-card>
 
-        <!-- ── 8. Exercises ────────────────────────────────────────── -->
+        <!-- ── 8. Guided practice + exercises ──────────────────────── -->
         <grammar-card id="esercizi" icon="✏️" kicker="Passo 6 · Pratica" title="Esercizi interattivi">
+          <guided-practice v-if="L.guided" :guided="L.guided"></guided-practice>
           <exercise-panel :ex="L.exercises" :lesson-file="L.file"></exercise-panel>
         </grammar-card>
 
@@ -226,7 +247,7 @@
       </main>
 
       <footer class="site-footer">
-        <p>Italiano A2 · Corso interattivo di grammatica · I progressi restano nel tuo browser (localStorage).</p>
+        <p>Italiano {{ levelName }} · Corso interattivo di grammatica · I progressi restano nel tuo browser (localStorage).</p>
       </footer>
       <toast-host></toast-host>
     `
@@ -234,7 +255,7 @@
 
   /** Boots a lesson page from window.LESSON. */
   ITA.mountLesson = function (lesson) {
-    document.title = lesson.title + ' · Italiano A2';
+    document.title = lesson.title + ' · Italiano ' + ITA.LEVEL;
     return ITA.createPage({
       components: { 'lesson-page': lessonPage },
       data: () => ({ lesson: lesson }),

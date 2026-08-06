@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Le frasi relative italiane: che, cui, il quale/la quale, ciò che/quello che, quanto e il cui (whose) — come unire due frasi semplici in una frase sola, con e senza preposizione.">
+  <title>Frasi Relative · Italiano B1</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     UNITÀ 13 — FRASI RELATIVE
+     ========================================================================== */
+  window.LESSON = {
+    num: 13, file: '13-frasi-relative.html', icon: '🪢', title: 'Frasi Relative', group: 'Sintassi',
+    subtitle: 'Che, cui, il quale, ciò che: come unire due frasi in una sola, con eleganza.',
+
+    intro: {
+      what: 'Le frasi relative usano un <b>pronome relativo</b> (che, cui, il quale, ciò che…) per collegare una frase secondaria a un nome della frase principale, evitando di ripeterlo. «Ho un amico. L\'amico vive a Roma.» diventa «Ho un amico <b>che</b> vive a Roma».',
+      when: 'Ogni volta che vuoi descrivere un nome con un\'informazione in più senza spezzare il discorso in tante frasi brevi, o quando devi collegare due idee che condividono lo stesso elemento: una persona, un luogo, un oggetto, un motivo.',
+      why: 'È una delle competenze di scrittura più importanti del B1: senza le relative il tuo italiano suona a scatti, fatto di frasi corte e slegate. Con le relative, invece, parli e scrivi in modo fluido, preciso e maturo.',
+      mistakes: [
+        'Usare «che» dopo una preposizione: ❌ "La persona che parlo" → ✅ "La persona a cui parlo".',
+        'Dimenticare la preposizione richiesta dal verbo: ❌ "Il libro che ho parlato" → ✅ "Il libro di cui ho parlato".',
+        'Usare «che» senza nessun antecedente: ❌ "Non capisco che dici" → ✅ "Non capisco ciò che dici".',
+        'Far concordare «il cui» con il possessore invece che con il nome posseduto: ❌ pensare che "cui" cambi in base a chi possiede, non a cosa è posseduto.'
+      ]
+    },
+
+    objectives: [
+      'Usare <b>che</b> come soggetto o oggetto diretto della frase relativa, senza preposizione.',
+      'Usare <b>cui</b> dopo tutte le preposizioni più comuni (a, di, in, con, su, per, da).',
+      'Conoscere <b>il quale / la quale / i quali / le quali</b> come alternativa formale a "cui".',
+      'Usare <b>ciò che / quello che</b> quando non c\'è un antecedente esplicito, e <b>quanto</b> nei contesti formali.',
+      'Costruire <b>il cui</b> (= whose) con il corretto accordo sul nome posseduto.',
+      'Unire due frasi semplici in un\'unica frase con la relativa, evitando l\'errore più comune (che dopo preposizione).'
+    ],
+
+    formulas: [
+      {
+        label: 'Che — senza preposizione',
+        rows: [
+          { parts: [
+              { text: 'nome (antecedente)', type: 'subject' },
+              { text: 'CHE', note: 'invariabile', type: 'verb' },
+              { text: 'resto della frase', type: 'object' }
+            ], example: 'Il libro che leggo è bello.', translation: 'The book that I am reading is nice.' }
+        ]
+      },
+      {
+        label: 'Cui — sempre con preposizione',
+        rows: [
+          { parts: [
+              { text: 'nome (antecedente)', type: 'subject' },
+              { text: 'PREPOSIZIONE + CUI', note: 'a / di / in / con / su / per / da + cui', type: 'verb' },
+              { text: 'resto della frase', type: 'object' }
+            ], example: 'La persona a cui scrivo.', translation: 'The person I am writing to.' }
+        ]
+      },
+      {
+        label: 'Ciò che / quello che — senza antecedente',
+        rows: [
+          { parts: [
+              { text: 'CIÒ CHE / QUELLO CHE', note: '= "what"', type: 'verb' },
+              { text: 'resto della frase', type: 'object' }
+            ], example: 'Non capisco ciò che dici.', translation: "I don't understand what you're saying." }
+        ]
+      },
+      {
+        label: 'Il cui — possesso (whose)',
+        rows: [
+          { parts: [
+              { text: 'nome (possessore)', type: 'subject' },
+              { text: 'IL / LA / I / LE CUI', note: 'concorda col nome posseduto', type: 'verb' },
+              { text: 'nome posseduto + resto', type: 'object' }
+            ], example: 'Lo scrittore il cui libro ho letto.', translation: 'The writer whose book I read.' }
+        ]
+      }
+    ],
+    formulaNote: 'Test rapido: il verbo della relativa ha bisogno di una preposizione? Se NO → che. Se SÌ → preposizione + cui (o il quale/la quale nello scritto formale). Se non c\'è nessun nome a cui riferirsi → ciò che / quello che.',
+
+    rules: [
+      {
+        title: 'Che — il pronome relativo più semplice',
+        body: '«Che» è invariabile (non cambia mai forma) e può essere soggetto o oggetto diretto della frase relativa. È il pronome relativo più comune, quello che userai il 90% delle volte.',
+        points: [
+          'Come soggetto: «Il libro <b>che</b> è sul tavolo è mio» (il libro è sul tavolo).',
+          'Come oggetto diretto: «Il libro <b>che</b> sto leggendo è affascinante» (sto leggendo il libro).',
+          '«Che» non cambia mai forma: vale per maschile, femminile, singolare, plurale, persone e cose.',
+          '«Che» non può MAI essere preceduto da una preposizione: in quel caso serve «cui».'
+        ],
+        exception: 'Non confondere il «che» relativo con il «che» congiunzione (Penso che venga) o con il «che» esclamativo (Che bello!): la forma è identica, la funzione no.'
+      },
+      {
+        title: 'Cui — dopo una preposizione',
+        body: '«Cui» è invariabile come «che», ma si usa SEMPRE dopo una preposizione (a, di, in, con, su, per, da…), mai da solo.',
+        points: [
+          '«La persona <b>a cui</b> scrivo» (scrivere a qualcuno).',
+          '«La città <b>in cui</b> vivo» (vivere in un luogo) — spesso equivale a "dove".',
+          '«Il motivo <b>per cui</b> sono partito» (il motivo per il quale).',
+          '«Il libro <b>di cui</b> parlavo» (parlare di qualcosa) · «L\'amico <b>con cui</b> esco» (uscire con qualcuno).'
+        ],
+        exception: '«Cui» senza preposizione ma davanti a un nome significa "whose": «lo scrittore <b>il cui</b> libro…» (vedi la regola sul possesso più avanti).'
+      },
+      {
+        title: 'Il quale / la quale / i quali / le quali — l\'alternativa formale',
+        body: 'Dopo una preposizione, al posto di «cui» si può usare «il quale» (e le sue forme), che però concorda in genere e numero col nome a cui si riferisce. È tipico dello scritto formale.',
+        points: [
+          '«L\'azienda <b>per la quale</b> lavoro» = «L\'azienda <b>per cui</b> lavoro».',
+          '«I colleghi <b>con i quali</b> lavoro» = «I colleghi <b>con cui</b> lavoro».',
+          'A differenza di «cui», «il quale» concorda: la quale (femm. sing.), i quali (masch. plur.), le quali (femm. plur.).',
+          'Si usa soprattutto in testi scritti, contratti, articoli di giornale, discorsi formali; nel parlato «cui» è molto più comune e naturale.'
+        ],
+        exception: 'Con «che» semplice (senza preposizione) non si usa mai «il quale» al posto di «che» nel parlato comune: sarebbe eccessivamente formale e suonerebbe artificiale.'
+      },
+      {
+        title: 'Ciò che / quello che — quando manca l\'antecedente',
+        body: 'Quando non c\'è un nome preciso a cui riferirsi — quando il pronome relativo significa semplicemente "la cosa che" — si usa «ciò che» o, più colloquiale, «quello che».',
+        points: [
+          '«Non capisco <b>ciò che</b> dici» = «non capisco la cosa che dici».',
+          '«Fai <b>quello che</b> vuoi» — più informale e frequente nel parlato.',
+          '«Ciò che» e «quello che» sono intercambiabili nella maggior parte dei contesti.',
+          'Equivalgono all\'inglese "what" nel senso di "that which", non nel senso di domanda.'
+        ],
+        exception: '«Quanto» può sostituire «ciò che / quello che» in contesti fissi, formali o burocratici: «Ringrazio per <b>quanto</b> fatto» = «per quello che è stato fatto».'
+      },
+      {
+        title: 'Unire due frasi in una: la competenza chiave del B1',
+        body: 'La frase relativa serve soprattutto a questo: prendere due frasi semplici con un elemento in comune e unirle in una frase sola, più fluida e naturale.',
+        points: [
+          '«Ho una vicina. La vicina cucina benissimo.» → «Ho una vicina <b>che</b> cucina benissimo.»',
+          '«Ho letto un libro. Mi hai parlato di quel libro.» → «Ho letto il libro <b>di cui</b> mi hai parlato.»',
+          '«Vivo in una città. La città è piccola.» → «La città <b>in cui</b> vivo è piccola.»',
+          'Il trucco: individua l\'elemento ripetuto nelle due frasi e sostituiscilo con il pronome relativo giusto, tenendo conto della preposizione eventualmente richiesta dal verbo.'
+        ],
+        exception: 'Se l\'elemento ripetuto è preceduto da una preposizione nella seconda frase, quella preposizione va davanti a «cui», non eliminata: «con cui», «per cui», «a cui».'
+      },
+      {
+        title: 'Il cui — il possessivo relativo (whose)',
+        body: '«Il cui / la cui / i cui / le cui» corrisponde all\'inglese "whose": esprime possesso o appartenenza. Concorda in genere e numero col nome che segue, NON con il possessore.',
+        points: [
+          '«Lo scrittore <b>il cui</b> libro ho letto» = the writer whose book I read (libro è maschile → il cui).',
+          '«La ragazza <b>la cui</b> madre conosco» = the girl whose mother I know (madre è femminile → la cui).',
+          'L\'ordine è fisso: [nome 1] + il/la/i/le + cui + [nome 2]: mai «il libro cui» o «cui il libro».',
+          'È una costruzione avanzata e piuttosto formale: nel parlato si preferisce spesso riformulare con due frasi separate.'
+        ],
+        exception: 'A differenza dell\'inglese "whose", l\'articolo davanti a «cui» concorda col nome POSSEDUTO, non col possessore: con «la cui casa» l\'accordo è con "casa" (femminile), anche se il possessore è maschile.'
+      },
+      {
+        title: 'Un errore molto comune: «che» dopo una preposizione',
+        body: 'L\'errore numero uno degli studenti stranieri: usare «che» anche dopo una preposizione, calcando la struttura di altre lingue.',
+        points: [
+          '❌ «La persona <b>che</b> parlo» → ✅ «La persona <b>a cui</b> parlo» (parlare A qualcuno).',
+          '❌ «Il libro <b>che</b> ho parlato» → ✅ «Il libro <b>di cui</b> ho parlato» (parlare DI qualcosa).',
+          'Regola pratica: pensa prima al verbo e alla preposizione che richiede (parlare A, parlare DI, vivere IN, lavorare PER…), poi scegli «preposizione + cui».',
+          'Se il verbo non richiede nessuna preposizione (vedere, leggere, conoscere…), allora va bene «che» da solo.'
+        ],
+        exception: 'Nell\'italiano molto informale si sente a volte «che» anche dopo un verbo che regge preposizione, ma è considerato scorretto e va evitato, soprattutto per iscritto e all\'esame.'
+      }
+    ],
+
+    timeline: {
+      title: 'Dal pronome più semplice al più formale',
+      intro: 'I pronomi relativi non seguono una linea del tempo, ma una scala di frequenza e formalità: dal più comune e informale al più raro e ricercato.',
+      points: [
+        { time: 'Il più comune', label: 'CHE', example: 'Il libro che leggo.', note: 'senza preposizione, sempre' },
+        { time: 'Con preposizione', label: 'CUI', example: 'La persona a cui scrivo.', note: 'invariabile' },
+        { time: 'Formale', label: 'IL QUALE / LA QUALE', example: 'L\'azienda per la quale lavoro.', note: 'concorda in genere e numero' },
+        { time: 'Senza antecedente', label: 'CIÒ CHE / QUELLO CHE', example: 'Non capisco ciò che dici.' },
+        { time: 'Adesso', label: 'IL CUI (whose)', example: 'Lo scrittore il cui libro ho letto.', now: true, note: 'possesso, costruzione avanzata' }
+      ],
+      caption: 'Nel parlato quotidiano "che" e "cui" coprono il 90% dei casi; "il quale" e "il cui" appartengono soprattutto alla lingua scritta e formale.'
+    },
+
+    tables: [
+      {
+        title: 'I pronomi relativi — riepilogo generale',
+        columns: ['Pronome', 'Uso', 'Esempio'],
+        rows: [
+          { cells: ['che', 'soggetto o oggetto diretto, MAI dopo preposizione', 'Il libro che leggo è bello.'] },
+          { cells: ['cui', 'sempre dopo una preposizione', 'La persona a cui scrivo.'] },
+          { cells: ['il quale / la quale / i quali / le quali', 'alternativa formale a "cui", concorda', 'L\'azienda per la quale lavoro.'], irregular: [0] },
+          { cells: ['ciò che / quello che', '"what", senza antecedente esplicito', 'Non capisco ciò che dici.'] },
+          { cells: ['il cui / la cui / i cui / le cui', '"whose", possesso, concorda col nome posseduto', 'Lo scrittore il cui libro ho letto.'], irregular: [0] },
+          { cells: ['quanto', 'sinonimo formale di "ciò che" in contesti fissi', 'Ringrazio per quanto fatto.'] }
+        ]
+      },
+      {
+        title: 'Cui con le preposizioni più comuni',
+        note: 'Il verbo detta la preposizione: impara i verbi a coppie con la loro preposizione.',
+        columns: ['Preposizione + cui', 'Significato', 'Esempio'],
+        rows: [
+          { cells: ['a cui', 'to whom / to which', 'La persona a cui scrivo.'] },
+          { cells: ['di cui', 'of whom / of which, about', 'Il libro di cui parlavo.'] },
+          { cells: ['in cui', 'in which / where', 'La città in cui vivo.'] },
+          { cells: ['con cui', 'with whom / with which', 'L\'amico con cui esco.'] },
+          { cells: ['su cui', 'on which / about which', 'L\'argomento su cui discutiamo.'] },
+          { cells: ['per cui', 'for which / why', 'Il motivo per cui sono partito.'] },
+          { cells: ['da cui', 'from which / from whom', 'Il paese da cui vengo.'] },
+          { cells: ['tra cui / fra cui', 'among whom / which', 'Ho tre amici, tra cui Marco.'] }
+        ]
+      },
+      {
+        title: 'Il quale — le quattro forme',
+        note: 'A differenza di "cui", concorda sempre in genere e numero.',
+        columns: ['Genere e numero', 'Forma', 'Esempio'],
+        rows: [
+          { cells: ['maschile singolare', 'il quale', 'Il collega con il quale lavoro.'] },
+          { cells: ['femminile singolare', 'la quale', 'L\'azienda per la quale lavoro.'] },
+          { cells: ['maschile plurale', 'i quali', 'I colleghi con i quali lavoro.'] },
+          { cells: ['femminile plurale', 'le quali', 'Le persone con le quali ho parlato.'] }
+        ]
+      },
+      {
+        title: 'Il cui — accordo col nome posseduto',
+        note: 'L\'accordo segue il nome che viene DOPO "cui", non il possessore.',
+        columns: ['Frase', 'Nome posseduto', 'Forma di "cui"'],
+        rows: [
+          { cells: ['Lo scrittore il cui libro ho letto…', 'il libro (masch. sing.)', 'il cui'], irregular: [2] },
+          { cells: ['La ragazza la cui madre conosco…', 'la madre (femm. sing.)', 'la cui'], irregular: [2] },
+          { cells: ['L\'uomo i cui figli studiano qui…', 'i figli (masch. plur.)', 'i cui'], irregular: [2] },
+          { cells: ['La donna le cui idee ammiro…', 'le idee (femm. plur.)', 'le cui'], irregular: [2] }
+        ]
+      },
+      {
+        title: 'Che o cui? Il test della preposizione',
+        columns: ['Il verbo richiede una preposizione?', 'Pronome giusto', 'Esempio'],
+        rows: [
+          { cells: ['NO (vedere, leggere, conoscere, avere…)', 'che', 'La persona che vedo.'] },
+          { cells: ['SÌ (parlare A, parlare DI, vivere IN…)', 'preposizione + cui', 'La persona a cui parlo.'] }
+        ]
+      },
+      {
+        title: 'Unire due frasi in una — esempi',
+        columns: ['Frase 1 + Frase 2', 'Frase unita con relativa', 'Pronome usato'],
+        rows: [
+          { cells: ['Ho una vicina. + La vicina cucina benissimo.', 'Ho una vicina che cucina benissimo.', 'che (soggetto)'] },
+          { cells: ['Ho letto un libro. + Mi hai parlato di quel libro.', 'Ho letto il libro di cui mi hai parlato.', 'di cui'] },
+          { cells: ['Vivo in una città. + La città è piccola.', 'La città in cui vivo è piccola.', 'in cui'] },
+          { cells: ['Conosco uno scrittore. + Ho letto il suo libro.', 'Conosco lo scrittore il cui libro ho letto.', 'il cui'] },
+          { cells: ['Lavoro per un\'azienda. + L\'azienda è italiana.', 'L\'azienda per cui lavoro è italiana.', 'per cui'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Il libro che è sul tavolo è mio.', literal: 'The book that is on-the table is mine.', natural: "The book that's on the table is mine.", note: '"che" è invariabile ed è il soggetto della relativa.' },
+      { it: 'Il libro che sto leggendo è affascinante.', literal: 'The book that I-am reading is fascinating.', natural: "The book I'm reading is fascinating.", note: '"che" è qui l\'oggetto diretto del verbo "leggere".' },
+      { it: 'La persona a cui scrivo è mia cugina.', literal: 'The person to whom I-write is my cousin.', natural: "The person I'm writing to is my cousin.", note: 'Dopo una preposizione, "che" diventa "cui": scrivere A qualcuno.' },
+      { it: 'La città in cui vivo è piccola ma vivace.', literal: 'The city in which I-live is small but lively.', natural: 'The city I live in is small but lively.', note: '"in cui" equivale spesso a "dove" quando si parla di un luogo.' },
+      { it: 'Il motivo per cui sono partito è semplice.', literal: 'The reason for which I-am left is simple.', natural: 'The reason why I left is simple.', note: '"il motivo per cui" = "the reason why".' },
+      { it: 'L\'azienda per la quale lavoro è italiana.', literal: 'The company for the which I-work is Italian.', natural: 'The company I work for is Italian.', note: '"la quale" concorda in genere e numero: alternativa formale a "cui" dopo preposizione.' },
+      { it: 'Non capisco ciò che dici.', literal: 'Not I-understand that which you-say.', natural: "I don't understand what you're saying.", note: '"ciò che" = "quello che" = "what", senza antecedente esplicito.' },
+      { it: 'Fai quello che vuoi.', literal: 'Do that which you-want.', natural: 'Do what you want.', note: '"quello che" è la forma più colloquiale di "ciò che".' },
+      { it: 'Ringrazio tutti per quanto fatto finora.', literal: 'I-thank everyone for how-much done until-now.', natural: 'I thank everyone for what has been done so far.', note: '"quanto" è un sinonimo formale di "ciò che" nei contesti fissi e burocratici.' },
+      { it: 'Il libro di cui parlavo è finalmente uscito.', literal: 'The book of which I-spoke is finally out.', natural: 'The book I was talking about has finally come out.', note: '"di cui" = "of which": il verbo "parlare di" regge la preposizione "di".' },
+      { it: 'Ho una vicina che cucina benissimo.', literal: 'I-have a neighbour that cooks very-well.', natural: 'I have a neighbour who cooks really well.', note: 'Due frasi unite in una: «Ho una vicina» + «La vicina cucina benissimo» → "che" sostituisce il soggetto ripetuto.' },
+      { it: 'Lo scrittore il cui libro ho letto vive a Torino.', literal: 'The writer the whose book I-have read lives in Turin.', natural: 'The writer whose book I read lives in Turin.', note: '"il cui" = "whose", concorda col nome che segue (il libro, maschile): costruzione avanzata e formale.' },
+      { it: 'Il paese da cui vengo si trova in montagna.', literal: 'The town from which I-come is-located in mountain.', natural: 'The town I come from is in the mountains.', note: '"da cui" indica provenienza: venire DA un luogo.' },
+      { it: 'L\'argomento su cui discutiamo è delicato.', literal: 'The topic on which we-discuss is delicate.', natural: "The topic we're discussing is a delicate one.", note: '"su cui" = "about/on which": discutere SU un argomento.' },
+      { it: 'La persona che vedi è mia sorella; la persona a cui parlo è mia madre.', literal: 'The person that you-see is my sister; the person to whom I-speak is my mother.', natural: "The person you see is my sister; the person I'm talking to is my mother.", note: '"che" senza preposizione, "cui" sempre con preposizione davanti: stesso contesto, pronomi diversi.' },
+      { it: 'I colleghi con i quali lavoro sono simpatici.', literal: 'The colleagues with the which(pl.) I-work are nice.', natural: 'The colleagues I work with are nice.', note: '"i quali" concorda al maschile plurale con "colleghi": alternativa formale a "con cui".' },
+      { it: 'Il quartiere in cui sono cresciuto, il cui nome ormai è cambiato, mi manca molto.', literal: 'The neighbourhood in which I-am grown, the whose name by-now is changed, to-me it-misses a-lot.', natural: 'The neighbourhood I grew up in, whose name has now changed, I miss a lot.', note: 'Combina "in cui" (luogo) e "il cui" (possesso) nella stessa frase.' },
+      { it: 'Ho tre amici, tra cui Marco, con cui esco ogni weekend.', literal: 'I-have three friends, among whom Marco, with whom I-go-out every weekend.', natural: 'I have three friends, including Marco, who I go out with every weekend.', note: '"tra cui" introduce un elemento di un gruppo; "con cui" segue "uscire con qualcuno".' }
+    ],
+
+    mistakes: [
+      { wrong: 'La persona che parlo è mia cugina.', right: 'La persona a cui parlo è mia cugina.', why: 'Dopo un verbo che regge una preposizione (parlare A qualcuno) non si può usare "che": serve "cui".' },
+      { wrong: 'Il libro che ho parlato ieri è questo.', right: 'Il libro di cui ho parlato ieri è questo.', why: '"Parlare di" richiede "di cui", non "che" da solo.' },
+      { wrong: 'La città che vivo è Roma.', right: 'La città in cui vivo è Roma.', why: '"Vivere in" richiede la preposizione "in": in cui.' },
+      { wrong: 'L\'azienda che lavoro è italiana.', right: 'L\'azienda per cui lavoro è italiana.', why: '"Lavorare per" richiede la preposizione "per": per cui.' },
+      { wrong: 'Non capisco che dici.', right: 'Non capisco ciò che dici. / Non capisco quello che dici.', why: 'Senza un antecedente esplicito serve "ciò che" o "quello che", non "che" da solo.' },
+      { wrong: 'Lo scrittore che il libro ho letto vive a Torino.', right: 'Lo scrittore il cui libro ho letto vive a Torino.', why: 'Per esprimere "whose" serve "il cui" (concorda col nome seguente), non "che".' },
+      { wrong: 'Il motivo che sono partito è semplice.', right: 'Il motivo per cui sono partito è semplice.', why: '"Motivo" regge la preposizione "per": il motivo per cui.' },
+      { wrong: 'Le persone quali ho incontrato erano gentili.', right: 'Le persone che ho incontrato erano gentili.', why: '"Il quale/i quali" si usa dopo una preposizione, non da solo al posto di "che" semplice.' },
+      { wrong: 'La ragazza cui madre conosco è simpatica.', right: 'La ragazza la cui madre conosco è simpatica.', why: 'Per il possesso serve l\'articolo prima di "cui": la cui, concordato col nome posseduto "madre".' }
+    ],
+
+    vocab: {
+      title: 'Vocabolario — descrizioni, relazioni e luoghi (56 parole)',
+      intro: 'Le frasi relative servono soprattutto a descrivere: persone, luoghi, caratteri, paesaggi. Ecco il lessico per farlo con precisione, con italiano, inglese, farsi (فارسی) ed esempio — molte frasi contengono proprio un pronome relativo.',
+      categories: [
+        { id: 'descrizione', label: 'Descrizione', icon: '🔍' },
+        { id: 'persone', label: 'Persone e relazioni', icon: '👥' },
+        { id: 'luoghi', label: 'Luoghi', icon: '🏘️' },
+        { id: 'paesaggio', label: 'Paesaggio e ambiente', icon: '🏞️' },
+        { id: 'caratteristiche', label: 'Caratteristiche personali', icon: '🎭' },
+        { id: 'posizione', label: 'Posizione e collocazione', icon: '📍' }
+      ],
+      words: [
+        /* ── Descrizione (9) ── */
+        { it: 'descrivere', en: 'to describe', fa: 'توصیف کردن', cat: 'descrizione', pos: 'v.', ex: 'Descrivimi la persona di cui parli.' },
+        { it: 'la descrizione', en: 'description', fa: 'توصیف', cat: 'descrizione', pos: 'f.', ex: 'La descrizione che hai fatto era perfetta.' },
+        { it: 'la caratteristica', en: 'characteristic, feature', fa: 'ویژگی', cat: 'descrizione', pos: 'f.', ex: 'La caratteristica che noto subito è la sua gentilezza.' },
+        { it: 'il particolare', en: 'detail', fa: 'جزئیات', cat: 'descrizione', pos: 'm.', ex: 'C\'è un particolare che non ho capito.' },
+        { it: 'l\'aspetto', en: 'appearance, aspect', fa: 'ظاهر', cat: 'descrizione', pos: 'm.', ex: 'L\'aspetto che mi colpisce di più è il sorriso.' },
+        { it: 'rassomigliare (a)', en: 'to resemble', fa: 'شبیه بودن', cat: 'descrizione', pos: 'v.', ex: 'È un uomo che rassomiglia molto a suo padre.' },
+        { it: 'distinguersi (per)', en: 'to stand out', fa: 'متمایز بودن', cat: 'descrizione', pos: 'v. rifl.', ex: 'È una persona che si distingue per la sua onestà.' },
+        { it: 'il dettaglio', en: 'detail', fa: 'جزئیات', cat: 'descrizione', pos: 'm.', ex: 'Il dettaglio di cui parli mi è sfuggito.' },
+        { it: 'l\'impressione', en: 'impression', fa: 'برداشت', cat: 'descrizione', pos: 'f.', ex: 'L\'impressione che ho avuto è stata positiva.' },
+
+        /* ── Persone e relazioni (10) ── */
+        { it: 'il vicino di casa', en: 'neighbour', fa: 'همسایه', cat: 'persone', pos: 'm.', ex: 'Il vicino di casa con cui parlo ogni giorno è simpatico.' },
+        { it: 'il conoscente', en: 'acquaintance', fa: 'آشنا', cat: 'persone', pos: 'm.', ex: 'È un conoscente il cui nome non ricordo.' },
+        { it: 'l\'amico d\'infanzia', en: 'childhood friend', fa: 'دوست دوران کودکی', cat: 'persone', pos: 'm.', ex: 'L\'amico d\'infanzia di cui ti ho parlato vive a Roma.' },
+        { it: 'il/la collega', en: 'colleague', fa: 'همکار', cat: 'persone', pos: 'm./f.', ex: 'Il collega con cui lavoro è molto preciso.' },
+        { it: 'il parente', en: 'relative', fa: 'خویشاوند', cat: 'persone', pos: 'm.', ex: 'Ho un parente che vive in Argentina.' },
+        { it: 'la conoscenza', en: 'acquaintance (relationship)', fa: 'آشنایی', cat: 'persone', pos: 'f.', ex: 'È una conoscenza di cui mi fido poco.' },
+        { it: 'fidarsi (di)', en: 'to trust', fa: 'اعتماد کردن', cat: 'persone', pos: 'v. rifl.', ex: 'È una persona di cui mi fido ciecamente.' },
+        { it: 'il rapporto', en: 'relationship', fa: 'رابطه', cat: 'persone', pos: 'm.', ex: 'Il rapporto che abbiamo è basato sulla fiducia.' },
+        { it: 'presentare (qualcuno)', en: 'to introduce (someone)', fa: 'معرفی کردن', cat: 'persone', pos: 'v.', ex: 'Ti presento l\'amico di cui ti ho parlato.' },
+        { it: 'il legame', en: 'bond, tie', fa: 'پیوند', cat: 'persone', pos: 'm.', ex: 'Il legame che ci unisce è molto forte.' },
+
+        /* ── Luoghi (9) ── */
+        { it: 'il quartiere', en: 'neighbourhood', fa: 'محله', cat: 'luoghi', pos: 'm.', ex: 'Il quartiere in cui vivo è tranquillo.' },
+        { it: 'la città', en: 'city', fa: 'شهر', cat: 'luoghi', pos: 'f.', ex: 'La città in cui sono nato è piccola.' },
+        { it: 'il paese', en: 'town, village; country', fa: 'شهر کوچک / کشور', cat: 'luoghi', pos: 'm.', ex: 'Il paese da cui vengo è vicino al mare.' },
+        { it: 'la piazza', en: 'square', fa: 'میدان', cat: 'luoghi', pos: 'f.', ex: 'La piazza in cui ci incontriamo è famosa.' },
+        { it: 'il centro storico', en: 'historic centre', fa: 'مرکز تاریخی شهر', cat: 'luoghi', pos: 'm.', ex: 'Il centro storico di cui parli è bellissimo.' },
+        { it: 'la periferia', en: 'outskirts, suburbs', fa: 'حومه شهر', cat: 'luoghi', pos: 'f.', ex: 'Abito in periferia, la zona in cui la vita è più tranquilla.' },
+        { it: 'la zona', en: 'area, zone', fa: 'منطقه', cat: 'luoghi', pos: 'f.', ex: 'La zona in cui lavoro è ben collegata.' },
+        { it: 'situato', en: 'located, situated', fa: 'واقع شده', cat: 'luoghi', pos: 'agg.', ex: 'È un paese situato tra le montagne.' },
+        { it: 'il monumento', en: 'monument', fa: 'بنای یادبود', cat: 'luoghi', pos: 'm.', ex: 'Il monumento di cui ti ho parlato è nel centro.' },
+
+        /* ── Paesaggio e ambiente (9) ── */
+        { it: 'il paesaggio', en: 'landscape', fa: 'چشم‌انداز', cat: 'paesaggio', pos: 'm.', ex: 'Il paesaggio che si vede da qui è magnifico.' },
+        { it: 'circondato (da)', en: 'surrounded (by)', fa: 'احاطه شده', cat: 'paesaggio', pos: 'agg.', ex: 'Un paese circondato da colline verdi.' },
+        { it: 'la collina', en: 'hill', fa: 'تپه', cat: 'paesaggio', pos: 'f.', ex: 'La collina su cui sorge il paese è verde tutto l\'anno.' },
+        { it: 'la vallata', en: 'valley', fa: 'دره', cat: 'paesaggio', pos: 'f.', ex: 'La vallata in cui si trova il lago è famosa.' },
+        { it: 'affacciarsi (su)', en: 'to overlook, to face', fa: 'مشرف بودن', cat: 'paesaggio', pos: 'v. rifl.', ex: 'Una casa che si affaccia sul mare.' },
+        { it: 'immerso (in)', en: 'immersed, set (in)', fa: 'محاط شده', cat: 'paesaggio', pos: 'agg.', ex: 'Un borgo immerso nel verde.' },
+        { it: 'il panorama', en: 'view, panorama', fa: 'منظره', cat: 'paesaggio', pos: 'm.', ex: 'Il panorama di cui godiamo da qui è unico.' },
+        { it: 'rurale', en: 'rural', fa: 'روستایی', cat: 'paesaggio', pos: 'agg.', ex: 'È un\'area rurale in cui vivono poche persone.' },
+        { it: 'tipico', en: 'typical', fa: 'معمول', cat: 'paesaggio', pos: 'agg.', ex: 'È un piatto tipico della zona in cui sono cresciuto.' },
+
+        /* ── Caratteristiche personali (9) ── */
+        { it: 'affidabile', en: 'reliable', fa: 'قابل اعتماد', cat: 'caratteristiche', pos: 'agg.', ex: 'È una persona affidabile su cui puoi contare.' },
+        { it: 'socievole', en: 'sociable', fa: 'اجتماعی', cat: 'caratteristiche', pos: 'agg.', ex: 'È un ragazzo socievole con cui è facile parlare.' },
+        { it: 'riservato', en: 'reserved, private', fa: 'کم‌حرف', cat: 'caratteristiche', pos: 'agg.', ex: 'È una persona riservata di cui si sa poco.' },
+        { it: 'curioso', en: 'curious', fa: 'کنجکاو', cat: 'caratteristiche', pos: 'agg.', ex: 'È un bambino curioso che fa sempre domande.' },
+        { it: 'gentile', en: 'kind', fa: 'مهربان', cat: 'caratteristiche', pos: 'agg.', ex: 'È la persona più gentile che conosca.' },
+        { it: 'testardo', en: 'stubborn', fa: 'لجباز', cat: 'caratteristiche', pos: 'agg.', ex: 'È un uomo testardo il cui carattere non cambia mai.' },
+        { it: 'sensibile', en: 'sensitive', fa: 'حساس', cat: 'caratteristiche', pos: 'agg.', ex: 'È una ragazza sensibile a cui piace la poesia.' },
+        { it: 'generoso', en: 'generous', fa: 'سخاوتمند', cat: 'caratteristiche', pos: 'agg.', ex: 'È un amico generoso su cui posso sempre contare.' },
+        { it: 'il carattere', en: 'character, personality', fa: 'شخصیت', cat: 'caratteristiche', pos: 'm.', ex: 'Il carattere che ha ereditato dal padre è forte.' },
+
+        /* ── Posizione e collocazione (10) ── */
+        { it: 'la posizione', en: 'position, location', fa: 'موقعیت', cat: 'posizione', pos: 'f.', ex: 'La posizione in cui si trova la casa è comoda.' },
+        { it: 'trovarsi', en: 'to be located', fa: 'قرار داشتن', cat: 'posizione', pos: 'v. rifl.', ex: 'Il ristorante di cui parli si trova vicino alla piazza.' },
+        { it: 'sorgere', en: 'to stand, to rise (of buildings)', fa: 'برافراشته شدن', cat: 'posizione', pos: 'v.', ex: 'La torre che sorge sulla collina è antica.' },
+        { it: 'accanto (a)', en: 'next to', fa: 'کنار', cat: 'posizione', pos: 'loc.', ex: 'La casa accanto a cui abito è vecchia.' },
+        { it: 'di fronte (a)', en: 'opposite, facing', fa: 'روبروی', cat: 'posizione', pos: 'loc.', ex: 'Il negozio di fronte a cui parcheggio è chiuso.' },
+        { it: 'lungo', en: 'along', fa: 'در امتداد', cat: 'posizione', pos: 'prep.', ex: 'La strada lungo cui camminiamo è alberata.' },
+        { it: 'in mezzo a', en: 'in the middle of', fa: 'در وسط', cat: 'posizione', pos: 'loc.', ex: 'Il paese in mezzo a cui passiamo è piccolo.' },
+        { it: 'attraverso', en: 'through, across', fa: 'از میان', cat: 'posizione', pos: 'prep.', ex: 'Il sentiero attraverso cui siamo passati è ripido.' },
+        { it: 'nei dintorni (di)', en: 'in the vicinity (of)', fa: 'در اطراف', cat: 'posizione', pos: 'loc.', ex: 'Nei dintorni della città in cui vivo ci sono molte colline.' },
+        { it: 'dislocato', en: 'located, spread out', fa: 'پراکنده', cat: 'posizione', pos: 'agg.', ex: 'Sono uffici dislocati in diverse città.' }
+      ]
+    },
+
+    guided: {
+      title: 'Costruiamo insieme la frase relativa',
+      intro: 'Tre domande in ordine: qual è l\'elemento ripetuto nelle due frasi? Il verbo della relativa richiede una preposizione? C\'è un rapporto di possesso da esprimere?',
+      steps: [
+        {
+          prompt: 'Unisci: «Ho un amico. L\'amico abita a Milano.»',
+          think: 'L\'elemento ripetuto ("l\'amico") è soggetto della seconda frase, senza preposizione → che.',
+          answer: 'Ho un amico che abita a Milano.',
+          why: '«Che» è soggetto della relativa e sostituisce «l\'amico».'
+        },
+        {
+          prompt: 'Unisci: «Ho scritto una lettera. Ti ho parlato di quella lettera.»',
+          think: 'Il verbo "parlare" richiede la preposizione "di" → di cui.',
+          answer: 'Ho scritto la lettera di cui ti ho parlato.',
+          why: '«Parlare di» + cui = di cui.'
+        },
+        {
+          prompt: 'Trasforma in modo più formale: «L\'azienda per cui lavoro è italiana.»',
+          think: 'Dopo una preposizione, "cui" può diventare "il quale" concordato: azienda è femminile singolare.',
+          answer: 'L\'azienda per la quale lavoro è italiana.',
+          why: '«La quale» concorda col nome femminile «azienda».'
+        },
+        {
+          prompt: 'Completa: «Non capisco ___ vuoi dire.»',
+          think: 'Non c\'è un nome preciso a cui riferirsi: il senso è "la cosa che" → ciò che / quello che.',
+          answer: 'Non capisco ciò che vuoi dire. / Non capisco quello che vuoi dire.',
+          why: 'Senza antecedente si usa "ciò che" o "quello che", mai "che" da solo.'
+        },
+        {
+          prompt: 'Esprimi il possesso: «Conosco uno scrittore. Ho letto il suo libro.»',
+          think: 'C\'è un rapporto di possesso (il libro DELLO scrittore) → il cui, concordato col nome posseduto «libro» (maschile).',
+          answer: 'Conosco lo scrittore il cui libro ho letto.',
+          why: '«Il cui» concorda con «libro», non con «scrittore».'
+        },
+        {
+          prompt: 'Correggi l\'errore: «La persona che parlo è mia sorella.»',
+          think: '"Parlare" richiede la preposizione "a": non si può usare "che" da solo dopo un verbo che regge una preposizione.',
+          answer: 'La persona a cui parlo è mia sorella.',
+          why: 'Parlare A qualcuno → a cui, non che.'
+        }
+      ]
+    },
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Il libro ___ leggo è bellissimo.»', options: ['cui', 'che', 'il quale', 'quanto'], answer: 1, hint: 'nessuna preposizione', why: '"che" è oggetto diretto, senza preposizione.' },
+        { q: 'Completa: «La persona ___ scrivo è mia cugina.»', options: ['che', 'a cui', 'il quale', 'quello che'], answer: 1, hint: 'scrivere A qualcuno', why: '"a cui".' },
+        { q: 'Completa: «La città ___ vivo è piccola.»', options: ['che', 'in cui', 'cui', 'il quale'], answer: 1, hint: 'vivere IN un luogo', why: '"in cui".' },
+        { q: 'Quale frase è formale ma corretta?', options: ['L\'azienda per che lavoro.', 'L\'azienda per la quale lavoro.', 'L\'azienda che lavoro.', 'L\'azienda cui lavoro.'], answer: 1, hint: 'preposizione + il quale', why: '«per la quale», concordato con "azienda".' },
+        { q: 'Completa: «Non capisco ___ dici.»', options: ['che', 'cui', 'ciò che', 'il quale'], answer: 2, hint: 'senza antecedente', why: '"ciò che" = "what".' },
+        { q: 'Completa: «Il libro ___ parlavo è uscito.»', options: ['che', 'di cui', 'cui', 'il quale'], answer: 1, hint: 'parlare DI qualcosa', why: '"di cui".' },
+        { q: 'Quale frase esprime il possesso ("whose")?', options: ['Lo scrittore che ho letto il libro.', 'Lo scrittore il cui libro ho letto.', 'Lo scrittore cui ho letto il libro.', 'Lo scrittore che libro ho letto.'], answer: 1, hint: 'il cui + nome posseduto', why: '«il cui libro» = whose book.' },
+        { q: 'Completa: «Il motivo ___ sono partito è semplice.»', options: ['che', 'per cui', 'cui', 'il quale'], answer: 1, hint: '"motivo" + preposizione "per"', why: '«per cui» = "why".' },
+        { q: 'Qual è l\'errore in questa frase? «La persona che parlo è simpatica.»', options: ['manca l\'articolo', '"che" va sostituito con "a cui"', 'manca il verbo', 'è tutto corretto'], answer: 1, hint: '"parlare" regge "a"', why: 'Serve «a cui», non «che».' },
+        { q: '«I colleghi ___ lavoro sono simpatici.» (versione formale)', options: ['che', 'con i quali', 'il quale', 'cui'], answer: 1, hint: 'plurale maschile, formale', why: '«con i quali».' },
+        { q: 'Completa: «Ringrazio tutti per ___ fatto finora.»', options: ['ciò che', 'quanto', 'che', 'cui'], answer: 1, hint: 'contesto fisso e formale', why: '"quanto" = "ciò che", nei contesti fissi.' },
+        { q: 'Quale pronome relativo NON concorda mai in genere e numero?', options: ['cui', 'il quale', 'la quale', 'i quali'], answer: 0, hint: 'invariabile', why: '"cui" resta sempre invariato.' },
+        { q: 'Completa: «La ragazza ___ madre conosco è simpatica.»', options: ['la cui', 'il cui', 'cui', 'che'], answer: 0, hint: '"madre" è femminile', why: '«la cui madre» concorda col nome posseduto.' }
+      ],
+      fill: [
+        { before: 'Il libro', after: 'leggo è bellissimo. (che)', answers: ['che'], en: 'The book I am reading is beautiful.' },
+        { before: 'La persona a', after: 'scrivo è mia cugina. (cui)', answers: ['cui'], en: 'The person I am writing to is my cousin.' },
+        { before: 'La città in', after: 'vivo è piccola. (cui)', answers: ['cui'], en: 'The city I live in is small.' },
+        { before: 'Il motivo per', after: 'sono partito è semplice. (cui)', answers: ['cui'], en: 'The reason why I left is simple.' },
+        { before: 'Non capisco', after: 'dici. (ciò che / quello che)', answers: ['ciò che', 'quello che'], en: "I don't understand what you're saying." },
+        { before: 'Il libro di', after: 'parlavo è uscito finalmente. (cui)', answers: ['cui'], en: 'The book I was talking about has finally come out.' },
+        { before: 'L\'azienda per la', after: 'lavoro è italiana. (quale)', answers: ['quale'], en: 'The company I work for is Italian.' },
+        { before: 'Lo scrittore il', after: 'libro ho letto vive a Torino. (cui)', answers: ['cui'], en: 'The writer whose book I read lives in Turin.' },
+        { before: '', after: 'fatto finora, ringrazio tutti. (quanto)', answers: ['Quanto'], en: 'For what has been done so far, I thank everyone.', hint: 'sinonimo formale di "ciò che"' },
+        { before: 'I colleghi con i', after: 'lavoro sono simpatici. (quali)', answers: ['quali'], en: 'The colleagues I work with are nice.' },
+        { before: 'L\'argomento su', after: 'discutiamo è delicato. (cui)', answers: ['cui'], en: 'The topic we are discussing is delicate.' }
+      ],
+      order: [
+        { words: ['Il', 'libro', 'che', 'leggo', 'è', 'bellissimo'], answer: 'Il libro che leggo è bellissimo', en: 'The book I am reading is beautiful.' },
+        { words: ['La', 'persona', 'a', 'cui', 'scrivo', 'è', 'mia', 'cugina'], answer: 'La persona a cui scrivo è mia cugina', en: 'The person I am writing to is my cousin.' },
+        { words: ['La', 'città', 'in', 'cui', 'vivo', 'è', 'piccola'], answer: 'La città in cui vivo è piccola', en: 'The city I live in is small.' },
+        { words: ['Il', 'motivo', 'per', 'cui', 'sono', 'partito', 'è', 'semplice'], answer: 'Il motivo per cui sono partito è semplice', en: 'The reason why I left is simple.' },
+        { words: ['Non', 'capisco', 'ciò', 'che', 'dici'], answer: 'Non capisco ciò che dici', en: "I don't understand what you're saying." },
+        { words: ['L\'azienda', 'per', 'la', 'quale', 'lavoro', 'è', 'italiana'], answer: 'L\'azienda per la quale lavoro è italiana', en: 'The company I work for is Italian.' },
+        { words: ['Lo', 'scrittore', 'il', 'cui', 'libro', 'ho', 'letto', 'vive', 'a', 'Torino'], answer: 'Lo scrittore il cui libro ho letto vive a Torino', en: 'The writer whose book I read lives in Turin.' }
+      ],
+      dnd: {
+        instructions: 'Questi verbi vogliono CHE (senza preposizione) o richiedono una preposizione + CUI? Trascinali nella colonna giusta.',
+        buckets: [
+          { id: 'che', label: 'CHE (senza preposizione)', icon: '🟢' },
+          { id: 'cui', label: 'PREPOSIZIONE + CUI', icon: '🔵' }
+        ],
+        items: [
+          { text: 'vedere', bucket: 'che' },
+          { text: 'leggere', bucket: 'che' },
+          { text: 'conoscere', bucket: 'che' },
+          { text: 'avere', bucket: 'che' },
+          { text: 'capire', bucket: 'che' },
+          { text: 'incontrare', bucket: 'che' },
+          { text: 'ascoltare', bucket: 'che' },
+          { text: 'parlare a', bucket: 'cui' },
+          { text: 'pensare a', bucket: 'cui' },
+          { text: 'parlare di', bucket: 'cui' },
+          { text: 'vivere in', bucket: 'cui' },
+          { text: 'lavorare per', bucket: 'cui' },
+          { text: 'uscire con', bucket: 'cui' },
+          { text: 'contare su', bucket: 'cui' }
+        ]
+      },
+      match: [
+        { a: 'che', b: 'soggetto o oggetto diretto, senza preposizione' },
+        { a: 'cui', b: 'sempre dopo una preposizione' },
+        { a: 'il quale / la quale', b: 'alternativa formale a cui, concorda' },
+        { a: 'ciò che / quello che', b: 'what, senza antecedente' },
+        { a: 'il cui / la cui', b: 'whose, possesso' },
+        { a: 'quanto', b: 'sinonimo formale di ciò che' },
+        { a: 'il motivo per cui', b: 'the reason why' },
+        { a: 'la persona a cui scrivo', b: 'the person I am writing to' },
+        { a: 'il libro di cui parlavo', b: 'the book I was talking about' },
+        { a: 'la città in cui vivo', b: 'the city I live in' }
+      ],
+      tf: [
+        { statement: '«Cui» può essere usato senza preposizione davanti al verbo.', answer: false, why: '«Cui» richiede sempre una preposizione, tranne nel costrutto "il cui" davanti a un nome.' },
+        { statement: '«Che» è invariabile e vale per maschile, femminile, singolare e plurale.', answer: true, why: 'Esatto, "che" non cambia mai forma.' },
+        { statement: '«Il quale» concorda in genere e numero col nome a cui si riferisce.', answer: true, why: 'Sì: il quale, la quale, i quali, le quali.' },
+        { statement: '«Ciò che» si usa quando c\'è un antecedente preciso ed esplicito.', answer: false, why: 'Al contrario: si usa proprio quando NON c\'è un antecedente esplicito.' },
+        { statement: '«Il cui» concorda col possessore, non col nome posseduto.', answer: false, why: 'No: concorda col nome posseduto, non con chi possiede.' },
+        { statement: 'Dopo un verbo che richiede una preposizione (parlare di, pensare a…) non si può usare "che" da solo.', answer: true, why: 'Esatto: serve preposizione + cui.' },
+        { statement: '«Quanto» può sostituire «ciò che» in contesti fissi e formali.', answer: true, why: 'Sì: «Ringrazio per quanto fatto».' },
+        { statement: '«La persona che parlo» è una frase corretta.', answer: false, why: 'No: «parlare» regge «a», serve «la persona a cui parlo».' },
+        { statement: 'La frase relativa serve a unire due frasi semplici in una sola.', answer: true, why: 'Esatto, è la sua funzione principale.' }
+      ],
+      translate: [
+        { en: 'The book I am reading is beautiful.', answers: ['Il libro che leggo è bellissimo', 'Il libro che sto leggendo è bellissimo'] },
+        { en: 'The person I am writing to is my cousin.', answers: ['La persona a cui scrivo è mia cugina'] },
+        { en: 'The city I live in is small.', answers: ['La città in cui vivo è piccola'] },
+        { en: 'The reason why I left is simple.', answers: ['Il motivo per cui sono partito è semplice'] },
+        { en: "I don't understand what you're saying.", answers: ['Non capisco ciò che dici', 'Non capisco quello che dici'] },
+        { en: 'The book I was talking about has finally come out.', answers: ['Il libro di cui parlavo è uscito', 'Il libro di cui parlavo è uscito finalmente'] },
+        { en: 'The company I work for is Italian.', answers: ['L\'azienda per cui lavoro è italiana', 'L\'azienda per la quale lavoro è italiana'] },
+        { en: 'The writer whose book I read lives in Turin.', answers: ['Lo scrittore il cui libro ho letto vive a Torino'] },
+        { en: 'The colleagues I work with are nice.', answers: ['I colleghi con cui lavoro sono simpatici', 'I colleghi con i quali lavoro sono simpatici'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Il nuovo quartiere',
+      intro: 'Giulia chiede a Sara del quartiere in cui si è appena trasferita: nota quante frasi si uniscono grazie a un pronome relativo.',
+      lines: [
+        { speaker: 'Giulia', icon: '👩', it: 'Com\'è il quartiere in cui ti sei trasferita?', en: "What's the neighbourhood you moved to like?",
+          glosses: [{ term: 'in cui ti sei trasferita', expl: '"in cui" indica il luogo di destinazione: relativa con preposizione.' }] },
+        { speaker: 'Sara', icon: '👩‍🦰', side: 'right', it: 'Bellissimo! È una zona tranquilla, circondata dal verde.', en: "Beautiful! It's a quiet area, surrounded by greenery.",
+          glosses: [{ term: 'circondata dal verde', expl: 'Participio-aggettivo (unità 12): descrive "zona", femminile singolare.' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'E i vicini? Hai già conosciuto qualcuno?', en: 'And the neighbours? Have you met anyone yet?' },
+        { speaker: 'Sara', icon: '👩‍🦰', side: 'right', it: 'Sì, ho un vicino di casa con cui parlo spesso: è la persona più simpatica che abbia mai conosciuto.', en: "Yes, I have a neighbour I often talk to: he's the nicest person I've ever met.",
+          glosses: [{ term: 'con cui parlo spesso', expl: '"parlare con qualcuno": preposizione + cui.' }, { term: 'che abbia mai conosciuto', expl: 'Superlativo relativo + congiuntivo passato (unità 3): "che" come oggetto diretto.' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'E il quartiere ha un centro storico?', en: 'Does the neighbourhood have a historic centre?' },
+        { speaker: 'Sara', icon: '👩‍🦰', side: 'right', it: 'Sì, c\'è una piazza il cui nome non ricordo, ma è bellissima.', en: "Yes, there's a square whose name I don't remember, but it's beautiful.",
+          glosses: [{ term: 'il cui nome', expl: '"il cui" concorda col nome posseduto "nome" (maschile): possesso, whose.' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'E ciò che ti piace di più?', en: 'And what do you like most about it?',
+          glosses: [{ term: 'ciò che ti piace', expl: '"ciò che" = what, senza antecedente esplicito.' }] },
+        { speaker: 'Sara', icon: '👩‍🦰', side: 'right', it: 'Il panorama su cui si affaccia il mio balcone: si vedono le colline.', en: 'The view my balcony overlooks: you can see the hills.',
+          glosses: [{ term: 'su cui si affaccia', expl: '"affacciarsi su" + cui.' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'Che invidia! Devo venire a trovarti nella casa di cui mi hai parlato tanto.', en: "I'm so jealous! I have to come visit you in the house you've talked to me so much about.",
+          glosses: [{ term: 'di cui mi hai parlato', expl: '"parlare di" + cui.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'che', back: 'soggetto o oggetto diretto, senza preposizione', note: 'invariabile' },
+      { front: 'cui', back: 'sempre dopo una preposizione', note: 'a cui, di cui, in cui…' },
+      { front: 'il quale / la quale / i quali / le quali', back: 'alternativa formale a cui, concorda' },
+      { front: 'ciò che / quello che', back: '= what, senza antecedente' },
+      { front: 'il cui / la cui / i cui / le cui', back: '= whose, concorda col nome posseduto' },
+      { front: 'quanto', back: 'sinonimo formale di ciò che', note: 'Ringrazio per quanto fatto.' },
+      { front: 'il motivo per cui', back: 'the reason why' },
+      { front: 'La persona ___ parlo.', back: 'a cui', note: 'parlare A qualcuno' },
+      { front: 'Il libro ___ parlavo.', back: 'di cui', note: 'parlare DI qualcosa' },
+      { front: 'La città ___ vivo.', back: 'in cui', note: 'vivere IN un luogo' },
+      { front: 'Lo scrittore ___ libro ho letto.', back: 'il cui', note: 'possesso: il libro dello scrittore' },
+      { front: '❌ La persona che parlo', back: '✅ La persona a cui parlo', note: 'errore comune numero uno' },
+      { front: 'Due frasi → una', back: 'trova l\'elemento ripetuto e sostituiscilo col pronome relativo giusto' }
+    ],
+
+    summary: {
+      formula: '[nome] + CHE (senza preposizione) / PREPOSIZIONE + CUI o IL QUALE concordato / IL CUI + nome posseduto (whose) / CIÒ CHE-QUELLO CHE (senza antecedente) + resto della frase',
+      rules: [
+        '«Che» è invariabile e si usa come soggetto o oggetto diretto, mai dopo una preposizione.',
+        '«Cui» è invariabile e si usa sempre dopo una preposizione: a cui, di cui, in cui, con cui, su cui, per cui, da cui.',
+        '«Il quale / la quale / i quali / le quali» sono l\'alternativa formale a "cui" dopo preposizione, e concordano in genere e numero.',
+        '«Ciò che» e «quello che» significano "what" quando non c\'è un antecedente esplicito.',
+        '«Quanto» può sostituire «ciò che» in contesti fissi e formali.',
+        '«Il cui / la cui / i cui / le cui» significano "whose" e concordano col nome posseduto, non col possessore.',
+        'L\'errore più comune è usare "che" dopo una preposizione: pensa sempre al verbo e alla preposizione che richiede prima di scegliere il pronome.'
+      ],
+      tips: [
+        'Prima regola pratica: se il verbo della relativa non ha bisogno di preposizione, usa "che"; se ce l\'ha, usa preposizione + "cui".',
+        'Per unire due frasi, cerca l\'elemento ripetuto: quello diventa l\'antecedente, e il pronome relativo lo sostituisce nella seconda frase.',
+        '"Il quale" è quasi sempre facoltativo: se sei in dubbio, "cui" va sempre bene ed è più naturale nel parlato.',
+        'Per il possesso ("whose") ricorda: "il cui / la cui" concorda con la cosa posseduta, non con chi possiede.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

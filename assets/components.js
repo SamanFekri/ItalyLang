@@ -10,6 +10,8 @@
      <dialogue-box>   A2 conversation with hoverable grammar glosses
      <summary-card>   formula + key rules + memory tips
      <flash-deck>     flippable flashcards with keyboard control
+     <vocab-list>     the vocabulary set of a lesson (grid + flashcards)
+     <guided-practice> worked examples: prompt → how to think → answer
    Registered globally through window.ITA_COMPONENTS.
    ========================================================================== */
 (function () {
@@ -466,6 +468,164 @@
                   :aria-label="isFav() ? 'Togli dai preferiti' : 'Aggiungi ai preferiti'">★</button>
         </div>
         <progress-bar :value="(i + 1) / order.length * 100" style="width:100%;max-width:460px"></progress-bar>
+      </div>
+    `
+  };
+
+  /* ------------------------------------------------------------------ */
+  /* Lesson vocabulary set                                               */
+  /* ------------------------------------------------------------------ */
+  /* vocab: { intro, categories: [ {id,label,icon} ],
+              words: [ { it, en, fa?, cat, pos?, ex?, exEn? } ] }
+     Same word shape as the wordbank pages, so a lesson set can be moved
+     into a wordbank page (and back) without touching the data.          */
+  C['vocab-list'] = {
+    props: {
+      vocab: { type: Object, required: true },
+      deckId: { type: String, default: 'vocab' }
+    },
+    data() { return { store, q: '', cat: 'all', onlyUnknown: false, mode: 'grid' }; },
+    computed: {
+      words() { return this.vocab.words; },
+      categories() { return this.vocab.categories || []; },
+      filtered() {
+        const q = window.ITA.normalise(this.q);
+        return this.words.filter(w => {
+          if (this.cat !== 'all' && w.cat !== this.cat) return false;
+          if (this.onlyUnknown && store.known[this.key(w)]) return false;
+          if (!q) return true;
+          return window.ITA.normalise([w.it, w.en, w.fa || '', w.ex || ''].join(' ')).indexOf(q) >= 0;
+        });
+      },
+      knownCount() { return this.words.filter(w => store.known[this.key(w)]).length; },
+      pct() { return this.words.length ? Math.round(this.knownCount / this.words.length * 100) : 0; },
+      catCounts() {
+        const m = {};
+        this.words.forEach(w => { m[w.cat] = (m[w.cat] || 0) + 1; });
+        return m;
+      },
+      flashcards() {
+        const src = this.filtered.length ? this.filtered : this.words;
+        return src.map(w => ({
+          front: w.it,
+          sub: w.pos || '',
+          back: w.fa ? (w.fa + '  ·  ' + w.en) : w.en,
+          note: w.ex || ''
+        }));
+      }
+    },
+    methods: {
+      key(w) { return this.deckId + ':' + w.it; },
+      toggleKnown(w) {
+        const k = this.key(w);
+        if (store.known[k]) delete store.known[k];
+        else { store.known[k] = true; window.ITA.addXp(2); }
+      },
+      isKnown(w) { return !!store.known[this.key(w)]; },
+      fav(w) { toggleFavorite(this.key(w)); },
+      isFav(w) { return isFavorite(this.key(w)); },
+      catLabel(id) {
+        const c = this.categories.find(c => c.id === id);
+        return c ? c.icon + ' ' + c.label : id;
+      }
+    },
+    template: `
+      <div>
+        <p v-if="vocab.intro" v-html="vocab.intro"></p>
+        <progress-bar :value="pct" label="Parole imparate"
+                      :right="knownCount + ' / ' + words.length + ' (' + pct + '%)'"></progress-bar>
+
+        <div class="btn-row">
+          <button class="btn btn-sm" :class="mode === 'grid' ? 'btn-primary' : 'btn-ghost'" @click="mode = 'grid'">📋 Elenco</button>
+          <button class="btn btn-sm" :class="mode === 'flash' ? 'btn-primary' : 'btn-ghost'" @click="mode = 'flash'">🃏 Flashcard</button>
+          <button class="btn btn-ghost btn-sm" :class="{ 'btn-blue': onlyUnknown }" @click="onlyUnknown = !onlyUnknown">📕 Da imparare</button>
+        </div>
+
+        <div class="vocab-toolbar">
+          <div class="search-box">
+            <span class="s-icon" aria-hidden="true">🔍</span>
+            <input type="search" v-model="q" placeholder="Cerca una parola…" aria-label="Cerca una parola del lessico">
+          </div>
+        </div>
+
+        <div v-if="categories.length" class="chip-row">
+          <button class="chip" :class="{ active: cat === 'all' }" @click="cat = 'all'">Tutte <small>{{ words.length }}</small></button>
+          <button v-for="c in categories" :key="c.id" class="chip" :class="{ active: cat === c.id }" @click="cat = c.id">
+            {{ c.icon }} {{ c.label }} <small>{{ catCounts[c.id] || 0 }}</small>
+          </button>
+        </div>
+
+        <div v-if="mode === 'grid'">
+          <p class="small muted">{{ filtered.length }} parole mostrate. ✓ = imparata (+2 XP) · ★ = preferita.</p>
+          <div class="vocab-grid">
+            <article v-for="(w, i) in filtered" :key="w.it + i" class="vocab-card"
+                     :class="{ 'hidden-tr': store.hideTranslations }"
+                     :style="{ animationDelay: Math.min(i, 20) * 20 + 'ms', borderColor: isKnown(w) ? 'var(--ok)' : '' }">
+              <div class="vc-top">
+                <span class="vc-it">{{ w.it }}</span>
+                <span v-if="w.pos" class="vc-pos">{{ w.pos }}</span>
+              </div>
+              <p class="vc-en">{{ w.en }}</p>
+              <p v-if="w.fa" class="vc-fa" lang="fa" dir="rtl">{{ w.fa }}</p>
+              <p v-if="w.ex" class="vc-ex">« {{ w.ex }} »</p>
+              <p v-if="w.exEn" class="small muted" style="margin:2px 0 0">{{ w.exEn }}</p>
+              <div class="vc-tools">
+                <speak-btn :text="w.ex || w.it"></speak-btn>
+                <copy-btn :text="w.it"></copy-btn>
+                <button class="mini-btn" :class="{ on: isFav(w) }" @click="fav(w)"
+                        :aria-label="isFav(w) ? 'Togli dai preferiti' : 'Aggiungi ai preferiti'">★</button>
+                <button class="mini-btn" :style="isKnown(w) ? 'color:var(--ok);border-color:var(--ok)' : ''"
+                        @click="toggleKnown(w)" :aria-label="isKnown(w) ? 'Segna come da ripassare' : 'Segna come imparata'">✓</button>
+                <span v-if="w.cat" class="pill" style="margin-left:auto;font-size:.66rem">{{ catLabel(w.cat) }}</span>
+              </div>
+            </article>
+          </div>
+          <p v-if="!filtered.length" class="muted center" style="margin-top:20px">Nessuna parola trovata per «{{ q }}».</p>
+        </div>
+
+        <flash-deck v-else :cards="flashcards" :deck-id="deckId" :key="flashcards.length + cat + q"></flash-deck>
+      </div>
+    `
+  };
+
+  /* ------------------------------------------------------------------ */
+  /* Guided practice — worked examples before the free exercises         */
+  /* ------------------------------------------------------------------ */
+  /* guided: { intro, steps: [ { prompt, think, answer, why } ] } */
+  C['guided-practice'] = {
+    props: { guided: { type: Object, required: true } },
+    data() { return { shown: {} }; },
+    methods: {
+      reveal(i) { this.shown[i] = true; },
+      revealAll() { this.guided.steps.forEach((s, i) => { this.shown[i] = true; }); }
+    },
+    template: `
+      <div class="card card--tip" style="margin:0 0 18px">
+        <div class="card-head">
+          <span class="card-badge" aria-hidden="true">🧭</span>
+          <div>
+            <p class="card-kicker">Pratica guidata</p>
+            <h3 style="font-size:1.05rem;margin:0">{{ guided.title || 'Ragioniamo insieme' }}</h3>
+          </div>
+        </div>
+        <p v-if="guided.intro" class="small muted">{{ guided.intro }}</p>
+
+        <div v-for="(s, i) in guided.steps" :key="i" class="q-block">
+          <div class="q-prompt">
+            <span class="q-index" aria-hidden="true">{{ i + 1 }}</span>
+            <span class="q-sentence">{{ s.prompt }}</span>
+          </div>
+          <p class="small muted" style="margin:6px 0 0 35px">🤔 <b>Come si ragiona:</b> {{ s.think }}</p>
+          <button v-if="!shown[i]" class="btn btn-ghost btn-sm" style="margin-left:35px;margin-top:8px"
+                  @click="reveal(i)">👁️ Mostra la soluzione</button>
+          <p v-else class="feedback ok">
+            ✅ <b class="it">{{ s.answer }}</b><span v-if="s.why"> — {{ s.why }}</span>
+          </p>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-ghost btn-sm" @click="revealAll">👁️ Mostra tutte le soluzioni</button>
+        </div>
       </div>
     `
   };

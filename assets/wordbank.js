@@ -29,6 +29,7 @@
       return {
         store,
         W: this.cfg,
+        levelName: ITA.LEVEL,
         q: '',
         cat: 'all',
         onlyFav: false,
@@ -142,7 +143,7 @@
 
       <main id="main" class="container">
         <header class="hero animate-in">
-          <p class="card-kicker" style="color:rgba(255,255,255,.85)">Lezione {{ W.num }} · Italiano A2</p>
+          <p class="card-kicker" style="color:rgba(255,255,255,.85)">Lezione {{ W.num }} · Italiano {{ levelName }}</p>
           <h1>{{ W.icon }} {{ W.title }}</h1>
           <p>{{ W.subtitle }}</p>
           <div class="hero-stats">
@@ -298,14 +299,14 @@
       </main>
 
       <footer class="site-footer">
-        <p>Italiano A2 · Corso interattivo di grammatica · I progressi restano nel tuo browser (localStorage).</p>
+        <p>Italiano {{ levelName }} · Corso interattivo di grammatica · I progressi restano nel tuo browser (localStorage).</p>
       </footer>
       <toast-host></toast-host>
     `
   };
 
   ITA.mountWordbank = function (cfg) {
-    document.title = cfg.title + ' · Italiano A2';
+    document.title = cfg.title + ' · Italiano ' + ITA.LEVEL;
     return ITA.createPage({
       components: { 'wordbank-page': wordbankPage },
       data: () => ({ cfg: cfg }),

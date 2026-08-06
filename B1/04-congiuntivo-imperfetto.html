@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il congiuntivo imperfetto italiano: formazione regolare e irregolare (fossi, avessi, facessi, dicessi, dessi, stessi), la concordanza dei tempi con una principale al passato, desideri irreali e periodo ipotetico.">
+  <title>Congiuntivo Imperfetto · Italiano B1</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     UNITÀ 4 — CONGIUNTIVO IMPERFETTO
+     ========================================================================== */
+  window.LESSON = {
+    num: 4, file: '04-congiuntivo-imperfetto.html', icon: '🌙', title: 'Congiuntivo Imperfetto', group: 'Il congiuntivo',
+    subtitle: 'Vorrei che tu fossi qui: desideri irrealizzabili, ipotesi e il congiuntivo che segue un verbo al passato.',
+
+    intro: {
+      what: 'Il congiuntivo imperfetto è un tempo semplice (una sola parola: che io parlassi, che tu fossi) che esprime opinione, dubbio o desiderio riferiti al passato o a una situazione irreale. Corrisponde spesso all\'inglese "I wished you were here" o "If I were rich".',
+      when: 'Si usa nella frase secondaria quando la principale è a un tempo passato (imperfetto, passato prossimo, trapassato) e richiede il congiuntivo: «Pensavo che fosse stanco». Si usa anche per desideri irreali nel presente («Vorrei che tu fossi qui») e nel periodo ipotetico dell\'irrealtà («Se fossi ricco…», unità 8).',
+      why: 'Senza il congiuntivo imperfetto non puoi raccontare al passato le tue opinioni («credevo che…»), esprimere un desiderio impossibile, o formulare educatamente una richiesta. È il tempo dei sogni, dei rimpianti e della cortesia.',
+      mistakes: [
+        'Usare il congiuntivo presente dopo una principale al passato: ❌ "Pensavo che sia partito" → ✅ "Pensavo che fosse partito".',
+        'Confondere imperfetto indicativo e congiuntivo con lo stesso soggetto: ❌ "Pensavo che io ero stanco" → ✅ "Pensavo di essere stanco".',
+        'Sbagliare il congiuntivo di essere: ❌ "Vorrei che tu sii qui" → ✅ "Vorrei che tu fossi qui".',
+        'Usare il condizionale al posto del congiuntivo dopo "se": ❌ "Se sarei ricco, viaggerei" → ✅ "Se fossi ricco, viaggerei".'
+      ]
+    },
+
+    objectives: [
+      'Formare il congiuntivo imperfetto di verbi regolari e dei sei irregolari fondamentali: <b>essere, avere, fare, dire, dare, stare</b>.',
+      'Riconoscere quando una principale al passato richiede il congiuntivo imperfetto, non il presente, nella subordinata.',
+      'Distinguere congiuntivo imperfetto (<b>contemporaneità</b>) e trapassato congiuntivo (<b>anteriorità</b>) rispetto a un punto passato.',
+      'Esprimere desideri irrealizzabili e rimpianti con <b>vorrei che</b>, <b>magari</b>, <b>se solo</b>.',
+      'Usare il congiuntivo imperfetto per attenuare una richiesta ed essere più cortesi.',
+      'Riconoscere la struttura base del periodo ipotetico dell\'irrealtà, che verrà approfondita nell\'unità 8.'
+    ],
+
+    formulas: [
+      {
+        label: 'Formula generale — principale al passato',
+        rows: [
+          { parts: [
+              { text: 'Principale al passato', note: 'pensavo, credevo, volevo…', type: 'subject' },
+              { text: 'CHE', type: 'verb' },
+              { text: 'CONGIUNTIVO IMPERFETTO', type: 'object' }
+            ], example: 'Pensavo che fosse stanco.', translation: 'I thought he was tired.' }
+        ]
+      },
+      {
+        label: 'Anteriorità — trapassato congiuntivo',
+        rows: [
+          { parts: [
+              { text: 'Pensavo che', type: 'subject' },
+              { text: 'FOSSI / AVESSI', note: 'imperfetto congiuntivo dell\'ausiliare', type: 'verb' },
+              { text: 'PARTICIPIO PASSATO', type: 'object' }
+            ], example: 'Pensavo che fosse già partito.', translation: 'I thought he had already left.' }
+        ]
+      },
+      {
+        label: 'Desiderio irreale',
+        rows: [
+          { parts: [
+              { text: 'VORREI CHE / MAGARI', type: 'subject' },
+              { text: 'CONGIUNTIVO IMPERFETTO', type: 'verb' }
+            ], example: 'Vorrei che tu fossi qui.', translation: 'I wish you were here.' }
+        ]
+      },
+      {
+        label: 'Anteprima: periodo ipotetico dell\'irrealtà',
+        rows: [
+          { parts: [
+              { text: 'SE + CONGIUNTIVO IMPERFETTO', note: 'condizione irreale', type: 'subject' },
+              { text: 'CONDIZIONALE PRESENTE', note: 'conseguenza', type: 'object' }
+            ], example: 'Se fossi ricco, viaggerei di più.', translation: 'If I were rich, I would travel more.' }
+        ]
+      }
+    ],
+    formulaNote: 'Trucco: il congiuntivo imperfetto è il "fratello passato" del congiuntivo presente. Confronta: <b>Penso che sia stanco</b> (adesso, unità 3) → <b>Pensavo che fosse stanco</b> (nel passato, unità 4). Cambia solo il tempo, non la logica.',
+
+    rules: [
+      {
+        title: 'Come si forma: il congiuntivo imperfetto regolare',
+        body: 'Si prende la radice dell\'infinito e si aggiungono le desinenze -assi per i verbi in -are, -essi per quelli in -ere, -issi per quelli in -ire.',
+        points: [
+          '-ARE (parlare): parl<b>assi</b>, parl<b>assi</b>, parl<b>asse</b>, parl<b>assimo</b>, parl<b>aste</b>, parl<b>assero</b>.',
+          '-ERE (credere): cred<b>essi</b>, cred<b>essi</b>, cred<b>esse</b>, cred<b>essimo</b>, cred<b>este</b>, cred<b>essero</b>.',
+          '-IRE (partire): part<b>issi</b>, part<b>issi</b>, part<b>isse</b>, part<b>issimo</b>, part<b>iste</b>, part<b>issero</b>.',
+          'Come nel congiuntivo presente, le prime due persone singolari sono identiche: per questo si esprime quasi sempre il pronome (che io, che tu).'
+        ],
+        exception: 'I verbi in -isc- del presente (capire → capisco) NON hanno questa particolarità all\'imperfetto: capissi, capissi, capisse… è del tutto regolare, come partissi.'
+      },
+      {
+        title: 'I sei irregolari da sapere a memoria',
+        body: 'Pochi verbi hanno un congiuntivo imperfetto irregolare, ma sono tra i più comuni della lingua: bisogna impararli come una filastrocca.',
+        points: [
+          '<b>essere</b> → fossi, fossi, fosse, fossimo, foste, fossero.',
+          '<b>avere</b> → avessi, avessi, avesse, avessimo, aveste, avessero.',
+          '<b>fare</b> → facessi, facessi, facesse, facessimo, faceste, facessero (dalla radice latina "facere").',
+          '<b>dire</b> → dicessi, dicessi, dicesse, dicessimo, diceste, dicessero (dalla radice "dicere").',
+          '<b>dare</b> → dessi, dessi, desse, dessimo, deste, dessero.',
+          '<b>stare</b> → stessi, stessi, stesse, stessimo, steste, stessero.'
+        ],
+        exception: 'Bere (bevessi), tradurre (traducessi) e altri verbi con un infinito "nascosto" (bevere, tradurre) seguono comunque una radice regolare su quell\'infinito storico: non sono eccezioni vere, solo radici meno trasparenti.'
+      },
+      {
+        title: 'Il trapassato congiuntivo: l\'anteriorità nel passato',
+        body: 'Per dire che un fatto era già successo prima del momento di cui parli, usi fossi/avessi (congiuntivo imperfetto dell\'ausiliare) + participio passato.',
+        points: [
+          'Con avere: che io avessi mangiato, che tu avessi capito.',
+          'Con essere, con accordo: che io fossi partito/a, che loro fossero partiti/e.',
+          'Stessa scelta dell\'ausiliare di sempre (transitivi → avere, movimento/riflessivi → essere).',
+          '«Pensavo che fosse partito» = anteriore al pensiero. «Pensavo che partisse» = contemporaneo o successivo al pensiero.'
+        ],
+        exception: 'Con i verbi modali l\'ausiliare segue l\'infinito che accompagnano: «Pensavo che fosse dovuto partire» (dovere + partire → essere).'
+      },
+      {
+        title: 'La regola d\'oro: concordanza dei tempi al passato',
+        body: 'È il cuore di questa unità, e il contrario esatto dell\'unità 3. Se la principale è al <b>presente</b>, usi congiuntivo presente/passato (unità 3). Se la principale è al <b>passato</b>, usi congiuntivo imperfetto/trapassato.',
+        points: [
+          'Principale <b>al passato</b> (imperfetto, passato prossimo, trapassato) + azione <b>contemporanea</b> o successiva → congiuntivo <b>imperfetto</b>: «Pensavo che fosse stanco», «Ho sperato che venisse».',
+          'Principale <b>al passato</b> + azione <b>anteriore</b> → congiuntivo <b>trapassato</b>: «Pensavo che fosse partito», «Non sapevo che avessero già mangiato».',
+          'Confronto diretto: «Penso che sia partito» (unità 3, principale al presente) vs «Pensavo che fosse partito» (unità 4, principale al passato) — stessa idea, tempo diverso.',
+          'Non esistono forme miste: una principale al passato non può reggere un congiuntivo presente o passato.'
+        ],
+        exception: '«Come se» vuole sempre l\'imperfetto (o il trapassato) congiuntivo, anche con una principale al presente: «Parla come se sapesse tutto» (Parla è presente, ma sapesse è imperfetto perché il paragone è ipotetico).'
+      },
+      {
+        title: 'Desideri, rimpianti e situazioni impossibili',
+        body: 'Il congiuntivo imperfetto è anche il modo dei desideri che sai già irrealizzabili, nel presente.',
+        points: [
+          '<b>Vorrei che</b> + congiuntivo imperfetto → «Vorrei che tu fossi qui» (ma non ci sei).',
+          '<b>Magari</b> + congiuntivo imperfetto, da solo, senza "che" → «Magari fossi ricco!» (esclamazione di desiderio).',
+          '<b>Se solo</b> + congiuntivo imperfetto → «Se solo avessi più tempo!»',
+          'Con "vorrei" e lo stesso soggetto (desiderio realizzabile e cortese) si usa l\'infinito: «Vorrei partire» ≠ «Vorrei che tu partissi».'
+        ],
+        exception: '"Magari" può anche significare "speriamo" da solo, senza verbo: «Vieni anche tu domani?» «Magari!»'
+      },
+      {
+        title: 'Cortesia e attenuazione',
+        body: 'L\'imperfetto (indicativo o congiuntivo) rende una richiesta più morbida e meno diretta — un uso molto frequente nell\'italiano parlato.',
+        points: [
+          '«Volevo chiedere se potessi aiutarmi» è più cortese di «Puoi aiutarmi?».',
+          '«Volevo un\'informazione» (imperfetto indicativo di cortesia) invece di «Voglio un\'informazione».',
+          'Il congiuntivo imperfetto compare tipicamente dopo "se" in queste richieste attenuate: se potessi, se avessi tempo, se fosse possibile.',
+          'Questo uso non descrive un vero passato: è un modo per "allontanare" la richiesta e renderla meno impositiva.'
+        ],
+        exception: 'Nei contesti molto formali si preferisce ancora il condizionale: «Potrebbe aiutarmi?», «Vorrei un\'informazione, se fosse possibile».'
+      },
+      {
+        title: 'Anteprima: il periodo ipotetico dell\'irrealtà',
+        body: 'Il congiuntivo imperfetto è protagonista anche di uno dei costrutti più usati dell\'italiano: le frasi con "se" impossibili o improbabili. Il tema completo è nell\'unità 8, ma la base la impari già qui.',
+        points: [
+          'Se + congiuntivo imperfetto (condizione) + condizionale presente (conseguenza): «Se fossi ricco, viaggerei di più».',
+          'La condizione è presentata come irreale o molto improbabile nel presente.',
+          'Errore frequente da evitare da subito: dopo "se" non si usa mai il condizionale, solo l\'indicativo o il congiuntivo.',
+          'Esempio di rimpianto (passato): «Se avessi studiato di più, avrei passato l\'esame» — qui serve il trapassato congiuntivo + condizionale passato (unità 2 e 8).'
+        ],
+        exception: 'Nel parlato molto informale si sente talvolta "se sarei ricco": è un errore comune ma scorretto, da evitare sempre nello scritto e all\'esame.'
+      }
+    ],
+
+    timeline: {
+      title: 'Il congiuntivo imperfetto nel racconto al passato',
+      intro: 'Il punto di riferimento è il verbo della principale, al passato. Il congiuntivo imperfetto racconta ciò che è contemporaneo (o successivo) a quel momento; il trapassato congiuntivo, ciò che è anteriore.',
+      points: [
+        { time: 'Prima', label: 'Trapassato congiuntivo', example: 'Pensavo che fosse già partito.', note: 'anteriore al momento del pensiero' },
+        { time: 'Allora', label: 'Principale al passato', example: 'Pensavo…', now: true, note: 'il punto di vista nel racconto' },
+        { time: 'Allora', label: 'Congiuntivo imperfetto', example: 'Pensavo che fosse stanco.', note: 'contemporaneo al pensiero' },
+        { time: 'Dopo (nel passato)', label: 'Congiuntivo imperfetto', example: 'Speravo che venisse il giorno dopo.', note: 'anche il "futuro nel passato" usa l\'imperfetto congiuntivo' }
+      ],
+      caption: 'Confronto con l\'unità 3: «Penso che sia stanco» (principale al presente) diventa «Pensavo che fosse stanco» (principale al passato). La logica non cambia, cambia solo l\'epoca.'
+    },
+
+    tables: [
+      {
+        title: 'Congiuntivo imperfetto regolare — tre coniugazioni',
+        note: 'Stessa desinenza caratteristica per tutta la coniugazione: -assi / -essi / -issi.',
+        columns: ['Persona', 'parlare', 'credere', 'partire'],
+        rows: [
+          { cells: ['che io', 'parlassi', 'credessi', 'partissi'] },
+          { cells: ['che tu', 'parlassi', 'credessi', 'partissi'] },
+          { cells: ['che lui / lei', 'parlasse', 'credesse', 'partisse'] },
+          { cells: ['che noi', 'parlassimo', 'credessimo', 'partissimo'] },
+          { cells: ['che voi', 'parlaste', 'credeste', 'partiste'] },
+          { cells: ['che loro', 'parlassero', 'credessero', 'partissero'] }
+        ]
+      },
+      {
+        title: 'I sei irregolari fondamentali (1) — essere, avere, fare',
+        note: 'Da imparare a memoria: sono tra i verbi più usati della lingua.',
+        columns: ['Persona', 'essere', 'avere', 'fare'],
+        rows: [
+          { cells: ['che io', 'fossi', 'avessi', 'facessi'], irregular: [1, 2, 3] },
+          { cells: ['che tu', 'fossi', 'avessi', 'facessi'], irregular: [1, 2, 3] },
+          { cells: ['che lui / lei', 'fosse', 'avesse', 'facesse'], irregular: [1, 2, 3] },
+          { cells: ['che noi', 'fossimo', 'avessimo', 'facessimo'], irregular: [1, 2, 3] },
+          { cells: ['che voi', 'foste', 'aveste', 'faceste'], irregular: [1, 2, 3] },
+          { cells: ['che loro', 'fossero', 'avessero', 'facessero'], irregular: [1, 2, 3] }
+        ]
+      },
+      {
+        title: 'I sei irregolari fondamentali (2) — dire, dare, stare',
+        columns: ['Persona', 'dire', 'dare', 'stare'],
+        rows: [
+          { cells: ['che io', 'dicessi', 'dessi', 'stessi'], irregular: [1, 2, 3] },
+          { cells: ['che tu', 'dicessi', 'dessi', 'stessi'], irregular: [1, 2, 3] },
+          { cells: ['che lui / lei', 'dicesse', 'desse', 'stesse'], irregular: [1, 2, 3] },
+          { cells: ['che noi', 'dicessimo', 'dessimo', 'stessimo'], irregular: [1, 2, 3] },
+          { cells: ['che voi', 'diceste', 'deste', 'steste'], irregular: [1, 2, 3] },
+          { cells: ['che loro', 'dicessero', 'dessero', 'stessero'], irregular: [1, 2, 3] }
+        ]
+      },
+      {
+        title: 'Trapassato congiuntivo — formazione',
+        columns: ['Ausiliare', 'Esempio', 'Accordo'],
+        rows: [
+          { cells: ['avere', 'Pensavo che (lui) avesse mangiato.', 'nessun accordo'] },
+          { cells: ['avere', 'Pensavo che (loro) avessero capito.', 'nessun accordo'] },
+          { cells: ['essere', 'Pensavo che (lei) fosse partita.', 'concorda: -a'] },
+          { cells: ['essere', 'Pensavo che (loro) fossero partiti.', 'concorda: -i'] },
+          { cells: ['riflessivo', 'Pensavo che si fosse svegliata tardi.', 'concorda: -a'] }
+        ]
+      },
+      {
+        title: 'Congiuntivo presente o imperfetto? Il tempo della principale decide',
+        note: 'Confronto diretto con l\'unità 3.',
+        columns: ['Principale', 'Tempo del congiuntivo', 'Esempio'],
+        rows: [
+          { cells: ['Penso che (presente)', 'congiuntivo presente', 'Penso che sia stanco.'] },
+          { cells: ['Pensavo che (imperfetto)', 'congiuntivo imperfetto', 'Pensavo che fosse stanco.'] },
+          { cells: ['Ho pensato che (passato prossimo)', 'congiuntivo imperfetto', 'Ho pensato che fosse stanco.'] },
+          { cells: ['Avevo pensato che (trapassato)', 'congiuntivo imperfetto', 'Avevo pensato che fosse stanco.'] },
+          { cells: ['Penso che (presente) + anteriorità', 'congiuntivo passato', 'Penso che sia partito.'] },
+          { cells: ['Pensavo che (passato) + anteriorità', 'trapassato congiuntivo', 'Pensavo che fosse partito.'] }
+        ]
+      },
+      {
+        title: 'Desideri, cortesia e periodo ipotetico — espressioni chiave',
+        columns: ['Espressione', 'Uso', 'Esempio'],
+        rows: [
+          { cells: ['vorrei che', 'desiderio irreale (soggetti diversi)', 'Vorrei che tu fossi qui.'] },
+          { cells: ['magari', 'desiderio esclamativo', 'Magari fossi ricco!'] },
+          { cells: ['se solo', 'rimpianto / desiderio', 'Se solo avessi più tempo!'] },
+          { cells: ['volevo chiedere se', 'richiesta cortese', 'Volevo chiedere se potessi aiutarmi.'] },
+          { cells: ['se + congiuntivo imperfetto…', 'condizione irreale (unità 8)', 'Se fossi ricco, viaggerei di più.'] },
+          { cells: ['come se', 'paragone irreale', 'Parla come se sapesse tutto.'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Pensavo che Marco fosse stanco.', literal: 'I-thought that Marco were tired.', natural: 'I thought Marco was tired.', note: 'Principale al passato → congiuntivo imperfetto, contemporaneità.' },
+      { it: 'Credevo che avessero già mangiato.', literal: 'I-believed that they-had(subj) already eaten.', natural: 'I thought they had already eaten.', note: 'Trapassato congiuntivo: anteriorità rispetto al pensiero passato.' },
+      { it: 'Vorrei che tu fossi qui con me.', literal: 'I-would-want that you were here with me.', natural: 'I wish you were here with me.', note: 'Desiderio irreale nel presente: vorrei che + congiuntivo imperfetto.' },
+      { it: 'Magari fossi ricco!', literal: 'If-only I-were rich!', natural: 'If only I were rich!', note: '"Magari" da solo + congiuntivo imperfetto: esclamazione di desiderio impossibile.' },
+      { it: 'Se fossi in te, non risponderei.', literal: 'If I-were in you, not I-would-answer.', natural: "If I were you, I wouldn't answer.", note: 'Anteprima del periodo ipotetico dell\'irrealtà (unità 8).' },
+      { it: 'Speravo che venisse anche lui alla festa.', literal: 'I-hoped that came(subj) also he to-the party.', natural: 'I was hoping he would come to the party too.', note: '"Futuro nel passato": l\'imperfetto congiuntivo copre anche la posteriorità.' },
+      { it: 'Non sapevo che aveste già finito.', literal: 'Not I-knew that you-had(subj) already finished.', natural: "I didn't know you had already finished.", note: 'Trapassato congiuntivo con "voi": aveste finito.' },
+      { it: 'Era importante che tutti fossero presenti.', literal: 'It-was important that all were present.', natural: 'It was important that everyone be present.', note: 'Espressione impersonale al passato → congiuntivo imperfetto.' },
+      { it: 'Mi dispiaceva che non potessi venire.', literal: 'To-me it-displeased that not you-could(subj) to-come.', natural: "I was sorry you couldn't come.", note: 'Emozione al passato → congiuntivo imperfetto.' },
+      { it: 'Parla come se sapesse già tutto.', literal: 'He-speaks as if he-knew already everything.', natural: 'He talks as if he already knew everything.', note: '"Come se" vuole sempre l\'imperfetto congiuntivo, anche con principale al presente.' },
+      { it: 'Se solo avessi ascoltato i miei genitori!', literal: 'If only I-had(subj) listened the my parents!', natural: 'If only I had listened to my parents!', note: 'Trapassato congiuntivo per un rimpianto sul passato.' },
+      { it: 'Volevo chiedere se poteste aspettare cinque minuti.', literal: 'I-wanted to-ask if you-could(subj) to-wait five minutes.', natural: 'I wanted to ask if you could wait five minutes.', note: 'Congiuntivo imperfetto di cortesia dopo una richiesta attenuata.' },
+      { it: 'Pensavo che fosse già partito, invece era ancora in ufficio.', literal: 'I-thought that he-were already left, instead he-was still in office.', natural: 'I thought he had already left, but he was still in the office.', note: 'Trapassato congiuntivo (fosse partito) vs imperfetto indicativo (era) nella stessa frase.' },
+      { it: 'Bisognava che tu dicessi la verità.', literal: 'It-was-necessary that you said(subj) the truth.', natural: 'You needed to tell the truth.', note: '"dire" irregolare: dicessi, dalla radice "dicere".' },
+      { it: 'Non credevo che facesse così freddo.', literal: 'Not I-believed that it-made(subj) so cold.', natural: "I didn't think it would be so cold.", note: '"fare" irregolare: facesse, dalla radice "facere".' },
+      { it: 'Avrei voluto che mi dessi una risposta.', literal: 'I-would-have wanted that you-gave(subj) me an answer.', natural: 'I would have liked you to give me an answer.', note: '"dare" irregolare: dessi.' },
+      { it: 'Era come se il tempo si fosse fermato.', literal: 'It-was as-if the time itself were(subj) stopped.', natural: 'It was as if time had stopped.', note: '"Come se" + trapassato congiuntivo per un paragone anteriore.' },
+      { it: 'Vorrei aver studiato di più.', literal: 'I-would-want to-have studied of more.', natural: 'I wish I had studied more.', note: 'Stesso soggetto → di/aver + participio, non "che io avessi studiato".' }
+    ],
+
+    mistakes: [
+      { wrong: 'Pensavo che sia partito.', right: 'Pensavo che fosse partito.', why: 'Una principale al passato richiede congiuntivo imperfetto o trapassato, non presente/passato.' },
+      { wrong: 'Vorrei che tu sii qui.', right: 'Vorrei che tu fossi qui.', why: 'Il congiuntivo imperfetto di essere è fossi, non "sii" (che è imperativo).' },
+      { wrong: 'Se sarei ricco, viaggerei di più.', right: 'Se fossi ricco, viaggerei di più.', why: 'Dopo "se" nel periodo ipotetico dell\'irrealtà non si usa mai il condizionale.' },
+      { wrong: 'Pensavo che io ero stanco.', right: 'Pensavo di essere stanco.', why: 'Con lo stesso soggetto si usa di + infinito, non che + congiuntivo.' },
+      { wrong: 'Speravo che tu venga.', right: 'Speravo che tu venissi.', why: 'Speravo è al passato: la subordinata contemporanea vuole il congiuntivo imperfetto, non il presente.' },
+      { wrong: 'Parla come se sapeva tutto.', right: 'Parla come se sapesse tutto.', why: '"Come se" vuole sempre il congiuntivo, mai l\'indicativo.' },
+      { wrong: 'Non sapevo che avesse partito.', right: 'Non sapevo che fosse partito.', why: 'Partire vuole essere: il congiuntivo trapassato segue la stessa regola dell\'ausiliare.' },
+      { wrong: 'Magari sarei ricco!', right: 'Magari fossi ricco!', why: '"Magari" con valore di desiderio vuole il congiuntivo imperfetto, non il condizionale.' },
+      { wrong: 'Se solo avrei studiato di più!', right: 'Se solo avessi studiato di più!', why: 'Il rimpianto sul passato vuole il trapassato congiuntivo, non il condizionale.' },
+      { wrong: 'Volevo chiedere se puoi aiutarmi.', right: 'Volevo chiedere se potessi aiutarmi.', why: 'Nella richiesta cortese attenuata il verbo dopo "se" va al congiuntivo imperfetto.' }
+    ],
+
+    vocab: {
+      title: 'Vocabolario — sogni, progetti, istruzione e futuro (49 parole)',
+      intro: 'Il congiuntivo imperfetto vive nelle frasi che cominciano con «vorrei che», «pensavo che», «speravo che»: cioè quando parli di sogni, progetti e traguardi. Ecco il lessico, con italiano, inglese, farsi (فارسی) ed esempio.',
+      categories: [
+        { id: 'sogni', label: 'Sogni e desideri', icon: '💫' },
+        { id: 'progetti', label: 'Progetti e obiettivi', icon: '🎯' },
+        { id: 'istruzione', label: 'Istruzione', icon: '🎓' },
+        { id: 'carriera', label: 'Carriera e futuro', icon: '💼' },
+        { id: 'espr', label: 'Espressioni', icon: '✨' }
+      ],
+      words: [
+        /* ── Sogni e desideri (11) ── */
+        { it: 'il sogno', en: 'dream', fa: 'رؤیا / آرزو', cat: 'sogni', pos: 'm.', ex: 'Il mio sogno era che tu fossi felice.' },
+        { it: 'sognare', en: 'to dream', fa: 'رویا دیدن', cat: 'sogni', pos: 'v.', ex: 'Sognavo che avessi una casa tutta mia.' },
+        { it: 'desiderare', en: 'to wish, to desire', fa: 'آرزو کردن', cat: 'sogni', pos: 'v.', ex: 'Desideravo che tutto andasse bene.' },
+        { it: 'il desiderio', en: 'wish, desire', fa: 'آرزو', cat: 'sogni', pos: 'm.', ex: 'Il suo desiderio era che i figli fossero felici.' },
+        { it: 'immaginare', en: 'to imagine', fa: 'تصور کردن', cat: 'sogni', pos: 'v.', ex: 'Immaginavo che fosse più difficile.' },
+        { it: 'augurarsi', en: 'to hope (for oneself)', fa: 'امیدوار بودن', cat: 'sogni', pos: 'v. rifl.', ex: 'Mi auguravo che le cose cambiassero.' },
+        { it: 'la speranza', en: 'hope', fa: 'امید', cat: 'sogni', pos: 'f.', ex: 'Avevo la speranza che tornasse presto.' },
+        { it: 'sperare', en: 'to hope', fa: 'امیدوار بودن', cat: 'sogni', pos: 'v.', ex: 'Speravo che venisse anche lui.' },
+        { it: 'l\'illusione', en: 'illusion', fa: 'توهم', cat: 'sogni', pos: 'f.', ex: 'Era un\'illusione pensare che fosse facile.' },
+        { it: 'la fantasia', en: 'imagination, fantasy', fa: 'تخیل', cat: 'sogni', pos: 'f.', ex: 'Da bambino avevo molta fantasia.' },
+        { it: 'irrealizzabile', en: 'unattainable', fa: 'دست‌نیافتنی', cat: 'sogni', pos: 'agg.', ex: 'Sembrava un sogno irrealizzabile.' },
+
+        /* ── Progetti e obiettivi (10) ── */
+        { it: 'il progetto', en: 'plan, project', fa: 'پروژه / طرح', cat: 'progetti', pos: 'm.', ex: 'Il progetto era che partissimo insieme.' },
+        { it: 'l\'obiettivo', en: 'goal', fa: 'هدف', cat: 'progetti', pos: 'm.', ex: 'Il mio obiettivo era che tutti fossero soddisfatti.' },
+        { it: 'pianificare', en: 'to plan', fa: 'برنامه‌ریزی کردن', cat: 'progetti', pos: 'v.', ex: 'Avevamo pianificato tutto perché non ci fossero problemi.' },
+        { it: 'programmare', en: 'to schedule, to plan', fa: 'برنامه‌ریزی کردن', cat: 'progetti', pos: 'v.', ex: 'Avevo programmato che partissimo alle otto.' },
+        { it: 'raggiungere', en: 'to reach, to achieve', fa: 'دستیابی به', cat: 'progetti', pos: 'v.', ex: 'Volevo che raggiungessimo l\'obiettivo insieme.' },
+        { it: 'realizzare (un sogno)', en: 'to fulfil (a dream)', fa: 'محقق کردن', cat: 'progetti', pos: 'v.', ex: 'Speravo di realizzare quel progetto.' },
+        { it: 'rimandare', en: 'to postpone', fa: 'به تعویق انداختن', cat: 'progetti', pos: 'v.', ex: 'Non volevo che rimandassimo ancora.' },
+        { it: 'la scadenza', en: 'deadline', fa: 'مهلت', cat: 'progetti', pos: 'f.', ex: 'Temevo che non rispettassimo la scadenza.' },
+        { it: 'il traguardo', en: 'milestone, finish line', fa: 'خط پایان', cat: 'progetti', pos: 'm.', ex: 'Era importante che raggiungessimo quel traguardo.' },
+        { it: 'deciso/a (a)', en: 'determined (to)', fa: 'مصمم', cat: 'progetti', pos: 'agg.', ex: 'Era deciso a raggiungere il suo obiettivo, costasse quel che costasse.' },
+
+        /* ── Istruzione (10) ── */
+        { it: 'la scuola', en: 'school', fa: 'مدرسه', cat: 'istruzione', pos: 'f.', ex: 'Volevo che i miei figli andassero in quella scuola.' },
+        { it: 'l\'università', en: 'university', fa: 'دانشگاه', cat: 'istruzione', pos: 'f.', ex: 'Speravo che si iscrivesse all\'università.' },
+        { it: 'iscriversi', en: 'to enrol', fa: 'ثبت‌نام کردن', cat: 'istruzione', pos: 'v. rifl.', ex: 'Vorrei che ti iscrivessi a un corso.' },
+        { it: 'diplomarsi', en: 'to graduate (secondary school)', fa: 'دیپلم گرفتن', cat: 'istruzione', pos: 'v. rifl.', ex: 'Era felice che si fosse diplomato.' },
+        { it: 'la borsa di studio', en: 'scholarship', fa: 'بورس تحصیلی', cat: 'istruzione', pos: 'f.', ex: 'Sperava che gli dessero una borsa di studio.' },
+        { it: 'la facoltà', en: 'faculty, department', fa: 'دانشکده', cat: 'istruzione', pos: 'f.', ex: 'Non sapevo che avesse cambiato facoltà.' },
+        { it: 'la materia', en: 'subject', fa: 'درس', cat: 'istruzione', pos: 'f.', ex: 'Vorrei che studiassi anche altre materie.' },
+        { it: 'l\'esame', en: 'exam', fa: 'امتحان', cat: 'istruzione', pos: 'm.', ex: 'Temevo che l\'esame fosse troppo difficile.' },
+        { it: 'bocciare', en: 'to fail (a student)', fa: 'مردود کردن', cat: 'istruzione', pos: 'v.', ex: 'Aveva paura che lo bocciassero.' },
+        { it: 'la tesi', en: 'thesis', fa: 'پایان‌نامه', cat: 'istruzione', pos: 'f.', ex: 'Voleva che finissi la tesi entro giugno.' },
+
+        /* ── Carriera e futuro (10) ── */
+        { it: 'la carriera', en: 'career', fa: 'مسیر شغلی', cat: 'carriera', pos: 'f.', ex: 'Sognava che la sua carriera decollasse.' },
+        { it: 'l\'ambizione', en: 'ambition', fa: 'جاه‌طلبی', cat: 'carriera', pos: 'f.', ex: 'La sua ambizione era che tutti lo riconoscessero.' },
+        { it: 'ambizioso/a', en: 'ambitious', fa: 'جاه‌طلب', cat: 'carriera', pos: 'agg.', ex: 'Era così ambizioso che non si accontentava mai.' },
+        { it: 'il colloquio', en: 'job interview', fa: 'مصاحبه', cat: 'carriera', pos: 'm.', ex: 'Volevo che il colloquio andasse bene.' },
+        { it: 'assumere', en: 'to hire', fa: 'استخدام کردن', cat: 'carriera', pos: 'v.', ex: 'Speravo che mi assumessero subito.' },
+        { it: 'licenziarsi', en: 'to resign', fa: 'استعفا دادن', cat: 'carriera', pos: 'v. rifl.', ex: 'Non pensavo che si licenziasse così presto.' },
+        { it: 'l\'impiego', en: 'job, employment', fa: 'شغل', cat: 'carriera', pos: 'm.', ex: 'Cercavo un impiego che mi piacesse davvero.' },
+        { it: 'il futuro', en: 'future', fa: 'آینده', cat: 'carriera', pos: 'm.', ex: 'Immaginavo un futuro diverso.' },
+        { it: 'il successo', en: 'success', fa: 'موفقیت', cat: 'carriera', pos: 'm.', ex: 'Desiderava che il progetto avesse successo.' },
+        { it: 'fallire', en: 'to fail', fa: 'شکست خوردن', cat: 'carriera', pos: 'v.', ex: 'Temeva che il piano fallisse.' },
+
+        /* ── Espressioni (8) ── */
+        { it: 'vorrei che', en: 'I wish that', fa: 'ای کاش', cat: 'espr', pos: 'espr.', ex: 'Vorrei che tu fossi qui.' },
+        { it: 'magari', en: 'if only', fa: 'ای کاش', cat: 'espr', pos: 'avv.', ex: 'Magari fossi più bravo a disegnare!' },
+        { it: 'se solo', en: 'if only', fa: 'کاش', cat: 'espr', pos: 'loc.', ex: 'Se solo avessi più tempo!' },
+        { it: 'come se', en: 'as if', fa: 'انگار که', cat: 'espr', pos: 'loc.', ex: 'Parla come se sapesse tutto.' },
+        { it: 'era come se', en: 'it was as if', fa: 'انگار که', cat: 'espr', pos: 'loc.', ex: 'Era come se non fosse mai successo niente.' },
+        { it: 'a quel tempo', en: 'at that time', fa: 'در آن زمان', cat: 'espr', pos: 'loc.', ex: 'A quel tempo credevo che tutto fosse possibile.' },
+        { it: 'da giovane', en: 'as a young person', fa: 'در جوانی', cat: 'espr', pos: 'loc.', ex: 'Da giovane pensavo che avessi tutto il tempo del mondo.' },
+        { it: 'chissà', en: 'who knows', fa: 'چه کسی می‌داند', cat: 'espr', pos: 'avv.', ex: 'Chissà se fosse vero.' }
+      ]
+    },
+
+    guided: {
+      title: 'Costruiamo insieme il congiuntivo imperfetto',
+      intro: 'Tre domande: la principale è al passato o al presente? Il soggetto è lo stesso? L\'azione è contemporanea o anteriore?',
+      steps: [
+        {
+          prompt: 'Trasforma al passato: «Penso che Marco sia stanco.» (principale al passato: Pensavo)',
+          think: 'La principale passa all\'imperfetto (pensavo); la subordinata è contemporanea → congiuntivo imperfetto, non presente.',
+          answer: 'Pensavo che Marco fosse stanco.',
+          why: 'sia → fosse: stessa logica, tempo diverso.'
+        },
+        {
+          prompt: 'Contemporaneità o anteriorità? «Pensavo che Anna (partire) il giorno prima.»',
+          think: '"il giorno prima" indica un fatto anteriore al pensiero → trapassato congiuntivo.',
+          answer: 'Pensavo che Anna fosse partita il giorno prima.',
+          why: 'Partire vuole essere; accordo femminile: fosse partita.'
+        },
+        {
+          prompt: 'Completa un desiderio irreale: «Vorrei che tu (essere) qui con me.»',
+          think: 'Vorrei che + soggetto diverso → congiuntivo imperfetto di essere: fossi.',
+          answer: 'Vorrei che tu fossi qui con me.',
+          why: '"Vorrei" esprime un desiderio nel presente, ma non realizzabile subito.'
+        },
+        {
+          prompt: 'Irregolare: «Non credevo che (fare) così freddo.»',
+          think: 'Fare → facessi, dalla radice "facere", non da "faccio".',
+          answer: 'Non credevo che facesse così freddo.',
+          why: 'Occhio a non confondere facessi con "facevo" (imperfetto indicativo).'
+        },
+        {
+          prompt: 'Stesso soggetto o soggetti diversi? «Speravo di (arrivare) in tempo.»',
+          think: 'Il soggetto di "speravo" e di "arrivare" è lo stesso → di + infinito, niente congiuntivo.',
+          answer: 'Speravo di arrivare in tempo.',
+          why: 'Con lo stesso soggetto il congiuntivo non serve mai.'
+        },
+        {
+          prompt: 'Periodo ipotetico (anteprima): «Se (essere) in te, non risponderei così.»',
+          think: 'Dopo "se" nell\'ipotesi irreale ci vuole il congiuntivo imperfetto, mai il condizionale.',
+          answer: 'Se fossi in te, non risponderei così.',
+          why: 'Approfondiremo questa struttura nell\'unità 8.'
+        }
+      ]
+    },
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Pensavo che Marco ___ stanco.»', options: ['è', 'sia', 'fosse', 'era'], answer: 2, hint: 'principale al passato', why: 'Pensavo (passato) → congiuntivo imperfetto: fosse.' },
+        { q: 'Congiuntivo imperfetto di essere (io):', options: ['sia', 'fossi', 'ero', 'sarei'], answer: 1, hint: 'irregolare', why: 'che io fossi.' },
+        { q: 'Congiuntivo imperfetto di avere (tu):', options: ['abbia', 'avevi', 'avessi', 'avresti'], answer: 2, hint: 'irregolare', why: 'che tu avessi.' },
+        { q: 'Completa: «Vorrei che tu ___ qui.»', options: ['sii', 'sia', 'fossi', 'sei'], answer: 2, hint: 'desiderio irreale', why: 'Vorrei che + congiuntivo imperfetto: fossi.' },
+        { q: 'Completa: «Magari ___ ricco!»', options: ['sarei', 'sono', 'fossi', 'ero'], answer: 2, hint: 'esclamazione di desiderio', why: 'Magari + congiuntivo imperfetto: fossi.' },
+        { q: 'Completa: «Non sapevo che ___ già partiti.»', options: ['erano', 'fossero', 'siano', 'sarebbero'], answer: 1, hint: 'trapassato congiuntivo', why: 'fossero partiti: anteriorità nel passato.' },
+        { q: 'Completa: «Parla come se ___ tutto.»', options: ['sapeva', 'sappia', 'sapesse', 'saprebbe'], answer: 2, hint: '"come se" vuole sempre…', why: 'Come se + congiuntivo imperfetto, anche con principale al presente.' },
+        { q: 'Congiuntivo imperfetto di fare (lui):', options: ['facesse', 'faceva', 'faccia', 'farebbe'], answer: 0, hint: 'radice "facere"', why: 'che lui facesse.' },
+        { q: 'Completa: «Se ___ ricco, viaggerei di più.»', options: ['sarei', 'fossi', 'sono', 'ero'], answer: 1, hint: 'periodo ipotetico irreale', why: 'Se + congiuntivo imperfetto, mai il condizionale.' },
+        { q: 'Congiuntivo imperfetto di dire (noi):', options: ['dicevamo', 'dicessimo', 'diciamo', 'diremmo'], answer: 1, hint: 'radice "dicere"', why: 'che noi dicessimo.' },
+        { q: 'Quale frase è corretta?', options: ['Pensavo che sia partito.', 'Pensavo che fosse partito.', 'Pensavo che è partito.', 'Pensavo che sarebbe partito.'], answer: 1, hint: 'concordanza dei tempi', why: 'Principale al passato + azione anteriore = trapassato congiuntivo.' },
+        { q: 'Completa: «Speravo che voi ___ presto.» (venire)', options: ['veniste', 'venite', 'veniate', 'sareste venuti'], answer: 0, hint: 'congiuntivo imperfetto, voi', why: 'che voi veniste.' },
+        { q: 'Completa: «Era importante che tutti ___ presenti.»', options: ['erano', 'fossero', 'siano', 'sarebbero'], answer: 1, hint: 'principale impersonale al passato', why: 'fossero presenti.' },
+        { q: 'Congiuntivo imperfetto di dare (loro):', options: ['davano', 'dessero', 'diano', 'darebbero'], answer: 1, hint: 'irregolare', why: 'che loro dessero.' }
+      ],
+      fill: [
+        { before: 'Pensavo che Marco', after: 'stanco. (essere)', answers: ['fosse'], en: 'I thought Marco was tired.' },
+        { before: 'Vorrei che tu', after: 'qui con me. (essere)', answers: ['fossi'], en: 'I wish you were here with me.' },
+        { before: 'Non sapevo che', after: 'già mangiato. (avere, loro)', answers: ['avessero'], en: "I didn't know they had already eaten.", hint: 'trapassato congiuntivo' },
+        { before: 'Magari', after: 'più tempo! (avere, io)', answers: ['avessi'], en: 'If only I had more time!' },
+        { before: 'Parla come se', after: 'tutto. (sapere)', answers: ['sapesse'], en: 'He talks as if he knew everything.' },
+        { before: 'Se', after: 'ricco, viaggerei di più. (essere)', answers: ['fossi'], en: 'If I were rich, I would travel more.' },
+        { before: 'Speravo che voi', after: 'presto. (venire)', answers: ['veniste'], en: 'I was hoping you would come soon.' },
+        { before: 'Non credevo che', after: 'così freddo. (fare)', answers: ['facesse'], en: "I didn't think it would be so cold.", hint: 'radice "facere"' },
+        { before: 'Era importante che tutti', after: 'presenti. (essere)', answers: ['fossero'], en: 'It was important that everyone be present.' },
+        { before: 'Volevo chiedere se', after: 'aiutarmi. (potere, tu)', answers: ['potessi'], en: 'I wanted to ask if you could help me.' },
+        { before: 'Se solo', after: 'di più! (studiare, io)', answers: ['avessi studiato'], en: 'If only I had studied more!' },
+        { before: 'Pensavo che Anna', after: 'già partita. (essere)', answers: ['fosse'], en: 'I thought Anna had already left.' }
+      ],
+      order: [
+        { words: ['Pensavo', 'che', 'Marco', 'fosse', 'stanco'], answer: 'Pensavo che Marco fosse stanco', en: 'I thought Marco was tired.' },
+        { words: ['Vorrei', 'che', 'tu', 'fossi', 'qui'], answer: 'Vorrei che tu fossi qui', en: 'I wish you were here.' },
+        { words: ['Non', 'sapevo', 'che', 'avessero', 'già', 'mangiato'], answer: 'Non sapevo che avessero già mangiato', en: "I didn't know they had already eaten." },
+        { words: ['Parla', 'come', 'se', 'sapesse', 'tutto'], answer: 'Parla come se sapesse tutto', en: 'He talks as if he knew everything.' },
+        { words: ['Se', 'fossi', 'ricco', 'viaggerei', 'di', 'più'], answer: 'Se fossi ricco viaggerei di più', en: 'If I were rich I would travel more.' },
+        { words: ['Speravo', 'che', 'venisse', 'anche', 'lui'], answer: 'Speravo che venisse anche lui', en: 'I was hoping he would come too.' },
+        { words: ['Magari', 'fossi', 'più', 'bravo'], answer: 'Magari fossi più bravo', en: 'If only I were better.' }
+      ],
+      dnd: {
+        instructions: 'Questi verbi al congiuntivo sono all\'IMPERFETTO (azione contemporanea) o al TRAPASSATO (azione anteriore)? Trascinali nella colonna giusta.',
+        buckets: [
+          { id: 'imperfetto', label: 'IMPERFETTO (contemporaneità)', icon: '🌙' },
+          { id: 'trapassato', label: 'TRAPASSATO (anteriorità)', icon: '⏳' }
+        ],
+        items: [
+          { text: 'fosse stanco', bucket: 'imperfetto' },
+          { text: 'fosse partito', bucket: 'trapassato' },
+          { text: 'avessero mangiato', bucket: 'trapassato' },
+          { text: 'sapesse tutto', bucket: 'imperfetto' },
+          { text: 'avessi capito', bucket: 'trapassato' },
+          { text: 'venisse presto', bucket: 'imperfetto' },
+          { text: 'fossero già usciti', bucket: 'trapassato' },
+          { text: 'facesse freddo', bucket: 'imperfetto' },
+          { text: 'avesse già finito', bucket: 'trapassato' },
+          { text: 'dicesse la verità', bucket: 'imperfetto' },
+          { text: 'fossimo arrivati', bucket: 'trapassato' },
+          { text: 'stessero bene', bucket: 'imperfetto' },
+          { text: 'avessi dimenticato', bucket: 'trapassato' },
+          { text: 'desse una risposta', bucket: 'imperfetto' }
+        ]
+      },
+      match: [
+        { a: 'che io fossi', b: 'congiuntivo imperfetto di essere' },
+        { a: 'che tu avessi', b: 'congiuntivo imperfetto di avere' },
+        { a: 'che lui facesse', b: 'congiuntivo imperfetto di fare' },
+        { a: 'che noi dicessimo', b: 'congiuntivo imperfetto di dire' },
+        { a: 'pensavo che fosse partito', b: 'trapassato congiuntivo (anteriorità)' },
+        { a: 'pensavo che fosse stanco', b: 'congiuntivo imperfetto (contemporaneità)' },
+        { a: 'vorrei che', b: 'desiderio irreale' },
+        { a: 'magari', b: 'if only' },
+        { a: 'come se', b: 'as if' },
+        { a: 'se fossi ricco…', b: "periodo ipotetico dell'irrealtà" }
+      ],
+      tf: [
+        { statement: 'Il congiuntivo imperfetto si usa quando la principale è al passato.', answer: true, why: 'Esatto: è la regola della concordanza dei tempi al passato.' },
+        { statement: '"Fossi" è il congiuntivo imperfetto di avere.', answer: false, why: 'No: fossi è di essere. Avere fa avessi.' },
+        { statement: 'Dopo "come se" si può usare l\'indicativo.', answer: false, why: 'No: "come se" vuole sempre il congiuntivo.' },
+        { statement: 'Il trapassato congiuntivo indica un\'azione anteriore rispetto al verbo principale al passato.', answer: true, why: 'Esatto: pensavo che fosse partito = anteriore al pensiero.' },
+        { statement: '"Magari fossi ricco!" esprime un desiderio realizzabile.', answer: false, why: 'No: esprime un desiderio irreale o molto improbabile.' },
+        { statement: 'Dopo "se" nel periodo ipotetico dell\'irrealtà si può usare il condizionale.', answer: false, why: 'No: mai. Si usa il congiuntivo (imperfetto o trapassato).' },
+        { statement: '"Facessi" deriva dalla radice "facere", non da "faccio".', answer: true, why: 'Esatto: è per questo che è irregolare rispetto al presente indicativo.' },
+        { statement: 'Con lo stesso soggetto si usa "che" + congiuntivo imperfetto.', answer: false, why: 'No: con lo stesso soggetto si usa di + infinito.' },
+        { statement: 'Il congiuntivo imperfetto può esprimere anche una richiesta cortese.', answer: true, why: 'Esatto: "Volevo chiedere se potessi aiutarmi" è più cortese di "Puoi aiutarmi?".' }
+      ],
+      translate: [
+        { en: 'I thought Marco was tired.', answers: ['Pensavo che Marco fosse stanco'] },
+        { en: 'I wish you were here.', answers: ['Vorrei che tu fossi qui'] },
+        { en: "I didn't know they had already eaten.", answers: ['Non sapevo che avessero già mangiato'] },
+        { en: 'If only I were rich!', answers: ['Magari fossi ricco'] },
+        { en: 'He talks as if he knew everything.', answers: ['Parla come se sapesse tutto'] },
+        { en: 'If I were rich, I would travel more.', answers: ['Se fossi ricco viaggerei di più'] },
+        { en: 'I was hoping he would come too.', answers: ['Speravo che venisse anche lui'] },
+        { en: 'I wanted to ask if you could help me.', answers: ['Volevo chiedere se potessi aiutarmi'] },
+        { en: 'If only I had studied more!', answers: ['Se solo avessi studiato di più'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Un desiderio impossibile',
+      intro: 'Due amici parlano di rimpianti e desideri: nota il congiuntivo imperfetto per la contemporaneità e il trapassato per l\'anteriorità.',
+      lines: [
+        { speaker: 'Giulia', icon: '👩', it: 'Che faccia stanca! Tutto bene?', en: 'You look so tired! Everything okay?' },
+        { speaker: 'Tommaso', icon: '🧑', side: 'right', it: 'Non tanto. Pensavo che il colloquio di lavoro andasse meglio.', en: 'Not really. I thought the job interview would go better.',
+          glosses: [{ term: 'andasse', expl: 'Congiuntivo imperfetto: contemporaneo al pensiero (durante il colloquio).' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'Non sapevo che avessi un colloquio oggi!', en: "I didn't know you had an interview today!",
+          glosses: [{ term: 'avessi', expl: 'Congiuntivo imperfetto di avere: l\'azione è contemporanea al momento raccontato, non anteriore.' }] },
+        { speaker: 'Tommaso', icon: '🧑', side: 'right', it: 'Già. Speravo che mi facessero delle domande più semplici.', en: 'Yeah. I was hoping they would ask me easier questions.',
+          glosses: [{ term: 'facessero', expl: 'Congiuntivo imperfetto di fare: dalla radice "facere".' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'Magari fosse solo questo! Cos\'altro è successo?', en: 'If only that were all! What else happened?',
+          glosses: [{ term: 'Magari fosse', expl: '"Magari" + congiuntivo imperfetto: desiderio/rimpianto.' }] },
+        { speaker: 'Tommaso', icon: '🧑', side: 'right', it: 'Ho scoperto che non avevano ancora letto il mio curriculum. Era come se non si fossero preparati per niente.', en: "I found out they hadn't even read my résumé yet. It was as if they hadn't prepared at all.",
+          glosses: [{ term: 'si fossero preparati', expl: '"Come se" + trapassato congiuntivo: paragone anteriore al momento del colloquio.' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'Che fastidio. Vorrei che i colloqui fossero sempre organizzati meglio.', en: 'How annoying. I wish interviews were always better organised.',
+          glosses: [{ term: 'fossero organizzati', expl: 'Vorrei che + congiuntivo imperfetto: desiderio generale nel presente.' }] },
+        { speaker: 'Tommaso', icon: '🧑', side: 'right', it: 'Se solo avessi saputo prima, avrei studiato meglio l\'azienda.', en: 'If only I had known earlier, I would have studied the company better.',
+          glosses: [{ term: 'avessi saputo', expl: '"Se solo" + trapassato congiuntivo: rimpianto sul passato.' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'Su, non è detto che sia andata male. Magari ti richiamano lo stesso.', en: "Come on, it's not certain it went badly. Maybe they'll call you back anyway.",
+          glosses: [{ term: 'non è detto che sia andata', expl: 'Qui la principale è al presente: torna il congiuntivo passato (unità 3), non l\'imperfetto.' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'congiuntivo imperfetto', back: 'che io parlassi / credessi / partissi', note: 'contemporaneità con una principale al passato' },
+      { front: 'essere →', back: 'fossi, fossi, fosse, fossimo, foste, fossero' },
+      { front: 'avere →', back: 'avessi, avessi, avesse, avessimo, aveste, avessero' },
+      { front: 'fare →', back: 'facessi…', note: 'dalla radice "facere"' },
+      { front: 'dire →', back: 'dicessi…', note: 'dalla radice "dicere"' },
+      { front: 'dare →', back: 'dessi…' },
+      { front: 'stare →', back: 'stessi…' },
+      { front: 'Pensavo che fosse stanco', back: 'I thought he was tired', note: 'contemporaneità' },
+      { front: 'Pensavo che fosse partito', back: 'I thought he had left', note: 'anteriorità: trapassato congiuntivo' },
+      { front: 'Vorrei che tu fossi qui', back: 'I wish you were here' },
+      { front: 'Magari fossi ricco!', back: 'If only I were rich!' },
+      { front: 'come se +', back: 'congiuntivo imperfetto sempre', note: 'Parla come se sapesse tutto.' },
+      { front: 'Se fossi ricco, …', back: '…viaggerei di più', note: 'anteprima periodo ipotetico (unità 8)' },
+      { front: 'Penso che sia vs Pensavo che fosse', back: 'presente vs passato', note: 'stessa logica, tempo diverso' }
+    ],
+
+    summary: {
+      formula: 'Principale al passato + CHE + congiuntivo imperfetto (contemporaneità) o fossi/avessi + participio (anteriorità)',
+      rules: [
+        'Il congiuntivo imperfetto si forma con le desinenze -assi/-essi/-issi sulla radice dell\'infinito.',
+        'Sei irregolari da sapere a memoria: essere→fossi, avere→avessi, fare→facessi, dire→dicessi, dare→dessi, stare→stessi.',
+        'Con una principale al passato (imperfetto, passato prossimo, trapassato) la subordinata al congiuntivo va all\'imperfetto (contemporaneità) o al trapassato (anteriorità), mai al presente o al passato.',
+        'Il trapassato congiuntivo = fossi/avessi (congiuntivo imperfetto) + participio passato, con lo stesso accordo del passato prossimo.',
+        '"Vorrei che", "magari", "se solo" + congiuntivo imperfetto esprimono desideri irrealizzabili o rimpianti.',
+        '"Come se" vuole sempre il congiuntivo imperfetto o trapassato, anche con una principale al presente.',
+        'Nel periodo ipotetico dell\'irrealtà: se + congiuntivo imperfetto, condizionale presente (approfondimento nell\'unità 8).'
+      ],
+      tips: [
+        'Confronta sempre con l\'unità 3: "Penso che sia" (adesso) diventa "Pensavo che fosse" (nel passato). Stessa struttura, tempo diverso.',
+        'Impara i sei irregolari come una piccola filastrocca: fossi, avessi, facessi, dicessi, dessi, stessi.',
+        'Dopo "se" nell\'ipotesi irreale, il condizionale non compare mai: solo congiuntivo imperfetto o trapassato.',
+        'Se riesci a dire la frase con "di + infinito", il soggetto è lo stesso e il congiuntivo non serve.'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

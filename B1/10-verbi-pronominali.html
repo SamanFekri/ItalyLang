@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I verbi pronominali italiani: farcela, andarsene, cavarsela, fregarsene, prendersela, sentirsela, volerci. Verbi con particelle ci/ne/la che cambiano completamente significato.">
+  <title>Verbi Pronominali · Italiano B1</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     UNITÀ 10 — VERBI PRONOMINALI
+     ========================================================================== */
+  window.LESSON = {
+    num: 10, file: '10-verbi-pronominali.html', icon: '🧩', title: 'Verbi Pronominali', group: 'Pronomi e verbi',
+    subtitle: 'Farcela, andarsene, cavarsela: quando un verbo più due particelle diventa una parola nuova.',
+
+    intro: {
+      what: 'I verbi pronominali sono verbi che si costruiscono con uno o due <b>pronomi combinati</b> fissi (ci, ne, la, le) attaccati o davanti al verbo: <b>far-ci-la</b>, <b>andar-se-ne</b>, <b>cavar-se-la</b>. Nell\'unità 9 hai imparato a combinare i pronomi liberamente (me lo, te la, glielo); qui i pronomi si "incollano" a un verbo specifico e insieme creano un significato che le singole parti non spiegano.',
+      when: 'Ogni volta che vuoi suonare come un madrelingua e non come un manuale: nel parlato informale gli italiani dicono quasi sempre "ce la faccio", "me ne vado", "non me la sento" al posto di perifrasi più lunghe e formali.',
+      why: 'Sono verbi ad altissima frequenza nella conversazione reale. Se non li riconosci, capisci ogni singola parola di una frase e non capisci la frase: "Ce l\'ho fatta" non significa "io l\'ho" + "fatta", significa "I made it / I managed".',
+      mistakes: [
+        'Tradurre parola per parola: ❌ "farcela" come "to make it here" invece di "riuscire, farcela" (to manage/succeed).',
+        'Dimenticare l\'ausiliare essere con i pronominali riflessivi: ❌ "ho andato via" → ✅ "me ne sono andato".',
+        'Sbagliare l\'ordine dei pronomi: ❌ "la ce faccio" → ✅ "ce la faccio" (sempre ci/ne prima, poi la/le).',
+        'Confondere "volerci" (impersonale, ci vuole tempo) con "volere" normale: ❌ "Voglio due ore per arrivare" quando intendi "Ci vogliono due ore".'
+      ]
+    },
+
+    objectives: [
+      'Riconoscere e usare almeno 9 verbi pronominali comuni: farcela, andarsene, cavarsela, fregarsene, mettercela tutta, prendersela, sentirsela, starsene, volerci.',
+      'Coniugare questi verbi al <b>presente</b> e al <b>passato prossimo</b>, con l\'ordine corretto dei pronomi.',
+      'Distinguere quando il pronominale usa <b>essere</b> (perché è anche riflessivo, come andarsene) e quando usa <b>avere</b> (come farcela).',
+      'Capire l\'accordo del participio con questi verbi: ce l\'ho fatta, se n\'è andato, te la sei presa.',
+      'Usare <b>volerci</b> in modo impersonale, distinguendolo da volere.',
+      'Riconoscere questi verbi nel parlato informale reale, dove sono estremamente frequenti.'
+    ],
+
+    formulas: [
+      {
+        label: 'La struttura generale',
+        rows: [
+          { parts: [
+              { text: '(mi/ti/si/ci/vi/si)', note: 'pronome riflessivo, se c\'è', type: 'subject' },
+              { text: 'ce / me / te / se…', note: 'ci trasformato davanti a lo/la/li/le/ne', type: 'verb' },
+              { text: 'la / ne', note: 'particella fissa', type: 'object' },
+              { text: 'VERBO', note: 'coniugato', type: 'extra' }
+            ], example: 'Ce la faccio.', translation: "I can manage / I'll make it." }
+        ]
+      },
+      {
+        label: 'Farcela — ce la faccio',
+        rows: [
+          { parts: [
+              { text: 'ce', note: 'ci → ce davanti a la', type: 'verb' },
+              { text: 'la', note: 'particella fissa, non cambia mai', type: 'object' },
+              { text: 'faccio / fai / fa…', note: 'fare coniugato', type: 'extra' }
+            ], example: 'Non ce la faccio più.', translation: "I can't take it anymore." }
+        ]
+      },
+      {
+        label: 'Andarsene — riflessivo + ne',
+        rows: [
+          { parts: [
+              { text: 'me / te / se / ci / vi / se', note: 'pronome riflessivo trasformato', type: 'subject' },
+              { text: 'ne', note: 'particella fissa: "via da qui"', type: 'verb' },
+              { text: 'vado / vai / va…', note: 'andare coniugato', type: 'object' }
+            ], example: 'Me ne vado.', translation: "I'm leaving / going away." }
+        ]
+      },
+      {
+        label: 'Volerci — impersonale',
+        rows: [
+          { parts: [
+              { text: 'ci', note: 'particella fissa, invariabile', type: 'verb' },
+              { text: 'vuole / vogliono', note: 'accordo col soggetto che segue', type: 'object' },
+              { text: 'tempo / due ore', note: 'il "soggetto" grammaticale', type: 'extra' }
+            ], example: 'Ci vuole pazienza. Ci vogliono due ore.', translation: 'It takes patience. It takes two hours.' }
+        ]
+      }
+    ],
+    formulaNote: 'Il pronome ci diventa CE, e mi/ti/si/vi diventano ME/TE/SE/VE, quando sono seguiti da lo/la/li/le/ne — esattamente la regola dei pronomi combinati dell\'unità 9. Nei verbi pronominali questo cambiamento è già "congelato" dentro la forma: si dice sempre ce la faccio, me ne vado, mai "ci la faccio" o "mi ne vado".',
+
+    rules: [
+      {
+        title: 'Che cos\'è un verbo pronominale',
+        body: 'È un verbo base (fare, andare, cavare, sentire, mettere, prendere, stare…) più una o due particelle (ci, ne, la) che diventano parte fissa e inseparabile del significato. Il significato del verbo pronominale spesso <b>non ha nulla a che vedere</b> con il verbo base.',
+        points: [
+          'fare = "to do/make" ma farcela = "to manage, to make it" — significato completamente diverso.',
+          'andare = "to go" ma andarsene = "to leave, to go away (from here, pointedly)" — con un\'idea in più di distacco.',
+          'sentire = "to hear/feel" ma sentirsela = "to feel up to (doing something)" — quasi sempre in frasi negative.',
+          'stare = "to stay/be" ma starsene = "to keep to oneself, to stay put (con enfasi)".'
+        ],
+        exception: 'Nel dizionario questi verbi si trovano elencati con -sela, -sene, -cela come parte dell\'infinito: cercali così, non sotto il verbo base.'
+      },
+      {
+        title: 'Farcela — riuscire in qualcosa di difficile',
+        body: 'Significa "riuscire, farcela con successo", spesso dopo uno sforzo. Ausiliare al passato: <b>avere</b>.',
+        points: [
+          'Presente: ce la faccio, ce la fai, ce la fa, ce la facciamo, ce la fate, ce la fanno.',
+          'Passato prossimo: ce l\'ho fatta, ce l\'hai fatta, ce l\'ha fatta… — il participio "fatta" concorda con "la" (femminile).',
+          'Negativo: non ce la faccio più = "I can\'t take it anymore" (esausto) oppure "non riesco".',
+          'Con l\'infinito di un altro verbo: "Non ce la faccio a finire in tempo" = I can\'t manage to finish in time.'
+        ],
+        exception: 'Al passato "ce la" si elide sempre in "ce l\'": ce l\'ho fatta, mai "ce la ho fatta".'
+      },
+      {
+        title: 'Andarsene — andare via, con enfasi',
+        body: 'È andare + il riflessivo (si va = one goes) + ne (via da qui). Nel passato prossimo si accumulano DUE ausiliari concettuali ma se ne usa uno solo: <b>essere</b>, perché è comunque un composto di andare.',
+        points: [
+          'Presente: me ne vado, te ne vai, se ne va, ce ne andiamo, ve ne andate, se ne vanno.',
+          'Passato prossimo: me ne sono andato/a, te ne sei andato/a, se n\'è andato/a, ce ne siamo andati/e, ve ne siete andati/e, se ne sono andati/e.',
+          'Il participio concorda col soggetto, come tutti i riflessivi con essere: se n\'è andata (lei), se ne sono andati (loro).',
+          'Imperativo molto comune: Vattene! (tu), Se ne vada! (Lei, formale), Andiamocene! (noi).'
+        ],
+        exception: 'Non confondere con "andare via" semplice: andarsene ha una sfumatura più decisa, spesso dopo un litigio o una scelta netta — "Se n\'è andato senza dire niente".'
+      },
+      {
+        title: 'Cavarsela e fregarsene — cavarsi d\'impaccio o non curarsi',
+        body: 'Cavarsela = "to get by, to cope, to manage decently" (con essere per il riflessivo interno, ma il participio segue avere perché "la" è oggetto). Fregarsene = "not to care at all" (colloquiale, un po\' scurrile ma usatissimo).',
+        points: [
+          'Cavarsela — presente: me la cavo, te la cavi, se la cava, ce la caviamo, ve la cavate, se la cavano.',
+          'Cavarsela — passato prossimo: me la sono cavata, te la sei cavata, se l\'è cavata… (essere, accordo con soggetto).',
+          '"Se la cava bene in inglese" = "He/She gets by well in English" (non è perfetto ma funziona).',
+          'Fregarsene — presente: me ne frego, te ne freghi, se ne frega, ce ne freghiamo, ve ne fregate, se ne fregano. Es: "Non m\'importa, me ne frego!" = "I don\'t care, whatever!"'
+        ],
+        exception: 'Fregarsene è colloquiale/informale: da evitare in un contesto formale o scritto, dove si preferisce "non m\'importa" o "non me ne curo".'
+      },
+      {
+        title: 'Mettercela tutta, prendersela, sentirsela',
+        body: 'Tre verbi pronominali dell\'emotività e dell\'impegno personale.',
+        points: [
+          'Mettercela tutta = "to give it one\'s all" — presente: ce la metto tutta, ce la metti tutta… passato: ce l\'ho messa tutta.',
+          'Prendersela = "to take offense, to get upset" — presente: me la prendo, te la prendi, se la prende… passato (essere): me la sono presa, te la sei presa, se l\'è presa.',
+          'Sentirsela = "to feel up to (doing) something", quasi sempre con "di + infinito" e spesso in negativo — presente: me la sento, non me la sento di uscire stasera.',
+          'Prendersela con qualcuno = "to take it out on someone": "Se l\'è presa con me senza motivo".'
+        ],
+        exception: 'Prendersela regge "con" per la persona ("se l\'è presa con lui") e "per" per la causa ("se l\'è presa per un\'inezia").'
+      },
+      {
+        title: 'Starsene — restare, con enfasi sull\'isolamento',
+        body: 'Sta + il riflessivo + ne: sottolinea che il soggetto rimane fermo, spesso appartato o in silenzio.',
+        points: [
+          'Presente: me ne sto, te ne stai, se ne sta, ce ne stiamo, ve ne state, se ne stanno.',
+          'Passato prossimo: me ne sono stato/a, se n\'è stato/a… (essere, accordo col soggetto).',
+          '"Se ne stava zitto in un angolo" = "He was keeping quiet in a corner".',
+          'Diverso da "stare" semplice: "sto a casa" (fatto neutro) vs "me ne sto a casa" (per scelta, quasi isolandomi).'
+        ],
+        exception: 'Con il gerundio si usa spesso per descrivere un atteggiamento prolungato: "Se ne stava lì, senza parlare" (unità 11, gerundio).'
+      },
+      {
+        title: 'Volerci — impersonale, "ci vuole / ci vogliono"',
+        body: 'Non è un vero verbo pronominale come gli altri (non ha soggetto persona), ma si comporta allo stesso modo grammaticalmente: ci è fisso, e volere si accorda con ciò che "serve".',
+        points: [
+          'Singolare se serve una sola cosa: "Ci vuole tempo", "Ci vuole pazienza".',
+          'Plurale se serve più di una cosa: "Ci vogliono due ore", "Ci vogliono tre uova".',
+          'Passato prossimo: ci è voluto/a, ci sono voluti/e — ausiliare essere: "Ci è voluta un\'ora", "Ci sono voluti tre giorni".',
+          'Diverso da <b>volere</b> normale, che ha un soggetto persona: "Io voglio due ore libere" (io le voglio) vs "Ci vogliono due ore" (sono necessarie, nessun soggetto persona).'
+        ],
+        exception: 'Non si dice mai "ci voglio" riferito a una persona: volerci è sempre impersonale, il soggetto grammaticale è la cosa che serve (tempo, ore, pazienza, tre uova…).'
+      }
+    ],
+
+    timeline: {
+      title: 'Dal verbo base al verbo pronominale',
+      intro: 'Ogni verbo pronominale nasce da un verbo comune, ma le particelle aggiunte lo trasformano in qualcosa di nuovo, spesso imprevedibile.',
+      points: [
+        { time: 'Verbo base', label: 'fare', example: 'Faccio i compiti.', note: 'significato letterale' },
+        { time: '+ ce la', label: 'farcela', example: 'Ce la faccio!', note: 'significato nuovo: riuscire' },
+        { time: 'Verbo base', label: 'andare', example: 'Vado a casa.', note: 'significato letterale' },
+        { time: '+ sene', label: 'andarsene', example: 'Me ne vado.', now: true, note: 'significato nuovo: andare via con enfasi' }
+      ],
+      caption: 'Non provare a "calcolare" il significato dalle parti: impara ogni verbo pronominale come un blocco unico, con la sua coniugazione completa.'
+    },
+
+    tables: [
+      {
+        title: 'Farcela — presente e passato prossimo',
+        note: 'Ausiliare avere; il participio "fatta" concorda sempre con "la" (femminile, invariabile).',
+        columns: ['Persona', 'Presente', 'Passato prossimo'],
+        rows: [
+          { cells: ['io', 'ce la faccio', "ce l'ho fatta"], irregular: [1, 2] },
+          { cells: ['tu', 'ce la fai', "ce l'hai fatta"], irregular: [1, 2] },
+          { cells: ['lui / lei', 'ce la fa', "ce l'ha fatta"], irregular: [1, 2] },
+          { cells: ['noi', 'ce la facciamo', "ce l'abbiamo fatta"], irregular: [1, 2] },
+          { cells: ['voi', 'ce la fate', "ce l'avete fatta"], irregular: [1, 2] },
+          { cells: ['loro', 'ce la fanno', "ce l'hanno fatta"], irregular: [1, 2] }
+        ]
+      },
+      {
+        title: 'Andarsene — presente e passato prossimo',
+        note: 'Ausiliare essere; il participio "andato/a/i/e" concorda col soggetto.',
+        columns: ['Persona', 'Presente', 'Passato prossimo'],
+        rows: [
+          { cells: ['io', 'me ne vado', 'me ne sono andato/a'], irregular: [1, 2] },
+          { cells: ['tu', 'te ne vai', 'te ne sei andato/a'], irregular: [1, 2] },
+          { cells: ['lui / lei', 'se ne va', "se n'è andato/a"], irregular: [1, 2] },
+          { cells: ['noi', 'ce ne andiamo', 'ce ne siamo andati/e'], irregular: [1, 2] },
+          { cells: ['voi', 've ne andate', 've ne siete andati/e'], irregular: [1, 2] },
+          { cells: ['loro', 'se ne vanno', 'se ne sono andati/e'], irregular: [1, 2] }
+        ]
+      },
+      {
+        title: 'Cavarsela — presente e passato prossimo',
+        note: 'Riflessivo + la; passato con essere, ma il participio concorda col soggetto (non con "la").',
+        columns: ['Persona', 'Presente', 'Passato prossimo'],
+        rows: [
+          { cells: ['io', 'me la cavo', 'me la sono cavato/a'], irregular: [1, 2] },
+          { cells: ['tu', 'te la cavi', 'te la sei cavato/a'], irregular: [1, 2] },
+          { cells: ['lui / lei', 'se la cava', "se l'è cavato/a"], irregular: [1, 2] },
+          { cells: ['noi', 'ce la caviamo', 'ce la siamo cavati/e'], irregular: [1, 2] },
+          { cells: ['voi', 've la cavate', 've la siete cavati/e'], irregular: [1, 2] },
+          { cells: ['loro', 'se la cavano', 'se la sono cavati/e'], irregular: [1, 2] }
+        ]
+      },
+      {
+        title: 'Prendersela e sentirsela — presente e passato',
+        note: 'Prendersela = to take offense; sentirsela = to feel up to. Entrambi con essere al passato.',
+        columns: ['Persona', 'Prendersela (presente)', 'Prendersela (passato)'],
+        rows: [
+          { cells: ['io', 'me la prendo', 'me la sono presa'], irregular: [2] },
+          { cells: ['tu', 'te la prendi', 'te la sei presa'], irregular: [2] },
+          { cells: ['lui / lei', 'se la prende', "se l'è presa"], irregular: [2] },
+          { cells: ['noi', 'ce la prendiamo', 'ce la siamo presa'], irregular: [2] },
+          { cells: ['voi', 've la prendete', 've la siete presa'], irregular: [2] },
+          { cells: ['loro', 'se la prendono', 'se la sono presa'], irregular: [2] }
+        ]
+      },
+      {
+        title: 'Fregarsene, mettercela tutta, starsene — solo presente',
+        note: 'Tre verbi pronominali molto usati nel parlato: nota la particella fissa in ciascuno.',
+        columns: ['Verbo', 'io', 'tu', 'lui/lei'],
+        rows: [
+          { cells: ['fregarsene', 'me ne frego', 'te ne freghi', 'se ne frega'] },
+          { cells: ['mettercela tutta', 'ce la metto tutta', 'ce la metti tutta', 'ce la mette tutta'] },
+          { cells: ['starsene', 'me ne sto', 'te ne stai', 'se ne sta'] }
+        ]
+      },
+      {
+        title: 'Volerci — impersonale',
+        note: 'Il verbo si accorda col "soggetto" che segue (singolare/plurale), mai con la persona che parla.',
+        columns: ['Tempo', 'Singolare', 'Plurale'],
+        rows: [
+          { cells: ['Presente', 'ci vuole tempo', 'ci vogliono due ore'], irregular: [1, 2] },
+          { cells: ['Passato prossimo', "ci è voluta un'ora", 'ci sono voluti tre giorni'], irregular: [1, 2] },
+          { cells: ['Imperfetto', 'ci voleva più cura', 'ci volevano più soldi'] }
+        ]
+      },
+      {
+        title: 'Volerci vs volere — non confonderli',
+        columns: ['Frase', 'Significato', 'Soggetto'],
+        rows: [
+          { cells: ['Ci vuole pazienza.', "It takes patience (it's needed).", 'impersonale: nessuno in particolare'] },
+          { cells: ['Voglio pazienza da parte tua.', 'I want patience from you.', 'io (persona reale)'] },
+          { cells: ['Ci vogliono due ore per arrivare.', 'It takes two hours to get there.', 'impersonale'] },
+          { cells: ['Voglio due ore libere.', 'I want two free hours.', 'io (persona reale)'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Dai, ce la fai, manca poco!', literal: 'Come-on, of-it it you-make, is-missing little!', natural: "Come on, you can do it, it's almost over!", note: 'farcela al presente, forma di incoraggiamento.' },
+      { it: 'Alla fine ce l\'ho fatta a finire il progetto.', literal: 'At-the end of-it I-have made-it to finish the project.', natural: 'In the end I managed to finish the project.', note: 'farcela + a + infinito; participio "fatta" invariabile.' },
+      { it: 'Non ce la faccio più a lavorare tutto il weekend.', literal: 'Not of-it I-make more to work all the weekend.', natural: "I can't take working all weekend anymore.", note: 'non ce la faccio più = espressione di esasperazione.' },
+      { it: 'Se n\'è andato senza salutare nessuno.', literal: 'Himself of-there is gone without to-greet nobody.', natural: 'He left without saying goodbye to anyone.', note: 'andarsene, passato prossimo, ausiliare essere, accordo maschile.' },
+      { it: 'Me ne vado, ho un altro impegno.', literal: 'Myself of-there I-go, I-have an other commitment.', natural: "I'm off, I have another commitment.", note: 'andarsene al presente, uso quotidiano.' },
+      { it: 'Se la cava benissimo da sola, non preoccuparti.', literal: 'Herself it she-manages very-well by-herself, not to-worry.', natural: "She manages just fine on her own, don't worry.", note: 'cavarsela = to get by/cope.' },
+      { it: 'Non è stato facile, ma alla fine ce la siamo cavata.', literal: 'Not is been easy, but at-the end of-it us it we-are managed.', natural: "It wasn't easy, but in the end we got by.", note: 'cavarsela al passato prossimo, con essere.' },
+      { it: 'Tanto lui se ne frega di quello che pensiamo.', literal: 'So-much he of-it himself frega of that which we-think.', natural: "He doesn't care at all what we think anyway.", note: 'fregarsene, colloquiale: non gli importa.' },
+      { it: 'Ce l\'ho messa tutta, ma non è bastato.', literal: 'Of-it I-have put-it all, but not is been-enough.', natural: "I gave it my all, but it wasn't enough.", note: 'mettercela tutta al passato prossimo.' },
+      { it: 'Non prendertela, non era una critica.', literal: 'Not yourself of-it take, not was a critique.', natural: "Don't take it personally, it wasn't a criticism.", note: 'prendersela all\'imperativo negativo.' },
+      { it: 'Si è offesa e se l\'è presa con tutti.', literal: 'Herself is offended and herself of-it is taken with everyone.', natural: 'She got offended and took it out on everyone.', note: 'prendersela con qualcuno = to take it out on someone.' },
+      { it: 'Non me la sento di uscire stasera, sono troppo stanca.', literal: 'Not myself of-it I-feel to go-out tonight, I-am too tired.', natural: "I don't feel up to going out tonight, I'm too tired.", note: 'sentirsela di + infinito, quasi sempre negativo.' },
+      { it: 'Te la senti di guidare tu stasera?', literal: 'To-you it you-feel to drive you tonight?', natural: 'Do you feel up to driving tonight?', note: 'sentirsela in forma interrogativa.' },
+      { it: 'Se ne stava zitto in un angolo, senza dire una parola.', literal: 'Himself of-there he-stayed quiet in a corner, without to-say a word.', natural: 'He kept to himself in a corner, without saying a word.', note: 'starsene, imperfetto, isolamento.' },
+      { it: 'Statevene tranquilli, arrivo tra dieci minuti.', literal: 'Stay-yourselves-of-it calm, I-arrive within ten minutes.', natural: "Just relax, I'll be there in ten minutes.", note: 'starsene all\'imperativo, forma voi.' },
+      { it: 'Per imparare bene una lingua ci vuole tempo.', literal: 'For to-learn well a language of-it wants time.', natural: 'It takes time to learn a language well.', note: 'volerci impersonale, singolare con "tempo".' },
+      { it: 'Da qui alla stazione ci vogliono venti minuti a piedi.', literal: 'From here to-the station of-it want twenty minutes on foot.', natural: "It takes twenty minutes on foot from here to the station.", note: 'volerci, plurale con "venti minuti".' },
+      { it: 'Ci è voluta molta pazienza per convincerlo.', literal: 'Of-it is wanted much patience to convince-him.', natural: 'It took a lot of patience to convince him.', note: 'volerci al passato prossimo, ausiliare essere, accordo femminile.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Ho farcela.', right: "Ce l'ho fatta.", why: 'Farcela va coniugato tutto insieme con ce la/l\' + fare; non si dice "ho farcela".' },
+      { wrong: 'Ci la faccio.', right: 'Ce la faccio.', why: 'Ci diventa CE davanti a la: è una regola fissa, come nei pronomi combinati dell\'unità 9.' },
+      { wrong: 'Mi ne vado.', right: 'Me ne vado.', why: 'Il riflessivo mi diventa ME davanti a ne, non resta "mi".' },
+      { wrong: 'Ho andato via presto.', right: 'Me ne sono andato/a presto.', why: 'Andarsene vuole sempre essere come ausiliare, mai avere.' },
+      { wrong: "Se n'è andato la festa.", right: "Se n'è andato dalla festa.", why: 'Andarsene richiede "da" per indicare il luogo lasciato: andarsene da un posto.' },
+      { wrong: 'Se la è cavato bene.', right: "Se l'è cavata bene.", why: 'La si elide in l\' davanti a è; il participio concorda col soggetto (lei → cavata).' },
+      { wrong: 'Non mi la sento di venire.', right: 'Non me la sento di venire.', why: 'Anche qui mi → me davanti a la.' },
+      { wrong: 'Ci vuole due ore.', right: 'Ci vogliono due ore.', why: 'Con un soggetto plurale (due ore) volerci va al plurale: ci vogliono.' },
+      { wrong: 'Voglio pazienza per imparare l\'italiano.', right: "Ci vuole pazienza per imparare l'italiano.", why: 'Qui non c\'è una persona che "vuole": è impersonale, serve volerci.' },
+      { wrong: "Ce l'ho fatto il progetto.", right: "Ce l'ho fatta il progetto (meglio: ce l'ho fatta a finire il progetto).", why: 'Il participio di farcela concorda sempre con "la" (femminile): fatta, mai fatto.' }
+    ],
+
+    vocab: {
+      title: 'Vocabolario — emozioni e italiano colloquiale (58 parole)',
+      intro: 'I verbi pronominali vivono nella conversazione informale: qui trovi le parole che li accompagnano, dalle emozioni quotidiane alle intercalari che senti continuamente parlando con italiani. Ogni scheda dà l\'italiano, l\'inglese, il farsi (فارسی) e una frase d\'esempio.',
+      categories: [
+        { id: 'emozioni', label: 'Emozioni', icon: '😤' },
+        { id: 'conversazione', label: 'Conversazioni', icon: '💬' },
+        { id: 'intercalari', label: 'Intercalari e riempitivi', icon: '🗨️' },
+        { id: 'informale', label: 'Espressioni informali', icon: '😎' },
+        { id: 'stati', label: 'Stati d\'animo', icon: '🌡️' }
+      ],
+      words: [
+        /* ── Emozioni (12) ── */
+        { it: 'incavolarsi', en: 'to get annoyed/angry (colloquial)', fa: 'عصبانی شدن', cat: 'emozioni', pos: 'v. rifl.', ex: 'Si è incavolato perché ho fatto tardi.' },
+        { it: 'arrabbiarsi', en: 'to get angry', fa: 'خشمگین شدن', cat: 'emozioni', pos: 'v. rifl.', ex: 'Non ti arrabbiare, non l\'ho fatto apposta.' },
+        { it: 'stressarsi', en: 'to get stressed', fa: 'استرس گرفتن', cat: 'emozioni', pos: 'v. rifl.', ex: 'Non stressarti troppo per l\'esame, ce la farai.' },
+        { it: 'rilassarsi', en: 'to relax', fa: 'آرام گرفتن', cat: 'emozioni', pos: 'v. rifl.', ex: 'Dopo il lavoro mi piace rilassarmi sul divano.' },
+        { it: 'preoccuparsi', en: 'to worry', fa: 'نگران شدن', cat: 'emozioni', pos: 'v. rifl.', ex: 'Non preoccuparti, ce la caviamo.' },
+        { it: 'emozionarsi', en: 'to get emotional', fa: 'هیجان‌زده شدن', cat: 'emozioni', pos: 'v. rifl.', ex: 'Mi sono emozionato al matrimonio di mio fratello.' },
+        { it: 'annoiarsi', en: 'to get bored', fa: 'حوصله‌اش سر رفتن', cat: 'emozioni', pos: 'v. rifl.', ex: 'Mi sono annoiato a morte durante la riunione.' },
+        { it: 'entusiasmarsi', en: 'to get excited/enthusiastic', fa: 'هیجان‌زده و مشتاق شدن', cat: 'emozioni', pos: 'v. rifl.', ex: 'Si è entusiasmata subito per il viaggio.' },
+        { it: 'deludere', en: 'to disappoint', fa: 'ناامید کردن', cat: 'emozioni', pos: 'v.', ex: 'Mi ha deluso molto quella risposta.' },
+        { it: 'la delusione', en: 'disappointment', fa: 'ناامیدی', cat: 'emozioni', pos: 'f.', ex: 'Ha nascosto bene la delusione.' },
+        { it: 'sollevato', en: 'relieved', fa: 'خیالش راحت شده', cat: 'emozioni', pos: 'agg.', ex: 'Sono sollevato: alla fine ce l\'abbiamo fatta.' },
+        { it: 'infastidirsi', en: 'to get irritated', fa: 'آزرده شدن', cat: 'emozioni', pos: 'v. rifl.', ex: 'Si infastidisce se lo interrompi.' },
+
+        /* ── Conversazioni quotidiane (12) ── */
+        { it: 'chiacchierare', en: 'to chat', fa: 'گپ زدن', cat: 'conversazione', pos: 'v.', ex: 'Ci siamo fermati a chiacchierare per un\'ora.' },
+        { it: 'sfogarsi', en: 'to vent, to let off steam', fa: 'دل خالی کردن', cat: 'conversazione', pos: 'v. rifl.', ex: 'Ho bisogno di sfogarmi con qualcuno.' },
+        { it: 'confidarsi', en: 'to confide', fa: 'راز دل گفتن', cat: 'conversazione', pos: 'v. rifl.', ex: 'Si è confidata con me su tutto.' },
+        { it: 'litigare', en: 'to argue, to fight', fa: 'دعوا کردن', cat: 'conversazione', pos: 'v.', ex: 'Abbiamo litigato per una sciocchezza.' },
+        { it: 'fare pace', en: 'to make up', fa: 'آشتی کردن', cat: 'conversazione', pos: 'loc.', ex: 'Alla fine abbiamo fatto pace.' },
+        { it: 'scherzare', en: 'to joke', fa: 'شوخی کردن', cat: 'conversazione', pos: 'v.', ex: 'Stavo solo scherzando, non prendertela!' },
+        { it: 'convincere', en: 'to convince', fa: 'متقاعد کردن', cat: 'conversazione', pos: 'v.', ex: 'Ci è voluto un po\' per convincerlo.' },
+        { it: 'esagerare', en: 'to exaggerate, to overdo it', fa: 'اغراق کردن', cat: 'conversazione', pos: 'v.', ex: 'Dai, non esagerare, non è così grave.' },
+        { it: 'lamentarsi', en: 'to complain', fa: 'شکایت کردن', cat: 'conversazione', pos: 'v. rifl.', ex: 'Si lamenta sempre di tutto.' },
+        { it: 'il malinteso', en: 'misunderstanding', fa: 'سوءتفاهم', cat: 'conversazione', pos: 'm.', ex: 'È stato solo un malinteso, tranquillo.' },
+        { it: 'fare finta', en: 'to pretend', fa: 'وانمود کردن', cat: 'conversazione', pos: 'loc.', ex: 'Ha fatto finta di niente.' },
+        { it: 'confrontarsi', en: 'to talk things through, to compare views', fa: 'تبادل نظر کردن', cat: 'conversazione', pos: 'v. rifl.', ex: 'Dovremmo confrontarci di più su queste cose.' },
+
+        /* ── Intercalari e riempitivi (12) ── */
+        { it: 'dai!', en: 'come on!', fa: 'بیا دیگه! / زودباش!', cat: 'intercalari', pos: 'espr.', ex: 'Dai, ce la fai, manca poco!' },
+        { it: 'boh', en: 'dunno, who knows', fa: 'نمی‌دونم', cat: 'intercalari', pos: 'espr.', ex: '«Che ore sono?» «Boh, non lo so.»' },
+        { it: 'magari', en: 'maybe / if only', fa: 'کاش / شاید', cat: 'intercalari', pos: 'avv.', ex: '«Vieni anche tu?» «Magari!»' },
+        { it: 'mica', en: 'not at all / hardly', fa: 'اصلاً نه', cat: 'intercalari', pos: 'avv.', ex: 'Non sono mica stanco, sto bene.' },
+        { it: 'insomma', en: 'well, in short, so-so', fa: 'خلاصه اینکه', cat: 'intercalari', pos: 'espr.', ex: '«Ti è piaciuto il film?» «Insomma…»' },
+        { it: 'comunque', en: 'anyway, however', fa: 'به هر حال', cat: 'intercalari', pos: 'avv.', ex: 'Comunque, non preoccuparti, ce la caviamo.' },
+        { it: 'cioè', en: 'that is, I mean', fa: 'یعنی', cat: 'intercalari', pos: 'espr.', ex: 'Cioè, non volevo dire questo.' },
+        { it: 'vabbè', en: 'oh well, fine then', fa: 'باشه بابا / خب دیگه', cat: 'intercalari', pos: 'espr.', ex: 'Vabbè, non importa, lasciamo perdere.' },
+        { it: 'praticamente', en: 'basically, practically', fa: 'عملاً', cat: 'intercalari', pos: 'avv.', ex: 'Praticamente ce l\'abbiamo fatta da soli.' },
+        { it: 'a proposito', en: 'by the way', fa: 'راستی', cat: 'intercalari', pos: 'loc.', ex: 'A proposito, hai sentito Marco?' },
+        { it: 'appunto', en: 'exactly, precisely', fa: 'دقیقاً همینه', cat: 'intercalari', pos: 'avv.', ex: '«Costa troppo.» «Appunto, per questo non lo compro.»', },
+        { it: 'be\'', en: 'well…', fa: 'خب…', cat: 'intercalari', pos: 'espr.', ex: 'Be\', non saprei cosa dirti.' },
+
+        /* ── Espressioni informali (11) ── */
+        { it: 'figurati', en: "don't mention it / no way", fa: 'اصلاً مهم نیست', cat: 'informale', pos: 'espr.', ex: '«Grazie mille!» «Figurati!»' },
+        { it: 'in bocca al lupo', en: 'good luck', fa: 'موفق باشی', cat: 'informale', pos: 'espr.', ex: 'In bocca al lupo per l\'esame, ce la farai!' },
+        { it: 'che palle', en: 'what a pain (colloquial)', fa: 'چه گیری! (عامیانه)', cat: 'informale', pos: 'espr.', ex: 'Che palle, ho perso di nuovo l\'autobus.' },
+        { it: 'meno male', en: 'thank goodness', fa: 'خداروشکر', cat: 'informale', pos: 'espr.', ex: 'Meno male che ce l\'abbiamo fatta in tempo.' },
+        { it: 'per fortuna', en: 'luckily', fa: 'خوشبختانه', cat: 'informale', pos: 'loc.', ex: 'Per fortuna se l\'è cavata con poco.' },
+        { it: 'da matti', en: 'like crazy, a ton', fa: 'به شدت / دیوانه‌وار', cat: 'informale', pos: 'loc.', ex: 'Oggi in ufficio c\'era da fare da matti.' },
+        { it: 'non me ne importa', en: "I don't care", fa: 'برام مهم نیست', cat: 'informale', pos: 'espr.', ex: 'Non me ne importa niente di quello che dicono.', },
+        { it: 'alla fine', en: 'in the end', fa: 'در نهایت / بالاخره', cat: 'informale', pos: 'loc.', ex: 'Alla fine ce l\'abbiamo fatta.' },
+        { it: 'per niente', en: 'not at all', fa: 'اصلاً نه', cat: 'informale', pos: 'loc.', ex: 'Non mi dispiace per niente.' },
+        { it: 'un casino', en: 'a mess, a ton (slang)', fa: 'یه عالمه / شلوغی زیاد (عامیانه)', cat: 'informale', pos: 'espr.', ex: 'C\'era un casino di gente alla festa.' },
+        { it: 'sul serio', en: 'seriously, for real', fa: 'جدی جدی', cat: 'informale', pos: 'loc.', ex: 'Dici sul serio o stai scherzando?' },
+
+        /* ── Stati d'animo (11) ── */
+        { it: 'stanco morto', en: 'dead tired', fa: 'خیلی خسته', cat: 'stati', pos: 'loc.', ex: 'Sono stanco morto, me ne vado a dormire.' },
+        { it: 'di malumore', en: 'in a bad mood', fa: 'بدخلق / بداخلاق', cat: 'stati', pos: 'loc.', ex: 'Oggi è di malumore, meglio non disturbarlo.' },
+        { it: 'giù di morale', en: 'down, in low spirits', fa: 'روحیه‌اش پایینه', cat: 'stati', pos: 'loc.', ex: 'Sono un po\' giù di morale ultimamente.' },
+        { it: 'su di giri', en: 'hyped up, in high spirits', fa: 'پر انرژی و هیجان‌زده', cat: 'stati', pos: 'loc.', ex: 'Oggi è molto su di giri, ha superato l\'esame!' },
+        { it: 'tranquillo', en: 'calm, relaxed', fa: 'آروم', cat: 'stati', pos: 'agg.', ex: 'Statevene tranquilli, ci penso io.' },
+        { it: 'nervoso', en: 'nervous, on edge', fa: 'عصبی', cat: 'stati', pos: 'agg.', ex: 'Sono un po\' nervoso prima degli esami.' },
+        { it: 'esausto', en: 'exhausted', fa: 'خسته و بی‌رمق', cat: 'stati', pos: 'agg.', ex: 'Dopo il trasloco ero esausto: non ce la facevo più.' },
+        { it: 'di buon umore', en: 'in a good mood', fa: 'خوش‌خلق', cat: 'stati', pos: 'loc.', ex: 'Oggi sono proprio di buon umore.' },
+        { it: 'agitato', en: 'agitated, anxious', fa: 'مضطرب', cat: 'stati', pos: 'agg.', ex: 'Era agitato prima del colloquio.' },
+        { it: 'a pezzi', en: 'shattered, worn out', fa: 'داغون / از پا افتاده', cat: 'stati', pos: 'loc.', ex: 'Dopo la maratona ero a pezzi.' },
+        { it: 'in ansia', en: 'anxious, worried', fa: 'نگران و مضطرب', cat: 'stati', pos: 'loc.', ex: 'Sono in ansia per i risultati.' }
+      ]
+    },
+
+    guided: {
+      title: 'Costruiamo insieme un verbo pronominale',
+      intro: 'Domande in ordine: qual è il verbo pronominale giusto per il significato? Ha bisogno di essere o avere al passato? I pronomi sono nell\'ordine giusto (ci/ne prima di la)?',
+      steps: [
+        {
+          prompt: 'Traduci: "I made it! (I succeeded)"',
+          think: 'Il significato è "riuscire", non "fare" letteralmente → serve farcela. Presente, io.',
+          answer: "Ce l'ho fatta!",
+          why: 'Al passato prossimo "ce la" diventa "ce l\'" davanti a "ho"; participio "fatta" invariabile.'
+        },
+        {
+          prompt: 'Traduci: "He left without saying anything." (lui)',
+          think: 'Andare via con enfasi → andarsene. Ausiliare essere, soggetto maschile singolare.',
+          answer: "Se n'è andato senza dire niente.",
+          why: 'Riflessivo se + ne + è + andato: tutti gli elementi in ordine fisso.'
+        },
+        {
+          prompt: 'Completa: "Non preoccuparti, ___ ___ caviamo." (noi)',
+          think: 'Cavarsela = to cope/get by. Presente, noi: pronome riflessivo ce + la + caviamo.',
+          answer: 'Non preoccuparti, ce la caviamo.',
+          why: 'ce la caviamo — riflessivo ci → ce davanti a la.'
+        },
+        {
+          prompt: 'Traduci: "It takes two hours to get there."',
+          think: '"Due ore" è plurale → volerci va al plurale: ci vogliono, non ci vuole.',
+          answer: 'Ci vogliono due ore per arrivare.',
+          why: 'Volerci si accorda col "soggetto" che segue: singolare → vuole, plurale → vogliono.'
+        },
+        {
+          prompt: 'Traduci: "She got offended and took it out on me." (lei)',
+          think: 'Prendersela = to take offense; prendersela con qualcuno = to take it out on someone. Passato con essere.',
+          answer: "Si è offesa e se l'è presa con me.",
+          why: 'se l\'è presa: se + la (elisa in l\') + è + presa, accordo femminile.'
+        },
+        {
+          prompt: 'Traduci: "I don\'t feel up to going out tonight."',
+          think: 'Sentirsela di + infinito, quasi sempre negativo. Presente, io.',
+          answer: 'Non me la sento di uscire stasera.',
+          why: 'me la sento di + infinito: la struttura fissa per esprimere "non ho la forza/voglia di".'
+        }
+      ]
+    },
+
+    exercises: {
+      mc: [
+        { q: 'Cosa significa "farcela"?', options: ['fare qualcosa insieme', 'riuscire, farcela con successo', 'andare via', 'non curarsi di qualcosa'], answer: 1, hint: 'pensa a "I made it"', why: 'Farcela = riuscire in qualcosa, spesso dopo uno sforzo.' },
+        { q: 'Completa: «Dai, ___ ___ fai, manca poco!»', options: ['ci la', 'ce la', 'ti la', 'ce li'], answer: 1, hint: 'ci → ce davanti a la', why: 'Ce la fai: forma fissa di farcela.' },
+        { q: 'Passato prossimo di "me ne vado" (io):', options: ['ho me ne andato', "me ne sono andato/a", 'sono me ne andato', 'mi ne sono andato'], answer: 1, hint: 'ausiliare essere per andarsene', why: 'me ne sono andato/a — mi diventa me davanti a ne.' },
+        { q: 'Quale ausiliare usa "andarsene" al passato?', options: ['avere', 'essere', 'dipende dal soggetto', 'nessuno, resta al presente'], answer: 1, hint: 'è un composto di andare', why: 'Andarsene vuole sempre essere.' },
+        { q: 'Completa: «Non ti preoccupare, ___ ___ caviamo.»', options: ['ci la', 'ce la', 'se la', 'ce li'], answer: 1, hint: 'noi + cavarsela', why: 'ce la caviamo: ci → ce davanti a la.' },
+        { q: 'Cosa significa "fregarsene"? (colloquiale)', options: ['prendersela molto', 'non curarsi affatto di qualcosa', 'darsi molto da fare', 'sentirsi in colpa'], answer: 1, hint: 'espressione informale, un po\' scurrile', why: '"Me ne frego" = non m\'importa affatto.' },
+        { q: 'Completa: «Ci ___ due ore per arrivare in centro.»', options: ['vuole', 'vogliono', 'voglio', 'vuoi'], answer: 1, hint: '"due ore" è plurale', why: 'Con un soggetto plurale volerci va al plurale: ci vogliono.' },
+        { q: 'Completa: «Per imparare una lingua ci ___ molta pazienza.»', options: ['vuole', 'vogliono', 'voglio', 'vuoi'], answer: 0, hint: '"pazienza" è singolare', why: 'Ci vuole pazienza: singolare.' },
+        { q: 'Qual è il significato di "prendersela"?', options: ['prendere qualcosa in mano', 'offendersi, arrabbiarsi', 'partire in fretta', 'decidere qualcosa'], answer: 1, hint: 'reazione emotiva', why: 'Prendersela = to take offense/get upset.' },
+        { q: 'Completa: «Non ___ ___ sento di uscire stasera, sono stanca.»', options: ['mi la', 'me la', 'ti la', 'ce la'], answer: 1, hint: 'io + sentirsela', why: 'me la sento: mi → me davanti a la.' },
+        { q: 'Quale frase è corretta?', options: ['Se n\'è andato dalla festa presto.', 'Ha andato via dalla festa presto.', 'Se n\'ha andato dalla festa presto.', 'È andato se ne dalla festa presto.'], answer: 0, hint: 'ausiliare + ordine dei pronomi', why: 'Se n\'è andato: se + ne + è + andato.' },
+        { q: 'Participio di "farcela" (femminile, con "la"):', options: ['fatto', 'fatta', 'fatti', 'fatte'], answer: 1, hint: 'concorda sempre con "la"', why: 'Ce l\'ho fatta: fatta è sempre invariabile, anche parlando un uomo.' },
+        { q: 'Completa: «___ tranquilli, arrivo tra dieci minuti.» (voi, starsene)', options: ['Vi ne state', 'Statevene', 'Ve ne state', 'Stateve ne'], answer: 1, hint: 'imperativo, forma voi', why: 'Statevene: imperativo + pronomi attaccati.' },
+        { q: 'Cosa significa "mettercela tutta"?', options: ['mettere tutto in ordine', 'dare il massimo impegno', 'litigare con qualcuno', 'stare zitti'], answer: 1, hint: 'to give it one\'s all', why: 'Mettercela tutta = impegnarsi al massimo.' }
+      ],
+      fill: [
+        { before: 'Dai, ce la', after: ', manca poco! (fare)', answers: ['fai'], en: "Come on, you can do it, it's almost over!" },
+        { before: 'Alla fine ce l\'', after: 'fatta a finire il progetto. (avere)', answers: ['ho'], en: 'In the end I managed to finish the project.' },
+        { before: 'Si', after: 'andato senza salutare nessuno. (essere — se ne)', answers: ["n'è"], en: 'He left without saying goodbye to anyone.', hint: 'se ne + è si contrae' },
+        { before: 'Non preoccuparti, se la', after: 'benissimo da sola. (cavare)', answers: ['cava'], en: "Don't worry, she manages just fine on her own." },
+        { before: 'Tanto lui se ne', after: 'di quello che pensiamo. (fregare)', answers: ['frega'], en: "He doesn't care at all what we think." },
+        { before: 'Non', after: ', non era una critica. (prendersela — imperativo negativo)', answers: ['prendertela'], en: "Don't take it personally, it wasn't a criticism.", hint: 'imperativo negativo, tutto attaccato' },
+        { before: 'Non me la', after: 'di uscire stasera, sono troppo stanca. (sentire)', answers: ['sento'], en: "I don't feel up to going out tonight, I'm too tired." },
+        { before: 'Se ne', after: 'zitto in un angolo. (stare — imperfetto)', answers: ['stava'], en: 'He kept to himself in a corner, silent.' },
+        { before: 'Per imparare bene una lingua ci', after: 'tempo. (volere)', answers: ['vuole'], en: 'It takes time to learn a language well.' },
+        { before: 'Da qui alla stazione ci', after: 'venti minuti a piedi. (volere)', answers: ['vogliono'], en: 'It takes twenty minutes on foot from here to the station.' },
+        { before: 'Ci è', after: 'molta pazienza per convincerlo. (volere — participio)', answers: ['voluta'], en: 'It took a lot of patience to convince him.', hint: 'accordo con "pazienza", femminile' },
+        { before: 'Ce l\'', after: 'messa tutta, ma non è bastato. (avere)', answers: ['ho'], en: "I gave it my all, but it wasn't enough." }
+      ],
+      order: [
+        { words: ['Dai', 'ce', 'la', 'fai', 'manca', 'poco'], answer: 'Dai ce la fai manca poco', en: "Come on, you can do it, it's almost over." },
+        { words: ['Se', 'n\'è', 'andato', 'senza', 'salutare', 'nessuno'], answer: 'Se n\'è andato senza salutare nessuno', en: 'He left without saying goodbye to anyone.' },
+        { words: ['Non', 'preoccuparti', 'ce', 'la', 'caviamo'], answer: 'Non preoccuparti ce la caviamo', en: "Don't worry, we'll manage." },
+        { words: ['Non', 'me', 'la', 'sento', 'di', 'uscire'], answer: 'Non me la sento di uscire', en: "I don't feel up to going out." },
+        { words: ['Ci', 'vogliono', 'due', 'ore', 'per', 'arrivare'], answer: 'Ci vogliono due ore per arrivare', en: 'It takes two hours to get there.' },
+        { words: ['Non', 'prendertela', 'era', 'solo', 'uno', 'scherzo'], answer: 'Non prendertela era solo uno scherzo', en: "Don't take it personally, it was just a joke." },
+        { words: ['Ce', 'l\'ho', 'messa', 'tutta', 'oggi'], answer: 'Ce l\'ho messa tutta oggi', en: 'I gave it my all today.' }
+      ],
+      dnd: {
+        instructions: 'Questi verbi pronominali vogliono ESSERE o AVERE al passato prossimo? Trascinali nella colonna giusta.',
+        buckets: [
+          { id: 'essere', label: 'ESSERE (sono/è…)', icon: '🟢' },
+          { id: 'avere', label: 'AVERE (ho/ha…)', icon: '🔵' }
+        ],
+        items: [
+          { text: 'andarsene', bucket: 'essere' },
+          { text: 'farcela', bucket: 'avere' },
+          { text: 'cavarsela', bucket: 'essere' },
+          { text: 'prendersela', bucket: 'essere' },
+          { text: 'sentirsela', bucket: 'essere' },
+          { text: 'starsene', bucket: 'essere' },
+          { text: 'volerci', bucket: 'essere' },
+          { text: 'mettercela tutta', bucket: 'avere' },
+          { text: 'fregarsene', bucket: 'essere' },
+          { text: 'svegliarsi', bucket: 'essere' },
+          { text: 'mangiare', bucket: 'avere' },
+          { text: 'trasferirsi', bucket: 'essere' },
+          { text: 'leggere', bucket: 'avere' },
+          { text: 'accorgersi', bucket: 'essere' }
+        ]
+      },
+      match: [
+        { a: 'farcela', b: 'to manage, to make it' },
+        { a: 'andarsene', b: 'to leave, to go away' },
+        { a: 'cavarsela', b: 'to get by, to cope' },
+        { a: 'fregarsene', b: "not to care (colloquial)" },
+        { a: 'mettercela tutta', b: "to give it one's all" },
+        { a: 'prendersela', b: 'to take offense, get upset' },
+        { a: 'sentirsela', b: 'to feel up to (something)' },
+        { a: 'starsene', b: 'to stay/keep to oneself' },
+        { a: 'volerci', b: 'to take, to be needed (impersonal)' },
+        { a: 'ce l\'ho fatta', b: 'I made it / I managed' }
+      ],
+      tf: [
+        { statement: 'Farcela usa l\'ausiliare avere al passato prossimo.', answer: true, why: 'Sì: ce l\'ho fatta, ce l\'hai fatta…' },
+        { statement: 'Andarsene usa l\'ausiliare avere al passato prossimo.', answer: false, why: 'No, usa sempre essere: me ne sono andato/a.' },
+        { statement: 'Il participio di farcela concorda con il soggetto (fatto/fatta/fatti/fatte).', answer: false, why: 'No: concorda sempre con "la", quindi resta "fatta", invariabile.' },
+        { statement: 'Volerci è impersonale e si accorda col "soggetto" che segue: ci vuole/ci vogliono.', answer: true, why: 'Esatto: ci vuole tempo, ci vogliono due ore.' },
+        { statement: 'Fregarsene è un\'espressione molto formale, adatta a un\'email di lavoro.', answer: false, why: 'No, è colloquiale/informale: da evitare in contesti formali.' },
+        { statement: 'Prendersela con qualcuno significa "arrabbiarsi con qualcuno e sfogarsi su di lui".', answer: true, why: 'Sì, esattamente questo significa.' },
+        { statement: 'Sentirsela si usa quasi sempre in frasi affermative entusiaste.', answer: false, why: 'No: è molto più comune in frasi negative (non me la sento di…).' },
+        { statement: 'Nei verbi pronominali, mi/ti/si/vi diventano me/te/se/ve davanti a lo/la/li/le/ne.', answer: true, why: 'Sì, è la stessa regola dei pronomi combinati (unità 9).' }
+      ],
+      translate: [
+        { en: "I made it! (I managed / succeeded)", answers: ["Ce l'ho fatta!"] },
+        { en: 'He left without saying anything.', answers: ["Se n'è andato senza dire niente", "Se n'è andato senza dire nulla"] },
+        { en: "Don't worry, we'll manage.", answers: ['Non preoccuparti ce la caviamo', 'Non ti preoccupare ce la caviamo'] },
+        { en: "He doesn't care at all.", answers: ['Se ne frega completamente', 'Non gliene importa niente'] },
+        { en: 'It takes two hours to get there.', answers: ['Ci vogliono due ore per arrivare'] },
+        { en: "I don't feel up to going out tonight.", answers: ['Non me la sento di uscire stasera'] },
+        { en: 'She got offended and took it out on me.', answers: ["Si è offesa e se l'è presa con me"] },
+        { en: 'I gave it my all.', answers: ["Ce l'ho messa tutta"] },
+        { en: 'It takes patience.', answers: ['Ci vuole pazienza'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Un esame difficile',
+      intro: 'Due amiche parlano di un esame appena finito: nota quanti verbi pronominali usano senza nemmeno accorgersene.',
+      lines: [
+        { speaker: 'Giulia', icon: '👩', it: 'Allora, com\'è andato l\'esame? Ce l\'hai fatta?', en: 'So, how did the exam go? Did you make it?',
+          glosses: [{ term: "Ce l'hai fatta", expl: 'Farcela al passato prossimo: participio "fatta" invariabile.' }] },
+        { speaker: 'Elena', icon: '👩', side: 'right', it: 'Boh, non lo so ancora, ma ce l\'ho messa tutta.', en: "I dunno yet, but I gave it my all.",
+          glosses: [{ term: "ce l'ho messa tutta", expl: 'Mettercela tutta: dare il massimo impegno.' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'Dai, tranquilla, vedrai che te la cavi bene come sempre.', en: 'Come on, relax, you\'ll see you\'ll manage just fine as always.',
+          glosses: [{ term: 'te la cavi', expl: 'Cavarsela al presente: to get by, to cope.' }] },
+        { speaker: 'Elena', icon: '👩', side: 'right', it: 'Speriamo. All\'inizio ero così agitata che non me la sentivo nemmeno di entrare.', en: "I hope so. At first I was so nervous I didn't even feel up to going in.",
+          glosses: [{ term: 'non me la sentivo', expl: 'Sentirsela all\'imperfetto: non avere la forza/voglia di fare qualcosa.' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'E il professore? È stato severo?', en: 'And the professor? Was he strict?',
+          glosses: [] },
+        { speaker: 'Elena', icon: '👩', side: 'right', it: 'Per niente, se n\'è fregato completamente delle mie pause e mi ha lasciato pensare con calma.', en: 'Not at all, he didn\'t care at all about my pauses and let me think calmly.',
+          glosses: [{ term: "se n'è fregato", expl: 'Fregarsene al passato prossimo: non curarsi di qualcosa.' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'Meno male. E quanto ci è voluto in totale?', en: 'Thank goodness. And how long did it take in total?',
+          glosses: [{ term: "ci è voluto", expl: 'Volerci al passato prossimo, impersonale: ci è voluto/a + tempo.' }] },
+        { speaker: 'Elena', icon: '👩', side: 'right', it: 'Ci sono volute quasi due ore! Alla fine ero a pezzi, me ne sono andata subito a casa.', en: 'It took almost two hours! In the end I was exhausted, I left for home right away.',
+          glosses: [{ term: 'Ci sono volute', expl: 'Volerci al plurale: "due ore" richiede "sono volute".' }, { term: "me ne sono andata", expl: 'Andarsene al passato prossimo, ausiliare essere, accordo femminile.' }] },
+        { speaker: 'Giulia', icon: '👩', it: 'Fai bene. Ora rilassati e non pensarci più.', en: "Good for you. Now relax and don't think about it anymore.",
+          glosses: [] },
+        { speaker: 'Elena', icon: '👩', side: 'right', it: 'Hai ragione. Comunque, qualunque cosa succeda, ormai ce l\'ho fatta a superare la paura più grande.', en: 'You\'re right. Anyway, whatever happens, I already managed to overcome my biggest fear.',
+          glosses: [{ term: "ce l'ho fatta", expl: 'Farcela: riuscire in qualcosa di difficile, con "a + infinito".' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'farcela', back: 'to manage, to make it', note: "ce la faccio · ce l'ho fatta" },
+      { front: 'andarsene', back: 'to leave, to go away', note: 'me ne vado · me ne sono andato/a' },
+      { front: 'cavarsela', back: 'to get by, to cope', note: 'me la cavo · me la sono cavato/a' },
+      { front: 'fregarsene', back: "not to care at all (colloquial)", note: 'me ne frego' },
+      { front: 'mettercela tutta', back: "to give it one's all", note: "ce la metto tutta" },
+      { front: 'prendersela', back: 'to take offense, to get upset', note: 'me la prendo · con qualcuno' },
+      { front: 'sentirsela', back: 'to feel up to something', note: 'non me la sento di…' },
+      { front: 'starsene', back: 'to stay/keep to oneself', note: 'se ne stava zitto' },
+      { front: 'volerci', back: 'it takes, it is needed', note: 'ci vuole tempo · ci vogliono due ore' },
+      { front: 'ci vuole vs ci vogliono', back: 'singolare vs plurale', note: 'accordo col "soggetto" che segue' },
+      { front: 'ci → ce, mi → me', back: 'davanti a lo/la/li/le/ne', note: 'stessa regola dell\'unità 9' },
+      { front: 'participio di farcela', back: 'sempre "fatta"', note: 'concorda con "la", non con il soggetto' },
+      { front: 'andarsene: ausiliare?', back: 'sempre essere', note: 'anche se non sembra riflessivo a prima vista' }
+    ],
+
+    summary: {
+      formula: '(mi/ti/si/ci/vi/si → me/te/se/ce/ve/se) + (ce/ne/la) + VERBO — un blocco fisso da imparare a memoria, verbo per verbo.',
+      rules: [
+        'I verbi pronominali combinano un verbo base con ci/ne/la in modo fisso: il significato non si deduce dalle parti.',
+        'Mi/ti/si/ci/vi/si diventano me/te/se/ce/ve/se davanti a lo/la/li/le/ne — regola già vista nei pronomi combinati (unità 9).',
+        'Farcela, mettercela tutta → ausiliare avere; il participio di farcela concorda sempre con "la": fatta.',
+        'Andarsene, cavarsela, prendersela, sentirsela, starsene, fregarsene → ausiliare essere; il participio concorda col soggetto.',
+        'Volerci è impersonale: ci vuole + singolare, ci vogliono + plurale; al passato ci è voluto/a, ci sono voluti/e.',
+        'Non confondere volerci (impersonale) con volere (soggetto persona): "ci vuole tempo" vs "voglio tempo libero".',
+        'Sono verbi essenziali del parlato informale: impara ogni verbo come un blocco unico, con tutte le sue forme.'
+      ],
+      tips: [
+        'Non tradurre parola per parola: impara ogni verbo pronominale come faresti con un\'espressione idiomatica intera.',
+        'Ascolta serie TV o podcast italiani: questi verbi ricorrono continuamente in dialoghi naturali.',
+        'Fatti una lista personale con le 5 espressioni che usi di più (es. "ce la faccio", "non me la sento") e usale ogni giorno.',
+        'Se un verbo pronominale ha "la" nella forma, il participio al passato è quasi sempre invariabile in -a (fatta, cavata, presa).'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>

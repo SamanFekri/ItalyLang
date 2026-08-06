@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Il periodo ipotetico italiano: i tre tipi di frase con «se» — reale, possibile e impossibile — con congiuntivo imperfetto, congiuntivo trapassato e condizionale.">
+  <title>Periodo Ipotetico · Italiano B1</title>
+  <link rel="stylesheet" href="../assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇹</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>window.ITA_LEVEL = 'B1';</script>
+  <script src="lessons.js"></script>
+  <script src="../assets/app.js?v=8"></script>
+  <script src="../assets/components.js?v=8"></script>
+  <script src="../assets/exercises.js?v=8"></script>
+  <script src="../assets/lesson.js?v=8"></script>
+
+  <script>
+  /* ==========================================================================
+     UNITÀ 8 — PERIODO IPOTETICO
+     ========================================================================== */
+  window.LESSON = {
+    num: 8, file: '08-periodo-ipotetico.html', icon: '🎲', title: 'Periodo Ipotetico', group: 'Strutture avanzate',
+    subtitle: 'Se… allora: i tre tipi di ipotesi, dal reale all\'impossibile.',
+
+    intro: {
+      what: 'Il periodo ipotetico è la frase che collega una condizione introdotta da <b>se</b> a una conseguenza. In italiano esistono <b>tre tipi</b>, secondo quanto la condizione è realistica: reale (tipo 1), possibile ma irreale (tipo 2), impossibile perché ormai passata (tipo 3). Ogni tipo ha una sua coppia fissa di tempi/modi che non si può mescolare a caso.',
+      when: 'Ogni volta che parli di condizioni: promesse realistiche («Se piove, resto a casa»), sogni e desideri non realizzabili ora («Se avessi più tempo, viaggerei»), o rimpianti su cose che non sono successe («Se avessi studiato, avrei superato l\'esame»).',
+      why: 'È una delle strutture più controllate agli esami B1/B2 perché mette insieme tutto quello che hai già imparato: il congiuntivo imperfetto (unità 4) e il condizionale passato (unità 2). Senza il periodo ipotetico non puoi esprimere in modo corretto ipotesi, rimpianti o consigli condizionati.',
+      mistakes: [
+        'Usare il condizionale anche nella frase con «se»: ❌ "Se avrei tempo, verrei" → ✅ "Se avessi tempo, verrei".',
+        'Mescolare i tempi dei tre tipi: ❌ "Se avessi tempo, sarei venuto" (misto tipo 2/3) → serve coerenza: tutto tipo 2 o tutto tipo 3.',
+        'Usare l\'indicativo presente per un\'ipotesi irreale: ❌ "Se ho tempo, verrei" (tipo 1 nella condizione, tipo 2 nella conseguenza) → ✅ "Se avessi tempo, verrei".',
+        'Dimenticare che nel tipo 3 il congiuntivo trapassato si forma con l\'imperfetto congiuntivo di essere/avere: ❌ "Se ho studiato" → ✅ "Se avessi studiato".'
+      ]
+    },
+
+    objectives: [
+      'Riconoscere e usare i <b>tre tipi</b> di periodo ipotetico italiano.',
+      'Formare il <b>congiuntivo trapassato</b> (fossi/avessi + participio) per il tipo 3.',
+      'Collegare il tipo 2 al congiuntivo imperfetto (unità 4) e il tipo 3 al condizionale passato (unità 2).',
+      'Evitare l\'errore più comune: il condizionale nella frase con «se».',
+      'Riconoscere le forme colloquiali (imperfetto indicativo al posto del congiuntivo) senza usarle in un contesto formale.',
+      'Spostare liberamente la conclusione prima o dopo la frase con «se».'
+    ],
+
+    formulas: [
+      {
+        label: 'Tipo 1 — Reale / possibile',
+        rows: [
+          { parts: [
+              { text: 'SE', type: 'subject' },
+              { text: 'presente indicativo', note: 'condizione', type: 'verb' },
+              { text: 'presente o futuro indicativo', note: 'conseguenza', type: 'object' }
+            ], example: 'Se piove, resto a casa.', translation: 'If it rains, I stay home.' }
+        ]
+      },
+      {
+        label: 'Tipo 2 — Possibile ma irreale (ora)',
+        rows: [
+          { parts: [
+              { text: 'SE', type: 'subject' },
+              { text: 'congiuntivo imperfetto', note: 'condizione, unità 4', type: 'verb' },
+              { text: 'condizionale presente', note: 'conseguenza', type: 'object' }
+            ], example: 'Se avessi tempo, verrei.', translation: 'If I had time, I would come.' }
+        ]
+      },
+      {
+        label: 'Tipo 3 — Impossibile (ipotesi nel passato)',
+        rows: [
+          { parts: [
+              { text: 'SE', type: 'subject' },
+              { text: 'congiuntivo trapassato', note: 'condizione, fossi/avessi + participio', type: 'verb' },
+              { text: 'condizionale passato', note: 'conseguenza, unità 2', type: 'object' }
+            ], example: 'Se avessi studiato, avrei superato l\'esame.', translation: 'If I had studied, I would have passed the exam.' }
+        ]
+      },
+      {
+        label: 'Il congiuntivo trapassato si forma così',
+        rows: [
+          { parts: [
+              { text: 'FOSSI / AVESSI', note: 'congiuntivo imperfetto di essere/avere', type: 'verb' },
+              { text: 'PARTICIPIO PASSATO', note: 'stesso participio di sempre', type: 'object' }
+            ], example: 'Se fossi arrivato prima… / Se avessi saputo…', translation: 'If I had arrived earlier… / If I had known…' }
+        ]
+      }
+    ],
+    formulaNote: 'Trucco per ricordare i tre tipi: più l\'ipotesi è lontana dalla realtà, più il verbo "arretra" nel tempo. Tipo 1 = presente. Tipo 2 = imperfetto (congiuntivo). Tipo 3 = trapassato (congiuntivo). La conseguenza segue lo stesso passo: presente/futuro → condizionale presente → condizionale passato.',
+
+    rules: [
+      {
+        title: 'Tipo 1 — la condizione reale',
+        body: 'Si usa quando la condizione è realistica: può ancora succedere, o è una regola generale.',
+        points: [
+          'Se + <b>presente indicativo</b>, presente o futuro indicativo: «Se piove, resto a casa» / «Se piove, resterò a casa».',
+          'Anche l\'imperativo è possibile nella conseguenza: «Se hai freddo, chiudi la finestra».',
+          'Copre anche verità generali e abitudini: «Se studi, impari» (sempre vero).',
+          'È il tipo più semplice: nessun congiuntivo, nessun condizionale nella condizione.'
+        ],
+        exception: 'Con il futuro in entrambe le frasi («Se pioverà, resterò a casa») la frase è accettata ma meno comune del presente + futuro; l\'italiano preferisce il presente nella condizione anche quando l\'azione è futura.'
+      },
+      {
+        title: 'Tipo 2 — la condizione possibile ma irreale',
+        body: 'Si usa per ipotesi che, nel presente, non sono vere (o sono molto improbabili), ma restano immaginabili.',
+        points: [
+          'Se + <b>congiuntivo imperfetto</b>, condizionale presente: «Se avessi tempo, verrei» (non ho tempo, adesso).',
+          'Il congiuntivo imperfetto è esattamente quello dell\'unità 4: fossi, avessi, parlassi, credessi, dormissi…',
+          'Tipico dei sogni e desideri: «Se vincessi alla lotteria, comprerei una casa».',
+          'Anche i consigli ipotetici: «Se fossi in te, non lo farei» (non sono in te, è impossibile per definizione, ma la struttura è la stessa).'
+        ],
+        exception: 'Con «se fossi in te / al posto tuo» il tipo 2 è sempre corretto anche se logicamente impossibile: è una forma fissa per dare consigli.'
+      },
+      {
+        title: 'Tipo 3 — la condizione impossibile, nel passato',
+        body: 'Si usa per ipotesi sul passato che non si sono realizzate: è ormai troppo tardi perché accadano.',
+        points: [
+          'Se + <b>congiuntivo trapassato</b>, condizionale passato: «Se avessi studiato, avrei superato l\'esame» (non ho studiato, non ho superato l\'esame).',
+          'Il congiuntivo trapassato = congiuntivo imperfetto di essere/avere (unità 4) + participio passato: fossi andato, avessi mangiato.',
+          'La conseguenza è il condizionale passato dell\'unità 2: avrei fatto, sarei andato.',
+          'Con essere il participio concorda: «Se Maria fosse partita prima, non avrebbe perso il treno».'
+        ],
+        exception: 'È possibile mescolare tipo 2 e tipo 3 quando la condizione è nel passato ma la conseguenza dura ancora oggi: «Se avessi studiato medicina, ora sarei un medico» (condizione trapassata, conseguenza al condizionale presente perché riguarda l\'oggi).'
+      },
+      {
+        title: 'L\'errore numero uno: il condizionale nella frase con «se»',
+        body: 'In italiano standard il condizionale <b>non entra mai</b> nella frase introdotta da «se».',
+        points: [
+          '❌ «Se avrei tempo, verrei» → ✅ «Se avessi tempo, verrei».',
+          '❌ «Se sarei stato ricco, avrei viaggiato» → ✅ «Se fossi stato ricco, avrei viaggiato».',
+          'Lo commettono spesso anche italiani madrelingua nel parlato informale: capirlo è utile, ma all\'esame va sempre corretto.',
+          'Il condizionale vive solo nella <b>conseguenza</b>, mai nella condizione con «se».'
+        ],
+        exception: 'Nessuna eccezione in italiano standard scritto: la regola non ammette il condizionale dopo «se» ipotetico (diverso da «se» nel senso di "non so se…", che regge l\'indicativo o il congiuntivo dubitativo, non il condizionale).'
+      },
+      {
+        title: 'Le forme colloquiali dell\'italiano parlato',
+        body: 'Nel parlato informale, soprattutto al Nord Italia, si sente spesso l\'<b>imperfetto indicativo</b> al posto del congiuntivo, in entrambe le frasi.',
+        points: [
+          'Colloquiale: «Se avevo tempo, venivo» (invece di «Se avessi avuto tempo, sarei venuto»).',
+          'È molto comune nel parlato quotidiano e nei tipi 2 e 3 mescolati insieme.',
+          'Va riconosciuto quando lo senti, ma <b>non</b> va usato nello scritto o in un contesto formale/d\'esame.',
+          'La forma standard resta sempre congiuntivo (condizione) + condizionale (conseguenza).'
+        ],
+        exception: 'Fa eccezione solo il tipo 1, dove l\'indicativo è già la forma corretta e standard: lì non c\'è nulla di "colloquiale".'
+      },
+      {
+        title: 'L\'ordine delle due frasi è libero',
+        body: 'La conclusione può stare prima o dopo la frase con «se», senza cambiare il significato.',
+        points: [
+          '«Se piove, resto a casa.» = «Resto a casa se piove.»',
+          '«Se avessi tempo, verrei.» = «Verrei, se avessi tempo.»',
+          '«Se avessi studiato, avrei superato l\'esame.» = «Avrei superato l\'esame, se avessi studiato.»',
+          'Quando la conclusione viene prima, di solito non serve la virgola; quando viene dopo la frase con «se», la virgola è quasi sempre presente.'
+        ],
+        exception: 'Nell\'italiano parlato molto rapido si può anche omettere «se» e invertire soggetto e verbo in forme letterarie («Fosse stato per me, saremmo già partiti»), ma è un registro alto, non necessario al B1.'
+      }
+    ],
+
+    timeline: {
+      title: 'I tre tipi sulla linea della probabilità',
+      intro: 'Immagina una scala: più scendi, più l\'ipotesi si allontana dalla realtà, e più il verbo "arretra" verso il passato.',
+      points: [
+        { time: 'Tipo 1', label: 'Reale / possibile', example: 'Se piove, resto a casa.', note: 'presente + presente/futuro' },
+        { time: 'Tipo 2', label: 'Possibile ma irreale', example: 'Se avessi tempo, verrei.', note: 'congiuntivo imperfetto + condizionale presente' },
+        { time: 'Tipo 3', label: 'Impossibile, nel passato', example: 'Se avessi studiato, avrei superato l\'esame.', note: 'congiuntivo trapassato + condizionale passato' },
+        { time: 'Adesso', label: 'La regola generale', example: 'Il condizionale non entra mai dopo "se".', now: true }
+      ],
+      caption: 'Confronto chiave: «Se piove» (può ancora succedere) vs «Se avessi tempo» (non ce l\'ho ora) vs «Se avessi studiato» (non l\'ho fatto, è finita).'
+    },
+
+    tables: [
+      {
+        title: 'I tre tipi a confronto',
+        note: 'La regola d\'oro: mai condizionale dopo "se".',
+        columns: ['Tipo', 'Condizione (dopo SE)', 'Conseguenza', 'Esempio'],
+        rows: [
+          { cells: ['1 — reale', 'presente indicativo', 'presente / futuro indicativo', 'Se studi, impari.'] },
+          { cells: ['2 — irreale', 'congiuntivo imperfetto', 'condizionale presente', 'Se studiassi, impareresti.'], irregular: [1] },
+          { cells: ['3 — impossibile', 'congiuntivo trapassato', 'condizionale passato', 'Se avessi studiato, avresti imparato.'], irregular: [1] }
+        ]
+      },
+      {
+        title: 'Congiuntivo imperfetto — ripasso dall\'unità 4',
+        note: 'Serve per il tipo 2. Essere e avere sono irregolari.',
+        columns: ['Persona', 'essere', 'avere', 'parlare'],
+        rows: [
+          { cells: ['io', 'fossi', 'avessi', 'parlassi'] },
+          { cells: ['tu', 'fossi', 'avessi', 'parlassi'] },
+          { cells: ['lui / lei', 'fosse', 'avesse', 'parlasse'] },
+          { cells: ['noi', 'fossimo', 'avessimo', 'parlassimo'] },
+          { cells: ['voi', 'foste', 'aveste', 'parlaste'] },
+          { cells: ['loro', 'fossero', 'avessero', 'parlassero'] }
+        ]
+      },
+      {
+        title: 'Congiuntivo trapassato — fossi/avessi + participio',
+        note: 'Si forma con il congiuntivo imperfetto dell\'ausiliare più il participio passato. Serve per il tipo 3.',
+        columns: ['Persona', 'Con AVERE — studiare', 'Con ESSERE — partire'],
+        rows: [
+          { cells: ['io', 'avessi studiato', 'fossi partito/a'] },
+          { cells: ['tu', 'avessi studiato', 'fossi partito/a'] },
+          { cells: ['lui / lei', 'avesse studiato', 'fosse partito/a'] },
+          { cells: ['noi', 'avessimo studiato', 'fossimo partiti/e'] },
+          { cells: ['voi', 'aveste studiato', 'foste partiti/e'] },
+          { cells: ['loro', 'avessero studiato', 'fossero partiti/e'] }
+        ]
+      },
+      {
+        title: 'La conseguenza nei tre tipi',
+        columns: ['Tipo', 'Tempo della conseguenza', 'Esempio'],
+        rows: [
+          { cells: ['1', 'presente o futuro indicativo', 'resto / resterò a casa'] },
+          { cells: ['2', 'condizionale presente', 'verrei'] },
+          { cells: ['3', 'condizionale passato', 'avrei superato l\'esame'] }
+        ]
+      },
+      {
+        title: 'Standard vs colloquiale (solo per riconoscere, non per imitare)',
+        note: 'Nel parlato informale l\'imperfetto indicativo sostituisce spesso congiuntivo e condizionale.',
+        columns: ['Registro', 'Frase', 'Nota'],
+        rows: [
+          { cells: ['Standard', 'Se avessi saputo, sarei venuto.', 'congiuntivo trapassato + condizionale passato'] },
+          { cells: ['Colloquiale', 'Se sapevo, venivo.', 'imperfetto indicativo in entrambe le frasi — evita nello scritto'] },
+          { cells: ['Standard', 'Se avessi tempo, verrei.', 'congiuntivo imperfetto + condizionale presente'] },
+          { cells: ['Colloquiale', 'Se avevo tempo, venivo.', 'stessa idea, registro informale'] }
+        ]
+      },
+      {
+        title: 'Ordine libero: conseguenza prima o dopo',
+        columns: ['Conseguenza + se', 'Se + condizione', 'Significato'],
+        rows: [
+          { cells: ['Resto a casa se piove.', 'Se piove, resto a casa.', 'identico'] },
+          { cells: ['Verrei se avessi tempo.', 'Se avessi tempo, verrei.', 'identico'] },
+          { cells: ['Avrei chiamato se avessi saputo.', 'Se avessi saputo, avrei chiamato.', 'identico'] }
+        ]
+      }
+    ],
+
+    examples: [
+      { it: 'Se piove, resto a casa.', literal: 'If it-rains, I-stay at home.', natural: "If it rains, I'll stay home.", note: 'Tipo 1: presente + presente. Condizione realistica.' },
+      { it: 'Se domani piove, resterò a casa.', literal: 'If tomorrow it-rains, I-will-stay at home.', natural: "If it rains tomorrow, I will stay home.", note: 'Tipo 1: presente nella condizione, futuro nella conseguenza.' },
+      { it: 'Se hai fame, mangia qualcosa.', literal: 'If you-have hunger, eat something.', natural: "If you're hungry, eat something.", note: 'Tipo 1 con imperativo nella conseguenza.' },
+      { it: 'Se studi ogni giorno, impari più in fretta.', literal: 'If you-study every day, you-learn more in-a-hurry.', natural: 'If you study every day, you learn faster.', note: 'Tipo 1: verità generale, non un fatto specifico.' },
+      { it: 'Se avessi tempo, verrei con voi.', literal: 'If I-had time, I-would-come with you.', natural: 'If I had time, I would come with you.', note: 'Tipo 2: congiuntivo imperfetto (unità 4) + condizionale presente.' },
+      { it: 'Se fossi in te, non accetterei quel lavoro.', literal: 'If I-were in you, not I-would-accept that job.', natural: "If I were you, I wouldn't accept that job.", note: 'Formula fissa del consiglio: se fossi in te / al posto tuo.' },
+      { it: 'Se vincessi alla lotteria, comprerei una casa al mare.', literal: 'If I-won at-the lottery, I-would-buy a house at-the sea.', natural: 'If I won the lottery, I would buy a house by the sea.', note: 'Tipo 2: sogno o desiderio irrealizzato ora.' },
+      { it: 'Se non fosse così tardi, uscirei volentieri.', literal: 'If not it-were so late, I-would-go-out gladly.', natural: "If it weren't so late, I would gladly go out.", note: 'essere al congiuntivo imperfetto: fosse.' },
+      { it: 'Se avessi studiato di più, avrei superato l\'esame.', literal: 'If I-had studied more, I-would-have passed the exam.', natural: 'If I had studied more, I would have passed the exam.', note: 'Tipo 3: congiuntivo trapassato + condizionale passato (unità 2).' },
+      { it: 'Se Maria fosse partita prima, non avrebbe perso il treno.', literal: 'If Maria were left before, not she-would-have lost the train.', natural: "If Maria had left earlier, she wouldn't have missed the train.", note: 'partire → essere; il participio concorda: fosse partita.' },
+      { it: 'Se avessi saputo che venivi, avrei preparato la cena.', literal: 'If I-had known that you-were-coming, I-would-have prepared the dinner.', natural: 'If I had known you were coming, I would have made dinner.', note: 'Congiuntivo trapassato di sapere: avessi saputo.' },
+      { it: 'Non avrei preso quella decisione se avessi avuto un\'altra scelta.', literal: 'Not I-would-have taken that decision if I-had had an other choice.', natural: "I wouldn't have made that decision if I'd had another choice.", note: 'Ordine libero: la conseguenza viene prima della frase con "se".' },
+      { it: 'Se avessi studiato medicina, ora sarei un medico.', literal: 'If I-had studied medicine, now I-would-be a doctor.', natural: 'If I had studied medicine, I would be a doctor now.', note: 'Misto: condizione al trapassato, conseguenza al condizionale presente perché riguarda l\'oggi.' },
+      { it: 'Se avessi più coraggio, cambierei lavoro domani stesso.', literal: 'If I-had more courage, I-would-change job tomorrow itself.', natural: "If I had more courage, I would change jobs tomorrow.", note: 'Tipo 2: irreale ma proiettato sul futuro immediato.' },
+      { it: '❌ Se avrei tempo, verrei. → ✅ Se avessi tempo, verrei.', literal: '(wrong) if I-would-have time / (right) if I-had time.', natural: "The 'se' clause never takes the conditional.", note: 'L\'errore più comune del periodo ipotetico.' },
+      { it: 'Se mi avessi avvisato, non sarei venuto in ritardo.', literal: 'If me you-had warned, not I-would-be come in late.', natural: "If you had warned me, I wouldn't have come late.", note: 'Congiuntivo trapassato con pronome: mi avessi avvisato.' },
+      { it: 'Resterei volentieri se non avessi già un altro impegno.', literal: 'I-would-stay gladly if not I-had already another commitment.', natural: "I would gladly stay if I didn't already have another commitment.", note: 'Ordine libero: conseguenza prima, condizione dopo.' },
+      { it: 'Se non ci fossimo persi, saremmo arrivati in tempo.', literal: 'If not us we-were lost, we-would-be arrived in time.', natural: "If we hadn't gotten lost, we would have arrived on time.", note: 'perdersi → essere; participio plurale: persi.' }
+    ],
+
+    mistakes: [
+      { wrong: 'Se avrei tempo, verrei.', right: 'Se avessi tempo, verrei.', why: 'Il condizionale non entra mai nella frase con "se": serve il congiuntivo imperfetto.' },
+      { wrong: 'Se sarei stato ricco, avrei viaggiato di più.', right: 'Se fossi stato ricco, avrei viaggiato di più.', why: 'Tipo 3: nella condizione va il congiuntivo trapassato, non il condizionale passato.' },
+      { wrong: 'Se ho tempo, verrei.', right: 'Se avessi tempo, verrei. (oppure: Se ho tempo, vengo.)', why: 'Non si mescola il presente indicativo (tipo 1) con il condizionale (tipo 2): scegli un solo tipo.' },
+      { wrong: 'Se avessi tempo, sarei venuto.', right: 'Se avessi avuto tempo, sarei venuto. (oppure: Se avessi tempo, verrei.)', why: 'Non si mescolano tipo 2 e tipo 3: condizione e conseguenza devono restare coerenti.' },
+      { wrong: 'Se piovesse, resto a casa.', right: 'Se piove, resto a casa. (oppure: Se piovesse, resterei a casa.)', why: 'Se la condizione è realistica (tipo 1), niente congiuntivo: presente + presente.' },
+      { wrong: 'Se ho studiato, avrei superato l\'esame.', right: 'Se avessi studiato, avrei superato l\'esame.', why: 'Il congiuntivo trapassato, non il passato prossimo, introduce l\'ipotesi impossibile.' },
+      { wrong: 'Se Maria era partita prima, non perdeva il treno. (in un contesto formale)', right: 'Se Maria fosse partita prima, non avrebbe perso il treno.', why: 'L\'imperfetto indicativo per il congiuntivo/condizionale è solo colloquiale, non standard.' },
+      { wrong: 'Se fossi in te non accetto quel lavoro.', right: 'Se fossi in te, non accetterei quel lavoro.', why: 'La conseguenza di "se fossi in te" va sempre al condizionale presente.' },
+      { wrong: 'Se avessi saputo, sarei venuta, se non ero già occupata.', right: 'Sarei venuta se avessi saputo, ma ero già occupata.', why: 'Nella stessa frase non si accumulano due "se" con valori diversi: meglio separare le idee.' },
+      { wrong: 'Se lui avesse chiamato prima avrebbe saputo la verità lui.', right: 'Se avesse chiamato prima, avrebbe saputo la verità.', why: 'Il soggetto ripetuto alla fine è ridondante: il verbo alla terza persona basta.' }
+    ],
+
+    vocab: {
+      title: 'Vocabolario — scelte, opportunità e conseguenze (60 parole)',
+      intro: 'Il periodo ipotetico vive di decisioni: cosa faresti, cosa avresti fatto, cosa succede se scegli una strada o l\'altra. Ecco il lessico delle scelte, delle occasioni e delle loro conseguenze, con italiano, inglese, farsi (فارسی) ed esempio, spesso al periodo ipotetico.',
+      categories: [
+        { id: 'scelte', label: 'Scelte', icon: '🔀' },
+        { id: 'opportunita', label: 'Opportunità', icon: '🌟' },
+        { id: 'conseguenze', label: 'Conseguenze', icon: '⛓️' },
+        { id: 'rischio', label: 'Rischio e sicurezza', icon: '⚠️' },
+        { id: 'condizioni', label: 'Condizioni', icon: '🧩' },
+        { id: 'espr', label: 'Espressioni', icon: '✨' }
+      ],
+      words: [
+        /* ── Scelte (11) ── */
+        { it: 'la scelta', en: 'choice', fa: 'انتخاب', cat: 'scelte', pos: 'f.', ex: 'Se avessi un\'altra scelta, non partirei.' },
+        { it: 'scegliere', en: 'to choose', fa: 'انتخاب کردن', cat: 'scelte', pos: 'v.', ex: 'Se dovessi scegliere, prenderei quello blu.' },
+        { it: 'decidere', en: 'to decide', fa: 'تصمیم گرفتن', cat: 'scelte', pos: 'v.', ex: 'Se decidessi ora, non avrei rimpianti dopo.' },
+        { it: 'il bivio', en: 'crossroads, fork', fa: 'دوراهی', cat: 'scelte', pos: 'm.', ex: 'Era arrivato a un bivio: se avesse svoltato a destra, la vita sarebbe stata diversa.' },
+        { it: 'esitare', en: 'to hesitate', fa: 'تردید کردن', cat: 'scelte', pos: 'v.', ex: 'Se non avessi esitato, avrei colto l\'occasione.' },
+        { it: 'optare (per)', en: 'to opt (for)', fa: 'ترجیح دادن', cat: 'scelte', pos: 'v.', ex: 'Se fossi in te, opterei per il lavoro più sicuro.' },
+        { it: 'rinunciare (a)', en: 'to give up', fa: 'صرف‌نظر کردن', cat: 'scelte', pos: 'v.', ex: 'Se rinunciassi ora, mi pentirei per sempre.' },
+        { it: 'la priorità', en: 'priority', fa: 'اولویت', cat: 'scelte', pos: 'f.', ex: 'Se cambiassi le mie priorità, vivrei diversamente.' },
+        { it: 'l\'alternativa', en: 'alternative', fa: 'گزینه جایگزین', cat: 'scelte', pos: 'f.', ex: 'Se ci fosse un\'alternativa, la sceglierei subito.' },
+        { it: 'ripensarci', en: 'to change one\'s mind', fa: 'نظر عوض کردن', cat: 'scelte', pos: 'v. pron.', ex: 'Se ci ripensassi, potresti sempre tornare indietro.' },
+        { it: 'ponderare', en: 'to weigh, to think carefully', fa: 'سنجیدن', cat: 'scelte', pos: 'v.', ex: 'Se avessi ponderato meglio, non avrei sbagliato.' },
+
+        /* ── Opportunità (10) ── */
+        { it: 'l\'opportunità', en: 'opportunity', fa: 'فرصت', cat: 'opportunita', pos: 'f.', ex: 'Se si presentasse un\'opportunità così, la coglierei.' },
+        { it: 'l\'occasione', en: 'chance, occasion', fa: 'فرصت / مناسبت', cat: 'opportunita', pos: 'f.', ex: 'Se avessi colto quell\'occasione, oggi la mia vita sarebbe diversa.' },
+        { it: 'cogliere l\'occasione', en: 'to seize the opportunity', fa: 'از فرصت استفاده کردن', cat: 'opportunita', pos: 'loc. v.', ex: 'Se non cogli l\'occasione ora, potrebbe non ripresentarsi.' },
+        { it: 'sfruttare', en: 'to make the most of, to exploit', fa: 'بهره‌برداری کردن', cat: 'opportunita', pos: 'v.', ex: 'Se avessi sfruttato meglio il tempo, avrei finito prima.' },
+        { it: 'perdere un\'occasione', en: 'to miss an opportunity', fa: 'فرصت را از دست دادن', cat: 'opportunita', pos: 'loc. v.', ex: 'Se non rispondi subito, perderai l\'occasione.' },
+        { it: 'la fortuna', en: 'luck, fortune', fa: 'شانس', cat: 'opportunita', pos: 'f.', ex: 'Se avessi più fortuna, le cose andrebbero meglio.' },
+        { it: 'il potenziale', en: 'potential', fa: 'استعداد بالقوه', cat: 'opportunita', pos: 'm.', ex: 'Se sviluppasse il suo potenziale, diventerebbe bravissimo.' },
+        { it: 'promettente', en: 'promising', fa: 'امیدوارکننده', cat: 'opportunita', pos: 'agg.', ex: 'Se il progetto fosse così promettente, investirei subito.' },
+        { it: 'proporre', en: 'to propose, to offer', fa: 'پیشنهاد دادن', cat: 'opportunita', pos: 'v.', ex: 'Se mi proponessero quel posto, accetterei senza pensarci.' },
+        { it: 'valere la pena', en: 'to be worth it', fa: 'ارزشش را داشتن', cat: 'opportunita', pos: 'loc. v.', ex: 'Se ne valesse la pena, ci proverei di nuovo.' },
+
+        /* ── Conseguenze (10) ── */
+        { it: 'la conseguenza', en: 'consequence', fa: 'پیامد', cat: 'conseguenze', pos: 'f.', ex: 'Se avessi pensato alle conseguenze, non l\'avrei fatto.' },
+        { it: 'comportare', en: 'to entail, to involve', fa: 'در پی داشتن', cat: 'conseguenze', pos: 'v.', ex: 'Se accettassi, comporterebbe molti sacrifici.' },
+        { it: 'provocare', en: 'to cause, to trigger', fa: 'موجب شدن', cat: 'conseguenze', pos: 'v.', ex: 'Se non fai attenzione, potresti provocare un incidente.' },
+        { it: 'l\'effetto', en: 'effect', fa: 'تأثیر', cat: 'conseguenze', pos: 'm.', ex: 'Se cambiassi dieta, vedresti subito l\'effetto.' },
+        { it: 'ripercuotersi (su)', en: 'to have repercussions (on)', fa: 'اثر گذاشتن بر', cat: 'conseguenze', pos: 'v. rifl.', ex: 'Se lasciassi il lavoro, si ripercuoterebbe su tutta la famiglia.' },
+        { it: 'evitare', en: 'to avoid', fa: 'اجتناب کردن', cat: 'conseguenze', pos: 'v.', ex: 'Se avessimo evitato quella strada, non avremmo perso tempo.' },
+        { it: 'peggiorare', en: 'to get worse, to worsen', fa: 'بدتر شدن', cat: 'conseguenze', pos: 'v.', ex: 'Se non intervenissero, la situazione peggiorerebbe.' },
+        { it: 'migliorare', en: 'to improve', fa: 'بهبود یافتن', cat: 'conseguenze', pos: 'v.', ex: 'Se studiassi con costanza, i risultati migliorerebbero.' },
+        { it: 'irreversibile', en: 'irreversible', fa: 'برگشت‌ناپذیر', cat: 'conseguenze', pos: 'agg.', ex: 'Se il danno fosse irreversibile, non ci sarebbe rimedio.' },
+        { it: 'rimediare (a)', en: 'to remedy, to fix', fa: 'جبران کردن', cat: 'conseguenze', pos: 'v.', ex: 'Se te ne fossi accorto prima, avresti potuto rimediare.' },
+
+        /* ── Rischio e sicurezza (10) ── */
+        { it: 'il rischio', en: 'risk', fa: 'ریسک', cat: 'rischio', pos: 'm.', ex: 'Se corressi questo rischio, potrei perdere tutto.' },
+        { it: 'rischiare', en: 'to risk', fa: 'ریسک کردن', cat: 'rischio', pos: 'v.', ex: 'Se rischiassi di più, forse guadagnerei di più.' },
+        { it: 'azzardare', en: 'to venture, to gamble', fa: 'به خطر انداختن', cat: 'rischio', pos: 'v.', ex: 'Se azzardassi quella mossa, potrebbe andare male.' },
+        { it: 'prudente', en: 'careful, cautious', fa: 'محتاط', cat: 'rischio', pos: 'agg.', ex: 'Se fossi più prudente, non avresti avuto quell\'incidente.' },
+        { it: 'la sicurezza', en: 'safety, security', fa: 'امنیت', cat: 'rischio', pos: 'f.', ex: 'Se avessimo più sicurezza economica, cambieremmo vita.' },
+        { it: 'garantire', en: 'to guarantee', fa: 'تضمین کردن', cat: 'rischio', pos: 'v.', ex: 'Se ci garantissero il posto, accetteremmo subito.' },
+        { it: 'incerto', en: 'uncertain', fa: 'نامطمئن', cat: 'rischio', pos: 'agg.', ex: 'Se il futuro non fosse così incerto, deciderei più facilmente.' },
+        { it: 'assicurarsi', en: 'to make sure, to insure oneself', fa: 'مطمئن شدن', cat: 'rischio', pos: 'v. rifl.', ex: 'Se ti fossi assicurato prima, non avresti avuto problemi.' },
+        { it: 'la scommessa', en: 'bet, gamble', fa: 'شرط‌بندی', cat: 'rischio', pos: 'f.', ex: 'Se vincessi quella scommessa, cambierebbe tutto.' },
+        { it: 'giocarsela', en: 'to take a chance, to go for it', fa: 'شانس خود را امتحان کردن', cat: 'rischio', pos: 'v. pron.', ex: 'Se me la fossi giocata, forse avrei vinto.' },
+
+        /* ── Condizioni (10) ── */
+        { it: 'la condizione', en: 'condition', fa: 'شرط', cat: 'condizioni', pos: 'f.', ex: 'A quali condizioni accetteresti?' },
+        { it: 'a patto che', en: 'provided that', fa: 'به شرطی که', cat: 'condizioni', pos: 'loc.', ex: 'Verrei, a patto che tu venga con me.' },
+        { it: 'purché', en: 'as long as, provided that', fa: 'به شرط اینکه', cat: 'condizioni', pos: 'cong.', ex: 'Accetto, purché mi lascino decidere i tempi.' },
+        { it: 'a meno che (non)', en: 'unless', fa: 'مگر اینکه', cat: 'condizioni', pos: 'loc.', ex: 'Non partirei, a meno che non mi pagassero il viaggio.' },
+        { it: 'nel caso in cui', en: 'in case, should', fa: 'در صورتی که', cat: 'condizioni', pos: 'loc.', ex: 'Nel caso in cui piovesse, porta l\'ombrello.' },
+        { it: 'a condizione che', en: 'on condition that', fa: 'به شرط اینکه', cat: 'condizioni', pos: 'loc.', ex: 'Ti aiuterò, a condizione che tu sia sincero.' },
+        { it: 'ipotizzare', en: 'to hypothesize, to suppose', fa: 'فرض کردن', cat: 'condizioni', pos: 'v.', ex: 'Ipotizziamo che tu avessi ragione: cosa cambierebbe?' },
+        { it: 'l\'ipotesi', en: 'hypothesis', fa: 'فرضیه', cat: 'condizioni', pos: 'f.', ex: 'Se quella ipotesi fosse vera, tutto avrebbe senso.' },
+        { it: 'presupporre', en: 'to presuppose, to assume', fa: 'پیش‌فرض گرفتن', cat: 'condizioni', pos: 'v.', ex: 'Se presupponessimo il peggio, saremmo più prudenti.' },
+        { it: 'realizzabile', en: 'achievable, feasible', fa: 'قابل تحقق', cat: 'condizioni', pos: 'agg.', ex: 'Se il piano fosse realizzabile, lo proporrei subito.' },
+
+        /* ── Espressioni (9) ── */
+        { it: 'se fossi in te', en: 'if I were you', fa: 'اگر جای تو بودم', cat: 'espr', pos: 'espr.', ex: 'Se fossi in te, accetterei quell\'offerta.' },
+        { it: 'al posto tuo', en: 'in your place', fa: 'به جای تو', cat: 'espr', pos: 'loc.', ex: 'Al posto tuo non rischierei tanto.' },
+        { it: 'chissà', en: 'who knows', fa: 'کی می‌داند', cat: 'espr', pos: 'avv.', ex: 'Chissà cosa sarebbe successo se avessi accettato.' },
+        { it: 'magari', en: 'if only, maybe', fa: 'کاش', cat: 'espr', pos: 'avv.', ex: 'Magari avessi ascoltato il tuo consiglio!' },
+        { it: 'a maggior ragione', en: 'all the more reason', fa: 'به طریق اولی', cat: 'espr', pos: 'loc.', ex: 'Se è rischioso, a maggior ragione dobbiamo pensarci bene.' },
+        { it: 'in ogni caso', en: 'in any case, either way', fa: 'در هر صورت', cat: 'espr', pos: 'loc.', ex: 'Se accetti o no, in ogni caso ti ringrazio.' },
+        { it: 'nel migliore dei casi', en: 'at best', fa: 'در بهترین حالت', cat: 'espr', pos: 'loc.', ex: 'Se andasse tutto bene, nel migliore dei casi risparmieremmo un anno.' },
+        { it: 'nel peggiore dei casi', en: 'at worst', fa: 'در بدترین حالت', cat: 'espr', pos: 'loc.', ex: 'Se fallisse, nel peggiore dei casi ricominceremmo da zero.' },
+        { it: 'punto di non ritorno', en: 'point of no return', fa: 'نقطه بازگشت‌ناپذیر', cat: 'espr', pos: 'loc.', ex: 'Se avessimo superato il punto di non ritorno, non ci sarebbe stato modo di tornare indietro.' }
+      ]
+    },
+
+    guided: {
+      title: 'Costruiamo insieme il periodo ipotetico',
+      intro: 'Tre domande in ordine: la condizione è realistica, immaginaria o ormai impossibile? Da lì scegli il tipo, e i tempi vengono da soli.',
+      steps: [
+        {
+          prompt: 'Completa (condizione realistica): «Se domani (io — avere) tempo, ___ (venire) a trovarti.»',
+          think: 'La condizione può ancora avverarsi → tipo 1: presente + presente o futuro.',
+          answer: 'Se domani ho tempo, vengo a trovarti. (oppure: verrò a trovarti)',
+          why: 'Tipo 1: nessun congiuntivo, nessun condizionale, solo indicativo.'
+        },
+        {
+          prompt: 'Completa (sogno irrealizzato ora): «Se (io — avere) più soldi, ___ (viaggiare) di più.»',
+          think: 'Non ho più soldi adesso, ma è immaginabile → tipo 2: congiuntivo imperfetto + condizionale presente.',
+          answer: 'Se avessi più soldi, viaggerei di più.',
+          why: 'avessi (unità 4) + condizionale presente (viaggerei).'
+        },
+        {
+          prompt: 'Trasforma al tipo 3: «Se (io — sapere) la verità, non (io — reagire) così.»',
+          think: 'È un\'ipotesi sul passato, ormai chiusa → congiuntivo trapassato + condizionale passato.',
+          answer: 'Se avessi saputo la verità, non avrei reagito così.',
+          why: 'avessi saputo (trapassato congiuntivo) + avrei reagito (condizionale passato, unità 2).'
+        },
+        {
+          prompt: 'Trova l\'errore e correggilo: «Se avrei più tempo, studierei di più.»',
+          think: 'Il condizionale non può stare nella frase con "se": va sostituito con il congiuntivo imperfetto.',
+          answer: 'Se avessi più tempo, studierei di più.',
+          why: 'L\'errore più comune del periodo ipotetico: condizionale al posto del congiuntivo dopo "se".'
+        },
+        {
+          prompt: 'Con essere (tipo 3): «Se Marco (partire) prima, non (perdere) l\'aereo.»',
+          think: 'partire vuole essere → fosse partito; l\'ausiliare della conseguenza è avere (perdere è transitivo).',
+          answer: 'Se Marco fosse partito prima, non avrebbe perso l\'aereo.',
+          why: 'Congiuntivo trapassato con essere: fosse partito, participio concordato al maschile.'
+        },
+        {
+          prompt: 'Inverti l\'ordine mantenendo il senso: «Se avessi saputo, ti avrei chiamato.»',
+          think: 'La conseguenza può venire prima della condizione, con una virgola prima di "se".',
+          answer: 'Ti avrei chiamato, se avessi saputo.',
+          why: 'L\'ordine delle due frasi è libero: il significato non cambia.'
+        }
+      ]
+    },
+
+    exercises: {
+      mc: [
+        { q: 'Completa: «Se ___ tempo, verrei con voi.»', options: ['ho', 'avrei', 'avessi', 'avevo'], answer: 2, hint: 'ipotesi irreale, tipo 2', why: 'Se + congiuntivo imperfetto: avessi.' },
+        { q: 'Completa: «Se piove, ___ a casa.»', options: ['resterei', 'restassi', 'resto', 'sarei restato'], answer: 2, hint: 'condizione realistica, tipo 1', why: 'Tipo 1: presente indicativo nella conseguenza.' },
+        { q: 'Completa: «Se avessi studiato, ___ l\'esame.»', options: ['supero', 'supererei', 'avrei superato', 'avevo superato'], answer: 2, hint: 'ipotesi impossibile sul passato', why: 'Tipo 3: condizionale passato nella conseguenza.' },
+        { q: 'Quale frase è corretta?', options: ['Se avrei tempo, verrei.', 'Se avessi tempo, verrei.', 'Se ho avuto tempo, verrei.', 'Se avessi tempo, sarei venuto.'], answer: 1, hint: 'il condizionale non entra mai dopo "se"', why: 'Se + congiuntivo imperfetto + condizionale presente è la forma corretta del tipo 2.' },
+        { q: 'Trapassato congiuntivo di «partire» (lui):', options: ['avesse partito', 'fosse partito', 'sarebbe partito', 'era partito'], answer: 1, hint: 'partire vuole essere', why: 'Congiuntivo imperfetto di essere (fosse) + participio: fosse partito.' },
+        { q: 'Completa: «Se fossi in te, ___ quel lavoro.»', options: ['accetto', 'accetterei', 'avrei accettato', 'accettassi'], answer: 1, hint: 'formula fissa di consiglio', why: '"Se fossi in te" richiede sempre il condizionale presente nella conseguenza.' },
+        { q: 'Quale coppia NON è mescolata correttamente?', options: ['Se piove, resto a casa.', 'Se avessi tempo, verrei.', 'Se avessi tempo, sarei venuto.', 'Se avessi studiato, avrei superato l\'esame.'], answer: 2, hint: 'tipo 2 e tipo 3 non si mischiano', why: '"Se avessi tempo" (tipo 2) non va con "sarei venuto" (tipo 3): serve coerenza.' },
+        { q: 'Completa: «Se Maria ___ partita prima, non avrebbe perso il treno.»', options: ['avesse', 'fosse', 'sarebbe', 'era'], answer: 1, hint: 'partire → essere', why: 'Congiuntivo trapassato: fosse partita.' },
+        { q: 'La conseguenza del tipo 1 può essere:', options: ['solo presente', 'presente o futuro indicativo, anche imperativo', 'solo condizionale', 'solo congiuntivo'], answer: 1, hint: 'tipo 1 è il più flessibile nella conseguenza', why: 'Presente, futuro e anche imperativo sono tutti possibili nel tipo 1.' },
+        { q: '«Se avevo tempo, venivo» è una frase:', options: ['scorretta in ogni contesto', 'standard e formale', 'colloquiale, da evitare nello scritto', 'un tipo 1'], answer: 2, hint: 'imperfetto indicativo al posto del congiuntivo', why: 'È una forma informale molto diffusa nel parlato, ma non standard.' },
+        { q: 'Quale frase ha lo stesso significato di «Se avessi saputo, ti avrei chiamato»?', options: ['Ti avrei chiamato, se avessi saputo.', 'Ti chiamerei, se sapessi.', 'Ti chiamo se so.', 'Avrei saputo se ti chiamavo.'], answer: 0, hint: 'ordine libero delle due frasi', why: 'Invertire condizione e conseguenza non cambia il senso.' },
+        { q: 'Completa: «Se non ci fossimo persi, ___ in tempo.»', options: ['arrivavamo', 'saremmo arrivati', 'arriveremmo', 'arriviamo'], answer: 1, hint: 'tipo 3, perdersi → essere', why: 'Condizionale passato: saremmo arrivati.' },
+        { q: 'Qual è la forma corretta del congiuntivo trapassato di «avere» (io)?', options: ['avessi avuto', 'avrei avuto', 'ero avuto', 'avevo avuto'], answer: 0, hint: 'avessi + participio', why: 'Congiuntivo imperfetto di avere (avessi) + participio (avuto).' },
+        { q: 'Completa: «___ studiato medicina, ora sarei un medico.»', options: ['Se avrei', 'Se ho', 'Se avessi', 'Se sarei'], answer: 2, hint: 'condizione nel passato, conseguenza nel presente', why: 'Se avessi studiato… ora sarei… è una forma mista accettata.' }
+      ],
+      fill: [
+        { before: 'Se', after: 'tempo, verrei con voi. (io — avere)', answers: ['avessi'], en: 'If I had time, I would come with you.' },
+        { before: 'Se piove,', after: 'a casa. (io — restare)', answers: ['resto'], en: "If it rains, I'll stay home.", hint: 'tipo 1, presente' },
+        { before: 'Se avessi studiato,', after: 'l\'esame. (io — superare)', answers: ['avrei superato'], en: 'If I had studied, I would have passed the exam.' },
+        { before: 'Se', after: 'in te, non accetterei. (io — essere)', answers: ['fossi'], en: 'If I were you, I would not accept.' },
+        { before: 'Se Maria', after: 'partita prima, non avrebbe perso il treno. (essere)', answers: ['fosse'], en: 'If Maria had left earlier, she would not have missed the train.' },
+        { before: 'Se non', after: 'persi, saremmo arrivati in tempo. (noi — essere)', answers: ['ci fossimo'], en: "If we hadn't gotten lost, we would have arrived on time.", hint: 'perdersi al congiuntivo trapassato' },
+        { before: 'Se', after: 'saputo, ti avrei chiamato. (io — avere)', answers: ['avessi'], en: 'If I had known, I would have called you.' },
+        { before: 'Se vincessi alla lotteria,', after: 'una casa. (io — comprare)', answers: ['comprerei'], en: 'If I won the lottery, I would buy a house.' },
+        { before: 'Se domani hai tempo,', after: 'a trovarmi. (venire)', answers: ['vieni'], en: 'If you have time tomorrow, come visit me.' },
+        { before: 'Se avessi più coraggio,', after: 'lavoro. (io — cambiare)', answers: ['cambierei'], en: 'If I had more courage, I would change jobs.' },
+        { before: 'Se non', after: 'esitato, avrei colto l\'occasione. (io — avere)', answers: ['avessi'], en: "If I hadn't hesitated, I would have seized the opportunity." },
+        { before: 'Se ti', after: 'assicurato prima, non avresti avuto problemi. (essere)', answers: ['fossi'], en: 'If you had made sure earlier, you would not have had problems.' }
+      ],
+      order: [
+        { words: ['Se', 'piove', 'resto', 'a', 'casa'], answer: 'Se piove resto a casa', en: "If it rains I'll stay home." },
+        { words: ['Se', 'avessi', 'tempo', 'verrei', 'con', 'voi'], answer: 'Se avessi tempo verrei con voi', en: 'If I had time I would come with you.' },
+        { words: ['Se', 'avessi', 'studiato', 'avrei', 'superato', 'l\'esame'], answer: 'Se avessi studiato avrei superato l\'esame', en: 'If I had studied I would have passed the exam.' },
+        { words: ['Se', 'fossi', 'in', 'te', 'non', 'accetterei'], answer: 'Se fossi in te non accetterei', en: "If I were you I wouldn't accept." },
+        { words: ['Se', 'Maria', 'fosse', 'partita', 'prima', 'non', 'avrebbe', 'perso', 'il', 'treno'], answer: 'Se Maria fosse partita prima non avrebbe perso il treno', en: 'If Maria had left earlier she would not have missed the train.' },
+        { words: ['Ti', 'avrei', 'chiamato', 'se', 'avessi', 'saputo'], answer: 'Ti avrei chiamato se avessi saputo', en: 'I would have called you if I had known.' },
+        { words: ['Se', 'vincessi', 'alla', 'lotteria', 'comprerei', 'una', 'casa'], answer: 'Se vincessi alla lotteria comprerei una casa', en: 'If I won the lottery I would buy a house.' }
+      ],
+      dnd: {
+        instructions: 'Questi verbi nella frase con "se" sono al congiuntivo imperfetto (tipo 2) o al congiuntivo trapassato (tipo 3)? Trascinali nella colonna giusta.',
+        buckets: [
+          { id: 'imperfetto', label: 'Congiuntivo imperfetto (tipo 2)', icon: '🌙' },
+          { id: 'trapassato', label: 'Congiuntivo trapassato (tipo 3)', icon: '⏳' }
+        ],
+        items: [
+          { text: 'avessi tempo', bucket: 'imperfetto' },
+          { text: 'avessi studiato', bucket: 'trapassato' },
+          { text: 'fossi in te', bucket: 'imperfetto' },
+          { text: 'fossi partito', bucket: 'trapassato' },
+          { text: 'vincessi alla lotteria', bucket: 'imperfetto' },
+          { text: 'avessi saputo', bucket: 'trapassato' },
+          { text: 'fosse più semplice', bucket: 'imperfetto' },
+          { text: 'fosse arrivata prima', bucket: 'trapassato' },
+          { text: 'avessimo più soldi', bucket: 'imperfetto' },
+          { text: 'avessimo evitato quella strada', bucket: 'trapassato' },
+          { text: 'potessi scegliere', bucket: 'imperfetto' },
+          { text: 'ci fossimo persi', bucket: 'trapassato' },
+          { text: 'sapesse la verità', bucket: 'imperfetto' },
+          { text: 'avesse rischiato', bucket: 'trapassato' }
+        ]
+      },
+      match: [
+        { a: 'Se piove, resto a casa.', b: 'tipo 1 — reale' },
+        { a: 'Se avessi tempo, verrei.', b: 'tipo 2 — irreale' },
+        { a: 'Se avessi studiato, avrei superato l\'esame.', b: 'tipo 3 — impossibile' },
+        { a: 'avessi', b: 'congiuntivo imperfetto di avere' },
+        { a: 'fossi', b: 'congiuntivo imperfetto di essere' },
+        { a: 'avessi studiato', b: 'congiuntivo trapassato con avere' },
+        { a: 'fossi partito', b: 'congiuntivo trapassato con essere' },
+        { a: 'Se avrei tempo, verrei.', b: 'errore comune ❌' },
+        { a: 'Se avevo tempo, venivo.', b: 'forma colloquiale' },
+        { a: 'se fossi in te', b: 'if I were you' }
+      ],
+      tf: [
+        { statement: 'Nel tipo 1 la condizione è al presente indicativo.', answer: true, why: 'Sì: Se piove, resto a casa.' },
+        { statement: 'Nel periodo ipotetico il condizionale può stare nella frase con "se".', answer: false, why: 'No, mai: il condizionale sta solo nella conseguenza.' },
+        { statement: 'Il congiuntivo trapassato si forma con il congiuntivo imperfetto di essere/avere + participio passato.', answer: true, why: 'Esatto: fossi partito, avessi mangiato.' },
+        { statement: 'Il tipo 2 usa il congiuntivo imperfetto e il condizionale presente.', answer: true, why: 'Se avessi tempo, verrei.' },
+        { statement: 'Il tipo 3 si usa per ipotesi ancora possibili nel futuro.', answer: false, why: 'No: il tipo 3 è per ipotesi impossibili, ormai nel passato.' },
+        { statement: 'Si può mescolare liberamente tipo 2 e tipo 3 senza restrizioni.', answer: false, why: 'No: bisogna restare coerenti, salvo il caso speciale di condizione al trapassato e conseguenza al presente.' },
+        { statement: 'La conseguenza può venire prima della frase con "se".', answer: true, why: 'Sì: «Resto a casa se piove» = «Se piove, resto a casa».' },
+        { statement: '«Se avevo tempo, venivo» è la forma standard scritta dell\'italiano.', answer: false, why: 'No: è una forma colloquiale, da evitare nello scritto formale.' },
+        { statement: 'Con essere, il participio nel congiuntivo trapassato concorda col soggetto.', answer: true, why: 'Sì: fosse partita, fossero arrivati.' }
+      ],
+      translate: [
+        { en: 'If it rains, I stay home.', answers: ['Se piove resto a casa'] },
+        { en: 'If I had time, I would come with you.', answers: ['Se avessi tempo verrei con voi'] },
+        { en: 'If I had studied, I would have passed the exam.', answers: ['Se avessi studiato avrei superato l\'esame'] },
+        { en: 'If I were you, I would not accept.', answers: ['Se fossi in te non accetterei'] },
+        { en: 'If Maria had left earlier, she would not have missed the train.', answers: ['Se Maria fosse partita prima non avrebbe perso il treno'] },
+        { en: 'I would have called you if I had known.', answers: ['Ti avrei chiamato se avessi saputo', 'Se avessi saputo ti avrei chiamato'] },
+        { en: 'If I won the lottery, I would buy a house.', answers: ['Se vincessi alla lotteria comprerei una casa'] },
+        { en: "If we hadn't gotten lost, we would have arrived on time.", answers: ['Se non ci fossimo persi saremmo arrivati in tempo'] }
+      ]
+    },
+
+    dialogue: {
+      title: 'Mini conversazione — Cambiare lavoro?',
+      intro: 'Due amici discutono di una possibile scelta di vita: nota come cambia il verbo secondo quanto l\'ipotesi è realistica, immaginaria o ormai passata.',
+      lines: [
+        { speaker: 'Luca', icon: '🧑', it: 'Ho ricevuto un\'offerta di lavoro a Berlino. Non so cosa fare.', en: "I got a job offer in Berlin. I don't know what to do.",
+          glosses: [] },
+        { speaker: 'Elena', icon: '👩', side: 'right', it: 'Se fossi in te, ci penserei molto seriamente.', en: 'If I were you, I would think about it very seriously.',
+          glosses: [{ term: 'Se fossi in te, ci penserei', expl: 'Tipo 2: congiuntivo imperfetto + condizionale presente. Formula fissa del consiglio.' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Se accetto, dovrò lasciare tutto qui: casa, amici, lavoro attuale.', en: 'If I accept, I will have to leave everything here: home, friends, current job.',
+          glosses: [{ term: 'Se accetto, dovrò', expl: 'Tipo 1: la decisione è ancora aperta e realistica.' }] },
+        { speaker: 'Elena', icon: '👩', side: 'right', it: 'Vero, ma se rinunciassi ora, potresti pentirtene per sempre.', en: 'True, but if you gave it up now, you might regret it forever.',
+          glosses: [{ term: 'se rinunciassi ora, potresti pentirtene', expl: 'Tipo 2: ipotesi ancora possibile, non ancora successa.' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Ricordi due anni fa? Se avessi accettato quel trasferimento a Roma, ora sarei già cresciuto professionalmente.', en: "Remember two years ago? If I had accepted that transfer to Rome, I would have already grown professionally by now.",
+          glosses: [{ term: 'Se avessi accettato quel trasferimento', expl: 'Tipo 3: congiuntivo trapassato, ipotesi ormai chiusa nel passato.' }, { term: 'ora sarei già cresciuto', expl: 'Forma mista: condizione al trapassato, conseguenza sul presente al condizionale presente.' }] },
+        { speaker: 'Elena', icon: '👩', side: 'right', it: 'Appunto! Se avessi detto sì allora, oggi non ti faresti tutte queste domande.', en: "Exactly! If you had said yes then, today you wouldn't be asking yourself all these questions.",
+          glosses: [{ term: 'Se avessi detto sì allora', expl: 'Congiuntivo trapassato di dire: avessi detto.' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Hai ragione. E se questa volta rischiassi davvero?', en: 'You\'re right. And what if this time I really took the risk?',
+          glosses: [{ term: 'se questa volta rischiassi', expl: 'Congiuntivo imperfetto usato da solo, come domanda ipotetica.' }] },
+        { speaker: 'Elena', icon: '👩', side: 'right', it: 'Se non provi, non lo saprai mai. E se andasse male, potresti sempre tornare.', en: "If you don't try, you'll never know. And if it went badly, you could always come back.",
+          glosses: [{ term: 'Se non provi, non lo saprai', expl: 'Tipo 1: presente + futuro.' }, { term: 'se andasse male, potresti', expl: 'Tipo 2: congiuntivo imperfetto + condizionale presente.' }] },
+        { speaker: 'Luca', icon: '🧑', it: 'Hai ragione tu. Se avessi ascoltato prima i tuoi consigli, avrei risparmiato due anni di dubbi!', en: "You're right. If I had listened to your advice earlier, I would have saved two years of doubts!",
+          glosses: [{ term: 'Se avessi ascoltato', expl: 'Congiuntivo trapassato: fatto ormai chiuso.' }, { term: 'avrei risparmiato', expl: 'Condizionale passato, conseguenza del tipo 3 (unità 2).' }] }
+      ]
+    },
+
+    flashcards: [
+      { front: 'periodo ipotetico', back: 'frase con SE + conseguenza, in 3 tipi' },
+      { front: 'Tipo 1', back: 'Se + presente, presente/futuro', note: 'Se piove, resto a casa.' },
+      { front: 'Tipo 2', back: 'Se + congiuntivo imperfetto, condizionale presente', note: 'Se avessi tempo, verrei.' },
+      { front: 'Tipo 3', back: 'Se + congiuntivo trapassato, condizionale passato', note: 'Se avessi studiato, avrei superato l\'esame.' },
+      { front: 'congiuntivo trapassato =', back: 'fossi/avessi + participio passato' },
+      { front: 'Se avrei tempo… ❌', back: 'Se avessi tempo… ✅', note: 'il condizionale non entra mai dopo "se"' },
+      { front: 'se fossi in te', back: 'if I were you', note: 'sempre + condizionale presente' },
+      { front: 'Se avevo tempo, venivo.', back: 'colloquiale, non standard' },
+      { front: 'L\'ordine delle frasi', back: 'libero: prima o dopo il "se"' },
+      { front: 'Se Maria fosse partita prima…', back: '…non avrebbe perso il treno', note: 'essere → accordo del participio' },
+      { front: 'avessi / fossi', back: 'congiuntivo imperfetto di avere/essere', note: 'unità 4' },
+      { front: 'avrei / sarei + participio', back: 'condizionale passato', note: 'unità 2' },
+      { front: 'Se avessi studiato medicina…', back: '…ora sarei un medico', note: 'trapassato + condizionale presente (misto)' },
+      { front: 'a patto che / purché', back: 'provided that', note: 'introducono una condizione col congiuntivo' }
+    ],
+
+    summary: {
+      formula: 'Tipo 1: SE + presente, presente/futuro · Tipo 2: SE + congiuntivo imperfetto, condizionale presente · Tipo 3: SE + congiuntivo trapassato, condizionale passato',
+      rules: [
+        'Tipo 1 (reale): Se + presente indicativo, presente o futuro. «Se piove, resto/resterò a casa».',
+        'Tipo 2 (irreale ora): Se + congiuntivo imperfetto (unità 4), condizionale presente. «Se avessi tempo, verrei».',
+        'Tipo 3 (impossibile, passato): Se + congiuntivo trapassato, condizionale passato (unità 2). «Se avessi studiato, avrei superato l\'esame».',
+        'Congiuntivo trapassato = congiuntivo imperfetto di essere/avere + participio: fossi andato, avessi mangiato.',
+        'Il condizionale non entra mai nella frase con "se": è l\'errore più comune.',
+        'Non mescolare i tempi dei tre tipi: restare coerenti, salvo il caso misto trapassato + presente.',
+        'L\'imperfetto indicativo al posto di congiuntivo/condizionale è colloquiale, non standard.',
+        'La conseguenza può stare prima o dopo la frase con "se": il significato non cambia.'
+      ],
+      tips: [
+        'Immagina una scala di realtà: tipo 1 in cima (possibile), tipo 2 nel mezzo (irreale ora), tipo 3 in fondo (finita, impossibile).',
+        'Se in inglese diresti "if I had…, I would have…", in italiano è sempre tipo 3: trapassato congiuntivo + condizionale passato.',
+        'Il congiuntivo trapassato non ha forme nuove da studiare: prendi il congiuntivo imperfetto di essere/avere (unità 4) e aggiungi il solito participio.',
+        'Regola d\'oro da ripetere come un mantra: "il condizionale non sta mai dopo se".'
+      ]
+    }
+  };
+
+  ITA.mountLesson(window.LESSON);
+  </script>
+</body>
+</html>
