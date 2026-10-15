@@ -838,6 +838,94 @@ table.verb-table { width: 100%; border-collapse: collapse; font-size: .94rem; mi
   .tl-dot { margin: 0 auto 8px; }
 }
 
+/* ---------------------------------------------------------------------------
+   Interaction polish (all pages)
+   ------------------------------------------------------------------------ */
+:root { --ease-out: cubic-bezier(.23, 1, .32, 1); --press: 160ms; }
+
+/* Animate only what changes — `transition: all` also animates layout
+   properties and makes theme switches smear. */
+.btn, .chip, .mini-btn, .icon-btn, .opt, .ex-tab, .tf-btn, .match-item, .pager a, .section-nav a {
+  transition-property: transform, color, background-color, border-color, box-shadow, opacity;
+}
+
+/* Hover lifts only on devices that really hover: on touch screens a tap
+   triggers :hover and leaves the element stuck in its lifted state. */
+@media (hover: none) {
+  .btn:hover, .icon-btn:hover, .lesson-card:hover, .example-card:hover, .vocab-card:hover,
+  .tile:hover, .pager a:hover, .opt:hover:not(:disabled) { transform: none; }
+}
+
+/* Press feedback: every pressable element answers the finger immediately. */
+.btn:active:not(:disabled), .chip:active, .mini-btn:active, .icon-btn:active, .ex-tab:active,
+.tf-btn:active:not(:disabled), .opt:active:not(:disabled), .match-item:active:not(:disabled),
+.section-nav a:active, .pager a:active, .lesson-card:active {
+  transform: scale(.97);
+  transition-duration: var(--press);
+  transition-timing-function: var(--ease-out);
+}
+
+/* ---------------------------------------------------------------------------
+   Density: a tighter, calmer scale for every page — smaller type, less
+   padding, smaller badges/emoji. Overrides the defaults above in one place.
+   ------------------------------------------------------------------------ */
+:root { --header-h: 54px; }
+html { font-size: 15px; }
+body { line-height: 1.55; }
+h1 { font-size: clamp(1.35rem, 3vw, 1.8rem); }
+h2 { font-size: clamp(1.1rem, 2.2vw, 1.3rem); }
+h3 { font-size: 1rem; }
+p  { margin-bottom: .75em; }
+.container { padding: 18px 16px 56px; }
+.card { padding: 16px; margin-bottom: 12px; border-radius: var(--r-md); box-shadow: none; }
+.card-head { gap: 10px; margin-bottom: 10px; }
+.card-head h2[style] { font-size: 1.08rem !important; }
+.card-badge { width: 30px; height: 30px; border-radius: 8px; font-size: .95rem; }
+.card-kicker { font-size: .66rem; }
+.hero { padding: 20px 22px; margin-bottom: 16px; border-radius: var(--r-lg); box-shadow: none; }
+.hero::after { width: 160px; height: 160px; right: -50px; top: -50px; }
+.hero-stats { gap: 8px; margin-top: 12px; }
+.hero-stat { padding: 6px 12px; border-radius: var(--r-sm); }
+.hero-stat b { font-size: 1.1rem; }
+.hero-stat span { font-size: .72rem; }
+.grid { gap: 12px; }
+.lesson-card { padding: 14px; gap: 6px; }
+.lesson-card .lc-icon { font-size: 1.25rem; }
+.icon-btn { width: 34px; height: 34px; font-size: .95rem; border-radius: 10px; }
+.btn { padding: 7px 14px; font-size: .86rem; border-radius: 10px; gap: 6px; }
+.btn-sm { padding: 5px 11px; font-size: .8rem; }
+.btn-row { gap: 8px; margin-top: 12px; }
+.chip { padding: 4px 11px; font-size: .8rem; }
+.chip-row { gap: 6px; margin-bottom: 12px; }
+.mini-btn { width: 26px; height: 26px; font-size: .74rem; border-radius: 7px; }
+.syntax-box { padding: 12px 14px; margin-bottom: 12px; border-radius: var(--r-md); border-width: 1px; }
+.syntax-box .sb-label { margin-bottom: 8px; font-size: .66rem; }
+.sb-part { padding: 5px 11px; border-radius: 9px; font-size: .9rem; box-shadow: none; }
+.sb-example { margin-top: 8px; font-size: .85rem; }
+.verb-table { font-size: .9rem; }
+.verb-table th, .verb-table td { padding: 6px 10px; }
+.verb-table thead th { font-size: .66rem; }
+.verb-table .form { font-size: .95rem; }
+.example-card { padding: 9px 12px; margin-bottom: 8px; border-radius: var(--r-sm); }
+.ex-it { font-size: 1rem; gap: 8px; }
+.ex-note { margin-top: 6px; padding: 5px 9px; }
+.pill { padding: 2px 8px; font-size: .7rem; }
+.section-nav { gap: 6px; padding: 8px 0; }
+.section-nav a { padding: 4px 11px; font-size: .76rem; }
+.vocab-toolbar { gap: 8px; margin-bottom: 12px; }
+.search-box input { padding: 8px 12px 8px 36px; font-size: .9rem; }
+.site-footer { padding-top: 14px; padding-bottom: 14px; font-size: .8rem; }
+@media (max-width: 720px) {
+  .container { padding: 12px 12px 48px; }
+  .card { padding: 13px; }
+  .hero { padding: 16px; }
+  .hero p { font-size: .9rem; }
+  .hero-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+  .hero-stat { padding: 5px 8px; }
+  .hero-stat b { font-size: 1rem; }
+  .hero-stat span { font-size: .64rem; line-height: 1.2; display: block; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .01ms !important; animation-iteration-count: 1 !important;
