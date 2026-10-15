@@ -40,6 +40,9 @@ engine and data schema — a level is just a folder plus a `lessons.js`.
 ```
 .
 ├── index.html                  ← entry page: level picker (deploy entry point)
+├── verbs-summary.html          ← Verbs Summary: 12 verb forms explained in Persian (فارسی)
+├── data/verbs-summary.js       ← its content: formulas, tables, examples (checked by `npm test`)
+├── tools/check-verbs-summary.js ← recomputes every conjugation on that page and fails on mismatch
 ├── server.js                   ← zero-dependency static dev server
 ├── package.json
 ├── README.md

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Verbs Summary — le 12 forme verbali italiane spiegate in persiano: formula, coniugazione completa con traduzione فارسی ed esempi.">
+  <title>Verbs Summary · خلاصهٔ افعال · Italiano Interattivo</title>
+  <link rel="stylesheet" href="assets/styles.css?v=8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+  <style>
+    /* ── Page-specific: Italian (LTR) and Persian (RTL) side by side ── */
+    .vs-fa-block { font-family: var(--font-fa); direction: rtl; text-align: right; line-height: 1.95; font-size: 1.02rem; }
+    .vs-fa-block bdi.it, td.fa bdi.it, .vs-note bdi.it { font-family: var(--font-it); font-weight: 600; color: var(--info); }
+    .vs-form .collapse-head { cursor: pointer; }
+    .vs-form { scroll-margin-top: calc(var(--header-h) + 72px); }   /* clear the sticky index bar */
+    .vs-num { font-weight: 800; color: var(--brand-5); background: color-mix(in srgb, var(--brand-5) 13%, transparent); }
+    .vs-title-it { font-family: var(--font-it); font-size: 1.35rem; margin: 0; }
+    .vs-title-fa { font-family: var(--font-fa); direction: rtl; font-size: 1rem; color: var(--brand-1); font-weight: 700; margin: 2px 0 0; text-align: left; }
+    .vs-h {
+      font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--text-mute); margin: 26px 0 10px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+    }
+    .vs-h .fa { text-transform: none; letter-spacing: 0; font-size: .9rem; }
+    .vs-steps { margin: 6px 0 0; }
+    .vs-steps li + li { margin-top: 4px; }
+    .vs-endings { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); margin-top: 14px; }
+    /* Grid items default to min-width:auto, which would let a table's min-width
+       widen the page on phones; 0 lets .table-wrap scroll instead. */
+    .vs-endings > *, .vs-tables > *, .vs-regirr > * { min-width: 0; }
+    .vs-cap { font-size: .82rem; font-weight: 700; color: var(--text-soft); margin: 0 0 6px; display: flex; gap: 8px; align-items: center; }
+    .vs-cap .mini-btn { width: 26px; height: 26px; font-size: .72rem; margin-left: auto; }
+    .verb-table th.fa, .verb-table td.fa { text-align: right; font-family: var(--font-fa); }
+    .verb-table td.fa { line-height: 1.8; }
+    .vs-person b { display: block; }
+    .vs-person small { font-family: var(--font-fa); color: var(--text-mute); font-weight: 600; }
+    .vs-regirr { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .vs-regirr > div { border: 1px solid var(--border); border-radius: var(--r-md); padding: 12px 14px; background: var(--surface-2); }
+    .vs-regirr .vs-reg { border-left: 4px solid var(--ok); }
+    .vs-regirr .vs-irr { border-left: 4px solid var(--warn); }
+    .vs-tabs { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 12px; }
+    .vs-tabs .chip { display: inline-flex; gap: 6px; align-items: center; }
+    .vs-tabs .chip i { font-style: normal; font-size: .7rem; opacity: .75; }
+    .vs-tabs .chip.na { opacity: .6; }
+    .vs-verb-meta { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+    .vs-tables { display: grid; gap: 16px; }
+    .vs-note {
+      margin-top: 10px; font-size: .92rem; color: var(--info); background: var(--info-bg);
+      border-radius: var(--r-sm); padding: 8px 12px;
+    }
+    .vs-na { background: var(--warn-bg); color: var(--warn); border-radius: var(--r-md); padding: 12px 14px; }
+    .vs-example .ex-fa { margin: 6px 0 0; color: var(--text); }
+    .vs-example .pill { margin-bottom: 6px; }
+    .vs-notes { margin: 0; }
+    .vs-notes li + li { margin-top: 6px; }
+    .vs-overview td .pill { white-space: nowrap; }
+    @media (max-width: 720px) {
+      .vs-title-it { font-size: 1.15rem; }
+      .verb-table th, .verb-table td { padding: 8px 9px; }
+      .vs-endings, .vs-regirr { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script>
+    window.ITA_LEVEL = 'A2';
+    window.ITA_PATHS = { home: 'A2/index.html', levels: 'index.html', base: 'A2/' };
+  </script>
+  <script src="A2/lessons.js"></script>
+  <script src="assets/app.js?v=8"></script>
+  <script src="assets/components.js?v=8"></script>
+  <!-- Grammar content: every form is written out and checked by
+       tools/check-verbs-summary.js (npm test). -->
+  <script src="data/verbs-summary.js"></script>
+
+  <script>
+  /* ==========================================================================
+     Verbs Summary — the 12 Italian verb forms for Persian speakers.
+     All content lives in data/verbs-summary.js; this page only renders it.
+     ========================================================================== */
+  const SUMMARY = window.VERBS_SUMMARY || { persons: {}, verbs: {}, forms: [], core: [] };
+  const { store } = ITA;
+
+  /* Runtime guard: a row is shown only if it is well formed. The linguistic
+     check (every form recomputed) is done ahead of time by the test script. */
+  function validRow(r) {
+    return Array.isArray(r) && r.length === 3 && SUMMARY.persons[r[0]] &&
+      typeof r[1] === 'string' && r[1].trim() && typeof r[2] === 'string' && r[2].trim();
+  }
+  SUMMARY.forms.forEach(f => {
+    const tables = [].concat(...Object.values(f.verbs).map(v => v.tables || []), f.extra || []);
+    tables.forEach(t => {
+      const bad = t.rows.filter(r => !validRow(r));
+      if (bad.length) console.warn('[verbs-summary] skipped malformed rows in', f.id, bad);
+      t.rows = t.rows.filter(validRow);
+    });
+  });
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  ITA.createPage({
+    data() {
+      const open = {}, sel = {};
+      SUMMARY.forms.forEach((f, i) => {
+        open[f.id] = i === 0;
+        sel[f.id] = Object.keys(f.verbs).find(v => !f.verbs[v].na);
+      });
+      return {
+        store,
+        forms: SUMMARY.forms,
+        verbs: SUMMARY.verbs,
+        persons: SUMMARY.persons,
+        core: SUMMARY.core,
+        open, sel,
+        q: ''
+      };
+    },
+    computed: {
+      filtered() {
+        const q = ITA.normalise(this.q);
+        if (!q) return this.forms;
+        return this.forms.filter(f => ITA.normalise([f.it, f.fa, f.id, f.num].join(' ')).indexOf(q) >= 0);
+      },
+      rowCount() {
+        let n = 0;
+        this.forms.forEach(f => {
+          Object.values(f.verbs).forEach(v => (v.tables || []).forEach(t => { n += t.rows.length; }));
+          (f.extra || []).forEach(t => { n += t.rows.length; });
+        });
+        return n;
+      },
+      allOpen() { return this.forms.every(f => this.open[f.id]); }
+    },
+    methods: {
+      /** Persian prose with *italian* spans isolated as LTR runs. */
+      rich(s) {
+        return escapeHtml(s).replace(/\*([^*]+)\*/g, '<bdi class="it" lang="it" dir="ltr">$1</bdi>');
+      },
+      toggle(id) { this.open[id] = !this.open[id]; },
+      setAll(v) { this.forms.forEach(f => { this.open[f.id] = v; }); },
+      jump(f) {
+        this.open[f.id] = true;
+        this.$nextTick(() => {
+          const el = document.getElementById(f.id);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', '#' + f.id);
+        });
+      },
+      /** Shows the same verb in every form where it applies. */
+      showEverywhere(inf) {
+        this.forms.forEach(f => { if (f.verbs[inf] && !f.verbs[inf].na) this.sel[f.id] = inf; });
+        ITA.toast(inf + ' · ' + this.verbs[inf].fa);
+      },
+      tabsOf(f) { return Object.keys(f.verbs); },
+      entry(f) { return f.verbs[this.sel[f.id]] || {}; },
+      isIrr(t, p) { return Array.isArray(t.irr) && t.irr.indexOf(p) >= 0; },
+      verbFa(inf) { return this.verbs[inf] ? this.verbs[inf].fa : ''; },
+      /** Text for speech synthesis: drops agreement slashes (andato/a → andato). */
+      say(text) {
+        ITA.speak(text.replace(/\s\/\s/g, ', ').replace(/\/[a-zàèéìòù]+/gi, '').replace(/!/g, ''));
+      },
+      sayTable(t) { this.say(t.rows.map(r => r[1]).join(', ')); }
+    },
+    mounted() {
+      const id = location.hash.slice(1);
+      const f = this.forms.find(x => x.id === id);
+      if (f) this.jump(f);
+    },
+    template: `
+      <a class="skip-link" href="#main">Vai al contenuto</a>
+      <site-header current="verbs-summary.html"></site-header>
+
+      <main id="main" class="container">
+        <header class="hero animate-in">
+          <p class="card-kicker" style="color:rgba(255,255,255,.85)">Riferimento · مرجع</p>
+          <h1>📚 Verbs Summary</h1>
+          <p class="fa" lang="fa" dir="rtl" style="font-size:1.25rem;font-weight:700;margin:0 0 8px">خلاصهٔ افعال ایتالیایی</p>
+          <p class="vs-fa-block" lang="fa" dir="rtl" style="color:rgba(255,255,255,.92)">
+            دوازده زمان و وجه پرکاربرد ایتالیایی، هر کدام با فرمول ساخت، جدول صرف کامل با ترجمهٔ فارسی،
+            تفاوت فعل‌های باقاعده و بی‌قاعده، و مثال‌هایی با <bdi lang="it">mangiare</bdi>، <bdi lang="it">credere</bdi>،
+            <bdi lang="it">dormire</bdi>، <bdi lang="it">andare</bdi> و <bdi lang="it">fare</bdi>.
+          </p>
+          <div class="hero-stats">
+            <div class="hero-stat"><b>12</b><span>forme · وجه و زمان</span></div>
+            <div class="hero-stat"><b>5</b><span>verbi · فعل الگو</span></div>
+            <div class="hero-stat"><b>{{ rowCount }}</b><span>forme coniugate · صورت صرف‌شده</span></div>
+          </div>
+        </header>
+
+        <!-- The model verbs -->
+        <section class="card">
+          <div class="card-head">
+            <span class="card-badge" aria-hidden="true">🔤</span>
+            <div>
+              <p class="card-kicker">I verbi modello · فعل‌های الگو</p>
+              <h2 style="font-size:1.2rem">Regolari e irregolari · باقاعده و بی‌قاعده</h2>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="verb-table vs-overview">
+              <thead><tr>
+                <th>Verbo</th><th class="fa" lang="fa">معنی</th><th>Gruppo · گروه</th>
+                <th>Tipo · نوع</th><th>Ausiliare · فعل کمکی</th><th>Participio</th><th>Gerundio</th>
+              </tr></thead>
+              <tbody>
+                <tr v-for="(v, inf) in verbs" :key="inf">
+                  <td><span class="form" lang="it">{{ inf }}</span></td>
+                  <td class="fa" lang="fa" dir="rtl">{{ v.fa }}</td>
+                  <td lang="it">{{ v.group }}</td>
+                  <td>
+                    <span v-if="v.regular" class="pill pill-ok">regolare · باقاعده</span>
+                    <span v-else class="pill pill-warn">irregolare · بی‌قاعده</span>
+                  </td>
+                  <td lang="it">{{ v.aux }}</td>
+                  <td><span class="form" :class="{ irr: inf === 'fare' }" lang="it">{{ v.pp }}</span></td>
+                  <td><span class="form" :class="{ irr: inf === 'fare' }" lang="it">{{ v.ger }}</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-legend">
+            <span><span class="verb-table"><span class="irr">forma</span></span> = irregolare · صورت بی‌قاعده</span>
+            <span><bdi lang="it">invitare</bdi> · فقط در بخش مجهول (۱۱ و ۱۲)</span>
+          </p>
+        </section>
+
+        <!-- Toolbar -->
+        <div class="vocab-toolbar">
+          <div class="search-box">
+            <span class="s-icon" aria-hidden="true">🔍</span>
+            <input type="search" v-model="q" placeholder="Cerca una forma · جستجو (imperfetto، مجهول…)" aria-label="Cerca una forma verbale">
+          </div>
+          <button class="btn btn-ghost btn-sm" @click="setAll(!allOpen)" :aria-pressed="String(allOpen)">
+            {{ allOpen ? '▲ Chiudi tutto · بستن همه' : '▼ Apri tutto · باز کردن همه' }}
+          </button>
+        </div>
+        <div class="chip-row" role="group" aria-label="Mostra un verbo in tutte le forme">
+          <span class="small muted" style="align-self:center">Verbo in tutte le forme · نمایش فعل در همهٔ بخش‌ها:</span>
+          <button v-for="inf in core" :key="inf" class="chip" @click="showEverywhere(inf)" lang="it">{{ inf }}</button>
+        </div>
+
+        <nav class="section-nav" aria-label="Indice delle forme">
+          <a v-for="f in filtered" :key="f.id" :href="'#' + f.id" @click.prevent="jump(f)">
+            {{ f.num }} · <span lang="it">{{ f.it }}</span>
+          </a>
+        </nav>
+
+        <p v-if="!filtered.length" class="muted center">Nessuna forma trovata · موردی پیدا نشد.</p>
+
+        <!-- One card per verb form -->
+        <section v-for="f in filtered" :key="f.id" :id="f.id" class="card vs-form">
+          <button class="collapse-head" :aria-expanded="String(!!open[f.id])" :aria-controls="f.id + '-body'" @click="toggle(f.id)">
+            <div class="card-head" style="margin-bottom:0;flex:1">
+              <span class="card-badge vs-num" aria-hidden="true">{{ f.num }}</span>
+              <div>
+                <h2 class="vs-title-it" lang="it">{{ f.it }}</h2>
+                <p class="vs-title-fa" lang="fa" dir="rtl">{{ f.fa }}</p>
+              </div>
+            </div>
+            <span class="collapse-caret" aria-hidden="true">▼</span>
+          </button>
+
+          <div v-show="open[f.id]" :id="f.id + '-body'" class="collapse-body">
+            <p class="vs-fa-block" lang="fa" dir="rtl" style="margin:0" v-html="rich(f.use)"></p>
+
+            <!-- Formula -->
+            <h3 class="vs-h">Formula <span class="fa" lang="fa">· فرمول ساخت</span></h3>
+            <syntax-box label="Formula · فرمول" :rows="[{ parts: f.formula.parts, example: f.formula.example }]"></syntax-box>
+            <p class="vs-fa-block" lang="fa" dir="rtl" style="font-weight:700;margin:0" v-html="rich(f.formula.fa)"></p>
+            <ol class="vs-fa-block vs-steps" lang="fa" dir="rtl">
+              <li v-for="(s, i) in f.formula.steps" :key="i" v-html="rich(s)"></li>
+            </ol>
+            <div class="vs-endings">
+              <div v-for="(e, ei) in f.endings" :key="ei">
+                <p class="vs-cap">{{ e.title }}</p>
+                <div class="table-wrap">
+                  <table class="verb-table">
+                    <thead><tr><th>Persona · شخص</th><th v-for="c in e.cols" :key="c" lang="it">{{ c }}</th></tr></thead>
+                    <tbody>
+                      <tr v-for="r in e.rows" :key="r[0]">
+                        <td class="vs-person"><b lang="it">{{ persons[r[0]].it }}</b><small lang="fa">{{ persons[r[0]].fa }}</small></td>
+                        <td v-for="(c, ci) in r.slice(1)" :key="ci"><span class="form" lang="it">{{ c }}</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Regular vs irregular -->
+            <h3 class="vs-h">Regolari e irregolari <span class="fa" lang="fa">· باقاعده و بی‌قاعده</span></h3>
+            <div class="vs-regirr">
+              <div class="vs-reg">
+                <span class="pill pill-ok">regolari · باقاعده</span>
+                <p class="vs-fa-block" lang="fa" dir="rtl" style="margin:6px 0 0" v-html="rich(f.regular)"></p>
+              </div>
+              <div class="vs-irr">
+                <span class="pill pill-warn">irregolari · بی‌قاعده</span>
+                <p class="vs-fa-block" lang="fa" dir="rtl" style="margin:6px 0 0" v-html="rich(f.irregular)"></p>
+              </div>
+            </div>
+
+            <!-- Conjugation, one verb at a time -->
+            <h3 class="vs-h">Coniugazione <span class="fa" lang="fa">· جدول صرف</span></h3>
+            <div class="vs-tabs" role="tablist" :aria-label="'Verbi per ' + f.it">
+              <button v-for="inf in tabsOf(f)" :key="inf" class="chip" role="tab"
+                      :class="{ active: sel[f.id] === inf, na: f.verbs[inf].na }"
+                      :aria-selected="String(sel[f.id] === inf)" @click="sel[f.id] = inf">
+                <span lang="it">{{ inf }}</span>
+                <i v-if="f.verbs[inf].na">n/a</i>
+                <i v-else-if="!verbs[inf].regular">irr.</i>
+              </button>
+            </div>
+
+            <div role="tabpanel">
+              <div class="vs-verb-meta">
+                <b class="it" lang="it" style="font-size:1.1rem">{{ sel[f.id] }}</b>
+                <span class="pill fa" lang="fa">{{ verbFa(sel[f.id]) }}</span>
+                <span v-if="verbs[sel[f.id]].regular" class="pill pill-ok">regolare · باقاعده</span>
+                <span v-else class="pill pill-warn">irregolare · بی‌قاعده</span>
+                <span class="pill pill-info" lang="it">ausiliare: {{ verbs[sel[f.id]].aux }}</span>
+              </div>
+
+              <p v-if="entry(f).na" class="vs-na vs-fa-block" lang="fa" dir="rtl" v-html="rich(entry(f).na)"></p>
+
+              <div v-else class="vs-tables">
+                <div v-for="(t, ti) in entry(f).tables" :key="sel[f.id] + ti">
+                  <p class="vs-cap">
+                    <span>{{ t.title || (f.it + ' · ' + sel[f.id]) }}</span>
+                    <button class="mini-btn" @click="sayTable(t)" :aria-label="'Ascolta ' + (t.title || f.it)">🔊</button>
+                  </p>
+                  <div class="table-wrap">
+                    <table class="verb-table">
+                      <thead><tr><th>Persona · شخص</th><th>Italiano · ایتالیایی</th><th class="fa" lang="fa">فارسی</th></tr></thead>
+                      <tbody>
+                        <tr v-for="r in t.rows" :key="r[0]">
+                          <td class="vs-person"><b lang="it">{{ persons[r[0]].it }}</b><small lang="fa">{{ persons[r[0]].fa }}</small></td>
+                          <td><span class="form" :class="{ irr: isIrr(t, r[0]) }" lang="it">{{ r[1] }}</span></td>
+                          <td class="fa" lang="fa" dir="rtl">{{ r[2] }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <p v-if="entry(f).note" class="vs-note vs-fa-block" lang="fa" dir="rtl" v-html="rich(entry(f).note)"></p>
+              <p class="vs-fa-block small muted" lang="fa" dir="rtl" style="margin:8px 0 0" v-html="rich(verbs[sel[f.id]].noteFa)"></p>
+            </div>
+
+            <!-- Extra reference tables (e.g. essere / avere) -->
+            <template v-if="f.extra && f.extra.length">
+              <h3 class="vs-h">Ausiliari <span class="fa" lang="fa">· فعل‌های کمکی و بی‌قاعدهٔ مهم</span></h3>
+              <div class="vs-endings">
+                <div v-for="(t, ti) in f.extra" :key="ti">
+                  <p class="vs-cap"><span>{{ t.title }}</span></p>
+                  <div class="table-wrap">
+                    <table class="verb-table">
+                      <thead><tr><th>Persona · شخص</th><th>Italiano</th><th class="fa" lang="fa">فارسی</th></tr></thead>
+                      <tbody>
+                        <tr v-for="r in t.rows" :key="r[0]">
+                          <td class="vs-person"><b lang="it">{{ persons[r[0]].it }}</b><small lang="fa">{{ persons[r[0]].fa }}</small></td>
+                          <td><span class="form" :class="{ irr: isIrr(t, r[0]) }" lang="it">{{ r[1] }}</span></td>
+                          <td class="fa" lang="fa" dir="rtl">{{ r[2] }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </template>
+
+            <!-- Examples -->
+            <h3 class="vs-h">Esempi <span class="fa" lang="fa">· مثال‌ها</span></h3>
+            <div v-for="(e, ei) in f.examples" :key="ei" class="example-card vs-example">
+              <span class="pill" lang="it">{{ e.verb }}</span>
+              <div class="ex-it" lang="it" dir="ltr">
+                <span>{{ e.it }}</span>
+                <span class="ex-tools">
+                  <speak-btn :text="e.it"></speak-btn>
+                  <copy-btn :text="e.it"></copy-btn>
+                </span>
+              </div>
+              <p class="ex-fa vs-fa-block" lang="fa" dir="rtl">{{ e.fa }}</p>
+            </div>
+
+            <!-- Notes -->
+            <div v-if="f.notes && f.notes.length" class="card card--tip" style="margin:16px 0 0">
+              <p class="card-kicker">Note · نکته‌ها</p>
+              <ul class="vs-fa-block vs-notes" lang="fa" dir="rtl">
+                <li v-for="(n, ni) in f.notes" :key="ni" v-html="rich(n)"></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Verbs Summary · خلاصهٔ افعال · Italiano Interattivo</p>
+      </footer>
+      <toast-host></toast-host>
+    `
+  });
+  </script>
+</body>
+</html>

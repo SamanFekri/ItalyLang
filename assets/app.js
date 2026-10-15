@@ -511,6 +511,10 @@
         <a class="nav-link" :href="paths.levels" @click="close">
           <span class="nav-num" aria-hidden="true">↩</span> Tutti i livelli
         </a>
+        <a class="nav-link" :href="paths.levels.replace('index.html', 'verbs-summary.html')"
+           :class="{ active: current === 'verbs-summary.html' }" @click="close">
+          <span class="nav-num" aria-hidden="true">📚</span> Verbs Summary · <span class="fa" lang="fa">خلاصهٔ افعال</span>
+        </a>
         <template v-for="g in groups" :key="g.name">
           <h4>{{ g.name }}</h4>
           <a v-for="l in g.items" :key="l.file" class="nav-link" :href="paths.base + l.file"
