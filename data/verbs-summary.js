@@ -639,57 +639,75 @@
     /* ------------------------------------------------------------------ 11 */
     {
       id: 'passivo-presente', num: 11, it: 'Passivo Presente', fa: 'مجهول حال',
-      use: 'وقتی کار مهم‌تر از کننده است: «نان خورده می‌شود». فقط فعل‌های متعدی (دارای مفعول مستقیم) مجهول می‌شوند؛ مفعولِ جملهٔ معلوم فاعلِ جملهٔ مجهول می‌شود. کننده (اگر بیاید) با *da* («توسط») می‌آید.',
+      use: 'وقتی کار مهم‌تر از کننده است: «نان خورده می‌شود». صورت اصلی در زمان حال *venire* + اسم مفعول است (*viene / vengono*) که همیشه «عمل» را نشان می‌دهد. فقط فعل‌های متعدی (دارای مفعول مستقیم) مجهول می‌شوند؛ کننده (اگر بیاید) با *da* («توسط») می‌آید.',
       formula: {
-        parts: [{ text: 'soggetto', type: 'subject' }, { text: 'essere', note: 'presente', type: 'verb' }, { text: 'participio', note: 'concordato · مطابق با فاعل', type: 'extra' }, { text: '(da + agente)', note: 'اختیاری', type: 'object' }],
-        example: 'La pizza è mangiata (da Marco). · Io sono invitato/a.',
-        fa: 'فاعل + *essere* در زمان حال + اسم مفعولِ مطابق با فاعل (+ *da* + کننده)',
+        parts: [{ text: 'soggetto', type: 'subject' }, { text: 'venire', note: 'presente · viene / vengono', type: 'verb' }, { text: 'participio', note: 'concordato · مطابق با فاعل', type: 'extra' }, { text: '(da + agente)', note: 'اختیاری', type: 'object' }],
+        example: 'La pizza viene mangiata (da Marco). · Io vengo invitato/a.',
+        fa: 'فاعل + *venire* در زمان حال + اسم مفعولِ مطابق با فاعل (+ *da* + کننده)',
         steps: [
           'جملهٔ معلوم: *Marco mangia la pizza* ← مفعول (*la pizza*) فاعل می‌شود.',
-          '*essere* را با فاعل جدید صرف کنید: *la pizza è*، *le mele sono*.',
+          '*venire* را با فاعل جدید صرف کنید: *vengo, vieni, viene, veniamo, venite, vengono* ← *la pizza viene*، *le mele vengono*.',
           'اسم مفعول با فاعل مطابقت می‌کند (*-o / -a / -i / -e*): *mangiato, mangiata, mangiati, mangiate*.',
-          'کننده با *da* می‌آید: *da Marco* = «توسط مارکو». فارسی معمولاً در این حالت جملهٔ معلوم را ترجیح می‌دهد: «مارکو پیتزا را می‌خورد».'
+          'کننده با *da* می‌آید: *da Marco* = «توسط مارکو». فارسی معمولاً در این حالت جملهٔ معلوم را ترجیح می‌دهد: «مارکو پیتزا را می‌خورد».',
+          'با *essere* هم می‌توان گفت (*la pizza è mangiata*)، ولی ممکن است «حالت» فهمیده شود؛ *venire* همیشه «عمل» است. *venire* فقط در زمان‌های ساده به کار می‌رود؛ برای گذشته (بخش ۱۲) از *essere* استفاده کنید.'
         ]
       },
       endings: [{
-        title: 'essere + participio · مطابقت',
-        cols: ['essere (presente)', 'participio'],
-        rows: [['io', 'sono', '-o / -a'], ['tu', 'sei', '-o / -a'], ['lui', 'è', '-o / -a'], ['noi', 'siamo', '-i / -e'], ['voi', 'siete', '-i / -e'], ['loro', 'sono', '-i / -e']]
+        title: 'venire / essere + participio · مطابقت',
+        cols: ['venire (presente)', 'essere (presente)', 'participio'],
+        rows: [['io', 'vengo', 'sono', '-o / -a'], ['tu', 'vieni', 'sei', '-o / -a'], ['lui', 'viene', 'è', '-o / -a'],
+               ['noi', 'veniamo', 'siamo', '-i / -e'], ['voi', 'venite', 'siete', '-i / -e'], ['loro', 'vengono', 'sono', '-i / -e']]
       }],
       regular: '*invitato*، *mangiato*، *creduto*: اسم مفعول باقاعده، فقط پایانه برای مطابقت تغییر می‌کند.',
-      irregular: '*fatto/a/i/e* (اسم مفعول بی‌قاعدهٔ *fare*). *andare* و *dormire* لازم‌اند و اصلاً مجهول ندارند.',
+      irregular: 'خودِ *venire* بی‌قاعده است: *vengo, vieni, viene, veniamo, venite, vengono*. *fatto/a/i/e* اسم مفعول بی‌قاعدهٔ *fare* است. *andare* و *dormire* لازم‌اند و اصلاً مجهول ندارند.',
       verbs: {
-        invitare: { tables: [{ tense: 'passivo_presente', rows: six([
-          ['sono invitato/a', 'من دعوت می‌شوم'], ['sei invitato/a', 'تو دعوت می‌شوی'], ['è invitato/a', 'او دعوت می‌شود'],
-          ['siamo invitati/e', 'ما دعوت می‌شویم'], ['siete invitati/e', 'شما دعوت می‌شوید'], ['sono invitati/e', 'آنها دعوت می‌شوند']]) }],
+        invitare: { tables: [
+          { title: 'venire + participio · عمل', tense: 'passivo_venire', rows: six([
+            ['vengo invitato/a', 'من دعوت می‌شوم'], ['vieni invitato/a', 'تو دعوت می‌شوی'], ['viene invitato/a', 'او دعوت می‌شود'],
+            ['veniamo invitati/e', 'ما دعوت می‌شویم'], ['venite invitati/e', 'شما دعوت می‌شوید'], ['vengono invitati/e', 'آنها دعوت می‌شوند']]) },
+          { title: 'essere + participio · حالت یا عمل', tense: 'passivo_presente', rows: six([
+            ['sono invitato/a', 'من دعوت شده‌ام / دعوت می‌شوم'], ['sei invitato/a', 'تو دعوت شده‌ای / دعوت می‌شوی'], ['è invitato/a', 'او دعوت شده است / دعوت می‌شود'],
+            ['siamo invitati/e', 'ما دعوت شده‌ایم / دعوت می‌شویم'], ['siete invitati/e', 'شما دعوت شده‌اید / دعوت می‌شوید'], ['sono invitati/e', 'آنها دعوت شده‌اند / دعوت می‌شوند']]) }],
           note: 'فعل *invitare* فقط برای این بخش اضافه شده تا مجهول را با همهٔ اشخاص نشان دهد؛ «من خورده می‌شوم» معنای طبیعی ندارد.' },
-        mangiare: { tables: [{ tense: 'passivo_presente', rows: agr([
-          ['il pane è mangiato', 'نان خورده می‌شود'], ['la pizza è mangiata', 'پیتزا خورده می‌شود'],
-          ['i biscotti sono mangiati', 'بیسکویت‌ها خورده می‌شوند'], ['le mele sono mangiate', 'سیب‌ها خورده می‌شوند']]) }] },
-        credere: { tables: [{ tense: 'passivo_presente', rows: agr([
-          ['il racconto è creduto', 'آن ماجرا باور می‌شود'], ['la notizia è creduta', 'آن خبر باور می‌شود'],
-          ['i testimoni sono creduti', 'حرف شاهدها باور می‌شود'], ['le promesse sono credute', 'قول‌ها باور می‌شوند']]) }],
-          note: 'فارسی در این مورد جملهٔ معلوم را طبیعی‌تر می‌داند: *la notizia è creduta da tutti* = «همه این خبر را باور می‌کنند».' },
-        fare: { tables: [{ tense: 'passivo_presente', irr: AGR, rows: agr([
-          ['il lavoro è fatto', 'کار انجام می‌شود'], ['la torta è fatta in casa', 'کیک در خانه درست می‌شود'],
-          ['i compiti sono fatti', 'تکالیف انجام می‌شوند'], ['le foto sono fatte', 'عکس‌ها گرفته می‌شوند']]) }],
-          note: 'ترجمهٔ *fare* به مفعول بستگی دارد: کار ← «انجام شدن»، کیک ← «درست شدن»، عکس ← «گرفته شدن».' },
+        mangiare: { tables: [
+          { title: 'venire + participio · عمل', tense: 'passivo_venire', rows: agr([
+            ['il pane viene mangiato', 'نان خورده می‌شود'], ['la pizza viene mangiata', 'پیتزا خورده می‌شود'],
+            ['i biscotti vengono mangiati', 'بیسکویت‌ها خورده می‌شوند'], ['le mele vengono mangiate', 'سیب‌ها خورده می‌شوند']]) },
+          { title: 'essere + participio · حالت یا عمل', tense: 'passivo_presente', rows: agr([
+            ['il pane è mangiato', 'نان خورده شده است / خورده می‌شود'], ['la pizza è mangiata', 'پیتزا خورده شده است / خورده می‌شود'],
+            ['i biscotti sono mangiati', 'بیسکویت‌ها خورده شده‌اند / خورده می‌شوند'], ['le mele sono mangiate', 'سیب‌ها خورده شده‌اند / خورده می‌شوند']]) }] },
+        credere: { tables: [
+          { title: 'venire + participio · عمل', tense: 'passivo_venire', rows: agr([
+            ['il racconto viene creduto', 'آن ماجرا باور می‌شود'], ['la notizia viene creduta', 'آن خبر باور می‌شود'],
+            ['i testimoni vengono creduti', 'حرف شاهدها باور می‌شود'], ['le promesse vengono credute', 'قول‌ها باور می‌شوند']]) },
+          { title: 'essere + participio · حالت یا عمل', tense: 'passivo_presente', rows: agr([
+            ['il racconto è creduto', 'آن ماجرا باور شده است / باور می‌شود'], ['la notizia è creduta', 'آن خبر باور شده است / باور می‌شود'],
+            ['i testimoni sono creduti', 'حرف شاهدها باور شده است / باور می‌شود'], ['le promesse sono credute', 'قول‌ها باور شده‌اند / باور می‌شوند']]) }],
+          note: 'فارسی در این مورد جملهٔ معلوم را طبیعی‌تر می‌داند: *la notizia viene creduta da tutti* = «همه این خبر را باور می‌کنند».' },
+        fare: { tables: [
+          { title: 'venire + participio · عمل', tense: 'passivo_venire', irr: AGR, rows: agr([
+            ['il lavoro viene fatto', 'کار انجام می‌شود'], ['la torta viene fatta in casa', 'کیک در خانه درست می‌شود'],
+            ['i compiti vengono fatti', 'تکالیف انجام می‌شوند'], ['le foto vengono fatte', 'عکس‌ها گرفته می‌شوند']]) },
+          { title: 'essere + participio · حالت', tense: 'passivo_presente', irr: AGR, rows: agr([
+            ['il lavoro è fatto', 'کار انجام شده است (تمام است)'], ['la torta è fatta in casa', 'کیک خانگی است (در خانه درست شده)'],
+            ['i compiti sono fatti', 'تکالیف انجام شده‌اند'], ['le foto sono fatte', 'عکس‌ها گرفته شده‌اند']]) }],
+          note: 'ترجمهٔ *fare* به مفعول بستگی دارد: کار ← «انجام شدن»، کیک ← «درست شدن»، عکس ← «گرفته شدن». با *essere* این جمله‌ها بیشتر «حالت» را می‌رسانند: *il lavoro è fatto* = «کار تمام است».' },
         andare: NO_PASSIVE.andare,
         dormire: NO_PASSIVE.dormire
       },
       examples: [
-        { verb: 'mangiare', it: 'Il cibo è mangiato in fretta.', fa: 'غذا با عجله خورده می‌شود.' },
-        { verb: 'mangiare', it: 'Questo piatto è mangiato in tutta Italia.', fa: 'این غذا در سراسر ایتالیا خورده می‌شود.' },
-        { verb: 'invitare', it: 'Siamo invitati alla festa di Giulia.', fa: 'ما به مهمانی جولیا دعوت شده‌ایم.' },
-        { verb: 'fare', it: 'Il lavoro è fatto con cura.', fa: 'کار با دقت انجام می‌شود.' },
-        { verb: 'credere', it: 'Questa notizia non è creduta da nessuno.', fa: 'هیچ‌کس این خبر را باور نمی‌کند.' },
-        { verb: 'aprire', it: 'La porta è aperta.', fa: 'در باز است. (صفت: حالت، نه مجهول)' },
-        { verb: 'aprire', it: 'La porta è aperta dal portiere alle otto.', fa: 'در ساعت هشت توسط دربان باز می‌شود. (مجهول)' }
+        { verb: 'mangiare', it: 'Il cibo viene mangiato in fretta.', fa: 'غذا با عجله خورده می‌شود.' },
+        { verb: 'mangiare', it: 'Questo piatto viene mangiato in tutta Italia.', fa: 'این غذا در سراسر ایتالیا خورده می‌شود.' },
+        { verb: 'invitare', it: 'Veniamo invitati a ogni festa di Giulia.', fa: 'ما به همهٔ مهمانی‌های جولیا دعوت می‌شویم.' },
+        { verb: 'fare', it: 'Il lavoro viene fatto con cura.', fa: 'کار با دقت انجام می‌شود.' },
+        { verb: 'credere', it: 'Questa notizia non viene creduta da nessuno.', fa: 'هیچ‌کس این خبر را باور نمی‌کند.' },
+        { verb: 'aprire', it: 'La porta è aperta.', fa: 'در باز است. (حالت؛ *aperta* صفت است)' },
+        { verb: 'aprire', it: 'La porta viene aperta dal portiere alle otto.', fa: 'در ساعت هشت توسط دربان باز می‌شود. (مجهول: عمل)' }
       ],
       notes: [
-        'مجهول یا صفت؟ *La porta è aperta* معمولاً یعنی «در باز است» (حالت؛ *aperta* صفت است). اگر بتوان *da* + کننده اضافه کرد یا *essere* را با *venire* عوض کرد (*la porta viene aperta*)، جمله مجهول است: «در باز می‌شود».',
-        'برای رفع ابهام، ایتالیایی در زمان‌های ساده اغلب از *venire* به جای *essere* استفاده می‌کند: *il pane viene mangiato* = «نان خورده می‌شود» (فقط عمل، نه حالت).',
-        'جملهٔ *Siamo invitati* بسته به بافت هم «دعوت می‌شویم» ترجمه می‌شود و هم «دعوت شده‌ایم» (حالت).'
+        '*venire* یا *essere*؟ *La porta viene aperta* = «در باز می‌شود» (عمل). *La porta è aperta* = معمولاً «در باز است» (حالت). *venire* همیشه عمل را نشان می‌دهد، برای همین در زمان حال صورت اصلی است.',
+        '*Siamo invitati alla festa* معمولاً یعنی «دعوت شده‌ایم» (حالت)؛ *Veniamo invitati alla festa* یعنی «دعوت می‌شویم» (عمل).',
+        '*venire* فقط در زمان‌های ساده (*viene*، *veniva*، *verrà*) به کار می‌رود. در زمان‌های مرکب فقط *essere*: *è stato mangiato*، نه «è venuto mangiato» (بخش ۱۲).'
       ]
     },
 

@@ -47,6 +47,7 @@ const refVerb = (inf) => REF.verbs.find(v => v.infinitive === inf) || null;
 const ESSERE = refVerb('essere').conjugations;
 const AVERE = refVerb('avere').conjugations;
 const STARE = refVerb('stare').conjugations;
+const VENIRE = refVerb('venire').conjugations;
 
 /** stem + ending with Italian spelling rules: mangi+i → mangi, mangi+erò → mangerò. */
 function join(stem, ending) {
@@ -116,6 +117,9 @@ function expected(inf, meta, tense, p) {
     case 'passivo_presente':
       return isAgr ? { contains: (sg ? 'è ' : 'sono ') + agree(pp, p) }
                    : { exact: ESSERE.indicativo.presente[p] + ' ' + slash(pp, pl) };
+    case 'passivo_venire':   // venire + participle: the action reading, simple tenses only
+      return isAgr ? { contains: (sg ? 'viene ' : 'vengono ') + agree(pp, p) }
+                   : { exact: VENIRE.indicativo.presente[p] + ' ' + slash(pp, pl) };
     case 'passivo_pp':
       return isAgr ? { contains: (sg ? 'è ' : 'sono ') + agree('stato', p) + ' ' + agree(pp, p) }
                    : { exact: ESSERE.indicativo.presente[p] + ' ' + slash('stato', pl) + ' ' + slash(pp, pl) };
